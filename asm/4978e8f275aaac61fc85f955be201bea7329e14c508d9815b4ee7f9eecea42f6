@@ -1,0 +1,16 @@
+ .name method.APT::PackageContainer_std::set_pkgCache::PkgIterator__std::less_pkgCache::PkgIterator___std::allocator_pkgCache::PkgIterator_____.clear__
+ .offset 0000000000009a70
+ .file apt-mark
+ endbr64
+ push rbx
+ mov rsi, qword [rdi + CONST]
+ mov rbx, rdi
+ lea rdi, [rdi + CONST]
+ call CONST
+ lea rax, [rbx + CONST]
+ mov qword [rbx + CONST], CONST
+ mov qword [rbx + CONST], rax
+ mov qword [rbx + CONST], rax
+ mov qword [rbx + CONST], CONST
+ pop rbx
+ ret

@@ -1,0 +1,108 @@
+ .name sym.make_word_flags
+ .offset 0000000000040100
+ .file bash
+ endbr64
+ push r15
+ push r14
+ mov r14, rsi
+ push r13
+ push r12
+ mov r12, rdi
+ mov rdi, rsi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov qword [rsp], CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL17
+ mov rbp, rax
+ xor ebx, ebx
+ lea r15, [rip + CONST]
+ xor edx, edx
+ jmp LABEL22
+LABEL55:
+ cmp al, CONST
+ cjmp LABEL24
+ cmp al, CONST
+ cjmp LABEL26
+LABEL24:
+ or dword [r12 + CONST], CONST
+LABEL26:
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL29
+ movzx ecx, byte [rsi]
+ mov eax, ecx
+ shr al, CONST
+ and eax, CONST
+ mov eax, dword [r15 + rax*CONST]
+ shr eax, cl
+ test al, CONST
+ cjmp LABEL37
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL40
+ test cl, cl
+ cjmp LABEL40
+ setne al
+ movzx eax, al
+LABEL87:
+ test rax, rax
+ cjmp LABEL46
+LABEL29:
+ add ebx, CONST
+LABEL90:
+ movsxd rdx, ebx
+ cmp rdx, rbp
+ cjmp LABEL17
+LABEL22:
+ lea rsi, [r14 + rdx]
+ movzx eax, byte [rsi]
+ cmp al, CONST
+ cjmp LABEL54
+ cjmp LABEL55
+ cmp al, CONST
+ cjmp LABEL26
+ jmp LABEL24
+LABEL54:
+ or dword [r12 + CONST], CONST
+ jmp LABEL26
+LABEL37:
+ mov eax, CONST
+LABEL46:
+ add ebx, eax
+ movsxd rdx, ebx
+ cmp rdx, rbp
+ cjmp LABEL22
+ nop
+LABEL17:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL69
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL40:
+ mov rax, rbp
+ xor edi, edi
+ mov rcx, rsp
+ mov r13, qword [rsp]
+ sub rax, rdx
+ mov rdx, rax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL87
+ mov qword [rsp], r13
+ add ebx, CONST
+ jmp LABEL90
+LABEL69:
+ call CONST

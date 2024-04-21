@@ -1,0 +1,26 @@
+ .name sym.with_input_from_stdin
+ .offset 0000000000032680
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL2
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL5
+ jmp LABEL6
+LABEL11:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL6
+LABEL5:
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL11
+LABEL2:
+ ret
+LABEL6:
+ mov r8, qword [rip + CONST]
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ jmp CONST

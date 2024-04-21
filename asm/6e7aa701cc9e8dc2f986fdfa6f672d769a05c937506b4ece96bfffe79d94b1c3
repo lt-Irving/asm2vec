@@ -1,0 +1,28 @@
+ .name sym.top_level_cleanup
+ .offset 0000000000078870
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL4
+ nop word [rax + rax]
+LABEL10:
+ mov edi, CONST
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+LABEL4:
+ call CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

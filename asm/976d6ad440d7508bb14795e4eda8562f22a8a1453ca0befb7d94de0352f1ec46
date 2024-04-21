@@ -1,0 +1,50 @@
+ .name sym._rl_redisplay_after_sigwinch
+ .offset 00000000000ce3b0
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ push r12
+ cjmp LABEL3
+ mov edi, dword [rip + CONST]
+ call CONST
+ lea r12, [rip + CONST]
+ mov esi, CONST
+ mov rdi, qword [rip + CONST]
+ mov rdx, r12
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test rdi, rdi
+ cjmp LABEL14
+ mov rdx, r12
+ mov esi, CONST
+ call CONST
+LABEL37:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL20
+ xor edi, edi
+ call CONST
+LABEL20:
+ mov rdi, qword [rip + CONST]
+ mov esi, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL27
+ lea rdi, [rax + CONST]
+ pop r12
+ jmp CONST
+LABEL14:
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rdx, r12
+ mov esi, CONST
+ call CONST
+ jmp LABEL37
+LABEL3:
+ call CONST
+ jmp LABEL20
+LABEL27:
+ pop r12
+ jmp CONST

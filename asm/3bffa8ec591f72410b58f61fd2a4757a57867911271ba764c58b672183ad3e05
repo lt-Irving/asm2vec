@@ -1,0 +1,79 @@
+ .name sym._rl_isearch_cleanup
+ .offset 00000000000c8410
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ test esi, esi
+ cjmp LABEL7
+LABEL50:
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+ and qword [rip + CONST], CONST
+ test ebx, ebx
+ mov qword [rip + CONST], CONST
+ setne al
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL7:
+ movsxd rdx, dword [rdi + CONST]
+ mov rax, qword [rdi + CONST]
+ xor esi, esi
+ mov rdi, qword [rax + rdx*CONST]
+ call CONST
+ call CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL28
+ call CONST
+LABEL28:
+ mov rax, qword [rbp + CONST]
+ mov edi, dword [rbp + CONST]
+ mov qword [rbp + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov eax, dword [rbp + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbp + CONST]
+ cmp edi, eax
+ cjmp LABEL38
+ sub eax, edi
+ xor esi, esi
+ mov edi, eax
+ call CONST
+ mov eax, dword [rbp + CONST]
+ test eax, eax
+ cjmp LABEL45
+LABEL56:
+ xor edi, edi
+ mov dword [rip + CONST], eax
+ call CONST
+ call CONST
+ jmp LABEL50
+LABEL38:
+ sub edi, eax
+ xor esi, esi
+ call CONST
+ mov eax, dword [rbp + CONST]
+ test eax, eax
+ cjmp LABEL56
+LABEL45:
+ mov eax, dword [rbp + CONST]
+ cmp dword [rbp + CONST], eax
+ cjmp LABEL59
+ mov rdi, qword [rip + CONST]
+ call CONST
+LABEL67:
+ mov edx, dword [rbp + CONST]
+ mov dword [rbp + CONST], eax
+ mov dword [rip + CONST], edx
+ jmp LABEL56
+LABEL59:
+ mov eax, dword [rbp + CONST]
+ jmp LABEL67

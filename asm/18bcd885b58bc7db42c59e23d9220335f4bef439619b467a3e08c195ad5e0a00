@@ -1,0 +1,67 @@
+ .name sym.maybe_save_shell_history
+ .offset 0000000000081600
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ xor eax, eax
+ ret
+LABEL3:
+ push rbp
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL12
+ cmp byte [rax], CONST
+ cjmp LABEL14
+LABEL12:
+ xor eax, eax
+LABEL40:
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL14:
+ mov rdi, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL22
+LABEL52:
+ call CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ cmp eax, edi
+ cjmp LABEL27
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL30
+LABEL27:
+ mov rsi, rbp
+ call CONST
+ mov edx, dword [rip + CONST]
+ add dword [rip + CONST], edx
+LABEL45:
+ lea rdi, [rip + CONST]
+ mov dword [rsp + CONST], eax
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov eax, dword [rsp + CONST]
+ jmp LABEL40
+LABEL30:
+ mov rdi, rbp
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], edx
+ jmp LABEL45
+LABEL22:
+ mov rdi, rbp
+ mov edx, CONST
+ mov esi, CONST
+ call CONST
+ mov edi, eax
+ cmp eax, CONST
+ cjmp LABEL52
+ call CONST
+ jmp LABEL52

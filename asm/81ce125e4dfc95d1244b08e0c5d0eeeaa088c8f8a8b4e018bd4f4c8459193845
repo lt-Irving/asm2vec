@@ -1,0 +1,15 @@
+ .name sym.print_select_command_head
+ .offset 0000000000042a30
+ .file bash
+ endbr64
+ push rbx
+ mov rax, qword [rdi + CONST]
+ mov rbx, rdi
+ lea rdi, [rip + CONST]
+ mov rsi, qword [rax]
+ xor eax, eax
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ lea rsi, [rip + CONST]
+ pop rbx
+ jmp CONST

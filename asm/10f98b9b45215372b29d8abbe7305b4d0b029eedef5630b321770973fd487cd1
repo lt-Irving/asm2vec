@@ -1,0 +1,19 @@
+ .name fcn.0007a6c0
+ .offset 000000000007a6c0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ test byte [rdi + CONST], CONST
+ cjmp LABEL4
+LABEL13:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, qword [rbp]
+ call CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL4:
+ call CONST
+ jmp LABEL13

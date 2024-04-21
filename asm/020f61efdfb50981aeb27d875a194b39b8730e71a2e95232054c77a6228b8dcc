@@ -1,0 +1,29 @@
+ .name sym.file_isdir
+ .offset 000000000003f2f0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rsi, rdi
+ mov edi, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ mov r8d, eax
+ xor eax, eax
+ test r8d, r8d
+ cjmp LABEL12
+ mov eax, dword [rsp + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ sete al
+ movzx eax, al
+LABEL12:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL20
+ add rsp, CONST
+ ret
+LABEL20:
+ call CONST

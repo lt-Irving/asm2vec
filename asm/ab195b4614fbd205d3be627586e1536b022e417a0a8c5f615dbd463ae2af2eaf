@@ -1,0 +1,37 @@
+ .name sym.rl_quoted_insert
+ .offset 00000000000d4e60
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ test byte [rip + CONST], CONST
+ cjmp LABEL4
+LABEL15:
+ mov edi, ebp
+ call CONST
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ xor eax, eax
+LABEL22:
+ pop rbp
+ ret
+LABEL4:
+ call CONST
+ test byte [rip + CONST], CONST
+ cjmp LABEL15
+ test ebp, ebp
+ cjmp LABEL17
+ mov edi, ebp
+ pop rbp
+ jmp CONST
+LABEL26:
+ add ebp, CONST
+ cjmp LABEL22
+LABEL17:
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL26
+ pop rbp
+ ret

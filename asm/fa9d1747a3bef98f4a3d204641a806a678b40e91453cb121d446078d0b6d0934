@@ -1,0 +1,32 @@
+ .name sym.make_word_list
+ .offset 00000000000402c0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ mov rdx, qword [rip + CONST]
+ sub eax, CONST
+ mov dword [rip + CONST], eax
+ cdqe
+ mov rax, qword [rdx + rax*CONST]
+ mov qword [rax + CONST], rbp
+ mov qword [rax], rbx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL8:
+ mov edi, CONST
+ call CONST
+ mov qword [rax + CONST], rbp
+ mov qword [rax], rbx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

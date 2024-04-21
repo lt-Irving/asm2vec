@@ -1,0 +1,26 @@
+ .name sym._rl_erase_entire_line
+ .offset 00000000000ce4e0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+LABEL4:
+ xor edi, edi
+ call CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL13
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+LABEL13:
+ mov rdi, qword [rip + CONST]
+ add rsp, CONST
+ jmp CONST

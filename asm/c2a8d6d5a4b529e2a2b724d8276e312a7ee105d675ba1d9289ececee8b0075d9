@@ -1,0 +1,18 @@
+ .name sym.find_special_builtin
+ .offset 0000000000093610
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor esi, esi
+ call CONST
+ xor r8d, r8d
+ mov qword [rip + CONST], rax
+ test rax, rax
+ cjmp LABEL7
+ test byte [rax + CONST], CONST
+ cjmp LABEL7
+ mov r8, qword [rax + CONST]
+LABEL7:
+ mov rax, r8
+ add rsp, CONST
+ ret

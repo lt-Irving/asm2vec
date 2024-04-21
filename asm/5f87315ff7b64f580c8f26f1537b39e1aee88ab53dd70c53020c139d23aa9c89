@@ -1,0 +1,62 @@
+ .name sym.assoc_quote_escapes
+ .offset 000000000007e980
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov edx, dword [rdi + CONST]
+ test edx, edx
+ cjmp LABEL11
+ mov eax, dword [rdi + CONST]
+ xor r12d, r12d
+ test eax, eax
+ cjmp LABEL15
+ nop dword [rax + rax]
+LABEL35:
+ mov rax, qword [r13]
+ mov rbx, qword [rax + r12*CONST]
+ test rbx, rbx
+ cjmp LABEL20
+ nop dword [rax]
+LABEL32:
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ mov rbp, rax
+ test rdi, rdi
+ cjmp LABEL27
+ call CONST
+LABEL27:
+ mov qword [rbx + CONST], rbp
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL32
+LABEL20:
+ add r12, CONST
+ cmp dword [r13 + CONST], r12d
+ cjmp LABEL35
+LABEL15:
+ add rsp, CONST
+ mov rax, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL11:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ xor eax, eax
+ ret

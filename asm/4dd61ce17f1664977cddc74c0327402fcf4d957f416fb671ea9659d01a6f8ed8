@@ -1,0 +1,84 @@
+ .name sym.get_directory_stack
+ .offset 000000000009ce60
+ .file bash
+ endbr64
+ push r13
+ mov r13d, edi
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL9
+ mov r12d, edi
+ xor ebx, ebx
+ xor ebp, ebp
+ and r12d, CONST
+ jmp LABEL14
+LABEL26:
+ call CONST
+ mov rsi, rbp
+ add rbx, CONST
+ mov rdi, rax
+ call CONST
+ cmp dword [rip + CONST], ebx
+ mov rbp, rax
+ cjmp LABEL22
+LABEL14:
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax + rbx*CONST]
+ test r12d, r12d
+ cjmp LABEL26
+ call CONST
+ mov rdi, rax
+ jmp LABEL26
+LABEL9:
+ xor ebp, ebp
+ nop word [rax + rax]
+LABEL22:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL36
+ and r13d, CONST
+ cjmp LABEL38
+LABEL58:
+ mov rdi, r12
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdi, r12
+ mov r13, rax
+ call CONST
+ add rsp, CONST
+ mov rax, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL38:
+ mov rdi, rax
+ call CONST
+ mov r13, rax
+ cmp r12, rax
+ cjmp LABEL58
+ mov rdi, r12
+ call CONST
+LABEL72:
+ mov rdi, r13
+ call CONST
+ add rsp, CONST
+ mov rsi, rbp
+ pop rbx
+ mov rdi, rax
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL36:
+ lea r13, [rip + CONST]
+ jmp LABEL72

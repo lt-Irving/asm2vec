@@ -1,0 +1,80 @@
+ .name sym._rl_init_locale
+ .offset 00000000000d5c30
+ .file bash
+ endbr64
+ push r12
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ cmp byte [rax], CONST
+ mov rsi, rax
+ cjmp LABEL5
+LABEL27:
+ xor edi, edi
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL13
+ cmp byte [rax], CONST
+ cjmp LABEL15
+LABEL13:
+ xor eax, eax
+LABEL58:
+ mov dword [rip + CONST], eax
+ mov rax, r12
+ pop r12
+ ret
+LABEL5:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ cjmp LABEL25
+ cmp byte [rax], CONST
+ cjmp LABEL27
+LABEL25:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ cjmp LABEL32
+ cmp byte [rax], CONST
+ cjmp LABEL27
+LABEL32:
+ xor esi, esi
+ xor edi, edi
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ lea rax, [rip + CONST]
+ cmove rsi, rax
+ jmp LABEL27
+LABEL15:
+ mov edi, CONST
+ call CONST
+ mov rsi, rax
+ movzx eax, byte [rax]
+ cmp al, CONST
+ cjmp LABEL48
+ cmp al, CONST
+ cjmp LABEL13
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov eax, CONST
+ repe cmpsb byte [rsi], byte [rdi]
+ seta dl
+ sbb dl, CONST
+ test dl, dl
+ cjmp LABEL58
+ jmp LABEL13
+LABEL48:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ sete al
+ movzx eax, al
+ jmp LABEL58

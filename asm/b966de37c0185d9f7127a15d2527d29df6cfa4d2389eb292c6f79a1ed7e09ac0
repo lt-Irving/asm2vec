@@ -1,0 +1,32 @@
+ .name fcn.000161c0
+ .offset 00000000000161c0
+ .file diff
+ mov rax, qword [rdi + CONST]
+ lea rsi, [rsi + rsi*CONST]
+ lea rax, [rax + rsi*CONST]
+ mov r10, qword [rax + CONST]
+ cmp r10, r8
+ cjmp LABEL5
+ mov rax, qword [rax + CONST]
+ cmp rax, r8
+ cjmp LABEL8
+ xor esi, esi
+ cmp r10, r8
+ sete sil
+ cmp rax, r8
+ cjmp LABEL13
+ xor eax, eax
+ cmp r10, r8
+ cjmp LABEL16
+ ret
+LABEL13:
+ or esi, CONST
+LABEL16:
+ mov r8, r9
+ jmp CONST
+LABEL8:
+ mov eax, CONST
+ ret
+LABEL5:
+ mov eax, CONST
+ ret

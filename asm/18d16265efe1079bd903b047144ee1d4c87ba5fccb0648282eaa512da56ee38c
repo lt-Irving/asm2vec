@@ -1,0 +1,118 @@
+ .name method.void_std::vector_pkgCache::VerIterator__std::allocator_pkgCache::VerIterator___::_M_realloc_insert_pkgCache.VerIterator____gnu_cxx::__normal_iterator_pkgCache::VerIterator__std::vector_pkgCache::VerIterator__std::allocator_pkgCache::VerIterator___
+ .offset 0000000000009ab0
+ .file apt-mark
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rsi
+ movabs rsi, CONST
+ sub rsp, CONST
+ mov rbp, qword [rdi + CONST]
+ mov r14, qword [rdi]
+ mov rax, rbp
+ sub rax, r14
+ sar rax, CONST
+ cmp rax, rsi
+ cjmp LABEL16
+ mov rcx, rbx
+ mov r12, rdi
+ sub rcx, r14
+ test rax, rax
+ cjmp LABEL21
+ movabs r15, CONST
+ lea rdi, [rax + rax]
+ cmp rax, rdi
+ cjmp LABEL25
+LABEL95:
+ mov rdi, r15
+ mov qword [rsp + CONST], rdx
+ mov qword [rsp], rcx
+ call CONST
+ mov rcx, qword [rsp]
+ mov rdx, qword [rsp + CONST]
+ mov r13, rax
+ add r15, rax
+ lea rax, [rax + CONST]
+LABEL93:
+ mov rsi, qword [rdx + CONST]
+ mov rdx, qword [rdx]
+ add rcx, r13
+ mov qword [rcx], rdx
+ mov qword [rcx + CONST], rsi
+ cmp rbx, r14
+ cjmp LABEL41
+ mov rcx, r13
+ mov rdx, r14
+ nop word [rax + rax]
+LABEL52:
+ mov rax, qword [rdx]
+ mov rsi, qword [rdx + CONST]
+ add rdx, CONST
+ add rcx, CONST
+ mov qword [rcx + CONST], rax
+ mov qword [rcx + CONST], rsi
+ cmp rbx, rdx
+ cjmp LABEL52
+ mov rax, rbx
+ sub rax, r14
+ lea rax, [r13 + rax + CONST]
+LABEL41:
+ cmp rbx, rbp
+ cjmp LABEL57
+ mov rdx, rbx
+ mov rcx, rax
+ nop word [rax + rax]
+LABEL68:
+ mov rsi, qword [rdx + CONST]
+ mov rdi, qword [rdx]
+ add rdx, CONST
+ add rcx, CONST
+ mov qword [rcx + CONST], rdi
+ mov qword [rcx + CONST], rsi
+ cmp rdx, rbp
+ cjmp LABEL68
+ sub rdx, rbx
+ add rax, rdx
+LABEL57:
+ test r14, r14
+ cjmp LABEL72
+ mov rdi, r14
+ mov qword [rsp], rax
+ call CONST
+ mov rax, qword [rsp]
+LABEL72:
+ mov qword [r12], r13
+ mov qword [r12 + CONST], rax
+ mov qword [r12 + CONST], r15
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL25:
+ test rdi, rdi
+ cjmp LABEL89
+ mov eax, CONST
+ xor r15d, r15d
+ xor r13d, r13d
+ jmp LABEL93
+LABEL21:
+ mov r15d, CONST
+ jmp LABEL95
+LABEL89:
+ cmp rdi, rsi
+ cmovbe rsi, rdi
+ mov r15, rsi
+ shl r15, CONST
+ jmp LABEL95
+LABEL16:
+ lea rdi, [rip + CONST]
+ call CONST
+ nop word [rax + rax]

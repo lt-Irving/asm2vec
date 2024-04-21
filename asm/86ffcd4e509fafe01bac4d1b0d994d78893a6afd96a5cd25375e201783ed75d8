@@ -1,0 +1,57 @@
+ .name sym._hs_append_history_line
+ .offset 00000000000d71e0
+ .file bash
+ endbr64
+ push r13
+ movsxd rdi, edi
+ push r12
+ push rbp
+ mov rbp, rsi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ mov r12, qword [rax + rdi*CONST]
+ mov r13, qword [r12]
+ mov rdi, r13
+ call CONST
+ mov rdi, rbp
+ mov rbx, rax
+ call CONST
+ lea rsi, [rbx + rax + CONST]
+ cmp rbx, CONST
+ cjmp LABEL18
+ cmp rsi, CONST
+ cjmp LABEL20
+ mov eax, CONST
+ nop word [rax + rax]
+LABEL25:
+ add rax, rax
+ cmp rsi, rax
+ cjmp LABEL25
+ mov rsi, rax
+LABEL18:
+ mov rdi, r13
+ call CONST
+ test rax, rax
+ cjmp LABEL30
+ mov qword [r12], rax
+ mov rsi, rbp
+ mov byte [rax + rbx], CONST
+ mov rax, qword [r12]
+ add rsp, CONST
+ lea rdi, [rax + rbx + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL20:
+ mov esi, CONST
+ jmp LABEL18
+LABEL30:
+ pop rax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

@@ -1,0 +1,30 @@
+ .name fcn.000034c0
+ .offset 00000000000034c0
+ .file chown
+ endbr64
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test rax, rax
+ cjmp LABEL9
+ mov rdi, qword [rax]
+LABEL22:
+ call CONST
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL14
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL9:
+ mov edi, ebx
+ mov rsi, rsp
+ call CONST
+ mov rdi, rax
+ jmp LABEL22
+LABEL14:
+ call CONST

@@ -1,0 +1,26 @@
+ .name fcn.000059f0
+ .offset 00000000000059f0
+ .file chrt
+ endbr64
+ push r12
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL7
+ lea rdi, [rip + CONST]
+ call CONST
+ mov qword [r12], rax
+ test rax, rax
+ cjmp LABEL7
+ mov rax, r12
+ pop r12
+ ret
+LABEL7:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ mov rax, r12
+ pop r12
+ ret

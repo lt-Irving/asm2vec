@@ -1,0 +1,32 @@
+ .name fcn.00013680
+ .offset 0000000000013680
+ .file dpkg-deb
+ endbr64
+ lea rax, [rsi + CONST]
+ cmp rax, rdx
+ cjmp LABEL3
+ ret
+LABEL3:
+ push r12
+ mov r12, rdi
+ mov rdi, rsi
+ push rbp
+ mov rbp, rsi
+ sub rsp, CONST
+ call CONST
+ mov rdi, r12
+ mov esi, eax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, r12
+ mov esi, eax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ mov rdi, r12
+ pop rbp
+ mov esi, eax
+ pop r12
+ jmp CONST

@@ -1,0 +1,28 @@
+ .name sym.rl_add_undo
+ .offset 00000000000d0770
+ .file bash
+ endbr64
+ push r13
+ mov r13d, edi
+ mov edi, CONST
+ push r12
+ mov r12d, esi
+ push rbp
+ mov ebp, edx
+ push rbx
+ mov rbx, rcx
+ sub rsp, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov dword [rax + CONST], r13d
+ mov qword [rax], rdx
+ mov dword [rax + CONST], r12d
+ mov dword [rax + CONST], ebp
+ mov qword [rax + CONST], rbx
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

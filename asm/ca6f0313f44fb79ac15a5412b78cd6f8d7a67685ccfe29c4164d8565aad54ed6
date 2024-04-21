@@ -1,0 +1,25 @@
+ .name fcn.00008170
+ .offset 0000000000008170
+ .file dir
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL1
+ ret
+LABEL1:
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ test al, al
+ cjmp LABEL7
+ add rsp, CONST
+ ret
+LABEL7:
+ lea rsi, [rip + CONST]
+ lea rdi, [rsi + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ lea rdi, [rsi + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ add rsp, CONST
+ lea rdi, [rsi + CONST]
+ jmp CONST

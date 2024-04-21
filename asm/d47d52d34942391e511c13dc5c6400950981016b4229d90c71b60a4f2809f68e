@@ -1,0 +1,30 @@
+ .name fcn.0000bc30
+ .offset 000000000000bc30
+ .file df
+ endbr64
+ push rbx
+ mov esi, CONST
+ mov rbx, rdi
+ xor eax, eax
+ mov qword [rdi + CONST], CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ xor r8d, r8d
+ mov dword [rbx], eax
+ test eax, eax
+ cjmp LABEL11
+ mov eax, r8d
+ pop rbx
+ ret
+LABEL11:
+ xor esi, esi
+ xor edi, edi
+ call CONST
+ xor r8d, r8d
+ test rax, rax
+ mov qword [rbx + CONST], rax
+ pop rbx
+ sete r8b
+ neg r8d
+ mov eax, r8d
+ ret

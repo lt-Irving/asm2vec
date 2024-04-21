@@ -1,0 +1,39 @@
+ .name fcn.00008ace
+ .offset 0000000000008ace
+ .file apt-mark
+LABEL30:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL3
+LABEL23:
+ mov rdi, r15
+ call CONST
+ mov rdi, r13
+ call CONST
+ mov rdi, rbx
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL13
+LABEL27:
+ mov rsi, qword [rsp + CONST]
+ lea rax, [rip + CONST]
+ lea rdi, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rdi, r14
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ jmp LABEL23
+LABEL3:
+ call CONST
+ jmp LABEL23
+LABEL13:
+ call CONST
+ jmp LABEL27
+ endbr64
+ mov rbx, rax
+ jmp LABEL30

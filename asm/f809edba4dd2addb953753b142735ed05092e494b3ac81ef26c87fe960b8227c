@@ -1,0 +1,22 @@
+ .name sym.rl_add_defun
+ .offset 00000000000c3e90
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, rsi
+ sub rsp, CONST
+ cmp edx, CONST
+ cjmp LABEL7
+ mov edi, edx
+ call CONST
+LABEL7:
+ mov rsi, rbp
+ mov rdi, r12
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

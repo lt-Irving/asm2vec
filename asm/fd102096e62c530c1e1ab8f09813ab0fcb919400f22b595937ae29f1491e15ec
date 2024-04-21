@@ -1,0 +1,62 @@
+ .name fcn.00001720
+ .offset 0000000000001720
+ .file clear_console
+ endbr64
+ push rbp
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL10
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rbp
+ mov eax, CONST
+ repe cmpsb byte [rsi], byte [rdi]
+ seta dl
+ sbb dl, CONST
+ test dl, dl
+ cjmp LABEL19
+LABEL38:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rbp
+ repe cmpsb byte [rsi], byte [rdi]
+ seta dl
+ sbb dl, CONST
+ xor eax, eax
+ test dl, dl
+ cjmp LABEL19
+ movzx eax, byte [rbp + CONST]
+ sub eax, CONST
+ cmp al, CONST
+ setbe al
+ add rsp, CONST
+ movzx eax, al
+ pop rbp
+ ret
+LABEL10:
+ mov eax, CONST
+ cjmp LABEL38
+LABEL19:
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL5:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL44
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL44:
+ lea rdi, [rip + CONST]
+ mov dword [rsp + CONST], eax
+ call CONST
+ mov eax, dword [rsp + CONST]
+ jmp LABEL19

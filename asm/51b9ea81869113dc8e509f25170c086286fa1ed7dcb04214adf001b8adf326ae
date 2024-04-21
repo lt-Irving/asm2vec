@@ -1,0 +1,62 @@
+ .name fcn.00006830
+ .offset 0000000000006830
+ .file dash
+LABEL41:
+ push r13
+ push r12
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov ebx, ecx
+ sub rsp, CONST
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov r12, rax
+ lea eax, [rsi + CONST]
+ cmp eax, CONST
+ cjmp LABEL12
+ mov rdi, r12
+ mov ecx, ebx
+ mov edx, CONST
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov r12, rax
+LABEL12:
+ cmp esi, CONST
+ cjmp LABEL20
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL20:
+ call CONST
+ xor ecx, ecx
+ test r12, r12
+ mov r13d, eax
+ mov rax, qword [rip + CONST]
+ sete cl
+ or ebx, ecx
+ mov qword [rbp], rax
+ call CONST
+ mov ecx, ebx
+ mov rsi, rbp
+ mov edi, r13d
+ mov edx, eax
+ call LABEL41
+ test r12, r12
+ mov r8, rax
+ setne al
+ xor r12d, r12d
+ test r8, r8
+ setne r12b
+ add rsp, CONST
+ and r12, rax
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ pop r13
+ ret

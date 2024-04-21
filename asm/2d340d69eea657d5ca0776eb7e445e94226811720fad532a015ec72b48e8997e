@@ -1,0 +1,70 @@
+ .name sym.return_builtin
+ .offset 000000000009ed60
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov r8, rdi
+ test rdi, rdi
+ cjmp LABEL4
+ mov rax, qword [rdi + CONST]
+ test rax, rax
+ cjmp LABEL4
+ mov rsi, qword [rax]
+ cmp byte [rsi], CONST
+ cjmp LABEL10
+LABEL4:
+ mov rdi, r8
+ call CONST
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL16
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ mov eax, CONST
+LABEL36:
+ add rsp, CONST
+ ret
+LABEL10:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL4
+ call CONST
+ mov eax, CONST
+ jmp LABEL36
+LABEL16:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ nop word cs:[rax + rax]
+ nop
+ endbr64
+ sub rsp, CONST
+ xor eax, eax
+ cmp edi, CONST
+ sete al
+ mov dword [rip + CONST], eax
+ cjmp LABEL48
+ lea rdi, [rip + CONST]
+ call CONST
+LABEL60:
+ lea rdi, [rip + CONST]
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL48:
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ jmp LABEL60

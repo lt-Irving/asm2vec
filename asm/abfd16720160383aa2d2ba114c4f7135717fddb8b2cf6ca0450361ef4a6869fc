@@ -1,0 +1,58 @@
+ .name sym._rl_char_value
+ .offset 00000000000dbcd0
+ .file bash
+ endbr64
+ push rbp
+ movsxd rbp, esi
+ push rbx
+ mov rbx, rbp
+ add rbp, rdi
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test edx, edx
+ cjmp LABEL12
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL15
+ movsx eax, byte [rbp]
+ test al, al
+ cjmp LABEL18
+LABEL15:
+ call CONST
+ lea ecx, [rax + CONST]
+ mov edx, eax
+ cmp ecx, ebx
+ cjmp LABEL12
+ cmp ebx, eax
+ cjmp LABEL25
+ mov rdi, rbp
+ call CONST
+ mov edx, eax
+LABEL25:
+ sub edx, ebx
+ lea rcx, [rsp + CONST]
+ lea rdi, [rsp + CONST]
+ mov rsi, rbp
+ mov qword [rsp + CONST], CONST
+ movsxd rdx, edx
+ call CONST
+ lea rdx, [rax + CONST]
+ mov eax, dword [rsp + CONST]
+ cmp rdx, CONST
+ cjmp LABEL18
+ nop dword [rax]
+LABEL12:
+ movsx eax, byte [rbp]
+LABEL18:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL44
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL44:
+ call CONST

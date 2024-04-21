@@ -1,0 +1,120 @@
+ .name sym.uconvert
+ .offset 00000000000b56a0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ movsx eax, byte [rdi]
+ mov r9d, CONST
+ lea ecx, [rax + CONST]
+ and ecx, CONST
+ cjmp LABEL7
+LABEL39:
+ xor ecx, ecx
+ jmp LABEL9
+LABEL22:
+ cmp al, CONST
+ cjmp LABEL11
+ lea r8d, [rax + CONST]
+ cmp r8b, CONST
+ cjmp LABEL14
+ sub eax, CONST
+ lea rcx, [rcx + rcx*CONST]
+ add rdi, CONST
+ cdqe
+ lea rcx, [rax + rcx*CONST]
+ movsx eax, byte [rdi]
+LABEL9:
+ test al, al
+ cjmp LABEL22
+LABEL41:
+ test rsi, rsi
+ cjmp LABEL24
+ movsxd r9, r9d
+ imul rcx, r9
+ mov qword [rsi], rcx
+LABEL24:
+ test rdx, rdx
+ cjmp LABEL29
+ mov qword [rdx], CONST
+ mov eax, CONST
+ ret
+LABEL7:
+ xor r9d, r9d
+ cmp al, CONST
+ movsx eax, byte [rdi + CONST]
+ setne r9b
+ add rdi, CONST
+ lea r9d, [r9 + r9 + CONST]
+ jmp LABEL39
+LABEL11:
+ test al, al
+ cjmp LABEL41
+ xor r8d, r8d
+ xor r10d, r10d
+LABEL57:
+ movsx eax, byte [rdi + r8 + CONST]
+ movsxd r11, r8d
+ test al, al
+ cjmp LABEL47
+ lea r11d, [rax + CONST]
+ cmp r11b, CONST
+ cjmp LABEL50
+ sub eax, CONST
+ lea r10, [r10 + r10*CONST]
+ add r8, CONST
+ cdqe
+ lea r10, [rax + r10*CONST]
+ cmp r8, CONST
+ cjmp LABEL57
+ movzx eax, byte [rdi + CONST]
+ sub eax, CONST
+ cmp al, CONST
+ adc r10, CONST
+LABEL88:
+ test rsi, rsi
+ cjmp LABEL63
+ movsxd r9, r9d
+ imul rcx, r9
+ mov qword [rsi], rcx
+LABEL63:
+ test rdx, rdx
+ cjmp LABEL29
+ mov qword [rdx], r10
+LABEL29:
+ mov eax, CONST
+ ret
+LABEL2:
+ mov r9d, CONST
+ xor ecx, ecx
+ jmp LABEL41
+LABEL14:
+ test rsi, rsi
+ cjmp LABEL76
+ movsxd r9, r9d
+ imul rcx, r9
+ mov qword [rsi], rcx
+LABEL76:
+ test rdx, rdx
+ cjmp LABEL81
+ mov qword [rdx], CONST
+LABEL81:
+ xor eax, eax
+ ret
+LABEL47:
+ lea rax, [rip + CONST]
+ movsxd rax, dword [rax + r11*CONST]
+ imul r10, rax
+ jmp LABEL88
+LABEL50:
+ test rsi, rsi
+ cjmp LABEL90
+ movsxd r9, r9d
+ imul rcx, r9
+ mov qword [rsi], rcx
+LABEL90:
+ test rdx, rdx
+ cjmp LABEL81
+ mov qword [rdx], r10
+ xor eax, eax
+ ret

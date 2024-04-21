@@ -1,0 +1,14 @@
+ .name fcn.00007f20
+ .offset 0000000000007f20
+ .file dmesg
+ endbr64
+ mov eax, dword [rip + CONST]
+ push rbp
+ mov ebp, edi
+ test eax, eax
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov edi, ebp
+ pop rbp
+ jmp CONST

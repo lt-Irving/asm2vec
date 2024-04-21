@@ -1,0 +1,25 @@
+ .name sym.sv_strict_posix
+ .offset 000000000004e200
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ xor edi, edi
+ test rax, rax
+ cjmp LABEL5
+ xor edi, edi
+ cmp qword [rax + CONST], CONST
+ setne dil
+LABEL5:
+ mov dword [rip + CONST], edi
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL13
+ add rsp, CONST
+ jmp CONST
+LABEL13:
+ mov edi, dword [rip + CONST]
+ call CONST
+ add rsp, CONST
+ jmp CONST

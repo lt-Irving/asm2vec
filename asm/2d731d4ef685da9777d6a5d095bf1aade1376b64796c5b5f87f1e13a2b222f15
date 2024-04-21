@@ -1,0 +1,17 @@
+ .name sym.history_set_history_state
+ .offset 00000000000d6ae0
+ .file bash
+ endbr64
+ mov rax, qword [rdi]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ test byte [rdi + CONST], CONST
+ cjmp LABEL10
+ mov dword [rip + CONST], CONST
+LABEL10:
+ ret

@@ -1,0 +1,29 @@
+ .name fcn.00082fa0
+ .offset 0000000000082fa0
+ .file bash
+ endbr64
+ push r12
+ movsxd rsi, esi
+ mov r12, rdi
+ push rbp
+ sub rsp, CONST
+ call CONST
+ cmp r12, rax
+ cjmp LABEL8
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ add rsp, CONST
+ mov rsi, rbp
+ mov rdi, rax
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL8:
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret

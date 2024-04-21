@@ -1,0 +1,50 @@
+ .name sym.convert_var_to_assoc
+ .offset 000000000007c900
+ .file bash
+ endbr64
+ push r13
+ push r12
+ mov r12, rdi
+ push rbx
+ mov r13, qword [rdi + CONST]
+ xor edi, edi
+ call CONST
+ mov rbx, rax
+ test r13, r13
+ cjmp LABEL10
+ mov edi, CONST
+ call CONST
+ mov rdx, r13
+ mov rdi, rbx
+ mov rsi, rax
+ mov eax, CONST
+ mov word [rsi], ax
+ call CONST
+LABEL10:
+ mov rdi, qword [r12 + CONST]
+ test rdi, rdi
+ cjmp LABEL21
+ call CONST
+LABEL21:
+ mov rdi, qword [r12 + CONST]
+ mov qword [r12 + CONST], rbx
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ test rdi, rdi
+ cjmp LABEL28
+ call CONST
+ mov qword [r12 + CONST], CONST
+LABEL28:
+ mov eax, dword [r12 + CONST]
+ test al, CONST
+ cjmp LABEL33
+ add dword [rip + CONST], CONST
+LABEL33:
+ and eax, CONST
+ pop rbx
+ or eax, CONST
+ mov dword [r12 + CONST], eax
+ mov rax, r12
+ pop r12
+ pop r13
+ ret

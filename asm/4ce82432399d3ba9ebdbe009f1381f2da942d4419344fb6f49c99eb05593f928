@@ -1,0 +1,40 @@
+ .name sym.make_case_command
+ .offset 00000000000407e0
+ .file bash
+ endbr64
+ push r13
+ mov r13d, edx
+ push r12
+ mov r12, rdi
+ mov edi, CONST
+ push rbp
+ mov rbp, rsi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov dword [rax], CONST
+ mov rbx, rax
+ mov dword [rax + CONST], r13d
+ mov qword [rax + CONST], r12
+ test rbp, rbp
+ cjmp LABEL16
+ cmp qword [rbp], CONST
+ cjmp LABEL16
+ mov rdi, rbp
+ xor eax, eax
+ call CONST
+ mov rbp, rax
+LABEL16:
+ mov qword [rbx + CONST], rbp
+ mov edi, CONST
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

@@ -1,0 +1,54 @@
+ .name sym.rl_forward_byte
+ .offset 00000000000d4490
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ cjmp LABEL4
+ add edi, dword [rip + CONST]
+ mov edx, eax
+ test eax, eax
+ cjmp LABEL8
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL11
+LABEL8:
+ cmp edx, edi
+ cjmp LABEL13
+LABEL30:
+ mov dword [rip + CONST], edi
+LABEL4:
+ test eax, eax
+ cjmp LABEL16
+ xor eax, eax
+ ret
+LABEL16:
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ ret
+LABEL11:
+ lea rdx, [rip + CONST]
+ cmp qword [rip + CONST], rdx
+ mov ecx, eax
+ sete dl
+ movzx edx, dl
+ sub ecx, edx
+ mov edx, ecx
+ cmp edx, edi
+ cjmp LABEL30
+LABEL13:
+ sub rsp, CONST
+ mov dword [rip + CONST], edx
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL36
+ mov dword [rip + CONST], CONST
+LABEL36:
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL2:
+ neg edi
+ jmp CONST

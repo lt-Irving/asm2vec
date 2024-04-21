@@ -1,0 +1,18 @@
+ .name sym.run_return_trap
+ .offset 0000000000076120
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL4
+ ret
+LABEL4:
+ push rbx
+ mov ebx, dword [rip + CONST]
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov dword [rip + CONST], ebx
+ pop rbx
+ ret

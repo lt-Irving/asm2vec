@@ -1,0 +1,92 @@
+ .name fcn.0000ffd0
+ .offset 000000000000ffd0
+ .file apt-cache
+ endbr64
+ push r13
+ lea rax, [rdi + CONST]
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ cmp rsi, rax
+ cjmp LABEL10
+ movzx r13d, word [rdx]
+ mov rbx, rsi
+ cmp r13w, word [rsi + CONST]
+ cjmp LABEL14
+ mov r8, qword [rdi + CONST]
+ mov rdx, r8
+ cmp r8, rsi
+ cjmp LABEL18
+ mov rdi, rsi
+ call CONST
+ cmp r13w, word [rax + CONST]
+ cjmp LABEL22
+ cmp qword [rax + CONST], CONST
+ mov r8d, CONST
+ cmovne r8, rbx
+ cmove rbx, rax
+ mov rdx, rbx
+LABEL18:
+ add rsp, CONST
+ mov rax, r8
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL14:
+ cjmp LABEL35
+ mov rax, qword [rdi + CONST]
+ xor r8d, r8d
+ mov rdx, rax
+ cmp rax, rsi
+ cjmp LABEL18
+ mov rdi, rsi
+ call CONST
+ cmp r13w, word [rax + CONST]
+ cjmp LABEL22
+ cmp qword [rbx + CONST], CONST
+ mov r8d, CONST
+ mov rdx, rbx
+ cmovne r8, rax
+ cmovne rdx, rax
+ jmp LABEL18
+LABEL10:
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL22
+ mov rbx, qword [rdi + CONST]
+ movzx eax, word [rdx]
+ cmp word [rbx + CONST], ax
+ cjmp LABEL56
+LABEL22:
+ add rsp, CONST
+ mov rsi, r12
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL35:
+ add rsp, CONST
+ mov r8, rsi
+ xor edx, edx
+ pop rbx
+ mov rax, r8
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL56:
+ add rsp, CONST
+ xor r8d, r8d
+ mov rdx, rbx
+ mov rax, r8
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

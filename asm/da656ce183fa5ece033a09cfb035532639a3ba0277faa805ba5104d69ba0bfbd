@@ -1,0 +1,24 @@
+ .name fcn.00008cd9
+ .offset 0000000000008cd9
+ .file apt-get
+ endbr64
+ mov rbx, rax
+ jmp LABEL2
+LABEL2:
+ mov rdi, qword [rbp + CONST]
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, rbx
+ call CONST
+ mov rdi, rbp
+ call CONST
+ call CONST
+ endbr64
+ mov rbp, rax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ nop word cs:[rax + rax]
+ nop

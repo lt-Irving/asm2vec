@@ -1,0 +1,31 @@
+ .name sym.utf8_mbstrlen
+ .offset 00000000000b6c70
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ xor r9d, r9d
+ cmp byte [rbx], CONST
+ mov r10d, CONST
+ mov esi, eax
+ cjmp LABEL8
+ jmp LABEL9
+LABEL21:
+ cmp rax, CONST
+ cmovae rax, r10
+ add r9, CONST
+ add rbx, rax
+ cmp byte [rbx], CONST
+ cjmp LABEL9
+LABEL8:
+ mov rdi, rbx
+ xor eax, eax
+ call CONST
+ cdqe
+ test rax, rax
+ cjmp LABEL21
+LABEL9:
+ mov rax, r9
+ pop rbx
+ ret

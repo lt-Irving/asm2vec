@@ -1,0 +1,37 @@
+ .name sym.ttnocanon
+ .offset 00000000000b05f0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov rax, qword [rip + CONST]
+ mov rdx, rsp
+ mov esi, CONST
+ xor edi, edi
+ movdqa xmm0, xmmword [rip + CONST]
+ movdqa xmm1, xmmword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ movdqa xmm2, xmmword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ movaps xmmword [rsp], xmm0
+ movaps xmmword [rsp + CONST], xmm1
+ and dword [rsp + CONST], CONST
+ mov dword [rsp + CONST], eax
+ movaps xmmword [rsp + CONST], xmm2
+ call CONST
+LABEL29:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL25
+ add rsp, CONST
+ ret
+LABEL7:
+ mov eax, CONST
+ jmp LABEL29
+LABEL25:
+ call CONST

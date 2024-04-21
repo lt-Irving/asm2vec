@@ -1,0 +1,20 @@
+ .name sym._rl_with_macro_input
+ .offset 00000000000d0ea0
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ push rbx
+ cjmp LABEL3
+ mov rbx, rdi
+ call CONST
+ mov qword [rip + CONST], rbx
+ pop rbx
+ or qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ ret
+LABEL3:
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ pop rbx
+ jmp CONST

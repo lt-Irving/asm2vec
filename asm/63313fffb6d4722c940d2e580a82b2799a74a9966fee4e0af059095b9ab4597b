@@ -1,0 +1,49 @@
+ .name sym.assoc_remove_quoted_nulls
+ .offset 000000000007eb30
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov edx, dword [rdi + CONST]
+ test edx, edx
+ cjmp LABEL9
+ mov eax, dword [rdi + CONST]
+ xor ebp, ebp
+ test eax, eax
+ cjmp LABEL13
+LABEL27:
+ mov rax, qword [r12]
+ mov rbx, qword [rax + rbp*CONST]
+ test rbx, rbx
+ cjmp LABEL17
+ nop dword [rax]
+LABEL24:
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov qword [rbx + CONST], rax
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL24
+LABEL17:
+ add rbp, CONST
+ cmp dword [r12 + CONST], ebp
+ cjmp LABEL27
+LABEL13:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL9:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ xor eax, eax
+ ret

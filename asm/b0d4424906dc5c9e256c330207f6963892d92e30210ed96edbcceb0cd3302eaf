@@ -1,0 +1,48 @@
+ .name fcn.00008a70
+ .offset 0000000000008a70
+ .file chsh
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov rsi, rsp
+ mov edx, CONST
+ mov rdi, rbx
+ mov dword [rax], CONST
+ mov rbp, rax
+ call CONST
+ xor r8d, r8d
+ cmp byte [rbx], CONST
+ cjmp LABEL19
+ mov rdx, qword [rsp]
+ cmp byte [rdx], CONST
+ cjmp LABEL19
+ cmp dword [rbp], CONST
+ cjmp LABEL19
+ mov edx, eax
+ cmp rax, rdx
+ cjmp LABEL27
+ nop
+LABEL19:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL31
+ add rsp, CONST
+ mov eax, r8d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL27:
+ mov dword [r12], eax
+ mov r8d, CONST
+ jmp LABEL19
+LABEL31:
+ call CONST

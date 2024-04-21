@@ -1,0 +1,38 @@
+ .name sym.printable_filename
+ .offset 000000000003f700
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ test ebx, ebx
+ cjmp LABEL10
+LABEL19:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL10:
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL19
+ add rsp, CONST
+ mov rdi, r12
+ pop rbx
+ pop r12
+ jmp CONST
+LABEL8:
+ add rsp, CONST
+ mov rdi, r12
+ xor edx, edx
+ xor esi, esi
+ pop rbx
+ pop r12
+ jmp CONST

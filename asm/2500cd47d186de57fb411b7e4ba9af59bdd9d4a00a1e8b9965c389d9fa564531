@@ -1,0 +1,20 @@
+ .name fcn.00015fb0
+ .offset 0000000000015fb0
+ .file dpkg-deb
+ endbr64
+ push rbp
+ mov ebp, esi
+ mov esi, CONST
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ mov rax, qword [rbx]
+ mov rdx, qword [rbx + CONST]
+ lea rcx, [rax + CONST]
+ mov qword [rbx], rcx
+ mov byte [rdx + rax], bpl
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

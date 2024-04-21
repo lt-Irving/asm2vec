@@ -1,0 +1,13 @@
+ .name fcn.00005ab0
+ .offset 0000000000005ab0
+ .file chsh
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST

@@ -1,0 +1,27 @@
+ .name sym.read_octal
+ .offset 0000000000092d70
+ .file bash
+ endbr64
+ xor edx, edx
+ xor r8d, r8d
+ jmp LABEL3
+LABEL11:
+ lea r8d, [rax + r8*CONST + CONST]
+ add rdx, CONST
+ cmp r8d, CONST
+ cjmp LABEL7
+LABEL3:
+ movsx eax, byte [rdi + rdx]
+ lea ecx, [rax + CONST]
+ cmp cl, CONST
+ cjmp LABEL11
+ test edx, edx
+ cjmp LABEL7
+ test al, al
+ cjmp LABEL7
+ mov eax, r8d
+ ret
+LABEL7:
+ mov r8d, CONST
+ mov eax, r8d
+ ret

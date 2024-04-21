@@ -1,0 +1,42 @@
+ .name sym.rl_start_kbd_macro
+ .offset 00000000000d1100
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push rbp
+ test ah, CONST
+ cjmp LABEL4
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL7
+ mov rbp, qword [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL10
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdi, rax
+ call CONST
+ mov rax, qword [rip + CONST]
+ pop rbp
+ or ah, CONST
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ ret
+LABEL7:
+ mov dword [rip + CONST], CONST
+LABEL10:
+ or ah, CONST
+ pop rbp
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ ret
+LABEL4:
+ call CONST
+ mov eax, CONST
+ pop rbp
+ ret

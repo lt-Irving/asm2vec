@@ -1,0 +1,50 @@
+ .name sym.rl_modifying
+ .offset 00000000000d0c90
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov ebx, edi
+ cmp edi, esi
+ cjmp LABEL7
+ cjmp LABEL8
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ mov ebp, edi
+ mov ebx, esi
+LABEL7:
+ mov esi, ebx
+ mov edi, ebp
+ call CONST
+ mov r12, rax
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov edi, CONST
+ mov dword [rax + CONST], ebp
+ mov qword [rax], rdx
+ mov dword [rax + CONST], ebx
+ mov qword [rax + CONST], r12
+ mov dword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov dword [rax + CONST], ebp
+ mov dword [rax + CONST], ebx
+ mov qword [rax], rdx
+ mov dword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

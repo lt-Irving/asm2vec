@@ -1,0 +1,32 @@
+ .name fcn.00083680
+ .offset 0000000000083680
+ .file bash
+ endbr64
+ lea rax, [rip + CONST]
+ push r12
+ mov r12, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ push rbp
+ mov rbp, qword [rip + CONST]
+ push rbx
+ mov rbx, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+ cjmp LABEL14
+ mov edi, CONST
+ call CONST
+LABEL26:
+ mov qword [rip + CONST], r12
+ mov qword [rip + CONST], rbp
+ mov qword [rip + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL14:
+ mov edi, CONST
+ call CONST
+ jmp LABEL26

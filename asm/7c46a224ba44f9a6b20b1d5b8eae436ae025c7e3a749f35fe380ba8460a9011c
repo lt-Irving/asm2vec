@@ -1,0 +1,101 @@
+ .name fcn.00005f30
+ .offset 0000000000005f30
+ .file b2sum
+ endbr64
+ push r12
+ pxor xmm0, xmm0
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ movaps xmmword [rsp], xmm0
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm0
+ test rsi, rsi
+ cjmp LABEL14
+ mov rbx, rdi
+ cmp qword [rdi + CONST], rdx
+ cjmp LABEL14
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL14
+ mov rdi, qword [rdi + CONST]
+ mov rbp, rsi
+ mov rax, rdi
+ add rax, qword [rbx + CONST]
+ adc qword [rbx + CONST], CONST
+ cmp byte [rbx + CONST], CONST
+ mov qword [rbx + CONST], rax
+ cjmp LABEL27
+LABEL88:
+ mov qword [rbx + CONST], CONST
+ lea r12, [rbx + CONST]
+ mov edx, CONST
+ xor esi, esi
+ sub rdx, rdi
+ add rdi, r12
+ call CONST
+ mov rsi, r12
+ mov rdi, rbx
+ mov r12, rsp
+ call CONST
+ mov rcx, rbx
+ mov rax, r12
+ lea rdi, [rsp + CONST]
+ nop dword [rax]
+LABEL68:
+ mov rdx, qword [rcx]
+ add rax, CONST
+ add rcx, CONST
+ mov rsi, rdx
+ mov byte [rax + CONST], dl
+ shr rsi, CONST
+ mov byte [rax + CONST], sil
+ mov rsi, rdx
+ shr rsi, CONST
+ mov byte [rax + CONST], sil
+ mov rsi, rdx
+ shr rsi, CONST
+ mov byte [rax + CONST], sil
+ mov rsi, rdx
+ shr rsi, CONST
+ mov byte [rax + CONST], sil
+ mov rsi, rdx
+ shr rsi, CONST
+ mov byte [rax + CONST], sil
+ mov rsi, rdx
+ shr rdx, CONST
+ shr rsi, CONST
+ mov byte [rax + CONST], dl
+ mov byte [rax + CONST], sil
+ cmp rax, rdi
+ cjmp LABEL68
+ mov rdx, qword [rbx + CONST]
+ mov rsi, r12
+ mov rdi, rbp
+ call CONST
+ mov edx, CONST
+ xor esi, esi
+ mov rdi, r12
+ mov rax, qword [rip + CONST]
+ call rax
+ xor eax, eax
+LABEL90:
+ mov rbx, qword [rsp + CONST]
+ xor rbx, qword fs:[CONST]
+ cjmp LABEL81
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL27:
+ mov qword [rbx + CONST], CONST
+ jmp LABEL88
+LABEL14:
+ mov eax, CONST
+ jmp LABEL90
+LABEL81:
+ call CONST

@@ -1,0 +1,14 @@
+ .name sym.sv_hostfile
+ .offset 000000000004e100
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL4
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL4:
+ add rsp, CONST
+ jmp CONST

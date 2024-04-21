@@ -1,0 +1,15 @@
+ .name sym.sh_getopt_restore_istate
+ .offset 00000000000a7340
+ .file bash
+ endbr64
+ mov rax, qword [rdi]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov rax, qword [rdi + CONST]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ jmp CONST

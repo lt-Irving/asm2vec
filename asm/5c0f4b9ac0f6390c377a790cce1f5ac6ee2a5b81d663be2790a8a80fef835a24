@@ -1,0 +1,32 @@
+ .name sym.initialize_flags
+ .offset 0000000000057c60
+ .file bash
+ endbr64
+ lea rcx, [rip + CONST]
+ xor eax, eax
+ mov edx, CONST
+ mov esi, CONST
+ lea r8, [rip + CONST]
+ jmp LABEL6
+LABEL15:
+ movzx edi, byte [rcx]
+ mov esi, edx
+ add rcx, CONST
+ mov edx, edi
+LABEL6:
+ mov byte [r8 + rax], sil
+ mov edi, eax
+ add rax, CONST
+ test dl, dl
+ cjmp LABEL15
+ lea edx, [rdi + CONST]
+ lea rax, [rip + CONST]
+ movsxd rdx, edx
+ mov byte [rax + rdx], CONST
+ lea edx, [rdi + CONST]
+ add edi, CONST
+ movsxd rdx, edx
+ movsxd rdi, edi
+ mov byte [rax + rdx], CONST
+ mov byte [rax + rdi], CONST
+ ret

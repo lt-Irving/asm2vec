@@ -1,0 +1,13 @@
+ .name sym.sh_validfd
+ .offset 000000000003ef30
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor edx, edx
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ add rsp, CONST
+ not eax
+ shr eax, CONST
+ ret

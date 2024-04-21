@@ -1,0 +1,29 @@
+ .name sym.rl_make_keymap
+ .offset 00000000000bcdc0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ lea rcx, [rip + CONST]
+ lea rdx, [rax + CONST]
+ lea rsi, [rax + CONST]
+ nop word [rax + rax]
+LABEL10:
+ mov qword [rdx], rcx
+ add rdx, CONST
+ cmp rdx, rsi
+ cjmp LABEL10
+ lea rdx, [rip + CONST]
+ mov qword [rax + CONST], rcx
+ lea rsi, [rax + CONST]
+ mov qword [rax + CONST], rdx
+ mov qword [rax + CONST], rdx
+ lea rdx, [rax + CONST]
+ nop
+LABEL21:
+ mov qword [rdx], rcx
+ add rdx, CONST
+ cmp rsi, rdx
+ cjmp LABEL21
+ add rsp, CONST
+ ret

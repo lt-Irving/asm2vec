@@ -1,0 +1,39 @@
+ .name fcn.00006210
+ .offset 0000000000006210
+ .file comm
+ endbr64
+ push r14
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rcx
+ call CONST
+ mov r14d, eax
+ call CONST
+ mov edi, dword [rax]
+ test edi, edi
+ cjmp LABEL15
+ pop rbx
+ mov eax, r14d
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL15:
+ mov r8, rbx
+ mov rcx, r13
+ mov rdx, r12
+ mov rsi, rbp
+ call CONST
+ pop rbx
+ mov eax, r14d
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

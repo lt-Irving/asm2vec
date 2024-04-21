@@ -1,0 +1,36 @@
+ .name sym.rl_backward_byte
+ .offset 00000000000d4420
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ cjmp LABEL4
+ cmp edi, eax
+ cjmp LABEL6
+ sub eax, edi
+ mov dword [rip + CONST], eax
+LABEL12:
+ xor eax, eax
+ ret
+LABEL4:
+ test eax, eax
+ cjmp LABEL12
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ ret
+LABEL2:
+ neg edi
+ jmp CONST
+LABEL6:
+ sub rsp, CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL23
+ mov dword [rip + CONST], CONST
+LABEL23:
+ xor eax, eax
+ add rsp, CONST
+ ret

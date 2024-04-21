@@ -1,0 +1,45 @@
+ .name sym.get_dollar_var_value
+ .offset 0000000000065880
+ .file bash
+ endbr64
+ push rbp
+ cmp rdi, CONST
+ cjmp LABEL3
+ lea rax, [rip + CONST]
+ mov rbp, qword [rax + rdi*CONST]
+ test rbp, rbp
+ cjmp LABEL7
+LABEL35:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST
+LABEL3:
+ mov rbp, qword [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL7
+ lea rax, [rdi + CONST]
+ cmp rdi, CONST
+ cjmp LABEL21
+ jmp LABEL22
+LABEL29:
+ lea rdx, [rax + CONST]
+ test rax, rax
+ cjmp LABEL22
+ mov rax, rdx
+LABEL21:
+ mov rbp, qword [rbp]
+ test rbp, rbp
+ cjmp LABEL29
+LABEL7:
+ xor eax, eax
+ pop rbp
+ ret
+LABEL22:
+ mov rax, qword [rbp + CONST]
+ mov rbp, qword [rax]
+ jmp LABEL35

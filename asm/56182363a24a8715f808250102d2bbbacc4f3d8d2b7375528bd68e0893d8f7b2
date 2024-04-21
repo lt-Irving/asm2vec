@@ -1,0 +1,19 @@
+ .name sym.ungetc_with_restart
+ .offset 0000000000076830
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ cmp edi, CONST
+ cjmp LABEL3
+ test eax, eax
+ cjmp LABEL3
+ sub eax, CONST
+ lea rdx, [rip + CONST]
+ mov dword [rip + CONST], eax
+ cdqe
+ mov byte [rdx + rax], dil
+ mov eax, edi
+ ret
+LABEL3:
+ mov eax, CONST
+ ret

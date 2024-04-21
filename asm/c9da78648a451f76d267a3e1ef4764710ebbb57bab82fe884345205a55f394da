@@ -1,0 +1,59 @@
+ .name sym.rl_funmap_names
+ .offset 00000000000bcc60
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ call CONST
+LABEL8:
+ mov rax, qword [rip + CONST]
+ mov rbp, qword [rax]
+ test rbp, rbp
+ cjmp LABEL13
+ mov r12d, CONST
+ xor r13d, r13d
+ xor ebp, ebp
+ xor ebx, ebx
+ jmp LABEL18
+LABEL29:
+ mov rdx, qword [rax + rbx]
+ mov rdx, qword [rdx]
+ mov qword [rbp + rbx], rdx
+ add rbx, CONST
+ lea rdx, [r12 + CONST]
+ mov qword [rbp + rbx], CONST
+ cmp qword [rax + rbx], CONST
+ cjmp LABEL26
+ mov r12, rdx
+LABEL18:
+ cmp r13d, r12d
+ cjmp LABEL29
+ add r13d, CONST
+ mov rdi, rbp
+ movsxd rsi, r13d
+ shl rsi, CONST
+ call CONST
+ mov rbp, rax
+ mov rax, qword [rip + CONST]
+ jmp LABEL29
+LABEL13:
+ xor r12d, r12d
+LABEL26:
+ lea rcx, [rip + CONST]
+ mov rsi, r12
+ mov rdi, rbp
+ mov edx, CONST
+ call CONST
+ add rsp, CONST
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

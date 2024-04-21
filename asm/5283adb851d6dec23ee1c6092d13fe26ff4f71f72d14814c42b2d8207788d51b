@@ -1,0 +1,26 @@
+ .name sym.rl_revert_line
+ .offset 00000000000d0d30
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL3
+ nop word [rax + rax]
+LABEL7:
+ call CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL7
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+LABEL10:
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL3:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

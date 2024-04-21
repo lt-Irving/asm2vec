@@ -1,0 +1,51 @@
+ .name sym.strlist_resize
+ .offset 00000000000b20a0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, esi
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL6
+ mov r12, rdi
+ cmp dword [rdi + CONST], esi
+ cjmp LABEL9
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL9:
+ mov rdi, qword [rdi]
+ lea esi, [rsi + CONST]
+ call CONST
+ mov ecx, dword [r12 + CONST]
+ mov qword [r12], rax
+ cmp ebp, ecx
+ cjmp LABEL21
+ mov edi, ebp
+ movsxd rsi, ecx
+ sub edi, ecx
+ lea rdx, [rax + rsi*CONST]
+ lea rcx, [rsi + rdi + CONST]
+ lea rax, [rax + rcx*CONST]
+ nop dword [rax]
+LABEL32:
+ mov qword [rdx], CONST
+ add rdx, CONST
+ cmp rdx, rax
+ cjmp LABEL32
+LABEL21:
+ mov dword [r12 + CONST], ebp
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL6:
+ add rsp, CONST
+ mov edi, esi
+ pop rbp
+ pop r12
+ jmp CONST

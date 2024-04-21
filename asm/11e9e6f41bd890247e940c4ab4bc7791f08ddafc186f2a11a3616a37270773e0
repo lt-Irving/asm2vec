@@ -1,0 +1,38 @@
+ .name sym.parser_in_command_position
+ .offset 0000000000032d70
+ .file bash
+ endbr64
+ mov edi, dword [rip + CONST]
+ mov eax, CONST
+ cmp edi, CONST
+ cjmp LABEL4
+ test byte [rip + CONST], CONST
+ cjmp LABEL6
+ mov eax, edi
+ lea ecx, [rdi + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ sete al
+ cmp ecx, CONST
+ cjmp LABEL13
+ mov edx, CONST
+ shr rdx, cl
+ and edx, CONST
+ or eax, edx
+LABEL13:
+ test al, al
+ cjmp LABEL19
+LABEL6:
+ lea edx, [rdi + CONST]
+ xor eax, eax
+ cmp edx, CONST
+ cjmp LABEL4
+ call CONST
+ test eax, eax
+ setne al
+ movzx eax, al
+ ret
+LABEL19:
+ mov eax, CONST
+LABEL4:
+ ret

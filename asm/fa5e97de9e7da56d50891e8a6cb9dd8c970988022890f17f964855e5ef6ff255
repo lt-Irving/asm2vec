@@ -1,0 +1,117 @@
+ .name sym.rl_vi_fWord
+ .offset 00000000000b9650
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ push rbp
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ nop dword [rax]
+LABEL77:
+ mov esi, dword [rip + CONST]
+ mov edx, dword [rip + CONST]
+ lea eax, [rsi + CONST]
+ cmp eax, edx
+ cjmp LABEL12
+ mov rcx, qword [rip + CONST]
+ movsxd rax, edx
+ movzx eax, byte [rcx + rax]
+ cmp al, CONST
+ cjmp LABEL17
+ cmp al, CONST
+ cjmp LABEL19
+ jmp LABEL20
+LABEL36:
+ lea edx, [rbp + CONST]
+ mov dword [rip + CONST], edx
+LABEL49:
+ mov rcx, qword [rip + CONST]
+ movsxd rax, edx
+ movzx eax, byte [rcx + rax]
+ cmp al, CONST
+ cjmp LABEL17
+ cmp al, CONST
+ cjmp LABEL20
+ mov esi, dword [rip + CONST]
+LABEL19:
+ cmp edx, esi
+ cjmp LABEL32
+ call CONST
+ mov ebp, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL36
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL36
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cmp eax, ebp
+ cjmp LABEL45
+ cmp eax, edx
+ cjmp LABEL45
+ mov edx, eax
+ jmp LABEL49
+LABEL32:
+ movsxd rax, dword [rip + CONST]
+ mov rdx, rax
+ movzx eax, byte [rcx + rax]
+LABEL17:
+ cmp al, CONST
+ cjmp LABEL20
+ cmp al, CONST
+ cjmp LABEL56
+ nop word cs:[rax + rax]
+LABEL20:
+ cmp dword [rip + CONST], edx
+ cjmp LABEL56
+ call CONST
+ mov ebp, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL63
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL66
+LABEL63:
+ lea edx, [rbp + CONST]
+ mov dword [rip + CONST], edx
+LABEL92:
+ mov rcx, qword [rip + CONST]
+ movsxd rax, edx
+ movzx eax, byte [rcx + rax]
+ cmp al, CONST
+ cjmp LABEL20
+ cmp al, CONST
+ cjmp LABEL20
+LABEL56:
+ sub ebx, CONST
+ cjmp LABEL77
+LABEL12:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL66:
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cmp eax, ebp
+ cjmp LABEL88
+ cmp eax, edx
+ cjmp LABEL88
+ mov edx, eax
+ jmp LABEL92
+LABEL45:
+ mov dword [rip + CONST], edx
+ jmp LABEL49
+LABEL88:
+ mov dword [rip + CONST], edx
+ jmp LABEL92
+LABEL2:
+ xor eax, eax
+ ret

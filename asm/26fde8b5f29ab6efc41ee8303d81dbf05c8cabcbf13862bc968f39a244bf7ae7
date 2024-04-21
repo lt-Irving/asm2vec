@@ -1,0 +1,300 @@
+ .name fcn.000085e0
+ .offset 00000000000085e0
+ .file apt-mark
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea r13, [rsp + CONST]
+ mov rdi, r13
+ call CONST
+ xor esi, esi
+ mov rdi, r13
+ call CONST
+ mov r12, qword [rsp + CONST]
+ test r12, r12
+ cjmp LABEL20
+ mov rbp, qword [rbx + CONST]
+ lea rsi, [rip + CONST]
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov rdi, qword [rbp]
+ call CONST
+ test eax, eax
+ sete byte [rsp + CONST]
+ cmp qword [rbp + CONST], CONST
+ cjmp LABEL31
+ lea rbp, [rsp + CONST]
+ mov edx, CONST
+ xor esi, esi
+ mov rdi, rbp
+ mov qword [rsp + CONST], rbp
+ lea r15, [rsp + CONST]
+ call CONST
+ mov r15, qword [rbx + CONST]
+ lea r14, [rsp + CONST]
+ xor esi, esi
+ mov rdi, r14
+ add r15, CONST
+ call CONST
+ lea rax, [rip + CONST]
+ mov rcx, r15
+ mov rdx, r13
+ mov rsi, r14
+ lea rbx, [rsp + CONST]
+ mov rdi, rbp
+ mov qword [rsp + CONST], rax
+ mov dword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], rbx
+ mov qword [rsp + CONST], rbx
+ mov qword [rsp + CONST], CONST
+ call CONST
+ lea r15, [rsp + CONST]
+ mov rsi, qword [rsp + CONST]
+ mov rdi, r15
+ call CONST
+ mov rbp, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ cmp rbp, rbx
+ cjmp LABEL66
+ nop dword [rax]
+LABEL84:
+ mov rax, qword [rbp + CONST]
+ mov edx, dword [rax + CONST]
+ test edx, edx
+ cjmp LABEL71
+ mov eax, dword [rax + CONST]
+ lea rax, [rax + rax*CONST]
+ shl rax, CONST
+ add rax, qword [r12 + CONST]
+ movzx eax, word [rax + CONST]
+ and eax, CONST
+ cmp al, byte [rsp + CONST]
+ cjmp LABEL79
+LABEL71:
+ mov rdi, rbp
+ call CONST
+ mov rbp, rax
+ cmp rax, rbx
+ cjmp LABEL84
+LABEL66:
+ mov rsi, qword [rsp + CONST]
+ lea rax, [rip + CONST]
+ lea rdi, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rdi, r14
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ call CONST
+LABEL232:
+ mov rbp, qword [rsp + CONST]
+ mov r12, qword [rsp + CONST]
+ cmp r12, rbp
+ cjmp LABEL97
+ mov rbx, rbp
+ mov edx, CONST
+ mov rsi, rbp
+ mov rdi, r12
+ sub rbx, r12
+ mov rax, rbx
+ sar rax, CONST
+ bsr rax, rax
+ xor rax, CONST
+ sub edx, eax
+ movsxd rdx, edx
+ add rdx, rdx
+ call CONST
+ cmp rbx, CONST
+ cjmp LABEL112
+ lea rbx, [r12 + CONST]
+ mov rdi, r12
+ mov rsi, rbx
+ call CONST
+ cmp rbp, rbx
+ cjmp LABEL118
+ nop word [rax + rax]
+LABEL124:
+ mov rdi, rbx
+ add rbx, CONST
+ call CONST
+ cmp rbp, rbx
+ cjmp LABEL124
+LABEL118:
+ mov rbx, qword [rsp + CONST]
+ mov rbp, qword [rsp + CONST]
+ cmp rbx, rbp
+ cjmp LABEL97
+ lea r14, [rip + CONST]
+ jmp LABEL130
+LABEL150:
+ movsx esi, byte [r12 + CONST]
+LABEL157:
+ mov rdi, rbp
+ call CONST
+ mov rdi, rax
+ call CONST
+ add rbx, CONST
+ cmp qword [rsp + CONST], rbx
+ cjmp LABEL138
+LABEL130:
+ mov rdx, qword [rbx + CONST]
+ mov rsi, qword [rbx]
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rbp, rax
+ mov rax, qword [rax]
+ mov rax, qword [rax + CONST]
+ mov r12, qword [rbp + rax + CONST]
+ test r12, r12
+ cjmp LABEL148
+ cmp byte [r12 + CONST], CONST
+ cjmp LABEL150
+ mov rdi, r12
+ call CONST
+ mov rax, qword [r12]
+ mov esi, CONST
+ mov rax, qword [rax + CONST]
+ cmp rax, r14
+ cjmp LABEL157
+ mov rdi, r12
+ call rax
+ movsx esi, al
+ jmp LABEL157
+LABEL138:
+ mov rbp, qword [rsp + CONST]
+ cmp rbx, rbp
+ cjmp LABEL164
+ nop word [rax + rax]
+LABEL173:
+ mov rdi, qword [rbp]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL169
+ call CONST
+LABEL169:
+ add rbp, CONST
+ cmp rbx, rbp
+ cjmp LABEL173
+ mov rbp, qword [rsp + CONST]
+LABEL97:
+ test rbp, rbp
+ cjmp LABEL176
+LABEL164:
+ mov rdi, rbp
+ call CONST
+LABEL176:
+ mov r12d, CONST
+LABEL255:
+ mov rdi, r13
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL184
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL79:
+ movdqu xmm0, xmmword [rbp + CONST]
+ mov rdi, qword [rsp + CONST]
+ lea rdx, [rsp + CONST]
+ lea rsi, [rsp + CONST]
+ mov byte [rsp + CONST], CONST
+ movaps xmmword [rsp + CONST], xmm0
+ mov rax, qword [rbp + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ mov rdi, r15
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL71
+ call CONST
+ jmp LABEL71
+LABEL31:
+ mov rax, qword [r12 + CONST]
+ lea r15, [rsp + CONST]
+ mov rdi, r15
+ mov rax, qword [rax + CONST]
+ mov esi, dword [rax + CONST]
+ mov eax, CONST
+ imul rsi, rax
+ shr rsi, CONST
+ call CONST
+ mov rax, qword [r12 + CONST]
+ lea r14, [rsp + CONST]
+ mov qword [rsp + CONST], CONST
+ mov rdi, r14
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rax + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ lea rbx, [rsp + CONST]
+LABEL249:
+ mov rax, qword [rsp + CONST]
+ test rax, rax
+ cjmp LABEL232
+ mov rdx, qword [rsp + CONST]
+ cmp qword [rax + CONST], rdx
+ cjmp LABEL232
+ mov ecx, dword [rdx + CONST]
+ test ecx, ecx
+ cjmp LABEL238
+ mov eax, dword [rdx + CONST]
+ lea rax, [rax + rax*CONST]
+ shl rax, CONST
+ add rax, qword [r12 + CONST]
+ movzx eax, word [rax + CONST]
+ and eax, CONST
+ cmp al, byte [rsp + CONST]
+ cjmp LABEL246
+LABEL238:
+ mov rdi, r14
+ call CONST
+ jmp LABEL249
+LABEL112:
+ mov rsi, rbp
+ mov rdi, r12
+ call CONST
+ jmp LABEL118
+LABEL20:
+ xor r12d, r12d
+ jmp LABEL255
+LABEL246:
+ lea rdx, [rsp + CONST]
+ mov rsi, r14
+ mov rdi, rbx
+ mov byte [rsp + CONST], CONST
+ call CONST
+ mov rsi, rbx
+ mov rdi, r15
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL238
+ call CONST
+ jmp LABEL238
+LABEL148:
+ call CONST
+LABEL184:
+ call CONST

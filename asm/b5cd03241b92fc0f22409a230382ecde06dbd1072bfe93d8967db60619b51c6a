@@ -1,0 +1,21 @@
+ .name sym._rl_restore_tty_signals
+ .offset 00000000000be520
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+ mov dword [rip + CONST], CONST
+LABEL12:
+ add rsp, CONST
+ ret

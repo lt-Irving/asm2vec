@@ -1,0 +1,43 @@
+ .name sym.assoc_replace
+ .offset 000000000007e7d0
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ mov rsi, rdi
+ push rbp
+ mov rdi, r12
+ mov rbp, rdx
+ mov edx, CONST
+ push rbx
+ call CONST
+ test rax, rax
+ cjmp LABEL11
+ mov rbx, rax
+ cmp qword [rax + CONST], r12
+ cjmp LABEL14
+ mov rdi, r12
+ call CONST
+LABEL14:
+ mov r12, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL19
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL19:
+ mov qword [rbx + CONST], rbp
+LABEL35:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL11:
+ xor r12d, r12d
+ jmp LABEL35

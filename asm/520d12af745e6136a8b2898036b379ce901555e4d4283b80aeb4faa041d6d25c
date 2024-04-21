@@ -1,0 +1,38 @@
+ .name sym.isnetconn
+ .offset 00000000000b0c30
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rsi, [rsp + CONST]
+ lea rdx, [rsp + CONST]
+ mov dword [rsp + CONST], CONST
+ call CONST
+ mov r8d, eax
+ mov eax, CONST
+ test r8d, r8d
+ cjmp LABEL12
+ call CONST
+ mov ecx, dword [rax]
+ cmp ecx, CONST
+ setne al
+ cmp ecx, CONST
+ setne dl
+ and eax, edx
+ cmp ecx, CONST
+ setne dl
+ and edx, eax
+ xor eax, eax
+ cmp ecx, CONST
+ setne al
+ and eax, edx
+LABEL12:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL29
+ add rsp, CONST
+ ret
+LABEL29:
+ call CONST

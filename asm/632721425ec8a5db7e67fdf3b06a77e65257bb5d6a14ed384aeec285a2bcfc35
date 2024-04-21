@@ -1,0 +1,230 @@
+ .name fcn.00018d90
+ .offset 0000000000018d90
+ .file diff
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov r10, qword [rdx + CONST]
+ test r10, r10
+ cjmp LABEL9
+ mov r8d, ecx
+ lea r12, [r8 + r10]
+ cjmp LABEL12
+ mov rax, qword [rdx + CONST]
+ lea r10, [rax + r10*CONST]
+ nop dword [rax]
+LABEL19:
+ add r12, qword [rax]
+ add rax, CONST
+ cmp r10, rax
+ cjmp LABEL19
+LABEL12:
+ mov rax, qword [rsi + CONST]
+ mov rbp, rdx
+ mov r15d, ecx
+ mov r13, rsi
+ mov qword [rsp + CONST], rdi
+ and rax, r12
+ lea rdx, [rax + rax*CONST]
+ mov rax, qword [rsi + CONST]
+ lea rax, [rax + rdx*CONST]
+ mov r11, qword [rax]
+ test r11, r11
+ cjmp LABEL31
+ mov rbx, qword [rax + CONST]
+ xor r10d, r10d
+ mov r9d, ecx
+ jmp LABEL35
+LABEL41:
+ add r10, CONST
+ cmp r10, r11
+ cjmp LABEL31
+LABEL35:
+ mov r14, qword [rbx + r10*CONST]
+ cmp qword [r14], r12
+ cjmp LABEL41
+ movzx eax, byte [r14 + CONST]
+ and eax, CONST
+ cmp eax, r9d
+ cjmp LABEL41
+ mov rdi, qword [r14 + CONST]
+ mov rsi, rbp
+ call CONST
+ test al, al
+ cjmp LABEL41
+LABEL166:
+ add rsp, CONST
+ mov rax, r14
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL31:
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov r14, rax
+ test rax, rax
+ cjmp LABEL65
+ lea rax, [rax + CONST]
+ mov rsi, rbp
+ mov rdi, rax
+ mov qword [rsp], rax
+ call CONST
+ test eax, eax
+ cjmp LABEL72
+ movzx eax, byte [r14 + CONST]
+ mov edx, r15d
+ mov ecx, r15d
+ and edx, CONST
+ and eax, CONST
+ or eax, edx
+ cmp qword [rbp + CONST], CONST
+ mov byte [r14 + CONST], al
+ mov rax, qword [rsp]
+ mov qword [r14 + CONST], rax
+ cjmp LABEL83
+ lea rax, [r14 + CONST]
+ xor r15d, r15d
+ mov qword [rsp + CONST], r12
+ xor r10d, r10d
+ mov qword [rsp + CONST], rax
+ mov r12, r14
+ mov r14, r15
+ mov r15, rbp
+ mov ebp, ecx
+ nop
+LABEL158:
+ mov rax, qword [r15 + CONST]
+ mov rax, qword [rax + r14*CONST]
+ shl rax, CONST
+ add rax, qword [r13]
+ mov ebx, dword [rax + CONST]
+ movzx esi, byte [rax + CONST]
+ shr ebx, CONST
+ and bx, CONST
+ movzx edi, bx
+ cmp esi, CONST
+ cjmp LABEL104
+ test edi, edi
+ cjmp LABEL106
+LABEL104:
+ movzx edx, byte [r12 + CONST]
+ movzx eax, byte [rax + CONST]
+ mov r11d, edx
+ shr al, CONST
+ and edx, CONST
+ shr r11b, CONST
+ or eax, r11d
+ and eax, CONST
+ shl eax, CONST
+ or eax, edx
+ mov byte [r12 + CONST], al
+ cmp esi, CONST
+ cjmp LABEL119
+ cmp esi, CONST
+ cjmp LABEL121
+ or eax, CONST
+ mov byte [r12 + CONST], al
+LABEL121:
+ test edi, edi
+ cjmp LABEL106
+ mov rax, qword [rsp]
+ cmp rax, qword [r12 + CONST]
+ cjmp LABEL128
+LABEL194:
+ test bl, CONST
+ cjmp LABEL130
+ test bpl, CONST
+ cjmp LABEL132
+ test bl, CONST
+ cjmp LABEL132
+LABEL178:
+ test bl, CONST
+ cjmp LABEL136
+ test bpl, CONST
+ cjmp LABEL132
+LABEL136:
+ and ebx, CONST
+ cjmp LABEL106
+ test bpl, CONST
+ cjmp LABEL106
+ nop dword [rax]
+LABEL132:
+ mov rdx, r14
+ sub rdx, r10
+ cjmp LABEL146
+ mov rax, qword [r12 + CONST]
+ cmp rdx, rax
+ cjmp LABEL146
+ sub rax, CONST
+ mov rsi, qword [rsp + CONST]
+ lea rdi, [r12 + CONST]
+ mov qword [r12 + CONST], rax
+ call CONST
+LABEL146:
+ add r10, CONST
+LABEL106:
+ add r14, CONST
+ cmp r14, qword [r15 + CONST]
+ cjmp LABEL158
+ mov r14, r12
+ mov r12, qword [rsp + CONST]
+LABEL83:
+ mov rdx, r12
+ mov rsi, r14
+ mov rdi, r13
+ call CONST
+ test eax, eax
+ cjmp LABEL166
+ mov rdi, r14
+ call CONST
+ nop word [rax + rax]
+LABEL65:
+ mov rax, qword [rsp + CONST]
+ xor r14d, r14d
+ mov dword [rax], CONST
+ jmp LABEL166
+LABEL119:
+ or eax, CONST
+ mov byte [r12 + CONST], al
+ jmp LABEL121
+LABEL130:
+ test bl, CONST
+ cjmp LABEL178
+ test bpl, CONST
+ cjmp LABEL178
+ jmp LABEL132
+LABEL128:
+ mov edi, CONST
+ call CONST
+ mov qword [r12 + CONST], rax
+ test rax, rax
+ cjmp LABEL186
+ mov rsi, r15
+ mov rdi, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL65
+ or byte [r12 + CONST], CONST
+ xor r10d, r10d
+ jmp LABEL194
+LABEL9:
+ mov dword [rdi], CONST
+ xor r14d, r14d
+ jmp LABEL166
+LABEL186:
+ mov rdi, r12
+ call CONST
+ jmp LABEL65
+LABEL72:
+ mov rdi, r14
+ call CONST
+ jmp LABEL65

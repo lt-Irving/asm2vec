@@ -1,0 +1,48 @@
+ .name fcn.00007cc0
+ .offset 0000000000007cc0
+ .file choom
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov rbp, rax
+ xor r12d, r12d
+ nop dword [rax + rax]
+LABEL15:
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL13
+LABEL22:
+ cmp word [rax + CONST], CONST
+ cjmp LABEL15
+ cmp word [rax + CONST], CONST
+ cjmp LABEL17
+LABEL32:
+ mov rdi, rbp
+ add r12d, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL22
+LABEL13:
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL17:
+ cmp byte [rax + CONST], CONST
+ cjmp LABEL15
+ jmp LABEL32
+LABEL6:
+ xor r12d, r12d
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret

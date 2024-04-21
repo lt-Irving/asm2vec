@@ -1,0 +1,26 @@
+ .name sym.list_all_jobs
+ .offset 000000000005b980
+ .file bash
+ endbr64
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL3
+ mov edx, dword [rip + CONST]
+ push rbp
+ mov ebp, edi
+ test edx, edx
+ cjmp LABEL8
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL12
+LABEL8:
+ mov edi, ebp
+ mov esi, CONST
+ pop rbp
+ jmp CONST
+LABEL12:
+ pop rbp
+ ret
+LABEL3:
+ ret

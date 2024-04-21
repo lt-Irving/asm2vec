@@ -1,0 +1,28 @@
+ .name fcn.0000bfb0
+ .offset 000000000000bfb0
+ .file dpkg-deb
+ endbr64
+ sub rsp, CONST
+ mov r8d, edi
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rax, [rip + CONST]
+ mov rdi, rsp
+ mov qword [rsp], rcx
+ mov qword [rsp + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rdx
+ mov edx, esi
+ mov esi, r8d
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL20
+ add rsp, CONST
+ ret
+LABEL20:
+ call CONST

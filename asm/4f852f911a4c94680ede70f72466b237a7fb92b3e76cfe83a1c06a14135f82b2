@@ -1,0 +1,96 @@
+ .name sym.xtrace_print_assignment
+ .offset 00000000000426b0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push r12
+ mov r12, rdi
+ push rbp
+ mov ebp, edx
+ test rax, rax
+ cmove rax, qword [rip + CONST]
+ push rbx
+ mov rbx, rsi
+ mov qword [rip + CONST], rax
+ test ecx, ecx
+ cjmp LABEL12
+LABEL47:
+ cmp byte [rbx], CONST
+ cjmp LABEL14
+ test ebp, ebp
+ cjmp LABEL16
+LABEL30:
+ mov rdi, qword [rip + CONST]
+ mov r8, rbx
+ mov rcx, r12
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ call CONST
+LABEL68:
+ mov rdi, qword [rip + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL14:
+ test ebp, ebp
+ cjmp LABEL30
+LABEL78:
+ mov rdi, qword [rip + CONST]
+ mov r8, rbx
+ mov rcx, r12
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov rdi, qword [rip + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL12:
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, rax
+ call CONST
+ jmp LABEL47
+LABEL16:
+ mov rdi, rbx
+ call CONST
+ mov rdi, rbx
+ test eax, eax
+ cjmp LABEL52
+ call CONST
+LABEL83:
+ mov rbp, rax
+ test rax, rax
+ mov rdi, qword [rip + CONST]
+ mov rcx, r12
+ setne al
+ cmp rbx, rbp
+ mov r8, rbp
+ mov esi, CONST
+ setne bl
+ lea rdx, [rip + CONST]
+ and ebx, eax
+ xor eax, eax
+ call CONST
+ test bl, bl
+ cjmp LABEL68
+ mov rdi, rbp
+ call CONST
+ mov rdi, qword [rip + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL52:
+ call CONST
+ test eax, eax
+ cjmp LABEL78
+ xor edx, edx
+ xor esi, esi
+ mov rdi, rbx
+ call CONST
+ jmp LABEL83

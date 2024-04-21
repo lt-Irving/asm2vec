@@ -1,0 +1,54 @@
+ .name fcn.000d76a0
+ .offset 00000000000d76a0
+ .file bash
+ push r14
+ push r13
+ movsxd r13, esi
+ sub edx, r13d
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ movsxd rbx, edx
+ cmp ecx, CONST
+ cjmp LABEL10
+ mov eax, CONST
+ lea r14, [rip + CONST]
+ cmp ecx, CONST
+ cjmp LABEL14
+ mov eax, CONST
+ lea r14, [rip + CONST]
+ cmp ecx, CONST
+ cjmp LABEL14
+ xor eax, eax
+ lea r14, [rip + CONST]
+ lea rdx, [rip + CONST]
+ cmp ecx, CONST
+ sete al
+ cmove r14, rdx
+ lea eax, [rax*CONST + CONST]
+LABEL14:
+ lea edi, [rax + rbx + CONST]
+ movsxd rdi, edi
+ call CONST
+ lea rsi, [rbp + r13]
+ mov rdx, rbx
+ mov r12, rax
+ mov rdi, rax
+ call CONST
+ mov byte [r12 + rbx], CONST
+ lea rdi, [r12 + rbx + CONST]
+ mov rsi, r14
+ mov byte [r12 + rbx + CONST], CONST
+ call CONST
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL10:
+ mov eax, CONST
+ lea r14, [rip + CONST]
+ jmp LABEL14

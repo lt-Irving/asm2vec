@@ -1,0 +1,25 @@
+ .name fcn.00008565
+ .offset 0000000000008565
+ .file apt-mark
+LABEL15:
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ lea r12, [rsp + CONST]
+ mov rdi, r12
+ call CONST
+LABEL18:
+ mov rdi, qword [rsp + CONST]
+ mov rbp, rbx
+ call CONST
+ jmp LABEL15
+ endbr64
+ mov rbx, rax
+ jmp LABEL18

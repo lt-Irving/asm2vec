@@ -1,0 +1,23 @@
+ .name sym.exportable_function_name
+ .offset 000000000003ecd0
+ .file bash
+ endbr64
+ push rbp
+ mov esi, CONST
+ mov rbp, rdi
+ call CONST
+ mov r8, rax
+ xor eax, eax
+ test r8, r8
+ cjmp LABEL8
+ pop rbp
+ ret
+LABEL8:
+ mov rdi, rbp
+ mov esi, CONST
+ call CONST
+ pop rbp
+ test rax, rax
+ sete al
+ movzx eax, al
+ ret

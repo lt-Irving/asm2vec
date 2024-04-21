@@ -1,0 +1,14 @@
+ .name fcn.00009c70
+ .offset 0000000000009c70
+ .file chfn
+ endbr64
+ mov rcx, rdx
+ test rdx, rdx
+ cjmp LABEL3
+ xor eax, eax
+ ret
+LABEL3:
+ mov edx, esi
+ mov rsi, rdi
+ lea rdi, [rip + CONST]
+ jmp CONST

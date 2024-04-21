@@ -1,0 +1,75 @@
+ .name sym.strvec_from_word_list
+ .offset 00000000000b2c60
+ .file bash
+ endbr64
+ push r15
+ xor eax, eax
+ mov r15d, esi
+ push r14
+ push r13
+ mov r13, rcx
+ push r12
+ mov r12d, edx
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ lea edi, [r12 + rax + CONST]
+ movsxd rdi, edi
+ shl rdi, CONST
+ call CONST
+ mov r14, rax
+ test r12d, r12d
+ cjmp LABEL20
+ lea edx, [r12 + CONST]
+ lea rdx, [rax + rdx*CONST + CONST]
+ nop dword [rax + rax]
+LABEL27:
+ mov qword [rax], CONST
+ add rax, CONST
+ cmp rax, rdx
+ cjmp LABEL27
+LABEL20:
+ lea ebp, [r12 + CONST]
+ movsxd rbp, ebp
+ test rbx, rbx
+ cjmp LABEL31
+ jmp LABEL32
+LABEL42:
+ mov rbx, qword [rbx]
+ mov qword [r14 + rbp*CONST + CONST], r12
+ mov r12d, ebp
+ add rbp, CONST
+ test rbx, rbx
+ cjmp LABEL32
+LABEL31:
+ mov rax, qword [rbx + CONST]
+ mov r12, qword [rax]
+ test r15d, r15d
+ cjmp LABEL42
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov r12, rax
+ jmp LABEL42
+LABEL32:
+ movsxd rax, r12d
+ mov qword [r14 + rax*CONST], CONST
+ test r13, r13
+ cjmp LABEL55
+ mov dword [r13], r12d
+LABEL55:
+ add rsp, CONST
+ mov rax, r14
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret

@@ -1,0 +1,15 @@
+ .name fcn.0004c360
+ .offset 000000000004c360
+ .file bash
+ endbr64
+ mov eax, dword [rdi + CONST]
+ mov r8d, eax
+ and r8d, CONST
+ cjmp LABEL4
+ and eax, CONST
+ xor r8d, r8d
+ cmp eax, CONST
+ setne r8b
+LABEL4:
+ mov eax, r8d
+ ret

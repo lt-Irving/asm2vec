@@ -1,0 +1,32 @@
+ .name sym.free_history_entry
+ .offset 00000000000d6e20
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL5
+ mov rbp, rdi
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL9
+ call CONST
+LABEL9:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL13
+ call CONST
+LABEL13:
+ mov rdi, rbp
+ mov r12, qword [rbp + CONST]
+ call CONST
+LABEL24:
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ xor r12d, r12d
+ jmp LABEL24

@@ -1,0 +1,21 @@
+ .name sym.locale_decpoint
+ .offset 000000000008a710
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL4
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL4
+ movsx eax, byte [rax]
+ mov edx, CONST
+ test al, al
+ cmove eax, edx
+ add rsp, CONST
+ ret
+LABEL4:
+ mov eax, CONST
+ add rsp, CONST
+ ret

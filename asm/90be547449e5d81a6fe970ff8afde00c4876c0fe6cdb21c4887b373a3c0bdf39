@@ -1,0 +1,17 @@
+ .name sym.open_buffered_stream
+ .offset 0000000000076a10
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor esi, esi
+ xor eax, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+ mov edi, eax
+ add rsp, CONST
+ jmp CONST
+LABEL6:
+ xor eax, eax
+ add rsp, CONST
+ ret

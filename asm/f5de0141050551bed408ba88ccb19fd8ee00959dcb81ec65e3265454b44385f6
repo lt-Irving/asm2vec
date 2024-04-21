@@ -1,0 +1,37 @@
+ .name sym.sh_contains_shell_metas
+ .offset 00000000000b38b0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov rdx, rdi
+ lea rcx, [rip + CONST]
+LABEL27:
+ movzx eax, byte [rdx]
+ test al, al
+ cjmp LABEL2
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL10
+ movzx eax, al
+ movsxd rax, dword [rcx + rax*CONST]
+ add rax, rcx
+ notrack jmp rax
+ cmp rdi, rdx
+ cjmp LABEL16
+ movzx eax, byte [rdx + CONST]
+ cmp al, CONST
+ cjmp LABEL16
+ cmp al, CONST
+ cjmp LABEL10
+LABEL16:
+ mov eax, CONST
+ ret
+ cmp rdi, rdx
+ cjmp LABEL16
+LABEL10:
+ add rdx, CONST
+ jmp LABEL27
+LABEL2:
+ xor eax, eax
+ ret

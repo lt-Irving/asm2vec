@@ -1,0 +1,34 @@
+ .name sym.sync_buffered_stream
+ .offset 0000000000076d30
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ movsxd rdi, edi
+ push rbx
+ mov rbx, qword [rax + rdi*CONST]
+ test rbx, rbx
+ cjmp LABEL8
+ mov rsi, qword [rbx + CONST]
+ sub rsi, qword [rbx + CONST]
+ cjmp LABEL11
+LABEL21:
+ mov qword [rbx + CONST], CONST
+ xor eax, eax
+ mov qword [rbx + CONST], CONST
+ pop rbx
+ ret
+LABEL11:
+ mov edi, dword [rbx]
+ neg rsi
+ mov edx, CONST
+ call CONST
+ jmp LABEL21
+LABEL8:
+ mov eax, CONST
+ pop rbx
+ ret
+LABEL3:
+ mov eax, CONST
+ ret

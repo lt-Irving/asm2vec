@@ -1,0 +1,71 @@
+ .name sym.rl_vi_overstrike_delete
+ .offset 00000000000b8a80
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ test edi, edi
+ cjmp LABEL7
+ mov r12d, edi
+ mov r13d, esi
+ xor ebx, ebx
+ jmp LABEL11
+LABEL24:
+ add ebx, CONST
+ cmp r12d, ebx
+ cjmp LABEL7
+LABEL11:
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL17
+ mov ebp, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL21
+ sub dword [rip + CONST], CONST
+LABEL21:
+ cmp dword [rip + CONST], ebp
+ cjmp LABEL24
+ mov esi, r13d
+ mov edi, CONST
+ add ebx, CONST
+ call CONST
+ cmp r12d, ebx
+ cjmp LABEL11
+ nop dword [rax]
+LABEL7:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL34
+LABEL49:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL37
+LABEL34:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL17:
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL34
+ jmp LABEL49
+LABEL37:
+ call CONST
+ call CONST
+ xor eax, eax
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

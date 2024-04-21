@@ -1,0 +1,26 @@
+ .name fcn.00003a00
+ .offset 0000000000003a00
+ .file csplit
+ push rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rbp, rsp
+ call CONST
+ mov rdx, rbp
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ movzx eax, byte [rip + CONST]
+ test al, al
+ cjmp LABEL13
+ xor edi, edi
+ call CONST
+LABEL13:
+ mov edi, CONST
+ xor edx, edx
+ mov rsi, rbp
+ call CONST
+ mov edi, CONST
+ call CONST

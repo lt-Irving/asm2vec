@@ -1,0 +1,57 @@
+ .name sym.shell_glob_filename
+ .offset 0000000000078260
+ .file bash
+ endbr64
+ push r12
+ xor eax, eax
+ mov esi, CONST
+ push rbp
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ sete al
+ mov dword [rip + CONST], eax
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov rbp, rax
+ mov eax, CONST
+ test esi, esi
+ mov rdi, rbp
+ cmovne esi, eax
+ call CONST
+ mov rdi, rbp
+ mov r12, rax
+ call CONST
+ test r12, r12
+ cjmp LABEL22
+ lea rax, [rip + CONST]
+ cmp r12, rax
+ cjmp LABEL22
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL28
+ cmp qword [r12], CONST
+ mov rdi, r12
+ cjmp LABEL31
+LABEL42:
+ call CONST
+LABEL22:
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL28:
+ mov rdi, r12
+ call CONST
+ cmp qword [r12], CONST
+ mov rdi, r12
+ cjmp LABEL42
+LABEL31:
+ call CONST
+ lea r12, [rip + CONST]
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret

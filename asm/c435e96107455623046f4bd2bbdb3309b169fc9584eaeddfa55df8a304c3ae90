@@ -1,0 +1,19 @@
+ .name fcn.0000fd00
+ .offset 000000000000fd00
+ .file dash
+ endbr64
+ mov rax, rdi
+ jmp LABEL2
+LABEL9:
+ add rax, CONST
+ add rsi, CONST
+ cmp byte [rax + CONST], dl
+ cjmp LABEL6
+LABEL2:
+ movzx edx, byte [rsi]
+ test dl, dl
+ cjmp LABEL9
+ ret
+LABEL6:
+ xor eax, eax
+ ret

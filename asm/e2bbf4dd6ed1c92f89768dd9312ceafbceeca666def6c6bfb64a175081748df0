@@ -1,0 +1,56 @@
+ .name fcn.00083a30
+ .offset 0000000000083a30
+ .file bash
+LABEL48:
+ mov ecx, dword [rip + CONST]
+ push r14
+ mov r14, qword [rip + CONST]
+ push r13
+ mov r13, qword [rip + CONST]
+ push r12
+ mov r12, qword [rip + CONST]
+ push rbp
+ mov rbp, qword [rip + CONST]
+ push rbx
+ test ecx, ecx
+ cjmp LABEL11
+ mov rbx, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+LABEL38:
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov qword [rip + CONST], r14
+ mov qword [rip + CONST], r13
+ mov qword [rip + CONST], r12
+ mov qword [rip + CONST], rbp
+ test edx, edx
+ cjmp LABEL28
+ mov qword [rip + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL11:
+ mov rbx, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ jmp LABEL38
+LABEL28:
+ mov qword [rip + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+ endbr64
+ mov edi, CONST
+ jmp LABEL48

@@ -1,0 +1,41 @@
+ .name sym.kill_all_local_variables
+ .offset 000000000004f690
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL4
+ mov edx, dword [rip + CONST]
+ nop word [rax + rax]
+LABEL14:
+ mov eax, dword [rbx + CONST]
+ test al, CONST
+ cjmp LABEL9
+ cmp dword [rbx + CONST], edx
+ cjmp LABEL11
+LABEL9:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL14
+LABEL4:
+ pop rbx
+ ret
+LABEL11:
+ mov rdi, qword [rbx + CONST]
+ test rdi, rdi
+ cjmp LABEL19
+ test al, CONST
+ cjmp LABEL21
+LABEL19:
+ mov qword [rbx + CONST], CONST
+LABEL30:
+ pop rbx
+ ret
+LABEL21:
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov qword [rbx + CONST], CONST
+ jmp LABEL30

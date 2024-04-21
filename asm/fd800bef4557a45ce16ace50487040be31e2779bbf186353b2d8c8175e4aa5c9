@@ -1,0 +1,27 @@
+ .name sym.no_options
+ .offset 0000000000092470
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ xor r8d, r8d
+ cmp eax, CONST
+ cjmp LABEL9
+ cmp eax, CONST
+ cjmp LABEL11
+ call CONST
+ mov r8d, CONST
+LABEL9:
+ mov eax, r8d
+ pop rbp
+ ret
+LABEL11:
+ call CONST
+ mov r8d, CONST
+ pop rbp
+ mov eax, r8d
+ ret

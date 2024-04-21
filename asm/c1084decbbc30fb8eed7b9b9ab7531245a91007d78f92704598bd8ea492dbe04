@@ -1,0 +1,92 @@
+ .name sym.rl_get_previous_history
+ .offset 00000000000d67e0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov ebx, edi
+ test edi, edi
+ cjmp LABEL6
+ cjmp LABEL7
+LABEL15:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ mov eax, dword [rip + CONST]
+ cmp eax, CONST
+ cjmp LABEL18
+LABEL61:
+ mov r12, qword [rip + CONST]
+ test r12, r12
+ cjmp LABEL21
+LABEL65:
+ call CONST
+ xor eax, eax
+ jmp LABEL24
+LABEL30:
+ sub ebx, CONST
+ cjmp LABEL26
+LABEL24:
+ mov rbp, rax
+ call CONST
+ test rax, rax
+ cjmp LABEL30
+ mov rax, rbp
+ test rbp, rbp
+ cjmp LABEL26
+ test r12, r12
+ cjmp LABEL35
+LABEL71:
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL26:
+ mov rdi, rax
+ xor esi, esi
+ call CONST
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL6:
+ pop rbx
+ neg edi
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL18:
+ mov edx, dword [rip + CONST]
+ mov ecx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL59
+ test ecx, ecx
+ cjmp LABEL61
+LABEL68:
+ mov dword [rip + CONST], edx
+ jmp LABEL61
+LABEL21:
+ call CONST
+ jmp LABEL65
+LABEL59:
+ cmp edx, ecx
+ cmove edx, eax
+ jmp LABEL68
+LABEL35:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL71
+ call CONST
+ mov qword [rip + CONST], CONST
+ jmp LABEL71

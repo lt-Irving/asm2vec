@@ -1,0 +1,16 @@
+ .name fcn.00005a50
+ .offset 0000000000005a50
+ .file chrt
+ endbr64
+ push rbp
+ mov rbp, rdi
+ test rdi, rdi
+ cjmp LABEL4
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST

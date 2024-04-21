@@ -1,0 +1,73 @@
+ .name sym.rl_vi_rubout
+ .offset 00000000000bbc90
+ .file bash
+ endbr64
+ push r13
+ push r12
+ mov r12d, esi
+ push rbp
+ mov ebp, edi
+ test edi, edi
+ cjmp LABEL7
+ mov r13d, dword [rip + CONST]
+ test r13d, r13d
+ cjmp LABEL10
+ cmp edi, CONST
+ cjmp LABEL12
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL12
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL18
+LABEL12:
+ call CONST
+ mov edi, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL22
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL25
+LABEL22:
+ sub edi, ebp
+ mov dword [rip + CONST], edi
+LABEL43:
+ test edi, edi
+ cjmp LABEL29
+ mov dword [rip + CONST], CONST
+ xor edi, edi
+LABEL29:
+ mov esi, r13d
+ call CONST
+ pop rbp
+ xor eax, eax
+ pop r12
+ pop r13
+ ret
+LABEL18:
+ mov edi, ebp
+ mov esi, r12d
+ call CONST
+ mov edi, dword [rip + CONST]
+ jmp LABEL43
+LABEL10:
+ call CONST
+ pop rbp
+ mov eax, CONST
+ pop r12
+ pop r13
+ ret
+LABEL7:
+ pop rbp
+ neg edi
+ pop r12
+ pop r13
+ jmp CONST
+LABEL25:
+ mov esi, edi
+ mov rdi, qword [rip + CONST]
+ mov edx, CONST
+ call CONST
+ mov dword [rip + CONST], eax
+ mov edi, eax
+ jmp LABEL43

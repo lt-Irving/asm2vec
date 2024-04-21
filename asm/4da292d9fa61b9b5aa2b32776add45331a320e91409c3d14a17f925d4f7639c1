@@ -1,0 +1,27 @@
+ .name sym.parse_and_execute_cleanup
+ .offset 0000000000096bc0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+ cmp eax, edi
+ cjmp LABEL6
+LABEL16:
+ call CONST
+LABEL4:
+ call CONST
+ test eax, eax
+ cjmp LABEL10
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL6:
+ lea edi, [rax + CONST]
+ call CONST
+ jmp LABEL16
+LABEL10:
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ jmp CONST

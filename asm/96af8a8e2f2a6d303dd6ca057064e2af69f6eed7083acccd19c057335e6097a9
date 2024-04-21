@@ -1,0 +1,19 @@
+ .name sym.array_rshift
+ .offset 000000000007b740
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL5
+ test rdx, rdx
+ cjmp LABEL2
+LABEL5:
+ test esi, esi
+ cjmp LABEL9
+ jmp CONST
+LABEL2:
+ xor eax, eax
+LABEL9:
+ ret

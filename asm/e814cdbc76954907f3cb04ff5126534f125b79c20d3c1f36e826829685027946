@@ -1,0 +1,17 @@
+ .name method.APT::PackageContainer_std::set_pkgCache::PkgIterator__std::less_pkgCache::PkgIterator___std::allocator_pkgCache::PkgIterator_____.virtual_40
+ .offset 0000000000009a30
+ .file apt-mark
+ endbr64
+ lea rax, [rip + CONST]
+ push rbp
+ mov rsi, qword [rdi + CONST]
+ mov rbp, rdi
+ mov qword [rdi], rax
+ lea rdi, [rdi + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ mov esi, CONST
+ pop rbp
+ jmp CONST

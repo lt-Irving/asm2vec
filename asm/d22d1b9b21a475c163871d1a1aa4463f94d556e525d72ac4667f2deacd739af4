@@ -1,0 +1,20 @@
+ .name sym.expand_word_leave_quoted
+ .offset 000000000006ff40
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], CONST
+ test edx, edx
+ cjmp LABEL6
+ or eax, CONST
+LABEL6:
+ or eax, CONST
+ xor ecx, ecx
+ xor edx, edx
+ mov dword [rdi + CONST], eax
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

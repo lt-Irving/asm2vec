@@ -1,0 +1,56 @@
+ .name sym.bash_groupname_completion_function
+ .offset 0000000000088dd0
+ .file bash
+ endbr64
+ push rbp
+ test esi, esi
+ cjmp LABEL3
+ mov rbp, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ nop dword [rax + rax]
+LABEL3:
+ call CONST
+ test rax, rax
+ cjmp LABEL24
+ movsxd rdx, dword [rip + CONST]
+ mov rbp, qword [rax]
+ test edx, edx
+ cjmp LABEL28
+ mov rdi, qword [rip + CONST]
+ movzx eax, byte [rbp]
+ cmp byte [rdi], al
+ cjmp LABEL3
+ mov rsi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL3
+LABEL28:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST
+LABEL24:
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret

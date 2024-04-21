@@ -1,0 +1,21 @@
+ .name sym.pop_context
+ .offset 0000000000051e80
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+LABEL3:
+ sub dword [rip + CONST], CONST
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov rdi, rax
+ jmp CONST
+LABEL6:
+ call CONST
+ jmp LABEL3

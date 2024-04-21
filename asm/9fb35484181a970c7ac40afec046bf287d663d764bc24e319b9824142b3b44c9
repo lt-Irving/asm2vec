@@ -1,0 +1,107 @@
+ .name fcn.0000dfb0
+ .offset 000000000000dfb0
+ .file dash
+ endbr64
+ mov edx, dword [rip + CONST]
+ push r12
+ push rbp
+ mov rbp, qword [rip + CONST]
+ push rbx
+ mov ebx, esi
+ test edx, edx
+ cjmp LABEL8
+ lea eax, [rdx + CONST]
+ mov esi, dword [rip + CONST]
+ mov r12, rbp
+ lea rax, [rax + rax*CONST + CONST]
+ lea rcx, [rbp + rax*CONST]
+LABEL50:
+ test byte [r12 + CONST], CONST
+ cjmp LABEL15
+ movzx eax, word [r12 + CONST]
+ and ax, CONST
+ cmp ax, CONST
+ cjmp LABEL19
+ test esi, esi
+ cjmp LABEL19
+ mov rdi, r12
+ call CONST
+LABEL15:
+ mov qword [r12 + CONST], CONST
+ pxor xmm0, xmm0
+ movups xmmword [r12], xmm0
+ mov eax, dword [rip + CONST]
+ movups xmmword [r12 + CONST], xmm0
+ test eax, eax
+ cjmp LABEL30
+ or byte [r12 + CONST], CONST
+LABEL30:
+ mov rax, qword [rip + CONST]
+ mov qword [r12 + CONST], r12
+ mov qword [rip + CONST], r12
+ mov qword [r12 + CONST], rax
+ or byte [r12 + CONST], CONST
+ cmp ebx, CONST
+ cjmp LABEL38
+ movsxd rdi, ebx
+ shl rdi, CONST
+ call CONST
+ mov qword [r12 + CONST], rax
+LABEL38:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL19:
+ add r12, CONST
+ cmp r12, rcx
+ cjmp LABEL50
+LABEL8:
+ lea r12, [rdx + rdx*CONST]
+ mov rdi, rbp
+ shl r12, CONST
+ lea rsi, [r12 + CONST]
+ call CONST
+ mov rdi, rax
+ sub rdi, rbp
+ cjmp LABEL58
+ add rbp, r12
+ test r12, r12
+ cjmp LABEL61
+ mov rdx, r12
+ nop dword [rax + rax]
+LABEL79:
+ sub rdx, CONST
+ mov rsi, rdx
+ mov rcx, qword [rax + rdx + CONST]
+ sub rsi, r12
+ add rsi, rbp
+ cmp rcx, rsi
+ cjmp LABEL70
+ add rcx, rdi
+ mov qword [rax + rdx + CONST], rcx
+LABEL70:
+ mov rcx, qword [rax + rdx + CONST]
+ test rcx, rcx
+ cjmp LABEL75
+ add rcx, rdi
+ mov qword [rax + rdx + CONST], rcx
+LABEL75:
+ test rdx, rdx
+ cjmp LABEL79
+LABEL61:
+ mov rdx, qword [rip + CONST]
+ test rdx, rdx
+ cjmp LABEL58
+ add rdx, rdi
+ mov qword [rip + CONST], rdx
+LABEL58:
+ add r12, rax
+ add dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ and byte [r12 + CONST], CONST
+ and byte [r12 + CONST], CONST
+ and byte [r12 + CONST], CONST
+ and byte [r12 + CONST], CONST
+ jmp LABEL15

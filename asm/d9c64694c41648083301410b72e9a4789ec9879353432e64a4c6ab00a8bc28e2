@@ -1,0 +1,42 @@
+ .name sym.time_to_check_mail
+ .offset 0000000000074070
+ .file bash
+ endbr64
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test rax, rax
+ cjmp LABEL8
+ mov rdi, rax
+ mov rsi, rsp
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ cmp qword [rsp], CONST
+ cjmp LABEL8
+ xor edi, edi
+ call CONST
+ mov rcx, qword [rsp]
+ mov rdx, rax
+ mov eax, CONST
+ test rcx, rcx
+ cjmp LABEL22
+ mov rax, rdx
+ sub rax, qword [rip + CONST]
+ cmp rcx, rax
+ setle al
+ movzx eax, al
+ jmp LABEL22
+LABEL8:
+ xor eax, eax
+LABEL22:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL32
+ add rsp, CONST
+ ret
+LABEL32:
+ call CONST

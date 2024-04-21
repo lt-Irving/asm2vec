@@ -1,0 +1,23 @@
+ .name fcn.00009c00
+ .offset 0000000000009c00
+ .file dpkg-deb
+ endbr64
+ lea rax, [rdi + CONST]
+ jmp LABEL2
+LABEL10:
+ mov rax, rdx
+LABEL2:
+ movzx edx, byte [rax]
+ cmp dl, CONST
+ cjmp LABEL6
+ mov byte [rax], CONST
+ lea rdx, [rax + CONST]
+ cmp rax, rdi
+ cjmp LABEL10
+LABEL13:
+ ret
+LABEL6:
+ cmp dl, CONST
+ cjmp LABEL13
+ mov byte [rax], CONST
+ ret

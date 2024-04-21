@@ -1,0 +1,45 @@
+ .name sym.sh_double_quote
+ .offset 00000000000b3300
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ lea rdi, [rax + rax + CONST]
+ call CONST
+ mov byte [rax], CONST
+ movzx edx, byte [rbx]
+ lea rcx, [rax + CONST]
+ test dl, dl
+ cjmp LABEL10
+ lea r8, [rip + CONST]
+ jmp LABEL12
+LABEL25:
+ cmp dl, CONST
+ cjmp LABEL14
+ add rbx, CONST
+ mov byte [rcx], CONST
+ add rcx, CONST
+ mov byte [rsi], dl
+ movzx edx, byte [rbx]
+ test dl, dl
+ cjmp LABEL10
+LABEL12:
+ movzx edi, dl
+ lea rsi, [rcx + CONST]
+ test byte [r8 + rdi*CONST], CONST
+ cjmp LABEL25
+LABEL14:
+ mov rdi, rsi
+ add rbx, CONST
+ mov rsi, rcx
+ mov byte [rsi], dl
+ movzx edx, byte [rbx]
+ mov rcx, rdi
+ test dl, dl
+ cjmp LABEL12
+LABEL10:
+ mov edx, CONST
+ mov word [rcx], dx
+ pop rbx
+ ret

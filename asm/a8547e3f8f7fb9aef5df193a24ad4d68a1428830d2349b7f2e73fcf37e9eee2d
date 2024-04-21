@@ -1,0 +1,62 @@
+ .name sym.pretty_print_loop
+ .offset 00000000000317f0
+ .file bash
+ endbr64
+ push rbp
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ mov dword [rsp + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rsp + CONST], eax
+ test eax, eax
+ cjmp LABEL8
+ jmp LABEL9
+LABEL37:
+ mov rdi, rbp
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL14
+ call CONST
+ mov dword [rsp + CONST], CONST
+LABEL40:
+ mov eax, dword [rsp + CONST]
+ mov rdi, rbp
+ mov dword [rip + CONST], eax
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL9
+LABEL8:
+ xor esi, esi
+ lea rdi, [rip + CONST]
+ call CONST
+ endbr64
+ test eax, eax
+ cjmp LABEL29
+ call CONST
+ test eax, eax
+ cjmp LABEL29
+ mov rbp, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ test rbp, rbp
+ cjmp LABEL37
+LABEL14:
+ mov edx, dword [rsp + CONST]
+ test edx, edx
+ cjmp LABEL40
+ mov edi, CONST
+ call CONST
+ mov dword [rsp + CONST], CONST
+ jmp LABEL40
+LABEL29:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbp
+ ret
+LABEL9:
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ ret

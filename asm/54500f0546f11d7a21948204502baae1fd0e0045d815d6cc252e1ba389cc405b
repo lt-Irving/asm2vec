@@ -1,0 +1,64 @@
+ .name fcn.00086fe0
+ .offset 0000000000086fe0
+ .file bash
+LABEL50:
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ push rbp
+ mov ebp, dword [rip + CONST]
+ call CONST
+ mov esi, dword [rip + CONST]
+ cmp esi, ebp
+ cjmp LABEL8
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL10
+LABEL17:
+ xor eax, eax
+ pop rbp
+ ret
+LABEL8:
+ mov edi, ebp
+ call CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL17
+LABEL10:
+ mov eax, dword [rip + CONST]
+ pop rbp
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ ret
+LABEL2:
+ neg edi
+ jmp LABEL24
+LABEL24:
+ endbr64
+ test edi, edi
+ cjmp LABEL27
+ push rbx
+ mov ebx, dword [rip + CONST]
+ call CONST
+ mov esi, dword [rip + CONST]
+ cmp esi, ebx
+ cjmp LABEL33
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], ebx
+ cjmp LABEL36
+LABEL44:
+ xor eax, eax
+ pop rbx
+ ret
+LABEL33:
+ mov edi, ebx
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], ebx
+ cjmp LABEL44
+LABEL36:
+ mov dword [rip + CONST], ebx
+ xor eax, eax
+ pop rbx
+ ret
+LABEL27:
+ neg edi
+ jmp LABEL50

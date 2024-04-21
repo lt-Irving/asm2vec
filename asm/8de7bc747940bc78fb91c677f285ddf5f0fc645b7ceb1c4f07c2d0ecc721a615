@@ -1,0 +1,36 @@
+ .name sym.unwind_protect_tag_on_stack
+ .offset 0000000000077610
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL6
+ mov rbp, rdi
+ jmp LABEL8
+LABEL13:
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL6
+LABEL8:
+ cmp qword [rbx + CONST], CONST
+ cjmp LABEL13
+ mov rdi, qword [rbx + CONST]
+ movzx eax, byte [rbp]
+ cmp byte [rdi], al
+ cjmp LABEL13
+ mov rsi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL13
+ mov eax, CONST
+ jmp LABEL23
+LABEL6:
+ xor eax, eax
+LABEL23:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

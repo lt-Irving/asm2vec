@@ -1,0 +1,26 @@
+ .name fcn.000b8be0
+ .offset 00000000000b8be0
+ .file bash
+ endbr64
+ push rbx
+ mov esi, CONST
+ mov rbx, rdi
+ lea rdi, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], eax
+ test eax, eax
+ cjmp LABEL8
+ and qword [rip + CONST], CONST
+ mov edi, dword [rbx]
+ mov ecx, eax
+ lea rdx, [rip + CONST]
+ mov esi, dword [rip + CONST]
+ pop rbx
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ jmp CONST
+LABEL8:
+ mov eax, CONST
+ pop rbx
+ and qword [rip + CONST], CONST
+ ret

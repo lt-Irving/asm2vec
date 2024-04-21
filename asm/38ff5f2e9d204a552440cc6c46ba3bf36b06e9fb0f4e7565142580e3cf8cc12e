@@ -1,0 +1,13 @@
+ .name fcn.0004c960
+ .offset 000000000004c960
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ mov rdi, rdx
+ mov rdx, rsi
+ mov esi, CONST
+ call CONST
+ mov rax, r12
+ pop r12
+ ret

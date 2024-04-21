@@ -1,0 +1,50 @@
+ .name fcn.00008150
+ .offset 0000000000008150
+ .file choom
+ endbr64
+ push r12
+ mov edx, esi
+ xor eax, eax
+ mov esi, CONST
+ push rbp
+ mov ebp, edi
+ push rbx
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL11
+LABEL21:
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL11:
+ mov edi, ebp
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL21
+ mov edi, eax
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL27
+ or eax, CONST
+ mov esi, CONST
+ mov edi, r12d
+ mov edx, eax
+ xor eax, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL21
+LABEL27:
+ call CONST
+ mov edi, r12d
+ mov r12d, CONST
+ mov ebx, dword [rax]
+ mov rbp, rax
+ call CONST
+ mov dword [rbp], ebx
+ jmp LABEL21

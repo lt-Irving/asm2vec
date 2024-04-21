@@ -1,0 +1,16 @@
+ .name sym.last_history_line
+ .offset 0000000000081f70
+ .file bash
+ endbr64
+ push r12
+ call CONST
+ call CONST
+ mov r12, rax
+ call CONST
+ test r12, r12
+ cjmp LABEL7
+ mov r12, qword [r12]
+LABEL7:
+ mov rax, r12
+ pop r12
+ ret

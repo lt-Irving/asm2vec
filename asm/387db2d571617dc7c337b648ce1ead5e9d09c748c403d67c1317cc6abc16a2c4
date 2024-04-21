@@ -1,0 +1,52 @@
+ .name sym.sh_single_quote
+ .offset 00000000000b3260
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ lea rdi, [rax*CONST + CONST]
+ call CONST
+ cmp byte [rbx], CONST
+ cjmp LABEL7
+LABEL38:
+ mov byte [rax], CONST
+ movsx ecx, byte [rbx]
+ lea rdx, [rax + CONST]
+ mov esi, ecx
+ test ecx, ecx
+ cjmp LABEL13
+ jmp LABEL14
+LABEL23:
+ movsx ecx, byte [rbx + CONST]
+ add rbx, CONST
+ add rdx, CONST
+ mov esi, ecx
+ test ecx, ecx
+ cjmp LABEL14
+LABEL13:
+ mov byte [rdx], sil
+ cmp ecx, CONST
+ cjmp LABEL23
+ mov esi, CONST
+ add rbx, CONST
+ mov byte [rdx + CONST], CONST
+ add rdx, CONST
+ mov word [rdx + CONST], si
+ movsx ecx, byte [rbx]
+ mov esi, ecx
+ test ecx, ecx
+ cjmp LABEL13
+LABEL14:
+ mov ecx, CONST
+ mov word [rdx], cx
+ pop rbx
+ ret
+LABEL7:
+ cmp byte [rbx + CONST], CONST
+ cjmp LABEL38
+ mov edi, CONST
+ mov byte [rax + CONST], CONST
+ mov word [rax], di
+ pop rbx
+ ret

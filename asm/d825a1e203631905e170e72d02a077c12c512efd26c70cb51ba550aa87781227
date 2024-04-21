@@ -1,0 +1,112 @@
+ .name main
+ .offset 0000000000005af0
+ .file dash
+ endbr64
+ push rbx
+ sub rsp, CONST
+ mov dword [rsp + CONST], edi
+ mov qword [rsp + CONST], rsi
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ lea rdi, [rsp + CONST]
+ mov dword [rsp + CONST], CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ endbr64
+ test eax, eax
+ cjmp LABEL19
+ lea rax, [rsp + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ lea rdi, [rsp + CONST]
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ mov edi, dword [rsp + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL31
+LABEL79:
+ cmp byte [rip + CONST], CONST
+ mov dword [rsp + CONST], CONST
+ cjmp LABEL34
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL34
+ cmp byte [rax], CONST
+ cjmp LABEL40
+LABEL34:
+ lea rdi, [rsp + CONST]
+ call CONST
+LABEL81:
+ mov rdi, qword [rip + CONST]
+ mov dword [rsp + CONST], CONST
+ test rdi, rdi
+ cjmp LABEL46
+ xor esi, esi
+ call CONST
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL46
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL46
+LABEL58:
+ call CONST
+LABEL19:
+ call CONST
+ mov eax, dword [rip + CONST]
+ mov ebx, dword [rsp + CONST]
+ cmp eax, CONST
+ cjmp LABEL58
+ test ebx, ebx
+ cjmp LABEL58
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL58
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL58
+ test eax, eax
+ cjmp LABEL66
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ call CONST
+LABEL66:
+ lea rdi, [rsp + CONST]
+ call CONST
+ mov dword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL75
+LABEL96:
+ cmp ebx, CONST
+ cjmp LABEL77
+ cmp ebx, CONST
+ cjmp LABEL79
+ cmp ebx, CONST
+ cjmp LABEL81
+LABEL46:
+ mov edi, CONST
+ call CONST
+ jmp LABEL58
+LABEL31:
+ lea rdi, [rip + CONST]
+ mov dword [rsp + CONST], CONST
+ call CONST
+LABEL77:
+ lea rdi, [rip + CONST]
+ mov dword [rsp + CONST], CONST
+ call CONST
+ jmp LABEL79
+LABEL40:
+ mov rdi, rax
+ call CONST
+ jmp LABEL34
+LABEL75:
+ call CONST
+ jmp LABEL96

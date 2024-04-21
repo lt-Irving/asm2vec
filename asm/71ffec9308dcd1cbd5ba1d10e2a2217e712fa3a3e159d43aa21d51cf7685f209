@@ -1,0 +1,14 @@
+ .name sym.coproc_pidchk
+ .offset 0000000000045550
+ .file bash
+ endbr64
+ cmp edi, dword [rip + CONST]
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], esi
+ mov dword [rip + CONST], CONST
+ and eax, CONST
+ or eax, CONST
+ mov dword [rip + CONST], eax
+LABEL2:
+ ret

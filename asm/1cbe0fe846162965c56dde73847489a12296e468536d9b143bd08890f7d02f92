@@ -1,0 +1,57 @@
+ .name fcn.00010470
+ .offset 0000000000010470
+ .file diff
+ mov eax, dword [rdi + CONST]
+ mov edx, CONST
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL4
+ cmp eax, CONST
+ cjmp LABEL6
+ cmp eax, CONST
+ cjmp LABEL8
+ cmp eax, CONST
+ cjmp LABEL10
+ cmp eax, CONST
+ cjmp LABEL12
+ cmp eax, CONST
+ cjmp LABEL14
+ cmp eax, CONST
+ cjmp LABEL16
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL4:
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL21
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL21:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL12:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL6:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL16:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL8:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL10:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST
+LABEL14:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST

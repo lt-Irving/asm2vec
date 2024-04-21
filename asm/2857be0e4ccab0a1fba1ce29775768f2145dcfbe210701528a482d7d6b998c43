@@ -1,0 +1,80 @@
+ .name sym.save_parser_state
+ .offset 000000000003dd40
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ test rdi, rdi
+ cjmp LABEL4
+LABEL70:
+ mov eax, dword [rip + CONST]
+ mov dword [rbx], eax
+ call CONST
+ mov qword [rbx + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov rax, qword [rip + CONST]
+ mov qword [rbx + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov qword [rbx + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov dword [rbx + CONST], edx
+ mov qword [rbx + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rbx + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ test eax, eax
+ cjmp LABEL38
+ mov qword [rbx + CONST], CONST
+LABEL65:
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rbx + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rbx + CONST], eax
+ mov rax, rbx
+ pop rbx
+ ret
+LABEL38:
+ movdqa xmm0, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm0
+ movdqa xmm1, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm1
+ movdqa xmm2, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm2
+ movdqa xmm3, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm3
+ movdqa xmm4, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm4
+ movdqa xmm5, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm5
+ movdqa xmm6, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm6
+ movdqa xmm7, xmmword [rip + CONST]
+ movups xmmword [rbx + CONST], xmm7
+ jmp LABEL65
+LABEL4:
+ mov edi, CONST
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL70
+ pop rbx
+ ret

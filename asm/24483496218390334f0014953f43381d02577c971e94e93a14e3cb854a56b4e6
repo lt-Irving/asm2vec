@@ -1,0 +1,27 @@
+ .name fcn.0005e1a0
+ .offset 000000000005e1a0
+ .file bash
+ endbr64
+ push rbp
+ mov rsi, qword [rip + CONST]
+ mov ebp, edi
+ mov edi, CONST
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ xor esi, esi
+ mov qword [rip + CONST], rax
+ call CONST
+ call CONST
+ mov esi, ebp
+ pop rbp
+ mov edi, eax
+ jmp CONST

@@ -1,0 +1,14 @@
+ .name fcn.00003140
+ .offset 0000000000003140
+ .file choom
+ push rax
+ pop rax
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov rsi, rax
+ xor eax, eax
+ call CONST

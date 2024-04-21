@@ -1,0 +1,71 @@
+ .name sym.show_all_var_attributes
+ .offset 00000000000a0530
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov ebx, esi
+ test edi, edi
+ cjmp LABEL8
+ call CONST
+ mov r13, rax
+ test r13, r13
+ cjmp LABEL12
+LABEL50:
+ mov rdi, qword [r13]
+ lea r14, [r13 + CONST]
+ lea r12, [rip + CONST]
+ lea rbp, [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL18
+ jmp LABEL19
+LABEL36:
+ mov rdi, qword [r14]
+ add r14, CONST
+ test rdi, rdi
+ cjmp LABEL19
+LABEL18:
+ mov rax, qword [rip + CONST]
+ mov edx, ebx
+ cmp rax, r12
+ sete sil
+ cmp rax, rbp
+ sete al
+ or esi, eax
+ movzx esi, sil
+ call CONST
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL36
+ mov r12d, CONST
+LABEL60:
+ mov rdi, r13
+ call CONST
+ pop rbx
+ mov eax, r12d
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL8:
+ call CONST
+ mov r13, rax
+ test r13, r13
+ cjmp LABEL50
+LABEL12:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL19:
+ xor r12d, r12d
+ jmp LABEL60

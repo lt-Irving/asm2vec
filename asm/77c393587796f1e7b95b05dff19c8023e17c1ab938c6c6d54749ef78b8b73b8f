@@ -1,0 +1,16 @@
+ .name sym.all_visible_functions
+ .offset 000000000004f8c0
+ .file bash
+ endbr64
+ push r12
+ lea rdi, [rip + CONST]
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL6
+ mov rdi, rax
+ call CONST
+LABEL6:
+ mov rax, r12
+ pop r12
+ ret

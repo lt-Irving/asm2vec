@@ -1,0 +1,50 @@
+ .name method.pkgCdromTextStatus.virtual_8
+ .offset 0000000000003f00
+ .file apt-cdrom
+ endbr64
+ lea rax, [rip + CONST]
+ push rbp
+ mov rbp, rdi
+ add rdi, CONST
+ mov qword [rdi + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rdi], rax
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL12
+ call CONST
+LABEL12:
+ lea rax, [rip + CONST]
+ mov rdi, qword [rbp + CONST]
+ mov qword [rbp + CONST], rax
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL19
+ call CONST
+LABEL19:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL24
+ call CONST
+LABEL24:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL29
+ call CONST
+LABEL29:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL34
+ call CONST
+LABEL34:
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ mov esi, CONST
+ pop rbp
+ jmp CONST

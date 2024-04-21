@@ -1,0 +1,36 @@
+ .name sym.array_from_word_list
+ .offset 000000000007c100
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL5
+ mov rbx, rdi
+ xor ebp, ebp
+ call CONST
+ mov r12, rax
+ nop word [rax + rax]
+LABEL19:
+ mov rax, qword [rbx + CONST]
+ mov rsi, rbp
+ mov rdi, r12
+ add rbp, CONST
+ mov rdx, qword [rax]
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL19
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ ret

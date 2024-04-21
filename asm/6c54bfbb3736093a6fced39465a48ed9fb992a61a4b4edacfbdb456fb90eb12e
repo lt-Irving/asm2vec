@@ -1,0 +1,19 @@
+ .name fcn.00086f00
+ .offset 0000000000086f00
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov rdi, rax
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL5:
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,52 @@
+ .name fcn.000c31a0
+ .offset 00000000000c31a0
+ .file bash
+ endbr64
+ push rbp
+ test rdi, rdi
+ cjmp LABEL3
+ cmp byte [rdi], CONST
+ mov rbp, rdi
+ cjmp LABEL6
+LABEL3:
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL6:
+ lea rsi, [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL14
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL14
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL3
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL3
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL34
+ mov dword [rip + CONST], CONST
+ pop rbp
+ ret
+LABEL14:
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL34:
+ mov eax, CONST
+ pop rbp
+ ret

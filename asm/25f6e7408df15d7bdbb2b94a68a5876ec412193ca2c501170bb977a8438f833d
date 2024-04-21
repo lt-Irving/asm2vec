@@ -1,0 +1,83 @@
+ .name sym._rl_adjust_point
+ .offset 00000000000dbba0
+ .file bash
+ endbr64
+ push r14
+ mov r14, rdx
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ mov ebp, esi
+ push rbx
+ call CONST
+ test ebp, ebp
+ cjmp LABEL11
+ cmp ebp, eax
+ cjmp LABEL11
+ test ebp, ebp
+ cjmp LABEL15
+ mov r13d, eax
+ xor ebx, ebx
+ nop word cs:[rax + rax]
+LABEL29:
+ mov eax, dword [rip + CONST]
+ movsxd r8, ebx
+ add r8, r12
+ test eax, eax
+ cjmp LABEL23
+ cmp byte [r8], CONST
+ mov eax, CONST
+ cjmp LABEL23
+LABEL51:
+ add ebx, eax
+LABEL53:
+ cmp ebx, ebp
+ cjmp LABEL29
+LABEL65:
+ mov eax, ebx
+ sub eax, ebp
+LABEL67:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL23:
+ mov r9d, r13d
+ sub r9d, ebx
+ movsxd r9, r9d
+ test r14, r14
+ cjmp LABEL42
+ xor edi, edi
+ mov rcx, r14
+ mov rdx, r9
+ mov rsi, r8
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL49
+LABEL60:
+ test rax, rax
+ cjmp LABEL51
+LABEL59:
+ add ebx, CONST
+ jmp LABEL53
+LABEL42:
+ xor edx, edx
+ mov rsi, r9
+ mov rdi, r8
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL59
+ jmp LABEL60
+LABEL49:
+ mov qword [r14], CONST
+ add ebx, CONST
+ jmp LABEL53
+LABEL15:
+ xor ebx, ebx
+ jmp LABEL65
+LABEL11:
+ mov eax, CONST
+ jmp LABEL67

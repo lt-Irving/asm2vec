@@ -1,0 +1,26 @@
+ .name sym.free_buffered_stream
+ .offset 0000000000076a40
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ movsxd rbx, dword [rdi]
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL10
+ call CONST
+LABEL10:
+ mov rdi, rbp
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov qword [rax + rbx*CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ ret

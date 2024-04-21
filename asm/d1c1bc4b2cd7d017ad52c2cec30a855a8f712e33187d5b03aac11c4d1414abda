@@ -1,0 +1,60 @@
+ .name sym.make_local_assoc_variable
+ .offset 0000000000050cc0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov ebx, esi
+ xor esi, esi
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL10
+ mov esi, dword [rax + CONST]
+ test sil, CONST
+ cjmp LABEL10
+ test ebx, ebx
+ cjmp LABEL15
+ test sil, CONST
+ cjmp LABEL10
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL20
+LABEL34:
+ mov rdi, r12
+ call CONST
+ mov r12, rax
+ or dword [r12 + CONST], CONST
+LABEL10:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL15:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL20
+ and esi, CONST
+ cjmp LABEL34
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ mov esi, dword [r12 + CONST]
+ and esi, CONST
+ mov dword [r12 + CONST], esi
+LABEL20:
+ mov rdi, qword [r12 + CONST]
+ call CONST
+ xor edi, edi
+ call CONST
+ or dword [r12 + CONST], CONST
+ mov qword [r12 + CONST], rax
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

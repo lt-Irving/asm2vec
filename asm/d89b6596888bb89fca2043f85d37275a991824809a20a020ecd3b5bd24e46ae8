@@ -1,0 +1,14 @@
+ .name fcn.000127b0
+ .offset 00000000000127b0
+ .file dpkg-deb
+ endbr64
+ push rbx
+ mov esi, CONST
+ mov rbx, rdi
+ call CONST
+ lea rdi, [rax + CONST]
+ test rax, rax
+ mov rax, rbx
+ pop rbx
+ cmovne rax, rdi
+ ret

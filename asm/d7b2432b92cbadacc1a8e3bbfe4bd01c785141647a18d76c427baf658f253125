@@ -1,0 +1,153 @@
+ .name fcn.000069a0
+ .offset 00000000000069a0
+ .file dash
+ endbr64
+ push r12
+ lea rdx, [rip + CONST]
+ push rbp
+ mov rbp, qword [rip + CONST]
+ push rbx
+LABEL52:
+ cmp byte [rbp], CONST
+ cjmp LABEL7
+ movzx eax, byte [rbp]
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ notrack jmp rax
+LABEL7:
+ mov eax, CONST
+LABEL50:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+ call CONST
+ mov rbx, rbp
+ mov rdx, qword [rax]
+ nop dword [rax + rax]
+LABEL24:
+ movzx eax, byte [rbx + CONST]
+ add rbx, CONST
+ cmp al, CONST
+ cjmp LABEL24
+ test byte [rdx + rax*CONST], CONST
+ cjmp LABEL24
+ mov r12, rbx
+ sub r12, rbp
+ lea rdi, [r12 + CONST]
+ call CONST
+ mov rdx, r12
+ mov rsi, rbp
+ mov rdi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ mov byte [rax], CONST
+ mov eax, CONST
+LABEL58:
+ mov qword [rip + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+ xor ecx, ecx
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ mov qword [rip + CONST], rax
+ mov eax, CONST
+ jmp LABEL50
+ add rbp, CONST
+ jmp LABEL52
+ mov eax, CONST
+ nop word cs:[rax + rax]
+LABEL63:
+ movzx edx, byte [rbp + CONST]
+ lea rbx, [rbp + CONST]
+LABEL86:
+ cmp dl, CONST
+ cjmp LABEL58
+ add eax, CONST
+LABEL73:
+ add rbx, CONST
+ jmp LABEL58
+ mov eax, CONST
+ jmp LABEL63
+ mov eax, CONST
+ jmp LABEL63
+ mov eax, CONST
+ jmp LABEL63
+ cmp byte [rbp + CONST], CONST
+ lea rbx, [rbp + CONST]
+ mov eax, CONST
+ cjmp LABEL58
+ mov eax, CONST
+ jmp LABEL73
+ mov rbx, rbp
+ mov eax, CONST
+ jmp LABEL73
+ mov rbx, rbp
+ mov eax, CONST
+ jmp LABEL73
+ movzx edx, byte [rbp + CONST]
+ lea rbx, [rbp + CONST]
+ mov eax, CONST
+ cmp dl, CONST
+ cjmp LABEL73
+ mov eax, CONST
+ jmp LABEL86
+ mov eax, CONST
+ jmp LABEL63
+ movzx eax, byte [rbp + CONST]
+ lea rbx, [rbp + CONST]
+ cmp al, CONST
+ cjmp LABEL92
+ cmp al, CONST
+ cjmp LABEL94
+ mov eax, CONST
+ jmp LABEL58
+ movzx eax, byte [rbp + CONST]
+ lea rbx, [rbp + CONST]
+ cmp al, CONST
+ cjmp LABEL100
+ cmp al, CONST
+ cjmp LABEL102
+ mov eax, CONST
+ jmp LABEL58
+ mov rbx, rbp
+ mov eax, CONST
+ jmp LABEL73
+ movzx edx, byte [rbp + CONST]
+ lea rbx, [rbp + CONST]
+ mov eax, CONST
+ cmp dl, CONST
+ cjmp LABEL73
+ mov eax, CONST
+ jmp LABEL86
+ mov rbx, rbp
+ xor eax, eax
+ jmp LABEL58
+ mov eax, CONST
+ jmp LABEL63
+ mov rbx, rbp
+ mov eax, CONST
+ jmp LABEL73
+ mov rbx, rbp
+ mov eax, CONST
+ jmp LABEL73
+ mov eax, CONST
+ jmp LABEL63
+LABEL94:
+ mov rbp, rbx
+ mov eax, CONST
+ jmp LABEL63
+LABEL102:
+ mov eax, CONST
+ jmp LABEL73
+LABEL92:
+ mov eax, CONST
+ jmp LABEL73
+LABEL100:
+ mov rbp, rbx
+ mov eax, CONST
+ jmp LABEL63

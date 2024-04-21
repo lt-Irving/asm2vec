@@ -1,0 +1,33 @@
+ .name fcn.0000f0e0
+ .offset 000000000000f0e0
+ .file dash
+ endbr64
+ push rbp
+ mov rbp, rsi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ sub rbp, qword [rip + CONST]
+ sub rax, rbp
+ cmp rdi, rax
+ cjmp LABEL9
+ mov rbx, rdi
+ nop word cs:[rax + rax]
+LABEL16:
+ call CONST
+ mov rax, qword [rip + CONST]
+ sub rax, rbp
+ cmp rax, rbx
+ cjmp LABEL16
+ mov rax, qword [rip + CONST]
+ add rsp, CONST
+ pop rbx
+ add rax, rbp
+ pop rbp
+ ret
+LABEL9:
+ add rsp, CONST
+ mov rax, rsi
+ pop rbx
+ pop rbp
+ ret

@@ -1,0 +1,107 @@
+ .name method.pkgCdromTextStatus.virtual_40
+ .offset 0000000000003010
+ .file apt-cdrom
+ endbr64
+ push r12
+ mov r12, rdi
+ lea rdi, [rip + CONST]
+ push rbp
+ push rbx
+ mov rbx, rsi
+ lea rsi, [rip + CONST]
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test rax, rax
+ cjmp LABEL14
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ mov rdx, rax
+ call CONST
+LABEL87:
+ lea rdi, [rip + CONST]
+ lea rbp, [rsp + CONST]
+ call CONST
+ mov rdi, rsp
+ lea rdx, [rip + CONST]
+ mov rsi, r12
+ call CONST
+ mov rax, qword [rsp]
+ mov rdi, qword [rbx]
+ cmp rax, rbp
+ cjmp LABEL32
+ lea rsi, [rbx + CONST]
+ mov rcx, qword [rsp + CONST]
+ mov rdx, qword [rsp + CONST]
+ cmp rdi, rsi
+ cjmp LABEL37
+ mov rsi, qword [rbx + CONST]
+ mov qword [rbx], rax
+ mov qword [rbx + CONST], rcx
+ mov qword [rbx + CONST], rdx
+ test rdi, rdi
+ cjmp LABEL43
+ mov qword [rsp], rdi
+ mov qword [rsp + CONST], rsi
+LABEL67:
+ mov qword [rsp + CONST], CONST
+ mov byte [rdi], CONST
+ mov rdi, qword [rsp]
+ cmp rdi, rbp
+ cjmp LABEL50
+ call CONST
+LABEL50:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL54
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL37:
+ mov qword [rbx], rax
+ mov qword [rbx + CONST], rcx
+ mov qword [rbx + CONST], rdx
+LABEL43:
+ mov qword [rsp], rbp
+ lea rbp, [rsp + CONST]
+ mov rdi, rbp
+ jmp LABEL67
+LABEL32:
+ mov rdx, qword [rsp + CONST]
+ test rdx, rdx
+ cjmp LABEL70
+ cmp rdx, CONST
+ cjmp LABEL72
+ mov rsi, rbp
+ call CONST
+ mov rdx, qword [rsp + CONST]
+ mov rdi, qword [rbx]
+LABEL70:
+ mov qword [rbx + CONST], rdx
+ mov byte [rdi + rdx], CONST
+ mov rdi, qword [rsp]
+ jmp LABEL67
+LABEL14:
+ mov rax, qword [rip + CONST]
+ lea rdi, [rip + CONST]
+ add rdi, qword [rax + CONST]
+ mov esi, dword [rdi + CONST]
+ or esi, CONST
+ call CONST
+ jmp LABEL87
+LABEL72:
+ movzx eax, byte [rsp + CONST]
+ mov byte [rdi], al
+ mov rdx, qword [rsp + CONST]
+ mov rdi, qword [rbx]
+ jmp LABEL70
+LABEL54:
+ call CONST

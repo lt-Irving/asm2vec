@@ -1,0 +1,26 @@
+ .name sym.rl_get_keymap_name
+ .offset 00000000000c6930
+ .file bash
+ endbr64
+ mov rcx, qword [rip + CONST]
+ mov r8, qword [rcx]
+ test r8, r8
+ cjmp LABEL4
+ lea rax, [rcx + CONST]
+ xor edx, edx
+ jmp LABEL7
+LABEL14:
+ mov r8, qword [rax]
+ add rax, CONST
+ add edx, CONST
+ test r8, r8
+ cjmp LABEL4
+LABEL7:
+ cmp rdi, qword [rax + CONST]
+ cjmp LABEL14
+ movsxd rdx, edx
+ shl rdx, CONST
+ mov r8, qword [rcx + rdx]
+LABEL4:
+ mov rax, r8
+ ret

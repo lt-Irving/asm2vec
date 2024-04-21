@@ -1,0 +1,23 @@
+ .name fcn.00007ed0
+ .offset 0000000000007ed0
+ .file apt-get
+LABEL17:
+ lea rax, [rip + CONST]
+ mov rdi, qword [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov rcx, qword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rax + CONST]
+ mov qword [rsp + rax + CONST], rcx
+ endbr64
+ mov rbx, rax
+ jmp LABEL17

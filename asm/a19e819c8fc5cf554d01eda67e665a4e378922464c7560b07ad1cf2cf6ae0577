@@ -1,0 +1,30 @@
+ .name sym._rl_is_mbchar_matched
+ .offset 00000000000dbc80
+ .file bash
+ endbr64
+ sub edx, esi
+ xor eax, eax
+ cmp edx, r8d
+ cjmp LABEL4
+ test r8d, r8d
+ cjmp LABEL6
+ movsxd rsi, esi
+ sub r8d, CONST
+ xor eax, eax
+ add rdi, rsi
+ jmp LABEL11
+LABEL18:
+ lea rdx, [rax + CONST]
+ cmp r8, rax
+ cjmp LABEL6
+ mov rax, rdx
+LABEL11:
+ movzx esi, byte [rcx + rax]
+ cmp byte [rdi + rax], sil
+ cjmp LABEL18
+ xor eax, eax
+LABEL4:
+ ret
+LABEL6:
+ mov eax, CONST
+ ret

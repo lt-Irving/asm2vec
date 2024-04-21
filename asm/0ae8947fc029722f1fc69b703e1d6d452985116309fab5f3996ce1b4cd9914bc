@@ -1,0 +1,51 @@
+ .name sym.should_suppress_fork
+ .offset 00000000000969f0
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL2
+LABEL6:
+ xor eax, eax
+ ret
+LABEL2:
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL6
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+ mov rax, qword [rip + CONST]
+ cmp byte [rax], CONST
+ cjmp LABEL6
+ push rbx
+ mov rbx, rdi
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ cmp dword [rbx], CONST
+ cjmp LABEL19
+LABEL17:
+ xor eax, eax
+ pop rbx
+ ret
+LABEL19:
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ cmp qword [rbx + CONST], CONST
+ cjmp LABEL17
+ mov rax, qword [rbx + CONST]
+ cmp qword [rax + CONST], CONST
+ cjmp LABEL17
+ xor eax, eax
+ test byte [rbx + CONST], CONST
+ pop rbx
+ sete al
+ ret

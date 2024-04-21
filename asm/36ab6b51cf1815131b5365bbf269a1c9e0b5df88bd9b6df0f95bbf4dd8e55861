@@ -1,0 +1,84 @@
+ .name sym.test_binop
+ .offset 0000000000079c10
+ .file bash
+ endbr64
+ movzx eax, byte [rdi]
+ cmp al, CONST
+ cjmp LABEL3
+ mov edx, eax
+ and edx, CONST
+ cmp dl, CONST
+ cjmp LABEL7
+ xor eax, eax
+ cmp byte [rdi + CONST], CONST
+ sete al
+ ret
+LABEL7:
+ cmp al, CONST
+ cjmp LABEL13
+ cmp al, CONST
+ cjmp LABEL15
+ movzx ecx, byte [rdi + CONST]
+ xor eax, eax
+ test cl, cl
+ cjmp LABEL19
+ movzx edx, byte [rdi + CONST]
+ test dl, dl
+ cjmp LABEL19
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL19
+ cmp dl, CONST
+ cjmp LABEL26
+ cmp cl, CONST
+ cjmp LABEL28
+ mov eax, CONST
+ cmp dl, CONST
+ cjmp LABEL19
+ xor eax, eax
+ cmp dl, CONST
+ sete al
+ ret
+LABEL3:
+ movzx edx, byte [rdi + CONST]
+ mov eax, CONST
+ test dl, dl
+ cjmp LABEL39
+LABEL58:
+ cmp dl, CONST
+ cjmp LABEL41
+LABEL15:
+ xor eax, eax
+LABEL19:
+ ret
+LABEL41:
+ xor eax, eax
+ cmp byte [rdi + CONST], CONST
+ sete al
+ ret
+LABEL26:
+ sub ecx, CONST
+ cmp cl, CONST
+ cjmp LABEL19
+ mov eax, CONST
+ shl rax, cl
+ test eax, CONST
+ setne al
+ movzx eax, al
+ ret
+LABEL13:
+ movzx edx, byte [rdi + CONST]
+ jmp LABEL58
+LABEL39:
+ ret
+LABEL28:
+ cmp dl, CONST
+ cjmp LABEL19
+ sub ecx, CONST
+ cmp cl, CONST
+ cjmp LABEL15
+ mov eax, CONST
+ shl rax, cl
+ test al, CONST
+ setne al
+ movzx eax, al
+ ret

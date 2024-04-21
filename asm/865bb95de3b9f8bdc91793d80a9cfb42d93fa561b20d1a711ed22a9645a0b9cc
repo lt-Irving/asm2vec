@@ -1,0 +1,17 @@
+ .name sym.run_interrupt_trap
+ .offset 0000000000076160
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL2
+ sub eax, CONST
+ lea rdx, [rip + CONST]
+ cdqe
+ and dword [rdx + rax*CONST], CONST
+LABEL2:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ jmp CONST

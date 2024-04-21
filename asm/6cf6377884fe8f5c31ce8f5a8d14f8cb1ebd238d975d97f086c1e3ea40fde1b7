@@ -1,0 +1,20 @@
+ .name sym.sh_closepipe
+ .offset 000000000003f260
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, dword [rdi]
+ test edi, edi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov edi, dword [rbx + CONST]
+ test edi, edi
+ cjmp LABEL9
+ call CONST
+LABEL9:
+ mov qword [rbx], CONST
+ xor eax, eax
+ pop rbx
+ ret

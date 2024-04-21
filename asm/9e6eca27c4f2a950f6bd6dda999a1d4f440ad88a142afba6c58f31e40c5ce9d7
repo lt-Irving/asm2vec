@@ -1,0 +1,127 @@
+ .name fcn.00003400
+ .offset 0000000000003400
+ .file base32
+ xor r8d, r8d
+ cmp rsi, CONST
+ cjmp LABEL2
+ movzx esi, byte [rdi]
+ lea rax, [rip + CONST]
+ movzx esi, byte [rax + rsi]
+ test sil, sil
+ cjmp LABEL2
+ movzx r9d, byte [rdi + CONST]
+ movzx r9d, byte [rax + r9]
+ test r9b, r9b
+ cjmp LABEL2
+ cmp qword [rcx], CONST
+ mov r8, qword [rdx]
+ cjmp LABEL14
+LABEL105:
+ movzx esi, byte [rdi + CONST]
+ cmp sil, CONST
+ cjmp LABEL17
+ movzx esi, byte [rax + rsi]
+ test sil, sil
+ cjmp LABEL20
+ movzx r10d, byte [rdi + CONST]
+ movzx r10d, byte [rax + r10]
+ test r10b, r10b
+ cjmp LABEL20
+ cmp qword [rcx], CONST
+ cjmp LABEL26
+ add esi, esi
+ shl r9d, CONST
+ add r8, CONST
+ or r9d, esi
+ mov esi, r10d
+ sar sil, CONST
+ or r9d, esi
+ mov byte [r8 + CONST], r9b
+ sub qword [rcx], CONST
+LABEL26:
+ movzx esi, byte [rdi + CONST]
+ cmp sil, CONST
+ cjmp LABEL38
+ movzx r9d, byte [rax + rsi]
+ test r9b, r9b
+ cjmp LABEL20
+ cmp qword [rcx], CONST
+ cjmp LABEL43
+ mov esi, r9d
+ shl r10d, CONST
+ add r8, CONST
+ sar sil, CONST
+ or r10d, esi
+ mov byte [r8 + CONST], r10b
+ sub qword [rcx], CONST
+LABEL43:
+ movzx esi, byte [rdi + CONST]
+ cmp sil, CONST
+ cjmp LABEL53
+ movzx esi, byte [rax + rsi]
+ test sil, sil
+ cjmp LABEL20
+ movzx r10d, byte [rdi + CONST]
+ movzx r10d, byte [rax + r10]
+ test r10b, r10b
+ cjmp LABEL20
+ cmp qword [rcx], CONST
+ cjmp LABEL62
+ shl esi, CONST
+ shl r9d, CONST
+ add r8, CONST
+ or r9d, esi
+ mov esi, r10d
+ sar sil, CONST
+ or r9d, esi
+ mov byte [r8 + CONST], r9b
+ sub qword [rcx], CONST
+LABEL62:
+ movzx esi, byte [rdi + CONST]
+ cmp sil, CONST
+ cjmp LABEL74
+ movzx eax, byte [rax + rsi]
+ test al, al
+ cjmp LABEL20
+ cmp qword [rcx], CONST
+ cjmp LABEL74
+ shl r10d, CONST
+ add r8, CONST
+ or r10d, eax
+ mov byte [r8 + CONST], r10b
+ sub qword [rcx], CONST
+ nop dword [rax]
+LABEL74:
+ mov qword [rdx], r8
+ mov r8d, CONST
+LABEL2:
+ mov eax, r8d
+ ret
+LABEL17:
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL20
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL38
+LABEL20:
+ mov qword [rdx], r8
+ xor r8d, r8d
+ mov eax, r8d
+ ret
+LABEL14:
+ mov r10d, r9d
+ shl esi, CONST
+ add r8, CONST
+ sar r10b, CONST
+ or esi, r10d
+ mov byte [r8 + CONST], sil
+ sub qword [rcx], CONST
+ jmp LABEL105
+LABEL38:
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL20
+LABEL53:
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL20
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL74
+ jmp LABEL20

@@ -1,0 +1,103 @@
+ .name sym.make_redirection
+ .offset 0000000000040e40
+ .file bash
+ endbr64
+ push r14
+ mov r14, rdi
+ mov edi, CONST
+ push r13
+ mov r13, rdx
+ push r12
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov ebx, ecx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov qword [rax + CONST], r14
+ mov qword [rax + CONST], r13
+ mov qword [rax + CONST], CONST
+ mov dword [rax + CONST], ebp
+ mov dword [rax + CONST], CONST
+ mov dword [rax + CONST], ebx
+ mov qword [rax], CONST
+ cmp ebp, CONST
+ cjmp LABEL24
+ lea rcx, [rip + CONST]
+ mov edx, ebp
+ mov r12, rax
+ movsxd rax, dword [rcx + rdx*CONST]
+ add rax, rcx
+ notrack jmp rax
+LABEL77:
+ mov rdi, qword [r13]
+ mov rsi, rsp
+ call CONST
+ test eax, eax
+ cjmp LABEL35
+ mov rax, qword [rsp]
+ movsxd rdx, eax
+ cmp rax, rdx
+ cjmp LABEL35
+ mov rdi, r13
+ call CONST
+ xor eax, eax
+ cmp ebp, CONST
+ setne al
+ add eax, CONST
+ mov dword [r12 + CONST], eax
+ mov rax, qword [rsp]
+ mov dword [r12 + CONST], eax
+ nop dword [rax]
+LABEL62:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL52
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+ mov dword [r12 + CONST], CONST
+ jmp LABEL62
+ mov dword [r12 + CONST], CONST
+ jmp LABEL62
+ mov rbx, qword [r13]
+ mov rdi, rbx
+ call CONST
+ sub eax, CONST
+ cdqe
+ add rax, rbx
+ cmp byte [rax], CONST
+ cjmp LABEL62
+ mov byte [rax], CONST
+ mov rdi, qword [r13]
+ call CONST
+ test eax, eax
+ cjmp LABEL77
+LABEL35:
+ xor eax, eax
+ cmp ebp, CONST
+ setne al
+ add eax, CONST
+ mov dword [r12 + CONST], eax
+ jmp LABEL62
+ mov dword [r12 + CONST], CONST
+ jmp LABEL62
+LABEL24:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov esi, ebp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+LABEL52:
+ call CONST

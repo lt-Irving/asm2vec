@@ -1,0 +1,32 @@
+ .name sym.coproc_checkfd
+ .offset 0000000000045790
+ .file bash
+ endbr64
+ mov eax, dword [rdi + CONST]
+ mov edx, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL4
+ cmp eax, esi
+ cjmp LABEL6
+ test edx, edx
+ cjmp LABEL8
+LABEL20:
+ cmp esi, edx
+ cjmp LABEL10
+ ret
+LABEL6:
+ mov dword [rdi + CONST], CONST
+ test edx, edx
+ cjmp LABEL14
+ cmp eax, edx
+ cjmp LABEL14
+LABEL10:
+ mov dword [rdi + CONST], CONST
+LABEL14:
+ jmp CONST
+LABEL4:
+ test edx, edx
+ cjmp LABEL20
+ ret
+LABEL8:
+ ret

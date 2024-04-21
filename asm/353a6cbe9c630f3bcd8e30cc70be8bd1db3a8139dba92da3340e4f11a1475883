@@ -1,0 +1,15 @@
+ .name sym.rl_kill_full_line
+ .offset 00000000000d0170
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov esi, dword [rip + CONST]
+ xor edi, edi
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

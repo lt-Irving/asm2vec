@@ -1,0 +1,14 @@
+ .name sym.sh_get_home_dir
+ .offset 000000000004d820
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ add rsp, CONST
+ ret

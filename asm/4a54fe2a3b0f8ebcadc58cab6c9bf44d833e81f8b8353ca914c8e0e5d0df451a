@@ -1,0 +1,19 @@
+ .name fcn.00017c40
+ .offset 0000000000017c40
+ .file cp
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, qword [rbx + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+ pop rbx
+ jmp CONST
+LABEL9:
+ pop rbx
+ ret

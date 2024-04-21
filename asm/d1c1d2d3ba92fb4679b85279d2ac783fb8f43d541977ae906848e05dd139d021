@@ -1,0 +1,82 @@
+ .name sym.mk_msgstr
+ .offset 000000000008a490
+ .file bash
+ endbr64
+ push rbp
+ mov rdx, rdi
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ xor edi, edi
+ sub rsp, CONST
+ test rbx, rbx
+ cjmp LABEL9
+ jmp LABEL10
+LABEL22:
+ lea ecx, [rdi + CONST]
+ add edi, CONST
+ cmp al, CONST
+ cmovne edi, ecx
+LABEL24:
+ add rdx, CONST
+LABEL9:
+ movzx eax, byte [rdx]
+ test al, al
+ cjmp LABEL18
+ cmp al, CONST
+ cjmp LABEL20
+ cmp al, CONST
+ cjmp LABEL22
+LABEL20:
+ add edi, CONST
+ jmp LABEL24
+LABEL18:
+ add edi, CONST
+ movsxd rdi, edi
+ call CONST
+ mov byte [rax], CONST
+ lea rcx, [rax + CONST]
+ jmp LABEL30
+LABEL46:
+ lea r8, [rcx + CONST]
+ cmp edx, CONST
+ cjmp LABEL33
+ cmp edx, CONST
+ cjmp LABEL33
+ mov rdx, r8
+ mov r8, rcx
+ mov rcx, rdx
+LABEL56:
+ mov byte [r8], dil
+LABEL51:
+ add rbx, CONST
+LABEL30:
+ movsx edx, byte [rbx]
+ mov edi, edx
+ test edx, edx
+ cjmp LABEL44
+ cmp edx, CONST
+ cjmp LABEL46
+ mov dword [rcx], CONST
+ add rcx, CONST
+ mov byte [rcx + CONST], CONST
+ test rbp, rbp
+ cjmp LABEL51
+ mov dword [rbp], CONST
+ jmp LABEL51
+LABEL33:
+ mov byte [rcx], CONST
+ add rcx, CONST
+ jmp LABEL56
+LABEL10:
+ mov edi, CONST
+ call CONST
+ mov byte [rax], CONST
+ lea rcx, [rax + CONST]
+LABEL44:
+ mov edx, CONST
+ mov word [rcx], dx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

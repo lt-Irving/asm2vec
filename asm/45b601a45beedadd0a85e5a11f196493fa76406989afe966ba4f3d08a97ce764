@@ -1,0 +1,55 @@
+ .name sym.string_to_rlimtype
+ .offset 000000000003e840
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ jmp LABEL3
+LABEL11:
+ cmp al, CONST
+ cjmp LABEL5
+ cmp al, CONST
+ cjmp LABEL7
+LABEL5:
+ add rdi, CONST
+LABEL2:
+ movsx eax, byte [rdi]
+ test al, al
+ cjmp LABEL11
+LABEL3:
+ xor r8d, r8d
+ mov rax, r8
+ ret
+LABEL7:
+ cmp al, CONST
+ lea edx, [rax + CONST]
+ sete sil
+ and edx, CONST
+ cjmp LABEL19
+ movsx eax, byte [rdi + CONST]
+ movzx esi, sil
+ lea rdx, [rdi + CONST]
+LABEL42:
+ xor r8d, r8d
+ jmp LABEL24
+LABEL33:
+ sub eax, CONST
+ lea rcx, [r8 + r8*CONST]
+ add rdx, CONST
+ cdqe
+ lea r8, [rax + rcx*CONST]
+ movsx eax, byte [rdx]
+LABEL24:
+ lea ecx, [rax + CONST]
+ cmp cl, CONST
+ cjmp LABEL33
+ mov rax, r8
+ neg rax
+ test esi, esi
+ cmovne r8, rax
+ mov rax, r8
+ ret
+LABEL19:
+ mov rdx, rdi
+ xor esi, esi
+ jmp LABEL42

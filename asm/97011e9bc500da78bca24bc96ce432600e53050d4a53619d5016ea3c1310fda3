@@ -1,0 +1,53 @@
+ .name fcn.00003d60
+ .offset 0000000000003d60
+ .file csplit
+ push r13
+ push r12
+ push rbp
+ mov rbp, rsi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r12, rsp
+ mov rsi, r12
+ call CONST
+ mov rdi, rax
+ call CONST
+ xor edi, edi
+ mov r13, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbx, rax
+ call CONST
+ mov r8, rbx
+ mov rcx, r13
+ mov esi, CONST
+ mov rdi, qword [rip + CONST]
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ test rbp, rbp
+ cjmp LABEL28
+ mov rsi, r12
+ mov rdi, rbp
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov r12, rax
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rcx, r12
+ mov esi, CONST
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+LABEL47:
+ call CONST
+LABEL28:
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ call CONST
+ jmp LABEL47

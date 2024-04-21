@@ -1,0 +1,27 @@
+ .name sym.getsgnam
+ .offset 000000000000d6a0
+ .file chfn
+ endbr64
+ push r12
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ jmp LABEL6
+LABEL15:
+ mov rsi, qword [r12]
+ mov rdi, rbx
+ call CONST
+ test eax, eax
+ cjmp LABEL11
+LABEL6:
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL15
+LABEL11:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret

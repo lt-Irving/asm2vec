@@ -1,0 +1,77 @@
+ .name sym._obstack_newchunk
+ .offset 00000000000065c0
+ .file dircolors
+ endbr64
+ push r14
+ xor eax, eax
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov r14, qword [rdi + CONST]
+ sub r14, qword [rdi + CONST]
+ mov rbp, qword [rdi + CONST]
+ add rsi, r14
+ mov rdx, r14
+ setb al
+ add rsi, qword [rdi + CONST]
+ setb cl
+ shr rdx, CONST
+ cmp qword [rdi], rsi
+ lea r12, [rsi + rdx + CONST]
+ cmovae rsi, qword [rdi]
+ cmp rsi, r12
+ cmovae r12, rsi
+ test rax, rax
+ cjmp LABEL22
+ movzx ecx, cl
+ test rcx, rcx
+ cjmp LABEL22
+ mov rsi, r12
+ mov rbx, rdi
+ call CONST
+ mov r13, rax
+ test rax, rax
+ cjmp LABEL22
+ lea rsi, [rax + r12]
+ mov qword [rbx + CONST], rax
+ mov rdx, r14
+ mov qword [rax + CONST], rbp
+ mov qword [rbx + CONST], rsi
+ mov qword [rax], rsi
+ mov rax, qword [rbx + CONST]
+ mov rsi, qword [rbx + CONST]
+ lea r12, [r13 + rax + CONST]
+ not rax
+ and r12, rax
+ mov rdi, r12
+ call CONST
+ test byte [rbx + CONST], CONST
+ cjmp LABEL46
+ mov rax, qword [rbx + CONST]
+ lea rdx, [rbp + rax + CONST]
+ not rax
+ and rax, rdx
+ cmp qword [rbx + CONST], rax
+ cjmp LABEL52
+LABEL46:
+ add r14, r12
+ and byte [rbx + CONST], CONST
+ mov qword [rbx + CONST], r12
+ mov qword [rbx + CONST], r14
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL52:
+ mov rax, qword [rbp + CONST]
+ mov rsi, rbp
+ mov rdi, rbx
+ mov qword [r13 + CONST], rax
+ call CONST
+ jmp LABEL46
+LABEL22:
+ call qword [rip + CONST]
+ nop dword [rax + rax]

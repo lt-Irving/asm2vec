@@ -1,0 +1,52 @@
+ .name fcn.000036d0
+ .offset 00000000000036d0
+ .file base64
+ endbr64
+ push r14
+ push r13
+ push r12
+ movabs r12, CONST
+ push rbp
+ push rbx
+ mov rbx, rdx
+ lea rdx, [rsi + CONST]
+ mov rax, rdx
+ mul r12
+ shr rdx, CONST
+ lea r12, [rdx*CONST]
+ lea r14, [r12 + CONST]
+ cmp rsi, r14
+ cjmp LABEL15
+ mov qword [rbx], CONST
+ xor r12d, r12d
+LABEL45:
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL15:
+ mov r13, rdi
+ mov rdi, r14
+ mov rbp, rsi
+ call CONST
+ mov qword [rbx], rax
+ mov rdx, rax
+ test rax, rax
+ cjmp LABEL32
+ mov rcx, r14
+ mov rsi, rbp
+ mov rdi, r13
+ call CONST
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL32:
+ mov r12, r14
+ jmp LABEL45

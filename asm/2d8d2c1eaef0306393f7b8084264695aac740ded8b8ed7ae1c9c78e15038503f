@@ -1,0 +1,43 @@
+ .name fcn.0000ca30
+ .offset 000000000000ca30
+ .file dmesg
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ cmp byte [rdi], CONST
+ cjmp LABEL8
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ xor ebx, ebx
+ lea r12, [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+LABEL23:
+ add rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL8
+ mov rsi, qword [r12 + rbx*CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL23
+LABEL15:
+ mov eax, ebx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ mov eax, CONST
+ ret

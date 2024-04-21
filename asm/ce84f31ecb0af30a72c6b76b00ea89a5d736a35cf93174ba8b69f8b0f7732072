@@ -1,0 +1,94 @@
+ .name sym.bash_servicename_completion_function
+ .offset 0000000000088cb0
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ test esi, esi
+ cjmp LABEL7
+ mov rbp, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL11
+ call CONST
+LABEL11:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ xor edi, edi
+ mov dword [rip + CONST], eax
+ call CONST
+ nop dword [rax]
+LABEL7:
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL30
+ movsxd r13, dword [rip + CONST]
+ mov rbp, qword [rbx]
+ test r13d, r13d
+ cjmp LABEL34
+ mov r14, qword [rip + CONST]
+ movzx r12d, byte [r14]
+ cmp r12b, byte [rbp]
+ cjmp LABEL38
+LABEL73:
+ mov rbx, qword [rbx + CONST]
+ mov rbp, qword [rbx]
+ test rbp, rbp
+ cjmp LABEL42
+ jmp LABEL7
+LABEL49:
+ mov rbp, qword [rbx + CONST]
+ add rbx, CONST
+ test rbp, rbp
+ cjmp LABEL7
+LABEL42:
+ cmp r12b, byte [rbp]
+ cjmp LABEL49
+ mov rdx, r13
+ mov rsi, rbp
+ mov rdi, r14
+ call CONST
+ test eax, eax
+ cjmp LABEL49
+LABEL34:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ pop rbx
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL38:
+ movsxd rdx, r13d
+ mov rsi, rbp
+ mov rdi, r14
+ call CONST
+ test eax, eax
+ cjmp LABEL73
+ jmp LABEL34
+LABEL30:
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

@@ -1,0 +1,42 @@
+ .name fcn.00009cd0
+ .offset 0000000000009cd0
+ .file dash
+ endbr64
+ lea rcx, [rip + CONST]
+ mov edi, dword [rip + CONST]
+ lea rsi, [rcx + CONST]
+ nop dword [rax + rax]
+LABEL23:
+ mov rax, qword [rcx]
+ test rax, rax
+ cjmp LABEL7
+ jmp LABEL8
+LABEL16:
+ cmp dx, CONST
+ cjmp LABEL10
+LABEL27:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL8
+LABEL7:
+ movzx edx, word [rax + CONST]
+ test dx, dx
+ cjmp LABEL16
+ mov byte [rax + CONST], CONST
+LABEL31:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL7
+LABEL8:
+ add rcx, CONST
+ cmp rcx, rsi
+ cjmp LABEL23
+ ret
+LABEL10:
+ mov rdx, qword [rax + CONST]
+ test byte [rdx + CONST], CONST
+ cjmp LABEL27
+ test edi, edi
+ cjmp LABEL27
+ mov byte [rax + CONST], CONST
+ jmp LABEL31

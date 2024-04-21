@@ -1,0 +1,29 @@
+ .name sym.array_assign_list
+ .offset 000000000007c200
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ test rsi, rsi
+ cjmp LABEL6
+ mov rbx, rsi
+ xor ebp, ebp
+ nop dword [rax]
+LABEL18:
+ mov rax, qword [rbx + CONST]
+ mov rsi, rbp
+ mov rdi, r12
+ add rbp, CONST
+ mov rdx, qword [rax]
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL18
+LABEL6:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

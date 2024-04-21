@@ -1,0 +1,40 @@
+ .name sym.phash_remove
+ .offset 0000000000073460
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov rsi, qword [rip + CONST]
+ xor eax, eax
+ test rsi, rsi
+ cjmp LABEL3
+ push r12
+ xor edx, edx
+ push rbp
+ sub rsp, CONST
+ call CONST
+ mov rbp, rax
+ mov eax, CONST
+ test rbp, rbp
+ cjmp LABEL16
+ mov r12, qword [rbp + CONST]
+ test r12, r12
+ cjmp LABEL19
+ mov rdi, qword [r12]
+ call CONST
+ mov rdi, r12
+ call CONST
+LABEL19:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+LABEL16:
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL3:
+ ret

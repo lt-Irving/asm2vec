@@ -1,0 +1,36 @@
+ .name sym.make_until_command
+ .offset 0000000000040950
+ .file bash
+LABEL31:
+ push r13
+ mov r13, rsi
+ push r12
+ mov r12, rdx
+ push rbp
+ mov ebp, edi
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov qword [rax + CONST], r13
+ mov rbx, rax
+ mov qword [rax + CONST], r12
+ mov dword [rax], CONST
+ call CONST
+ mov dword [rax], ebp
+ mov qword [rax + CONST], rbx
+ mov dword [rax + CONST], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+ endbr64
+ mov rdx, rsi
+ mov rsi, rdi
+ mov edi, CONST
+ jmp LABEL31

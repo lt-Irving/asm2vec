@@ -1,0 +1,19 @@
+ .name sym.posix_initialize
+ .offset 000000000003e720
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ ret
+LABEL2:
+ mov dword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ ret

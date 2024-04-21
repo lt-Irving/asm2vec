@@ -1,0 +1,35 @@
+ .name fcn.0000b400
+ .offset 000000000000b400
+ .file diff
+LABEL27:
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ mov rdx, rbp
+ sub rsp, CONST
+ mov rsi, qword [rdi + CONST]
+ add rsi, qword [rdi + CONST]
+ mov edi, dword [rdi]
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL11
+ add qword [rbx + CONST], rax
+ cmp rbp, rax
+ seta byte [rbx + CONST]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL11:
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ nop dword [rax + rax]
+ test rsi, rsi
+ cjmp LABEL23
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL25
+LABEL23:
+ ret
+LABEL25:
+ jmp LABEL27

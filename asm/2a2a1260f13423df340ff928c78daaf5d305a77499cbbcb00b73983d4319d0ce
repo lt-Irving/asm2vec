@@ -1,0 +1,64 @@
+ .name sym.check_identifier
+ .offset 000000000003eb80
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ mov rbp, qword [rdi]
+ test byte [rdi + CONST], CONST
+ cjmp LABEL6
+ movzx eax, byte [rbp]
+ test al, al
+ cjmp LABEL6
+ mov rdx, rbp
+ jmp LABEL11
+LABEL18:
+ movzx eax, byte [rdx + CONST]
+ add rdx, CONST
+ test al, al
+ cjmp LABEL6
+LABEL11:
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL18
+ test esi, esi
+ cjmp LABEL20
+LABEL31:
+ mov r12d, CONST
+LABEL40:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL20:
+ mov rdi, rbp
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL31
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL40
+LABEL6:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ xor r12d, r12d
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret

@@ -1,0 +1,36 @@
+ .name sym._rl_print_prefix_color
+ .offset 00000000000dc7d0
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL2
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ test al, al
+ cjmp LABEL7
+LABEL27:
+ mov rcx, qword [rip + CONST]
+ mov rsi, qword [rip + CONST]
+ mov edx, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL7:
+ call CONST
+ jmp LABEL27
+LABEL2:
+ mov eax, CONST
+ ret

@@ -1,0 +1,15 @@
+ .name sym.print_command
+ .offset 0000000000043860
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ xor eax, eax
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST

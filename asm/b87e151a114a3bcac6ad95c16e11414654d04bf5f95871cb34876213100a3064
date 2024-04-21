@@ -1,0 +1,47 @@
+ .name sym.rl_history_substr_search_forward
+ .offset 00000000000bd710
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ push r12
+ lea rdx, [rip + CONST]
+ mov r12d, esi
+ push rbp
+ mov ebp, edi
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ cmp rax, rdx
+ cjmp LABEL11
+ lea rdx, [rip + CONST]
+ cmp rax, rdx
+ cjmp LABEL11
+ xor edi, edi
+ call CONST
+LABEL11:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL19
+ xor esi, esi
+ mov eax, ebp
+ test ebp, ebp
+ mov edi, ebp
+ setg sil
+ sar eax, CONST
+ add rsp, CONST
+ xor edi, eax
+ pop rbp
+ lea esi, [rsi + rsi + CONST]
+ pop r12
+ sub edi, eax
+ jmp CONST
+LABEL2:
+ xor eax, eax
+ ret
+LABEL19:
+ add rsp, CONST
+ mov esi, r12d
+ mov edi, ebp
+ pop rbp
+ pop r12
+ jmp CONST

@@ -1,0 +1,29 @@
+ .name fcn.00008fb0
+ .offset 0000000000008fb0
+ .file dash
+ add dword [rip + CONST], CONST
+ push rbp
+ mov rax, qword [rip + CONST]
+ mov rbp, qword [rax]
+ mov rdx, qword [rbp]
+ cmp word [rbp + CONST], CONST
+ mov qword [rax], rdx
+ cjmp LABEL7
+LABEL19:
+ mov rdi, rbp
+ call CONST
+ sub dword [rip + CONST], CONST
+ cjmp LABEL11
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL14
+LABEL11:
+ pop rbp
+ ret
+LABEL7:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ jmp LABEL19
+LABEL14:
+ pop rbp
+ jmp CONST

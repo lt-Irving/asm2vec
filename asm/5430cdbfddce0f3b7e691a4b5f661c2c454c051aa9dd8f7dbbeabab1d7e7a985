@@ -1,0 +1,46 @@
+ .name sym.importable_function_name
+ .offset 000000000003ec40
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ mov esi, CONST
+ sub rsp, CONST
+ call CONST
+ mov r8, rax
+ xor eax, eax
+ test r8, r8
+ cjmp LABEL11
+LABEL18:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL11:
+ movzx edx, byte [rbp]
+ cmp dl, CONST
+ cjmp LABEL18
+ lea rcx, [rip + CONST]
+ mov eax, dword [rcx + rdx*CONST]
+ and eax, CONST
+ cjmp LABEL22
+ movzx edx, byte [rbp + rbx + CONST]
+ test byte [rcx + rdx*CONST + CONST], CONST
+ cjmp LABEL18
+ mov edx, dword [rip + CONST]
+ mov eax, CONST
+ test edx, edx
+ cjmp LABEL18
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL22:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret

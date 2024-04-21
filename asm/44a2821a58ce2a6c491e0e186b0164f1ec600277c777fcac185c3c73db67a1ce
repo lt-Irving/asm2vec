@@ -1,0 +1,39 @@
+ .name sym.clean_itemlist
+ .offset 000000000008e1e0
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rbp, qword [rdi + CONST]
+ mov eax, dword [rdi]
+ test rbp, rbp
+ cjmp LABEL8
+ test al, CONST
+ cjmp LABEL10
+ test al, CONST
+ cjmp LABEL12
+LABEL25:
+ mov rdi, rbp
+ call CONST
+ mov eax, dword [rbx]
+LABEL8:
+ and eax, CONST
+ mov qword [rbx + CONST], CONST
+ mov dword [rbx], eax
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL12:
+ mov rdi, qword [rbp]
+ call CONST
+ jmp LABEL25
+LABEL10:
+ mov rdi, qword [rbp]
+ call CONST
+ mov eax, dword [rbx]
+ test al, CONST
+ cjmp LABEL25
+ jmp LABEL12

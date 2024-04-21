@@ -1,0 +1,20 @@
+ .name sym._rl_isearch_callback
+ .offset 00000000000c8730
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ mov esi, dword [rbp + CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ xor eax, eax
+ pop rbp
+ ret
+LABEL8:
+ mov rdi, rbp
+ mov esi, eax
+ pop rbp
+ jmp CONST

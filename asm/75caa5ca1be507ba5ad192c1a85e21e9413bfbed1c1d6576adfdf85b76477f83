@@ -1,0 +1,17 @@
+ .name sym.undo_partial_redirects
+ .offset 00000000000452a0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, qword [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL4
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov qword [rip + CONST], CONST
+LABEL4:
+ pop rbp
+ ret

@@ -1,0 +1,40 @@
+ .name sym.rl_redraw_prompt_last_line
+ .offset 00000000000ca3b0
+ .file bash
+LABEL31:
+ push rbx
+ mov rbx, qword [rip + CONST]
+ call CONST
+ lea r9, [rip + CONST]
+ lea r8, [rip + CONST]
+ mov esi, CONST
+ lea rcx, [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov qword [rip + CONST], rdi
+ call CONST
+ mov qword [rip + CONST], CONST
+ mov rdi, rax
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL15
+ call CONST
+LABEL15:
+ mov dword [rip + CONST], eax
+ call CONST
+ mov qword [rip + CONST], rbx
+ pop rbx
+ jmp CONST
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ mov esi, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL28
+ lea rdi, [rax + CONST]
+ add rsp, CONST
+ jmp LABEL31
+LABEL28:
+ add rsp, CONST
+ jmp CONST

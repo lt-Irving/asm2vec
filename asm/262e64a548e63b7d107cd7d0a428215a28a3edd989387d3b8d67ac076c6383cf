@@ -1,0 +1,36 @@
+ .name sym.coproc_fdclose
+ .offset 00000000000457f0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ mov edi, dword [rdi + CONST]
+ test edi, edi
+ cjmp LABEL6
+ cmp esi, edi
+ cjmp LABEL8
+LABEL6:
+ mov edi, dword [rbp + CONST]
+ test edi, edi
+ cjmp LABEL11
+ cmp esi, edi
+ cjmp LABEL13
+LABEL11:
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL13:
+ call CONST
+ mov dword [rbp + CONST], CONST
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL8:
+ mov dword [rsp + CONST], esi
+ call CONST
+ mov dword [rbp + CONST], CONST
+ mov esi, dword [rsp + CONST]
+ jmp LABEL6

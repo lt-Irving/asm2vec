@@ -1,0 +1,73 @@
+ .name sym.bg_builtin
+ .offset 0000000000098e80
+ .file bash
+ endbr64
+ push r12
+ mov r8, rdi
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL6
+ mov rax, qword [rdi + CONST]
+ test rax, rax
+ cjmp LABEL6
+ mov rsi, qword [rax]
+ cmp byte [rsi], CONST
+ cjmp LABEL12
+LABEL6:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL15
+ mov rdi, r8
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL20
+ mov rbx, qword [rip + CONST]
+ mov ebp, CONST
+ jmp LABEL23
+LABEL33:
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL26
+LABEL23:
+ xor esi, esi
+ mov rdi, rbx
+ call CONST
+ cmp eax, CONST
+ cmove r12d, ebp
+ test rbx, rbx
+ cjmp LABEL33
+LABEL26:
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL15:
+ mov r12d, CONST
+ xor edi, edi
+ call CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL6
+ call CONST
+ mov r12d, CONST
+ jmp LABEL26
+LABEL20:
+ mov r12d, CONST
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret

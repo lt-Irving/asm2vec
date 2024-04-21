@@ -1,0 +1,71 @@
+ .name sym.get_current_options
+ .offset 000000000009f2b0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ mov ebp, CONST
+ push rbx
+ lea rbx, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ movsxd rdi, eax
+ mov r14, rdi
+ add rdi, CONST
+ call CONST
+ mov edi, CONST
+ lea r8, [rip + CONST]
+ mov r13, rax
+ jmp LABEL19
+LABEL35:
+ mov rax, qword [rbx + CONST]
+ test rax, rax
+ cjmp LABEL22
+ mov rdi, r8
+ call rax
+LABEL61:
+ mov byte [r13 + rbp + CONST], al
+ mov r15d, ebp
+ add rbx, CONST
+ add rbp, CONST
+ test r12, r12
+ cjmp LABEL30
+LABEL43:
+ mov r8, r12
+ mov edi, dword [rbx + CONST]
+ mov r12, qword [rbx + CONST]
+LABEL19:
+ test edi, edi
+ cjmp LABEL35
+ call CONST
+ mov r15d, ebp
+ add rbx, CONST
+ mov eax, dword [rax]
+ mov byte [r13 + rbp + CONST], al
+ add rbp, CONST
+ test r12, r12
+ cjmp LABEL43
+LABEL30:
+ movsxd rdi, r15d
+ add r14d, r15d
+ add rdi, r13
+ movsxd r14, r14d
+ call CONST
+ mov byte [r13 + r14], CONST
+ add rsp, CONST
+ mov rax, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL22:
+ mov rax, qword [rbx]
+ movzx eax, byte [rax]
+ jmp LABEL61

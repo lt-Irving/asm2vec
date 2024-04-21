@@ -1,0 +1,25 @@
+ .name sym.source_file
+ .offset 0000000000096730
+ .file bash
+ endbr64
+ cmp esi, CONST
+ mov eax, dword [rip + CONST]
+ push r12
+ sbb esi, esi
+ xor sil, sil
+ add esi, CONST
+ test eax, eax
+ cjmp LABEL8
+ mov eax, esi
+ mov edx, dword [rip + CONST]
+ or eax, CONST
+ or edx, dword [rip + CONST]
+ cmove esi, eax
+LABEL8:
+ xor eax, eax
+ call CONST
+ mov r12d, eax
+ call CONST
+ mov eax, r12d
+ pop r12
+ ret

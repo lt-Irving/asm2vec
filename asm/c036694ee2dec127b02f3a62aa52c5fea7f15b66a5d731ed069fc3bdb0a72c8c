@@ -1,0 +1,41 @@
+ .name sym.sh_mktmpfp
+ .offset 00000000000b1fb0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov ebx, esi
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+ mov ebp, eax
+ and ebx, CONST
+ lea rax, [rip + CONST]
+ lea rsi, [rip + CONST]
+ mov edi, ebp
+ cmove rsi, rax
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL17
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL17:
+ mov edi, ebp
+ call CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ ret

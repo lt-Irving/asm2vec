@@ -1,0 +1,66 @@
+ .name fcn.00017030
+ .offset 0000000000017030
+ .file dir
+ endbr64
+ push r14
+ mov r14, rsi
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdx
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL9
+ mov r12, rdi
+ call CONST
+ mov r13, rax
+ test rax, rax
+ cjmp LABEL14
+ mov rsi, rbp
+ mov rdi, r14
+ call CONST
+ test rax, rax
+ cjmp LABEL19
+ mov rsi, rbp
+ mov rdi, r12
+ call CONST
+ test al, al
+ cjmp LABEL19
+ cmp r13, CONST
+ cjmp LABEL26
+LABEL48:
+ add rsp, CONST
+ mov rax, rbp
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL19:
+ cmp r13, CONST
+ cjmp LABEL14
+ mov rdi, r13
+ call CONST
+LABEL14:
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL26:
+ mov rdi, r13
+ call CONST
+ test al, al
+ cjmp LABEL48
+ jmp LABEL14
+LABEL9:
+ add rsp, CONST
+ mov rdi, r14
+ mov rsi, rdx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST

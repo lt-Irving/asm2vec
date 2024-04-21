@@ -1,0 +1,19 @@
+ .name fcn.00008370
+ .offset 0000000000008370
+ .file cp
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ mov edx, dword [rax]
+ cmp edx, CONST
+ sete al
+ cmp edx, CONST
+ sete dl
+ or al, dl
+ cjmp LABEL10
+ movzx eax, byte [rbx + CONST]
+ xor eax, CONST
+LABEL10:
+ pop rbx
+ ret

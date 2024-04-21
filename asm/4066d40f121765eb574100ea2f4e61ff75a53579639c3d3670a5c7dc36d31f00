@@ -1,0 +1,16 @@
+ .name sym.set_default_lang
+ .offset 000000000008a310
+ .file bash
+ endbr64
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rax
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ mov rsi, rax
+ jmp CONST

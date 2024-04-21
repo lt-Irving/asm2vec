@@ -1,0 +1,50 @@
+ .name sym.print_assignment
+ .offset 000000000004d960
+ .file bash
+ endbr64
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL2
+ push rbp
+ mov eax, dword [rdi + CONST]
+ mov rbp, rdi
+ test al, CONST
+ cjmp LABEL7
+ test al, CONST
+ cjmp LABEL9
+ test al, CONST
+ cjmp LABEL11
+ xor esi, esi
+ pop rbp
+ jmp CONST
+LABEL7:
+ mov rdx, qword [rdi]
+ xor eax, eax
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ test byte [rbp + CONST], CONST
+ cjmp LABEL21
+ mov rdi, rbp
+ call CONST
+LABEL21:
+ mov edi, CONST
+ pop rbp
+ jmp CONST
+LABEL11:
+ mov rdx, qword [rdi]
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ xor eax, eax
+ call CONST
+ mov rdi, rbp
+ mov esi, CONST
+ call CONST
+ mov edi, CONST
+ pop rbp
+ jmp CONST
+LABEL9:
+ xor esi, esi
+ pop rbp
+ jmp CONST
+LABEL2:
+ ret

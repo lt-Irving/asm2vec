@@ -1,0 +1,23 @@
+ .name sym.unsetenv
+ .offset 00000000000afc40
+ .file bash
+ endbr64
+ push rbp
+ cmp byte [rdi], CONST
+ cjmp LABEL3
+ mov esi, CONST
+ mov rbp, rdi
+ call CONST
+ test rax, rax
+ cjmp LABEL3
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL3:
+ call CONST
+ mov dword [rax], CONST
+ mov eax, CONST
+ pop rbp
+ ret

@@ -1,0 +1,31 @@
+ .name sym.make_if_command
+ .offset 00000000000408c0
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdi
+ mov edi, CONST
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdx
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov qword [rax + CONST], r13
+ mov rbx, rax
+ mov qword [rax + CONST], r12
+ mov qword [rax + CONST], rbp
+ mov dword [rax], CONST
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

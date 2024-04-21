@@ -1,0 +1,23 @@
+ .name sym.delete_all_contexts
+ .offset 0000000000051d60
+ .file bash
+ endbr64
+ cmp rdi, qword [rip + CONST]
+ push rbx
+ mov rbx, rdi
+ cjmp LABEL4
+ nop dword [rax]
+LABEL10:
+ mov rdi, rbx
+ mov rbx, qword [rbx + CONST]
+ call CONST
+ cmp qword [rip + CONST], rbx
+ cjmp LABEL10
+LABEL4:
+ mov rdi, qword [rbx + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rax, qword [rip + CONST]
+ pop rbx
+ mov qword [rip + CONST], rax
+ ret

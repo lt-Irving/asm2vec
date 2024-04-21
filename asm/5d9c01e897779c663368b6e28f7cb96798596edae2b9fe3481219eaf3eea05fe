@@ -1,0 +1,29 @@
+ .name sym.sv_histchars
+ .offset 000000000004eb80
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL4
+ movzx edx, byte [rax]
+ mov byte [rip + CONST], dl
+ test dl, dl
+ cjmp LABEL8
+ movzx edx, byte [rax + CONST]
+ test dl, dl
+ cjmp LABEL8
+ movzx eax, byte [rax + CONST]
+ mov byte [rip + CONST], dl
+ test al, al
+ cjmp LABEL8
+ mov byte [rip + CONST], al
+LABEL8:
+ add rsp, CONST
+ ret
+LABEL4:
+ mov byte [rip + CONST], CONST
+ mov byte [rip + CONST], CONST
+ mov byte [rip + CONST], CONST
+ add rsp, CONST
+ ret

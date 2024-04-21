@@ -1,0 +1,86 @@
+ .name sym._rl_rubout_char
+ .offset 00000000000d5440
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ push r12
+ push rbp
+ mov ebp, dword [rip + CONST]
+ push rbx
+ test ebp, ebp
+ cjmp LABEL8
+ cmp edi, CONST
+ cjmp LABEL10
+ mov r12d, dword [rip + CONST]
+ test r12d, r12d
+ cjmp LABEL13
+LABEL10:
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov edi, ebp
+ xor r12d, r12d
+ call CONST
+LABEL40:
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL13:
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov r8, qword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL28
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL31
+LABEL28:
+ lea edi, [rsi + CONST]
+ mov esi, ebp
+ movsxd rax, edi
+ mov dword [rip + CONST], edi
+ movzx ebx, byte [r8 + rax]
+ call CONST
+ mov ebp, dword [rip + CONST]
+ cmp ebp, dword [rip + CONST]
+ cjmp LABEL40
+ call CONST
+ mov r8, rax
+ movzx eax, bl
+ mov rdx, qword [r8]
+ test byte [rdx + rax*CONST + CONST], CONST
+ cjmp LABEL40
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL49
+ xor r12d, r12d
+ jmp LABEL40
+LABEL8:
+ call CONST
+ mov r12d, CONST
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret
+LABEL2:
+ neg edi
+ jmp CONST
+LABEL31:
+ mov rdi, r8
+ mov edx, CONST
+ call CONST
+ mov esi, ebp
+ mov edi, eax
+ mov dword [rip + CONST], eax
+ call CONST
+ jmp LABEL40
+LABEL49:
+ movzx edi, bl
+ mov esi, ebp
+ call CONST
+ mov edi, eax
+ call CONST
+ jmp LABEL40

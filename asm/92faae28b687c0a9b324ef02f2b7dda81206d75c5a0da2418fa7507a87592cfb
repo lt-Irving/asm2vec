@@ -1,0 +1,24 @@
+ .name fcn.00003650
+ .offset 0000000000003650
+ .file cmp
+ push rbx
+ lea rax, [rip + CONST]
+ movsxd rbx, edi
+ cmp byte [rax + rbx], CONST
+ cjmp LABEL4
+ lea rax, [rip + CONST]
+ mov rax, qword [rax + rbx*CONST]
+ pop rbx
+ ret
+LABEL4:
+ mov byte [rax + rbx], CONST
+ lea rax, [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rax + rbx*CONST]
+ lea rax, [rip + CONST]
+ mov edi, dword [rax + rbx*CONST]
+ call CONST
+ lea rdx, [rip + CONST]
+ mov qword [rdx + rbx*CONST], rax
+ pop rbx
+ ret

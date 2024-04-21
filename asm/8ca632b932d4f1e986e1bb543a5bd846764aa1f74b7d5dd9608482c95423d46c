@@ -1,0 +1,37 @@
+ .name fcn.0000c8c0
+ .offset 000000000000c8c0
+ .file dir
+ endbr64
+ push r12
+ mov r12, rsi
+ mov esi, CONST
+ push rbp
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [r12]
+ call CONST
+ mov rdi, qword [rbx]
+ mov esi, CONST
+ mov rbp, rax
+ call CONST
+ mov rsi, rax
+ lea rax, [rip + CONST]
+ test rsi, rsi
+ cmove rsi, rax
+ test rbp, rbp
+ cmove rbp, rax
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL22
+ mov rsi, qword [rbx]
+ mov rdi, qword [r12]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL22:
+ pop rbx
+ pop rbp
+ pop r12
+ ret

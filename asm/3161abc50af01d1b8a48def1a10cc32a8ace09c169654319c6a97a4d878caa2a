@@ -1,0 +1,20 @@
+ .name fcn.000033f7
+ .offset 00000000000033f7
+ .file apt-config
+LABEL10:
+ mov rdi, qword [rbp + CONST]
+ cmp rdi, qword [rbp + CONST]
+ je CONST
+ call CONST
+ jmp CONST
+LABEL13:
+ mov rdi, qword [rbp + CONST]
+ cmp rdi, rbx
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ mov rbx, r14
+ jmp LABEL10
+ endbr64
+ mov r14, rax
+ jmp LABEL13

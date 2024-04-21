@@ -1,0 +1,13 @@
+ .name fcn.00016310
+ .offset 0000000000016310
+ .file dpkg-deb
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi + CONST]
+ call CONST
+ mov qword [rbx + CONST], CONST
+ mov qword [rbx + CONST], CONST
+ mov qword [rbx], CONST
+ pop rbx
+ ret

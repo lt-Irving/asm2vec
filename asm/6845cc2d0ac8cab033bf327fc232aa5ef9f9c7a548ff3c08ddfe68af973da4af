@@ -1,0 +1,49 @@
+ .name sym.rl_restore_prompt
+ .offset 00000000000ca220
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL8
+ call CONST
+LABEL8:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL12
+ call CONST
+LABEL12:
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ ret

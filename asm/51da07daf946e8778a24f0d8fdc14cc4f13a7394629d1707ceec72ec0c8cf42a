@@ -1,0 +1,94 @@
+ .name sym.change_flag
+ .offset 00000000000578c0
+ .file bash
+ endbr64
+ mov r8d, dword [rip + CONST]
+ push r12
+ test r8d, r8d
+ cjmp LABEL4
+ cmp edi, CONST
+ cjmp LABEL4
+ cmp esi, CONST
+ cjmp LABEL8
+LABEL4:
+ lea rdx, [rip + CONST]
+ xor ecx, ecx
+ mov eax, CONST
+ jmp LABEL12
+LABEL19:
+ movsx eax, byte [rdx]
+ add rdx, CONST
+ add ecx, CONST
+ test al, al
+ cjmp LABEL8
+LABEL12:
+ cmp edi, eax
+ cjmp LABEL19
+ movsxd rcx, ecx
+ lea rax, [rip + CONST]
+ shl rcx, CONST
+ mov rax, qword [rax + rcx + CONST]
+ test rax, rax
+ cjmp LABEL8
+ lea edx, [rsi + CONST]
+ and edx, CONST
+ cjmp LABEL8
+ xor r8d, r8d
+ cmp esi, CONST
+ mov r12d, dword [rax]
+ sete r8b
+ sub edi, CONST
+ mov dword [rax], r8d
+ cmp edi, CONST
+ cjmp LABEL36
+ lea rdx, [rip + CONST]
+ movsxd rax, dword [rdx + rdi*CONST]
+ add rax, rdx
+ notrack jmp rax
+ cmp esi, CONST
+ cjmp LABEL36
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL36
+ mov rdi, qword [rip + CONST]
+ call CONST
+LABEL36:
+ mov eax, r12d
+ pop r12
+ ret
+LABEL8:
+ mov r12d, CONST
+ mov eax, r12d
+ pop r12
+ ret
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, r12d
+ pop r12
+ ret
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cmp esi, CONST
+ cjmp LABEL36
+ call CONST
+ jmp LABEL36
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL36
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ jmp LABEL36
+ mov edi, r8d
+ call CONST
+ mov eax, r12d
+ pop r12
+ ret
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL36
+ mov dword [rip + CONST], CONST
+ jmp LABEL36
+ cmp esi, CONST
+ cjmp LABEL36
+ call CONST
+ jmp LABEL36

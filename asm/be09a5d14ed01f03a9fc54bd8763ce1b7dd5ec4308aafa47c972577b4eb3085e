@@ -1,0 +1,22 @@
+ .name sym._rl_vi_domove_callback
+ .offset 00000000000bb250
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ or qword [rip + CONST], CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ mov r8d, CONST
+ mov dword [rbp + CONST], eax
+ test eax, eax
+ cjmp LABEL9
+ mov rdi, rbp
+ call CONST
+ xor r8d, r8d
+ test eax, eax
+ setne r8b
+LABEL9:
+ mov eax, r8d
+ pop rbp
+ ret

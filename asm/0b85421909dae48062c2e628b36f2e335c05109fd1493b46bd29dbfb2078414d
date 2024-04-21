@@ -1,0 +1,20 @@
+ .name fcn.00006960
+ .offset 0000000000006960
+ .file dash
+ endbr64
+ sub rsp, CONST
+ mov qword [rip + CONST], rdi
+ mov qword [rip + CONST], rdi
+ call CONST
+ xor esi, esi
+ mov edi, eax
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL10
+ add rsp, CONST
+ ret
+LABEL10:
+ lea rdi, [rip + CONST]
+ call CONST
+ nop

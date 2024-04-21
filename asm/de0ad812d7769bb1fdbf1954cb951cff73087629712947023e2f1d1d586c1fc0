@@ -1,0 +1,21 @@
+ .name sym.restore_pipestatus_array
+ .offset 00000000000541d0
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ test byte [rax + CONST], CONST
+ cjmp LABEL6
+ mov rdi, qword [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL6
+ mov qword [rax + CONST], rbx
+ pop rbx
+ jmp CONST
+LABEL6:
+ pop rbx
+ ret

@@ -1,0 +1,54 @@
+ .name fcn.0000a5d0
+ .offset 000000000000a5d0
+ .file diff
+ lea eax, [rsi + CONST]
+ sub rsp, CONST
+ cmp al, CONST
+ cjmp LABEL3
+ lea rdx, [rip + CONST]
+ movzx eax, al
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ jmp rax
+ add rdi, CONST
+ mov rax, qword [rdi + CONST]
+ sub rax, qword [rdi + CONST]
+LABEL47:
+ add rsp, CONST
+ ret
+ add rdi, CONST
+ mov rsi, qword [rdi + CONST]
+ mov rdi, qword [rdi]
+ call CONST
+ add rsp, CONST
+ sub rax, CONST
+ ret
+ add rdi, CONST
+ mov rsi, qword [rdi + CONST]
+ mov rdi, qword [rdi]
+ add rsp, CONST
+ jmp CONST
+ add rdi, CONST
+ mov rsi, qword [rdi + CONST]
+ mov rdi, qword [rdi]
+ call CONST
+ add rsp, CONST
+ sub rax, CONST
+ ret
+ add rdi, CONST
+ mov rsi, qword [rdi + CONST]
+ mov rdi, qword [rdi]
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ sub esi, CONST
+ cmp sil, CONST
+ cjmp LABEL40
+ lea rdx, [rip + CONST]
+ movzx esi, sil
+ movsxd rax, dword [rdx + rsi*CONST]
+ add rax, rdx
+ jmp rax
+LABEL40:
+ mov rax, CONST
+ jmp LABEL47

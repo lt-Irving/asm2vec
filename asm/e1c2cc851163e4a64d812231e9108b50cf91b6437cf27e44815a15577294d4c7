@@ -1,0 +1,19 @@
+ .name sym.all_digits
+ .offset 000000000003e980
+ .file bash
+ endbr64
+ jmp LABEL1
+LABEL8:
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL4
+ add rdi, CONST
+LABEL1:
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL8
+ mov eax, CONST
+ ret
+LABEL4:
+ xor eax, eax
+ ret

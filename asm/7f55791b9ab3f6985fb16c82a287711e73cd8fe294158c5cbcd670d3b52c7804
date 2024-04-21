@@ -1,0 +1,42 @@
+ .name sym.rl_vi_fetch_history
+ .offset 00000000000b9510
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, edi
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov r12d, esi
+ call CONST
+ add eax, dword [rip + CONST]
+ mov edi, eax
+ sub edi, ebp
+ test edi, edi
+ cjmp LABEL14
+ mov esi, r12d
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ xor esi, esi
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL14:
+ xor esi, esi
+ xor edi, edi
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

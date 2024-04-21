@@ -1,0 +1,34 @@
+ .name sym.add_history_time
+ .offset 00000000000d6db0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ movsxd rax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov rdx, qword [rip + CONST]
+ mov rbx, qword [rdx + rax*CONST + CONST]
+ mov rdi, qword [rbx + CONST]
+ test rdi, rdi
+ cjmp LABEL14
+ call CONST
+LABEL14:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov qword [rbx + CONST], rax
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ ret

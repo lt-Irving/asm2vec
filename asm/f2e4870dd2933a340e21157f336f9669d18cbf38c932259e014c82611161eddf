@@ -1,0 +1,43 @@
+ .name sym.rl_vi_goto_mark
+ .offset 00000000000bcb10
+ .file bash
+LABEL35:
+ sub rsp, CONST
+ or qword [rip + CONST], CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ cmp eax, CONST
+ cjmp LABEL5
+ sub eax, CONST
+ cmp eax, CONST
+ cjmp LABEL8
+ cdqe
+ lea rdx, [rip + CONST]
+ mov eax, dword [rdx + rax*CONST]
+ cmp eax, CONST
+ cjmp LABEL8
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL8:
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret
+LABEL5:
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret
+ endbr64
+ test byte [rip + CONST], CONST
+ cjmp LABEL29
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ ret
+LABEL29:
+ jmp LABEL35

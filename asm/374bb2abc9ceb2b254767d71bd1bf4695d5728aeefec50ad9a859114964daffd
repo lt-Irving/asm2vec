@@ -1,0 +1,15 @@
+ .name sym.file_error
+ .offset 0000000000054d60
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ mov edi, dword [rax]
+ call CONST
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ pop rbp
+ mov rdx, rax
+ xor eax, eax
+ jmp CONST

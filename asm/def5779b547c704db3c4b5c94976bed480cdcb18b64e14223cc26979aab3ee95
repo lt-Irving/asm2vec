@@ -1,0 +1,29 @@
+ .name sym.find_procsub_child
+ .offset 0000000000067b20
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ lea esi, [rax + CONST]
+ mov rcx, qword [rip + CONST]
+ xor eax, eax
+ jmp LABEL10
+LABEL17:
+ lea rdx, [rax + CONST]
+ cmp rax, rsi
+ cjmp LABEL3
+ mov rax, rdx
+LABEL10:
+ mov r8d, eax
+ cmp dword [rcx + rax*CONST], edi
+ cjmp LABEL17
+ mov eax, r8d
+ ret
+LABEL3:
+ mov r8d, CONST
+ mov eax, r8d
+ ret

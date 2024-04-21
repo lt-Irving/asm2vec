@@ -1,0 +1,46 @@
+ .name sym.assign_array_var_from_word_list
+ .offset 000000000007ced0
+ .file bash
+ endbr64
+ push r13
+ mov r13d, edx
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ and edx, CONST
+ cjmp LABEL10
+ mov rax, qword [rdi + CONST]
+ mov rbp, qword [rax + CONST]
+ add rbp, CONST
+LABEL38:
+ and r13d, CONST
+ test rbx, rbx
+ cjmp LABEL16
+ nop dword [rax]
+LABEL28:
+ mov rax, qword [rbx + CONST]
+ mov rsi, rbp
+ mov r8d, r13d
+ xor edx, edx
+ mov rdi, r12
+ add rbp, CONST
+ mov rcx, qword [rax]
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL28
+LABEL16:
+ and dword [r12 + CONST], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL10:
+ xor ebp, ebp
+ jmp LABEL38

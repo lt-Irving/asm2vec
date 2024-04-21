@@ -1,0 +1,31 @@
+ .name sym.assign_array_from_string
+ .offset 000000000007dae0
+ .file bash
+ endbr64
+ mov eax, edx
+ push r13
+ mov r13d, edx
+ and eax, CONST
+ push r12
+ cmp eax, CONST
+ push rbp
+ mov rbp, rsi
+ sbb esi, esi
+ and esi, CONST
+ add esi, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL15
+ test rbp, rbp
+ cjmp LABEL15
+ mov edx, r13d
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+LABEL15:
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ ret

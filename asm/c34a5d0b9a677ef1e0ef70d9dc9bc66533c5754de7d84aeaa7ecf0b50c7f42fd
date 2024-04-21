@@ -1,0 +1,46 @@
+ .name sym._obstack_free
+ .offset 00000000000066f0
+ .file dircolors
+LABEL24:
+ call CONST
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ mov rsi, qword [rdi + CONST]
+ mov rbx, rdi
+ test rsi, rsi
+ cjmp LABEL9
+ jmp LABEL10
+LABEL22:
+ mov rsi, rbp
+LABEL9:
+ cmp rsi, r12
+ cjmp LABEL13
+ mov rax, qword [rsi]
+ cmp rax, r12
+ cjmp LABEL16
+LABEL13:
+ mov rbp, qword [rsi + CONST]
+ mov rdi, rbx
+ call CONST
+ or byte [rbx + CONST], CONST
+ test rbp, rbp
+ cjmp LABEL22
+LABEL10:
+ test r12, r12
+ cjmp LABEL24
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL16:
+ mov qword [rbx + CONST], r12
+ mov qword [rbx + CONST], r12
+ mov qword [rbx + CONST], rax
+ mov qword [rbx + CONST], rsi
+ pop rbx
+ pop rbp
+ pop r12
+ ret

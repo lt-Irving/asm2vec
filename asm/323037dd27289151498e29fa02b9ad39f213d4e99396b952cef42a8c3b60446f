@@ -1,0 +1,19 @@
+ .name sym.utf8_mbsmbchar
+ .offset 00000000000b6ac0
+ .file bash
+ endbr64
+ jmp LABEL1
+LABEL8:
+ and edx, CONST
+ cmp edx, CONST
+ cjmp LABEL4
+ add rdi, CONST
+LABEL1:
+ movzx edx, byte [rdi]
+ test dl, dl
+ cjmp LABEL8
+ xor eax, eax
+ ret
+LABEL4:
+ mov rax, rdi
+ ret

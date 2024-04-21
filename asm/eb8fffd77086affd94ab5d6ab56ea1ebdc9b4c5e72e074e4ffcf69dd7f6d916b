@@ -1,0 +1,48 @@
+ .name fcn.0000af20
+ .offset 000000000000af20
+ .file diff
+ sub rsp, CONST
+ lea rsi, [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rax, qword [rip + CONST]
+ neg rax
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], rax
+ call CONST
+ mov rax, qword [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL13
+ mov rax, qword [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL13
+LABEL40:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL19
+ add rsp, CONST
+ ret
+LABEL13:
+ call CONST
+ lea rax, [rip + CONST]
+ mov rcx, rsp
+ xor edx, edx
+ mov qword [rsp], rax
+ mov rax, qword [rip + CONST]
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ jmp LABEL40
+LABEL19:
+ call CONST

@@ -1,0 +1,39 @@
+ .name sym._rl_backward_char_internal
+ .offset 00000000000d43b0
+ .file bash
+ endbr64
+ mov esi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL3
+ push rbx
+ mov ebx, edi
+ test esi, esi
+ cjmp LABEL7
+ nop dword [rax]
+LABEL17:
+ mov rdi, qword [rip + CONST]
+ mov edx, CONST
+ sub ebx, CONST
+ call CONST
+ mov esi, eax
+ test ebx, ebx
+ cjmp LABEL15
+ test eax, eax
+ cjmp LABEL17
+LABEL15:
+ test ebx, ebx
+ cjmp LABEL7
+ test esi, esi
+ mov eax, CONST
+ pop rbx
+ cmovns eax, esi
+ ret
+LABEL7:
+ xor eax, eax
+ pop rbx
+ ret
+LABEL3:
+ test esi, esi
+ mov eax, CONST
+ cmovns eax, esi
+ ret

@@ -1,0 +1,41 @@
+ .name sym.get_shopt_options
+ .offset 00000000000a4220
+ .file bash
+ endbr64
+ push r13
+ mov edi, CONST
+ lea r13, [rip + CONST]
+ push r12
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ mov ebx, CONST
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ mov eax, CONST
+ jmp LABEL13
+LABEL27:
+ mov rdi, r13
+ call CONST
+LABEL13:
+ lea rdi, [rax + CONST]
+ add rbp, CONST
+ call CONST
+ mov rsi, r13
+ mov rdi, rax
+ call CONST
+ mov qword [r12 + rbx*CONST + CONST], rax
+ mov r13, qword [rbp + CONST]
+ movsxd rax, ebx
+ add rbx, CONST
+ test r13, r13
+ cjmp LABEL27
+ mov qword [r12 + rax*CONST], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

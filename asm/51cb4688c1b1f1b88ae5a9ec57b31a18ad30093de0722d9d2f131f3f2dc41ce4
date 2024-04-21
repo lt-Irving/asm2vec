@@ -1,0 +1,41 @@
+ .name sym.rl_ding
+ .offset 00000000000d3360
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ push r12
+ test eax, eax
+ cjmp LABEL4
+ mov eax, dword [rip + CONST]
+ cmp eax, CONST
+ cjmp LABEL7
+ xor r12d, r12d
+ cmp eax, CONST
+ cjmp LABEL10
+LABEL33:
+ mov eax, r12d
+ pop r12
+ ret
+LABEL10:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL7
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov eax, r12d
+ pop r12
+ ret
+LABEL7:
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ xor r12d, r12d
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov eax, r12d
+ pop r12
+ ret
+LABEL4:
+ mov r12d, CONST
+ jmp LABEL33

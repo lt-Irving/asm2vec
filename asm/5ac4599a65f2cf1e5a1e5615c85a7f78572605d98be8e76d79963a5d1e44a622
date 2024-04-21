@@ -1,0 +1,48 @@
+ .name sym.readline
+ .offset 00000000000b8520
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ push r12
+ cjmp LABEL3
+ call CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL8
+ mov edi, dword [rip + CONST]
+ call rax
+LABEL8:
+ call CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL15
+ nop dword [rax]
+LABEL21:
+ call CONST
+ mov edi, eax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL21
+LABEL34:
+ mov dword [rip + CONST], edi
+ call CONST
+ mov r12, rax
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL27
+ call rax
+LABEL27:
+ call CONST
+LABEL37:
+ mov rax, r12
+ pop r12
+ ret
+LABEL15:
+ mov edi, CONST
+ jmp LABEL34
+LABEL3:
+ call CONST
+ xor r12d, r12d
+ jmp LABEL37

@@ -1,0 +1,63 @@
+ .name fcn.00016270
+ .offset 0000000000016270
+ .file dir
+LABEL38:
+ call CONST
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, r8
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov ebp, dword [rip + CONST]
+ cmp edi, CONST
+ cjmp LABEL13
+ cmp edi, CONST
+ cjmp LABEL15
+ cjmp LABEL16
+ lea r9, [rip + CONST]
+LABEL50:
+ movsxd rax, esi
+ test esi, esi
+ cjmp LABEL20
+LABEL42:
+ shl rax, CONST
+ lea r12, [rip + CONST]
+ mov r13, qword [rcx + rax]
+LABEL48:
+ mov rsi, r9
+ mov edx, CONST
+ xor edi, edi
+ call CONST
+ mov r9, rbx
+ mov r8, r13
+ mov rcx, r12
+ mov rdx, rax
+ xor esi, esi
+ mov edi, ebp
+ xor eax, eax
+ call CONST
+ call CONST
+LABEL13:
+ cmp edi, CONST
+ cjmp LABEL38
+ lea r9, [rip + CONST]
+ movsxd rax, esi
+ test esi, esi
+ cjmp LABEL42
+LABEL20:
+ lea r12, [rip + CONST]
+ mov byte [rsp + CONST], dl
+ lea r13, [rsp + CONST]
+ mov byte [rsp + CONST], CONST
+ sub r12, rax
+ jmp LABEL48
+LABEL15:
+ lea r9, [rip + CONST]
+ jmp LABEL50
+LABEL16:
+ jmp LABEL38

@@ -1,0 +1,31 @@
+ .name sym.alloc_history_entry
+ .offset 00000000000d6ce0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ mov rbx, rsi
+ call CONST
+ mov r12, rax
+ test rbp, rbp
+ cjmp LABEL10
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL10:
+ mov qword [r12], rbp
+ mov rax, r12
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ ret

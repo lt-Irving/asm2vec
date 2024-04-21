@@ -1,0 +1,58 @@
+ .name sym.rl_deprep_terminal
+ .offset 00000000000bdd30
+ .file bash
+ endbr64
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL3
+ ret
+LABEL3:
+ push rbp
+ call CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+LABEL44:
+ call CONST
+ mov ebp, eax
+ test byte [rip + CONST], CONST
+ cjmp LABEL13
+LABEL35:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL16
+LABEL42:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, ebp
+ call CONST
+ test eax, eax
+ cjmp LABEL23
+ and qword [rip + CONST], CONST
+ pop rbp
+ mov dword [rip + CONST], CONST
+ jmp CONST
+LABEL13:
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL35
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ call CONST
+ jmp LABEL35
+LABEL16:
+ xor edi, edi
+ call CONST
+ jmp LABEL42
+LABEL9:
+ mov rdi, qword [rip + CONST]
+ jmp LABEL44
+LABEL23:
+ pop rbp
+ jmp CONST

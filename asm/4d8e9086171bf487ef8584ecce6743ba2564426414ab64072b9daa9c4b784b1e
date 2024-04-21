@@ -1,0 +1,13 @@
+ .name fcn.00010840
+ .offset 0000000000010840
+ .file dash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov edx, CONST
+ mov dword [rip + CONST], CONST
+ test eax, eax
+ cmove eax, edx
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ ret

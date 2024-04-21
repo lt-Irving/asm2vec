@@ -1,0 +1,44 @@
+ .name sym.print_rlimtype
+ .offset 000000000003e8d0
+ .file bash
+ endbr64
+ movabs rcx, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov byte [rsp + CONST], CONST
+ lea r8, [rsp + CONST]
+ nop dword [rax]
+LABEL23:
+ mov rax, rdi
+ mov r9, rdi
+ sub r8, CONST
+ mul rcx
+ shr rdx, CONST
+ lea rax, [rdx + rdx*CONST]
+ add rax, rax
+ sub r9, rax
+ mov rax, r9
+ add eax, CONST
+ mov byte [r8], al
+ mov rax, rdi
+ mov rdi, rdx
+ cmp rax, CONST
+ cjmp LABEL23
+ test esi, esi
+ lea rax, [rip + CONST]
+ mov rdx, r8
+ mov edi, CONST
+ lea rcx, [rip + CONST]
+ lea rsi, [rip + CONST]
+ cmove rcx, rax
+ xor eax, eax
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL35
+ add rsp, CONST
+ ret
+LABEL35:
+ call CONST

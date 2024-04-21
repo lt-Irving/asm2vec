@@ -1,0 +1,48 @@
+ .name sym.get_name_for_error
+ .offset 0000000000054990
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+LABEL36:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL7
+ cmp byte [rdi], CONST
+ cjmp LABEL9
+LABEL7:
+ lea rax, [rip + CONST]
+LABEL32:
+ add rsp, CONST
+ ret
+LABEL9:
+ call CONST
+ test rax, rax
+ cjmp LABEL7
+ add rsp, CONST
+ ret
+LABEL4:
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL21
+ test byte [rax + CONST], CONST
+ cjmp LABEL21
+ mov rdi, qword [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL21
+ xor esi, esi
+ call CONST
+ test rax, rax
+ cjmp LABEL21
+ cmp byte [rax], CONST
+ cjmp LABEL32
+ nop dword [rax]
+LABEL21:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL36
+ add rsp, CONST
+ ret

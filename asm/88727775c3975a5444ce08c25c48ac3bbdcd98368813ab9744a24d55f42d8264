@@ -1,0 +1,46 @@
+ .name sym.set_tty_state
+ .offset 000000000005a980
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ mov r12d, dword [rip + CONST]
+ cmp r12d, CONST
+ cjmp LABEL6
+LABEL24:
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ mov edi, r12d
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+LABEL23:
+ xor r13d, r13d
+LABEL28:
+ mov eax, r13d
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL6:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov r12d, eax
+ cmp eax, CONST
+ cjmp LABEL23
+ jmp LABEL24
+LABEL12:
+ mov eax, dword [rip + CONST]
+ mov r13d, CONST
+ test eax, eax
+ cjmp LABEL28
+ mov r14d, dword [rip + CONST]
+ call CONST
+ mov ecx, r12d
+ lea rdi, [rip + CONST]
+ movsxd rsi, eax
+ mov edx, r14d
+ xor eax, eax
+ call CONST
+ jmp LABEL28

@@ -1,0 +1,56 @@
+ .name sym._rl_insert_typein
+ .offset 00000000000d1760
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ mov ebx, edi
+ mov edi, CONST
+ sub rsp, CONST
+ call CONST
+ mov esi, dword [rip + CONST]
+ movsxd rdx, dword [rip + CONST]
+ mov byte [rax], bl
+ mov rbp, rax
+ lea r8, [rax + CONST]
+ cmp esi, edx
+ cjmp LABEL13
+ mov ecx, CONST
+ lea r10, [rip + CONST]
+ xor r9d, r9d
+ sub ecx, r8d
+LABEL35:
+ lea eax, [rdx + CONST]
+ movzx edi, byte [r10 + rdx]
+ cmp eax, CONST
+ cmovg eax, r9d
+ movsxd rdx, eax
+ movzx eax, dil
+ shl rax, CONST
+ add rax, qword [rip + CONST]
+ cmp byte [rax], CONST
+ cjmp LABEL27
+ lea rbx, [rip + CONST]
+ cmp qword [rax + CONST], rbx
+ cjmp LABEL27
+ mov byte [r8], dil
+ lea eax, [rcx + r8]
+ add r8, CONST
+ cmp edx, esi
+ cjmp LABEL35
+ mov dword [rip + CONST], edx
+ movsxd r8, eax
+ add r8, rbp
+LABEL13:
+ mov byte [r8], CONST
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL27:
+ mov dword [rip + CONST], edx
+ call CONST
+ jmp LABEL13

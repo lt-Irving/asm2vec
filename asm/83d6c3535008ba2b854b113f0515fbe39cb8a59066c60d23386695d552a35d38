@@ -1,0 +1,22 @@
+ .name fcn.00005680
+ .offset 0000000000005680
+ .file df
+ mov eax, edi
+ mov rdi, rsi
+ mov r9d, dword [rip + CONST]
+ movzx esi, al
+ add rsi, rdx
+ test al, al
+ cjmp LABEL6
+ mov edx, r9d
+ jmp CONST
+LABEL6:
+ sub rsp, CONST
+ neg rdi
+ mov edx, r9d
+ call CONST
+ lea r8, [rax + CONST]
+ mov byte [rax + CONST], CONST
+ add rsp, CONST
+ mov rax, r8
+ ret

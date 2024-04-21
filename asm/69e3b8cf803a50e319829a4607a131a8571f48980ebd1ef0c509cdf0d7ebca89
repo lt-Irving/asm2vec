@@ -1,0 +1,30 @@
+ .name sym.strip_trailing
+ .offset 00000000000897f0
+ .file bash
+ endbr64
+ test esi, esi
+ movsxd rsi, esi
+ cjmp LABEL3
+ nop dword [rax + rax]
+LABEL19:
+ movzx eax, byte [rdi + rsi]
+ test edx, edx
+ cjmp LABEL7
+ cmp al, CONST
+ cjmp LABEL9
+LABEL3:
+ mov byte [rdi + rsi + CONST], CONST
+ ret
+LABEL7:
+ cmp al, CONST
+ cjmp LABEL9
+ cmp al, CONST
+ cjmp LABEL3
+LABEL9:
+ lea eax, [rsi + CONST]
+ sub rsi, CONST
+ test esi, esi
+ cjmp LABEL19
+ movsxd rsi, eax
+ mov byte [rdi + rsi + CONST], CONST
+ ret

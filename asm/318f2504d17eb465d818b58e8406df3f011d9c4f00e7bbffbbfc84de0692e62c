@@ -1,0 +1,87 @@
+ .name sym.rl_variable_dumper
+ .offset 00000000000c7320
+ .file bash
+ endbr64
+ push r14
+ lea rax, [rip + CONST]
+ lea rcx, [rip + CONST]
+ push r13
+ lea r14, [rip + CONST]
+ lea r13, [rip + CONST]
+ push r12
+ mov r12d, edi
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ lea rbx, [rip + CONST]
+ jmp LABEL13
+LABEL31:
+ mov rdi, qword [rip + CONST]
+ xor eax, eax
+ mov esi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ test rbp, rbp
+ cjmp LABEL20
+LABEL38:
+ mov rdx, qword [rbx + CONST]
+ mov rax, qword [rbx]
+ mov rcx, rbp
+ add rbx, CONST
+ mov rbp, rdx
+LABEL13:
+ mov eax, dword [rax]
+ mov r8, r13
+ test eax, eax
+ cmovne r8, r14
+ test r12d, r12d
+ cjmp LABEL31
+ mov rdi, qword [rip + CONST]
+ xor eax, eax
+ mov esi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ test rbp, rbp
+ cjmp LABEL38
+LABEL20:
+ lea rbp, [rip + CONST]
+ lea rbx, [rip + CONST]
+ lea r14, [rip + CONST]
+ lea r13, [rip + CONST]
+ jmp LABEL43
+LABEL62:
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+LABEL58:
+ test rbx, rbx
+ cjmp LABEL49
+LABEL68:
+ mov rax, qword [rbp]
+ mov r14, rbx
+ add rbp, CONST
+ mov rbx, rax
+LABEL43:
+ mov rdi, r14
+ call CONST
+ mov r8, rax
+ test rax, rax
+ cjmp LABEL58
+ mov rdi, qword [rip + CONST]
+ mov rcx, r14
+ test r12d, r12d
+ cjmp LABEL62
+ xor eax, eax
+ mov rdx, r13
+ mov esi, CONST
+ call CONST
+ test rbx, rbx
+ cjmp LABEL68
+LABEL49:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

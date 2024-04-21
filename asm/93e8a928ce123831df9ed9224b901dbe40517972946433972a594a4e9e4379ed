@@ -1,0 +1,115 @@
+ .name sym._rl_arg_dispatch
+ .offset 00000000000d5fa0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, esi
+ sub rsp, CONST
+ test esi, esi
+ cjmp LABEL5
+ movsxd rax, esi
+ shl rax, CONST
+ add rax, qword [rip + CONST]
+ cmp byte [rax], CONST
+ cjmp LABEL5
+ lea rdx, [rip + CONST]
+ cmp qword [rax + CONST], rdx
+ cjmp LABEL13
+LABEL5:
+ mov ecx, ebp
+ mov edx, dword [rip + CONST]
+ and cl, CONST
+ lea eax, [rcx + CONST]
+ cmp eax, CONST
+ cjmp LABEL19
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL22
+ mov ecx, dword [rip + CONST]
+ lea ecx, [rcx + rcx*CONST]
+ lea eax, [rax + rcx*CONST]
+LABEL22:
+ or edx, CONST
+ mov dword [rip + CONST], eax
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], edx
+LABEL63:
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL19:
+ cmp ecx, CONST
+ cjmp LABEL35
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL35
+ or edx, CONST
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], edx
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL35:
+ and edx, CONST
+ cjmp LABEL48
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL48
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL48
+ mov dword [rip + CONST], CONST
+ nop word [rax + rax]
+LABEL48:
+ call CONST
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov edi, ebp
+ and qword [rip + CONST], CONST
+ call CONST
+ test byte [rip + CONST], CONST
+ cjmp LABEL63
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ mov dword [rsp + CONST], eax
+ cjmp LABEL67
+ call qword [rip + CONST]
+ mov eax, dword [rsp + CONST]
+ jmp LABEL63
+LABEL13:
+ and edi, CONST
+ cjmp LABEL72
+ mov rax, qword [rip + CONST]
+ test eax, CONST
+ cjmp LABEL75
+ or dword [rip + CONST], CONST
+ xor eax, eax
+ jmp LABEL63
+LABEL67:
+ xor eax, eax
+ jmp LABEL63
+LABEL75:
+ or rax, CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ and qword [rip + CONST], CONST
+ mov ebp, eax
+ call CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ test ebp, ebp
+ cjmp LABEL90
+ mov rsi, qword [rip + CONST]
+ add rsp, CONST
+ mov edi, ebp
+ pop rbp
+ jmp CONST
+LABEL72:
+ shl dword [rip + CONST], CONST
+ mov eax, CONST
+ jmp LABEL63
+LABEL90:
+ or eax, CONST
+ jmp LABEL63

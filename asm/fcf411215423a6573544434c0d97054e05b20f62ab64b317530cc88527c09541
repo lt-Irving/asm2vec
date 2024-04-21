@@ -1,0 +1,47 @@
+ .name sym.array_to_word_list
+ .offset 000000000007bda0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL5
+ mov eax, dword [rdi + CONST]
+ mov r12, rdi
+ test eax, eax
+ cjmp LABEL5
+ mov rax, qword [rdi + CONST]
+ mov rbx, qword [rax + CONST]
+ cmp rax, rbx
+ cjmp LABEL5
+ xor ebp, ebp
+ nop word cs:[rax + rax]
+LABEL24:
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbx, qword [rbx + CONST]
+ mov rbp, rax
+ cmp qword [r12 + CONST], rbx
+ cjmp LABEL24
+ test rax, rax
+ cjmp LABEL5
+ cmp qword [rax], CONST
+ cjmp LABEL28
+ pop rbx
+ mov rdi, rax
+ pop rbp
+ xor eax, eax
+ pop r12
+ jmp CONST
+LABEL5:
+ xor ebp, ebp
+LABEL28:
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ ret

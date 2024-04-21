@@ -1,0 +1,59 @@
+ .name fcn.0000af00
+ .offset 000000000000af00
+ .file dmesg
+ endbr64
+ push r14
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12d, esi
+ push rbp
+ mov rbp, rcx
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r14, rsp
+ and esi, CONST
+ mov rsi, r14
+ cjmp LABEL17
+ call CONST
+LABEL38:
+ test rax, rax
+ cjmp LABEL20
+ mov rsi, qword [rbx + CONST]
+ mov r8, rbp
+ mov rcx, r13
+ mov edx, r12d
+ mov rdi, r14
+ call CONST
+LABEL49:
+ mov rbx, qword [rsp + CONST]
+ xor rbx, qword fs:[CONST]
+ cjmp LABEL29
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL17:
+ call CONST
+ jmp LABEL38
+LABEL20:
+ mov rbp, qword [rbx]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ mov rsi, rbp
+ xor eax, eax
+ call CONST
+ mov eax, CONST
+ jmp LABEL49
+LABEL29:
+ call CONST

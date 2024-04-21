@@ -1,0 +1,38 @@
+ .name sym.rl_forced_update_display
+ .offset 00000000000c9680
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdx, qword [rip + CONST]
+ mov rax, qword [rdx]
+ test rax, rax
+ cjmp LABEL5
+ cmp byte [rax], CONST
+ cjmp LABEL7
+ nop dword [rax]
+LABEL12:
+ add rax, CONST
+ mov byte [rax + CONST], CONST
+ cmp byte [rax], CONST
+ cjmp LABEL12
+ mov rax, qword [rdx]
+ test rax, rax
+ cjmp LABEL5
+LABEL7:
+ mov byte [rax], CONST
+LABEL5:
+ mov dword [rip + CONST], CONST
+ mov rax, qword [rdx + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ test rax, rax
+ cjmp LABEL23
+ mov qword [rax], CONST
+LABEL23:
+ add dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ call qword [rip + CONST]
+ xor eax, eax
+ add rsp, CONST
+ ret

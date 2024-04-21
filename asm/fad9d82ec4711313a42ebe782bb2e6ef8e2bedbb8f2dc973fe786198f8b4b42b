@@ -1,0 +1,60 @@
+ .name sym.get_dirstack_from_string
+ .offset 000000000009cd10
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ movzx eax, byte [rdi]
+ lea edx, [rax + CONST]
+ and edx, CONST
+ cjmp LABEL10
+ xor ebp, ebp
+ cmp al, CONST
+ setne bpl
+ add rdi, CONST
+ lea ebp, [rbp + rbp + CONST]
+LABEL10:
+ lea rsi, [rsp + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL19
+ mov rdi, qword [rsp + CONST]
+ lea rdx, [rsp + CONST]
+ mov esi, ebp
+ mov dword [rsp + CONST], CONST
+ call CONST
+ mov edx, dword [rsp + CONST]
+ test edx, edx
+ cjmp LABEL27
+ test eax, eax
+ cjmp LABEL19
+ cmp dword [rip + CONST], eax
+ cjmp LABEL19
+ cmp edx, CONST
+ cjmp LABEL33
+ test eax, eax
+ cjmp LABEL27
+LABEL33:
+ mov rdx, qword [rip + CONST]
+ cdqe
+ mov rax, qword [rdx + rax*CONST]
+ jmp LABEL39
+LABEL27:
+ lea rdi, [rip + CONST]
+ call CONST
+LABEL39:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL44
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL19:
+ xor eax, eax
+ jmp LABEL39
+LABEL44:
+ call CONST

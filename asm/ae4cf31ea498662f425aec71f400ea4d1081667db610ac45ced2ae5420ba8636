@@ -1,0 +1,14 @@
+ .name fcn.00017f90
+ .offset 0000000000017f90
+ .file dpkg-deb
+ endbr64
+ mov rdx, qword [rsi]
+ mov rcx, qword [rdi]
+ mov eax, CONST
+ mov rdx, qword [rdx + CONST]
+ cmp qword [rcx + CONST], rdx
+ cjmp LABEL6
+ setg al
+ movzx eax, al
+LABEL6:
+ ret

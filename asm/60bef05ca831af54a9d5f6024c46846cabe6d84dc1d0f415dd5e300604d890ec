@@ -1,0 +1,56 @@
+ .name fcn.00005dc0
+ .offset 0000000000005dc0
+ .file dash
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ movzx esi, byte [rdi]
+ mov ecx, esi
+ shl ecx, CONST
+ test sil, sil
+ cjmp LABEL8
+ mov rax, rdi
+ nop word [rax + rax]
+LABEL15:
+ add rax, CONST
+ add ecx, esi
+ movzx esi, byte [rax]
+ test sil, sil
+ cjmp LABEL15
+LABEL8:
+ mov eax, ecx
+ mov edx, CONST
+ imul rax, rdx
+ shr rax, CONST
+ mov rdx, rax
+ mov eax, ecx
+ sub eax, edx
+ shr eax, CONST
+ add eax, edx
+ shr eax, CONST
+ imul eax, eax, CONST
+ sub ecx, eax
+ lea rax, [rip + CONST]
+ mov rbx, qword [rax + rcx*CONST]
+ lea r12, [rax + rcx*CONST]
+ test rbx, rbx
+ cjmp LABEL32
+ jmp LABEL33
+LABEL42:
+ mov r12, rbx
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL33
+LABEL32:
+ mov rsi, qword [rbx + CONST]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL42
+LABEL33:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

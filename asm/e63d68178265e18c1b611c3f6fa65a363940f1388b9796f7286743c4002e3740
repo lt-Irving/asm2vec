@@ -1,0 +1,28 @@
+ .name sym.rl_vi_domove
+ .offset 00000000000bb290
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ mov rbp, qword [rip + CONST]
+ or qword [rip + CONST], CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ mov dword [rbp + CONST], eax
+ mov dword [rbx], eax
+ test eax, eax
+ cjmp LABEL12
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL12:
+ mov dword [rbp + CONST], CONST
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret

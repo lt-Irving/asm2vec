@@ -1,0 +1,24 @@
+ .name sym.rl_rubout
+ .offset 00000000000d5560
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL5
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ jmp CONST
+LABEL8:
+ jmp CONST
+LABEL5:
+ sub rsp, CONST
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret
+LABEL2:
+ neg edi
+ jmp CONST

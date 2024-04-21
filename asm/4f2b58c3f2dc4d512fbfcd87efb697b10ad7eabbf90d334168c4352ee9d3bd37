@@ -1,0 +1,22 @@
+ .name sym.rl_re_read_init_file
+ .offset 00000000000c6830
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor edi, edi
+ call CONST
+ mov edx, dword [rip + CONST]
+ cmp edx, CONST
+ cjmp LABEL6
+ test edx, edx
+ cjmp LABEL8
+ lea rsi, [rip + CONST]
+ mov qword [rip + CONST], rsi
+LABEL8:
+ add rsp, CONST
+ ret
+LABEL6:
+ lea rcx, [rip + CONST]
+ mov qword [rip + CONST], rcx
+ add rsp, CONST
+ ret

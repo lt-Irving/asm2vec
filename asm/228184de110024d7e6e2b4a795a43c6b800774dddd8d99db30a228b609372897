@@ -1,0 +1,19 @@
+ .name sym.validate_inherited_value
+ .offset 000000000004ece0
+ .file bash
+ endbr64
+ cmp esi, CONST
+ cjmp LABEL2
+ mov eax, CONST
+ cmp esi, CONST
+ cjmp LABEL5
+ xor eax, eax
+ test byte [rdi + CONST], CONST
+ sete al
+LABEL5:
+ ret
+LABEL2:
+ xor eax, eax
+ test byte [rdi + CONST], CONST
+ sete al
+ ret

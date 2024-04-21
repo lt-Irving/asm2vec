@@ -1,0 +1,28 @@
+ .name fcn.00016d50
+ .offset 0000000000016d50
+ .file dash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ push rbx
+ cjmp LABEL3
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax]
+ lea rbx, [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL8
+ nop word [rax + rax]
+LABEL14:
+ call CONST
+ mov rdi, qword [rbx]
+ add rbx, CONST
+ test rdi, rdi
+ cjmp LABEL14
+LABEL8:
+ xor eax, eax
+ pop rbx
+ ret
+LABEL3:
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ nop dword [rax + rax]

@@ -1,0 +1,47 @@
+ .name fcn.0000c450
+ .offset 000000000000c450
+ .file dir
+ endbr64
+ mov eax, dword [rdi + CONST]
+ mov ecx, dword [rsi + CONST]
+ cmp eax, CONST
+ sete dl
+ cmp eax, CONST
+ sete al
+ or edx, eax
+ cmp ecx, CONST
+ sete al
+ cmp ecx, CONST
+ sete cl
+ or al, cl
+ cjmp LABEL13
+ test dl, dl
+ cjmp LABEL15
+LABEL22:
+ mov r8d, CONST
+ test al, al
+ cjmp LABEL18
+LABEL29:
+ mov eax, r8d
+ ret
+LABEL13:
+ test dl, dl
+ cjmp LABEL22
+LABEL18:
+ mov rax, qword [rsi + CONST]
+ cmp qword [rdi + CONST], rax
+ cjmp LABEL15
+ cjmp LABEL26
+ mov r8, qword [rsi + CONST]
+ sub r8d, dword [rdi + CONST]
+ cjmp LABEL29
+ mov rsi, qword [rsi]
+ mov rdi, qword [rdi]
+ jmp CONST
+LABEL26:
+ mov r8d, CONST
+ mov eax, r8d
+ ret
+LABEL15:
+ mov r8d, CONST
+ jmp LABEL29

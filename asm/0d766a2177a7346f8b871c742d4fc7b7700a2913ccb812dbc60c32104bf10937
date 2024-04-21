@@ -1,0 +1,51 @@
+ .name sym.set_signal_handler
+ .offset 0000000000078bb0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov ebp, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov qword [rsp], rsi
+ mov dword [rsp + CONST], CONST
+ cmp edi, CONST
+ cjmp LABEL12
+ cmp edi, CONST
+ cjmp LABEL14
+LABEL12:
+ mov dword [rsp + CONST], CONST
+LABEL38:
+ lea rdi, [rsp + CONST]
+ mov r12, rsp
+ lea r13, [rsp + CONST]
+ call CONST
+ lea rdi, [rsp + CONST]
+ call CONST
+ mov rdx, r13
+ mov rsi, r12
+ mov edi, ebp
+ call CONST
+ test eax, eax
+ mov eax, CONST
+ cmove rax, qword [rsp + CONST]
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL31
+ add rsp, CONST
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL14:
+ cmp edi, CONST
+ cjmp LABEL38
+ lea rax, [rip + CONST]
+ cmp rsi, rax
+ cjmp LABEL38
+ jmp LABEL12
+LABEL31:
+ call CONST

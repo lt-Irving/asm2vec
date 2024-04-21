@@ -1,0 +1,20 @@
+ .name sym.strvec_sort
+ .offset 00000000000b2c20
+ .file bash
+ endbr64
+ cmp qword [rdi], CONST
+ cjmp LABEL2
+ mov eax, CONST
+ nop
+LABEL8:
+ mov rsi, rax
+ add rax, CONST
+ cmp qword [rdi + rax*CONST + CONST], CONST
+ cjmp LABEL8
+LABEL13:
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ jmp CONST
+LABEL2:
+ xor esi, esi
+ jmp LABEL13

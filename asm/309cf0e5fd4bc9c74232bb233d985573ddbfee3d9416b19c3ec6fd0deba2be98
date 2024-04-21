@@ -1,0 +1,14 @@
+ .name fcn.000060a0
+ .offset 00000000000060a0
+ .file dash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi + CONST]
+ call CONST
+ mov rsi, qword [rbx + CONST]
+ lea rdi, [rip + CONST]
+ pop rbx
+ mov rdx, rax
+ xor eax, eax
+ jmp CONST

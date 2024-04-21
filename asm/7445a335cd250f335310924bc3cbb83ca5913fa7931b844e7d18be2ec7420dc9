@@ -1,0 +1,22 @@
+ .name sym.rl_on_new_line
+ .offset 00000000000c94a0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ mov rdx, qword [rax]
+ test rdx, rdx
+ cjmp LABEL4
+ mov byte [rdx], CONST
+LABEL4:
+ mov dword [rip + CONST], CONST
+ mov rax, qword [rax + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ test rax, rax
+ cjmp LABEL12
+ mov qword [rax], CONST
+LABEL12:
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ ret

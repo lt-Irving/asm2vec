@@ -1,0 +1,43 @@
+ .name fcn.0000cab0
+ .offset 000000000000cab0
+ .file dir
+ endbr64
+ push r13
+ mov r13, rsi
+ mov esi, CONST
+ push r12
+ push rbp
+ mov r12, qword [rdi]
+ mov rdi, r12
+ call CONST
+ mov r13, qword [r13]
+ mov esi, CONST
+ mov rbp, rax
+ mov rdi, r13
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ mov rsi, rax
+ test rbp, rbp
+ lea rax, [rip + CONST]
+ cmove rbp, rax
+LABEL30:
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL23
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL15:
+ lea rsi, [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL30
+LABEL23:
+ pop rbp
+ mov rsi, r13
+ mov rdi, r12
+ pop r12
+ pop r13
+ jmp CONST

@@ -1,0 +1,1495 @@
+ .name fcn.00004560
+ .offset 0000000000004560
+ .file b2sum
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov qword [rsp + CONST], rdi
+ lea rcx, [rsp + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ nop
+LABEL17:
+ mov rdx, qword [rsi + rax*CONST]
+ mov qword [rcx + rax*CONST], rdx
+ add rax, CONST
+ cmp rax, CONST
+ cjmp LABEL17
+ mov rsi, qword [rsp + CONST]
+ xor eax, eax
+ lea rcx, [rsp + CONST]
+ nop dword [rax]
+LABEL26:
+ mov rdx, qword [rsi + rax*CONST]
+ mov qword [rcx + rax*CONST], rdx
+ add rax, CONST
+ cmp rax, CONST
+ cjmp LABEL26
+ mov r11, qword [rsp + CONST]
+ mov rbp, qword [rsp + CONST]
+ movabs rax, CONST
+ movabs r10, CONST
+ mov r14, qword [rsp + CONST]
+ mov rcx, qword [rsp + CONST]
+ movabs r9, CONST
+ movabs rbx, CONST
+ mov r8, qword [r11 + CONST]
+ mov r13, qword [rsp + CONST]
+ mov rdi, qword [r11 + CONST]
+ add r14, rbp
+ mov rsi, qword [r11 + CONST]
+ add r14, qword [rsp + CONST]
+ add r13, rcx
+ add r13, qword [rsp + CONST]
+ xor r8, r14
+ xor rdi, r13
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ xor r8, rax
+ mov rdx, qword [rsp + CONST]
+ movabs rax, CONST
+ mov r12, qword [rsp + CONST]
+ xor rdi, rax
+ rol r8, CONST
+ mov r15, qword [rsp + CONST]
+ movabs rax, CONST
+ rol rdi, CONST
+ add r10, r8
+ add r12, rdx
+ add r12, qword [rsp + CONST]
+ add r9, rdi
+ xor rbp, r10
+ xor rcx, r9
+ ror rbp, CONST
+ ror rcx, CONST
+ add r14, rbp
+ add r13, rcx
+ xor r8, r14
+ xor rdi, r13
+ ror r8, CONST
+ ror rdi, CONST
+ add r10, r8
+ add r9, rdi
+ xor rbp, r10
+ xor rcx, r9
+ rol rbp, CONST
+ rol rcx, CONST
+ xor rsi, r12
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [r11 + CONST]
+ xor rsi, rax
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ movabs r11, CONST
+ mov rax, qword [rsp + CONST]
+ rol rsi, CONST
+ add r14, rcx
+ add rbx, rsi
+ add r15, rax
+ add r15, qword [rsp + CONST]
+ xor rdx, rbx
+ xor rbp, r15
+ ror rdx, CONST
+ add r15, qword [rsp + CONST]
+ xor rbp, r11
+ add r12, rdx
+ movabs r11, CONST
+ rol rbp, CONST
+ xor rsi, r12
+ add r11, rbp
+ ror rsi, CONST
+ xor rax, r11
+ add rbx, rsi
+ ror rax, CONST
+ xor rdx, rbx
+ add r15, rax
+ rol rdx, CONST
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ xor rax, r11
+ rol rbp, CONST
+ rol rax, CONST
+ add rbx, rbp
+ add r13, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r13, rdx
+ xor rcx, rbx
+ add r12, qword [rsp + CONST]
+ xor r8, r13
+ add r12, rax
+ ror rcx, CONST
+ add r13, qword [rsp + CONST]
+ rol r8, CONST
+ add r14, rcx
+ xor rdi, r12
+ add r12, qword [rsp + CONST]
+ add r11, r8
+ xor rbp, r14
+ rol rdi, CONST
+ xor rdx, r11
+ ror rbp, CONST
+ add r10, rdi
+ ror rdx, CONST
+ add rbx, rbp
+ xor rax, r10
+ mov qword [rsp + CONST], rbp
+ add r13, rdx
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ ror rax, CONST
+ xor r8, r13
+ rol rcx, CONST
+ ror r8, CONST
+ add r11, r8
+ xor rdx, r11
+ rol rdx, CONST
+ add r12, rax
+ add r15, qword [rsp + CONST]
+ add r15, rbp
+ xor rdi, r12
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ ror rdi, CONST
+ add r14, qword [rsp + CONST]
+ rol rsi, CONST
+ add r10, rdi
+ add r9, rsi
+ xor rax, r10
+ xor rbp, r9
+ rol rax, CONST
+ ror rbp, CONST
+ add r15, rbp
+ xor rsi, r15
+ ror rsi, CONST
+ add r9, rsi
+ xor rbp, r9
+ rol rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ add r10, r8
+ xor rbp, r10
+ ror rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ ror r8, CONST
+ add r10, r8
+ xor rbp, r10
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rcx
+ add r12, rdx
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ xor rdi, r13
+ xor rsi, r12
+ add r13, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ rol rdi, CONST
+ rol rsi, CONST
+ mov rbp, qword [rsp + CONST]
+ add r15, rax
+ add r9, rdi
+ add rbx, rsi
+ add r12, qword [rsp + CONST]
+ xor rcx, r9
+ xor rdx, rbx
+ ror rcx, CONST
+ ror rdx, CONST
+ add r13, rcx
+ add r12, rdx
+ xor rdi, r13
+ xor rsi, r12
+ ror rdi, CONST
+ ror rsi, CONST
+ add r9, rdi
+ add rbx, rsi
+ xor rcx, r9
+ xor rdx, rbx
+ rol rcx, CONST
+ rol rdx, CONST
+ xor rbp, r15
+ add r15, qword [rsp + CONST]
+ rol rbp, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r11, rbp
+ add r14, rcx
+ add r13, rdx
+ xor rax, r11
+ xor r8, r13
+ ror rax, CONST
+ rol r8, CONST
+ add r15, rax
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ xor rax, r11
+ add r11, r8
+ add rbx, rbp
+ xor rdx, r11
+ rol rax, CONST
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ rol rcx, CONST
+ ror rdx, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ add r12, rax
+ add r15, rbp
+ add r13, qword [rsp + CONST]
+ xor rdi, r12
+ xor rsi, r15
+ add r12, qword [rsp + CONST]
+ add r13, rdx
+ rol rdi, CONST
+ rol rsi, CONST
+ xor r8, r13
+ add r15, qword [rsp + CONST]
+ add r10, rdi
+ add r9, rsi
+ ror r8, CONST
+ xor rax, r10
+ xor rbp, r9
+ add r11, r8
+ ror rax, CONST
+ ror rbp, CONST
+ xor rdx, r11
+ add r12, rax
+ add r15, rbp
+ rol rdx, CONST
+ xor rdi, r12
+ xor rsi, r15
+ ror rdi, CONST
+ add r10, rdi
+ xor rax, r10
+ rol rax, CONST
+ ror rsi, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r9, rsi
+ add r13, rcx
+ xor rbp, r9
+ xor rdi, r13
+ add r13, qword [rsp + CONST]
+ rol rbp, CONST
+ rol rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ ror rcx, CONST
+ add r10, r8
+ add r13, rcx
+ xor rbp, r10
+ xor rdi, r13
+ ror rbp, CONST
+ ror rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ ror r8, CONST
+ rol rcx, CONST
+ add r10, r8
+ xor rbp, r10
+ rol rbp, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ xor rbp, r15
+ rol rsi, CONST
+ add r15, qword [rsp + CONST]
+ add r14, rcx
+ rol rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rdx, rbx
+ xor rax, r11
+ ror rdx, CONST
+ ror rax, CONST
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ xor rbp, r15
+ ror rsi, CONST
+ ror rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rbp, r14
+ xor rdx, rbx
+ rol rbp, CONST
+ xor rax, r11
+ rol rdx, CONST
+ rol rax, CONST
+ add rbx, rbp
+ add r14, qword [rsp + CONST]
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ mov qword [rsp + CONST], rbp
+ add r13, qword [rsp + CONST]
+ add rbx, rbp
+ add r13, rdx
+ add r12, qword [rsp + CONST]
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ xor r8, r13
+ add r12, rax
+ add r13, qword [rsp + CONST]
+ rol rcx, CONST
+ rol r8, CONST
+ xor rdi, r12
+ add r12, qword [rsp + CONST]
+ add r11, r8
+ rol rdi, CONST
+ xor rdx, r11
+ add r10, rdi
+ ror rdx, CONST
+ xor rax, r10
+ add r13, rdx
+ ror rax, CONST
+ xor r8, r13
+ ror r8, CONST
+ add r11, r8
+ xor rdx, r11
+ rol rdx, CONST
+ add r12, rax
+ add r15, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r15, rbp
+ xor rdi, r12
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ ror rdi, CONST
+ rol rsi, CONST
+ add r10, rdi
+ add r9, rsi
+ xor rax, r10
+ xor rbp, r9
+ rol rax, CONST
+ ror rbp, CONST
+ add r15, rbp
+ xor rsi, r15
+ ror rsi, CONST
+ add r9, rsi
+ xor rbp, r9
+ rol rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ add r10, r8
+ xor rbp, r10
+ ror rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ ror r8, CONST
+ add r10, r8
+ xor rbp, r10
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rcx
+ add r12, rdx
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ xor rdi, r13
+ xor rsi, r12
+ add r13, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ rol rdi, CONST
+ rol rsi, CONST
+ mov rbp, qword [rsp + CONST]
+ add r15, rax
+ add r9, rdi
+ add rbx, rsi
+ add r12, qword [rsp + CONST]
+ xor rcx, r9
+ xor rdx, rbx
+ ror rcx, CONST
+ ror rdx, CONST
+ add r13, rcx
+ add r12, rdx
+ xor rdi, r13
+ xor rsi, r12
+ ror rdi, CONST
+ ror rsi, CONST
+ add r9, rdi
+ add rbx, rsi
+ xor rcx, r9
+ xor rdx, rbx
+ rol rcx, CONST
+ rol rdx, CONST
+ xor rbp, r15
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ add r14, rcx
+ add r13, qword [rsp + CONST]
+ add r11, rbp
+ add r13, rdx
+ xor rax, r11
+ xor r8, r13
+ ror rax, CONST
+ rol r8, CONST
+ add r15, rax
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ xor rax, r11
+ add r11, r8
+ add rbx, rbp
+ xor rdx, r11
+ rol rax, CONST
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ rol rcx, CONST
+ ror rdx, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ add r12, rax
+ add r15, rbp
+ add r13, qword [rsp + CONST]
+ xor rdi, r12
+ xor rsi, r15
+ add r12, qword [rsp + CONST]
+ add r13, rdx
+ rol rdi, CONST
+ rol rsi, CONST
+ xor r8, r13
+ add r15, qword [rsp + CONST]
+ add r10, rdi
+ add r9, rsi
+ ror r8, CONST
+ xor rax, r10
+ xor rbp, r9
+ add r11, r8
+ ror rax, CONST
+ ror rbp, CONST
+ xor rdx, r11
+ add r12, rax
+ add r15, rbp
+ rol rdx, CONST
+ xor rdi, r12
+ xor rsi, r15
+ ror rdi, CONST
+ add r10, rdi
+ xor rax, r10
+ rol rax, CONST
+ ror rsi, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r9, rsi
+ add r13, rcx
+ xor rbp, r9
+ xor rdi, r13
+ add r13, qword [rsp + CONST]
+ rol rbp, CONST
+ rol rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ ror rcx, CONST
+ add r10, r8
+ add r13, rcx
+ xor rbp, r10
+ xor rdi, r13
+ ror rbp, CONST
+ ror rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ ror r8, CONST
+ rol rcx, CONST
+ add r10, r8
+ xor rbp, r10
+ rol rbp, CONST
+ mov qword [rsp + CONST], rbp
+ add r12, qword [rsp + CONST]
+ mov rbp, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ xor rbp, r15
+ rol rsi, CONST
+ add r15, qword [rsp + CONST]
+ add r14, rcx
+ rol rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rdx, rbx
+ xor rax, r11
+ ror rdx, CONST
+ ror rax, CONST
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ xor rbp, r15
+ ror rsi, CONST
+ ror rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rbp, r14
+ xor rdx, rbx
+ rol rbp, CONST
+ xor rax, r11
+ rol rdx, CONST
+ rol rax, CONST
+ add rbx, rbp
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rdx
+ xor rcx, rbx
+ add r12, rax
+ add r14, qword [rsp + CONST]
+ xor r8, r13
+ ror rcx, CONST
+ add r13, qword [rsp + CONST]
+ xor rdi, r12
+ rol r8, CONST
+ add r14, rcx
+ rol rdi, CONST
+ add r12, qword [rsp + CONST]
+ add r11, r8
+ xor rbp, r14
+ add r10, rdi
+ xor rdx, r11
+ ror rbp, CONST
+ xor rax, r10
+ ror rdx, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ ror rax, CONST
+ add r13, rdx
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ xor r8, r13
+ rol rcx, CONST
+ ror r8, CONST
+ add r11, r8
+ xor rdx, r11
+ rol rdx, CONST
+ add r12, rax
+ add r15, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r15, rbp
+ xor rdi, r12
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ ror rdi, CONST
+ rol rsi, CONST
+ add r10, rdi
+ add r9, rsi
+ xor rax, r10
+ xor rbp, r9
+ rol rax, CONST
+ ror rbp, CONST
+ add r15, rbp
+ xor rsi, r15
+ ror rsi, CONST
+ add r9, rsi
+ xor rbp, r9
+ rol rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ add r10, r8
+ xor rbp, r10
+ ror rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ ror r8, CONST
+ add r10, r8
+ xor rbp, r10
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rcx
+ add r12, rdx
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ xor rdi, r13
+ xor rsi, r12
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ rol rdi, CONST
+ rol rsi, CONST
+ mov qword [rsp + CONST], rbp
+ add r15, rax
+ add r9, rdi
+ add rbx, rsi
+ mov rbp, qword [rsp + CONST]
+ xor rcx, r9
+ xor rdx, rbx
+ ror rcx, CONST
+ ror rdx, CONST
+ add r13, rcx
+ add r12, rdx
+ xor rdi, r13
+ xor rsi, r12
+ ror rdi, CONST
+ ror rsi, CONST
+ add r9, rdi
+ add rbx, rsi
+ xor rcx, r9
+ xor rdx, rbx
+ rol rcx, CONST
+ rol rdx, CONST
+ xor rbp, r15
+ add r15, qword [rsp + CONST]
+ rol rbp, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r11, rbp
+ add r14, rcx
+ add r13, rdx
+ xor rax, r11
+ xor r8, r13
+ ror rax, CONST
+ rol r8, CONST
+ add r15, rax
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ xor rax, r11
+ add r11, r8
+ add rbx, rbp
+ xor rdx, r11
+ rol rax, CONST
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ xor rcx, rbx
+ rol rcx, CONST
+ ror rdx, CONST
+ add r12, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r12, rax
+ add r13, rdx
+ xor rdi, r12
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ xor r8, r13
+ mov rbp, qword [rsp + CONST]
+ rol rdi, CONST
+ ror r8, CONST
+ add r10, rdi
+ add r11, r8
+ add r15, rbp
+ xor rax, r10
+ xor rdx, r11
+ ror rax, CONST
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ rol rdx, CONST
+ rol rsi, CONST
+ add r12, rax
+ add r9, rsi
+ xor rdi, r12
+ xor rbp, r9
+ ror rdi, CONST
+ ror rbp, CONST
+ add r10, rdi
+ add r15, rbp
+ xor rax, r10
+ xor rsi, r15
+ rol rax, CONST
+ ror rsi, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r9, rsi
+ add r13, rcx
+ xor rbp, r9
+ xor rdi, r13
+ add r13, qword [rsp + CONST]
+ rol rbp, CONST
+ rol rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ ror rcx, CONST
+ add r10, r8
+ add r13, rcx
+ xor rbp, r10
+ xor rdi, r13
+ ror rbp, CONST
+ ror rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ ror r8, CONST
+ rol rcx, CONST
+ add r10, r8
+ xor rbp, r10
+ rol rbp, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ xor rbp, r15
+ rol rsi, CONST
+ add r15, qword [rsp + CONST]
+ add r14, rcx
+ rol rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rdx, rbx
+ xor rax, r11
+ ror rdx, CONST
+ ror rax, CONST
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ xor rbp, r15
+ ror rsi, CONST
+ ror rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rbp, r14
+ xor rdx, rbx
+ rol rbp, CONST
+ xor rax, r11
+ rol rdx, CONST
+ rol rax, CONST
+ add rbx, rbp
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rdx
+ xor rcx, rbx
+ add r12, rax
+ add r14, qword [rsp + CONST]
+ xor r8, r13
+ ror rcx, CONST
+ add r13, qword [rsp + CONST]
+ xor rdi, r12
+ rol r8, CONST
+ add r14, rcx
+ rol rdi, CONST
+ add r12, qword [rsp + CONST]
+ add r11, r8
+ xor rbp, r14
+ add r10, rdi
+ xor rdx, r11
+ ror rbp, CONST
+ xor rax, r10
+ ror rdx, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ ror rax, CONST
+ add r13, rdx
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ xor r8, r13
+ rol rcx, CONST
+ ror r8, CONST
+ add r11, r8
+ xor rdx, r11
+ rol rdx, CONST
+ add r12, rax
+ add r15, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r15, rbp
+ xor rdi, r12
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ ror rdi, CONST
+ rol rsi, CONST
+ add r10, rdi
+ add r9, rsi
+ xor rax, r10
+ xor rbp, r9
+ rol rax, CONST
+ ror rbp, CONST
+ add r15, rbp
+ xor rsi, r15
+ ror rsi, CONST
+ add r9, rsi
+ xor rbp, r9
+ rol rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ add r10, r8
+ xor rbp, r10
+ ror rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ ror r8, CONST
+ add r10, r8
+ xor rbp, r10
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rcx
+ add r12, rdx
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ xor rdi, r13
+ xor rsi, r12
+ add r12, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ rol rdi, CONST
+ rol rsi, CONST
+ mov rbp, qword [rsp + CONST]
+ add r15, rax
+ add r9, rdi
+ add rbx, rsi
+ add r13, qword [rsp + CONST]
+ xor rcx, r9
+ xor rdx, rbx
+ ror rcx, CONST
+ ror rdx, CONST
+ add r13, rcx
+ add r12, rdx
+ xor rdi, r13
+ xor rsi, r12
+ ror rdi, CONST
+ ror rsi, CONST
+ add r9, rdi
+ add rbx, rsi
+ xor rcx, r9
+ xor rdx, rbx
+ rol rcx, CONST
+ rol rdx, CONST
+ xor rbp, r15
+ add r15, qword [rsp + CONST]
+ rol rbp, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r11, rbp
+ add r14, rcx
+ add r13, rdx
+ xor rax, r11
+ xor r8, r13
+ ror rax, CONST
+ rol r8, CONST
+ add r15, rax
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ xor rax, r11
+ add r11, r8
+ add rbx, rbp
+ xor rdx, r11
+ rol rax, CONST
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ rol rcx, CONST
+ ror rdx, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ add r12, rax
+ add r15, rbp
+ add r13, qword [rsp + CONST]
+ xor rdi, r12
+ xor rsi, r15
+ add r12, qword [rsp + CONST]
+ add r13, rdx
+ rol rdi, CONST
+ rol rsi, CONST
+ xor r8, r13
+ add r15, qword [rsp + CONST]
+ add r10, rdi
+ add r9, rsi
+ ror r8, CONST
+ xor rax, r10
+ xor rbp, r9
+ add r11, r8
+ ror rax, CONST
+ ror rbp, CONST
+ xor rdx, r11
+ add r12, rax
+ add r15, rbp
+ rol rdx, CONST
+ xor rdi, r12
+ xor rsi, r15
+ ror rdi, CONST
+ add r10, rdi
+ xor rax, r10
+ rol rax, CONST
+ ror rsi, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r9, rsi
+ add r13, rcx
+ xor rbp, r9
+ xor rdi, r13
+ add r13, qword [rsp + CONST]
+ rol rbp, CONST
+ rol rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ ror rcx, CONST
+ add r10, r8
+ add r13, rcx
+ xor rbp, r10
+ xor rdi, r13
+ ror rbp, CONST
+ ror rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ ror r8, CONST
+ rol rcx, CONST
+ add r10, r8
+ xor rbp, r10
+ rol rbp, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ xor rbp, r15
+ rol rsi, CONST
+ add r15, qword [rsp + CONST]
+ add r14, rcx
+ rol rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rdx, rbx
+ xor rax, r11
+ ror rdx, CONST
+ ror rax, CONST
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ xor rbp, r15
+ ror rsi, CONST
+ ror rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rbp, r14
+ xor rdx, rbx
+ rol rbp, CONST
+ xor rax, r11
+ rol rdx, CONST
+ rol rax, CONST
+ add rbx, rbp
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ xor rcx, rbx
+ add r12, rax
+ add r13, rdx
+ ror rcx, CONST
+ xor rdi, r12
+ add r12, qword [rsp + CONST]
+ xor r8, r13
+ add r13, qword [rsp + CONST]
+ add r14, rcx
+ rol rdi, CONST
+ rol r8, CONST
+ xor rbp, r14
+ add r10, rdi
+ add r11, r8
+ ror rbp, CONST
+ xor rax, r10
+ xor rdx, r11
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ ror rax, CONST
+ ror rdx, CONST
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ add r13, rdx
+ rol rcx, CONST
+ xor r8, r13
+ ror r8, CONST
+ add r11, r8
+ xor rdx, r11
+ rol rdx, CONST
+ add r12, rax
+ add r15, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r15, rbp
+ xor rdi, r12
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ ror rdi, CONST
+ rol rsi, CONST
+ add r10, rdi
+ add r9, rsi
+ xor rax, r10
+ xor rbp, r9
+ rol rax, CONST
+ ror rbp, CONST
+ add r15, rbp
+ xor rsi, r15
+ ror rsi, CONST
+ add r9, rsi
+ xor rbp, r9
+ rol rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ add r10, r8
+ xor rbp, r10
+ ror rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ ror r8, CONST
+ add r10, r8
+ xor rbp, r10
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rcx
+ add r12, rdx
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ xor rdi, r13
+ xor rsi, r12
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ rol rdi, CONST
+ rol rsi, CONST
+ mov qword [rsp + CONST], rbp
+ add r15, rax
+ add r9, rdi
+ add rbx, rsi
+ mov rbp, qword [rsp + CONST]
+ xor rcx, r9
+ xor rdx, rbx
+ ror rcx, CONST
+ ror rdx, CONST
+ add r13, rcx
+ add r12, rdx
+ xor rdi, r13
+ xor rsi, r12
+ ror rdi, CONST
+ ror rsi, CONST
+ add r9, rdi
+ add rbx, rsi
+ xor rcx, r9
+ xor rdx, rbx
+ rol rcx, CONST
+ rol rdx, CONST
+ xor rbp, r15
+ add r15, qword [rsp + CONST]
+ rol rbp, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r11, rbp
+ add r14, rcx
+ add r13, rdx
+ xor rax, r11
+ xor r8, r13
+ ror rax, CONST
+ rol r8, CONST
+ add r15, rax
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ xor rax, r11
+ add r11, r8
+ add rbx, rbp
+ xor rdx, r11
+ rol rax, CONST
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ rol rcx, CONST
+ ror rdx, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ add r12, rax
+ add r15, rbp
+ add r13, qword [rsp + CONST]
+ xor rdi, r12
+ xor rsi, r15
+ add r13, rdx
+ add r15, qword [rsp + CONST]
+ rol rdi, CONST
+ add r12, qword [rsp + CONST]
+ rol rsi, CONST
+ xor r8, r13
+ add r10, rdi
+ add r9, rsi
+ ror r8, CONST
+ xor rax, r10
+ xor rbp, r9
+ add r11, r8
+ ror rax, CONST
+ ror rbp, CONST
+ xor rdx, r11
+ add r12, rax
+ add r15, rbp
+ rol rdx, CONST
+ xor rdi, r12
+ xor rsi, r15
+ ror rdi, CONST
+ add r10, rdi
+ xor rax, r10
+ rol rax, CONST
+ ror rsi, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r9, rsi
+ add r13, rcx
+ xor rbp, r9
+ xor rdi, r13
+ add r13, qword [rsp + CONST]
+ rol rbp, CONST
+ rol rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ ror rcx, CONST
+ add r10, r8
+ add r13, rcx
+ xor rbp, r10
+ xor rdi, r13
+ ror rbp, CONST
+ ror rdi, CONST
+ add r14, rbp
+ add r9, rdi
+ xor r8, r14
+ xor rcx, r9
+ ror r8, CONST
+ rol rcx, CONST
+ add r10, r8
+ xor rbp, r10
+ rol rbp, CONST
+ add r12, qword [rsp + CONST]
+ add r15, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ mov rbp, qword [rsp + CONST]
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ add r12, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ xor rbp, r15
+ rol rsi, CONST
+ add r15, qword [rsp + CONST]
+ add r14, rcx
+ rol rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rdx, rbx
+ xor rax, r11
+ ror rdx, CONST
+ ror rax, CONST
+ add r12, rdx
+ add r15, rax
+ xor rsi, r12
+ xor rbp, r15
+ ror rsi, CONST
+ ror rbp, CONST
+ add rbx, rsi
+ add r11, rbp
+ xor rbp, r14
+ xor rdx, rbx
+ rol rbp, CONST
+ xor rax, r11
+ rol rdx, CONST
+ rol rax, CONST
+ add rbx, rbp
+ add r14, qword [rsp + CONST]
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ mov qword [rsp + CONST], rbp
+ add r13, qword [rsp + CONST]
+ add rbx, rbp
+ add r13, rdx
+ add r12, qword [rsp + CONST]
+ mov rbp, qword [rsp + CONST]
+ xor rcx, rbx
+ xor r8, r13
+ add r12, rax
+ add r13, qword [rsp + CONST]
+ rol rcx, CONST
+ rol r8, CONST
+ xor rdi, r12
+ add r12, qword [rsp + CONST]
+ add r11, r8
+ rol rdi, CONST
+ xor rdx, r11
+ add r10, rdi
+ ror rdx, CONST
+ xor rax, r10
+ add r13, rdx
+ ror rax, CONST
+ xor r8, r13
+ ror r8, CONST
+ add r11, r8
+ xor rdx, r11
+ rol rdx, CONST
+ add r12, rax
+ add r15, qword [rsp + CONST]
+ add r14, qword [rsp + CONST]
+ add r15, rbp
+ xor rdi, r12
+ xor rsi, r15
+ add r15, qword [rsp + CONST]
+ ror rdi, CONST
+ rol rsi, CONST
+ add r10, rdi
+ add r9, rsi
+ xor rax, r10
+ xor rbp, r9
+ rol rax, CONST
+ ror rbp, CONST
+ add r15, rbp
+ xor rsi, r15
+ ror rsi, CONST
+ add r9, rsi
+ xor rbp, r9
+ rol rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ add r14, qword [rsp + CONST]
+ rol r8, CONST
+ add r10, r8
+ xor rbp, r10
+ ror rbp, CONST
+ add r14, rbp
+ xor r8, r14
+ ror r8, CONST
+ add r10, r8
+ xor rbp, r10
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rcx
+ add r12, rdx
+ rol rbp, CONST
+ add r15, qword [rsp + CONST]
+ xor rdi, r13
+ xor rsi, r12
+ add r13, qword [rsp + CONST]
+ mov qword [rsp + CONST], rbp
+ rol rdi, CONST
+ rol rsi, CONST
+ mov rbp, qword [rsp + CONST]
+ add r15, rax
+ add r9, rdi
+ add rbx, rsi
+ add r12, qword [rsp + CONST]
+ xor rcx, r9
+ xor rdx, rbx
+ ror rcx, CONST
+ ror rdx, CONST
+ add r13, rcx
+ add r12, rdx
+ xor rdi, r13
+ xor rsi, r12
+ ror rdi, CONST
+ ror rsi, CONST
+ add r9, rdi
+ add rbx, rsi
+ xor rcx, r9
+ xor rdx, rbx
+ rol rcx, CONST
+ rol rdx, CONST
+ xor rbp, r15
+ add r15, qword [rsp + CONST]
+ rol rbp, CONST
+ add r14, qword [rsp + CONST]
+ add r13, qword [rsp + CONST]
+ add r11, rbp
+ add r14, rcx
+ add r13, rdx
+ xor rax, r11
+ xor r8, r13
+ ror rax, CONST
+ rol r8, CONST
+ add r15, rax
+ xor rbp, r15
+ ror rbp, CONST
+ add r11, rbp
+ xor rbp, r14
+ add r14, qword [rsp + CONST]
+ rol rbp, CONST
+ xor rax, r11
+ add r11, r8
+ add rbx, rbp
+ xor rdx, r11
+ rol rax, CONST
+ xor rcx, rbx
+ ror rcx, CONST
+ add r14, rcx
+ xor rbp, r14
+ ror rbp, CONST
+ add rbx, rbp
+ mov qword [rsp + CONST], rbp
+ mov qword [rsp + CONST], rbx
+ xor rbx, rcx
+ rol rbx, CONST
+ ror rdx, CONST
+ add r13, qword [rsp + CONST]
+ add r12, qword [rsp + CONST]
+ add r13, rdx
+ add r12, rax
+ mov qword [rsp + CONST], rbx
+ mov qword [rsp + CONST], r13
+ xor r13, r8
+ xor rdi, r12
+ ror r13, CONST
+ rol rdi, CONST
+ add r11, r13
+ add r10, rdi
+ mov qword [rsp + CONST], r13
+ mov qword [rsp + CONST], r11
+ xor r11, rdx
+ mov rdx, qword [rsp + CONST]
+ xor rax, r10
+ ror rax, CONST
+ rol r11, CONST
+ add rdx, r12
+ mov qword [rsp + CONST], r11
+ add rdx, rax
+ xor rdi, rdx
+ mov qword [rsp + CONST], rdx
+ ror rdi, CONST
+ add r10, rdi
+ mov qword [rsp + CONST], rdi
+ mov qword [rsp + CONST], r10
+ mov rdx, qword [rsp + CONST]
+ xor r10, rax
+ mov rax, qword [rsp + CONST]
+ rol r10, CONST
+ mov rdi, qword [rsp + CONST]
+ add rdx, r15
+ mov qword [rsp + CONST], r10
+ add rdx, rax
+ xor rsi, rdx
+ add rdx, qword [rsp + CONST]
+ rol rsi, CONST
+ add r9, rsi
+ xor rax, r9
+ mov rcx, rax
+ ror rcx, CONST
+ lea rax, [rdx + rcx]
+ lea rdx, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ xor rax, rsi
+ mov rsi, rax
+ mov rax, r14
+ ror rsi, CONST
+ mov qword [rsp + CONST], rsi
+ add rsi, r9
+ mov qword [rsp + CONST], rsi
+ xor rsi, rcx
+ lea rcx, [rsp + CONST]
+ rol rsi, CONST
+ mov qword [rsp + CONST], rsi
+ jmp LABEL1465
+LABEL1474:
+ mov rax, qword [rdx + CONST]
+LABEL1465:
+ mov r14, qword [rdi]
+ xor r14, qword [rdx]
+ add rdx, CONST
+ add rdi, CONST
+ xor r14, rax
+ mov qword [rdi + CONST], r14
+ cmp rdx, rcx
+ cjmp LABEL1474
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL1477
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL1477:
+ call CONST

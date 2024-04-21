@@ -1,0 +1,58 @@
+ .name sym.file_status
+ .offset 000000000008a810
+ .file bash
+ endbr64
+ push r12
+ mov rsi, rdi
+ xor r12d, r12d
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ test eax, eax
+ cjmp LABEL14
+ mov eax, dword [rsp + CONST]
+ mov r12d, CONST
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL14
+ xor eax, eax
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL24
+LABEL46:
+ mov r12d, CONST
+LABEL48:
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov r8d, eax
+ mov eax, r12d
+ or eax, CONST
+ test r8d, r8d
+ cmove r12d, eax
+LABEL14:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL36
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL24:
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL46
+ mov r12d, CONST
+ jmp LABEL48
+LABEL36:
+ call CONST

@@ -1,0 +1,28 @@
+ .name sym._rl_prep_non_filename_text
+ .offset 00000000000dcd40
+ .file bash
+ endbr64
+ mov rdi, qword [rip + CONST]
+ mov rcx, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ mov rsi, qword [rip + CONST]
+ mov edx, CONST
+ jmp CONST
+LABEL4:
+ sub rsp, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ mov edx, CONST
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ add rsp, CONST
+ jmp CONST

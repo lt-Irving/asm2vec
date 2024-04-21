@@ -1,0 +1,17 @@
+ .name sym.rl_set_keymap_from_edit_mode
+ .offset 00000000000c6b90
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ cmp eax, CONST
+ cjmp LABEL3
+ test eax, eax
+ cjmp LABEL5
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+LABEL5:
+ ret
+LABEL3:
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ ret

@@ -1,0 +1,41 @@
+ .name sym.notify_and_cleanup
+ .offset 000000000005b9d0
+ .file bash
+ endbr64
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL3
+ mov ecx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL7
+ mov edx, dword [rip + CONST]
+ or edx, dword [rip + CONST]
+ cjmp LABEL7
+LABEL15:
+ test eax, eax
+ cjmp LABEL12
+ jmp CONST
+LABEL7:
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL15
+ test eax, eax
+ cjmp LABEL3
+ sub rsp, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL22
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL25
+LABEL22:
+ add rsp, CONST
+ ret
+LABEL3:
+ ret
+LABEL25:
+ add rsp, CONST
+ jmp CONST
+LABEL12:
+ ret

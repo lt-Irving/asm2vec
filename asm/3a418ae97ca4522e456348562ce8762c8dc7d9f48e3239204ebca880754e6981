@@ -1,0 +1,53 @@
+ .name sym.find_string_in_alist
+ .offset 00000000000891d0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rdi, qword [rsi]
+ test rdi, rdi
+ cjmp LABEL7
+ mov rbx, rsi
+ mov r12d, edx
+ jmp LABEL10
+LABEL19:
+ movzx eax, byte [rdi]
+ cmp byte [rbp], al
+ cjmp LABEL13
+LABEL24:
+ mov rdi, qword [rbx + CONST]
+ add rbx, CONST
+ test rdi, rdi
+ cjmp LABEL7
+LABEL10:
+ test r12d, r12d
+ cjmp LABEL19
+ mov edx, CONST
+ mov rsi, rbp
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL24
+LABEL34:
+ mov eax, dword [rbx + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL13:
+ mov rsi, rdi
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL34
+ mov rdi, qword [rbx + CONST]
+ add rbx, CONST
+ test rdi, rdi
+ cjmp LABEL10
+LABEL7:
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret

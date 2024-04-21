@@ -1,0 +1,33 @@
+ .name fcn.00057cc0
+ .offset 0000000000057cc0
+ .file bash
+ mov rdx, qword [rip + CONST]
+ movsxd rdi, edi
+ shl rdi, CONST
+ add rdi, rdx
+ mov esi, dword [rdi + CONST]
+ cmp esi, CONST
+ cjmp LABEL6
+ mov ecx, dword [rdi]
+ movsxd rax, dword [rdi + CONST]
+ cmp ecx, CONST
+ cjmp LABEL10
+ movsxd r8, ecx
+ shl r8, CONST
+ mov dword [rdx + r8 + CONST], eax
+ movsxd rax, dword [rdi + CONST]
+LABEL10:
+ cmp eax, CONST
+ cjmp LABEL16
+ shl rax, CONST
+ mov dword [rdx + rax], ecx
+LABEL25:
+ mov qword [rdi], CONST
+ mov dword [rdi + CONST], CONST
+LABEL6:
+ ret
+LABEL16:
+ and esi, CONST
+ lea rax, [rip + CONST]
+ mov dword [rax + rsi*CONST], ecx
+ jmp LABEL25

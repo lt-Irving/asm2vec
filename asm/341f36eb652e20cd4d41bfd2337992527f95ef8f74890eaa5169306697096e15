@@ -1,0 +1,99 @@
+ .name fcn.0000f5b0
+ .offset 000000000000f5b0
+ .file apt-cache
+ endbr64
+ push r15
+ push r14
+ lea r14, [rdi + CONST]
+ push r13
+ mov r13, rsi
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov r12, qword [rdi + CONST]
+ test r12, r12
+ cjmp LABEL13
+ mov ebp, dword [rsi]
+ jmp LABEL15
+LABEL23:
+ mov rax, qword [r12 + CONST]
+ mov edx, CONST
+ test rax, rax
+ cjmp LABEL19
+LABEL27:
+ mov r12, rax
+LABEL15:
+ mov ecx, dword [r12 + CONST]
+ cmp ebp, ecx
+ cjmp LABEL23
+ mov rax, qword [r12 + CONST]
+ xor edx, edx
+ test rax, rax
+ cjmp LABEL27
+LABEL19:
+ test dl, dl
+ cjmp LABEL29
+ cmp ebp, ecx
+ cjmp LABEL31
+LABEL57:
+ mov r15d, CONST
+ cmp r14, r12
+ cjmp LABEL34
+LABEL76:
+ mov edi, CONST
+ call CONST
+ mov rdx, r12
+ mov rcx, r14
+ mov edi, r15d
+ mov rbp, rax
+ mov eax, dword [r13]
+ mov rsi, rbp
+ mov dword [rbp + CONST], eax
+ call CONST
+ add qword [rbx + CONST], CONST
+ add rsp, CONST
+ mov rax, rbp
+ pop rbx
+ mov edx, CONST
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL29:
+ cmp r12, qword [rbx + CONST]
+ cjmp LABEL57
+LABEL81:
+ mov rdi, r12
+ call CONST
+ cmp ebp, dword [rax + CONST]
+ cjmp LABEL57
+ mov r12, rax
+LABEL31:
+ add rsp, CONST
+ mov rax, r12
+ xor edx, edx
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL34:
+ xor r15d, r15d
+ cmp ebp, dword [r12 + CONST]
+ setb r15b
+ jmp LABEL76
+LABEL13:
+ mov r12, r14
+ cmp r14, qword [rdi + CONST]
+ cjmp LABEL79
+ mov ebp, dword [rsi]
+ jmp LABEL81
+LABEL79:
+ mov r15d, CONST
+ jmp LABEL76

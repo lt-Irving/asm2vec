@@ -1,0 +1,59 @@
+ .name sym.sh_chkwrite
+ .offset 0000000000092950
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ push r12
+ mov r12d, edi
+ test eax, eax
+ cjmp LABEL5
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+LABEL28:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL13
+LABEL47:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL16
+ mov rdi, qword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL20
+LABEL35:
+ mov eax, r12d
+ pop r12
+ ret
+LABEL5:
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL28
+LABEL8:
+ call CONST
+ jmp LABEL28
+LABEL16:
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL35
+LABEL20:
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov r12d, CONST
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov eax, r12d
+ pop r12
+ ret
+LABEL13:
+ mov edi, dword [rip + CONST]
+ call CONST
+ jmp LABEL47

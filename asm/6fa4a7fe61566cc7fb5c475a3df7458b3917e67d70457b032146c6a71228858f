@@ -1,0 +1,14 @@
+ .name sym.rl_maybe_save_line
+ .offset 00000000000d6520
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL2
+ xor eax, eax
+ ret
+LABEL2:
+ sub rsp, CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

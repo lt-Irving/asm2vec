@@ -1,0 +1,32 @@
+ .name method.APT::VersionContainer_std::vector_pkgCache::VerIterator__std::allocator_pkgCache::VerIterator_____.insert_pkgCache::VerIterator_const_
+ .offset 0000000000009940
+ .file apt-mark
+ endbr64
+ mov rax, qword [rsi + CONST]
+ xor r8d, r8d
+ test rax, rax
+ cjmp LABEL4
+ mov rdx, qword [rsi]
+ cmp rdx, qword [rax + CONST]
+ cjmp LABEL4
+ mov r8, qword [rdi + CONST]
+ cmp r8, qword [rdi + CONST]
+ cjmp LABEL10
+ mov qword [r8], rdx
+ add r8, CONST
+ mov qword [r8 + CONST], rax
+ mov qword [rdi + CONST], r8
+ mov r8d, CONST
+LABEL4:
+ mov eax, r8d
+ ret
+LABEL10:
+ sub rsp, CONST
+ mov rdx, rsi
+ add rdi, CONST
+ mov rsi, r8
+ call CONST
+ mov r8d, CONST
+ add rsp, CONST
+ mov eax, r8d
+ ret

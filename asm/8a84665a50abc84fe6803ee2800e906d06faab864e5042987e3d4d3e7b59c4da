@@ -1,0 +1,37 @@
+ .name sym.sh_set_lines_and_columns
+ .offset 0000000000051680
+ .file bash
+ endbr64
+ push rbp
+ movsxd rdi, edi
+ mov edx, CONST
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rbp, [rsp + CONST]
+ mov rsi, rbp
+ call CONST
+ xor edx, edx
+ lea rdi, [rip + CONST]
+ mov rsi, rax
+ call CONST
+ movsxd rdi, ebx
+ mov edx, CONST
+ mov rsi, rbp
+ call CONST
+ xor edx, edx
+ lea rdi, [rip + CONST]
+ mov rsi, rax
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL27
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL27:
+ call CONST

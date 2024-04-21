@@ -1,0 +1,28 @@
+ .name sym.dispose_word
+ .offset 0000000000043b80
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov eax, dword [rip + CONST]
+ cmp dword [rip + CONST], eax
+ cjmp LABEL9
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL9:
+ movabs rax, CONST
+ mov qword [rbp], rax
+ mov qword [rbp + CONST], rax
+ movsxd rax, dword [rip + CONST]
+ lea edx, [rax + CONST]
+ mov dword [rip + CONST], edx
+ mov rdx, qword [rip + CONST]
+ mov qword [rdx + rax*CONST], rbp
+ pop rbp
+ ret

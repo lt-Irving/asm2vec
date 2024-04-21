@@ -1,0 +1,117 @@
+ .name fcn.00010fe0
+ .offset 0000000000010fe0
+ .file diff
+ push r15
+ lea rax, [rip + CONST]
+ mov r15, rsi
+ push r14
+ mov r14, r8
+ push r13
+ mov r13, rcx
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ test rdx, rdx
+ cmove r12, rax
+ test rcx, rcx
+ lea rax, [rip + CONST]
+ cmove r13, rax
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL22
+ lea rdi, [rax + CONST]
+ test r15, r15
+ cjmp LABEL25
+ mov qword [rax + CONST], r15
+ call CONST
+ test al, al
+ cjmp LABEL29
+ cmp byte [r15 + CONST], CONST
+ cjmp LABEL31
+LABEL91:
+ mov rdi, rbp
+ call CONST
+ mov rbp, rax
+ shr rax, CONST
+ setne al
+ bt rbp, CONST
+ movzx eax, al
+ cjmp LABEL29
+ test rax, rax
+ cjmp LABEL29
+ mov qword [rbx + CONST], rbp
+ test rbp, rbp
+ cjmp LABEL29
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov qword [rbx], rax
+ test rax, rax
+ cjmp LABEL29
+ shl rbp, CONST
+ mov qword [rbx + CONST], CONST
+ add rbp, rax
+ mov qword [rbx + CONST], CONST
+ mov qword [rbx + CONST], rbp
+ mov qword [rbx + CONST], r12
+ mov qword [rbx + CONST], r13
+ mov qword [rbx + CONST], r14
+ mov qword [rbx + CONST], CONST
+ jmp LABEL22
+LABEL29:
+ mov rdi, rbx
+ xor ebx, ebx
+ call CONST
+LABEL22:
+ add rsp, CONST
+ mov rax, rbx
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL25:
+ lea rax, [rip + CONST]
+ mov qword [rbx + CONST], rax
+ call CONST
+ movss xmm1, dword [rip + CONST]
+ test al, al
+ cjmp LABEL29
+ test rbp, rbp
+ cjmp LABEL80
+LABEL94:
+ pxor xmm0, xmm0
+ cvtsi2ss xmm0, rbp
+LABEL102:
+ divss xmm0, xmm1
+ comiss xmm0, dword [rip + CONST]
+ cjmp LABEL29
+ comiss xmm0, dword [rip + CONST]
+ cjmp LABEL87
+ subss xmm0, dword [rip + CONST]
+ cvttss2si rbp, xmm0
+ btc rbp, CONST
+ jmp LABEL91
+LABEL31:
+ movss xmm1, dword [r15 + CONST]
+ test rbp, rbp
+ cjmp LABEL94
+LABEL80:
+ mov rax, rbp
+ and ebp, CONST
+ pxor xmm0, xmm0
+ shr rax, CONST
+ or rax, rbp
+ cvtsi2ss xmm0, rax
+ addss xmm0, xmm0
+ jmp LABEL102
+LABEL87:
+ cvttss2si rbp, xmm0
+ jmp LABEL91

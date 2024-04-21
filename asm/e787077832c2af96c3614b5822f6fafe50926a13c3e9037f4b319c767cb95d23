@@ -1,0 +1,38 @@
+ .name sym.load_history
+ .offset 0000000000081300
+ .file bash
+ endbr64
+ push rbp
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rax
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL17
+ cmp byte [rax], CONST
+ mov rbp, rax
+ cjmp LABEL20
+LABEL17:
+ pop rbp
+ ret
+LABEL20:
+ mov rdi, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ mov rdi, rbp
+ call CONST
+ mov eax, dword [rip + CONST]
+ pop rbp
+ mov dword [rip + CONST], eax
+ jmp CONST

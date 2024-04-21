@@ -1,0 +1,30 @@
+ .name sym.legal_alias_name
+ .offset 000000000003ed10
+ .file bash
+ endbr64
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL3
+ lea rsi, [rip + CONST]
+ movabs r8, CONST
+ jmp LABEL6
+LABEL16:
+ movzx eax, byte [rdi + CONST]
+ add rdi, CONST
+ test al, al
+ cjmp LABEL3
+LABEL6:
+ movzx edx, al
+ movzx ecx, al
+ test dword [rsi + rdx*CONST], CONST
+ cjmp LABEL14
+ cmp al, CONST
+ cjmp LABEL16
+ bt r8, rcx
+ cjmp LABEL16
+LABEL14:
+ xor eax, eax
+ ret
+LABEL3:
+ mov eax, CONST
+ ret

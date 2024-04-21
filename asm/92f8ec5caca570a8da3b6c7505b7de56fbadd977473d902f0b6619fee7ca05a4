@@ -1,0 +1,19 @@
+ .name sym.rl_vi_subst
+ .offset 00000000000bc980
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ push rbp
+ mov ebp, edi
+ test eax, eax
+ cjmp LABEL5
+ xor edi, edi
+ cmp esi, CONST
+ setne dil
+ lea edi, [rdi + rdi*CONST + CONST]
+ call CONST
+LABEL5:
+ mov edi, ebp
+ mov esi, CONST
+ pop rbp
+ jmp CONST

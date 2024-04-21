@@ -1,0 +1,120 @@
+ .name fcn.00002c10
+ .offset 0000000000002c10
+ .file dircolors
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL2
+ push r12
+ mov r12d, CONST
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov ebx, CONST
+ jmp LABEL9
+LABEL47:
+ cmp rdx, rcx
+ cjmp LABEL11
+LABEL82:
+ lea rax, [rdx + CONST]
+ mov qword [rip + CONST], rax
+ mov byte [rdx], CONST
+ mov rax, qword [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL17
+LABEL92:
+ lea rdx, [rax + CONST]
+ mov qword [rip + CONST], rdx
+ mov byte [rax], CONST
+ mov rax, qword [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL23
+LABEL87:
+ lea rdx, [rax + CONST]
+ mov ebx, CONST
+ mov qword [rip + CONST], rdx
+ mov byte [rax], CONST
+ mov rcx, qword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ nop word cs:[rax + rax]
+LABEL71:
+ cmp rcx, rdx
+ cjmp LABEL32
+LABEL60:
+ lea rax, [rdx + CONST]
+ add rbp, CONST
+ mov qword [rip + CONST], rax
+ movzx eax, byte [rbp + CONST]
+ mov byte [rdx], al
+ movzx eax, byte [rbp]
+ test al, al
+ cjmp LABEL40
+LABEL9:
+ mov rcx, qword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ cmp al, CONST
+ cjmp LABEL44
+ cjmp LABEL45
+ cmp al, CONST
+ cjmp LABEL47
+ cmp al, CONST
+ cjmp LABEL49
+LABEL44:
+ test bl, bl
+ cjmp LABEL49
+ cmp rdx, rcx
+ cjmp LABEL53
+LABEL97:
+ lea rax, [rdx + CONST]
+ mov qword [rip + CONST], rax
+ mov byte [rdx], CONST
+ mov rcx, qword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ cmp rcx, rdx
+ cjmp LABEL60
+ nop dword [rax]
+LABEL32:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdx, qword [rip + CONST]
+ jmp LABEL60
+LABEL45:
+ and eax, CONST
+ xor ebx, CONST
+ cmp al, CONST
+ cmovne ebx, r12d
+ jmp LABEL71
+LABEL49:
+ mov ebx, CONST
+ jmp LABEL71
+LABEL40:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL11:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdx, qword [rip + CONST]
+ jmp LABEL82
+LABEL23:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rax, qword [rip + CONST]
+ jmp LABEL87
+LABEL17:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rax, qword [rip + CONST]
+ jmp LABEL92
+LABEL53:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdx, qword [rip + CONST]
+ jmp LABEL97
+LABEL2:
+ ret

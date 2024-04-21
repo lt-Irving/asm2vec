@@ -1,0 +1,52 @@
+ .name sym.show_shell_version
+ .offset 000000000007a5f0
+ .file bash
+ endbr64
+ cmp byte [rip + CONST], CONST
+ push rbx
+ mov ebx, edi
+ cjmp LABEL4
+LABEL20:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rcx, [rip + CONST]
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ mov rsi, rax
+ xor eax, eax
+ call CONST
+ test ebx, ebx
+ cjmp LABEL16
+ pop rbx
+ ret
+LABEL4:
+ call CONST
+ jmp LABEL20
+LABEL16:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ call CONST
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ pop rbx
+ mov rdi, rax
+ jmp CONST

@@ -1,0 +1,31 @@
+ .name fcn.00009af0
+ .offset 0000000000009af0
+ .file dpkg-deb
+ endbr64
+ push rbp
+ cmp byte [rdi], CONST
+ mov rbp, rdi
+ cjmp LABEL4
+ movzx esi, byte [rdi + CONST]
+ test esi, esi
+ cjmp LABEL4
+LABEL17:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL4:
+ xor esi, esi
+ mov rdi, rbp
+ xor eax, eax
+ call CONST
+ mov esi, eax
+ test eax, eax
+ cjmp LABEL17
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov edx, CONST
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST

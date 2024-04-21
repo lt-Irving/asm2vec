@@ -1,0 +1,18 @@
+ .name sym.find_variable_tempenv
+ .offset 000000000004dde0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov esi, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ test byte [rax + CONST], CONST
+ cjmp LABEL7
+LABEL5:
+ add rsp, CONST
+ ret
+LABEL7:
+ mov rdi, rax
+ add rsp, CONST
+ jmp CONST

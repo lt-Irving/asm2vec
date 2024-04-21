@@ -1,0 +1,78 @@
+ .name sym.suspend_builtin
+ .offset 00000000000a13c0
+ .file bash
+ endbr64
+ push r12
+ xor r12d, r12d
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ mov rbx, rdi
+ call CONST
+LABEL18:
+ mov rsi, rbp
+ mov rdi, rbx
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL12
+ cmp eax, CONST
+ cjmp LABEL14
+ cmp eax, CONST
+ cjmp LABEL16
+ add r12d, CONST
+ jmp LABEL18
+LABEL14:
+ call CONST
+ mov eax, CONST
+LABEL49:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL16:
+ call CONST
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL33
+ test r12d, r12d
+ cjmp LABEL35
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL40
+LABEL35:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov esi, CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ xor eax, eax
+ jmp LABEL49
+LABEL33:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ call CONST
+ mov eax, CONST
+ jmp LABEL49
+LABEL40:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ mov eax, CONST
+ jmp LABEL49

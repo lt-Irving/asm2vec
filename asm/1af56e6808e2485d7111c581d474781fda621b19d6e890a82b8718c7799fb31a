@@ -1,0 +1,20 @@
+ .name fcn.00007530
+ .offset 0000000000007530
+ .file dash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ cmp edi, CONST
+ cjmp LABEL4
+LABEL2:
+ lea rax, [rip + CONST]
+ test sil, CONST
+ cjmp LABEL7
+ and esi, CONST
+ lea rax, [rip + CONST]
+ lea rdx, [rip + CONST]
+ cmove rax, rdx
+LABEL7:
+ ret
+LABEL4:
+ jmp CONST

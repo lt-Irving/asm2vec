@@ -1,0 +1,100 @@
+ .name method.std::_Rb_tree_pkgCache::PkgIterator__pkgCache::PkgIterator__std::_Identity_pkgCache::PkgIterator___std::less_pkgCache::PkgIterator___std::allocator_pkgCache::PkgIterator___._M_get_insert_unique_pos_pkgCache::PkgIterator_const_
+ .offset 0000000000009f60
+ .file apt-mark
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ mov rbx, qword [rdi + CONST]
+ test rbx, rbx
+ cjmp LABEL7
+ mov r10, qword [rsi]
+ mov r9, qword [rsi + CONST]
+ xor ebp, ebp
+ jmp LABEL11
+LABEL31:
+ mov rax, qword [rbx + CONST]
+ mov r11d, CONST
+ test rax, rax
+ cjmp LABEL15
+LABEL35:
+ mov rbx, rax
+LABEL11:
+ test r9, r9
+ cjmp LABEL18
+ mov rax, qword [r9 + CONST]
+LABEL60:
+ mov r8, qword [rbx + CONST]
+ cmp rax, r10
+ mov rdx, rbp
+ mov rcx, qword [rbx + CONST]
+ cmovne rdx, r10
+ test r8, r8
+ cjmp LABEL26
+ mov rax, qword [r8 + CONST]
+LABEL58:
+ cmp rcx, rax
+ cjmp LABEL29
+ cmp rcx, rdx
+ cjmp LABEL31
+LABEL29:
+ mov rax, qword [rbx + CONST]
+ xor r11d, r11d
+ test rax, rax
+ cjmp LABEL35
+LABEL15:
+ mov rdx, rbx
+ test r11b, r11b
+ cjmp LABEL38
+LABEL80:
+ test r8, r8
+ cjmp LABEL40
+ mov r8, qword [r8 + CONST]
+LABEL40:
+ cmp rcx, r8
+ mov eax, CONST
+ cmove rcx, rax
+ test r9, r9
+ cjmp LABEL46
+ mov r9, qword [r9 + CONST]
+LABEL46:
+ cmp r9, r10
+ cjmp LABEL49
+ xor eax, eax
+ cmp rcx, r10
+ cjmp LABEL49
+LABEL71:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL26:
+ xor eax, eax
+ jmp LABEL58
+LABEL18:
+ xor eax, eax
+ jmp LABEL60
+LABEL49:
+ mov rax, rbx
+ xor edx, edx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ lea rbx, [rdi + CONST]
+LABEL38:
+ xor eax, eax
+ mov rdx, rbx
+ cmp qword [rdi + CONST], rbx
+ cjmp LABEL71
+ mov rdi, rbx
+ call CONST
+ mov rdx, rbx
+ mov r9, qword [r12 + CONST]
+ mov r10, qword [r12]
+ mov rcx, qword [rax + CONST]
+ mov r8, qword [rax + CONST]
+ mov rbx, rax
+ jmp LABEL80

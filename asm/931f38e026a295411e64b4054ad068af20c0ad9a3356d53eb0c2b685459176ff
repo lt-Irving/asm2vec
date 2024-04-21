@@ -1,0 +1,38 @@
+ .name sym.minus_o_option_value
+ .offset 000000000009f0f0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ test eax, eax
+ cjmp LABEL5
+ cdqe
+ lea rdx, [rax + rax*CONST]
+ lea rax, [rip + CONST]
+ lea rax, [rax + rdx*CONST]
+ mov edi, dword [rax + CONST]
+ test edi, edi
+ cjmp LABEL12
+ mov rdx, qword [rax + CONST]
+ test rdx, rdx
+ cjmp LABEL15
+ mov rdi, rbp
+ pop rbp
+ jmp rdx
+LABEL12:
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov eax, dword [rax]
+LABEL27:
+ pop rbp
+ ret
+LABEL15:
+ mov rax, qword [rax + CONST]
+ mov eax, dword [rax]
+ jmp LABEL27
+LABEL5:
+ mov eax, CONST
+ pop rbp
+ ret

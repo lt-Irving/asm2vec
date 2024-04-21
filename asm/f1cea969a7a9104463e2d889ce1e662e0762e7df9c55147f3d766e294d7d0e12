@@ -1,0 +1,35 @@
+ .name sym.unwind_protect_mem
+ .offset 0000000000077670
+ .file bash
+ endbr64
+ push r13
+ push r12
+ mov r12, rdi
+ lea edi, [rsi + CONST]
+ push rbp
+ movsxd rdi, edi
+ mov ebp, esi
+ push rbx
+ sub rsp, CONST
+ mov r13d, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ call CONST
+ movsxd rdx, ebp
+ mov rsi, r12
+ mov rbx, rax
+ mov rax, qword [rip + CONST]
+ mov qword [rbx + CONST], r12
+ lea rdi, [rbx + CONST]
+ mov qword [rbx], rax
+ lea rax, [rip + CONST]
+ mov dword [rbx + CONST], ebp
+ mov qword [rbx + CONST], rax
+ call CONST
+ mov qword [rip + CONST], rbx
+ mov dword [rip + CONST], r13d
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

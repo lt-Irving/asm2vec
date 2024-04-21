@@ -1,0 +1,17 @@
+ .name sym.history_number
+ .offset 0000000000081f20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL5
+ mov eax, CONST
+ add rsp, CONST
+ ret
+LABEL5:
+ call CONST
+ add eax, dword [rip + CONST]
+ add rsp, CONST
+ ret

@@ -1,0 +1,38 @@
+ .name sym.strlist_create
+ .offset 00000000000b2020
+ .file bash
+ endbr64
+ push r12
+ push rbx
+ mov ebx, edi
+ mov edi, CONST
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test ebx, ebx
+ cjmp LABEL9
+ mov qword [rax], CONST
+ mov dword [rax + CONST], CONST
+LABEL23:
+ mov dword [r12 + CONST], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL9:
+ lea edi, [rbx + CONST]
+ call CONST
+ mov dword [r12 + CONST], ebx
+ mov qword [r12], rax
+ test ebx, ebx
+ cjmp LABEL23
+ lea edx, [rbx + CONST]
+ lea rdx, [rax + rdx*CONST + CONST]
+ nop dword [rax]
+LABEL30:
+ mov qword [rax], CONST
+ add rax, CONST
+ cmp rax, rdx
+ cjmp LABEL30
+ jmp LABEL23

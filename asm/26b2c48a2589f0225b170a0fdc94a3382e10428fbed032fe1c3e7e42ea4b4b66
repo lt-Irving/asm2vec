@@ -1,0 +1,15 @@
+ .name sym.endsgent
+ .offset 000000000000d2f0
+ .file chfn
+ endbr64
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL3
+ sub rsp, CONST
+ call CONST
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL3:
+ mov qword [rip + CONST], CONST
+ ret

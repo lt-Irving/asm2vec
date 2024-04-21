@@ -1,0 +1,21 @@
+ .name sym.set_working_directory
+ .offset 0000000000092ec0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ pop rbp
+ mov qword [rip + CONST], rax
+ ret

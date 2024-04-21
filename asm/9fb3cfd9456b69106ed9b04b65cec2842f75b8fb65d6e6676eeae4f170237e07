@@ -1,0 +1,71 @@
+ .name fcn.00003640
+ .offset 0000000000003640
+ .file apt-config
+ endbr64
+ push r12
+ lea rsi, [rip + CONST]
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rdx, [rsp + CONST]
+ mov byte [rsp + CONST], CONST
+ call CONST
+ mov rsi, qword [rip + CONST]
+ lea rdi, [rsp + CONST]
+ lea rcx, [rip + CONST]
+ lea rdx, [rip + CONST]
+ movzx ebp, al
+ call CONST
+ mov rdi, rbx
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ cmp eax, CONST
+ cjmp LABEL24
+ mov rax, qword [rbx + CONST]
+ mov rdx, qword [rax + CONST]
+ lea rbx, [rax + CONST]
+ test rdx, rdx
+ cjmp LABEL29
+ lea r12, [rip + CONST]
+ nop dword [rax + rax]
+LABEL40:
+ mov rdi, qword [rip + CONST]
+ mov r8d, ebp
+ mov rsi, r12
+ call CONST
+ mov rdx, qword [rbx + CONST]
+ add rbx, CONST
+ mov rcx, qword [rsp + CONST]
+ test rdx, rdx
+ cjmp LABEL40
+LABEL29:
+ lea rax, [rsp + CONST]
+ cmp rcx, rax
+ cjmp LABEL43
+ mov rdi, rcx
+ call CONST
+LABEL43:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL48
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL24:
+ mov rdi, qword [rip + CONST]
+ movzx r8d, bpl
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ jmp LABEL29
+LABEL48:
+ call CONST

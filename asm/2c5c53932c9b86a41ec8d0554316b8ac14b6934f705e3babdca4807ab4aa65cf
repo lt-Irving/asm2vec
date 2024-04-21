@@ -1,0 +1,15 @@
+ .name sym.rl_skip_csi_sequence
+ .offset 00000000000d4ca0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ or qword [rip + CONST], CONST
+LABEL6:
+ call CONST
+ lea edx, [rax + CONST]
+ cmp edx, CONST
+ cjmp LABEL6
+ and qword [rip + CONST], CONST
+ shr eax, CONST
+ add rsp, CONST
+ ret

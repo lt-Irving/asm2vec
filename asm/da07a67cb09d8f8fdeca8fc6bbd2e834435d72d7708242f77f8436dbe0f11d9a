@@ -1,0 +1,19 @@
+ .name sym._rl_control_keypad
+ .offset 00000000000d3490
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+LABEL11:
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ jmp CONST
+LABEL2:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL11
+LABEL5:
+ ret

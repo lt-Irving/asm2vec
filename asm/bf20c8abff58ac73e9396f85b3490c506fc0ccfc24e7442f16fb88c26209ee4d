@@ -1,0 +1,32 @@
+ .name sym.set_sigint_handler
+ .offset 00000000000757c0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test al, CONST
+ cjmp LABEL3
+ test al, CONST
+ cjmp LABEL5
+ test al, CONST
+ cjmp LABEL7
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ jmp CONST
+LABEL3:
+ mov eax, CONST
+ ret
+LABEL10:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ jmp CONST
+LABEL7:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ jmp CONST
+LABEL5:
+ mov esi, CONST
+ mov edi, CONST
+ jmp CONST

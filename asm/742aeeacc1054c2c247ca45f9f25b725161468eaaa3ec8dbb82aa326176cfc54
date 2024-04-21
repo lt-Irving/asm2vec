@@ -1,0 +1,45 @@
+ .name sym.free_mail_files
+ .offset 0000000000074180
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ mov r13, qword [rip + CONST]
+ test eax, eax
+ cjmp LABEL9
+ sub eax, CONST
+ mov rbx, r13
+ lea r12, [r13 + rax*CONST + CONST]
+ nop word [rax + rax]
+LABEL25:
+ mov rbp, qword [rbx]
+ mov rdi, qword [rbp]
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL19
+ call CONST
+LABEL19:
+ mov rdi, rbp
+ add rbx, CONST
+ call CONST
+ cmp rbx, r12
+ cjmp LABEL25
+LABEL9:
+ test r13, r13
+ cjmp LABEL27
+ mov rdi, r13
+ call CONST
+LABEL27:
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

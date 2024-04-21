@@ -1,0 +1,17 @@
+ .name sym._rl_clear_to_eol
+ .offset 00000000000ca5f0
+ .file bash
+ endbr64
+ mov r8, qword [rip + CONST]
+ test r8, r8
+ cjmp LABEL3
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ mov rdi, r8
+ jmp CONST
+LABEL3:
+ test edi, edi
+ cjmp LABEL9
+ ret
+LABEL9:
+ jmp CONST

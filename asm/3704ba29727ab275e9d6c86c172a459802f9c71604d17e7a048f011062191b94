@@ -1,0 +1,13 @@
+ .name sym.make_builtin_argv
+ .offset 0000000000092a20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rcx, rsi
+ mov edx, CONST
+ xor esi, esi
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov qword [rax], rdx
+ add rsp, CONST
+ ret

@@ -1,0 +1,47 @@
+ .name sym.shopt_listopt
+ .offset 00000000000a42b0
+ .file bash
+ endbr64
+ push r12
+ mov r12d, esi
+ push rbp
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL6
+ mov rbp, rdi
+ call CONST
+ test eax, eax
+ cjmp LABEL10
+ test r12d, r12d
+ mov edx, CONST
+ cdqe
+ mov rdi, rbp
+ cmovne r12d, edx
+ lea rdx, [rax + rax*CONST]
+ lea rax, [rip + CONST]
+ mov rax, qword [rax + rdx*CONST + CONST]
+ mov edx, r12d
+ mov esi, dword [rax]
+ call CONST
+ add rsp, CONST
+ xor edi, edi
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL6:
+ test esi, esi
+ mov eax, CONST
+ cmovne r12d, eax
+ add rsp, CONST
+ pop rbp
+ mov edi, r12d
+ pop r12
+ jmp CONST
+LABEL10:
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret

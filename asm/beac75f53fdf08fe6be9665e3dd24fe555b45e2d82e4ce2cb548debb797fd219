@@ -1,0 +1,24 @@
+ .name sym.rl_dump_macros
+ .offset 00000000000c72c0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+LABEL18:
+ mov rsi, qword [rip + CONST]
+ mov edi, dword [rip + CONST]
+ xor edx, edx
+ call CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ jmp LABEL18

@@ -1,0 +1,22 @@
+ .name fcn.00015630
+ .offset 0000000000015630
+ .file dash
+ push rax
+ pop rax
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL4
+ cmp byte [rdi], CONST
+ cjmp LABEL6
+LABEL4:
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+LABEL6:
+ mov rdx, rsi
+ xor eax, eax
+ mov rsi, rdi
+ lea rdi, [rip + CONST]
+ call CONST
+ nop word cs:[rax + rax]
+ nop dword [rax]

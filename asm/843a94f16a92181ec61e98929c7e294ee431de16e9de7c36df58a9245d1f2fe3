@@ -1,0 +1,27 @@
+ .name sym.fd_ispipe
+ .offset 000000000003ef50
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edx, CONST
+ xor esi, esi
+ mov edi, ebp
+ mov dword [rax], CONST
+ mov rbx, rax
+ call CONST
+ mov r8, rax
+ xor eax, eax
+ test r8, r8
+ cjmp LABEL15
+ xor eax, eax
+ cmp dword [rbx], CONST
+ sete al
+LABEL15:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

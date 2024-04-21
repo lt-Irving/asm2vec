@@ -1,0 +1,22 @@
+ .name sym._rl_fix_last_undo_of_type
+ .offset 00000000000d0bb0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ jmp LABEL4
+LABEL9:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL4
+LABEL3:
+ cmp dword [rax + CONST], edi
+ cjmp LABEL9
+ mov dword [rax + CONST], esi
+ mov dword [rax + CONST], edx
+ xor eax, eax
+ ret
+LABEL4:
+ mov eax, CONST
+ ret

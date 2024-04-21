@@ -1,0 +1,16 @@
+ .name fcn.0000aa50
+ .offset 000000000000aa50
+ .file chcon
+ endbr64
+ push rbp
+ mov edx, CONST
+ mov ebp, edi
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov esi, ebp
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ call CONST

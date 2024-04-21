@@ -1,0 +1,21 @@
+ .name sym.make_bare_simple_command
+ .offset 0000000000040a60
+ .file bash
+ endbr64
+ push r12
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ mov r12, rax
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov qword [r12 + CONST], rax
+ mov dword [rax], CONST
+ mov dword [rax + CONST], edx
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov rax, r12
+ mov qword [r12 + CONST], CONST
+ mov qword [r12], CONST
+ pop r12
+ ret

@@ -1,0 +1,49 @@
+ .name fcn.00010f20
+ .offset 0000000000010f20
+ .file dir
+ endbr64
+ mov byte [rsi + CONST], CONST
+ lea r8, [rsi + CONST]
+ movabs rcx, CONST
+ test rdi, rdi
+ cjmp LABEL5
+ nop dword [rax + rax]
+LABEL18:
+ mov rax, rdi
+ sub r8, CONST
+ mul rcx
+ shr rdx, CONST
+ lea rax, [rdx + rdx*CONST]
+ add rax, rax
+ sub rdi, rax
+ add edi, CONST
+ mov byte [r8], dil
+ mov rdi, rdx
+ test rdx, rdx
+ cjmp LABEL18
+ mov rax, r8
+ ret
+LABEL5:
+ movabs r9, CONST
+ mov esi, CONST
+ nop
+LABEL38:
+ mov rax, rdi
+ mov rcx, r8
+ sub r8, CONST
+ imul r9
+ mov rax, rdi
+ sar rax, CONST
+ sar rdx, CONST
+ sub rdx, rax
+ lea rax, [rdx + rdx*CONST]
+ lea eax, [rsi + rax*CONST]
+ sub eax, edi
+ mov rdi, rdx
+ mov byte [r8], al
+ test rdx, rdx
+ cjmp LABEL38
+ mov byte [r8 + CONST], CONST
+ lea r8, [rcx + CONST]
+ mov rax, r8
+ ret

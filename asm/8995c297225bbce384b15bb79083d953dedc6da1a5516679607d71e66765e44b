@@ -1,0 +1,32 @@
+ .name fcn.000071f0
+ .offset 00000000000071f0
+ .file dash
+ mov rdx, qword [rip + CONST]
+ mov r8, qword [rip + CONST]
+ lea rax, [rip + CONST]
+ push r13
+ mov r13, rsi
+ push r12
+ lea rsi, [rip + CONST]
+ mov r12, rdi
+ test rdx, rdx
+ push rbp
+ mov rbp, qword [rip + CONST]
+ cmove rdx, rax
+ test r8, r8
+ mov ecx, dword [rip + CONST]
+ lea rax, [rip + CONST]
+ cmovne rsi, rax
+ mov rdi, rbp
+ xor eax, eax
+ call CONST
+ mov rsi, r12
+ mov rdi, rbp
+ mov rdx, r13
+ call CONST
+ mov rsi, rbp
+ mov edi, CONST
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST

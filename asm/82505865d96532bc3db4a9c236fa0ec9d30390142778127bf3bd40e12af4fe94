@@ -1,0 +1,28 @@
+ .name sym._rl_fix_point
+ .offset 00000000000d41a0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ cmp edx, eax
+ cjmp LABEL4
+ mov dword [rip + CONST], eax
+LABEL18:
+ test edi, edi
+ cjmp LABEL7
+ mov edx, dword [rip + CONST]
+ cmp eax, edx
+ cjmp LABEL10
+ mov dword [rip + CONST], eax
+ ret
+LABEL10:
+ test edx, edx
+ cjmp LABEL7
+ mov dword [rip + CONST], CONST
+LABEL7:
+ ret
+LABEL4:
+ test edx, edx
+ cjmp LABEL18
+ mov dword [rip + CONST], CONST
+ jmp LABEL18

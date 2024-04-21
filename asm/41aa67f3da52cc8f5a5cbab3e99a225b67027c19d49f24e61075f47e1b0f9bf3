@@ -1,0 +1,14 @@
+ .name fcn.000867a0
+ .offset 00000000000867a0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ lea rcx, [rip + CONST]
+ xor edx, edx
+ jmp CONST
+LABEL3:
+ lea rcx, [rip + CONST]
+ xor edx, edx
+ jmp CONST

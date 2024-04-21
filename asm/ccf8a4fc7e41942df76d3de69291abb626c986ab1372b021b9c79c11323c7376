@@ -1,0 +1,137 @@
+ .name fcn.000062a0
+ .offset 00000000000062a0
+ .file dash
+ lea eax, [rdi + CONST]
+ mov r9, rdx
+ cmp eax, CONST
+ cjmp LABEL3
+ lea rcx, [rip + CONST]
+ movsxd rax, dword [rcx + rax*CONST]
+ add rax, rcx
+ notrack jmp rax
+ xor r8d, r8d
+ cmp rsi, rdx
+ setne r8b
+LABEL20:
+ mov rax, r8
+ ret
+LABEL3:
+ test r9, r9
+ cjmp LABEL14
+ mov rax, rsi
+ cqo
+ idiv r9
+ mov r8, rdx
+ cmp edi, CONST
+ cjmp LABEL20
+ mov r8, rax
+ jmp LABEL20
+ xor r8d, r8d
+ cmp rsi, rdx
+ setle r8b
+ jmp LABEL20
+ xor r8d, r8d
+ cmp rsi, rdx
+ setge r8b
+ jmp LABEL20
+ xor r8d, r8d
+ cmp rsi, rdx
+ setl r8b
+ jmp LABEL20
+ xor r8d, r8d
+ cmp rsi, rdx
+ setg r8b
+ jmp LABEL20
+ xor r8d, r8d
+ cmp rsi, rdx
+ sete r8b
+ jmp LABEL20
+ and rsi, rdx
+ mov r8, rsi
+ jmp LABEL20
+ mov ecx, edx
+ shl rsi, cl
+ mov r8, rsi
+ jmp LABEL20
+ mov ecx, edx
+ sar rsi, cl
+ mov r8, rsi
+ jmp LABEL20
+ imul rsi, rdx
+ mov r8, rsi
+ jmp LABEL20
+ lea r8, [rsi + rdx]
+ jmp LABEL20
+ or rsi, rdx
+ mov r8, rsi
+ jmp LABEL20
+ sub rsi, rdx
+ mov r8, rsi
+ jmp LABEL20
+ xor rsi, rdx
+ mov r8, rsi
+ jmp LABEL20
+LABEL14:
+ push rax
+ lea rdi, [rip + CONST]
+ call CONST
+ nop dword [rax + rax]
+LABEL114:
+ push r14
+ push r13
+ push r12
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov ebx, ecx
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov r12, rax
+ cjmp LABEL82
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL82:
+ xor r13d, r13d
+ test rax, rax
+ sete r13b
+ call CONST
+ or r13d, ebx
+ mov esi, r13d
+ mov edi, eax
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov r13, rax
+ cjmp LABEL100
+ call CONST
+ xor ecx, ecx
+ test r12, r12
+ mov r14d, eax
+ mov rax, qword [rip + CONST]
+ setne cl
+ or ebx, ecx
+ mov qword [rbp], rax
+ call CONST
+ mov ecx, ebx
+ mov rsi, rbp
+ mov edi, r14d
+ mov edx, eax
+ call LABEL114
+ test r12, r12
+ pop rbx
+ pop rbp
+ cmove r13, rax
+ mov r12, r13
+ mov rax, r12
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL100:
+ lea rdi, [rip + CONST]
+ call CONST
+ nop dword [rax + rax]

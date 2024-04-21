@@ -1,0 +1,52 @@
+ .name sym.nameref_transform_name
+ .offset 000000000004e720
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ test sil, CONST
+ cjmp LABEL6
+ test sil, CONST
+ cjmp LABEL8
+LABEL20:
+ mov rax, rbx
+LABEL29:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL8:
+ and esi, CONST
+ mov esi, CONST
+ cjmp LABEL16
+ call CONST
+ mov rbp, rax
+LABEL41:
+ test rbp, rbp
+ cjmp LABEL20
+LABEL38:
+ test byte [rbp + CONST], CONST
+ cjmp LABEL20
+ mov rdi, qword [rbp + CONST]
+ mov esi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL20
+ mov rax, qword [rbp + CONST]
+ jmp LABEL29
+LABEL6:
+ mov esi, CONST
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL20
+ mov eax, dword [rip + CONST]
+ cmp dword [rbp + CONST], eax
+ cjmp LABEL20
+ jmp LABEL38
+LABEL16:
+ call CONST
+ mov rbp, rax
+ jmp LABEL41

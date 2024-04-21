@@ -1,0 +1,19 @@
+ .name sym.rl_function_of_keyseq
+ .offset 00000000000c5070
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ call CONST
+ mov rcx, r13
+ mov rdx, r12
+ mov rdi, rbp
+ mov rsi, rax
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST

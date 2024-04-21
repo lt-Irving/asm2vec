@@ -1,0 +1,15 @@
+ .name sym.sh_readonly
+ .offset 00000000000926d0
+ .file bash
+ endbr64
+ push rbp
+ lea rsi, [rip + CONST]
+ mov rbp, rdi
+ mov edx, CONST
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ xor eax, eax
+ jmp CONST

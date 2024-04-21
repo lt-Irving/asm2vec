@@ -1,0 +1,31 @@
+ .name sym.rl_bracketed_paste_begin
+ .offset 00000000000d0700
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdi, rsp
+ call CONST
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ mov rdi, rbp
+ cdqe
+ cmp qword [rsp], rax
+ setne r12b
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL19
+ movzx r12d, r12b
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL19:
+ call CONST

@@ -1,0 +1,50 @@
+ .name fcn.00016260
+ .offset 0000000000016260
+ .file dash
+ mov r8, qword [rdi]
+ mov r9, rdi
+ test r8, r8
+ cjmp LABEL3
+ movsx r10d, byte [rsi]
+ xor r11d, r11d
+ nop word [rax + rax]
+LABEL31:
+ mov rdi, qword [r8 + CONST]
+ movsx eax, byte [rdi]
+ cmp eax, r10d
+ cjmp LABEL10
+ mov edx, CONST
+ nop dword [rax]
+LABEL21:
+ test eax, eax
+ cjmp LABEL3
+ cmp eax, CONST
+ cjmp LABEL3
+ movsx eax, byte [rdi + rdx]
+ movsx ecx, byte [rsi + rdx]
+ add rdx, CONST
+ cmp eax, ecx
+ cjmp LABEL21
+LABEL39:
+ cmp eax, CONST
+ cjmp LABEL23
+ cmp ecx, CONST
+ cmove ecx, r11d
+LABEL37:
+ cmp eax, ecx
+ cjmp LABEL3
+ mov r9, r8
+ mov r8, qword [r8]
+ test r8, r8
+ cjmp LABEL31
+LABEL3:
+ mov rax, r9
+ ret
+LABEL23:
+ cmp ecx, CONST
+ cjmp LABEL3
+ xor eax, eax
+ jmp LABEL37
+LABEL10:
+ mov ecx, r10d
+ jmp LABEL39

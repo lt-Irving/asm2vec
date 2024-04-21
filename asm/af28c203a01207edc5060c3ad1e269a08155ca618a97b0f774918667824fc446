@@ -1,0 +1,58 @@
+ .name sym.sh_stat
+ .offset 00000000000b09b0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL6
+ mov rbp, rdi
+ mov rdx, rsi
+ cmp al, CONST
+ cjmp LABEL10
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL12
+LABEL10:
+ mov rsi, rbp
+LABEL43:
+ add rsp, CONST
+ mov edi, CONST
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL12:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rbp
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL10
+ add rbp, CONST
+ mov qword [rsp + CONST], rdx
+ mov rdi, rbp
+ call CONST
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov r12, rax
+ mov qword [rip + CONST], rax
+ movabs rax, CONST
+ mov qword [r12], rax
+ lea rdi, [r12 + CONST]
+ call CONST
+ mov rdx, qword [rsp + CONST]
+ mov rsi, r12
+ jmp LABEL43
+LABEL6:
+ call CONST
+ mov dword [rax], CONST
+ add rsp, CONST
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret

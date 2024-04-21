@@ -1,0 +1,25 @@
+ .name sym.with_input_from_buffered_stream
+ .offset 0000000000076f70
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ call CONST
+ lea rdi, [rip + CONST]
+ test rax, rax
+ cjmp LABEL9
+LABEL19:
+ add rsp, CONST
+ mov r8, rbx
+ mov rcx, r12
+ mov edx, CONST
+ pop rbx
+ lea rsi, [rip + CONST]
+ pop r12
+ jmp CONST
+LABEL9:
+ lea rdi, [rip + CONST]
+ jmp LABEL19

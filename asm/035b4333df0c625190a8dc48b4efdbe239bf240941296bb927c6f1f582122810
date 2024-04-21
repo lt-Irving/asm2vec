@@ -1,0 +1,66 @@
+ .name fcn.0000c350
+ .offset 000000000000c350
+ .file dpkg-deb
+ endbr64
+ push r14
+ mov r14d, edx
+ push r13
+ push r12
+ mov r12d, esi
+ mov rsi, rcx
+ push rbp
+ movsxd rbp, edi
+ sub rsp, CONST
+ mov qword [rsp + CONST], r8
+ mov qword [rsp + CONST], r9
+ test al, al
+ cjmp LABEL13
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm1
+ movaps xmmword [rsp + CONST], xmm2
+ movaps xmmword [rsp + CONST], xmm3
+ movaps xmmword [rsp + CONST], xmm4
+ movaps xmmword [rsp + CONST], xmm5
+ movaps xmmword [rsp + CONST], xmm6
+ movaps xmmword [rsp + CONST], xmm7
+LABEL13:
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r13, rsp
+ lea rdx, [rsp + CONST]
+ lea rax, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ mov rdi, r13
+ lea rax, [rsp + CONST]
+ mov qword [rsp], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov dword [rsp + CONST], CONST
+ mov dword [rsp + CONST], CONST
+ mov qword [rsp + CONST], rax
+ call CONST
+ cmp ebp, CONST
+ cjmp LABEL39
+ lea rax, [rip + CONST]
+ mov rdx, qword [rsp + CONST]
+ mov esi, r14d
+ mov edi, r12d
+ mov rax, qword [rax + rbp*CONST]
+ call qword [rax + CONST]
+ mov rdi, r13
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL50
+ add rsp, CONST
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL39:
+ mov edi, ebp
+ call CONST
+LABEL50:
+ call CONST

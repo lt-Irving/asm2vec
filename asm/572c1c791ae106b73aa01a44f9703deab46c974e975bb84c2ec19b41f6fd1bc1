@@ -1,0 +1,99 @@
+ .name sym.zmapfd
+ .offset 00000000000b52a0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ mov r14d, edi
+ mov edi, CONST
+ push r13
+ mov r13d, CONST
+ push r12
+ xor r12d, r12d
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov qword [rsp + CONST], rsi
+ lea rbx, [rsp + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov rbp, rax
+ jmp LABEL19
+LABEL37:
+ lea rdi, [rbp + rcx]
+ mov rdx, r15
+ mov rsi, rbx
+ add r12d, r15d
+ call CONST
+LABEL19:
+ mov edx, CONST
+ mov rsi, rbx
+ mov edi, r14d
+ call CONST
+ mov r15, rax
+ test rax, rax
+ cjmp LABEL31
+ cjmp LABEL32
+ movsxd rcx, r12d
+ movsxd rsi, r13d
+ lea rax, [rcx + rax]
+ cmp rax, rsi
+ cjmp LABEL37
+ sub eax, esi
+ mov rdi, rbp
+ mov qword [rsp], rcx
+ and eax, CONST
+ lea r13d, [r13 + rax + CONST]
+ movsxd rsi, r13d
+ call CONST
+ mov rcx, qword [rsp]
+ mov rbp, rax
+ jmp LABEL37
+LABEL31:
+ lea eax, [r12 + CONST]
+ cmp eax, r13d
+ cjmp LABEL50
+ sub eax, r13d
+ mov rdi, rbp
+ and eax, CONST
+ lea esi, [r13 + rax + CONST]
+ movsxd rsi, esi
+ call CONST
+ mov rbp, rax
+LABEL50:
+ movsxd rax, r12d
+ mov byte [rbp + rax], CONST
+ mov rax, qword [rsp + CONST]
+ test rax, rax
+ cjmp LABEL62
+ mov qword [rax], rbp
+LABEL81:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL66
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL32:
+ mov rdi, rbp
+ mov r12d, CONST
+ call CONST
+ mov rax, qword [rsp + CONST]
+ test rax, rax
+ cjmp LABEL81
+ mov qword [rax], CONST
+ jmp LABEL81
+LABEL62:
+ mov rdi, rbp
+ call CONST
+ jmp LABEL81
+LABEL66:
+ call CONST

@@ -1,0 +1,18 @@
+ .name sym.zreadintr
+ .offset 00000000000aff70
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12, rsi
+ push rbp
+ mov ebp, edi
+ call CONST
+ mov rdx, r13
+ mov rsi, r12
+ mov edi, ebp
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST

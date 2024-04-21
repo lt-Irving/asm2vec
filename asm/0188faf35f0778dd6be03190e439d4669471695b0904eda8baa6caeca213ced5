@@ -1,0 +1,46 @@
+ .name sym.dispose_saved_dollar_vars
+ .offset 0000000000051fe0
+ .file bash
+ endbr64
+ mov rdx, qword [rip + CONST]
+ test rdx, rdx
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+LABEL3:
+ ret
+LABEL6:
+ sub eax, CONST
+ push r12
+ mov dword [rip + CONST], eax
+ cdqe
+ push rbp
+ shl rax, CONST
+ push rbx
+ mov rdi, qword [rdx + rax + CONST]
+ call CONST
+ movsxd rbp, dword [rip + CONST]
+ shl rbp, CONST
+ add rbp, qword [rip + CONST]
+ mov r12, qword [rbp]
+ lea rbx, [r12 + CONST]
+ add r12, CONST
+ nop dword [rax]
+LABEL30:
+ mov rdi, qword [rbx]
+ test rdi, rdi
+ cjmp LABEL26
+ call CONST
+LABEL26:
+ add rbx, CONST
+ cmp r12, rbx
+ cjmp LABEL30
+ mov rdi, qword [rbp]
+ call CONST
+ mov qword [rbp], CONST
+ mov qword [rbp + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret

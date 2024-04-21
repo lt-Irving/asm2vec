@@ -1,0 +1,35 @@
+ .name sym.history_total_bytes
+ .offset 00000000000d6b40
+ .file bash
+ endbr64
+ push r13
+ xor r13d, r13d
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov r12, qword [rip + CONST]
+ test r12, r12
+ cjmp LABEL9
+ jmp LABEL10
+LABEL21:
+ mov rdi, qword [rbp]
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ mov rbx, rax
+ call CONST
+ add ebx, eax
+ add r13d, ebx
+LABEL9:
+ mov rbp, qword [r12]
+ add r12, CONST
+ test rbp, rbp
+ cjmp LABEL21
+LABEL10:
+ add rsp, CONST
+ mov eax, r13d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

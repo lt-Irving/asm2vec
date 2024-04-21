@@ -1,0 +1,14 @@
+ .name fcn.0000df10
+ .offset 000000000000df10
+ .file dpkg-deb
+ endbr64
+ push rbp
+ lea rsi, [rip + CONST]
+ mov rbp, rdi
+ mov edx, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST

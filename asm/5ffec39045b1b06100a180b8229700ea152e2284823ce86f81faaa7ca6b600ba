@@ -1,0 +1,53 @@
+ .name fcn.00007d40
+ .offset 0000000000007d40
+ .file choom
+ endbr64
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ mov qword [rsp + CONST], rdx
+ mov qword [rsp + CONST], rcx
+ mov qword [rsp + CONST], r8
+ mov qword [rsp + CONST], r9
+ test al, al
+ cjmp LABEL9
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm1
+ movaps xmmword [rsp + CONST], xmm2
+ movaps xmmword [rsp + CONST], xmm3
+ movaps xmmword [rsp + CONST], xmm4
+ movaps xmmword [rsp + CONST], xmm5
+ movaps xmmword [rsp + CONST], xmm6
+ movaps xmmword [rsp + CONST], xmm7
+LABEL9:
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rax, [rsp + CONST]
+ mov rdx, rsp
+ mov rdi, rbp
+ mov qword [rsp + CONST], rax
+ lea rax, [rsp + CONST]
+ mov dword [rsp], CONST
+ mov dword [rsp + CONST], CONST
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ cjmp LABEL32
+ mov rdi, rbp
+ call CONST
+LABEL44:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL37
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL32:
+ call CONST
+ mov eax, dword [rax]
+ neg eax
+ jmp LABEL44
+LABEL37:
+ call CONST

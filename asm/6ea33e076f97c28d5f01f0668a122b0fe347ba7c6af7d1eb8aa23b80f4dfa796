@@ -1,0 +1,16 @@
+ .name fcn.00008505
+ .offset 0000000000008505
+ .file apt-get
+LABEL11:
+ mov rdi, r12
+ mov r12, rbx
+ call CONST
+ mov rdi, r15
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, r12
+ call CONST
+ endbr64
+ mov rbx, rax
+ jmp LABEL11

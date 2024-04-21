@@ -1,0 +1,67 @@
+ .name sym.rl_clear_signals
+ .offset 00000000000ceb50
+ .file bash
+ endbr64
+ push r12
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test edx, edx
+ cjmp LABEL8
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL10
+LABEL8:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL13
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL15
+LABEL13:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL18
+ add rsp, CONST
+ xor eax, eax
+ pop r12
+ ret
+LABEL15:
+ lea rdi, [rsp + CONST]
+ mov r12, rsp
+ call CONST
+ mov rdx, r12
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], CONST
+ jmp LABEL13
+LABEL10:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ jmp LABEL8
+LABEL18:
+ call CONST

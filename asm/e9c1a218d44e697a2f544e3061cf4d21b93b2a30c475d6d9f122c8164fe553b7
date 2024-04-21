@@ -1,0 +1,14 @@
+ .name fcn.0001a8f0
+ .offset 000000000001a8f0
+ .file dpkg-deb
+ endbr64
+ lea rax, [rip + CONST]
+ lea rdx, [rax + CONST]
+ nop word [rax + rax]
+LABEL7:
+ mov qword [rax], CONST
+ add rax, CONST
+ cmp rax, rdx
+ cjmp LABEL7
+ mov dword [rip + CONST], CONST
+ ret

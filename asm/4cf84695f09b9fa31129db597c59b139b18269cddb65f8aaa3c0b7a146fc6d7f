@@ -1,0 +1,36 @@
+ .name fcn.00007a10
+ .offset 0000000000007a10
+ .file dmesg
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rsi, rsp
+ call CONST
+ mov r8d, eax
+ test eax, eax
+ cjmp LABEL12
+ mov rax, qword [rsp]
+ mov rcx, qword [rsp + CONST]
+ movabs rdx, CONST
+ mov qword [rbx], rax
+ mov rax, rcx
+ sar rcx, CONST
+ imul rdx
+ sar rdx, CONST
+ sub rdx, rcx
+ mov qword [rbx + CONST], rdx
+LABEL12:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL25
+ add rsp, CONST
+ mov eax, r8d
+ pop rbx
+ ret
+LABEL25:
+ call CONST

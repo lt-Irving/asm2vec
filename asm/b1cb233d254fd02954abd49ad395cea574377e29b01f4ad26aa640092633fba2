@@ -1,0 +1,77 @@
+ .name sym._rl_overwrite_char
+ .offset 00000000000d51d0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test edi, edi
+ cjmp LABEL10
+ call CONST
+ nop word [rax + rax]
+LABEL38:
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL16
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL10:
+ mov ebp, edi
+ mov r12d, esi
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL28
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL31
+LABEL28:
+ call CONST
+ xor ebx, ebx
+ mov r13, rsp
+ jmp LABEL35
+LABEL50:
+ add ebx, CONST
+ cmp ebp, ebx
+ cjmp LABEL38
+LABEL35:
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL41
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL44
+LABEL41:
+ mov esi, r12d
+ mov edi, CONST
+ call CONST
+LABEL57:
+ mov eax, dword [rip + CONST]
+ cmp dword [rip + CONST], eax
+ cjmp LABEL50
+ mov esi, r12d
+ mov edi, CONST
+ call CONST
+ jmp LABEL50
+LABEL44:
+ mov rdi, r13
+ call CONST
+ jmp LABEL57
+LABEL31:
+ mov rsi, rsp
+ mov edx, CONST
+ mov edi, r12d
+ call CONST
+ jmp LABEL28
+LABEL16:
+ call CONST

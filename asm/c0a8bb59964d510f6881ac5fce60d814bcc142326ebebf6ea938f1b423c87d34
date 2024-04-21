@@ -1,0 +1,29 @@
+ .name sym.rl_copy_text
+ .offset 00000000000cf2b0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ push rbx
+ sub rsp, CONST
+ cmp edi, esi
+ cjmp LABEL6
+ mov ebp, esi
+ mov esi, edi
+LABEL6:
+ mov ebx, esi
+ sub ebx, ebp
+ lea edi, [rbx + CONST]
+ movsxd rbx, ebx
+ movsxd rdi, edi
+ call CONST
+ movsxd rsi, ebp
+ mov rdx, rbx
+ add rsi, qword [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov byte [rax + rbx], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

@@ -1,0 +1,56 @@
+ .name fcn.00002a90
+ .offset 0000000000002a90
+ .file comm
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ cmp ecx, CONST
+ cjmp LABEL7
+ cmp ecx, CONST
+ cjmp LABEL9
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL11
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL13
+ mov rcx, rdx
+ mov rdi, qword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ mov esi, CONST
+ call CONST
+LABEL13:
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL20
+LABEL36:
+ mov rdx, qword [rbp]
+ mov rdi, qword [rbx]
+ mov rcx, r12
+ mov esi, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL7:
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL30
+LABEL11:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL9:
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL36
+ jmp LABEL11
+LABEL30:
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL36
+LABEL20:
+ mov rdx, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ mov rcx, r12
+ mov esi, CONST
+ call CONST
+ jmp LABEL36

@@ -1,0 +1,30 @@
+ .name sym.sh_unset_nodelay_mode
+ .offset 000000000003eec0
+ .file bash
+ endbr64
+ push rbp
+ xor edx, edx
+ xor eax, eax
+ mov esi, CONST
+ mov ebp, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ mov r8d, eax
+ and r8d, CONST
+ cjmp LABEL11
+LABEL23:
+ mov eax, r8d
+ pop rbp
+ ret
+LABEL11:
+ and ah, CONST
+ mov edi, ebp
+ mov esi, CONST
+ pop rbp
+ mov edx, eax
+ xor eax, eax
+ jmp CONST
+LABEL8:
+ mov r8d, CONST
+ jmp LABEL23

@@ -1,0 +1,52 @@
+ .name sym.rl_vi_put
+ .offset 00000000000bab20
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbp
+ mov ebp, esi
+ and esi, CONST
+ push rbx
+ cjmp LABEL7
+ mov esi, dword [rip + CONST]
+ cmp esi, dword [rip + CONST]
+ cjmp LABEL10
+LABEL34:
+ lea ebx, [r12 + CONST]
+ test r12d, r12d
+ cjmp LABEL13
+ nop dword [rax]
+LABEL20:
+ mov esi, ebp
+ mov edi, CONST
+ sub ebx, CONST
+ call CONST
+ cmp ebx, CONST
+ cjmp LABEL20
+LABEL13:
+ mov esi, ebp
+ mov edi, CONST
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ call CONST
+ mov r8, rax
+ movsxd rax, ebp
+ mov rdx, qword [r8]
+ test byte [rdx + rax*CONST + CONST], CONST
+ cjmp LABEL34
+ mov esi, dword [rip + CONST]
+ cmp esi, dword [rip + CONST]
+ cjmp LABEL34
+LABEL10:
+ mov rdi, qword [rip + CONST]
+ mov ecx, CONST
+ mov edx, CONST
+ call CONST
+ mov dword [rip + CONST], eax
+ jmp LABEL34

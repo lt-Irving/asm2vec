@@ -1,0 +1,57 @@
+ .name sym.rl_get_next_history
+ .offset 00000000000d6920
+ .file bash
+ endbr64
+ push rbx
+ mov ebx, edi
+ test edi, edi
+ cjmp LABEL4
+ cjmp LABEL5
+ xor eax, eax
+ pop rbx
+ ret
+LABEL5:
+ call CONST
+ mov eax, dword [rip + CONST]
+ cmp eax, CONST
+ cjmp LABEL12
+ nop dword [rax + rax]
+LABEL18:
+ call CONST
+ test rax, rax
+ cjmp LABEL16
+LABEL38:
+ sub ebx, CONST
+ cjmp LABEL18
+ mov rdi, rax
+ xor esi, esi
+ call CONST
+ call CONST
+ xor eax, eax
+ pop rbx
+ ret
+LABEL4:
+ neg edi
+ pop rbx
+ jmp CONST
+LABEL12:
+ mov edx, dword [rip + CONST]
+ mov ecx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL32
+ test ecx, ecx
+ cjmp LABEL18
+LABEL45:
+ mov dword [rip + CONST], edx
+ call CONST
+ test rax, rax
+ cjmp LABEL38
+LABEL16:
+ call CONST
+ xor eax, eax
+ pop rbx
+ ret
+LABEL32:
+ cmp edx, ecx
+ cmove edx, eax
+ jmp LABEL45

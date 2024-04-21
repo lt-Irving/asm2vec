@@ -1,0 +1,17 @@
+ .name fcn.00006fa0
+ .offset 0000000000006fa0
+ .file date
+ xor edi, CONST
+ mov r8, rdx
+ lea rdx, [rip + CONST]
+ mov rcx, rsi
+ movzx edi, dil
+ sub rsp, CONST
+ mov esi, CONST
+ xor eax, eax
+ add rdx, rdi
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

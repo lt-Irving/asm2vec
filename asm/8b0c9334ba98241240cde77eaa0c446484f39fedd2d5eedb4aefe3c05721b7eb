@@ -1,0 +1,23 @@
+ .name sym._rl_peek_macro_key
+ .offset 00000000000d0dc0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ movsxd rdx, dword [rip + CONST]
+ movsx eax, byte [rax + rdx]
+ test al, al
+ cjmp LABEL7
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ mov rax, qword [rax + CONST]
+ test rax, rax
+ cjmp LABEL3
+ movsx eax, byte [rax]
+ ret
+LABEL3:
+ xor eax, eax
+LABEL7:
+ ret

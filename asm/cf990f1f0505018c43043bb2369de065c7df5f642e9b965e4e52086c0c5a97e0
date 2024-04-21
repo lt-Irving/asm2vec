@@ -1,0 +1,17 @@
+ .name fcn.00001970
+ .offset 0000000000001970
+ .file chattr
+ push r12
+ mov edx, CONST
+ mov r12, qword [rip + CONST]
+ xor edi, edi
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rcx, r12
+ mov esi, CONST
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ mov edi, CONST
+ call CONST

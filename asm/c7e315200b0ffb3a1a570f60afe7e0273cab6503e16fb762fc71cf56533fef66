@@ -1,0 +1,19 @@
+ .name fcn.0009cfb0
+ .offset 000000000009cfb0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov byte [rax + CONST], dl
+ mov rdx, qword [rip + CONST]
+ mov qword [rax + CONST], rdx
+ movzx edx, byte [rip + CONST]
+ shl rdx, CONST
+ add rax, rdx
+ mov edx, dword [rip + CONST]
+ mov byte [rax], dl
+ mov rdx, qword [rip + CONST]
+ mov qword [rax + CONST], rdx
+ add rsp, CONST
+ ret

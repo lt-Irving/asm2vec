@@ -1,0 +1,160 @@
+ .name sym.wait_for_background_pids
+ .offset 000000000005cfb0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ lea r14, [rip + CONST]
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r13, rsp
+ lea r12, [rsp + CONST]
+ nop word [rax + rax]
+LABEL72:
+ mov rdi, r13
+ call CONST
+ mov esi, CONST
+ mov rdi, r13
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov rsi, r13
+ mov rdx, r12
+ xor edi, edi
+ call CONST
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL28
+ mov rcx, qword [rip + CONST]
+ xor ebx, ebx
+ xor ebp, ebp
+ jmp LABEL32
+LABEL40:
+ mov ebp, r15d
+ add rbx, CONST
+ cmp esi, r15d
+ cjmp LABEL36
+LABEL32:
+ mov rax, qword [rcx + rbx]
+ lea r15d, [rbp + CONST]
+ test rax, rax
+ cjmp LABEL40
+ mov edx, dword [rax + CONST]
+ cmp edx, CONST
+ cjmp LABEL43
+LABEL94:
+ lea r15d, [rbp + CONST]
+ cmp edx, CONST
+ cjmp LABEL40
+ test byte [rax + CONST], CONST
+ cjmp LABEL40
+ nop dword [rax]
+LABEL36:
+ cmp ebp, esi
+ cjmp LABEL51
+ mov edi, ebp
+ call CONST
+ xor edx, edx
+ mov rsi, r12
+ mov edi, CONST
+ mov ebp, dword [rax + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL61
+LABEL99:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL64
+LABEL96:
+ call CONST
+ mov esi, CONST
+ mov edi, ebp
+ mov dword [rax], CONST
+ mov rbx, rax
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL72
+ cmp dword [rbx], CONST
+ cjmp LABEL72
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL72
+ call CONST
+ jmp LABEL72
+LABEL43:
+ mov edi, ebp
+ lea r15d, [rbp + CONST]
+ call CONST
+ mov esi, r15d
+ mov rdi, r14
+ mov edx, dword [rax + CONST]
+ xor eax, eax
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov rax, qword [rcx + rbx]
+ test rax, rax
+ cjmp LABEL91
+ mov edx, dword [rax + CONST]
+ mov esi, dword [rip + CONST]
+ jmp LABEL94
+LABEL64:
+ call CONST
+ jmp LABEL96
+LABEL61:
+ mov edi, dword [rip + CONST]
+ call CONST
+ jmp LABEL99
+LABEL51:
+ xor edx, edx
+ mov rsi, r12
+ mov edi, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL106
+ mov edi, dword [rax + CONST]
+ cmp edi, CONST
+ cjmp LABEL109
+LABEL106:
+ call CONST
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL116
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL116
+ call CONST
+LABEL116:
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL124
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL109:
+ call CONST
+ jmp LABEL106
+LABEL28:
+ xor ebp, ebp
+ jmp LABEL36
+LABEL91:
+ mov esi, dword [rip + CONST]
+ jmp LABEL40
+LABEL124:
+ call CONST

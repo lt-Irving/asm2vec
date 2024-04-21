@@ -1,0 +1,29 @@
+ .name sym.get_posix_options
+ .offset 000000000003e7a0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, rdi
+ test rdi, rdi
+ cjmp LABEL4
+LABEL21:
+ xor edx, edx
+ lea rcx, [rip + CONST]
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ jmp LABEL9
+LABEL16:
+ mov rsi, rcx
+ mov rcx, qword [rdi + rdx*CONST]
+LABEL9:
+ mov esi, dword [rsi]
+ mov byte [rax + rdx], sil
+ add rdx, CONST
+ test rcx, rcx
+ cjmp LABEL16
+ add rsp, CONST
+ ret
+LABEL4:
+ mov edi, CONST
+ call CONST
+ jmp LABEL21

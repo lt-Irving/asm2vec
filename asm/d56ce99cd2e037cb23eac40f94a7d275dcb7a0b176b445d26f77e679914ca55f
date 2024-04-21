@@ -1,0 +1,73 @@
+ .name sym.array_patsub
+ .offset 000000000007bf40
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL9
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL9
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL9
+ mov r13, rsi
+ mov r14, rdx
+ mov r12d, ecx
+ call CONST
+ mov r15, rax
+ test rax, rax
+ cjmp LABEL9
+ mov rbx, rax
+ nop
+LABEL40:
+ mov rax, qword [rbx + CONST]
+ mov ecx, r12d
+ mov rdx, r14
+ mov rsi, r13
+ mov rdi, qword [rax]
+ call CONST
+ mov rbp, rax
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ test rdi, rdi
+ cjmp LABEL34
+ call CONST
+ mov rax, qword [rbx + CONST]
+LABEL34:
+ mov rbx, qword [rbx]
+ mov qword [rax], rbp
+ test rbx, rbx
+ cjmp LABEL40
+ mov eax, r12d
+ mov edx, r12d
+ mov rsi, r15
+ and eax, CONST
+ cmp eax, CONST
+ sbb edi, edi
+ sar edx, CONST
+ and edi, CONST
+ and edx, CONST
+ add edi, CONST
+ call CONST
+ mov rdi, r15
+ mov r12, rax
+ call CONST
+LABEL65:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL9:
+ xor r12d, r12d
+ jmp LABEL65

@@ -1,0 +1,32 @@
+ .name fcn.00009062
+ .offset 0000000000009062
+ .file apt-mark
+LABEL25:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL3
+ call CONST
+ jmp LABEL3
+LABEL22:
+ mov rdi, qword [rsp + CONST]
+ call CONST
+LABEL3:
+ mov rdi, r14
+ call CONST
+ mov rdi, r13
+ call CONST
+ mov rdi, rbx
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ lea rax, [rip + CONST]
+ lea r14, [rsp + CONST]
+ lea rdi, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rdi, r15
+ call CONST
+ jmp LABEL22
+ endbr64
+ mov rbx, rax
+ jmp LABEL25

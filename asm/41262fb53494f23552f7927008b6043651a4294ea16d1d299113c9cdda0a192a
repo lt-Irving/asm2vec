@@ -1,0 +1,37 @@
+ .name sym.rl_named_function
+ .offset 00000000000c4fb0
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ call CONST
+ mov rbx, qword [rip + CONST]
+ mov rbp, qword [rbx]
+ test rbp, rbp
+ cjmp LABEL9
+ add rbx, CONST
+ jmp LABEL11
+LABEL20:
+ mov rbp, qword [rbx]
+ add rbx, CONST
+ test rbp, rbp
+ cjmp LABEL9
+LABEL11:
+ mov rdi, qword [rbp]
+ mov rsi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL20
+ mov rax, qword [rbp + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL9:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

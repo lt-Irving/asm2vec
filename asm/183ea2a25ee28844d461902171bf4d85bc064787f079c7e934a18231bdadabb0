@@ -1,0 +1,26 @@
+ .name sym.bash_re_edit
+ .offset 0000000000087c40
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ pop rbp
+ mov qword [rip + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ ret

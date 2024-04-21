@@ -1,0 +1,25 @@
+ .name sym.make_word_from_token
+ .offset 0000000000040260
+ .file bash
+ endbr64
+ push rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rbp, [rsp + CONST]
+ mov byte [rsp + CONST], dil
+ mov rdi, rbp
+ mov byte [rsp + CONST], CONST
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL16
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL16:
+ call CONST

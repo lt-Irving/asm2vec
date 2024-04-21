@@ -1,0 +1,26 @@
+ .name fcn.00013360
+ .offset 0000000000013360
+ .file dpkg-deb
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ sub rsp, CONST
+ mov rbp, qword [rdx + CONST]
+ test rbp, rbp
+ cjmp LABEL7
+LABEL20:
+ mov rdi, rbp
+ lea rsi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov rsi, rbp
+ mov rdi, r12
+ pop rbp
+ mov rdx, rax
+ pop r12
+ jmp CONST
+LABEL7:
+ mov rax, qword [rsi]
+ mov rbp, qword [rax + CONST]
+ jmp LABEL20

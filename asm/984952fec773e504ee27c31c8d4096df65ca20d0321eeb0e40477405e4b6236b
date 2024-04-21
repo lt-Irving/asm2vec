@@ -1,0 +1,27 @@
+ .name method.std::_Rb_tree_pkgCache::PkgIterator__pkgCache::PkgIterator__std::_Identity_pkgCache::PkgIterator___std::less_pkgCache::PkgIterator___std::allocator_pkgCache::PkgIterator___._M_erase_std::_Rb_tree_node_pkgCache::PkgIterator__
+ .offset 00000000000099b0
+ .file apt-mark
+LABEL10:
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+LABEL15:
+ mov rsi, qword [rbx + CONST]
+ mov rdi, rbp
+ call LABEL10
+ mov rdi, rbx
+ mov rbx, qword [rbx + CONST]
+ call CONST
+ test rbx, rbx
+ cjmp LABEL15
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ ret

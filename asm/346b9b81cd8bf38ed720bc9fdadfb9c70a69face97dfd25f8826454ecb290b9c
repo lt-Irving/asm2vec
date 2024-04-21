@@ -1,0 +1,20 @@
+ .name sym.rl_backward_char_search
+ .offset 00000000000d5b20
+ .file bash
+ endbr64
+ test byte [rip + CONST], CONST
+ cjmp LABEL2
+ mov edx, CONST
+ mov esi, CONST
+ jmp CONST
+LABEL2:
+ sub rsp, CONST
+ call CONST
+ movabs rcx, CONST
+ mov qword [rip + CONST], rax
+ mov qword [rax + CONST], rcx
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ add rsp, CONST
+ ret

@@ -1,0 +1,70 @@
+ .name sym.strvec_remove
+ .offset 00000000000b2aa0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r15
+ push r14
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rbp, qword [rdi]
+ test rbp, rbp
+ cjmp LABEL13
+ movzx r14d, byte [rsi]
+ mov r15, rsi
+ xor ebx, ebx
+ jmp LABEL17
+LABEL24:
+ add rbx, CONST
+ mov rbp, qword [r12 + rbx*CONST]
+ test rbp, rbp
+ cjmp LABEL13
+LABEL17:
+ movsxd r13, ebx
+ cmp r14b, byte [rbp]
+ cjmp LABEL24
+ mov rsi, rbp
+ mov rdi, r15
+ call CONST
+ test eax, eax
+ cjmp LABEL29
+ add rbx, CONST
+ mov rbp, qword [r12 + rbx*CONST]
+ test rbp, rbp
+ cjmp LABEL17
+LABEL13:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL47:
+ mov rax, qword [r12 + r13*CONST + CONST]
+ mov qword [r12 + r13*CONST], rax
+ add r13, CONST
+LABEL29:
+ cmp qword [r12 + r13*CONST], CONST
+ cjmp LABEL47
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL2:
+ xor eax, eax
+ ret

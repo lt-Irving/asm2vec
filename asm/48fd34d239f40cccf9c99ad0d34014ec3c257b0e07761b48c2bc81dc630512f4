@@ -1,0 +1,25 @@
+ .name sym.wextglob_pattern_p
+ .offset 00000000000af580
+ .file bash
+ endbr64
+ mov eax, dword [rdi]
+ lea ecx, [rax + CONST]
+ cmp ecx, CONST
+ cjmp LABEL4
+ mov eax, CONST
+ xor r8d, r8d
+ shl rax, cl
+ test eax, CONST
+ cjmp LABEL9
+ mov eax, r8d
+ ret
+LABEL9:
+ xor r8d, r8d
+ cmp dword [rdi + CONST], CONST
+ sete r8b
+ mov eax, r8d
+ ret
+LABEL4:
+ xor r8d, r8d
+ mov eax, r8d
+ ret

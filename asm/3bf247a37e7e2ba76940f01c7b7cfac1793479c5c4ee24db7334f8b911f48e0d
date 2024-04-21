@@ -1,0 +1,37 @@
+ .name fcn.000061e0
+ .offset 00000000000061e0
+ .file chsh
+ endbr64
+ mov rsi, rdi
+ lea rdi, [rip + CONST]
+ jmp LABEL3
+LABEL3:
+ endbr64
+ push rbx
+ test byte [rdi + CONST], CONST
+ cjmp LABEL7
+ mov rdx, rsi
+ mov rsi, qword [rdi + CONST]
+ mov rbx, rdi
+ lea rdi, [rdi + CONST]
+ test rsi, rsi
+ cjmp LABEL13
+ call CONST
+ test rax, rax
+ cjmp LABEL13
+ mov qword [rbx + CONST], rax
+ mov rax, qword [rax + CONST]
+ pop rbx
+ ret
+LABEL7:
+ call CONST
+ mov dword [rax], CONST
+ xor eax, eax
+ pop rbx
+ ret
+LABEL13:
+ call CONST
+ mov dword [rax], CONST
+ xor eax, eax
+ pop rbx
+ ret

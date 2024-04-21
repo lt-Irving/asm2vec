@@ -1,0 +1,36 @@
+ .name sym.end_job_control
+ .offset 000000000005ef70
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+LABEL27:
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL7
+ mov esi, dword [rip + CONST]
+ cmp edi, esi
+ cjmp LABEL10
+LABEL23:
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+LABEL7:
+ add rsp, CONST
+ ret
+LABEL10:
+ mov esi, CONST
+ call CONST
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL23
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ jmp LABEL27

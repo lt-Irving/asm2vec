@@ -1,0 +1,33 @@
+ .name sym._rl_pop_executing_macro
+ .offset 00000000000d0ef0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ mov rdi, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ test rdi, rdi
+ cjmp LABEL10
+ mov rax, qword [rdi + CONST]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov rax, qword [rdi]
+ mov qword [rip + CONST], rax
+ call CONST
+ sub dword [rip + CONST], CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL20
+ add rsp, CONST
+ ret
+LABEL10:
+ sub dword [rip + CONST], CONST
+LABEL20:
+ and qword [rip + CONST], CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,36 @@
+ .name method.OpProgress.virtual_24
+ .offset 0000000000008690
+ .file apt-get
+ endbr64
+ lea rax, [rip + CONST]
+ push rbp
+ mov rbp, rdi
+ mov qword [rdi], rax
+ mov rdi, qword [rdi + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL8
+ call CONST
+LABEL8:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL13
+ call CONST
+LABEL13:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL18
+ call CONST
+LABEL18:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL23
+ call CONST
+LABEL23:
+ mov rdi, rbp
+ mov esi, CONST
+ pop rbp
+ jmp CONST

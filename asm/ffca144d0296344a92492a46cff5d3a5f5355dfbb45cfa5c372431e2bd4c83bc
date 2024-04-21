@@ -1,0 +1,21 @@
+ .name sym.rl_yank
+ .offset 00000000000cfb90
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL3
+ mov edi, dword [rip + CONST]
+ call CONST
+ movsxd rdx, dword [rip + CONST]
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax + rdx*CONST]
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL3:
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,30 @@
+ .name sym.command_connect
+ .offset 0000000000040390
+ .file bash
+ endbr64
+ push r13
+ mov r13d, edx
+ push r12
+ mov r12, rdi
+ mov edi, CONST
+ push rbp
+ mov rbp, rsi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov dword [rax + CONST], r13d
+ mov rbx, rax
+ mov qword [rax + CONST], r12
+ mov qword [rax + CONST], rbp
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

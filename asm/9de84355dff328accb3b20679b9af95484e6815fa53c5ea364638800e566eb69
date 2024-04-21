@@ -1,0 +1,28 @@
+ .name sym.check_unbind_variable
+ .offset 00000000000529f0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ test byte [rax + CONST], CONST
+ cjmp LABEL7
+LABEL5:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL7:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ lea rdx, [rip + CONST]
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ mov eax, CONST
+ pop rbp
+ ret

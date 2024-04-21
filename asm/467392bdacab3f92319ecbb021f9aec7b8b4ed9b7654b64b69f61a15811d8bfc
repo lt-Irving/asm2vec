@@ -1,0 +1,50 @@
+ .name fcn.0008d340
+ .offset 000000000008d340
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL7
+ mov rsi, qword [rip + CONST]
+ sub edx, CONST
+ mov r10, qword [rax]
+ xor edi, edi
+ lea r9, [rdx + rdx*CONST]
+ shl r9, CONST
+ lea rcx, [rsi + CONST]
+ add r9, rcx
+ jmp LABEL16
+LABEL31:
+ add rcx, CONST
+LABEL16:
+ movsxd rdx, edi
+ shl rdx, CONST
+ cmp qword [rsi + CONST], CONST
+ lea r8, [r10 + rdx]
+ cjmp LABEL22
+ test byte [rsi + CONST], CONST
+ cjmp LABEL22
+ mov rsi, qword [rsi]
+ add edi, CONST
+ mov qword [r8], rsi
+ lea r8, [r10 + rdx + CONST]
+LABEL22:
+ mov rsi, rcx
+ cmp rcx, r9
+ cjmp LABEL31
+LABEL41:
+ mov dword [rax + CONST], edi
+ mov qword [r8], CONST
+ mov qword [rbx + CONST], rax
+ xor eax, eax
+ or dword [rbx], CONST
+ pop rbx
+ ret
+LABEL7:
+ mov r8, qword [rax]
+ xor edi, edi
+ jmp LABEL41

@@ -1,0 +1,36 @@
+ .name fcn.000c6880
+ .offset 00000000000c6880
+ .file bash
+ endbr64
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL2
+ push r13
+ mov esi, CONST
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov r13, qword [rip + CONST]
+ mov ebx, dword [rip + CONST]
+ mov r12d, dword [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ mov byte [rax], CONST
+LABEL15:
+ lea esi, [rbx + CONST]
+ mov rdi, rbp
+ call CONST
+ mov qword [rip + CONST], r13
+ mov dword [rip + CONST], r12d
+ mov dword [rip + CONST], ebx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ xor eax, eax
+ ret

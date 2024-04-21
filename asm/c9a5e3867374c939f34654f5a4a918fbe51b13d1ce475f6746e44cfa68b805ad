@@ -1,0 +1,31 @@
+ .name fcn.00006810
+ .offset 0000000000006810
+ .file chsh
+ endbr64
+ sub rsp, CONST
+ cmp byte [rip + CONST], CONST
+ movzx edx, byte [rip + CONST]
+ cjmp LABEL4
+ xor eax, eax
+ test dl, dl
+ cjmp LABEL7
+LABEL17:
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ mov byte [rip + CONST], CONST
+ test eax, eax
+ setg dl
+ xor eax, eax
+ mov byte [rip + CONST], dl
+ test dl, dl
+ cjmp LABEL17
+LABEL7:
+ xor edi, edi
+ call CONST
+ test eax, eax
+ setne al
+ add rsp, CONST
+ movzx eax, al
+ ret

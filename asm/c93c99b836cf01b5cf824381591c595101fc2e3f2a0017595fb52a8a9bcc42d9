@@ -1,0 +1,24 @@
+ .name fcn.00009ec0
+ .offset 0000000000009ec0
+ .file chage
+ endbr64
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test al, al
+ cjmp LABEL5
+ add rsp, CONST
+ ret
+LABEL5:
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ jmp LABEL10
+LABEL10:
+ endbr64
+ sub rsp, CONST
+ xor esi, esi
+ call CONST
+ test eax, eax
+ sete al
+ add rsp, CONST
+ ret

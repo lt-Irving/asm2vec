@@ -1,0 +1,37 @@
+ .name fcn.000064b0
+ .offset 00000000000064b0
+ .file chfn
+ push rbp
+ mov ebp, edi
+ lea rdi, [rip + CONST]
+ call CONST
+ lea r8, [rip + CONST]
+ test rax, rax
+ cjmp LABEL6
+ mov rsi, rax
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov r8, rax
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL15
+ lea r8, [rip + CONST]
+LABEL6:
+ mov esi, ebp
+ mov rdi, r8
+ call CONST
+ pop rbp
+ test rax, rax
+ setne al
+ ret
+LABEL15:
+ cmp byte [r8], CONST
+ cjmp LABEL6
+ cmp byte [r8 + CONST], CONST
+ cjmp LABEL6
+ cmp byte [r8 + CONST], CONST
+ lea rax, [rip + CONST]
+ cmove r8, rax
+ jmp LABEL6

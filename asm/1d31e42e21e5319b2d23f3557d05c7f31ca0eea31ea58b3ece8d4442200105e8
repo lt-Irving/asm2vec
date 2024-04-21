@@ -1,0 +1,30 @@
+ .name fcn.000be570
+ .offset 00000000000be570
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rdx
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov r12, rax
+ mov rax, qword [rip + CONST]
+ lea rdi, [r12 + CONST]
+ movzx eax, byte [rax]
+ mov byte [r12], al
+ call CONST
+ test rbx, rbx
+ cjmp LABEL17
+ mov rax, qword [rip + CONST]
+ movzx eax, byte [rax]
+ mov byte [rbx], al
+LABEL17:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

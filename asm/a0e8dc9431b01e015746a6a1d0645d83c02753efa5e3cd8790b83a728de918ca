@@ -1,0 +1,43 @@
+ .name sym.rl_character_len
+ .offset 00000000000c9de0
+ .file bash
+ endbr64
+ test dil, dil
+ cjmp LABEL2
+ push rbx
+ movzx ebx, dil
+ cmp dil, CONST
+ cjmp LABEL6
+ mov eax, CONST
+ cmp edi, CONST
+ cjmp LABEL9
+ cmp edi, CONST
+ cjmp LABEL11
+LABEL21:
+ call CONST
+ mov rax, qword [rax]
+ test byte [rax + rbx*CONST + CONST], CONST
+ sete al
+ movzx eax, al
+ add eax, CONST
+LABEL11:
+ pop rbx
+ ret
+LABEL9:
+ and edi, CONST
+ cjmp LABEL21
+ pop rbx
+ ret
+LABEL2:
+ cmp dword [rip + CONST], CONST
+ sbb eax, eax
+ and eax, CONST
+ add eax, CONST
+ ret
+LABEL6:
+ mov eax, esi
+ pop rbx
+ or eax, CONST
+ add eax, CONST
+ sub eax, esi
+ ret

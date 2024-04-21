@@ -1,0 +1,32 @@
+ .name sym.utf8_mbsnlen
+ .offset 00000000000b6b00
+ .file bash
+ endbr64
+ movzx eax, byte [rdi]
+ test edx, edx
+ cjmp LABEL3
+ test al, al
+ cjmp LABEL3
+ mov ecx, CONST
+ xor r8d, r8d
+ nop word [rax + rax]
+LABEL21:
+ and eax, CONST
+ cmp eax, CONST
+ setne al
+ movzx eax, al
+ add r8d, eax
+ movzx eax, byte [rdi + rcx]
+ cmp edx, ecx
+ setge r9b
+ test al, al
+ setne sil
+ add rcx, CONST
+ test r9b, sil
+ cjmp LABEL21
+ mov eax, r8d
+ ret
+LABEL3:
+ xor r8d, r8d
+ mov eax, r8d
+ ret

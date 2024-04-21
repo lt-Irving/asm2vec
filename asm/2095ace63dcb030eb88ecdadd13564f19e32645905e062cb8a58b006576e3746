@@ -1,0 +1,16 @@
+ .name method.pkgCdromTextStatus.virtual_24
+ .offset 0000000000002af0
+ .file apt-cdrom
+ endbr64
+ mov rdx, qword [rsi + CONST]
+ test rdx, rdx
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ mov rsi, qword [rsi]
+ lea rdi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov rdi, rax
+ jmp CONST

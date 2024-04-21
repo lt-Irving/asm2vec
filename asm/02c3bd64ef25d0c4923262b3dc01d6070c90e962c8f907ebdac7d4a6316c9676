@@ -1,0 +1,22 @@
+ .name sym.rl_end_kbd_macro
+ .offset 00000000000d1240
+ .file bash
+ endbr64
+ test byte [rip + CONST], CONST
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ sub edi, CONST
+ xor esi, esi
+ sub eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cdqe
+ mov byte [rdx + rax], CONST
+ and qword [rip + CONST], CONST
+ jmp CONST
+LABEL2:
+ sub rsp, CONST
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

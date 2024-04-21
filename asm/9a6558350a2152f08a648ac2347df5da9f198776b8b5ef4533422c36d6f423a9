@@ -1,0 +1,21 @@
+ .name sym.word_split
+ .offset 0000000000069980
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov edx, dword [rdi + CONST]
+ and edx, CONST
+ test rsi, rsi
+ cjmp LABEL6
+ test edx, edx
+ cjmp LABEL6
+ mov rdi, qword [rdi]
+ jmp CONST
+LABEL2:
+ xor eax, eax
+ ret
+LABEL6:
+ mov rdi, qword [rdi]
+ lea rsi, [rip + CONST]
+ jmp CONST

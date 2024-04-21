@@ -1,0 +1,61 @@
+ .name sym.bind_function_def
+ .offset 000000000004f420
+ .file bash
+ endbr64
+ push r13
+ mov r13, rsi
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov ebx, edx
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL11
+ and ebx, CONST
+ cjmp LABEL13
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL13:
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ add rsp, CONST
+ mov rsi, rbp
+ mov rdi, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL11:
+ mov rbp, qword [r13 + CONST]
+ mov qword [r13 + CONST], CONST
+ mov rdi, r13
+ call CONST
+ mov qword [r13 + CONST], rbp
+ mov rdi, r12
+ mov rbp, qword [rip + CONST]
+ mov rbx, rax
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov rsi, rbp
+ mov edx, CONST
+ mov rdi, rax
+ call CONST
+ mov qword [rax + CONST], rbx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

@@ -1,0 +1,19 @@
+ .name sym.rl_bind_key_if_unbound
+ .offset 00000000000c47e0
+ .file bash
+ endbr64
+ push rbp
+ movzx edi, dil
+ mov rbp, rsi
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov rdx, qword [rip + CONST]
+ mov rsi, rbp
+ mov rdi, rax
+ pop rbp
+ jmp CONST
+LABEL6:
+ xor eax, eax
+ pop rbp
+ ret

@@ -1,0 +1,76 @@
+ .name sym.get_job_spec
+ .offset 00000000000930e0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rax, qword [rdi + CONST]
+ mov rbp, qword [rax]
+ movzx eax, byte [rbp]
+ test al, al
+ cjmp LABEL8
+ cmp al, CONST
+ cjmp LABEL10
+ movzx eax, byte [rbp + CONST]
+ add rbp, CONST
+LABEL10:
+ lea edx, [rax + CONST]
+ cmp dl, CONST
+ cjmp LABEL15
+ cmp al, CONST
+ cjmp LABEL17
+LABEL44:
+ cjmp LABEL18
+ cmp al, CONST
+ cjmp LABEL20
+ movabs rdx, CONST
+ bt rdx, rax
+ cjmp LABEL20
+ mov eax, dword [rip + CONST]
+ pop rbp
+ ret
+LABEL18:
+ cmp al, CONST
+ cjmp LABEL20
+ add rbp, CONST
+ mov esi, CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL20:
+ mov rdi, rbp
+ xor esi, esi
+ pop rbp
+ jmp CONST
+LABEL15:
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL41
+ movzx eax, byte [rbp]
+ cmp al, CONST
+ cjmp LABEL44
+LABEL17:
+ mov eax, dword [rip + CONST]
+ pop rbp
+ ret
+LABEL2:
+ mov eax, dword [rip + CONST]
+ ret
+LABEL41:
+ xor esi, esi
+ mov edx, CONST
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ cmp dword [rip + CONST], eax
+ cjmp LABEL8
+ sub eax, CONST
+ pop rbp
+ ret
+LABEL8:
+ mov eax, CONST
+ pop rbp
+ ret

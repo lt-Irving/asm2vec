@@ -1,0 +1,23 @@
+ .name fcn.000146b0
+ .offset 00000000000146b0
+ .file dash
+ endbr64
+ mov rsi, qword [rdi + CONST]
+ mov rdx, qword [rdi]
+ sub rdx, rsi
+ cjmp LABEL4
+ push rbx
+ mov rbx, rdi
+ mov edi, dword [rdi + CONST]
+ test edi, edi
+ cjmp LABEL9
+ mov qword [rbx], rsi
+ call CONST
+ test eax, eax
+ cjmp LABEL9
+ or dword [rbx + CONST], CONST
+LABEL9:
+ pop rbx
+ ret
+LABEL4:
+ ret

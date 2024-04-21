@@ -1,0 +1,24 @@
+ .name sym._rl_scxt_dispose
+ .offset 00000000000c7690
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+ call CONST
+LABEL9:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL13
+ call CONST
+LABEL13:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST

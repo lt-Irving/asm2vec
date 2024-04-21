@@ -1,0 +1,127 @@
+ .name sym.rl_noninc_reverse_search
+ .offset 00000000000bd9a0
+ .file bash
+LABEL112:
+ push r12
+ mov r12d, esi
+ xor esi, esi
+ push rbp
+ push rbx
+ mov ebx, edi
+ mov edi, CONST
+ call CONST
+ mov rbp, rax
+ cmp ebx, CONST
+ cjmp LABEL10
+ or dword [rax + CONST], CONST
+LABEL10:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL14
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL17
+LABEL14:
+ mov eax, dword [rbp + CONST]
+ mov dword [rbp + CONST], ebx
+ mov dword [rbp + CONST], eax
+ call CONST
+ mov rax, qword [rip + CONST]
+ test r12d, r12d
+ mov qword [rip + CONST], CONST
+ mov byte [rax], CONST
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ cmove r12d, eax
+ mov dword [rip + CONST], CONST
+LABEL93:
+ mov edi, r12d
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rax
+ mov r12, rax
+ xor eax, eax
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], rbp
+ xor r8d, r8d
+ mov rdx, rax
+ or dh, CONST
+ mov qword [rip + CONST], rdx
+ test eax, CONST
+ cjmp LABEL46
+ jmp LABEL47
+LABEL58:
+ cjmp LABEL48
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL52
+ cjmp LABEL48
+LABEL46:
+ mov rdi, rbp
+ call CONST
+ mov esi, eax
+ test eax, eax
+ cjmp LABEL58
+ lea rsi, [rbp + CONST]
+ lea rdi, [rbp + CONST]
+ call CONST
+ mov r8d, CONST
+LABEL47:
+ pop rbx
+ mov eax, r8d
+ pop rbp
+ pop r12
+ ret
+LABEL48:
+ mov rdi, rbp
+ call CONST
+ mov ebx, eax
+ test eax, eax
+ cjmp LABEL72
+LABEL52:
+ mov r8d, CONST
+ pop rbx
+ pop rbp
+ mov eax, r8d
+ pop r12
+ ret
+LABEL17:
+ mov eax, r12d
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL14
+ mov eax, dword [rbp + CONST]
+ or dword [rbp + CONST], CONST
+ mov dword [rbp + CONST], ebx
+ mov dword [rbp + CONST], eax
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov byte [rax], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ jmp LABEL93
+LABEL72:
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ xor r8d, r8d
+ and qword [rip + CONST], CONST
+ cmp ebx, CONST
+ mov qword [rip + CONST], CONST
+ setne r8b
+ pop rbx
+ mov eax, r8d
+ pop rbp
+ pop r12
+ ret
+ endbr64
+ cmp esi, CONST
+ mov eax, CONST
+ mov edi, CONST
+ cmovne esi, eax
+ jmp LABEL112

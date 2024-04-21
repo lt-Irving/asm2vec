@@ -1,0 +1,38 @@
+ .name sym.zreadcintr
+ .offset 00000000000b0030
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ cmp qword [rip + CONST], rax
+ push rbx
+ mov rbx, rsi
+ cjmp LABEL5
+ test rax, rax
+ cjmp LABEL5
+LABEL27:
+ mov eax, CONST
+ test rbx, rbx
+ cjmp LABEL10
+ mov rdx, qword [rip + CONST]
+ lea rcx, [rdx + CONST]
+ mov qword [rip + CONST], rcx
+ lea rcx, [rip + CONST]
+ movzx edx, byte [rcx + rdx]
+ mov byte [rbx], dl
+LABEL10:
+ pop rbx
+ ret
+LABEL5:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ mov qword [rip + CONST], CONST
+ test rax, rax
+ cjmp LABEL25
+ mov qword [rip + CONST], rax
+ jmp LABEL27
+LABEL25:
+ mov qword [rip + CONST], CONST
+ pop rbx
+ ret

@@ -1,0 +1,71 @@
+ .name main
+ .offset 0000000000001300
+ .file clear
+ endbr64
+ push r13
+ xor r13d, r13d
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ mov rdi, qword [rsi]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ lea rdx, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov qword [rdx], rax
+ call CONST
+ mov r12, rax
+LABEL33:
+ lea rdx, [rip + CONST]
+ mov rsi, rbx
+ mov edi, ebp
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL24
+ cmp eax, CONST
+ cjmp LABEL26
+ cmp eax, CONST
+ cjmp LABEL28
+ cmp eax, CONST
+ cjmp LABEL30
+LABEL48:
+ call CONST
+LABEL28:
+ mov r13d, CONST
+ jmp LABEL33
+LABEL26:
+ call CONST
+ mov rdi, rax
+ call CONST
+ xor edi, edi
+ call CONST
+LABEL30:
+ xor edi, edi
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov r12, qword [rax]
+ jmp LABEL33
+LABEL24:
+ mov rax, qword [rip + CONST]
+ cmp dword [rax], ebp
+ cjmp LABEL48
+ xor esi, esi
+ mov rdi, rsp
+ call CONST
+ xor edx, edx
+ mov rdi, r12
+ mov esi, eax
+ call CONST
+ movzx edi, r13b
+ call CONST
+ xor edi, edi
+ add eax, CONST
+ sete dil
+ call CONST

@@ -1,0 +1,13 @@
+ .name sym.rl_restart_output
+ .offset 00000000000be300
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov esi, CONST
+ mov edi, eax
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

@@ -1,0 +1,35 @@
+ .name sym.make_bare_word
+ .offset 0000000000040090
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ cmp byte [rbp], CONST
+ mov r12, rax
+ cjmp LABEL8
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov qword [r12], rax
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ mov edi, CONST
+ call CONST
+ mov qword [r12], rax
+ mov byte [rax], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret

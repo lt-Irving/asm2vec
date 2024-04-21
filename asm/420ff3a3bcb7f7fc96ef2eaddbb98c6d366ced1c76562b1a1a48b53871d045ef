@@ -1,0 +1,57 @@
+ .name sym.get_random_number
+ .offset 000000000004da70
+ .file bash
+ endbr64
+ push rbx
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL5
+ cmp dword [rip + CONST], eax
+ mov ebx, eax
+ cjmp LABEL8
+LABEL5:
+ mov edx, dword [rip + CONST]
+ mov esi, dword [rip + CONST]
+ jmp LABEL11
+LABEL34:
+ mov eax, edx
+ imul rax, rax, CONST
+ shr rax, CONST
+ mov rcx, rax
+ mov eax, edx
+ sub eax, ecx
+ shr eax, CONST
+ add eax, ecx
+ shr eax, CONST
+ imul ecx, eax, CONST
+ imul eax, eax, CONST
+ sub edx, ecx
+ imul edx, edx, CONST
+ add eax, edx
+ cjmp LABEL26
+ add eax, CONST
+ mov r8d, eax
+ mov edx, eax
+ and r8d, CONST
+ cmp esi, r8d
+ cjmp LABEL32
+LABEL11:
+ test edx, edx
+ cjmp LABEL34
+ mov eax, CONST
+LABEL26:
+ mov r8d, eax
+ mov edx, eax
+ and r8d, CONST
+ cmp esi, r8d
+ cjmp LABEL11
+LABEL32:
+ mov dword [rip + CONST], eax
+ pop rbx
+ mov eax, r8d
+ ret
+LABEL8:
+ call CONST
+ mov dword [rip + CONST], ebx
+ jmp LABEL5

@@ -1,0 +1,63 @@
+ .name fcn.0000c1b0
+ .offset 000000000000c1b0
+ .file dpkg-deb
+ endbr64
+ mov rdx, rdi
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rdx
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ movsx eax, al
+ test eax, eax
+ cjmp LABEL10
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rdx
+ mov eax, CONST
+ repe cmpsb byte [rsi], byte [rdi]
+ seta cl
+ sbb cl, CONST
+ test cl, cl
+ cjmp LABEL10
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rdx
+ mov eax, CONST
+ repe cmpsb byte [rsi], byte [rdi]
+ seta cl
+ sbb cl, CONST
+ test cl, cl
+ cjmp LABEL10
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rdx
+ mov eax, CONST
+ repe cmpsb byte [rsi], byte [rdi]
+ seta cl
+ sbb cl, CONST
+ test cl, cl
+ cjmp LABEL10
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rdx
+ mov eax, CONST
+ repe cmpsb byte [rsi], byte [rdi]
+ seta cl
+ sbb cl, CONST
+ test cl, cl
+ cjmp LABEL10
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rdx
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ movsx eax, al
+ cmp eax, CONST
+ sbb eax, eax
+ and eax, CONST
+ sub eax, CONST
+LABEL10:
+ ret

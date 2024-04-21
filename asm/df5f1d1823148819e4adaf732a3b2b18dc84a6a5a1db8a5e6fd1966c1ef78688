@@ -1,0 +1,85 @@
+ .name sym.completions_to_stringlist
+ .offset 000000000008e490
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r15
+ push r14
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ call CONST
+ lea edi, [rax + CONST]
+ mov r13d, eax
+ call CONST
+ mov rbp, qword [r12]
+ mov r15, rax
+ test rbp, rbp
+ cjmp LABEL18
+ cmp qword [r12 + CONST], CONST
+ cjmp LABEL20
+ cmp r13d, CONST
+ cjmp LABEL22
+ lea eax, [r13 + CONST]
+ xor ebx, ebx
+ lea r14, [rax*CONST + CONST]
+ nop
+LABEL42:
+ mov rbp, qword [r12 + rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL29
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL29:
+ mov rdx, qword [r15]
+ mov qword [rdx + rbx], rbp
+ add rbx, CONST
+ cmp r14, rbx
+ cjmp LABEL42
+ lea eax, [r13 + CONST]
+ mov r13, rax
+ lea rax, [rdx + rax*CONST]
+LABEL61:
+ mov dword [r15 + CONST], r13d
+ mov qword [rax], CONST
+LABEL18:
+ add rsp, CONST
+ mov rax, r15
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL2:
+ mov edi, CONST
+ jmp CONST
+LABEL22:
+ mov rax, qword [rax]
+ xor r13d, r13d
+ jmp LABEL61
+LABEL20:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov r8, rax
+ mov rax, qword [r15]
+ mov qword [rax], r8
+ mov dword [r15 + CONST], CONST
+ mov qword [rax + CONST], CONST
+ jmp LABEL18

@@ -1,0 +1,36 @@
+ .name fcn.00009b00
+ .offset 0000000000009b00
+ .file chfn
+LABEL28:
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ jmp LABEL6
+LABEL15:
+ mov rdi, qword [rax]
+ mov rsi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL11
+LABEL6:
+ mov rdi, rbx
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL11:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret
+ endbr64
+ mov rsi, rdi
+ lea rdi, [rip + CONST]
+ jmp LABEL28

@@ -1,0 +1,72 @@
+ .name sym.give_terminal_to
+ .offset 000000000005bbe0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, esi
+ or eax, dword [rip + CONST]
+ cjmp LABEL10
+LABEL53:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL13
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL10:
+ mov rbp, rsp
+ mov ebx, edi
+ lea r12, [rsp + CONST]
+ mov rdi, rbp
+ call CONST
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, r12
+ call CONST
+ xor edi, edi
+ mov rsi, rbp
+ mov rdx, r12
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov esi, ebx
+ call CONST
+ test eax, eax
+ cjmp LABEL46
+ xor edx, edx
+ mov rsi, r12
+ mov edi, CONST
+ mov dword [rip + CONST], ebx
+ call CONST
+ xor eax, eax
+ jmp LABEL53
+LABEL46:
+ call CONST
+ xor edx, edx
+ mov rsi, r12
+ mov edi, CONST
+ mov ebp, dword [rax]
+ mov rbx, rax
+ call CONST
+ mov eax, CONST
+ mov dword [rbx], ebp
+ jmp LABEL53
+LABEL13:
+ call CONST

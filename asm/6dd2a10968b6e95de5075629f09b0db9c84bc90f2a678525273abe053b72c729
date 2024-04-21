@@ -1,0 +1,17 @@
+ .name fcn.00002c50
+ .offset 0000000000002c50
+ .file [
+ movsxd rdx, dword [rip + CONST]
+ mov rax, qword [rip + CONST]
+ push rbp
+ mov rdi, qword [rax + rdx*CONST + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ mov rbp, rax
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST

@@ -1,0 +1,47 @@
+ .name sym.tilde_initialize
+ .offset 000000000003f860
+ .file bash
+ endbr64
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ lea edx, [rax + CONST]
+ mov dword [rip + CONST], edx
+ test eax, eax
+ cjmp LABEL7
+ ret
+LABEL7:
+ push rbp
+ mov edi, CONST
+ lea rbp, [rip + CONST]
+ push rbx
+ lea rbx, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov qword [rax], rbp
+ mov qword [rax + CONST], rbx
+ mov qword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ mov edi, CONST
+ mov qword [rax], rbx
+ lea rbx, [rip + CONST]
+ mov qword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov edi, CONST
+ mov qword [rax], rbx
+ mov qword [rax + CONST], rbp
+ mov qword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ mov qword [rax], rbx
+ mov qword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

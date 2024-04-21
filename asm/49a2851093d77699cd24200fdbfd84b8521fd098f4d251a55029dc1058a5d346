@@ -1,0 +1,14 @@
+ .name fcn.00005f00
+ .offset 0000000000005f00
+ .file b2sum
+ endbr64
+ test rdx, rdx
+ cjmp LABEL2
+ sub rsp, CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL2:
+ xor eax, eax
+ ret

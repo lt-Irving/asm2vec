@@ -1,0 +1,28 @@
+ .name sym.bind_var_to_int
+ .offset 0000000000051830
+ .file bash
+ endbr64
+ push rbp
+ xor r8d, r8d
+ mov ecx, CONST
+ mov rbp, rdi
+ mov rdi, rsi
+ mov esi, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ xor edx, edx
+ mov rdi, rbp
+ mov rsi, rax
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL19
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL19:
+ call CONST

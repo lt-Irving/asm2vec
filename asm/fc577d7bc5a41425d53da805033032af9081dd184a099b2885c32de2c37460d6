@@ -1,0 +1,17 @@
+ .name sym.rl_overwrite_mode
+ .offset 00000000000d6a50
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ xor dword [rip + CONST], CONST
+ xor eax, eax
+ ret
+LABEL3:
+ xor eax, eax
+ test edi, edi
+ setle al
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ ret

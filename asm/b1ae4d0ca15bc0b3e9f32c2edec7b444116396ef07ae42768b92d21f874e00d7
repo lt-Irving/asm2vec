@@ -1,0 +1,34 @@
+ .name sym.rl_vi_check
+ .offset 00000000000babd0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ cmp eax, dword [rip + CONST]
+ cjmp LABEL5
+LABEL3:
+ xor eax, eax
+ ret
+LABEL5:
+ sub rsp, CONST
+ call CONST
+ mov esi, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL12
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL15
+LABEL12:
+ sub esi, CONST
+ mov dword [rip + CONST], esi
+LABEL25:
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL15:
+ mov rdi, qword [rip + CONST]
+ mov edx, CONST
+ call CONST
+ mov dword [rip + CONST], eax
+ jmp LABEL25

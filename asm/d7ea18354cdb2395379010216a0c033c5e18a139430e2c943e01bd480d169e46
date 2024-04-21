@@ -1,0 +1,112 @@
+ .name fcn.00082e30
+ .offset 0000000000082e30
+ .file bash
+ endbr64
+ push r14
+ mov esi, CONST
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbp, qword [rdi]
+ mov rbx, rdi
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL12
+LABEL88:
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+LABEL83:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL20
+ cmp byte [rbp], CONST
+ cjmp LABEL22
+ cmp byte [rbp + CONST], CONST
+ cjmp LABEL20
+LABEL22:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rbp
+ mov rsi, rax
+ mov r12, rax
+ call CONST
+ mov rdi, r12
+ mov r13, rax
+ call CONST
+ mov esi, CONST
+ mov rdi, r13
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL39
+ mov rdi, rbp
+ call CONST
+ mov qword [rbx], r12
+LABEL39:
+ mov rdi, r13
+ call CONST
+LABEL20:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL17:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov r14d, dword [rip + CONST]
+ mov edx, CONST
+ xor esi, esi
+ mov dword [rip + CONST], CONST
+ mov rdi, rax
+ mov r13, rax
+ call CONST
+ mov dword [rip + CONST], r14d
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL69
+ mov rdi, r13
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov r13, rax
+ test rax, rax
+ cjmp LABEL76
+ cmp byte [rax], CONST
+ cjmp LABEL78
+LABEL76:
+ mov rdi, r13
+ call CONST
+LABEL97:
+ mov rdi, r12
+ call CONST
+ jmp LABEL83
+LABEL12:
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL88
+ jmp LABEL83
+LABEL69:
+ mov rdi, r13
+ call CONST
+ jmp LABEL83
+LABEL78:
+ mov rdi, rbp
+ mov rbp, r13
+ call CONST
+ mov qword [rbx], r13
+ jmp LABEL97

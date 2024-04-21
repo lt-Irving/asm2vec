@@ -1,0 +1,40 @@
+ .name sym.maybe_make_restricted
+ .offset 0000000000031010
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ cmp byte [rax], CONST
+ mov rsi, rax
+ sete al
+ movzx eax, al
+ add rsi, rax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ cmp byte [rsi], CONST
+ cjmp LABEL12
+LABEL21:
+ add rsp, CONST
+ ret
+LABEL12:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta dl
+ sbb dl, CONST
+ test dl, dl
+ cjmp LABEL21
+LABEL10:
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

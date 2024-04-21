@@ -1,0 +1,28 @@
+ .name fcn.000098a0
+ .offset 00000000000098a0
+ .file dpkg-deb
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ call CONST
+ mov r12, rax
+ cmp rax, CONST
+ cjmp LABEL8
+ pop rbx
+ pop rbp
+ mov dword [rip + CONST], eax
+ pop r12
+ ret
+LABEL8:
+ movsx ebp, byte [rbx + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdx, r12
+ mov rdi, rax
+ mov esi, ebp
+ xor eax, eax
+ call CONST

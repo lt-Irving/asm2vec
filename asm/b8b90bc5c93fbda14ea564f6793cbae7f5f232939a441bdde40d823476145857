@@ -1,0 +1,61 @@
+ .name sym._rl_read_mbstring
+ .offset 00000000000d1e50
+ .file bash
+ endbr64
+ push r14
+ movsxd rdx, edx
+ push r13
+ mov r14, rdx
+ push r12
+ mov r12d, edi
+ push rbp
+ mov rbp, rsi
+ xor esi, esi
+ push rbx
+ mov rdi, rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test r12d, r12d
+ cjmp LABEL18
+ test r14d, r14d
+ cjmp LABEL18
+ mov ebx, CONST
+ mov r13, rsp
+ jmp LABEL23
+LABEL41:
+ or qword [rip + CONST], CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ mov r12d, eax
+ not eax
+ shr eax, CONST
+ cmp r14d, ebx
+ setg dl
+ add rbx, CONST
+ test dl, al
+ cjmp LABEL18
+LABEL23:
+ mov byte [rbp + rbx + CONST], r12b
+ mov rsi, r13
+ mov rdi, rbp
+ mov qword [r13], CONST
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL41
+LABEL18:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL44
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL44:
+ call CONST

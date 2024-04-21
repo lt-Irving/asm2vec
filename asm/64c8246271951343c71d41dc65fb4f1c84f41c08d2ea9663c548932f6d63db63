@@ -1,0 +1,30 @@
+ .name sym.set_maxchild
+ .offset 000000000005f020
+ .file bash
+ endbr64
+ movsxd rdx, dword [rip + CONST]
+ push rbx
+ movsxd rbx, edi
+ test edx, edx
+ cjmp LABEL5
+LABEL20:
+ cmp ebx, edx
+ cjmp LABEL7
+ cmp ebx, CONST
+ mov edx, CONST
+ cmovle rdx, rbx
+LABEL7:
+ mov qword [rip + CONST], rdx
+ pop rbx
+ ret
+LABEL5:
+ call CONST
+ movsxd rdx, eax
+ test eax, eax
+ cjmp LABEL17
+ mov dword [rip + CONST], CONST
+ mov edx, CONST
+ jmp LABEL20
+LABEL17:
+ mov dword [rip + CONST], eax
+ jmp LABEL20

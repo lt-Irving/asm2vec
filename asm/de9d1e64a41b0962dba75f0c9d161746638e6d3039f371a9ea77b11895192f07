@@ -1,0 +1,42 @@
+ .name sym.sh_invalidnum
+ .offset 00000000000925e0
+ .file bash
+ endbr64
+ push rbp
+ cmp byte [rdi], CONST
+ mov rbp, rdi
+ cjmp LABEL4
+LABEL22:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdx, rax
+LABEL28:
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ pop rbp
+ jmp CONST
+LABEL4:
+ call CONST
+ movzx ecx, byte [rbp + CONST]
+ mov r8, rax
+ mov rdx, qword [r8]
+ test byte [rdx + rcx*CONST + CONST], CONST
+ cjmp LABEL20
+ cmp cl, CONST
+ cjmp LABEL22
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdx, rax
+ jmp LABEL28
+LABEL20:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdx, rax
+ jmp LABEL28

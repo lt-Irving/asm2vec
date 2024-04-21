@@ -1,0 +1,58 @@
+ .name sym.strvec_copy
+ .offset 00000000000b2b60
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ cmp qword [rdi], CONST
+ cjmp LABEL8
+ mov eax, CONST
+LABEL13:
+ mov edx, eax
+ add rax, CONST
+ cmp qword [r13 + rax*CONST + CONST], CONST
+ cjmp LABEL13
+ lea edi, [rdx + CONST]
+ movsxd rdi, edi
+ shl rdi, CONST
+LABEL46:
+ call CONST
+ mov rbp, qword [r13]
+ mov r12, rax
+ test rbp, rbp
+ cjmp LABEL21
+ xor ebx, ebx
+ nop dword [rax + rax]
+LABEL35:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov qword [r12 + rbx], rax
+ add rbx, CONST
+ mov rbp, qword [r13 + rbx]
+ test rbp, rbp
+ cjmp LABEL35
+ add rbx, r12
+LABEL48:
+ mov qword [rbx], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL8:
+ mov edi, CONST
+ jmp LABEL46
+LABEL21:
+ mov rbx, rax
+ jmp LABEL48

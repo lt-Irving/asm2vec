@@ -1,0 +1,31 @@
+ .name sym.check_signals
+ .offset 0000000000075710
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+LABEL17:
+ add rsp, CONST
+ ret
+LABEL7:
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL17
+LABEL10:
+ add rsp, CONST
+ jmp CONST
+LABEL4:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ nop

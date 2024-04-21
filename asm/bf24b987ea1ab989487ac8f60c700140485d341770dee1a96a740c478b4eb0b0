@@ -1,0 +1,19 @@
+ .name fcn.0000ff40
+ .offset 000000000000ff40
+ .file dash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ lea r12, [rax + CONST]
+ mov rdi, r12
+ call CONST
+ add rsp, CONST
+ mov rdx, r12
+ mov rsi, rbp
+ mov rdi, rax
+ pop rbp
+ pop r12
+ jmp CONST

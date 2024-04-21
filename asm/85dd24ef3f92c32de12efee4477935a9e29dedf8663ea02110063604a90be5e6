@@ -1,0 +1,28 @@
+ .name sym.test_unop
+ .offset 0000000000079db0
+ .file bash
+ endbr64
+ xor r8d, r8d
+ cmp byte [rdi], CONST
+ cjmp LABEL3
+ movzx eax, byte [rdi + CONST]
+ test al, al
+ cjmp LABEL3
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL3
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL11
+ lea rdx, [rip + CONST]
+ movzx eax, al
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ notrack jmp rax
+ mov r8d, CONST
+LABEL3:
+ mov eax, r8d
+ ret
+LABEL11:
+ xor r8d, r8d
+ mov eax, r8d
+ ret

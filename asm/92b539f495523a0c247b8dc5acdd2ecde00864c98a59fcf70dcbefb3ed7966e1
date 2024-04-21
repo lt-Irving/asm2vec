@@ -1,0 +1,23 @@
+ .name sym.chkexport
+ .offset 0000000000051c20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov rdx, rax
+ xor eax, eax
+ test rdx, rdx
+ cjmp LABEL6
+ mov eax, dword [rdx + CONST]
+ and eax, CONST
+ cjmp LABEL9
+LABEL6:
+ add rsp, CONST
+ ret
+LABEL9:
+ mov dword [rsp + CONST], eax
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov eax, dword [rsp + CONST]
+ add rsp, CONST
+ ret

@@ -1,0 +1,32 @@
+ .name sym.progcomp_remove
+ .offset 0000000000090350
+ .file bash
+ endbr64
+ mov rsi, qword [rip + CONST]
+ mov eax, CONST
+ test rsi, rsi
+ cjmp LABEL4
+ push rbp
+ xor edx, edx
+ call CONST
+ mov rbp, rax
+ xor eax, eax
+ test rbp, rbp
+ cjmp LABEL11
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL14
+ sub dword [rdi], CONST
+ cjmp LABEL14
+ call CONST
+LABEL14:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov eax, CONST
+LABEL11:
+ pop rbp
+ ret
+LABEL4:
+ ret

@@ -1,0 +1,76 @@
+ .name fcn.0004cb10
+ .offset 000000000004cb10
+ .file bash
+ endbr64
+ push rbp
+ xor esi, esi
+ mov rbp, rsp
+ push r14
+ push r12
+ mov r12, rdi
+ lea rdi, [rbp + CONST]
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rbp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov rbx, qword [rbp + CONST]
+ call CONST
+ lea rcx, [rbp + CONST]
+ mov r9d, dword [rbp + CONST]
+ lea r8, [rip + CONST]
+ push rbx
+ mov rdi, rcx
+ mov r14, rcx
+ mov edx, CONST
+ push rax
+ mov ecx, CONST
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ mov rdi, r14
+LABEL35:
+ mov edx, dword [rdi]
+ add rdi, CONST
+ lea eax, [rdx + CONST]
+ not edx
+ and eax, edx
+ and eax, CONST
+ cjmp LABEL35
+ mov edx, eax
+ shr edx, CONST
+ test eax, CONST
+ cmove eax, edx
+ lea rdx, [rdi + CONST]
+ cmove rdi, rdx
+ mov ecx, eax
+ add cl, al
+ sbb rdi, CONST
+ sub rdi, r14
+ add rdi, CONST
+ call CONST
+ mov rsi, r14
+ mov rdi, rax
+ call CONST
+ mov rdi, qword [r12 + CONST]
+ mov rbx, rax
+ pop rax
+ pop rdx
+ test rdi, rdi
+ cjmp LABEL56
+ call CONST
+LABEL56:
+ mov qword [r12 + CONST], rbx
+ mov rax, qword [rbp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL61
+ lea rsp, [rbp + CONST]
+ mov rax, r12
+ pop rbx
+ pop r12
+ pop r14
+ pop rbp
+ ret
+LABEL61:
+ call CONST

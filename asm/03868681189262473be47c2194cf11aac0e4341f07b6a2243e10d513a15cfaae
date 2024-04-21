@@ -1,0 +1,26 @@
+ .name sym.u32tocesc
+ .offset 00000000000b62e0
+ .file bash
+ endbr64
+ mov r8d, edi
+ sub rsp, CONST
+ mov rdi, rsi
+ cmp r8d, CONST
+ cjmp LABEL5
+ lea rcx, [rip + CONST]
+ mov rdx, CONST
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret
+LABEL5:
+ lea rcx, [rip + CONST]
+ mov rdx, CONST
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

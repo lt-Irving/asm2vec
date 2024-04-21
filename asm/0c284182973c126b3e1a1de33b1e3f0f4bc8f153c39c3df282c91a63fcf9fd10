@@ -1,0 +1,20 @@
+ .name sym.do_assignment_no_expand
+ .offset 0000000000069740
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor esi, esi
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov qword [rsp], rdi
+ mov rdi, rsp
+ mov dword [rsp + CONST], CONST
+ call CONST
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL12
+ add rsp, CONST
+ ret
+LABEL12:
+ call CONST

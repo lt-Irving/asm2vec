@@ -1,0 +1,98 @@
+ .name method.std::vector_APT::Configuration::Compressor__std::allocator_APT::Configuration::Compressor___.vector__
+ .offset 0000000000003e60
+ .file apt-config
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, qword [rdi + CONST]
+ mov rbp, qword [rdi]
+ cmp rbx, rbp
+ cjmp LABEL9
+ mov r13, rdi
+ nop
+LABEL64:
+ mov r14, qword [rbp + CONST]
+ mov r12, qword [rbp + CONST]
+ cmp r14, r12
+ cjmp LABEL15
+LABEL23:
+ mov rdi, qword [r12]
+ lea rax, [r12 + CONST]
+ cmp rdi, rax
+ cjmp LABEL19
+ call CONST
+LABEL19:
+ add r12, CONST
+ cmp r14, r12
+ cjmp LABEL23
+ mov r12, qword [rbp + CONST]
+LABEL15:
+ test r12, r12
+ cjmp LABEL26
+ mov rdi, r12
+ call CONST
+LABEL26:
+ mov r14, qword [rbp + CONST]
+ mov r12, qword [rbp + CONST]
+ cmp r14, r12
+ cjmp LABEL32
+ nop word [rax + rax]
+LABEL41:
+ mov rdi, qword [r12]
+ lea rax, [r12 + CONST]
+ cmp rdi, rax
+ cjmp LABEL37
+ call CONST
+LABEL37:
+ add r12, CONST
+ cmp r14, r12
+ cjmp LABEL41
+ mov r12, qword [rbp + CONST]
+LABEL32:
+ test r12, r12
+ cjmp LABEL44
+ mov rdi, r12
+ call CONST
+LABEL44:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL50
+ call CONST
+LABEL50:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL55
+ call CONST
+LABEL55:
+ mov rdi, qword [rbp]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL60
+ call CONST
+LABEL60:
+ add rbp, CONST
+ cmp rbx, rbp
+ cjmp LABEL64
+ mov rbp, qword [r13]
+LABEL9:
+ test rbp, rbp
+ cjmp LABEL67
+ pop rbx
+ mov rdi, rbp
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL67:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

@@ -1,0 +1,79 @@
+ .name sym.sv_xtracefd
+ .offset 000000000004e260
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test rax, rax
+ cjmp LABEL12
+ mov r12, qword [rax + CONST]
+ mov rbx, rax
+ test r12, r12
+ cjmp LABEL12
+ cmp byte [r12], CONST
+ cjmp LABEL18
+LABEL12:
+ call CONST
+LABEL49:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL22
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL18:
+ mov rsi, rsp
+ mov edx, CONST
+ mov rdi, r12
+ call CONST
+ mov r13, rax
+ mov rax, qword [rsp]
+ cmp rax, r12
+ cjmp LABEL36
+ cmp byte [rax], CONST
+ cjmp LABEL38
+LABEL36:
+ mov r12, qword [rbx + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+LABEL66:
+ xor edi, edi
+ call CONST
+ mov rdx, r12
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL49
+LABEL38:
+ mov edi, r13d
+ call CONST
+ test eax, eax
+ cjmp LABEL36
+ lea rsi, [rip + CONST]
+ mov edi, r13d
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ cjmp LABEL59
+ mov edi, r13d
+ call CONST
+ jmp LABEL49
+LABEL59:
+ mov r12, qword [rbx + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL66
+LABEL22:
+ call CONST

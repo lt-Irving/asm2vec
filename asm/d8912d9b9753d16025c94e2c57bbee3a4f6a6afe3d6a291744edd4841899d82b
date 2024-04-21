@@ -1,0 +1,18 @@
+ .name sym.dispose_function_def_contents
+ .offset 0000000000043fe0
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi + CONST]
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+ pop rbx
+ jmp CONST
+LABEL9:
+ pop rbx
+ ret

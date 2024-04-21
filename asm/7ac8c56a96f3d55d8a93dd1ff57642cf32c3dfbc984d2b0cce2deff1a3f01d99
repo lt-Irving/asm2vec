@@ -1,0 +1,79 @@
+ .name sym.glob_dirscan
+ .offset 00000000000af920
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL7
+ movsx edx, byte [rdi]
+ mov rbx, rdi
+ mov ebp, esi
+ xor r14d, r14d
+ xor r12d, r12d
+ mov r13d, CONST
+ jmp LABEL14
+LABEL29:
+ lea ecx, [rdx + CONST]
+ movzx esi, byte [rbx + CONST]
+ cmp cl, CONST
+ cjmp LABEL18
+ mov rax, r13
+ shl rax, cl
+ test eax, CONST
+ cjmp LABEL22
+LABEL18:
+ cmp edx, ebp
+ lea rax, [rbx + CONST]
+ cmove r12, rbx
+LABEL49:
+ movsx edx, sil
+ mov rbx, rax
+LABEL14:
+ test dl, dl
+ cjmp LABEL29
+LABEL65:
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL22:
+ cmp sil, CONST
+ cjmp LABEL18
+ test r14, r14
+ cjmp LABEL40
+LABEL60:
+ xor edx, edx
+ lea rdi, [rbx + CONST]
+ mov rsi, r14
+ call CONST
+ test rax, rax
+ cjmp LABEL46
+ movzx esi, byte [rax]
+ test sil, sil
+ cjmp LABEL49
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL40:
+ mov rdi, rbx
+ call CONST
+ lea r14, [rbx + rax + CONST]
+ jmp LABEL60
+LABEL46:
+ movzx esi, byte [rbx + CONST]
+ lea rax, [rbx + CONST]
+ jmp LABEL49
+LABEL7:
+ xor r12d, r12d
+ jmp LABEL65

@@ -1,0 +1,71 @@
+ .name sym.sv_shcompat
+ .offset 000000000004e360
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ call CONST
+ test rax, rax
+ cjmp LABEL7
+ mov r12, qword [rax + CONST]
+ test r12, r12
+ cjmp LABEL7
+ movzx ebx, byte [r12]
+ test bl, bl
+ cjmp LABEL7
+ call CONST
+ movzx edx, bl
+ mov rax, qword [rax]
+ test byte [rax + rdx*CONST + CONST], CONST
+ cjmp LABEL18
+ movzx edx, byte [r12 + CONST]
+ cmp dl, CONST
+ cjmp LABEL21
+LABEL55:
+ movzx ecx, dl
+ test byte [rax + rcx*CONST + CONST], CONST
+ cjmp LABEL18
+ cmp byte [r12 + CONST], CONST
+ cjmp LABEL18
+ movsx ebx, bl
+ movsx edx, dl
+ lea eax, [rbx + rbx*CONST + CONST]
+ lea eax, [rdx + rax*CONST + CONST]
+LABEL62:
+ lea edx, [rax + CONST]
+ cmp edx, CONST
+ cjmp LABEL18
+ pop rbx
+ pop rbp
+ mov dword [rip + CONST], eax
+ pop r12
+ jmp CONST
+LABEL18:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdx, r12
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+LABEL7:
+ mov dword [rip + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL21:
+ movzx esi, byte [r12 + CONST]
+ test byte [rax + rsi*CONST + CONST], CONST
+ cjmp LABEL55
+ cmp byte [r12 + CONST], CONST
+ cjmp LABEL55
+ movsx ebx, bl
+ movsx ecx, sil
+ lea eax, [rbx + rbx*CONST + CONST]
+ lea eax, [rcx + rax*CONST + CONST]
+ jmp LABEL62

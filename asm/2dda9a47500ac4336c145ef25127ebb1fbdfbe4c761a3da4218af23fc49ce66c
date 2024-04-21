@@ -1,0 +1,32 @@
+ .name sym.extract_array_assignment_list
+ .offset 0000000000062d60
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ call CONST
+ xor r8d, r8d
+ movsxd rdx, eax
+ cmp byte [rbp + rdx + CONST], CONST
+ cjmp LABEL10
+ pop rbx
+ mov rax, r8
+ pop rbp
+ pop r12
+ ret
+LABEL10:
+ lea ebx, [rax + CONST]
+ mov esi, dword [r12]
+ mov rdi, rbp
+ mov edx, ebx
+ call CONST
+ mov dword [r12], ebx
+ pop rbx
+ mov r8, rax
+ pop rbp
+ pop r12
+ mov rax, r8
+ ret

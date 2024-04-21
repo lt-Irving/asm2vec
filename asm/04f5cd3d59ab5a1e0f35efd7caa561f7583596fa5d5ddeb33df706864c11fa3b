@@ -1,0 +1,38 @@
+ .name sym._rl_add_macro_char
+ .offset 00000000000d1000
+ .file bash
+ endbr64
+ movsxd rcx, dword [rip + CONST]
+ mov esi, dword [rip + CONST]
+ push rbx
+ mov ebx, edi
+ mov rdi, qword [rip + CONST]
+ lea edx, [rcx + CONST]
+ cmp edx, esi
+ cjmp LABEL8
+ test rdi, rdi
+ cjmp LABEL10
+ add esi, CONST
+ mov dword [rip + CONST], esi
+ movsxd rsi, esi
+ call CONST
+ movsxd rcx, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ lea edx, [rcx + CONST]
+LABEL8:
+ mov dword [rip + CONST], edx
+ movsxd rdx, edx
+ mov byte [rdi + rcx], bl
+ mov byte [rdi + rdx], CONST
+ pop rbx
+ ret
+LABEL10:
+ mov dword [rip + CONST], CONST
+ mov edi, CONST
+ call CONST
+ movsxd rcx, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ lea edx, [rcx + CONST]
+ jmp LABEL8

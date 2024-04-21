@@ -1,0 +1,49 @@
+ .name sym.hash_walk
+ .offset 0000000000073d80
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov edx, dword [rdi + CONST]
+ test edx, edx
+ cjmp LABEL11
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL11
+ mov rbp, rsi
+ xor r13d, r13d
+LABEL37:
+ mov rax, qword [r12]
+ mov rbx, qword [rax + r13*CONST]
+ test rbx, rbx
+ cjmp LABEL20
+ jmp LABEL21
+LABEL28:
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL21
+LABEL20:
+ mov rdi, rbx
+ call rbp
+ test eax, eax
+ cjmp LABEL28
+LABEL11:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL21:
+ add r13, CONST
+ cmp dword [r12 + CONST], r13d
+ cjmp LABEL37
+ jmp LABEL11
+LABEL2:
+ ret

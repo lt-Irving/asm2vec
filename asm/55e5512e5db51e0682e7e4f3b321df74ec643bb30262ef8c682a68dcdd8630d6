@@ -1,0 +1,16 @@
+ .name sym.history_set_pos
+ .offset 00000000000d6bb0
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], edi
+ cjmp LABEL2
+ test edi, edi
+ cjmp LABEL2
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL2
+ mov dword [rip + CONST], edi
+ mov eax, CONST
+ ret
+LABEL2:
+ xor eax, eax
+ ret

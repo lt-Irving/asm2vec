@@ -1,0 +1,13 @@
+ .name sym.initialize_itemlist
+ .offset 000000000008e1c0
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call qword [rdi + CONST]
+ mov eax, dword [rbx]
+ and eax, CONST
+ or eax, CONST
+ mov dword [rbx], eax
+ pop rbx
+ ret

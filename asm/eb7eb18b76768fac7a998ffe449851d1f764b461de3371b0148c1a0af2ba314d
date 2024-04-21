@@ -1,0 +1,63 @@
+ .name sym.progcomp_insert
+ .offset 00000000000903b0
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+ test rsi, rsi
+ cjmp LABEL7
+ mov rsi, qword [rip + CONST]
+ test rsi, rsi
+ cjmp LABEL10
+LABEL54:
+ add dword [rbx], CONST
+ mov rdi, r12
+ xor edx, edx
+ call CONST
+ mov rdi, qword [rax + CONST]
+ mov rbp, rax
+ test rdi, rdi
+ cjmp LABEL18
+ sub dword [rdi], CONST
+ cjmp LABEL20
+ call CONST
+LABEL20:
+ mov qword [rbp + CONST], rbx
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL18:
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov qword [rbp + CONST], rbx
+ mov qword [rbp + CONST], rax
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+LABEL10:
+ mov edi, CONST
+ call CONST
+ mov qword [rip + CONST], rax
+ mov rsi, rax
+ jmp LABEL54

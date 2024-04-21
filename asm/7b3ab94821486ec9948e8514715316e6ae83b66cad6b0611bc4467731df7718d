@@ -1,0 +1,14 @@
+ .name sym.init_bash_argv
+ .offset 0000000000052160
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,36 @@
+ .name sym.u32toutf16
+ .offset 00000000000b64f0
+ .file bash
+ endbr64
+ lea eax, [rdi + CONST]
+ cmp eax, CONST
+ cjmp LABEL3
+ cmp edi, CONST
+ cjmp LABEL3
+ sub edi, CONST
+ xor eax, eax
+ cmp edi, CONST
+ cjmp LABEL9
+ xor edx, edx
+ mov word [rsi], dx
+ ret
+LABEL3:
+ mov word [rsi], di
+ xor edx, edx
+ add rsi, CONST
+ mov eax, CONST
+ mov word [rsi], dx
+ ret
+LABEL9:
+ mov eax, edi
+ and di, CONST
+ add rsi, CONST
+ xor edx, edx
+ shr eax, CONST
+ sub di, CONST
+ mov word [rsi + CONST], di
+ sub ax, CONST
+ mov word [rsi + CONST], ax
+ mov eax, CONST
+ mov word [rsi], dx
+ ret

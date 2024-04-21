@@ -1,0 +1,52 @@
+ .name sym._obstack_begin
+ .offset 0000000000006580
+ .file dircolors
+LABEL44:
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ test rdx, rdx
+ cjmp LABEL5
+ mov rbp, rdx
+ lea r12, [rdx + CONST]
+LABEL36:
+ test rsi, rsi
+ mov eax, CONST
+ mov qword [rbx + CONST], r12
+ mov rdi, rbx
+ cmove rsi, rax
+ mov qword [rbx], rsi
+ call CONST
+ mov qword [rbx + CONST], rax
+ test rax, rax
+ cjmp LABEL17
+ lea rdx, [rax + r12 + CONST]
+ neg rbp
+ and rbp, rdx
+ mov rdx, qword [rbx]
+ mov qword [rbx + CONST], rbp
+ add rdx, rax
+ mov qword [rbx + CONST], rbp
+ mov qword [rax], rdx
+ mov qword [rbx + CONST], rdx
+ mov qword [rax + CONST], CONST
+ mov eax, CONST
+ and byte [rbx + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ mov r12d, CONST
+ mov ebp, CONST
+ jmp LABEL36
+LABEL17:
+ call qword [rip + CONST]
+ nop word cs:[rax + rax]
+ nop
+ endbr64
+ and byte [rdi + CONST], CONST
+ mov qword [rdi + CONST], rcx
+ mov qword [rdi + CONST], r8
+ jmp LABEL44

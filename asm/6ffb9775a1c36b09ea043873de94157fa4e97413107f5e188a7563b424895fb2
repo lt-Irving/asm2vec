@@ -1,0 +1,51 @@
+ .name sym._rl_strindex
+ .offset 00000000000cf700
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ mov r12, rdi
+ mov rdi, rsi
+ push rbp
+ mov rbp, rsi
+ push rbx
+ call CONST
+ mov rdi, r12
+ mov rbx, rax
+ mov r13d, eax
+ call CONST
+ cmp ebx, eax
+ cjmp LABEL15
+ movsxd rbx, ebx
+ lea r14d, [rax + r12]
+ jmp LABEL18
+LABEL29:
+ add r12, CONST
+ mov eax, r14d
+ sub eax, r12d
+ cmp r13d, eax
+ cjmp LABEL15
+LABEL18:
+ mov rdx, rbx
+ mov rsi, rbp
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL29
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL15:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ pop r13
+ pop r14
+ ret

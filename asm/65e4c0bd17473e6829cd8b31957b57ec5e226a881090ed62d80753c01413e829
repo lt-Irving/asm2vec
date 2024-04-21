@@ -1,0 +1,26 @@
+ .name sym.force_execute_file
+ .offset 00000000000966e0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov ebp, esi
+ xor esi, esi
+ call CONST
+ test ebp, ebp
+ mov r12, rax
+ mov eax, CONST
+ cmovne ebp, eax
+ mov rdi, r12
+ xor eax, eax
+ mov esi, ebp
+ call CONST
+ mov rdi, r12
+ mov r13d, eax
+ call CONST
+ mov eax, r13d
+ pop rbp
+ pop r12
+ pop r13
+ ret

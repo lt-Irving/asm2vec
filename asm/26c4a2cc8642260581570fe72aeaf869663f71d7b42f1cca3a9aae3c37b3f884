@@ -1,0 +1,39 @@
+ .name sym.find_user_command
+ .offset 000000000008ae70
+ .file bash
+LABEL32:
+ push r12
+ mov r12d, esi
+ push rbp
+ mov rbp, rdi
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL8
+ mov rsi, qword [rax + CONST]
+ test rsi, rsi
+ cjmp LABEL8
+ cmp byte [rsi], CONST
+ cjmp LABEL13
+LABEL8:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ add rsp, CONST
+ mov rsi, rbp
+ mov rdi, rax
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL13:
+ add rsp, CONST
+ mov edx, r12d
+ mov rdi, rbp
+ pop rbp
+ pop r12
+ jmp CONST
+ endbr64
+ mov esi, CONST
+ jmp LABEL32

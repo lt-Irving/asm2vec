@@ -1,0 +1,72 @@
+ .name sym.array_shift_element
+ .offset 000000000007b770
+ .file bash
+LABEL58:
+ push r12
+ mov r12, rdi
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov rax, qword [rdi + CONST]
+ mov rbx, qword [rax + CONST]
+ test rdx, rdx
+ cjmp LABEL8
+ mov rsi, rdx
+ xor edi, edi
+ call CONST
+ mov rdx, qword [rbx + CONST]
+ mov qword [rdx + CONST], rax
+ mov qword [rax + CONST], rdx
+ mov qword [rbx + CONST], rax
+ mov qword [rax + CONST], rbx
+ mov eax, dword [r12 + CONST]
+ lea r8d, [rax + CONST]
+ mov dword [r12 + CONST], r8d
+ cmp r8d, CONST
+ cjmp LABEL21
+ mov rax, qword [r12 + CONST]
+LABEL41:
+ movsxd rsi, ebp
+ cmp rbx, rax
+ cjmp LABEL25
+ nop dword [rax]
+LABEL30:
+ add qword [rbx], rsi
+ mov rbx, qword [rbx + CONST]
+ cmp rax, rbx
+ cjmp LABEL30
+LABEL25:
+ mov rax, qword [rax + CONST]
+ pop rbx
+ pop rbp
+ mov rax, qword [rax]
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], rax
+ mov eax, r8d
+ pop r12
+ ret
+LABEL8:
+ mov r8d, dword [rdi + CONST]
+ jmp LABEL41
+LABEL21:
+ mov qword [r12 + CONST], CONST
+ pop rbx
+ mov eax, r8d
+ pop rbp
+ pop r12
+ ret
+ endbr64
+ mov rdx, rsi
+ test rdi, rdi
+ cjmp LABEL51
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL54
+ test rsi, rsi
+ cjmp LABEL51
+LABEL54:
+ mov esi, CONST
+ jmp LABEL58
+LABEL51:
+ xor eax, eax
+ ret

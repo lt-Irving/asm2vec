@@ -1,0 +1,62 @@
+ .name sym.rl_variable_value
+ .offset 00000000000c50b0
+ .file bash
+ endbr64
+ push r12
+ lea rsi, [rip + CONST]
+ mov r12, rdi
+ push rbp
+ xor ebp, ebp
+ push rbx
+ lea rbx, [rip + CONST]
+ jmp LABEL8
+LABEL17:
+ mov rsi, qword [rbx]
+ add rbx, CONST
+ add ebp, CONST
+ test rsi, rsi
+ cjmp LABEL13
+LABEL8:
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ movsxd rbp, ebp
+ lea rax, [rip + CONST]
+ lea rsi, [rip + CONST]
+ lea rdx, [rbp + rbp*CONST]
+ mov rax, qword [rax + rdx*CONST + CONST]
+ mov eax, dword [rax]
+ test eax, eax
+ lea rax, [rip + CONST]
+ cmove rsi, rax
+LABEL40:
+ pop rbx
+ mov rax, rsi
+ pop rbp
+ pop r12
+ ret
+LABEL13:
+ lea rbx, [rip + CONST]
+ xor ebp, ebp
+ lea rsi, [rip + CONST]
+ jmp LABEL35
+LABEL44:
+ mov rsi, qword [rbx]
+ add rbx, CONST
+ add ebp, CONST
+ test rsi, rsi
+ cjmp LABEL40
+LABEL35:
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL44
+ movsxd rbp, ebp
+ lea rax, [rip + CONST]
+ pop rbx
+ lea rdx, [rbp + rbp*CONST]
+ pop rbp
+ pop r12
+ mov rdi, qword [rax + rdx*CONST]
+ jmp CONST

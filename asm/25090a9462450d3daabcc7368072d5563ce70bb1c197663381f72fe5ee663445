@@ -1,0 +1,54 @@
+ .name sym.sh_un_double_quote
+ .offset 00000000000b3410
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ movsx esi, byte [rbx]
+ test esi, esi
+ cjmp LABEL8
+ mov edx, esi
+ mov rcx, rax
+ lea r9, [rip + CONST]
+ xor edi, edi
+ jmp LABEL13
+LABEL24:
+ cmp esi, CONST
+ cjmp LABEL15
+LABEL38:
+ mov byte [rcx], dl
+ movzx edx, byte [rbx + CONST]
+ add rcx, CONST
+LABEL41:
+ movsx esi, dl
+ add rbx, CONST
+ test esi, esi
+ cjmp LABEL22
+LABEL13:
+ test edi, edi
+ cjmp LABEL24
+ mov byte [rcx], dl
+ movzx edx, byte [rbx + CONST]
+ add rcx, CONST
+ xor edi, edi
+ add rbx, CONST
+ movsx esi, dl
+ test esi, esi
+ cjmp LABEL13
+LABEL22:
+ mov byte [rcx], CONST
+ pop rbx
+ ret
+LABEL15:
+ movzx r8d, byte [rbx + CONST]
+ test byte [r9 + r8*CONST], CONST
+ cjmp LABEL38
+ mov edx, r8d
+ mov edi, CONST
+ jmp LABEL41
+LABEL8:
+ mov rcx, rax
+ jmp LABEL22

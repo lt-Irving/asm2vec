@@ -1,0 +1,54 @@
+ .name sym._rl_disable_tty_signals
+ .offset 00000000000be420
+ .file bash
+ endbr64
+ push r12
+ mov r12d, dword [rip + CONST]
+ test r12d, r12d
+ cjmp LABEL4
+ xor r12d, r12d
+LABEL46:
+ mov eax, r12d
+ pop r12
+ ret
+LABEL4:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ mov rax, qword [rip + CONST]
+ movdqa xmm0, xmmword [rip + CONST]
+ movdqa xmm1, xmmword [rip + CONST]
+ movdqa xmm2, xmmword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov rdi, qword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ movaps xmmword [rip + CONST], xmm0
+ movaps xmmword [rip + CONST], xmm1
+ and dword [rip + CONST], CONST
+ and dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ movaps xmmword [rip + CONST], xmm2
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL34
+ mov dword [rip + CONST], CONST
+ mov eax, r12d
+ pop r12
+ ret
+LABEL34:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ pop r12
+ mov edi, eax
+ jmp CONST
+LABEL15:
+ mov r12d, CONST
+ jmp LABEL46

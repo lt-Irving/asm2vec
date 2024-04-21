@@ -1,0 +1,16 @@
+ .name sym.err_badarraysub
+ .offset 0000000000055570
+ .file bash
+ endbr64
+ push rbp
+ mov rsi, qword [rip + CONST]
+ mov rbp, rdi
+ mov edx, CONST
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ pop rbp
+ mov rdx, rax
+ xor eax, eax
+ jmp CONST

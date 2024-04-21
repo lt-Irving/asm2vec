@@ -1,0 +1,86 @@
+ .name sym.restore_parser_state
+ .offset 000000000003dec0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbx
+ mov rbx, rdi
+ mov eax, dword [rdi]
+ mov rdi, qword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ test rdi, rdi
+ cjmp LABEL9
+ mov eax, dword [rdi]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ call CONST
+LABEL9:
+ mov eax, dword [rbx + CONST]
+ mov rdi, qword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov rax, qword [rbx + CONST]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ call CONST
+ mov rax, qword [rbx + CONST]
+ mov edx, dword [rbx + CONST]
+ mov qword [rip + CONST], rax
+ mov rax, qword [rbx + CONST]
+ mov dword [rip + CONST], edx
+ mov qword [rip + CONST], rax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [rip + CONST], eax
+ test eax, eax
+ cjmp LABEL48
+ mov qword [rip + CONST], CONST
+LABEL76:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL52
+ call CONST
+LABEL52:
+ mov rax, qword [rbx + CONST]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rbx + CONST]
+ pop rbx
+ mov dword [rip + CONST], eax
+ ret
+LABEL48:
+ movdqu xmm0, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm0
+ movdqu xmm1, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm1
+ movdqu xmm2, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm2
+ movdqu xmm3, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm3
+ movdqu xmm4, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm4
+ movdqu xmm5, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm5
+ movdqu xmm6, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm6
+ movdqu xmm7, xmmword [rbx + CONST]
+ movaps xmmword [rip + CONST], xmm7
+ jmp LABEL76
+LABEL2:
+ ret

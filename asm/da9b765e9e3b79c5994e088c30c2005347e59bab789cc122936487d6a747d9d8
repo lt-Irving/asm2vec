@@ -1,0 +1,22 @@
+ .name sym.find_alias
+ .offset 000000000007a760
+ .file bash
+ endbr64
+ mov rsi, qword [rip + CONST]
+ test rsi, rsi
+ cjmp LABEL3
+ sub rsp, CONST
+ xor edx, edx
+ call CONST
+ test rax, rax
+ cjmp LABEL8
+ mov rax, qword [rax + CONST]
+ add rsp, CONST
+ ret
+LABEL8:
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL3:
+ xor eax, eax
+ ret

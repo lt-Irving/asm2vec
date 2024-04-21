@@ -1,0 +1,85 @@
+ .name sym.bash_tilde_find_word
+ .offset 000000000003f940
+ .file bash
+ endbr64
+ push r13
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ movzx eax, byte [rdi]
+ cmp al, CONST
+ cjmp LABEL10
+ test al, al
+ cjmp LABEL10
+ mov rdx, rdi
+ movabs rdi, CONST
+ jmp LABEL15
+LABEL30:
+ cmp al, CONST
+ cjmp LABEL17
+ test esi, esi
+ cjmp LABEL19
+LABEL17:
+ movzx eax, byte [rdx + CONST]
+ add rdx, CONST
+ test al, al
+ cjmp LABEL19
+ cmp al, CONST
+ cjmp LABEL19
+LABEL15:
+ lea ecx, [rax + CONST]
+ cmp cl, CONST
+ cjmp LABEL17
+ bt rdi, rcx
+ cjmp LABEL30
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov r8, rax
+ test r12, r12
+ cjmp LABEL40
+ mov dword [r12], CONST
+LABEL40:
+ add rsp, CONST
+ mov rax, r8
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL19:
+ sub rdx, rbp
+ lea edi, [rdx + CONST]
+ mov r13d, edx
+ movsxd rbx, edx
+ movsxd rdi, edi
+LABEL74:
+ call CONST
+ mov rdx, rbx
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov byte [rax + rbx], CONST
+ mov r8, rax
+ test r12, r12
+ cjmp LABEL40
+ mov dword [r12], r13d
+ add rsp, CONST
+ mov rax, r8
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL10:
+ xor r13d, r13d
+ xor ebx, ebx
+ mov edi, CONST
+ jmp LABEL74

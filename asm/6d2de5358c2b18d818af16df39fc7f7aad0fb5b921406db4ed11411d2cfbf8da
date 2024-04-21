@@ -1,0 +1,48 @@
+ .name fcn.000084e0
+ .offset 00000000000084e0
+ .file dmesg
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ push rbx
+ lea rbx, [rip + CONST]
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov edi, dword [rip + CONST]
+ call CONST
+ lea rsi, [rbx + CONST]
+ xor edx, edx
+ mov edi, CONST
+ call CONST
+ lea rsi, [rbx + CONST]
+ xor edx, edx
+ mov edi, CONST
+ call CONST
+ lea rsi, [rbx + CONST]
+ xor edx, edx
+ mov edi, CONST
+ call CONST
+ lea rsi, [rbx + CONST]
+ xor edx, edx
+ mov edi, CONST
+ call CONST
+ lea rsi, [rbx + CONST]
+ mov edi, CONST
+ xor edx, edx
+ call CONST
+ mov rdi, rbx
+ mov ecx, CONST
+ xor eax, eax
+ rep stosq qword [rdi], rax
+ pop rbx
+ ret

@@ -1,0 +1,28 @@
+ .name fcn.000a1020
+ .offset 00000000000a1020
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL4
+ call CONST
+ test al, CONST
+ cjmp LABEL7
+LABEL4:
+ call CONST
+LABEL20:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL11
+ call CONST
+ add rsp, CONST
+ jmp CONST
+LABEL11:
+ call CONST
+ call CONST
+ add rsp, CONST
+ jmp CONST
+LABEL7:
+ call CONST
+ jmp LABEL20

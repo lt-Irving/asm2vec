@@ -1,0 +1,20 @@
+ .name fcn.00007c60
+ .offset 0000000000007c60
+ .file chfn
+ endbr64
+ sub rsp, CONST
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL3
+LABEL13:
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov rax, qword [rax + CONST]
+LABEL6:
+ add rsp, CONST
+ ret
+LABEL3:
+ mov qword [rsp + CONST], rdi
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ jmp LABEL13

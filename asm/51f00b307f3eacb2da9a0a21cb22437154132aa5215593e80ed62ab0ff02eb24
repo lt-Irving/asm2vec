@@ -1,0 +1,36 @@
+ .name sym.ifs_firstchar
+ .offset 00000000000650b0
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov r8, rax
+ cmp rdx, CONST
+ cjmp LABEL8
+ movzx eax, byte [rip + CONST]
+ mov byte [r8 + CONST], CONST
+ xor edx, edx
+ mov byte [r8], al
+ test al, al
+ setne dl
+LABEL29:
+ test rbx, rbx
+ cjmp LABEL16
+ mov dword [rbx], edx
+LABEL16:
+ mov rax, r8
+ pop rbx
+ ret
+LABEL8:
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov r8, rax
+ mov rax, qword [rip + CONST]
+ mov edx, eax
+ cdqe
+ mov byte [r8 + rax], CONST
+ jmp LABEL29

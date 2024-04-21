@@ -1,0 +1,14 @@
+ .name sym.find_variable_noref
+ .offset 000000000004e4e0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ xor esi, esi
+ test eax, eax
+ cjmp LABEL4
+ xor esi, esi
+ mov eax, dword [rip + CONST]
+ or eax, dword [rip + CONST]
+ setne sil
+LABEL4:
+ jmp CONST

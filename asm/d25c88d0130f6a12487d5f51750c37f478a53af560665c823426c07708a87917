@@ -1,0 +1,38 @@
+ .name fcn.0000f150
+ .offset 000000000000f150
+ .file dash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rdx
+ sub rbx, qword [rip + CONST]
+ sub rax, rbx
+ cmp rsi, rax
+ cjmp LABEL11
+ nop word [rax + rax]
+LABEL17:
+ call CONST
+ mov rax, qword [rip + CONST]
+ sub rax, rbx
+ cmp r12, rax
+ cjmp LABEL17
+ mov rdi, qword [rip + CONST]
+ mov rdx, r12
+ mov rsi, rbp
+ add rdi, rbx
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL11:
+ pop rbx
+ mov rdi, rdx
+ mov rsi, rbp
+ mov rdx, r12
+ pop rbp
+ pop r12
+ jmp CONST

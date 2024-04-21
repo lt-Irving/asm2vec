@@ -1,0 +1,27 @@
+ .name sym.dequote_word
+ .offset 0000000000066900
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbx
+ sub rsp, CONST
+ mov rdi, qword [rdi]
+ call CONST
+ mov rdi, qword [r12]
+ mov rbx, rax
+ cmp byte [rdi], CONST
+ cjmp LABEL10
+LABEL19:
+ call CONST
+ mov qword [r12], rbx
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL10:
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL19
+ and dword [r12 + CONST], CONST
+ jmp LABEL19

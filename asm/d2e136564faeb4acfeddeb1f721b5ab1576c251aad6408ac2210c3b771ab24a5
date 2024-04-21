@@ -1,0 +1,38 @@
+ .name fcn.00003720
+ .offset 0000000000003720
+ .file cmp
+ mov rdi, qword [rip + CONST]
+ push rbx
+ test byte [rdi], CONST
+ cjmp LABEL3
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+ pop rbx
+ ret
+LABEL3:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ lea rdx, [rip + CONST]
+ xor esi, esi
+ mov edi, CONST
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+LABEL6:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rbx, rax
+ call CONST
+ mov rcx, rbx
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ mov esi, dword [rax]
+ xor eax, eax
+ call CONST
+ nop word cs:[rax + rax]
+ ret

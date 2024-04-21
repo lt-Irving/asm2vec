@@ -1,0 +1,31 @@
+ .name method.void_std::vector_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_____std::allocator_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_______::emplace_back_std::__cxx11::basic_string_char__std:
+ .offset 0000000000009e50
+ .file apt-mark
+ endbr64
+ mov rdx, rsi
+ mov rsi, qword [rdi + CONST]
+ cmp rsi, qword [rdi + CONST]
+ cjmp LABEL4
+ lea rax, [rsi + CONST]
+ mov qword [rsi], rax
+ mov rcx, qword [rdx]
+ lea rax, [rdx + CONST]
+ cmp rcx, rax
+ cjmp LABEL10
+ mov qword [rsi], rcx
+ mov rcx, qword [rdx + CONST]
+ mov qword [rsi + CONST], rcx
+LABEL23:
+ mov rcx, qword [rdx + CONST]
+ mov qword [rdx], rax
+ mov qword [rdx + CONST], CONST
+ mov qword [rsi + CONST], rcx
+ mov byte [rdx + CONST], CONST
+ add qword [rdi + CONST], CONST
+ ret
+LABEL10:
+ movdqu xmm0, xmmword [rdx + CONST]
+ movups xmmword [rsi + CONST], xmm0
+ jmp LABEL23
+LABEL4:
+ jmp CONST

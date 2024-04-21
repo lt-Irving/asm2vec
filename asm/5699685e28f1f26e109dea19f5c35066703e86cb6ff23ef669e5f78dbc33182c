@@ -1,0 +1,15 @@
+ .name fcn.0000e860
+ .offset 000000000000e860
+ .file dpkg-deb
+ endbr64
+ sub rsp, CONST
+ call CONST
+ lea rdx, [rip + CONST]
+ lea rcx, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rax + CONST], rdx
+ mov qword [rax + CONST], CONST
+ mov dword [rax + CONST], CONST
+ mov qword [rax + CONST], rcx
+ add rsp, CONST
+ ret

@@ -1,0 +1,42 @@
+ .name sym.hangup_all_jobs
+ .offset 000000000005a430
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ push rbp
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ nop word cs:[rax + rax]
+LABEL25:
+ mov rax, qword [rip + CONST]
+ lea rbp, [rbx*CONST]
+ mov rax, qword [rax + rbx*CONST]
+ test rax, rax
+ cjmp LABEL13
+ test byte [rax + CONST], CONST
+ cjmp LABEL13
+ mov edi, dword [rax + CONST]
+ mov esi, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov rax, qword [rax + rbp]
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL22
+LABEL13:
+ add rbx, CONST
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL25
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL22:
+ mov edi, dword [rax + CONST]
+ mov esi, CONST
+ call CONST
+ jmp LABEL13
+LABEL3:
+ ret

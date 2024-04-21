@@ -1,0 +1,27 @@
+ .name sym.find_variable
+ .offset 000000000004dfa0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ xor esi, esi
+ mov qword [rip + CONST], CONST
+ test eax, eax
+ cjmp LABEL6
+ xor esi, esi
+ mov eax, dword [rip + CONST]
+ or eax, dword [rip + CONST]
+ setne sil
+LABEL6:
+ call CONST
+ test rax, rax
+ cjmp LABEL13
+ test byte [rax + CONST], CONST
+ cjmp LABEL15
+LABEL13:
+ add rsp, CONST
+ ret
+LABEL15:
+ mov rdi, rax
+ add rsp, CONST
+ jmp CONST

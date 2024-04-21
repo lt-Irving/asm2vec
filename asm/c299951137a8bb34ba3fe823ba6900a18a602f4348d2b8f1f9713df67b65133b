@@ -1,0 +1,32 @@
+ .name sym.remove_history
+ .offset 00000000000d7340
+ .file bash
+ endbr64
+ push r12
+ test edi, edi
+ cjmp LABEL3
+ mov edx, dword [rip + CONST]
+ cmp edx, edi
+ cjmp LABEL3
+ mov r12, qword [rip + CONST]
+ test r12, r12
+ cjmp LABEL9
+ movsxd rax, edi
+ sub edx, edi
+ lea r8, [r12 + rax*CONST]
+ movsxd rdx, edx
+ shl rdx, CONST
+ lea rsi, [r8 + CONST]
+ mov rdi, r8
+ mov r12, qword [r8]
+ call CONST
+ sub dword [rip + CONST], CONST
+LABEL9:
+ mov rax, r12
+ pop r12
+ ret
+LABEL3:
+ xor r12d, r12d
+ mov rax, r12
+ pop r12
+ ret

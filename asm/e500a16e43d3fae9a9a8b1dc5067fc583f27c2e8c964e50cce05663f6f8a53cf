@@ -1,0 +1,19 @@
+ .name fcn.000082f0
+ .offset 00000000000082f0
+ .file choom
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ sub rsp, CONST
+ mov esi, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL7
+ mov byte [rax], CONST
+ add rax, CONST
+LABEL7:
+ add rsp, CONST
+ ret
+LABEL2:
+ xor eax, eax
+ ret

@@ -1,0 +1,24 @@
+ .name sym.difftimeval
+ .offset 00000000000b0ee0
+ .file bash
+ endbr64
+ mov rcx, qword [rdx]
+ sub rcx, qword [rsi]
+ mov rax, rdi
+ mov qword [rdi], rcx
+ mov rdx, qword [rdx + CONST]
+ sub rdx, qword [rsi + CONST]
+ cjmp LABEL7
+ mov qword [rdi + CONST], rdx
+ ret
+LABEL7:
+ add rdx, CONST
+ mov qword [rdi + CONST], rdx
+ sub rcx, CONST
+ cjmp LABEL13
+ mov qword [rdi], rcx
+ ret
+LABEL13:
+ mov qword [rdi], CONST
+ mov qword [rdi + CONST], CONST
+ ret

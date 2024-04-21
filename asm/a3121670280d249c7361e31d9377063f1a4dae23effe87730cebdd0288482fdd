@@ -1,0 +1,32 @@
+ .name sym.reap_procsubs
+ .offset 0000000000067bb0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ push rbx
+ xor ebx, ebx
+ jmp LABEL6
+LABEL15:
+ mov eax, dword [rip + CONST]
+ add rbx, CONST
+ test eax, eax
+ cjmp LABEL10
+LABEL6:
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL10
+ mov rax, qword [rip + CONST]
+ cmp dword [rax + rbx*CONST], CONST
+ cjmp LABEL15
+ mov edi, ebx
+ add rbx, CONST
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+LABEL10:
+ pop rbx
+ ret
+LABEL3:
+ ret

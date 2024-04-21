@@ -1,0 +1,24 @@
+ .name sym.unset_bash_input
+ .offset 0000000000031190
+ .file bash
+ endbr64
+ mov r8d, edi
+ mov edi, dword [rip + CONST]
+ test r8d, r8d
+ cjmp LABEL4
+ test edi, edi
+ cjmp LABEL6
+LABEL15:
+ sub rsp, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL4:
+ test edi, edi
+ cjmp LABEL15
+ ret
+LABEL6:
+ ret

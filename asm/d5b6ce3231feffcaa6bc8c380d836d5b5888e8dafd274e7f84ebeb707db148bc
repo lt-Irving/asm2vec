@@ -1,0 +1,33 @@
+ .name sym.remove_backslashes
+ .offset 0000000000065970
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ movzx edx, byte [rbx]
+ mov rcx, rax
+ test dl, dl
+ cjmp LABEL9
+ jmp LABEL10
+LABEL23:
+ lea rbx, [rdx + CONST]
+ mov byte [rcx], sil
+ movzx edx, byte [rdx + CONST]
+ add rcx, CONST
+ test dl, dl
+ cjmp LABEL10
+LABEL9:
+ cmp dl, CONST
+ sete dl
+ movzx edx, dl
+ add rdx, rbx
+ movzx esi, byte [rdx]
+ test sil, sil
+ cjmp LABEL23
+LABEL10:
+ mov byte [rcx], CONST
+ pop rbx
+ ret

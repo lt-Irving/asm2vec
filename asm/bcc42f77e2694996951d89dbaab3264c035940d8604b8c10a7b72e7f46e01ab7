@@ -1,0 +1,25 @@
+ .name sym.find_flag
+ .offset 0000000000057870
+ .file bash
+ endbr64
+ lea rdx, [rip + CONST]
+ xor ecx, ecx
+ mov eax, CONST
+ jmp LABEL4
+LABEL11:
+ movsx eax, byte [rdx]
+ add rdx, CONST
+ add ecx, CONST
+ test al, al
+ cjmp LABEL9
+LABEL4:
+ cmp eax, edi
+ cjmp LABEL11
+ movsxd rcx, ecx
+ lea rax, [rip + CONST]
+ shl rcx, CONST
+ mov rax, qword [rax + rcx + CONST]
+ ret
+LABEL9:
+ xor eax, eax
+ ret

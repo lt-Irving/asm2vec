@@ -1,0 +1,85 @@
+ .name fcn.00005fc0
+ .offset 0000000000005fc0
+ .file apt-get
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ lea rbx, [rip + CONST]
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rbp, rsp
+ lea r12, [rsp + CONST]
+ mov rdi, rbp
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, r12
+ mov qword [rsp], rbx
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ call CONST
+ mov edx, CONST
+ mov rsi, r12
+ mov rdi, rbp
+ call CONST
+ lea rax, [rip + CONST]
+ mov rdi, r12
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL31
+ call CONST
+LABEL31:
+ lea rax, [rip + CONST]
+ mov rdi, qword [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL38
+ call CONST
+LABEL38:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL43
+ call CONST
+LABEL43:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL48
+ call CONST
+LABEL48:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL53
+ call CONST
+LABEL53:
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ mov qword [rsp], rbx
+ test rdi, rdi
+ cjmp LABEL61
+ call CONST
+LABEL61:
+ mov rdi, rbp
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL67
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL67:
+ call CONST

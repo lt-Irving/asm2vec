@@ -1,0 +1,17 @@
+ .name sym.set_bash_input_fd
+ .offset 0000000000076870
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL5
+ mov dword [rip + CONST], edi
+LABEL5:
+ xor eax, eax
+ ret
+LABEL2:
+ mov dword [rip + CONST], edi
+ xor eax, eax
+ ret

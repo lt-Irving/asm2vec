@@ -1,0 +1,32 @@
+ .name sym.array_create_element
+ .offset 000000000007b470
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ mov qword [rax], rbx
+ mov r12, rax
+ test rbp, rbp
+ cjmp LABEL11
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL11:
+ mov qword [r12 + CONST], rbp
+ mov rax, r12
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret

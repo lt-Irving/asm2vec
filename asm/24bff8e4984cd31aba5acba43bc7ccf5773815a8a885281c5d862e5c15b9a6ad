@@ -1,0 +1,46 @@
+ .name fcn.000056b0
+ .offset 00000000000056b0
+ .file dd
+ endbr64
+ test rdx, rdx
+ cjmp LABEL2
+ push r13
+ xor r13d, r13d
+ push r12
+ mov r12d, edi
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdx
+ sub rsp, CONST
+ jmp LABEL12
+LABEL23:
+ cjmp LABEL13
+ add r13, rax
+ add rbp, rax
+ sub rbx, rax
+ cjmp LABEL13
+LABEL12:
+ mov rdx, rbx
+ mov rsi, rbp
+ mov edi, r12d
+ call CONST
+ test rax, rax
+ cjmp LABEL23
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL13:
+ add rsp, CONST
+ mov rax, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ xor eax, eax
+ ret

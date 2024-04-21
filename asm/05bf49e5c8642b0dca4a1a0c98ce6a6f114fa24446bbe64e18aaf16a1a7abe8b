@@ -1,0 +1,18 @@
+ .name sym.rl_set_mark
+ .offset 00000000000d5ba0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov edi, dword [rip + CONST]
+LABEL3:
+ mov eax, CONST
+ test edi, edi
+ cjmp LABEL7
+ cmp edi, dword [rip + CONST]
+ cjmp LABEL7
+ mov dword [rip + CONST], edi
+ xor eax, eax
+LABEL7:
+ ret

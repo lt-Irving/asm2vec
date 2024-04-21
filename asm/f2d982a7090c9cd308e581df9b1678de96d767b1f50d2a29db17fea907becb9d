@@ -1,0 +1,17 @@
+ .name sym.progcomp_walk
+ .offset 00000000000904e0
+ .file bash
+ endbr64
+ mov rsi, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ test rsi, rsi
+ cjmp LABEL4
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL9
+LABEL4:
+ ret
+LABEL9:
+ jmp CONST

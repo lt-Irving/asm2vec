@@ -1,0 +1,33 @@
+ .name sym.set_var_read_only
+ .offset 0000000000051890
+ .file bash
+LABEL21:
+ mov eax, dword [CONST]
+ ud2
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ test rax, rax
+ cjmp LABEL7
+LABEL19:
+ mov edx, dword [rax + CONST]
+LABEL25:
+ or edx, CONST
+ mov dword [rax + CONST], edx
+ pop rbp
+ ret
+LABEL7:
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL19
+ test rax, rax
+ cjmp LABEL21
+ mov edx, dword [rax + CONST]
+ or dh, CONST
+ mov dword [rax + CONST], edx
+ jmp LABEL25

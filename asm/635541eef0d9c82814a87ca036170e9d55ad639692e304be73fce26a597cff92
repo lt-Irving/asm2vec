@@ -1,0 +1,28 @@
+ .name sym.rl_clear_visible_line
+ .offset 00000000000ce1e0
+ .file bash
+ endbr64
+ push rbx
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov ebx, dword [rip + CONST]
+ test ebx, ebx
+ cjmp LABEL11
+ nop dword [rax]
+LABEL19:
+ mov edi, ebx
+ sub ebx, CONST
+ call CONST
+ xor edi, edi
+ call CONST
+ cmp ebx, CONST
+ cjmp LABEL19
+LABEL11:
+ xor eax, eax
+ pop rbx
+ ret

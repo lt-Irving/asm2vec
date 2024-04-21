@@ -1,0 +1,86 @@
+ .name sym.sh_mbsnlen
+ .offset 00000000000b6990
+ .file bash
+ endbr64
+ push r15
+ push r14
+ mov r14d, edx
+ push r13
+ mov r13, rdi
+ push r12
+ xor r12d, r12d
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ mov qword [rsp + CONST], rsi
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov qword [rsp + CONST], CONST
+ nop word [rax + rax]
+LABEL42:
+ movsxd rdx, ebx
+ lea rsi, [r13 + rdx]
+ movzx ecx, byte [rsi]
+ test cl, cl
+ cjmp LABEL23
+ add r12d, CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL26
+ mov eax, ecx
+ shr al, CONST
+ and eax, CONST
+ mov eax, dword [rbp + rax*CONST]
+ shr eax, cl
+ test al, CONST
+ cjmp LABEL33
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL36
+ mov eax, CONST
+ test cl, cl
+ cjmp LABEL36
+LABEL68:
+ add ebx, eax
+LABEL66:
+ cmp ebx, r14d
+ cjmp LABEL42
+LABEL23:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL45
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL36:
+ mov rax, qword [rsp + CONST]
+ xor edi, edi
+ lea rcx, [rsp + CONST]
+ mov r15, qword [rsp + CONST]
+ sub rax, rdx
+ mov rdx, rax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL63
+ mov qword [rsp + CONST], r15
+ add ebx, CONST
+ jmp LABEL66
+LABEL63:
+ test rax, rax
+ cjmp LABEL68
+LABEL26:
+ add ebx, CONST
+ jmp LABEL66
+LABEL33:
+ mov eax, CONST
+ jmp LABEL68
+LABEL45:
+ call CONST

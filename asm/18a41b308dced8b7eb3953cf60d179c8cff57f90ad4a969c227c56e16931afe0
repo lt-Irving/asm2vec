@@ -1,0 +1,50 @@
+ .name sym.sh_mkdoublequoted
+ .offset 00000000000b3380
+ .file bash
+ endbr64
+ push rbp
+ lea eax, [rsi + CONST]
+ mov ebp, edx
+ push rbx
+ mov rbx, rdi
+ lea edi, [rsi + rsi + CONST]
+ sub rsp, CONST
+ test edx, edx
+ cmove edi, eax
+ movsxd rdi, edi
+ call CONST
+ mov byte [rax], CONST
+ movzx esi, byte [rbx]
+ lea rcx, [rax + CONST]
+ test sil, sil
+ cjmp LABEL16
+ test ebp, ebp
+ setne dil
+ jmp LABEL19
+LABEL31:
+ mov rsi, rdx
+ mov rdx, rcx
+ mov rcx, rsi
+LABEL36:
+ movzx esi, byte [rbx]
+ add rbx, CONST
+ mov byte [rdx], sil
+ movzx esi, byte [rbx]
+ test sil, sil
+ cjmp LABEL16
+LABEL19:
+ lea rdx, [rcx + CONST]
+ cmp sil, CONST
+ cjmp LABEL31
+ test dil, dil
+ cjmp LABEL31
+ mov byte [rcx], CONST
+ add rcx, CONST
+ jmp LABEL36
+LABEL16:
+ mov edx, CONST
+ mov word [rcx], dx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

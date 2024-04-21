@@ -1,0 +1,66 @@
+ .name sym.rl_replace_line
+ .offset 00000000000d4260
+ .file bash
+ endbr64
+ push r13
+ mov r13d, esi
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ cmp dword [rip + CONST], eax
+ mov rbx, rax
+ mov r12d, eax
+ cjmp LABEL12
+LABEL53:
+ mov rdi, qword [rip + CONST]
+ mov rsi, rbp
+ call CONST
+ mov dword [rip + CONST], ebx
+ test r13d, r13d
+ cjmp LABEL18
+LABEL50:
+ mov eax, dword [rip + CONST]
+ cmp eax, r12d
+ cjmp LABEL21
+ mov dword [rip + CONST], r12d
+LABEL34:
+ mov eax, dword [rip + CONST]
+ cmp eax, r12d
+ cjmp LABEL25
+LABEL38:
+ mov dword [rip + CONST], r12d
+LABEL40:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL21:
+ test eax, eax
+ cjmp LABEL34
+ mov dword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ cmp eax, r12d
+ cjmp LABEL38
+LABEL25:
+ test eax, eax
+ cjmp LABEL40
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL18:
+ call CONST
+ mov r12d, dword [rip + CONST]
+ jmp LABEL50
+LABEL12:
+ mov edi, eax
+ call CONST
+ jmp LABEL53

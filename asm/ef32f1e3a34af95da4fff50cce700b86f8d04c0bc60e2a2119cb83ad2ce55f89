@@ -1,0 +1,65 @@
+ .name sym.stifle_history
+ .offset 00000000000d74a0
+ .file bash
+ endbr64
+ push r14
+ test edi, edi
+ mov r14d, dword [rip + CONST]
+ push r13
+ push r12
+ push rbp
+ mov ebp, CONST
+ cmovns ebp, edi
+ push rbx
+ cmp r14d, ebp
+ cjmp LABEL11
+ sub r14d, ebp
+ mov r12d, edi
+ xor ebx, ebx
+ lea eax, [r14 + CONST]
+ lea r13, [rax*CONST + CONST]
+ nop word [rax + rax]
+LABEL23:
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax + rbx]
+ add rbx, CONST
+ call CONST
+ cmp r13, rbx
+ cjmp LABEL23
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], r14d
+ mov rcx, qword [rip + CONST]
+ sub eax, ebp
+ test r12d, r12d
+ cjmp LABEL29
+ cdqe
+ lea rsi, [rcx + rax*CONST]
+ xor eax, eax
+ nop dword [rax]
+LABEL38:
+ mov rdx, qword [rsi + rax*CONST]
+ mov qword [rcx + rax*CONST], rdx
+ add rax, CONST
+ cmp ebp, eax
+ cjmp LABEL38
+ test ebp, ebp
+ mov eax, CONST
+ cmovg eax, ebp
+ movsxd rdx, eax
+ lea rcx, [rcx + rdx*CONST]
+LABEL56:
+ mov qword [rcx], CONST
+ mov dword [rip + CONST], eax
+LABEL11:
+ pop rbx
+ mov dword [rip + CONST], ebp
+ mov dword [rip + CONST], ebp
+ pop rbp
+ mov dword [rip + CONST], CONST
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL29:
+ xor eax, eax
+ jmp LABEL56

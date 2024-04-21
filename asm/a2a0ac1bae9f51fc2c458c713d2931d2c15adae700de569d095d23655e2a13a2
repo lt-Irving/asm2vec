@@ -1,0 +1,66 @@
+ .name sym.close_new_fifos
+ .offset 0000000000067a70
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r13
+ lea r13d, [rsi + CONST]
+ push r12
+ mov r12, rdi
+ push rbp
+ mov ebp, esi
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL14
+ jmp LABEL15
+LABEL30:
+ mov rbx, rax
+LABEL14:
+ mov ecx, dword [r12 + rbx*CONST]
+ lea rax, [rbx*CONST]
+ test ecx, ecx
+ cjmp LABEL20
+ cmp edx, ebx
+ cjmp LABEL20
+ mov rcx, qword [rip + CONST]
+ mov eax, dword [rcx + rax]
+ test eax, eax
+ cjmp LABEL26
+ nop dword [rax]
+LABEL20:
+ lea rax, [rbx + CONST]
+ cmp r13, rbx
+ cjmp LABEL30
+LABEL15:
+ cmp ebp, edx
+ cjmp LABEL32
+ nop dword [rax]
+LABEL38:
+ mov edi, ebp
+ add ebp, CONST
+ call CONST
+ cmp dword [rip + CONST], ebp
+ cjmp LABEL38
+LABEL32:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL26:
+ mov edi, ebx
+ call CONST
+ mov edx, dword [rip + CONST]
+ jmp LABEL20
+LABEL2:
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL51
+ jmp CONST
+LABEL51:
+ ret

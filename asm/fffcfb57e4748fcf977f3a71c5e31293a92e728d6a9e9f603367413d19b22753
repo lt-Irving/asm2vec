@@ -1,0 +1,43 @@
+ .name fcn.0000bdb0
+ .offset 000000000000bdb0
+ .file date
+ endbr64
+ push r15
+ mov r15, rdx
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13, rdi
+ lea rdi, [rip + CONST]
+ push r12
+ xor r12d, r12d
+ push rbp
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov rdi, rax
+ mov rbx, rax
+ call CONST
+ test rax, rax
+ cjmp LABEL18
+ mov rbp, rax
+ mov rdi, r13
+ mov r9, rbx
+ mov r8, rax
+ xor ecx, ecx
+ mov rdx, r15
+ mov rsi, r14
+ call CONST
+ mov rdi, rbp
+ mov r12d, eax
+ call CONST
+LABEL18:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret

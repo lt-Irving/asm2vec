@@ -1,0 +1,15 @@
+ .name sym.bash_history_enable
+ .offset 00000000000812b0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ lea rax, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ jmp CONST

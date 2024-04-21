@@ -1,0 +1,19 @@
+ .name sym.sv_terminal
+ .offset 000000000004e8f0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+LABEL3:
+ ret
+LABEL6:
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov rdi, rax
+ jmp CONST

@@ -1,0 +1,55 @@
+ .name fcn.00009770
+ .offset 0000000000009770
+ .file diff
+ movsxd rsi, esi
+ lea rax, [rsi + rsi*CONST]
+ lea rdx, [rsi + rax*CONST]
+ shl rdx, CONST
+ lea rcx, [rdi + rdx]
+ nop dword [rax + rax]
+LABEL18:
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL8
+LABEL41:
+ lea rax, [rdi + rdx]
+ mov rsi, qword [rcx + CONST]
+ cmp qword [rax + CONST], rsi
+ cjmp LABEL12
+ mov eax, dword [rdi + rdx + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL16
+LABEL34:
+ cmp eax, CONST
+ cjmp LABEL18
+ mov eax, dword [rcx + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL18
+LABEL38:
+ mov rax, qword [rcx + CONST]
+ cmp qword [rdi + rdx + CONST], rax
+ cjmp LABEL18
+LABEL30:
+ mov eax, CONST
+ ret
+LABEL12:
+ mov rsi, qword [rcx + CONST]
+ cmp qword [rax + CONST], rsi
+ cjmp LABEL30
+ mov eax, dword [rdi + rdx + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL34
+LABEL16:
+ mov eax, dword [rcx + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL38
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL41
+LABEL8:
+ xor eax, eax
+ ret

@@ -1,0 +1,13 @@
+ .name sym.sort_variables
+ .offset 000000000004f820
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ mov rdi, rbp
+ mov edx, CONST
+ pop rbp
+ movsxd rsi, eax
+ lea rcx, [rip + CONST]
+ jmp CONST

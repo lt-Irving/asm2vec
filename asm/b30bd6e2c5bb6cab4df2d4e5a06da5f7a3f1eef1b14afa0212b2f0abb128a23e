@@ -1,0 +1,53 @@
+ .name sym.which_set_flags
+ .offset 0000000000057a00
+ .file bash
+ endbr64
+ sub rsp, CONST
+ movsxd rdx, dword [rip + CONST]
+ movsxd rax, dword [rip + CONST]
+ lea rdi, [rdx + rax + CONST]
+ call CONST
+ mov ecx, CONST
+ xor r8d, r8d
+ xor edi, edi
+ lea rdx, [rip + CONST]
+ lea r9, [rip + CONST]
+ mov r10d, CONST
+ jmp LABEL12
+LABEL27:
+ movzx esi, byte [rdx + CONST]
+ mov r9, qword [rdx]
+ mov r10d, ecx
+ add rdx, CONST
+ mov ecx, esi
+LABEL12:
+ mov r9d, dword [r9]
+ lea rsi, [rax + rdi]
+ test r9d, r9d
+ cjmp LABEL21
+ add r8d, CONST
+ mov byte [rsi], r10b
+ movsxd rdi, r8d
+ lea rsi, [rax + rdi]
+LABEL21:
+ test cl, cl
+ cjmp LABEL27
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL30
+ add r8d, CONST
+ mov byte [rsi], CONST
+ movsxd rsi, r8d
+ add rsi, rax
+LABEL30:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL37
+ mov byte [rsi], CONST
+ lea esi, [r8 + CONST]
+ movsxd rsi, esi
+ add rsi, rax
+LABEL37:
+ mov byte [rsi], CONST
+ add rsp, CONST
+ ret

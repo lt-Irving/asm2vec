@@ -1,0 +1,21 @@
+ .name sym.coproc_close
+ .offset 0000000000045480
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, dword [rdi + CONST]
+ test edi, edi
+ cjmp LABEL5
+ call CONST
+ mov dword [rbx + CONST], CONST
+LABEL5:
+ mov edi, dword [rbx + CONST]
+ test edi, edi
+ cjmp LABEL10
+ call CONST
+ mov dword [rbx + CONST], CONST
+LABEL10:
+ mov qword [rbx + CONST], CONST
+ pop rbx
+ ret

@@ -1,0 +1,36 @@
+ .name fcn.00007c70
+ .offset 0000000000007c70
+ .file dir
+ endbr64
+ mov eax, dword [rdi + CONST]
+ mov ecx, dword [rsi + CONST]
+ cmp eax, CONST
+ sete dl
+ cmp eax, CONST
+ sete al
+ or edx, eax
+ cmp ecx, CONST
+ sete al
+ cmp ecx, CONST
+ sete cl
+ or al, cl
+ cjmp LABEL13
+ test dl, dl
+ cjmp LABEL15
+LABEL22:
+ mov r8d, CONST
+ test al, al
+ cjmp LABEL18
+LABEL27:
+ mov eax, r8d
+ ret
+LABEL13:
+ test dl, dl
+ cjmp LABEL22
+LABEL18:
+ mov rsi, qword [rsi]
+ mov rdi, qword [rdi]
+ jmp CONST
+LABEL15:
+ mov r8d, CONST
+ jmp LABEL27

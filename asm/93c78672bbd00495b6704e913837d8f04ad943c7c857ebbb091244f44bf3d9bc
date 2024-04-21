@@ -1,0 +1,24 @@
+ .name sym.rl_extend_line_buffer
+ .offset 00000000000cf300
+ .file bash
+ endbr64
+ mov esi, dword [rip + CONST]
+ push rbx
+ mov ebx, edi
+ mov rdi, qword [rip + CONST]
+ cmp ebx, esi
+ cjmp LABEL6
+ nop dword [rax + rax]
+LABEL16:
+ add esi, CONST
+ mov dword [rip + CONST], esi
+ movsxd rsi, esi
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ cmp esi, ebx
+ cjmp LABEL16
+LABEL6:
+ pop rbx
+ jmp CONST

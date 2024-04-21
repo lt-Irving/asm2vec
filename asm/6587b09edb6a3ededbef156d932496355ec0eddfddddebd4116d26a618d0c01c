@@ -1,0 +1,77 @@
+ .name fcn.00011230
+ .offset 0000000000011230
+ .file diff
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ cmp qword [rdi + CONST], CONST
+ mov rbp, qword [rdi]
+ mov rax, qword [rdi + CONST]
+ cjmp LABEL7
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL7
+ cmp rbp, rax
+ cjmp LABEL11
+ jmp LABEL12
+LABEL18:
+ add rbp, CONST
+ cmp rax, rbp
+ cjmp LABEL15
+LABEL11:
+ mov rdi, qword [rbp]
+ test rdi, rdi
+ cjmp LABEL18
+ mov rbx, rbp
+ jmp LABEL20
+LABEL25:
+ mov rdi, qword [rbx]
+LABEL20:
+ call qword [r12 + CONST]
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL25
+ mov rax, qword [r12 + CONST]
+ add rbp, CONST
+ cmp rax, rbp
+ cjmp LABEL11
+LABEL15:
+ mov rbp, qword [r12]
+LABEL7:
+ cmp rbp, rax
+ cjmp LABEL12
+ nop dword [rax + rax]
+LABEL45:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL36
+ nop dword [rax]
+LABEL42:
+ mov rbx, qword [rdi + CONST]
+ call CONST
+ mov rdi, rbx
+ test rbx, rbx
+ cjmp LABEL42
+LABEL36:
+ add rbp, CONST
+ cmp qword [r12 + CONST], rbp
+ cjmp LABEL45
+LABEL12:
+ mov rdi, qword [r12 + CONST]
+ test rdi, rdi
+ cjmp LABEL48
+ nop word cs:[rax + rax]
+LABEL54:
+ mov rbx, qword [rdi + CONST]
+ call CONST
+ mov rdi, rbx
+ test rbx, rbx
+ cjmp LABEL54
+LABEL48:
+ mov rdi, qword [r12]
+ call CONST
+ pop rbx
+ mov rdi, r12
+ pop rbp
+ pop r12
+ jmp CONST

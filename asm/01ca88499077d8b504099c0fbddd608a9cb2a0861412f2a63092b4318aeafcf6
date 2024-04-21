@@ -1,0 +1,21 @@
+ .name fcn.00017230
+ .offset 0000000000017230
+ .file dir
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ cjmp LABEL3
+ xor eax, eax
+ cmp edi, CONST
+ cjmp LABEL6
+ cmp edi, CONST
+ setne al
+ ret
+LABEL3:
+ cmp edi, CONST
+ setne al
+ ret
+LABEL2:
+ xor eax, eax
+LABEL6:
+ ret

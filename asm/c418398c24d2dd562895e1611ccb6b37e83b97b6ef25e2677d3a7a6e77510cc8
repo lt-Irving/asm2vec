@@ -1,0 +1,66 @@
+ .name sym.expand_string_assignment
+ .offset 000000000006ffb0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL9
+ xor r12d, r12d
+ cmp byte [rdi], CONST
+ mov rbp, rdi
+ cjmp LABEL13
+ mov r13d, esi
+ mov dword [rsp + CONST], CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdi, rsp
+ xor ecx, ecx
+ xor edx, edx
+ mov esi, r13d
+ mov qword [rsp], rax
+ call CONST
+ mov rdi, qword [rsp]
+ mov r12, rax
+ test rdi, rdi
+ cjmp LABEL32
+ call CONST
+LABEL32:
+ mov dword [rip + CONST], CONST
+ test r12, r12
+ cjmp LABEL13
+ mov rax, qword [r12 + CONST]
+ test rax, rax
+ cjmp LABEL39
+ mov rdi, qword [rax]
+ call CONST
+ mov rax, qword [r12 + CONST]
+ and dword [rax + CONST], CONST
+LABEL39:
+ mov rdi, r12
+ call CONST
+LABEL13:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL48
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL9:
+ xor r12d, r12d
+ jmp LABEL13
+LABEL48:
+ call CONST

@@ -1,0 +1,60 @@
+ .name sym.pop_stream
+ .offset 00000000000327e0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, qword [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL4
+ mov rax, qword [rbp]
+ mov rcx, qword [rbp + CONST]
+ mov dword [rip + CONST], CONST
+ mov edx, dword [rbp + CONST]
+ mov rsi, qword [rbp + CONST]
+ mov rdi, qword [rbp + CONST]
+ mov r8, qword [rbp + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL15
+LABEL30:
+ mov eax, dword [rbp + CONST]
+ mov rdi, qword [rbp + CONST]
+ mov dword [rip + CONST], eax
+ test rdi, rdi
+ cjmp LABEL20
+ call CONST
+LABEL20:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL4:
+ mov dword [rip + CONST], CONST
+ pop rbp
+ ret
+LABEL15:
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL30
+ mov eax, dword [rip + CONST]
+ mov rsi, qword [rbp + CONST]
+ test eax, eax
+ cjmp LABEL34
+ mov r8d, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test r8d, r8d
+ cjmp LABEL38
+LABEL34:
+ call CONST
+ jmp LABEL30
+LABEL38:
+ mov dword [rip + CONST], r8d
+ mov edi, r8d
+ mov edx, CONST
+ xor eax, eax
+ mov dword [rsi], r8d
+ mov esi, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov rsi, qword [rbp + CONST]
+ jmp LABEL34

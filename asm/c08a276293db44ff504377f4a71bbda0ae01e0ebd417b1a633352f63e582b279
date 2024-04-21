@@ -1,0 +1,20 @@
+ .name sym.hash_bucket
+ .offset 0000000000073970
+ .file bash
+ endbr64
+ movsx edx, byte [rdi]
+ mov eax, CONST
+ test dl, dl
+ cjmp LABEL4
+LABEL10:
+ imul eax, eax, CONST
+ add rdi, CONST
+ xor eax, edx
+ movsx edx, byte [rdi]
+ test dl, dl
+ cjmp LABEL10
+LABEL4:
+ mov edx, dword [rsi + CONST]
+ sub edx, CONST
+ and eax, edx
+ ret

@@ -1,0 +1,30 @@
+ .name fcn.0000fcb0
+ .offset 000000000000fcb0
+ .file apt-cache
+ endbr64
+ push r12
+ mov r12, rcx
+ lea rcx, [rdi + CONST]
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ sub rsp, CONST
+ test rsi, rsi
+ cjmp LABEL9
+LABEL19:
+ mov rsi, r12
+ call CONST
+ add qword [rbx + CONST], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL9:
+ cmp rdx, rcx
+ cjmp LABEL19
+ xor edi, edi
+ movzx eax, word [rdx + CONST]
+ cmp word [r12 + CONST], ax
+ setb dil
+ jmp LABEL19

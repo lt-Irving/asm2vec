@@ -1,0 +1,16 @@
+ .name fcn.00008535
+ .offset 0000000000008535
+ .file apt-get
+LABEL10:
+ mov rdi, qword [rsp + CONST]
+ cmp rdi, rbx
+ cjmp LABEL2
+ call CONST
+LABEL2:
+ mov rdi, r12
+ mov r12, r13
+ call CONST
+ jmp CONST
+ endbr64
+ mov r13, rax
+ jmp LABEL10

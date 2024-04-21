@@ -1,0 +1,24 @@
+ .name fcn.0000b8a5
+ .offset 000000000000b8a5
+ .file apt-cache
+LABEL17:
+ mov rdi, qword [rsp + CONST]
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL2
+ call CONST
+LABEL2:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ je CONST
+ call CONST
+ jmp CONST
+ endbr64
+ mov rbx, rax
+ jmp LABEL17

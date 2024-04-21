@@ -1,0 +1,36 @@
+ .name sym.initialize_bashopts
+ .offset 00000000000a4a30
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ jmp CONST
+LABEL2:
+ push rbp
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL8
+ mov edx, dword [rax + CONST]
+ test dh, CONST
+ cjmp LABEL8
+ and edx, CONST
+ cjmp LABEL13
+LABEL8:
+ pop rbp
+ jmp CONST
+LABEL13:
+ mov rbp, qword [rax + CONST]
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+ mov rdi, rax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ jmp LABEL8

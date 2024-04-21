@@ -1,0 +1,63 @@
+ .name sym.all_aliases
+ .offset 000000000007aa50
+ .file bash
+ endbr64
+ push r12
+ mov r12, qword [rip + CONST]
+ test r12, r12
+ cjmp LABEL4
+ mov edi, dword [r12 + CONST]
+ xor r12d, r12d
+ test edi, edi
+ cjmp LABEL4
+ add edi, CONST
+ movsxd rdi, edi
+ shl rdi, CONST
+ call CONST
+ mov r12, rax
+ mov rax, qword [rip + CONST]
+ mov edx, dword [rax + CONST]
+ test edx, edx
+ cjmp LABEL17
+ mov rax, qword [rax]
+ sub edx, CONST
+ xor esi, esi
+ lea rcx, [rax + CONST]
+ lea r8, [rcx + rdx*CONST]
+ nop word cs:[rax + rax]
+LABEL42:
+ mov rdx, qword [rax]
+ test rdx, rdx
+ cjmp LABEL26
+ lea eax, [rsi + CONST]
+ cdqe
+ nop dword [rax]
+LABEL37:
+ mov rdi, qword [rdx + CONST]
+ mov rdx, qword [rdx]
+ mov esi, eax
+ mov qword [r12 + rax*CONST], CONST
+ mov qword [r12 + rax*CONST + CONST], rdi
+ add rax, CONST
+ test rdx, rdx
+ cjmp LABEL37
+LABEL26:
+ mov rax, rcx
+ cmp rcx, r8
+ cjmp LABEL17
+ add rcx, CONST
+ jmp LABEL42
+LABEL17:
+ test r12, r12
+ cjmp LABEL4
+ mov rdi, r12
+ call CONST
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ mov rdi, r12
+ movsxd rsi, eax
+ call CONST
+LABEL4:
+ mov rax, r12
+ pop r12
+ ret

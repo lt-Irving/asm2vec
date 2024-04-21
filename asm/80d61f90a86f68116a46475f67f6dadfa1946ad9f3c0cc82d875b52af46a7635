@@ -1,0 +1,23 @@
+ .name sym.buffered_ungetchar
+ .offset 0000000000076400
+ .file bash
+ endbr64
+ movsxd rdx, dword [rip + CONST]
+ mov rax, qword [rip + CONST]
+ mov rax, qword [rax + rdx*CONST]
+ cmp edi, CONST
+ cjmp LABEL5
+ test rax, rax
+ cjmp LABEL5
+ mov rdx, qword [rax + CONST]
+ test rdx, rdx
+ cjmp LABEL5
+ mov rcx, qword [rax + CONST]
+ lea rsi, [rdx + CONST]
+ mov qword [rax + CONST], rsi
+ mov eax, edi
+ mov byte [rcx + rdx + CONST], dil
+ ret
+LABEL5:
+ mov eax, CONST
+ ret

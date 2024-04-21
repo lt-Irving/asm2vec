@@ -1,0 +1,17 @@
+ .name fcn.0000c870
+ .offset 000000000000c870
+ .file dash
+ endbr64
+ cmp rdi, qword [rip + CONST]
+ cjmp LABEL2
+ push rbx
+ mov rbx, rdi
+ nop dword [rax]
+LABEL8:
+ call CONST
+ cmp qword [rip + CONST], rbx
+ cjmp LABEL8
+ pop rbx
+ ret
+LABEL2:
+ ret

@@ -1,0 +1,33 @@
+ .name sym.stdin_redirects
+ .offset 000000000008d1b0
+ .file bash
+ endbr64
+ xor r8d, r8d
+ test rdi, rdi
+ cjmp LABEL3
+ lea rdx, [rip + CONST]
+ nop dword [rax + rax]
+LABEL19:
+ test byte [rdi + CONST], CONST
+ cjmp LABEL7
+ cmp dword [rdi + CONST], CONST
+ mov ecx, dword [rdi + CONST]
+ cjmp LABEL7
+ mov eax, dword [rdi + CONST]
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ notrack jmp rax
+ add r8d, CONST
+ nop dword [rax]
+LABEL7:
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL19
+LABEL3:
+ mov eax, r8d
+ ret
+ xor eax, eax
+ test ecx, ecx
+ sete al
+ add r8d, eax
+ jmp LABEL7

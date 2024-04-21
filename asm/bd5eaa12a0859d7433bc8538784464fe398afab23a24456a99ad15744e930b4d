@@ -1,0 +1,19 @@
+ .name fcn.00083bd0
+ .offset 0000000000083bd0
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ push rbx
+ cjmp LABEL3
+ mov dword [rip + CONST], CONST
+LABEL3:
+ lea rax, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rbx, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov edi, eax
+ call CONST
+ mov qword [rip + CONST], rbx
+ pop rbx
+ ret

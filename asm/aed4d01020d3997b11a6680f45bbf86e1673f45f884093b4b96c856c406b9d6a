@@ -1,0 +1,77 @@
+ .name fcn.00008a20
+ .offset 0000000000008a20
+ .file dpkg-deb
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov rbp, qword [rdi]
+ test rbp, rbp
+ cjmp LABEL6
+ cmp byte [rbp], CONST
+ cjmp LABEL8
+LABEL42:
+ mov r13, qword [rdi + CONST]
+ test r13, r13
+ cjmp LABEL11
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL13
+ mov rsi, r13
+ lea rdx, [rip + CONST]
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ xor edx, edx
+ mov rsi, r13
+ mov rdi, rbp
+ mov r12, rax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ setne dl
+ xor ecx, ecx
+ add edx, CONST
+ call CONST
+ mov rsi, r12
+ mov rdi, rbp
+ mov ecx, CONST
+ mov edx, CONST
+ call CONST
+ mov rdi, r12
+ call CONST
+ pop rbp
+ xor eax, eax
+ pop r12
+ pop r13
+ ret
+LABEL8:
+ cmp byte [rbp + CONST], CONST
+ cjmp LABEL42
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+LABEL57:
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+LABEL6:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+ jmp LABEL57
+LABEL13:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+ jmp LABEL57
+LABEL11:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+ jmp LABEL57

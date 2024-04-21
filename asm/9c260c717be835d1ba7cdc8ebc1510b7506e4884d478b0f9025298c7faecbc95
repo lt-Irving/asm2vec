@@ -1,0 +1,35 @@
+ .name fcn.00005d50
+ .offset 0000000000005d50
+ .file b2sum
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rax, [rsi + CONST]
+ cmp rax, CONST
+ cjmp LABEL7
+ pxor xmm0, xmm0
+ mov byte [rsp], sil
+ xor eax, eax
+ mov rsi, rsp
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov byte [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov dword [rsp + CONST], CONST
+ mov word [rsp + CONST], ax
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm0
+ call CONST
+LABEL27:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL23
+ add rsp, CONST
+ ret
+LABEL7:
+ mov eax, CONST
+ jmp LABEL27
+LABEL23:
+ call CONST

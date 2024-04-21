@@ -1,0 +1,19 @@
+ .name fcn.000014e0
+ .offset 00000000000014e0
+ .file clear
+ push rbx
+ lea rax, [rip + CONST]
+ mov esi, CONST
+ lea rdx, [rip + CONST]
+ mov rbx, qword [rip + CONST]
+ mov rcx, qword [rax]
+ xor eax, eax
+ mov rdi, qword [rbx]
+ call CONST
+ mov rcx, qword [rbx]
+ mov edx, CONST
+ lea rdi, [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov edi, CONST
+ call CONST

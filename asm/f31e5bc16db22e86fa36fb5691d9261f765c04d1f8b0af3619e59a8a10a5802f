@@ -1,0 +1,46 @@
+ .name sym._rl_set_screen_size
+ .offset 00000000000d3140
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL7
+LABEL32:
+ test ebp, ebp
+ cjmp LABEL9
+ mov dword [rip + CONST], ebp
+ test ebx, ebx
+ cjmp LABEL12
+LABEL29:
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], ebx
+ test eax, eax
+ cjmp LABEL16
+LABEL25:
+ imul ebx, ebp
+ mov dword [rip + CONST], ebx
+LABEL27:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL16:
+ sub ebx, CONST
+ mov dword [rip + CONST], ebx
+ jmp LABEL25
+LABEL9:
+ test ebx, ebx
+ cjmp LABEL27
+ mov ebp, dword [rip + CONST]
+ jmp LABEL29
+LABEL7:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ jmp LABEL32
+LABEL12:
+ mov ebx, dword [rip + CONST]
+ jmp LABEL25

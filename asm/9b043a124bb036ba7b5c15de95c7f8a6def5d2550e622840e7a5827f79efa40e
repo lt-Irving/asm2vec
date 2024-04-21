@@ -1,0 +1,14 @@
+ .name sym.command_errstr
+ .offset 0000000000055540
+ .file bash
+ endbr64
+ lea rsi, [rip + CONST]
+ cmp edi, CONST
+ cjmp LABEL3
+ movsxd rdi, edi
+ lea rax, [rip + CONST]
+ mov rsi, qword [rax + rdi*CONST]
+LABEL3:
+ mov edx, CONST
+ xor edi, edi
+ jmp CONST

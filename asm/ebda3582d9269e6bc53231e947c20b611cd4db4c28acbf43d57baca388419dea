@@ -1,0 +1,33 @@
+ .name sym.array_flush
+ .offset 000000000007b7d0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword [rdi + CONST]
+ mov rbx, qword [rax + CONST]
+ cmp rax, rbx
+ cjmp LABEL10
+ nop
+LABEL16:
+ mov rdi, rbx
+ mov rbx, qword [rbx + CONST]
+ call CONST
+ cmp qword [rbp + CONST], rbx
+ cjmp LABEL16
+LABEL10:
+ mov qword [rbx + CONST], rbx
+ mov qword [rbx + CONST], rbx
+ mov qword [rbp + CONST], CONST
+ mov dword [rbp + CONST], CONST
+ mov qword [rbp + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ ret

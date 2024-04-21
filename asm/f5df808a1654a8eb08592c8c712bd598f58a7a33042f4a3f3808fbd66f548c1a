@@ -1,0 +1,121 @@
+ .name sym.quote_string
+ .offset 00000000000662f0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ cmp byte [rdi], CONST
+ cjmp LABEL12
+ mov edi, CONST
+ call CONST
+ mov edx, CONST
+ mov word [rax], dx
+ mov r13, rax
+LABEL79:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL20
+ add rsp, CONST
+ mov rax, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL12:
+ mov qword [rsp + CONST], CONST
+ mov rbx, rdi
+ call CONST
+ lea rdi, [rax + rax + CONST]
+ lea r12, [rbx + rax]
+ call CONST
+ mov r13, rax
+ mov rbp, rax
+ cmp rbx, r12
+ cjmp LABEL39
+ lea r15, [rip + CONST]
+ jmp LABEL41
+LABEL51:
+ movzx eax, byte [rbx]
+ add rbp, CONST
+ mov rbx, r14
+ mov byte [rbp + CONST], al
+LABEL98:
+ cmp r12, rbx
+ cjmp LABEL39
+LABEL41:
+ mov byte [rbp], CONST
+ cmp dword [rip + CONST], CONST
+ lea r14, [rbx + CONST]
+ cjmp LABEL51
+ movzx ecx, byte [rbx]
+ mov eax, ecx
+ shr al, CONST
+ and eax, CONST
+ mov eax, dword [r15 + rax*CONST]
+ shr eax, cl
+ test al, CONST
+ cjmp LABEL59
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL62
+ mov edx, CONST
+ test cl, cl
+ cjmp LABEL62
+LABEL81:
+ mov eax, CONST
+ jmp LABEL67
+LABEL72:
+ movzx ecx, byte [rbx + rax]
+ add rax, CONST
+LABEL67:
+ mov byte [rbp + rax], cl
+ cmp rax, rdx
+ cjmp LABEL72
+ add rbx, rax
+ lea rbp, [rbp + rax + CONST]
+ cmp r12, rbx
+ cjmp LABEL41
+ nop word cs:[rax + rax]
+LABEL39:
+ mov byte [rbp], CONST
+ jmp LABEL79
+LABEL59:
+ mov edx, CONST
+ jmp LABEL81
+LABEL62:
+ mov rax, qword [rsp + CONST]
+ mov rdx, r12
+ xor edi, edi
+ lea rcx, [rsp + CONST]
+ sub rdx, rbx
+ mov rsi, rbx
+ mov qword [rsp + CONST], rax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL91
+ mov rax, qword [rsp + CONST]
+ add rbp, CONST
+ mov qword [rsp + CONST], rax
+ movzx eax, byte [rbx]
+ mov rbx, r14
+ mov byte [rbp + CONST], al
+ jmp LABEL98
+LABEL91:
+ test rax, rax
+ mov edx, CONST
+ movzx ecx, byte [rbx]
+ cmovne rdx, rax
+ jmp LABEL81
+LABEL20:
+ call CONST

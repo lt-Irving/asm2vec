@@ -1,0 +1,54 @@
+ .name sym.bash_delete_last_history
+ .offset 0000000000081440
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ cmp qword [rax], CONST
+ cjmp LABEL8
+ xor edx, edx
+ nop dword [rax]
+LABEL14:
+ mov ebp, edx
+ add rdx, CONST
+ cmp qword [rax + rdx*CONST], CONST
+ cjmp LABEL14
+LABEL45:
+ mov edi, dword [rip + CONST]
+ add edi, ebp
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov edi, ebp
+ call CONST
+ mov r12d, eax
+ call CONST
+ mov edi, dword [rip + CONST]
+ cmp eax, edi
+ cjmp LABEL26
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL6:
+ xor r12d, r12d
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL26:
+ call CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ mov ebp, CONST
+ jmp LABEL45

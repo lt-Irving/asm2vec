@@ -1,0 +1,41 @@
+ .name sym.strlist_print
+ .offset 00000000000b27b0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL11
+ test rsi, rsi
+ lea r12, [rip + CONST]
+ lea r13, [rip + CONST]
+ cmovne r12, rsi
+ xor ebx, ebx
+ nop dword [rax]
+LABEL27:
+ mov rax, qword [rbp]
+ mov rdx, r12
+ mov rsi, r13
+ mov edi, CONST
+ mov rcx, qword [rax + rbx*CONST]
+ xor eax, eax
+ add rbx, CONST
+ call CONST
+ cmp dword [rbp + CONST], ebx
+ cjmp LABEL27
+LABEL11:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ ret

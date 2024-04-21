@@ -1,0 +1,35 @@
+ .name sym.rl_print_last_kbd_macro
+ .offset 00000000000d12a0
+ .file bash
+ endbr64
+ mov rdi, qword [rip + CONST]
+ push rbp
+ test rdi, rdi
+ cjmp LABEL4
+ mov esi, CONST
+ call CONST
+ mov rbp, rax
+ call CONST
+ mov rdx, rbp
+ mov edi, CONST
+ xor eax, eax
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ call CONST
+ test rbp, rbp
+ cjmp LABEL18
+ mov rdi, rbp
+ call CONST
+LABEL18:
+ call CONST
+ xor eax, eax
+ pop rbp
+ mov dword [rip + CONST], CONST
+ ret
+LABEL4:
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret

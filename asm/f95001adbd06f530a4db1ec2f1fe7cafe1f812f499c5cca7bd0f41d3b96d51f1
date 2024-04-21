@@ -1,0 +1,31 @@
+ .name sym.string_rest_of_args
+ .offset 0000000000065910
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbp
+ sub rsp, CONST
+ call CONST
+ mov rbp, rax
+ test r12d, r12d
+ cjmp LABEL8
+ xor edx, edx
+ xor esi, esi
+ mov rdi, rax
+ call CONST
+ mov r12, rax
+LABEL25:
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov r12, rax
+ jmp LABEL25

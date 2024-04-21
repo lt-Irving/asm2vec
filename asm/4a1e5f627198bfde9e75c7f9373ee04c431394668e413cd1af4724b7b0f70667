@@ -1,0 +1,40 @@
+ .name sym.rl_vi_prev_word
+ .offset 00000000000ba1a0
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+ test esi, CONST
+ cjmp LABEL8
+ mov dword [rsp + CONST], esi
+ mov dword [rsp + CONST], edi
+ call CONST
+ mov edi, dword [rsp + CONST]
+ mov r8, rax
+ movsxd rax, dword [rsp + CONST]
+ mov rdx, qword [r8]
+ mov rsi, rax
+ test byte [rdx + rax*CONST + CONST], CONST
+ cjmp LABEL18
+LABEL8:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL18:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL6:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL2:
+ neg edi
+ jmp CONST

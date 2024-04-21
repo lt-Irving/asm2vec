@@ -1,0 +1,37 @@
+ .name fcn.000032e0
+ .offset 00000000000032e0
+ .file cat
+ mov rcx, qword [rip + CONST]
+ lea rax, [rip + CONST]
+ jmp LABEL2
+LABEL9:
+ sub rax, CONST
+ mov byte [rax + CONST], CONST
+ cmp rcx, rax
+ cjmp LABEL6
+LABEL2:
+ movzx edx, byte [rax]
+ cmp dl, CONST
+ cjmp LABEL9
+ add edx, CONST
+ mov byte [rax], dl
+ ret
+LABEL6:
+ lea rax, [rip + CONST]
+ cmp rcx, rax
+ cjmp LABEL15
+ lea rdx, [rcx + CONST]
+ mov byte [rcx + CONST], CONST
+ mov qword [rip + CONST], rdx
+LABEL27:
+ mov rax, qword [rip + CONST]
+ cmp rax, rdx
+ cjmp LABEL21
+ sub rax, CONST
+ mov qword [rip + CONST], rax
+LABEL21:
+ ret
+LABEL15:
+ mov byte [rip + CONST], CONST
+ mov rdx, rcx
+ jmp LABEL27

@@ -1,0 +1,17 @@
+ .name sym.initialize_bash_input
+ .offset 0000000000032580
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ ret

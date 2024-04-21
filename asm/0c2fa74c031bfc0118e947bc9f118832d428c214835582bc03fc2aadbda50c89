@@ -1,0 +1,34 @@
+ .name fcn.000d4040
+ .offset 00000000000d4040
+ .file bash
+ endbr64
+ mov eax, dword [rdi]
+ test eax, eax
+ cjmp LABEL3
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ cjmp LABEL6
+ mov edi, eax
+ jmp CONST
+LABEL6:
+ ret
+LABEL3:
+ add eax, CONST
+ push rbx
+ mov rbx, rdi
+ mov dword [rdi], eax
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rbx]
+ mov dword [rip + CONST], CONST
+ test edx, edx
+ cjmp LABEL19
+LABEL24:
+ mov qword [rip + CONST], CONST
+LABEL25:
+ pop rbx
+ ret
+LABEL19:
+ test eax, eax
+ cjmp LABEL24
+ jmp LABEL25

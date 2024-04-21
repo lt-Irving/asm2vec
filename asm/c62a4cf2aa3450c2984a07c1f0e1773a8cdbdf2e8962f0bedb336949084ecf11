@@ -1,0 +1,17 @@
+ .name fcn.000318d0
+ .offset 00000000000318d0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ mov eax, edi
+ test edx, edx
+ cjmp LABEL4
+ mov rcx, qword [rip + CONST]
+ test rcx, rcx
+ cjmp LABEL4
+ sub edx, CONST
+ mov dword [rip + CONST], edx
+ movsxd rdx, edx
+ mov byte [rcx + rdx], dil
+LABEL4:
+ ret

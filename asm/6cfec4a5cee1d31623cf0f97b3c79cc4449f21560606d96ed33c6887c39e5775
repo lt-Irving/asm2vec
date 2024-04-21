@@ -1,0 +1,43 @@
+ .name sym.dispose_redirects
+ .offset 0000000000043d20
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ push rbx
+ mov rbx, rdi
+ nop word [rax + rax]
+LABEL26:
+ mov rbp, rbx
+ mov rbx, qword [rbx]
+ test byte [rbp + CONST], CONST
+ cjmp LABEL12
+LABEL33:
+ cmp dword [rbp + CONST], CONST
+ cjmp LABEL14
+ mov eax, dword [rbp + CONST]
+ movsxd rax, dword [r12 + rax*CONST]
+ add rax, r12
+ notrack jmp rax
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+LABEL14:
+ mov rdi, rbp
+ call CONST
+ test rbx, rbx
+ cjmp LABEL26
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ jmp LABEL33
+LABEL2:
+ ret

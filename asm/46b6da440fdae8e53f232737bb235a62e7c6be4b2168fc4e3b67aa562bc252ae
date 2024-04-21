@@ -1,0 +1,23 @@
+ .name fcn.00015c30
+ .offset 0000000000015c30
+ .file cp
+ mov eax, esi
+ mov r8d, edi
+ mov rdi, rdx
+ mov edx, esi
+ shl edx, CONST
+ shl eax, CONST
+ and edx, CONST
+ and eax, CONST
+ or edx, eax
+ or edx, CONST
+ and esi, CONST
+ cjmp LABEL11
+ mov rsi, rdi
+ xor eax, eax
+ mov edi, r8d
+ jmp CONST
+LABEL11:
+ mov esi, edx
+ xor eax, eax
+ jmp CONST

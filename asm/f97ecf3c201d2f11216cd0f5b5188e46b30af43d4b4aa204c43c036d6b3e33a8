@@ -1,0 +1,47 @@
+ .name fcn.0003e480
+ .offset 000000000003e480
+ .file bash
+ endbr64
+ push rbp
+ movzx eax, byte [rdi]
+ cmp al, CONST
+ cjmp LABEL4
+ cmp al, CONST
+ cjmp LABEL6
+LABEL24:
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL9
+ call CONST
+ mov rbp, rax
+LABEL28:
+ test rbp, rbp
+ cjmp LABEL9
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST
+LABEL6:
+ movzx eax, byte [rdi + CONST]
+ test al, al
+ cjmp LABEL24
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rbp, rax
+ jmp LABEL28
+LABEL9:
+ xor eax, eax
+ pop rbp
+ ret
+LABEL4:
+ movzx eax, byte [rdi + CONST]
+ test al, al
+ cjmp LABEL24
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rbp, rax
+ jmp LABEL28

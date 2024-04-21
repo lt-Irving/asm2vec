@@ -1,0 +1,29 @@
+ .name fcn.00014ba0
+ .offset 0000000000014ba0
+ .file dash
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rsi
+ mov rsi, qword [rip + CONST]
+ sub rbx, rdi
+ lea rdi, [rbx + CONST]
+ call CONST
+ mov rdx, rbx
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov edx, CONST
+ mov r8, rax
+ lea rax, [rax + rbx]
+ mov word [rax], dx
+ mov byte [rax + CONST], CONST
+ movzx eax, byte [rbp]
+ mov byte [r8 + rbx + CONST], al
+ mov rax, r8
+ pop rbx
+ pop rbp
+ pop r12
+ ret

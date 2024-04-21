@@ -1,0 +1,19 @@
+ .name sym.rl_clear_screen
+ .offset 00000000000d4c20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+ call CONST
+ call CONST
+ xor eax, eax
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

@@ -1,0 +1,18 @@
+ .name sym.u32reset
+ .offset 00000000000b6230
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+ mov rdi, qword [rip + CONST]
+ cmp rdi, CONST
+ cjmp LABEL4
+ call CONST
+ mov qword [rip + CONST], CONST
+LABEL4:
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

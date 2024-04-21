@@ -1,0 +1,18 @@
+ .name fcn.00014050
+ .offset 0000000000014050
+ .file dash
+ endbr64
+ add edi, CONST
+ cmp dword [rip + CONST], edi
+ cjmp LABEL3
+ sub rsp, CONST
+ mov dword [rip + CONST], edi
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ ret

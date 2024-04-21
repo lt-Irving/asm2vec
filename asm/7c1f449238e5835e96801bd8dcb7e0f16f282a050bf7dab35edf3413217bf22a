@@ -1,0 +1,41 @@
+ .name sym.clean_simple_command
+ .offset 00000000000411d0
+ .file bash
+ endbr64
+ push r12
+ mov edx, dword [rdi]
+ mov r12, rdi
+ cmp edx, CONST
+ cjmp LABEL5
+ mov rdx, qword [rdi + CONST]
+ mov rdi, qword [rdx + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+ cmp qword [rdi], CONST
+ cjmp LABEL9
+ xor eax, eax
+ call CONST
+ mov rdx, qword [r12 + CONST]
+ mov rdi, rax
+LABEL9:
+ mov qword [rdx + CONST], rdi
+ mov rdi, qword [rdx + CONST]
+ test rdi, rdi
+ cjmp LABEL19
+ cmp qword [rdi], CONST
+ cjmp LABEL19
+ xor eax, eax
+ call CONST
+ mov rdx, qword [r12 + CONST]
+ mov rdi, rax
+LABEL19:
+ mov rax, r12
+ mov qword [rdx + CONST], rdi
+ pop r12
+ and dword [rip + CONST], CONST
+ ret
+LABEL5:
+ xor ecx, ecx
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST

@@ -1,0 +1,77 @@
+ .name sym.wcsnwidth
+ .offset 00000000000b6cc0
+ .file bash
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push r15
+ lea r15, [rsi + CONST]
+ push r14
+ xor r14d, r14d
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ jmp LABEL15
+LABEL34:
+ call CONST
+ test eax, eax
+ cjmp LABEL18
+ movsxd rcx, r14d
+ mov rsi, rbp
+ movsxd rdx, eax
+ sub rsi, rcx
+ cmp rdx, rsi
+ cjmp LABEL24
+ cjmp LABEL25
+ sub r15, CONST
+ add r14d, eax
+ cmp r15, CONST
+ cjmp LABEL24
+LABEL15:
+ mov r12, rbx
+ mov edi, dword [rbx]
+ add rbx, CONST
+ test edi, edi
+ cjmp LABEL34
+LABEL24:
+ mov rax, rbx
+ add rsp, CONST
+ sub rax, r13
+ pop rbx
+ pop rbp
+ sar rax, CONST
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL18:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL25:
+ mov rax, r12
+ add rsp, CONST
+ sub rax, r13
+ pop rbx
+ pop rbp
+ sar rax, CONST
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL2:
+ xor eax, eax
+ ret

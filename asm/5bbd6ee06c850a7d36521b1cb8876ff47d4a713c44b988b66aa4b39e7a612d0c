@@ -1,0 +1,50 @@
+ .name sym.rl_macro_bind
+ .offset 00000000000c3f70
+ .file bash
+ endbr64
+ push r14
+ mov r14, rdx
+ push r13
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ mov rdi, rsi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ lea rdi, [rax + rax + CONST]
+ call CONST
+ lea rdx, [rsp + CONST]
+ mov rdi, r12
+ mov rsi, rax
+ mov r13, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL22
+ mov rcx, r14
+ mov rdx, r13
+ mov rsi, rbp
+ mov edi, CONST
+ mov r12d, eax
+ call CONST
+LABEL42:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL31
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL22:
+ mov rdi, r13
+ mov r12d, CONST
+ call CONST
+ jmp LABEL42
+LABEL31:
+ call CONST

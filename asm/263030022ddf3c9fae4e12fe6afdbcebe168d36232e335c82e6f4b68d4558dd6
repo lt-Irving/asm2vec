@@ -1,0 +1,83 @@
+ .name sym.trap_handler
+ .offset 0000000000075570
+ .file bash
+ endbr64
+ push r13
+ lea rax, [rip + CONST]
+ push r12
+ push rbp
+ push rbx
+ movsxd rbx, edi
+ sub rsp, CONST
+ test byte [rax + rbx*CONST], CONST
+ cjmp LABEL9
+ mov rbp, rbx
+ cmp ebx, CONST
+ cjmp LABEL12
+ lea rax, [rip + CONST]
+ cmp qword [rax + rbx*CONST], CONST
+ cjmp LABEL12
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov r13d, dword [rax]
+ mov r12, rax
+ lea rax, [rip + CONST]
+ mov dword [rip + CONST], ebx
+ add dword [rax + rbx*CONST], CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL26
+ cmp rax, qword [rip + CONST]
+ cjmp LABEL28
+LABEL26:
+ test byte [rip + CONST], CONST
+ cjmp LABEL30
+ test edx, edx
+ cjmp LABEL32
+LABEL60:
+ call CONST
+LABEL55:
+ mov dword [r12], r13d
+LABEL9:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL12:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ call CONST
+ add rsp, CONST
+ mov esi, ebp
+ pop rbx
+ mov rdi, rax
+ pop rbp
+ xor eax, eax
+ pop r12
+ pop r13
+ jmp CONST
+LABEL63:
+ test byte [rip + CONST], CONST
+ cjmp LABEL55
+LABEL32:
+ call CONST
+ mov edx, dword [rip + CONST]
+LABEL30:
+ test edx, edx
+ cjmp LABEL55
+ jmp LABEL60
+LABEL28:
+ mov dword [rip + CONST], ebx
+ test edx, edx
+ cjmp LABEL63
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL60
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ nop dword [rax]

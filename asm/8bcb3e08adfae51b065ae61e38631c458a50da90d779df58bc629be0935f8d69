@@ -1,0 +1,24 @@
+ .name sym.command_error
+ .offset 00000000000554f0
+ .file bash
+ endbr64
+ push r12
+ mov eax, CONST
+ mov r12d, edx
+ mov edx, CONST
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ cmp esi, CONST
+ cmovge esi, eax
+ lea rax, [rip + CONST]
+ xor edi, edi
+ movsxd rsi, esi
+ mov rsi, qword [rax + rsi*CONST]
+ call CONST
+ mov ecx, r12d
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ mov rdx, rax
+ xor eax, eax
+ call CONST

@@ -1,0 +1,100 @@
+ .name sym.initialize_traps
+ .offset 00000000000747b0
+ .file bash
+ endbr64
+ lea rdx, [rip + CONST]
+ sub rsp, CONST
+ mov qword [rip + CONST], CONST
+ mov eax, CONST
+ mov qword [rip + CONST], CONST
+ lea r8, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ lea rsi, [rip + CONST]
+ lea rcx, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rdx
+ nop word [rax + rax]
+LABEL23:
+ mov dword [r8 + rax], CONST
+ mov qword [rdi + rax*CONST], CONST
+ mov dword [rsi + rax], CONST
+ mov qword [rcx + rax*CONST], rdx
+ add rax, CONST
+ cmp rax, CONST
+ cjmp LABEL23
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ mov rsi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ cmp qword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ cjmp LABEL33
+LABEL84:
+ or eax, CONST
+ xor esi, esi
+ mov edi, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ mov edi, CONST
+ mov rsi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ cmp qword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ cjmp LABEL45
+LABEL82:
+ or eax, CONST
+ xor esi, esi
+ mov edi, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ mov edi, CONST
+ mov rsi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ cmp qword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ cjmp LABEL57
+LABEL80:
+ or eax, CONST
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL62
+ add rsp, CONST
+ jmp CONST
+LABEL62:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ mov rsi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ cmp qword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ cjmp LABEL74
+LABEL86:
+ or eax, CONST
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ jmp CONST
+LABEL57:
+ or eax, CONST
+ jmp LABEL80
+LABEL45:
+ or eax, CONST
+ jmp LABEL82
+LABEL33:
+ or eax, CONST
+ jmp LABEL84
+LABEL74:
+ or eax, CONST
+ jmp LABEL86

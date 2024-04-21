@@ -1,0 +1,58 @@
+ .name sym._hs_replace_history_data
+ .offset 00000000000d7290
+ .file bash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL2
+ cmp eax, edi
+ cjmp LABEL2
+ mov r8, qword [rip + CONST]
+ test r8, r8
+ cjmp LABEL2
+ test edi, edi
+ cjmp LABEL12
+ test eax, eax
+ cjmp LABEL14
+ lea r9d, [rax + CONST]
+ mov r10, CONST
+ xor eax, eax
+ jmp LABEL18
+LABEL25:
+ lea rcx, [rax + CONST]
+ cmp r9, rax
+ cjmp LABEL21
+ mov rax, rcx
+LABEL18:
+ mov rcx, qword [r8 + rax*CONST]
+ test rcx, rcx
+ cjmp LABEL25
+ cmp qword [rcx + CONST], rsi
+ cjmp LABEL25
+ movsxd r10, eax
+ cmp edi, CONST
+ cjmp LABEL25
+ mov qword [rcx + CONST], rdx
+ jmp LABEL25
+LABEL21:
+ cmp edi, CONST
+ cjmp LABEL2
+ test r10d, r10d
+ cjmp LABEL2
+ mov rax, qword [r8 + r10*CONST]
+LABEL45:
+ mov qword [rax + CONST], rdx
+LABEL2:
+ ret
+LABEL12:
+ movsxd rdi, edi
+ mov rax, qword [r8 + rdi*CONST]
+ test rax, rax
+ cjmp LABEL2
+ cmp qword [rax + CONST], rsi
+ cjmp LABEL45
+ ret
+LABEL14:
+ ret

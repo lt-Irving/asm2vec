@@ -1,0 +1,134 @@
+ .name fcn.00006870
+ .offset 0000000000006870
+ .file chage
+ cmp byte [rip + CONST], CONST
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ cjmp LABEL5
+LABEL15:
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL7
+LABEL66:
+ call CONST
+ test ebp, ebp
+ cjmp LABEL10
+LABEL63:
+ mov edi, ebp
+ call CONST
+LABEL5:
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ call CONST
+ mov r12, qword [rip + CONST]
+ mov edx, CONST
+ xor edi, edi
+ lea rsi, [rip + CONST]
+ mov rbx, rax
+ call CONST
+ mov r8, rbx
+ mov rcx, r12
+ mov esi, CONST
+ mov rdi, qword [rip + CONST]
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ mov edi, CONST
+ xor esi, esi
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL35
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL35
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+ mov rsi, r12
+ mov edi, CONST
+ call CONST
+ mov rdi, r12
+ call CONST
+ jmp LABEL15
+LABEL10:
+ mov r8d, dword [rip + CONST]
+ xor r9d, r9d
+ mov rsi, qword [rip + CONST]
+ lea rcx, [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ jmp LABEL63
+LABEL7:
+ call CONST
+ test eax, eax
+ cjmp LABEL66
+ call CONST
+ mov r12, qword [rip + CONST]
+ mov edx, CONST
+ xor edi, edi
+ lea rsi, [rip + CONST]
+ mov rbx, rax
+ call CONST
+ mov r8, rbx
+ mov rcx, r12
+ mov esi, CONST
+ mov rdi, qword [rip + CONST]
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ mov edi, CONST
+ xor esi, esi
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL86
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL86
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+ mov rsi, r12
+ mov edi, CONST
+ call CONST
+ mov rdi, r12
+ call CONST
+ jmp LABEL66
+LABEL86:
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL66
+LABEL35:
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL15

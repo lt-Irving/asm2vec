@@ -1,0 +1,73 @@
+ .name fcn.00005d20
+ .offset 0000000000005d20
+ .file cp
+ push r14
+ push r13
+ mov r13d, ecx
+ push r12
+ mov r12, rdx
+ mov rdx, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ mov rsi, rdi
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL14
+ mov edx, dword [rbx + CONST]
+ and edx, CONST
+ cmp edx, CONST
+ cjmp LABEL18
+LABEL30:
+ and eax, CONST
+ jmp LABEL20
+LABEL14:
+ call CONST
+ mov r14d, dword [rax]
+ test r14d, r14d
+ cjmp LABEL24
+ mov eax, dword [rbx + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ sete al
+ movzx eax, al
+ jmp LABEL30
+LABEL24:
+ cmp r14d, CONST
+ cjmp LABEL32
+ test r13b, r13b
+ cjmp LABEL34
+ mov dword [rbx + CONST], CONST
+ xor eax, eax
+LABEL20:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL18:
+ mov eax, CONST
+ jmp LABEL20
+LABEL32:
+ mov byte [r12], CONST
+ xor eax, eax
+ jmp LABEL20
+LABEL34:
+ mov rsi, rbp
+ mov edi, CONST
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov r12, rax
+ call CONST
+ mov rcx, r12
+ mov esi, r14d
+ mov edi, CONST
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ nop word cs:[rax + rax]

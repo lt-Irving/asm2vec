@@ -1,0 +1,57 @@
+ .name fcn.00028d10
+ .offset 0000000000028d10
+ .file diff
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL6
+ mov rdx, rdi
+ cmp al, CONST
+ cjmp LABEL9
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL9
+ xor edi, edi
+ jmp LABEL13
+LABEL21:
+ cmp r8b, CONST
+ cjmp LABEL9
+ cmp byte [rdx + rdi*CONST + CONST], CONST
+ cjmp LABEL9
+LABEL13:
+ add rdi, CONST
+ movzx r8d, byte [rdx + rdi*CONST]
+ test r8b, r8b
+ cjmp LABEL21
+LABEL42:
+ call CONST
+ jmp LABEL23
+LABEL9:
+ mov rcx, rsi
+ mov rdi, rsp
+ mov esi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL29
+ mov rax, qword [rsp]
+LABEL23:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL33
+ add rsp, CONST
+ ret
+LABEL29:
+ call CONST
+ cmp dword [rax], CONST
+ cjmp LABEL38
+ xor eax, eax
+ jmp LABEL23
+LABEL6:
+ xor edi, edi
+ jmp LABEL42
+LABEL33:
+ call CONST
+LABEL38:
+ call CONST

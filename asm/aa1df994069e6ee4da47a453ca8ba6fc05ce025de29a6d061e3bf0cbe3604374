@@ -1,0 +1,20 @@
+ .name sym.clear_string_list_expander
+ .offset 0000000000032a00
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+LABEL12:
+ mov rdx, qword [rax + CONST]
+ cmp rdx, rdi
+ cjmp LABEL6
+ test rdx, rdx
+ cjmp LABEL6
+ mov qword [rax + CONST], CONST
+LABEL6:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL12
+LABEL3:
+ ret

@@ -1,0 +1,45 @@
+ .name fcn.0000df60
+ .offset 000000000000df60
+ .file date
+ endbr64
+ push r12
+ mov rsi, rdi
+ push rbx
+ mov rbx, rdi
+ xor edi, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL13
+ call CONST
+ cmp dword [rax], CONST
+ cjmp LABEL13
+ mov rax, qword [rbx]
+ mov rcx, qword [rbx + CONST]
+ mov rdi, rsp
+ xor esi, esi
+ movabs rdx, CONST
+ mov qword [rsp], rax
+ mov rax, rcx
+ sar rcx, CONST
+ imul rdx
+ sar rdx, CONST
+ sub rdx, rcx
+ mov qword [rsp + CONST], rdx
+ call CONST
+ mov r12d, eax
+LABEL13:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL33
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret
+LABEL33:
+ call CONST

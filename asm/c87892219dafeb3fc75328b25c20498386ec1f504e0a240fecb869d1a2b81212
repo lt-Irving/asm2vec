@@ -1,0 +1,47 @@
+ .name fcn.00015df0
+ .offset 0000000000015df0
+ .file diff
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov rbx, rdi
+ jmp LABEL6
+LABEL10:
+ mov rbx, rax
+LABEL6:
+ mov rax, qword [rbx + CONST]
+ test rax, rax
+ cjmp LABEL10
+ mov rax, qword [rbx + CONST]
+ test rax, rax
+ cjmp LABEL10
+ mov rsi, rbx
+ mov rdi, rbp
+ call r12
+ test eax, eax
+ cjmp LABEL18
+ nop word [rax + rax]
+LABEL35:
+ mov rdx, qword [rbx]
+ test rdx, rdx
+ cjmp LABEL18
+ mov rax, qword [rdx + CONST]
+ test rax, rax
+ sete sil
+ cmp rax, rbx
+ mov rbx, rdx
+ sete cl
+ or sil, cl
+ cjmp LABEL10
+ mov rsi, rbx
+ mov rdi, rbp
+ call r12
+ test eax, eax
+ cjmp LABEL35
+LABEL18:
+ pop rbx
+ pop rbp
+ pop r12
+ ret

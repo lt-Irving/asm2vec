@@ -1,0 +1,112 @@
+ .name sym.bind_int_variable
+ .offset 0000000000051700
+ .file bash
+ endbr64
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13d, edx
+ push r12
+ mov r12d, edx
+ push rbp
+ shr r12d, CONST
+ mov rbp, rdi
+ push rbx
+ and r12d, CONST
+ mov esi, r12d
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ xor ecx, ecx
+ xor edx, edx
+ mov esi, r12d
+ mov rdi, rbp
+ call CONST
+ xor ebx, ebx
+ test rax, rax
+ cjmp LABEL23
+ mov edx, dword [rax + CONST]
+ mov ebx, edx
+ and edx, CONST
+ mov dword [rax + CONST], edx
+ and ebx, CONST
+LABEL23:
+ mov edx, r13d
+ mov rsi, r14
+ mov rdi, rbp
+ call CONST
+ mov r12, rax
+LABEL75:
+ test r12, r12
+ cjmp LABEL35
+ mov eax, dword [r12 + CONST]
+ mov edx, eax
+ or edx, CONST
+ test ebx, ebx
+ cmovne eax, edx
+ mov edx, eax
+ and dh, CONST
+ mov dword [r12 + CONST], edx
+ test ah, CONST
+ cjmp LABEL45
+LABEL35:
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL15:
+ mov rdi, rbp
+ mov ebx, eax
+ call CONST
+ mov rdi, rbp
+ test eax, eax
+ cjmp LABEL58
+ call CONST
+ test rax, rax
+ cjmp LABEL61
+ mov edx, dword [rax + CONST]
+ mov ebx, edx
+ mov ecx, edx
+ and ecx, CONST
+ and ebx, CONST
+ and edx, CONST
+ mov dword [rax + CONST], ecx
+ cjmp LABEL69
+LABEL61:
+ xor edx, edx
+ mov rsi, r14
+ mov rdi, rbp
+ call CONST
+ mov r12, rax
+ jmp LABEL75
+LABEL69:
+ xor ecx, ecx
+ mov rdx, r14
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ mov r12, rax
+ jmp LABEL75
+LABEL45:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL58:
+ call CONST
+ xor r12d, r12d
+ jmp LABEL35

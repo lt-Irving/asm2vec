@@ -1,0 +1,19 @@
+ .name sym.history_get
+ .offset 00000000000d6ca0
+ .file bash
+ endbr64
+ sub edi, dword [rip + CONST]
+ cmp dword [rip + CONST], edi
+ cjmp LABEL3
+ test edi, edi
+ cjmp LABEL3
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL8
+ movsxd rdi, edi
+ mov rax, qword [rax + rdi*CONST]
+ ret
+LABEL3:
+ xor eax, eax
+LABEL8:
+ ret

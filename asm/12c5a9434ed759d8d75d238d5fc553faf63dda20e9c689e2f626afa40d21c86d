@@ -1,0 +1,40 @@
+ .name sym.free_trap_strings
+ .offset 00000000000761a0
+ .file bash
+ endbr64
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ xor ebx, ebx
+ nop dword [rax + rax]
+LABEL16:
+ cmp qword [r12 + rbx*CONST], CONST
+ cjmp LABEL9
+ xor esi, esi
+ mov edi, ebx
+ call CONST
+ and dword [rbp + rbx*CONST], CONST
+LABEL9:
+ add rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL16
+LABEL21:
+ test byte [rbp + rbx*CONST], CONST
+ cjmp LABEL18
+LABEL31:
+ add rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL21
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL18:
+ xor esi, esi
+ mov edi, ebx
+ call CONST
+ and dword [rbp + rbx*CONST], CONST
+ mov qword [r12 + rbx*CONST], CONST
+ jmp LABEL31

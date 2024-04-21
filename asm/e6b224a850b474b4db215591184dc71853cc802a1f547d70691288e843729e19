@@ -1,0 +1,114 @@
+ .name sym.all_variables_matching_prefix
+ .offset 000000000004f9f0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ xor r13d, r13d
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL11
+ cmp byte [rdi], CONST
+ cjmp LABEL13
+LABEL11:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov r14, rax
+ test rax, rax
+ cjmp LABEL18
+ xor eax, eax
+LABEL24:
+ mov edi, eax
+ add rax, CONST
+ mov r12, qword [r14 + rax*CONST + CONST]
+ test r12, r12
+ cjmp LABEL24
+ test edi, edi
+ cjmp LABEL26
+ add edi, CONST
+ call CONST
+ mov r12, rax
+ mov rax, qword [r14]
+ test rax, rax
+ cjmp LABEL32
+ movsxd rcx, r13d
+ lea r15, [r14 + CONST]
+ xor ebx, ebx
+ mov qword [rsp + CONST], rcx
+ jmp LABEL37
+LABEL47:
+ movzx eax, byte [rsi]
+ cmp byte [rbp], al
+ cjmp LABEL40
+LABEL83:
+ mov rax, qword [r15]
+ add r15, CONST
+ test rax, rax
+ cjmp LABEL44
+LABEL37:
+ mov rsi, qword [rax]
+ test r13d, r13d
+ cjmp LABEL47
+LABEL84:
+ mov rdi, rsi
+ mov qword [rsp + CONST], rsi
+ add r15, CONST
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ mov rdi, rax
+ lea eax, [rbx + CONST]
+ mov dword [rsp + CONST], eax
+ call CONST
+ mov qword [r12 + rbx*CONST], rax
+ mov rax, qword [r15 + CONST]
+ movsxd rbx, dword [rsp + CONST]
+ test rax, rax
+ cjmp LABEL37
+LABEL44:
+ lea rax, [r12 + rbx*CONST]
+LABEL95:
+ mov qword [rax], CONST
+ mov rdi, r14
+ call CONST
+LABEL26:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL40:
+ mov rdx, qword [rsp + CONST]
+ mov rdi, rbp
+ mov qword [rsp + CONST], rsi
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ test eax, eax
+ cjmp LABEL83
+ jmp LABEL84
+LABEL13:
+ cmp byte [rdi + CONST], CONST
+ mov r13d, CONST
+ cjmp LABEL11
+ cmp byte [rdi + CONST], CONST
+ mov r13d, CONST
+ cjmp LABEL11
+ call CONST
+ mov r13d, eax
+ jmp LABEL11
+LABEL32:
+ mov rax, r12
+ jmp LABEL95
+LABEL18:
+ xor r12d, r12d
+ jmp LABEL26

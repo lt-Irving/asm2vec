@@ -1,0 +1,13 @@
+ .name sym.job_exit_signal
+ .offset 000000000005aa70
+ .file bash
+ endbr64
+ call CONST
+ mov edx, eax
+ and eax, CONST
+ and edx, CONST
+ add edx, CONST
+ cmp dl, CONST
+ mov edx, CONST
+ cmovle eax, edx
+ ret

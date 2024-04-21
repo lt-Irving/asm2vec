@@ -1,0 +1,29 @@
+ .name fcn.000015b0
+ .offset 00000000000015b0
+ .file clear_console
+ endbr64
+ sub rsp, CONST
+ mov esi, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rdx, [rsp + CONST]
+ mov byte [rsp + CONST], CONST
+ call CONST
+ mov r8d, eax
+ xor eax, eax
+ test r8d, r8d
+ cjmp LABEL12
+ movzx eax, byte [rsp + CONST]
+ sub eax, CONST
+ cmp al, CONST
+ setbe al
+ movzx eax, al
+LABEL12:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL20
+ add rsp, CONST
+ ret
+LABEL20:
+ call CONST

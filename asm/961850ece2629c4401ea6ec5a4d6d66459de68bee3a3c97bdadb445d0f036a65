@@ -1,0 +1,54 @@
+ .name fcn.00004030
+ .offset 0000000000004030
+ .file csplit
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ cmp rax, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ cjmp LABEL4
+LABEL32:
+ lea rdx, [rax + CONST]
+ lea rax, [rax + rax*CONST]
+ shl rax, CONST
+ mov qword [rip + CONST], rdx
+ add rax, rdi
+ mov byte [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov byte [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax], CONST
+ add rsp, CONST
+ ret
+LABEL4:
+ test rdi, rdi
+ cjmp LABEL18
+ movabs rdx, CONST
+ cmp rax, rdx
+ cjmp LABEL21
+ mov rdx, rax
+ shr rdx, CONST
+ lea rcx, [rax + rdx + CONST]
+LABEL44:
+ lea rsi, [rcx + rcx*CONST]
+ mov qword [rip + CONST], rcx
+ shl rsi, CONST
+ call CONST
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ mov rax, qword [rip + CONST]
+ jmp LABEL32
+LABEL18:
+ test rax, rax
+ mov ecx, CONST
+ mov edx, CONST
+ cmovne rcx, rax
+ mov rax, rdx
+ mul rcx
+ seto dl
+ movzx edx, dl
+ test rax, rax
+ cjmp LABEL21
+ test rdx, rdx
+ cjmp LABEL44
+LABEL21:
+ call CONST

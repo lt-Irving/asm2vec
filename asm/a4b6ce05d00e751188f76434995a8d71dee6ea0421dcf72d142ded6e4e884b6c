@@ -1,0 +1,20 @@
+ .name fcn.00014800
+ .offset 0000000000014800
+ .file dash
+ endbr64
+ sub rsp, CONST
+ mov rdx, rsi
+ mov esi, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov byte [rsp + CONST], dil
+ lea rdi, [rsp + CONST]
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL12
+ add rsp, CONST
+ ret
+LABEL12:
+ call CONST

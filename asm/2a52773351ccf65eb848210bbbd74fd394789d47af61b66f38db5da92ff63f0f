@@ -1,0 +1,34 @@
+ .name sym.optimize_fork
+ .offset 0000000000096ad0
+ .file bash
+ endbr64
+ cmp dword [rdi], CONST
+ cjmp LABEL2
+ ret
+LABEL2:
+ push rbx
+ mov rdx, qword [rdi + CONST]
+ mov rbx, rdi
+ mov eax, dword [rdx + CONST]
+ lea ecx, [rax + CONST]
+ cmp ecx, CONST
+ cjmp LABEL10
+ cmp eax, CONST
+ cjmp LABEL10
+LABEL17:
+ pop rbx
+ ret
+LABEL10:
+ mov rdi, qword [rdx + CONST]
+ test byte [rdi + CONST], CONST
+ cjmp LABEL17
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ mov rax, qword [rbx + CONST]
+ mov rax, qword [rax + CONST]
+ or dword [rax + CONST], CONST
+ mov rax, qword [rax + CONST]
+ or dword [rax], CONST
+ pop rbx
+ ret

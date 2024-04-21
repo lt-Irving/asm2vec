@@ -1,0 +1,37 @@
+ .name sym.get_tty_state
+ .offset 000000000005a910
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ cmp edi, CONST
+ cjmp LABEL4
+LABEL20:
+ lea rsi, [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL11
+LABEL19:
+ xor eax, eax
+LABEL27:
+ add rsp, CONST
+ ret
+LABEL4:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov edi, eax
+ cmp eax, CONST
+ cjmp LABEL19
+ jmp LABEL20
+LABEL11:
+ xor edx, edx
+ xor esi, esi
+ xor edi, edi
+ call CONST
+ jmp LABEL19
+LABEL8:
+ mov eax, CONST
+ jmp LABEL27

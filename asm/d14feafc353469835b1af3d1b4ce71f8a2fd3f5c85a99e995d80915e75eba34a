@@ -1,0 +1,22 @@
+ .name sym.eval_builtin
+ .offset 0000000000095e50
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL4
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL7
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ add rsp, CONST
+ mov rdi, rax
+ jmp CONST
+LABEL4:
+ mov eax, CONST
+LABEL7:
+ add rsp, CONST
+ ret

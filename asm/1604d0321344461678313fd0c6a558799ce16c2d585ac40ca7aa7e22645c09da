@@ -1,0 +1,77 @@
+ .name fcn.0000bb80
+ .offset 000000000000bb80
+ .file dpkg-deb
+ endbr64
+ push r14
+ mov ecx, CONST
+ push r13
+ mov r13, rsi
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r14, rsp
+ or dword [r12 + CONST], CONST
+ mov rdi, r14
+ rep stosq qword [rdi], rax
+ mov rax, qword [r12 + CONST]
+ mov dword [rsp + CONST], CONST
+ cmp dword [rax + CONST], CONST
+ mov edx, dword [rax + CONST]
+ cjmp LABEL21
+ or edx, CONST
+LABEL21:
+ mov dword [rsp + CONST], edx
+ call CONST
+ mov rbp, rax
+ shr rbp, CONST
+ cmp rax, CONST
+ mov eax, CONST
+ cmovbe rbp, rax
+ call CONST
+ mov dword [rsp + CONST], eax
+ test eax, eax
+ cjmp LABEL33
+ mov dword [rsp + CONST], CONST
+LABEL51:
+ mov rsi, r14
+ mov rdi, r13
+ call CONST
+ test eax, eax
+ cjmp LABEL39
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL42
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL33:
+ cmp eax, CONST
+ cjmp LABEL51
+ lea ebx, [rax + CONST]
+ jmp LABEL53
+LABEL60:
+ mov dword [rsp + CONST], ebx
+ sub ebx, CONST
+ cjmp LABEL51
+LABEL53:
+ mov rdi, r14
+ call CONST
+ cmp rbp, rax
+ cjmp LABEL60
+ jmp LABEL51
+LABEL39:
+ mov esi, dword [r12 + CONST]
+ mov edx, eax
+ mov rdi, r12
+ call CONST
+LABEL42:
+ call CONST

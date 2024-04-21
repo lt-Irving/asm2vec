@@ -1,0 +1,15 @@
+ .name sym.init_job_stats
+ .offset 0000000000059ac0
+ .file bash
+ endbr64
+ movdqa xmm0, xmmword [rip + CONST]
+ movdqa xmm1, xmmword [rip + CONST]
+ movdqa xmm2, xmmword [rip + CONST]
+ movdqa xmm3, xmmword [rip + CONST]
+ mov rax, qword [rip + CONST]
+ movaps xmmword [rip + CONST], xmm0
+ movaps xmmword [rip + CONST], xmm1
+ mov qword [rip + CONST], rax
+ movaps xmmword [rip + CONST], xmm2
+ movaps xmmword [rip + CONST], xmm3
+ ret

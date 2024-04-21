@@ -1,0 +1,21 @@
+ .name sym.ttfd_onechar
+ .offset 00000000000b0330
+ .file bash
+ endbr64
+ mov eax, dword [rsi + CONST]
+ mov rdx, rsi
+ and eax, CONST
+ or eax, CONST
+ mov dword [rsi + CONST], eax
+ mov eax, dword [rsi]
+ and eax, CONST
+ or ah, CONST
+ mov dword [rsi], eax
+ mov eax, dword [rsi + CONST]
+ and eax, CONST
+ or eax, CONST
+ mov dword [rsi + CONST], eax
+ mov eax, CONST
+ mov word [rsi + CONST], ax
+ mov esi, CONST
+ jmp CONST

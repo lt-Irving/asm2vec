@@ -1,0 +1,155 @@
+ .name fcn.000034e0
+ .offset 00000000000034e0
+ .file base64
+ endbr64
+ test cl, CONST
+ cjmp LABEL2
+ mov rax, rcx
+ shr rax, CONST
+ lea rax, [rax + rax*CONST]
+ cmp rax, rsi
+ cjmp LABEL7
+LABEL2:
+ test rcx, rcx
+ cjmp LABEL9
+ test rsi, rsi
+ cjmp LABEL11
+ movzx eax, byte [rdi]
+ lea r8, [rip + CONST]
+ mov r9d, eax
+ shr r9b, CONST
+ and r9d, CONST
+ movzx r9d, byte [r8 + r9]
+ mov byte [rdx], r9b
+ cmp rcx, CONST
+ cjmp LABEL20
+ push rbp
+ lea r9, [rdi + rsi + CONST]
+ lea r11, [rdi + rsi + CONST]
+ push rbx
+ lea r10, [rdi + rsi + CONST]
+ lea rbx, [rdx + rcx]
+ mov rsi, rdx
+ jmp LABEL28
+LABEL73:
+ movzx edx, byte [rdi + CONST]
+ mov ebp, edx
+ shr bpl, CONST
+ add eax, ebp
+ and eax, CONST
+ movzx eax, byte [r8 + rax]
+ mov byte [rsi + CONST], al
+ cmp rcx, CONST
+ cjmp LABEL37
+ shl edx, CONST
+ cmp r10, rdi
+ cjmp LABEL40
+ movzx eax, byte [rdi + CONST]
+ mov ebp, eax
+ shr bpl, CONST
+ add edx, ebp
+ and edx, CONST
+ movzx edx, byte [r8 + rdx]
+ mov byte [rsi + CONST], dl
+ mov rdx, rbx
+ sub rdx, rsi
+ cmp rdx, CONST
+ cjmp LABEL37
+ and eax, CONST
+ add rsi, CONST
+ mov rbp, rcx
+ movzx eax, byte [r8 + rax]
+ mov byte [rsi + CONST], al
+ sub rbp, CONST
+ cjmp LABEL37
+ cmp r11, rdi
+ cjmp LABEL60
+ movzx eax, byte [rdi + CONST]
+ add rdi, CONST
+ mov edx, eax
+ shr dl, CONST
+ and edx, CONST
+ movzx edx, byte [r8 + rdx]
+ mov byte [rsi], dl
+ cmp rcx, CONST
+ cjmp LABEL37
+ mov rcx, rbp
+LABEL28:
+ shl eax, CONST
+ cmp r9, rdi
+ cjmp LABEL73
+ and eax, CONST
+ movzx eax, byte [r8 + rax]
+ mov byte [rsi + CONST], al
+ cmp rcx, CONST
+ cjmp LABEL37
+ mov byte [rsi + CONST], CONST
+ cmp rcx, CONST
+ cjmp LABEL37
+LABEL94:
+ mov byte [rsi + CONST], CONST
+ lea rdx, [rsi + CONST]
+ cmp rcx, CONST
+ cjmp LABEL37
+LABEL138:
+ mov byte [rdx], CONST
+LABEL37:
+ pop rbx
+ pop rbp
+ ret
+LABEL40:
+ and edx, CONST
+ movzx eax, byte [r8 + rdx]
+ mov byte [rsi + CONST], al
+ cmp rcx, CONST
+ cjmp LABEL94
+ pop rbx
+ pop rbp
+ ret
+LABEL11:
+ test rcx, rcx
+ cjmp LABEL9
+ mov byte [rdx], CONST
+LABEL9:
+ ret
+LABEL7:
+ test rax, rax
+ cjmp LABEL9
+ lea rsi, [rdi + rax]
+ lea r8, [rip + CONST]
+ nop dword [rax]
+LABEL134:
+ movzx eax, byte [rdi]
+ add rdx, CONST
+ add rdi, CONST
+ mov ecx, eax
+ shl eax, CONST
+ shr cl, CONST
+ and ecx, CONST
+ movzx ecx, byte [r8 + rcx]
+ mov byte [rdx + CONST], cl
+ movzx ecx, byte [rdi + CONST]
+ mov r9d, ecx
+ shr r9b, CONST
+ add eax, r9d
+ and eax, CONST
+ movzx eax, byte [r8 + rax]
+ mov byte [rdx + CONST], al
+ movzx eax, byte [rdi + CONST]
+ mov r9d, eax
+ and eax, CONST
+ shr r9b, CONST
+ movzx eax, byte [r8 + rax]
+ lea ecx, [r9 + rcx*CONST]
+ and ecx, CONST
+ movzx ecx, byte [r8 + rcx]
+ mov byte [rdx + CONST], cl
+ mov byte [rdx + CONST], al
+ cmp rdi, rsi
+ cjmp LABEL134
+ ret
+LABEL20:
+ ret
+LABEL60:
+ mov rdx, rsi
+ jmp LABEL138

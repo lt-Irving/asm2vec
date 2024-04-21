@@ -1,0 +1,17 @@
+ .name fcn.000065d0
+ .offset 00000000000065d0
+ .file choom
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov rdi, rbp
+ mov rsi, rax
+ pop rbp
+ jmp CONST
+LABEL5:
+ xor eax, eax
+ pop rbp
+ ret

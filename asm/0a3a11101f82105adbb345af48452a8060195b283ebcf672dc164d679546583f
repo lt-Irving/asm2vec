@@ -1,0 +1,58 @@
+ .name sym._rl_enable_paren_matching
+ .offset 00000000000dd540
+ .file bash
+ endbr64
+ push rbp
+ lea rdx, [rip + CONST]
+ test edi, edi
+ cjmp LABEL4
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rdx, [rip + CONST]
+ lea rsi, [rip + CONST]
+ pop rbp
+ mov edi, CONST
+ jmp CONST
+LABEL4:
+ lea rbp, [rip + CONST]
+ mov edi, CONST
+ mov rsi, rbp
+ call CONST
+ mov rsi, rbp
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ mov edi, CONST
+ pop rbp
+ lea rdx, [rip + CONST]
+ jmp CONST

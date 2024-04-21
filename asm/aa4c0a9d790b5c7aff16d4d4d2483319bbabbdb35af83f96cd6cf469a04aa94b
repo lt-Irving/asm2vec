@@ -1,0 +1,44 @@
+ .name sym.putenv
+ .offset 00000000000afb20
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ sub rsp, CONST
+ cmp byte [rdi], CONST
+ cjmp LABEL5
+ xor esi, esi
+ mov rbp, rdi
+ call CONST
+ movsxd rbx, eax
+ cmp byte [rbp + rbx], CONST
+ cjmp LABEL5
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ xor edx, edx
+ mov byte [rax + rbx], CONST
+ mov rdi, rax
+ lea rsi, [rbx + rax + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov edx, dword [rax + CONST]
+ and dh, CONST
+ or edx, CONST
+ mov dword [rax + CONST], edx
+ xor eax, eax
+LABEL38:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL5:
+ call CONST
+ mov dword [rax], CONST
+ mov eax, CONST
+ jmp LABEL38

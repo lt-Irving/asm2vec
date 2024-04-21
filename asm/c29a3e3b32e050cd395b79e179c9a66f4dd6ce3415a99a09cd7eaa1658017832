@@ -1,0 +1,33 @@
+ .name sym.can_optimize_connection
+ .offset 0000000000096a80
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ cmp byte [rax], CONST
+ cjmp LABEL3
+ xor eax, eax
+ ret
+LABEL3:
+ push rbx
+ mov rbx, rdi
+ call CONST
+ test eax, eax
+ cjmp LABEL10
+ mov rdx, qword [rbx + CONST]
+ mov eax, dword [rdx + CONST]
+ lea ecx, [rax + CONST]
+ cmp ecx, CONST
+ cjmp LABEL15
+ cmp eax, CONST
+ cjmp LABEL15
+LABEL10:
+ xor eax, eax
+ pop rbx
+ ret
+LABEL15:
+ mov rax, qword [rdx + CONST]
+ pop rbx
+ cmp dword [rax], CONST
+ sete al
+ movzx eax, al
+ ret

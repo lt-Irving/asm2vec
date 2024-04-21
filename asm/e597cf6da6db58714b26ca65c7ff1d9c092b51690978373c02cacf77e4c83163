@@ -1,0 +1,49 @@
+ .name sym._rl_arg_callback
+ .offset 00000000000d62e0
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbp
+ sub rsp, CONST
+ call CONST
+ mov ebp, eax
+ mov eax, CONST
+ test ebp, ebp
+ cjmp LABEL9
+ mov eax, dword [rip + CONST]
+ test al, CONST
+ cjmp LABEL12
+ mov esi, ebp
+ mov edi, r12d
+ call CONST
+ mov ebp, eax
+ test eax, eax
+ cjmp LABEL18
+ mov esi, dword [rip + CONST]
+ imul esi, dword [rip + CONST]
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+LABEL18:
+ xor eax, eax
+ cmp ebp, CONST
+ setne al
+LABEL9:
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ and eax, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ call CONST
+ mov edi, ebp
+ and qword [rip + CONST], CONST
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

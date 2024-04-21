@@ -1,0 +1,30 @@
+ .name sym.map_over_funcs
+ .offset 000000000004f7c0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ mov r12, qword [rip + CONST]
+ push rbp
+ test r12, r12
+ cjmp LABEL6
+ mov r13, rdi
+ mov edi, dword [r12 + CONST]
+ xor r12d, r12d
+ test edi, edi
+ cjmp LABEL6
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rsi, r13
+ mov rbp, rax
+ mov rdx, rax
+ call CONST
+ mov rdi, rbp
+ mov r12, qword [rbp]
+ call CONST
+LABEL6:
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ ret

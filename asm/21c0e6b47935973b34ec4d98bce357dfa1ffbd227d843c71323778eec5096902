@@ -1,0 +1,34 @@
+ .name sym.executing_line_number
+ .offset 0000000000045240
+ .file bash
+ endbr64
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL3
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL3
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL9
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+LABEL9:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ mov edx, dword [rax]
+ cmp edx, CONST
+ cjmp LABEL18
+ cmp edx, CONST
+ cjmp LABEL18
+ cmp edx, CONST
+ cjmp LABEL3
+LABEL18:
+ mov rax, qword [rax + CONST]
+ mov eax, dword [rax + CONST]
+ ret
+LABEL3:
+ mov eax, dword [rip + CONST]
+ ret

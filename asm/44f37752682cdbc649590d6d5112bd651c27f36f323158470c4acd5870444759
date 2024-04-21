@@ -1,0 +1,21 @@
+ .name sym.restore_input_line_state
+ .offset 000000000003e220
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rax, qword [rbx]
+ mov qword [rip + CONST], rax
+ mov rax, qword [rbx + CONST]
+ mov qword [rip + CONST], rax
+ mov rax, qword [rbx + CONST]
+ mov qword [rip + CONST], rax
+ mov rax, qword [rbx + CONST]
+ pop rbx
+ mov qword [rip + CONST], rax
+ jmp CONST

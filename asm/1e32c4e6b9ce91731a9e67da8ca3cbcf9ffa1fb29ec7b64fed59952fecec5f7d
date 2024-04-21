@@ -1,0 +1,35 @@
+ .name sym.clear_hostname_list
+ .offset 0000000000087ce0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL9
+ mov rax, qword [rip + CONST]
+ sub edx, CONST
+ lea rbx, [rax + CONST]
+ lea rbp, [rbx + rdx*CONST]
+ jmp LABEL14
+LABEL20:
+ add rbx, CONST
+LABEL14:
+ mov rdi, qword [rax]
+ call CONST
+ mov rax, rbx
+ cmp rbx, rbp
+ cjmp LABEL20
+LABEL9:
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL3:
+ ret

@@ -1,0 +1,63 @@
+ .name fcn.00001d70
+ .offset 0000000000001d70
+ .file chattr
+ endbr64
+ cmp word [rsi + CONST], CONST
+ cjmp LABEL2
+ push r12
+ lea r12, [rsi + CONST]
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ cmp word [rsi + CONST], CONST
+ cjmp LABEL10
+LABEL45:
+ mov rdi, rbx
+ call CONST
+ mov rdi, r12
+ mov rbp, rax
+ call CONST
+ lea rdi, [rbp + rax + CONST]
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL20
+ mov r9, r12
+ mov r8, rbx
+ lea rcx, [rip + CONST]
+ mov rdi, rax
+ mov rdx, CONST
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ mov dword [rsp + CONST], eax
+ call CONST
+ mov eax, dword [rsp + CONST]
+LABEL44:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ xor eax, eax
+ ret
+LABEL10:
+ xor eax, eax
+ cmp byte [r12 + CONST], CONST
+ cjmp LABEL44
+ jmp LABEL45
+LABEL20:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, rax
+ call CONST
+ or eax, CONST
+ jmp LABEL44

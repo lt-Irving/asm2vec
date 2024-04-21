@@ -1,0 +1,19 @@
+ .name sym.unlink_fifo
+ .offset 00000000000679c0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push rbx
+ movsxd rbx, edi
+ mov eax, dword [rax + rbx*CONST]
+ test eax, eax
+ cjmp LABEL6
+ pop rbx
+ ret
+LABEL6:
+ call CONST
+ mov rax, qword [rip + CONST]
+ sub dword [rip + CONST], CONST
+ mov dword [rax + rbx*CONST], CONST
+ pop rbx
+ ret

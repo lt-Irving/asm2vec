@@ -1,0 +1,19 @@
+ .name fcn.0000cc80
+ .offset 000000000000cc80
+ .file df
+ test edi, edi
+ cjmp LABEL1
+ ret
+LABEL1:
+ sub rsp, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+ add rsp, CONST
+ ret
+LABEL6:
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST

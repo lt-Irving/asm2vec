@@ -1,0 +1,22 @@
+ .name sym.xtrace_print_case_command_head
+ .offset 0000000000042af0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push rbx
+ mov rbx, rdi
+ test rax, rax
+ cmove rax, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov rax, qword [rbx + CONST]
+ mov esi, CONST
+ pop rbx
+ mov rdi, qword [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov rcx, qword [rax]
+ xor eax, eax
+ jmp CONST

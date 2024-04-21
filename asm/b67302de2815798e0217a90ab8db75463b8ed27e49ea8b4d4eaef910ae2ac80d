@@ -1,0 +1,116 @@
+ .name sym.enable_hostname_completion
+ .offset 00000000000871f0
+ .file bash
+ endbr64
+ push r12
+ mov r12d, dword [rip + CONST]
+ push rbp
+ push rbx
+ mov ebx, edi
+ test edi, edi
+ cjmp LABEL7
+ lea rax, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+LABEL36:
+ mov esi, dword [rip + CONST]
+ mov rbp, qword [rip + CONST]
+ test esi, esi
+ cjmp LABEL14
+ test rbp, rbp
+ cjmp LABEL16
+ cmp qword [rip + CONST], rbp
+ cjmp LABEL16
+LABEL14:
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ sete dl
+ test ebx, ebx
+ setne al
+ cmp dl, al
+ cjmp LABEL27
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ lea rax, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ jmp LABEL36
+LABEL27:
+ mov rdi, rbp
+ call CONST
+ movsxd rdx, ebx
+ lea rdi, [rdx + rax + CONST]
+ call CONST
+ mov rbp, rax
+ test ebx, ebx
+ cjmp LABEL44
+ mov rdx, qword [rip + CONST]
+ mov rcx, rbp
+ movzx eax, byte [rdx]
+ test al, al
+ cjmp LABEL49
+ nop dword [rax]
+LABEL58:
+ add rdx, CONST
+ cmp al, CONST
+ cjmp LABEL53
+ mov byte [rcx], al
+ add rcx, CONST
+LABEL53:
+ movzx eax, byte [rdx]
+ test al, al
+ cjmp LABEL58
+LABEL49:
+ mov byte [rcx], CONST
+LABEL101:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov eax, r12d
+ pop rbx
+ mov qword [rip + CONST], rbp
+ pop rbp
+ pop r12
+ ret
+LABEL16:
+ test ebx, ebx
+ cjmp LABEL69
+ mov edi, CONST
+ call CONST
+ mov ecx, CONST
+ movabs rsi, CONST
+ mov qword [rax], rsi
+ mov dword [rax + CONST], CONST
+ mov word [rax + CONST], cx
+ mov byte [rax + CONST], CONST
+ pop rbx
+ mov qword [rip + CONST], rax
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret
+LABEL69:
+ mov edi, CONST
+ call CONST
+ mov edx, CONST
+ movabs rsi, CONST
+ mov qword [rax], rsi
+ mov dword [rax + CONST], CONST
+ mov word [rax + CONST], dx
+ pop rbx
+ mov qword [rip + CONST], rax
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret
+LABEL44:
+ mov byte [rax], CONST
+ mov rsi, qword [rip + CONST]
+ lea rdi, [rax + CONST]
+ call CONST
+ jmp LABEL101

@@ -1,0 +1,32 @@
+ .name sym.rl_vi_bracktype
+ .offset 00000000000bc810
+ .file bash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ cjmp LABEL3
+ mov eax, CONST
+ cmp edi, CONST
+ cjmp LABEL6
+ mov eax, CONST
+ cmp edi, CONST
+ cjmp LABEL9
+LABEL6:
+ ret
+LABEL9:
+ xor eax, eax
+ cmp edi, CONST
+ sete al
+ ret
+LABEL3:
+ mov eax, CONST
+ cmp edi, CONST
+ cjmp LABEL6
+ xor eax, eax
+ cmp edi, CONST
+ setne al
+ lea eax, [rax + rax*CONST + CONST]
+ ret
+LABEL2:
+ mov eax, CONST
+ ret

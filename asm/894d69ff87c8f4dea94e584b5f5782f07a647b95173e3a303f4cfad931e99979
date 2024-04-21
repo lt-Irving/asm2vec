@@ -1,0 +1,29 @@
+ .name fcn.000052c0
+ .offset 00000000000052c0
+ .file df
+ push r12
+ mov r12, rdi
+ push rbx
+ sub rsp, CONST
+ movzx ebx, byte [rdi]
+ test bl, bl
+ cjmp LABEL6
+ call CONST
+ mov rdx, r12
+ nop dword [rax]
+LABEL17:
+ mov rcx, qword [rax]
+ test byte [rcx + rbx*CONST], CONST
+ cjmp LABEL12
+ mov byte [rdx], CONST
+LABEL12:
+ movzx ebx, byte [rdx + CONST]
+ add rdx, CONST
+ test bl, bl
+ cjmp LABEL17
+LABEL6:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret

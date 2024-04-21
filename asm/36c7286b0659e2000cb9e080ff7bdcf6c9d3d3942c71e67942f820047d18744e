@@ -1,0 +1,58 @@
+ .name sym._rl_compare_chars
+ .offset 00000000000dbb00
+ .file bash
+ endbr64
+ push r14
+ movsxd r10, esi
+ mov rsi, rdx
+ mov r14, r9
+ push r13
+ movsxd r13, r8d
+ push r12
+ push rbp
+ mov rbp, rcx
+ push rbx
+ lea rbx, [rdi + r10]
+ mov rdi, rbx
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ add rbp, r13
+ mov rsi, r14
+ mov r12d, eax
+ mov rdi, rbp
+ call CONST
+ cmp r12d, eax
+ cjmp LABEL15
+ test eax, eax
+ cjmp LABEL15
+ movzx eax, byte [rbp]
+ cmp byte [rbx], al
+ cjmp LABEL15
+ cmp r12d, CONST
+ cjmp LABEL29
+ lea edx, [r12 + CONST]
+ mov eax, CONST
+ add rdx, CONST
+ jmp LABEL33
+LABEL39:
+ add rax, CONST
+ cmp rdx, rax
+ cjmp LABEL29
+LABEL33:
+ movzx ecx, byte [rbp + rax]
+ cmp byte [rbx + rax], cl
+ cjmp LABEL39
+ nop dword [rax + rax]
+LABEL15:
+ xor eax, eax
+LABEL49:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL29:
+ mov eax, CONST
+ jmp LABEL49

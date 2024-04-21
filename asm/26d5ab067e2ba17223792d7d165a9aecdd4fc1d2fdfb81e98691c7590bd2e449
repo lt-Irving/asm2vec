@@ -1,0 +1,85 @@
+ .name sym.remember_mail_dates
+ .offset 0000000000074220
+ .file bash
+ endbr64
+ push r12
+ lea rdi, [rip + CONST]
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov dword [rsp + CONST], CONST
+ lea r12, [rsp + CONST]
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL14
+ nop dword [rax]
+LABEL42:
+ mov rsi, r12
+ mov rdi, rbx
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL21
+ movzx eax, byte [rbp]
+ mov rdx, rbp
+ test al, al
+ cjmp LABEL25
+LABEL48:
+ mov rsi, rdx
+LABEL36:
+ cmp al, CONST
+ cjmp LABEL28
+ cmp al, CONST
+ cjmp LABEL30
+ cmp al, CONST
+ cjmp LABEL30
+ movzx eax, byte [rsi + CONST]
+ add rsi, CONST
+ test al, al
+ cjmp LABEL36
+LABEL25:
+ xor esi, esi
+LABEL51:
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ call CONST
+ jmp LABEL42
+LABEL28:
+ cmp byte [rsi + CONST], CONST
+ cjmp LABEL25
+ movzx eax, byte [rsi + CONST]
+ lea rdx, [rsi + CONST]
+ test al, al
+ cjmp LABEL48
+ jmp LABEL25
+LABEL30:
+ cmp byte [rsi], CONST
+ cjmp LABEL51
+ mov byte [rsi], CONST
+ add rsi, CONST
+ jmp LABEL51
+LABEL14:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL21
+ xor esi, esi
+ call CONST
+ nop dword [rax]
+LABEL21:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL65
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL65:
+ call CONST

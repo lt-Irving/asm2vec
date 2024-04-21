@@ -1,0 +1,39 @@
+ .name fcn.00012930
+ .offset 0000000000012930
+ .file dash
+ endbr64
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov ebx, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ call CONST
+ xor ecx, ecx
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov edi, eax
+ call CONST
+ mov dword [rip + CONST], ebx
+ call CONST
+ xor esi, esi
+ mov rdi, rsp
+ mov edx, CONST
+ mov rax, qword [rip + CONST]
+ mov dword [rsp], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL30
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL30:
+ call CONST

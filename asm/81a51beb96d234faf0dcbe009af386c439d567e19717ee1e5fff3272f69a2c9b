@@ -1,0 +1,52 @@
+ .name sym.legal_identifier
+ .offset 000000000003e9f0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL5
+ movzx ebp, byte [rdi]
+ mov rbx, rdi
+ xor r12d, r12d
+ test bpl, bpl
+ cjmp LABEL10
+ call CONST
+ mov rsi, qword [rax]
+ movzx eax, bpl
+ test byte [rsi + rax*CONST + CONST], CONST
+ cjmp LABEL15
+ cmp bpl, CONST
+ cjmp LABEL10
+LABEL15:
+ movzx eax, byte [rbx + CONST]
+ lea rdx, [rbx + CONST]
+ test al, al
+ cjmp LABEL21
+LABEL30:
+ movzx ecx, al
+ test byte [rsi + rcx*CONST], CONST
+ cjmp LABEL24
+ cmp al, CONST
+ cjmp LABEL5
+LABEL24:
+ movzx eax, byte [rdx + CONST]
+ add rdx, CONST
+ test al, al
+ cjmp LABEL30
+LABEL21:
+ mov r12d, CONST
+LABEL10:
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret

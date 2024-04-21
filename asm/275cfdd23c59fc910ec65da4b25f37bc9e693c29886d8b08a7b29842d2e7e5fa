@@ -1,0 +1,20 @@
+ .name sym.addtimeval
+ .offset 00000000000b0f30
+ .file bash
+ endbr64
+ mov rcx, qword [rdx]
+ mov rdx, qword [rdx + CONST]
+ mov rax, rdi
+ add rcx, qword [rsi]
+ add rdx, qword [rsi + CONST]
+ mov qword [rdi], rcx
+ cmp rdx, CONST
+ cjmp LABEL8
+ mov qword [rdi + CONST], rdx
+ ret
+LABEL8:
+ sub rdx, CONST
+ add rcx, CONST
+ mov qword [rdi + CONST], rdx
+ mov qword [rdi], rcx
+ ret

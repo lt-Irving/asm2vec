@@ -1,0 +1,112 @@
+ .name fcn.000792b0
+ .offset 00000000000792b0
+ .file bash
+LABEL93:
+ push rbp
+ lea rsi, [rip + CONST]
+ mov rbp, rdi
+ mov edx, CONST
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ nop word cs:[rax + rax]
+ nop dword [rax]
+ push r13
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov ebx, edx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ and ecx, CONST
+ cjmp LABEL23
+ lea r13, [rsp + CONST]
+ xor esi, esi
+ mov rdx, r13
+ call CONST
+ mov ecx, dword [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ test ecx, ecx
+ cjmp LABEL31
+LABEL67:
+ xor eax, eax
+LABEL71:
+ mov rbx, qword [rsp + CONST]
+ xor rbx, qword fs:[CONST]
+ cjmp LABEL35
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL23:
+ lea rsi, [rsp + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL45
+ lea rsi, [rsp + CONST]
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL50
+ mov rax, qword [rsp + CONST]
+LABEL66:
+ mov rsi, qword [rsp + CONST]
+ cmp ebx, CONST
+ cjmp LABEL54
+ lea rcx, [rip + CONST]
+ movsxd rdx, dword [rcx + rbx*CONST]
+ add rdx, rcx
+ notrack jmp rdx
+LABEL31:
+ mov rdx, r13
+ xor esi, esi
+ mov rdi, r12
+ call CONST
+ mov edx, dword [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ test edx, edx
+ cjmp LABEL66
+ jmp LABEL67
+ cmp rax, rsi
+ setle al
+ movzx eax, al
+ jmp LABEL71
+ cmp rax, rsi
+ setge al
+ movzx eax, al
+ jmp LABEL71
+ cmp rax, rsi
+ setl al
+ movzx eax, al
+ jmp LABEL71
+ cmp rax, rsi
+ setg al
+ movzx eax, al
+ jmp LABEL71
+ cmp rax, rsi
+ setne al
+ movzx eax, al
+ jmp LABEL71
+LABEL54:
+ cmp rax, rsi
+ sete al
+ movzx eax, al
+ jmp LABEL71
+LABEL45:
+ mov rdi, rbp
+ call LABEL93
+LABEL35:
+ call CONST
+LABEL50:
+ mov rdi, r12
+ call LABEL93
+ nop word cs:[rax + rax]
+ nop dword [rax]

@@ -1,0 +1,22 @@
+ .name sym.make_group_command
+ .offset 0000000000040790
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov qword [rax + CONST], rbp
+ mov rbx, rax
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

@@ -1,0 +1,47 @@
+ .name fcn.000039a0
+ .offset 00000000000039a0
+ .file cmp
+ lea rcx, [rsi + CONST]
+ mov byte [rsi + CONST], CONST
+ mov r8d, CONST
+ movabs rsi, CONST
+ movabs r9, CONST
+ test rdi, rdi
+ cjmp LABEL6
+ nop word [rax + rax]
+LABEL19:
+ mov rax, rdi
+ sub rcx, CONST
+ mul rsi
+ shr rdx, CONST
+ lea rax, [rdx + rdx*CONST]
+ add rax, rax
+ sub rdi, rax
+ add edi, CONST
+ mov byte [rcx], dil
+ mov rdi, rdx
+ test rdx, rdx
+ cjmp LABEL19
+ mov rax, rcx
+ ret
+LABEL36:
+ mov rcx, rsi
+LABEL6:
+ mov rax, rdi
+ lea rsi, [rcx + CONST]
+ imul r9
+ mov rax, rdi
+ sar rax, CONST
+ sar rdx, CONST
+ sub rdx, rax
+ lea rax, [rdx + rdx*CONST]
+ lea eax, [r8 + rax*CONST]
+ sub eax, edi
+ mov rdi, rdx
+ mov byte [rcx + CONST], al
+ test rdx, rdx
+ cjmp LABEL36
+ sub rcx, CONST
+ mov byte [rsi + CONST], CONST
+ mov rax, rcx
+ ret

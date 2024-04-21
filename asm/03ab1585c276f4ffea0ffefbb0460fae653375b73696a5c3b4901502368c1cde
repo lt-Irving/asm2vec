@@ -1,0 +1,45 @@
+ .name fcn.000087b0
+ .offset 00000000000087b0
+ .file apt-get
+ endbr64
+ lea rax, [rip + CONST]
+ push rbp
+ mov rbp, rdi
+ mov qword [rdi], rax
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL9
+ call CONST
+LABEL9:
+ lea rax, [rip + CONST]
+ mov rdi, qword [rbp + CONST]
+ mov qword [rbp], rax
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL16
+ call CONST
+LABEL16:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL21
+ call CONST
+LABEL21:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL26
+ call CONST
+LABEL26:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL31
+ call CONST
+LABEL31:
+ mov rdi, rbp
+ mov esi, CONST
+ pop rbp
+ jmp CONST

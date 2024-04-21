@@ -1,0 +1,19 @@
+ .name sym.close_buffered_stream
+ .offset 0000000000076c80
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov ebp, dword [rdi]
+ test byte [rdi + CONST], CONST
+ cjmp LABEL6
+ mov qword [rdi + CONST], CONST
+LABEL6:
+ call CONST
+ mov edi, ebp
+ pop rbp
+ jmp CONST
+LABEL2:
+ xor eax, eax
+ ret

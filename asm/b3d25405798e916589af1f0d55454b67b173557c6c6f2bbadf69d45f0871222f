@@ -1,0 +1,22 @@
+ .name sym.stream_on_stack
+ .offset 00000000000328d0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ jmp LABEL4
+LABEL9:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL7
+LABEL3:
+ cmp dword [rax + CONST], edi
+ cjmp LABEL9
+ mov eax, CONST
+ ret
+LABEL7:
+ ret
+LABEL4:
+ xor eax, eax
+ ret

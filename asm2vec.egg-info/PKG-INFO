@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: asm2vec
+Version: 1.0.0
+Summary: Unofficial implementation of asm2vec using pytorch
+Home-page: UNKNOWN
+Author: oalieno
+Author-email: jeffrey6910@gmail.com
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN

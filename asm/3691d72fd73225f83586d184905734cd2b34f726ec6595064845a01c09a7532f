@@ -1,0 +1,33 @@
+ .name sym.discard_pipeline
+ .offset 0000000000059c10
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdi
+ push r12
+ xor r12d, r12d
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ nop word [rax + rax]
+LABEL20:
+ mov rbp, rbx
+ mov rbx, qword [rbx]
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL14
+ call CONST
+LABEL14:
+ mov rdi, rbp
+ add r12d, CONST
+ call CONST
+ cmp r13, rbx
+ cjmp LABEL20
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

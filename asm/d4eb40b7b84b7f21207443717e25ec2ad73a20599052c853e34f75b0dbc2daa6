@@ -1,0 +1,16 @@
+ .name fcn.000194c0
+ .offset 00000000000194c0
+ .file dpkg-deb
+ endbr64
+ cmp byte [rcx], CONST
+ cjmp LABEL2
+ ret
+LABEL2:
+ push rbx
+ mov rbx, qword [r8 + CONST]
+ mov rdi, rcx
+ add rbx, rsi
+ call CONST
+ mov qword [rbx], rax
+ pop rbx
+ ret

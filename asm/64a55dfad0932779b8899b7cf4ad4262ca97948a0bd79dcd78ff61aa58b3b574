@@ -1,0 +1,25 @@
+ .name sym.make_absolute
+ .offset 000000000003f470
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ test rsi, rsi
+ cjmp LABEL4
+ cmp byte [rdi], CONST
+ cjmp LABEL6
+LABEL4:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST
+LABEL6:
+ mov rdi, rsi
+ xor edx, edx
+ mov rsi, rbp
+ pop rbp
+ jmp CONST

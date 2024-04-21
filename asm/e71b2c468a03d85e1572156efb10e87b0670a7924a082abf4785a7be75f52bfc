@@ -1,0 +1,60 @@
+ .name sym.array_to_argv
+ .offset 000000000007c240
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL7
+ mov r13, rdi
+ mov edi, dword [rdi + CONST]
+ xor r14d, r14d
+ test edi, edi
+ cjmp LABEL12
+ add edi, CONST
+ call CONST
+ mov r14, rax
+ mov rax, qword [r13 + CONST]
+ mov rbx, qword [rax + CONST]
+ cmp rax, rbx
+ cjmp LABEL19
+ mov r12d, CONST
+LABEL37:
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL23
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL23:
+ mov qword [r14 + r12*CONST + CONST], rbp
+ movsxd rax, r12d
+ mov rbx, qword [rbx + CONST]
+ add r12, CONST
+ cmp qword [r13 + CONST], rbx
+ cjmp LABEL37
+ lea rax, [r14 + rax*CONST]
+LABEL50:
+ mov qword [rax], CONST
+LABEL12:
+ pop rbx
+ mov rax, r14
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL7:
+ xor r14d, r14d
+ jmp LABEL12
+LABEL19:
+ mov rax, r14
+ jmp LABEL50

@@ -1,0 +1,79 @@
+ .name sym._rl_make_prompt_for_search
+ .offset 00000000000ca440
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ call CONST
+ mov rbp, qword [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL10
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ lea rbp, [rax + CONST]
+ mov rdi, rbp
+ call CONST
+ lea edi, [rax + CONST]
+ mov r12, rax
+ movsxd rdi, edi
+ call CONST
+ mov r8, rax
+ test r12d, r12d
+ cjmp LABEL25
+LABEL69:
+ movsxd r12, r12d
+ mov byte [r8 + r12], bl
+ mov byte [r8 + r12 + CONST], CONST
+LABEL59:
+ mov eax, dword [rip + CONST]
+ add eax, CONST
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ mov rax, r8
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL15:
+ cmp byte [rbp], CONST
+ cjmp LABEL10
+ mov rdi, rbp
+ call CONST
+ lea edi, [rax + CONST]
+ mov r12, rax
+ movsxd rdi, edi
+ movsxd rbp, r12d
+ call CONST
+ lea r13, [rbp + CONST]
+ mov r8, rax
+ test r12d, r12d
+ cjmp LABEL51
+ mov rsi, qword [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov r8, rax
+ lea rax, [rax + rbp]
+LABEL51:
+ mov byte [rax], bl
+ mov byte [r8 + r13], CONST
+ jmp LABEL59
+LABEL10:
+ mov edi, CONST
+ mov r13d, CONST
+ call CONST
+ mov r8, rax
+ jmp LABEL51
+LABEL25:
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov r8, rax
+ jmp LABEL69

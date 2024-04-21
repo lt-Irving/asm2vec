@@ -1,0 +1,31 @@
+ .name fcn.0000d3b0
+ .offset 000000000000d3b0
+ .file diff
+ lea edx, [rdi + CONST]
+ cmp dl, CONST
+ cjmp LABEL2
+ lea rcx, [rip + CONST]
+ movzx edx, dl
+ movsxd rax, dword [rcx + rdx*CONST]
+ add rax, rcx
+ jmp rax
+ mov eax, edi
+ ret
+ mov eax, CONST
+ ret
+ mov eax, CONST
+ ret
+ mov eax, CONST
+ ret
+ mov eax, CONST
+ ret
+ mov eax, CONST
+ ret
+ mov eax, CONST
+ ret
+ mov eax, CONST
+ ret
+LABEL2:
+ cmp dil, CONST
+ setle al
+ ret

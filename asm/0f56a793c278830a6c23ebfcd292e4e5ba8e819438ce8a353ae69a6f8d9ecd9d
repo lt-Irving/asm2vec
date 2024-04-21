@@ -1,0 +1,14 @@
+ .name fcn.00002c90
+ .offset 0000000000002c90
+ .file [
+ mov eax, dword [rip + CONST]
+ lea edx, [rax + CONST]
+ cmp edx, dword [rip + CONST]
+ mov dword [rip + CONST], edx
+ cjmp LABEL4
+ add eax, CONST
+ mov dword [rip + CONST], eax
+ ret
+LABEL4:
+ push rax
+ call CONST

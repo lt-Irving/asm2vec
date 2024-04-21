@@ -1,0 +1,36 @@
+ .name fcn.00006ce0
+ .offset 0000000000006ce0
+ .file chsh
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rbp, qword [rdi + CONST]
+ test rbp, rbp
+ cjmp LABEL6
+ nop dword [rax]
+LABEL23:
+ mov rax, qword [rbp + CONST]
+ mov rdi, qword [rbp]
+ mov qword [rbx + CONST], rax
+ test rdi, rdi
+ cjmp LABEL12
+ call CONST
+LABEL12:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL16
+ mov rax, qword [rbx + CONST]
+ call qword [rax + CONST]
+LABEL16:
+ mov rdi, rbp
+ call CONST
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL23
+LABEL6:
+ mov qword [rbx + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

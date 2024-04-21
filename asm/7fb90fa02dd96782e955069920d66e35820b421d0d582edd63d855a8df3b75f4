@@ -1,0 +1,71 @@
+ .name sym.unalias_builtin
+ .offset 00000000000908a0
+ .file bash
+ endbr64
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ xor ebp, ebp
+ push rbx
+ mov rbx, rdi
+ call CONST
+LABEL17:
+ mov rsi, r12
+ mov rdi, rbx
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL12
+ cmp eax, CONST
+ cjmp LABEL14
+ mov ebp, CONST
+ cmp eax, CONST
+ cjmp LABEL17
+LABEL35:
+ call CONST
+ mov eax, CONST
+LABEL53:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL14:
+ call CONST
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ test ebp, ebp
+ cjmp LABEL31
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL34
+ jmp LABEL35
+LABEL45:
+ mov rdi, qword [rax]
+ call CONST
+LABEL50:
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL40
+LABEL34:
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ call CONST
+ test rax, rax
+ cjmp LABEL45
+ mov rax, qword [rbx + CONST]
+ add ebp, CONST
+ mov rdi, qword [rax]
+ call CONST
+ jmp LABEL50
+LABEL31:
+ call CONST
+ xor eax, eax
+ jmp LABEL53
+LABEL40:
+ xor eax, eax
+ test ebp, ebp
+ setne al
+ jmp LABEL53

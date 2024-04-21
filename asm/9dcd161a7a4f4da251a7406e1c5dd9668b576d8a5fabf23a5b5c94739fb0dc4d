@@ -1,0 +1,20 @@
+ .name fcn.0000a280
+ .offset 000000000000a280
+ .file dash
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov rdi, rbp
+ mov rbx, rax
+ call CONST
+ mov qword [rbx + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rax], rbx
+ mov qword [rip + CONST], rbx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

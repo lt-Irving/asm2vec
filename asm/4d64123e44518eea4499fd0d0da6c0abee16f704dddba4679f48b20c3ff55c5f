@@ -1,0 +1,16 @@
+ .name sym.trap_to_sighandler
+ .offset 0000000000075840
+ .file bash
+ endbr64
+ lea rax, [rip + CONST]
+ movsxd rdi, edi
+ mov edx, dword [rax + rdi*CONST]
+ mov eax, CONST
+ test dl, CONST
+ cjmp LABEL6
+ and edx, CONST
+ lea rax, [rip + CONST]
+ mov edx, CONST
+ cmove rax, rdx
+LABEL6:
+ ret

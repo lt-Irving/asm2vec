@@ -1,0 +1,20 @@
+ .name sym.save_pipestatus_array
+ .offset 0000000000054190
+ .file bash
+ endbr64
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ test byte [rax + CONST], CONST
+ cjmp LABEL5
+ mov rdi, qword [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ add rsp, CONST
+ jmp CONST
+LABEL5:
+ xor eax, eax
+ add rsp, CONST
+ ret

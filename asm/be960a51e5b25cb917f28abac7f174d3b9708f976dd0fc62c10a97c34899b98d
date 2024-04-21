@@ -1,0 +1,19 @@
+ .name sym.rl_copy_keymap
+ .offset 00000000000bcd90
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ call CONST
+ xor edx, edx
+ nop
+LABEL12:
+ movzx ecx, byte [rbx + rdx]
+ mov byte [rax + rdx], cl
+ mov rcx, qword [rbx + rdx + CONST]
+ mov qword [rax + rdx + CONST], rcx
+ add rdx, CONST
+ cmp rdx, CONST
+ cjmp LABEL12
+ pop rbx
+ ret

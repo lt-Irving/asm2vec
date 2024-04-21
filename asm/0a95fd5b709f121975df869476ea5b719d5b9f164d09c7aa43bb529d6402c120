@@ -1,0 +1,28 @@
+ .name fcn.0004c620
+ .offset 000000000004c620
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, qword [rip + CONST]
+ push rbx
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rdi, qword [r12 + CONST]
+ mov rbx, rax
+ test rdi, rdi
+ cjmp LABEL16
+ call CONST
+LABEL16:
+ mov qword [r12 + CONST], rbx
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

@@ -1,0 +1,21 @@
+ .name sym.ttrestore
+ .offset 00000000000b0260
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ xor edi, edi
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ lea rdx, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

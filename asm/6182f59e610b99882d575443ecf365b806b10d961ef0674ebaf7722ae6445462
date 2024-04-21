@@ -1,0 +1,19 @@
+ .name fcn.0000ef00
+ .offset 000000000000ef00
+ .file dash
+ endbr64
+ mov rax, qword [rip + CONST]
+ mov rcx, qword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ mov qword [rdi + CONST], rcx
+ lea rcx, [rax + CONST]
+ cmp rdx, rcx
+ lea rcx, [rip + CONST]
+ mov qword [rdi + CONST], rdx
+ mov qword [rdi], rax
+ sete dl
+ xor edi, edi
+ cmp rax, rcx
+ setne dil
+ and rdi, rdx
+ jmp CONST

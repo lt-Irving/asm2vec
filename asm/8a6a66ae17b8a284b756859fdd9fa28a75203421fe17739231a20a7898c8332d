@@ -1,0 +1,43 @@
+ .name fcn.00002dd0
+ .offset 0000000000002dd0
+ .file basename
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ sub rsp, CONST
+ call CONST
+ cmp byte [rax], CONST
+ cjmp LABEL7
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ mov rdi, rbp
+ mov rsi, rax
+ xor eax, eax
+ cmp byte [rbp + rsi], CONST
+ sete al
+ add rsp, CONST
+ pop rbp
+ add rsi, rax
+ pop r12
+ jmp LABEL20
+LABEL7:
+ mov rdi, r12
+ call CONST
+ add rsp, CONST
+ mov rdi, r12
+ pop rbp
+ mov rsi, rax
+ pop r12
+ jmp LABEL20
+LABEL20:
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL33
+ add rsp, CONST
+ ret
+LABEL33:
+ call CONST

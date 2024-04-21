@@ -1,0 +1,89 @@
+ .name sym.array_subrange
+ .offset 000000000007be20
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL7
+ mov ebx, ecx
+ mov rcx, qword [rdi + CONST]
+ test rcx, rcx
+ cjmp LABEL7
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov rax, rsi
+ cmp qword [rdi + CONST], rsi
+ cjmp LABEL7
+ mov rsi, qword [rcx + CONST]
+ mov r9, rdx
+ mov r12d, r8d
+ cmp rcx, rsi
+ cjmp LABEL22
+ jmp LABEL7
+LABEL28:
+ mov rsi, qword [rsi + CONST]
+ cmp rcx, rsi
+ cjmp LABEL7
+LABEL22:
+ cmp qword [rsi], rax
+ cjmp LABEL28
+ cmp rcx, rsi
+ cjmp LABEL7
+ mov rdx, rsi
+ xor eax, eax
+ nop dword [rax + rax]
+LABEL39:
+ cmp r9, rax
+ cjmp LABEL35
+ mov rdx, qword [rdx + CONST]
+ add rax, CONST
+ cmp rcx, rdx
+ cjmp LABEL39
+LABEL35:
+ call CONST
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ mov r13, rax
+ test rbp, rbp
+ cjmp LABEL46
+ mov rdi, rbp
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+LABEL46:
+ test r13, r13
+ cjmp LABEL7
+ cmp ebx, CONST
+ mov edx, r12d
+ mov rsi, r13
+ sbb edi, edi
+ and edi, CONST
+ add edi, CONST
+ call CONST
+ mov rdi, r13
+ mov r12, rax
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL7:
+ add rsp, CONST
+ xor r12d, r12d
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ ret

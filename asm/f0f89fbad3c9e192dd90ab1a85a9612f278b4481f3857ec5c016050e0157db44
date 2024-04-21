@@ -1,0 +1,31 @@
+ .name sym.start_pipeline
+ .offset 0000000000059d20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL3
+ call CONST
+ lea rdi, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ call CONST
+LABEL3:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+LABEL16:
+ add rsp, CONST
+ ret
+LABEL10:
+ lea rdi, [rip + CONST]
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL16
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov rdi, rax
+ xor eax, eax
+ jmp CONST

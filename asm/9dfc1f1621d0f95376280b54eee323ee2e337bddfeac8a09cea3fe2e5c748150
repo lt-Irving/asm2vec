@@ -1,0 +1,55 @@
+ .name fcn.0000e990
+ .offset 000000000000e990
+ .file diff
+LABEL16:
+ call CONST
+ push rbx
+ mov ebx, edi
+ cmp edi, CONST
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL7
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL9
+LABEL7:
+ pop rbx
+ ret
+LABEL9:
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ cmp ebx, CONST
+ cjmp LABEL16
+ lea rcx, [rip + CONST]
+ mov edx, ebx
+ movsxd rax, dword [rcx + rdx*CONST]
+ add rax, rcx
+ jmp rax
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+LABEL34:
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], ebx
+ pop rbx
+ ret
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ jmp LABEL34
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ jmp LABEL34
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ jmp LABEL34
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ jmp LABEL34

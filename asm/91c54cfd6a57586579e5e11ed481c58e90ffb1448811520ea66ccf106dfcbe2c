@@ -1,0 +1,21 @@
+ .name sym.any_signals_trapped
+ .offset 00000000000756d0
+ .file bash
+ endbr64
+ mov eax, CONST
+ lea rdx, [rip + CONST]
+ jmp LABEL3
+LABEL9:
+ add rax, CONST
+ cmp rax, CONST
+ cjmp LABEL6
+LABEL3:
+ mov r8d, eax
+ test byte [rdx + rax*CONST], CONST
+ cjmp LABEL9
+ mov eax, r8d
+ ret
+LABEL6:
+ mov r8d, CONST
+ mov eax, r8d
+ ret

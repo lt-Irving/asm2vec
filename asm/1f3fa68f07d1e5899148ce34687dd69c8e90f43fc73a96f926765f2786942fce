@@ -1,0 +1,27 @@
+ .name fcn.00012200
+ .offset 0000000000012200
+ .file diff
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ test rdx, rdx
+ cjmp LABEL5
+ mov r12, rsi
+ lea rbx, [rdx + CONST]
+ call CONST
+ nop dword [rax + rax]
+LABEL16:
+ movzx ecx, byte [r12 + rbx]
+ mov rdx, qword [rax]
+ mov edx, dword [rdx + rcx*CONST]
+ mov byte [rbp + rbx], dl
+ sub rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL16
+LABEL5:
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ ret

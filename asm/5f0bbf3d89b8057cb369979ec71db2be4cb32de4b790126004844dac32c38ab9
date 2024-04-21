@@ -1,0 +1,87 @@
+ .name sym._hs_history_patsearch
+ .offset 00000000000db6f0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ mov r13d, esi
+ push r12
+ mov r12d, edx
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ lea esi, [rax + CONST]
+ mov rbp, rax
+ mov r14, rax
+ movsxd rax, esi
+ cmp byte [rbx + rax], CONST
+ cjmp LABEL17
+LABEL70:
+ lea rdi, [rbp + CONST]
+ call CONST
+ mov r15, rax
+ test r12b, CONST
+ cjmp LABEL22
+LABEL51:
+ sub rbp, CONST
+ mov rdi, r15
+LABEL55:
+ mov rsi, rbx
+ call CONST
+ cmp byte [r15 + rbp], CONST
+ cjmp LABEL28
+ mov byte [r15 + r14], CONST
+ mov byte [r15 + r14 + CONST], CONST
+LABEL28:
+ mov edx, r12d
+ mov esi, r13d
+ mov rdi, r15
+ or edx, CONST
+ call CONST
+ mov r12d, eax
+ cmp rbx, r15
+ cjmp LABEL38
+ mov rdi, r15
+ call CONST
+LABEL38:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL22:
+ cmp byte [rbx], CONST
+ cjmp LABEL51
+ mov byte [rax], CONST
+ lea rdi, [rax + CONST]
+ lea r14, [rbp + CONST]
+ jmp LABEL55
+LABEL17:
+ mov edx, CONST
+ mov ecx, CONST
+ test esi, esi
+ cjmp LABEL59
+ jmp LABEL60
+LABEL68:
+ mov esi, ecx
+ sub rax, CONST
+ sub esi, edx
+ mov edx, esi
+ test eax, eax
+ cjmp LABEL66
+LABEL59:
+ cmp byte [rbx + rax + CONST], CONST
+ cjmp LABEL68
+LABEL66:
+ test edx, edx
+ cjmp LABEL70
+LABEL60:
+ mov r12d, CONST
+ jmp LABEL38

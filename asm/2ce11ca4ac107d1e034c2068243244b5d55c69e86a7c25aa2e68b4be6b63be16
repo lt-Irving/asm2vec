@@ -1,0 +1,57 @@
+ .name sym.update_export_env_inplace
+ .offset 000000000004fe00
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ push rbx
+ movsxd rbx, esi
+ lea r12, [rbx + CONST]
+ sub rsp, CONST
+ test rdx, rdx
+ cjmp LABEL10
+ xor eax, eax
+ cmp byte [rdx], CONST
+ mov rbp, rdx
+ cjmp LABEL14
+LABEL36:
+ lea rdi, [rax + r12]
+ call CONST
+ mov rsi, r13
+ mov r12, rax
+ mov rdi, rax
+ call CONST
+ lea rdi, [r12 + rbx]
+ mov rsi, rbp
+ call CONST
+LABEL49:
+ mov rdi, r12
+ xor esi, esi
+ call CONST
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL14:
+ cmp byte [rdx + CONST], CONST
+ mov eax, CONST
+ cjmp LABEL36
+ cmp byte [rdx + CONST], CONST
+ mov eax, CONST
+ cjmp LABEL36
+ mov rdi, rdx
+ call CONST
+ jmp LABEL36
+LABEL10:
+ mov rdi, r12
+ call CONST
+ mov rsi, r13
+ mov rdi, rax
+ mov r12, rax
+ call CONST
+ jmp LABEL49

@@ -1,0 +1,17 @@
+ .name fcn.0000eb60
+ .offset 000000000000eb60
+ .file dash
+ sub rsp, CONST
+ call CONST
+ mov esi, CONST
+ mov rdi, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+ xor edi, edi
+ call CONST
+ pop rdx
+ jmp CONST
+LABEL6:
+ pop rax
+ ret

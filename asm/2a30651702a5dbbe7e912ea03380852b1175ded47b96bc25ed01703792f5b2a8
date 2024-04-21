@@ -1,0 +1,22 @@
+ .name sym.mitos
+ .offset 00000000000afdd0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor r8d, r8d
+ mov ecx, CONST
+ mov esi, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ mov rdi, rax
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL14
+ add rsp, CONST
+ ret
+LABEL14:
+ call CONST

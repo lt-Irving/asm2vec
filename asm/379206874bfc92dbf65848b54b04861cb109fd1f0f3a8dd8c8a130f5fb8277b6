@@ -1,0 +1,95 @@
+ .name sym.rl_unix_filename_rubout
+ .offset 00000000000d02f0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov r10d, dword [rip + CONST]
+ test r10d, r10d
+ cjmp LABEL4
+ mov r11d, CONST
+ test edi, edi
+ mov rcx, qword [rip + CONST]
+ mov r8d, r10d
+ movabs r9, CONST
+ cmovle edi, r11d
+ lea r11d, [rdi + CONST]
+ nop dword [rax]
+LABEL61:
+ movsxd rax, r8d
+ movsx eax, byte [rcx + rax + CONST]
+ test r8d, r8d
+ cjmp LABEL16
+ cmp al, CONST
+ cjmp LABEL18
+ bt r9, rax
+ cjmp LABEL18
+ lea esi, [r8 + CONST]
+ movsxd rsi, esi
+ nop word [rax + rax]
+LABEL72:
+ mov dword [rip + CONST], esi
+ mov r8d, esi
+ movsx eax, byte [rcx + rsi + CONST]
+ test esi, esi
+ cjmp LABEL16
+ cmp al, CONST
+ cjmp LABEL30
+LABEL18:
+ cmp eax, CONST
+ sete sil
+ cmp eax, CONST
+ sete dl
+ or sil, dl
+ cjmp LABEL16
+ cmp eax, CONST
+ lea eax, [r8 + CONST]
+ setne dl
+ cdqe
+ test dl, dl
+ cjmp LABEL42
+ jmp LABEL16
+LABEL57:
+ sub rax, CONST
+ cmp edx, CONST
+ sete dil
+ cmp edx, CONST
+ sete sil
+ or dil, sil
+ cjmp LABEL16
+ cmp edx, CONST
+ cjmp LABEL16
+LABEL42:
+ mov dword [rip + CONST], eax
+ mov r8d, eax
+ movsx edx, byte [rcx + rax + CONST]
+ test eax, eax
+ cjmp LABEL57
+ nop
+LABEL16:
+ sub r11d, CONST
+ cmp r11d, CONST
+ cjmp LABEL61
+ mov esi, r8d
+ mov edi, r10d
+ call CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL66
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL30:
+ sub rsi, CONST
+ bt r9, rax
+ cjmp LABEL72
+ jmp LABEL18
+LABEL66:
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

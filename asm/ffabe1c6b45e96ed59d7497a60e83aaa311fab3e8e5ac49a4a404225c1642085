@@ -1,0 +1,14 @@
+ .name sym.assoc_keys_to_word_list
+ .offset 000000000007f340
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL2
+ mov esi, CONST
+ jmp CONST
+LABEL2:
+ xor eax, eax
+ ret

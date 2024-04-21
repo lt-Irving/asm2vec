@@ -1,0 +1,20 @@
+ .name sym.print_simple_command
+ .offset 0000000000042e70
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ cmp qword [rbx + CONST], CONST
+ cjmp LABEL7
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ pop rbx
+ jmp CONST
+LABEL7:
+ pop rbx
+ ret

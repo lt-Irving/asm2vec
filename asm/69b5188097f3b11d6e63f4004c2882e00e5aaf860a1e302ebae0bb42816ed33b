@@ -1,0 +1,34 @@
+ .name sym.set_compatibility_opts
+ .offset 00000000000a4140
+ .file bash
+ endbr64
+ mov dword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ sub eax, CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ cmp eax, CONST
+ cjmp LABEL11
+ lea rdx, [rip + CONST]
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ notrack jmp rax
+ mov dword [rip + CONST], CONST
+LABEL11:
+ ret
+ mov dword [rip + CONST], CONST
+ ret
+ mov dword [rip + CONST], CONST
+ ret
+ mov dword [rip + CONST], CONST
+ ret
+ mov dword [rip + CONST], CONST
+ ret
+ mov dword [rip + CONST], CONST
+ ret
+ mov dword [rip + CONST], CONST
+ ret

@@ -1,0 +1,17 @@
+ .name sym.builtin_address
+ .offset 00000000000935d0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov esi, CONST
+ call CONST
+ mov qword [rip + CONST], rax
+ test rax, rax
+ cjmp LABEL6
+ mov rax, qword [rax + CONST]
+ add rsp, CONST
+ ret
+LABEL6:
+ xor eax, eax
+ add rsp, CONST
+ ret

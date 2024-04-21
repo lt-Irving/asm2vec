@@ -1,0 +1,83 @@
+ .name sym.make_function_def
+ .offset 0000000000040fd0
+ .file bash
+ endbr64
+ push r14
+ mov r14d, edx
+ push r13
+ mov r13d, ecx
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ call CONST
+ lea rdi, [rip + CONST]
+ mov qword [rax + CONST], r12
+ mov rbx, rax
+ mov qword [rax + CONST], rbp
+ mov dword [rax + CONST], r14d
+ mov dword [rax], CONST
+ mov dword [r12 + CONST], r13d
+ mov qword [rax + CONST], CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL22
+ test byte [rax + CONST], CONST
+ cjmp LABEL24
+LABEL22:
+ mov rax, qword [rbx + CONST]
+ test rax, rax
+ cjmp LABEL27
+LABEL66:
+ mov rdi, qword [rbp]
+ xor edx, edx
+ mov rsi, rbx
+ call CONST
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL34
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL34:
+ mov qword [rbx + CONST], rbp
+ mov edi, CONST
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL24:
+ mov rdi, qword [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL22
+ mov edx, dword [rdi + CONST]
+ test edx, edx
+ cjmp LABEL22
+ xor esi, esi
+ call CONST
+ mov qword [rbx + CONST], rax
+ test rax, rax
+ cjmp LABEL66
+ nop dword [rax + rax]
+LABEL27:
+ mov eax, dword [rip + CONST]
+ lea rdx, [rip + CONST]
+ test eax, eax
+ lea rax, [rip + CONST]
+ cmove rax, rdx
+ mov qword [rbx + CONST], rax
+ jmp LABEL66

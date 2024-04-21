@@ -1,0 +1,57 @@
+ .name fcn.00005fe0
+ .offset 0000000000005fe0
+ .file dash
+ endbr64
+ push r12
+ push rbx
+ lea rbx, [rip + CONST]
+ sub rsp, CONST
+ jmp LABEL5
+LABEL12:
+ cmp r12d, CONST
+ cjmp LABEL7
+LABEL5:
+ mov rdi, rbx
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL12
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax]
+ test rdi, rdi
+ cjmp LABEL16
+LABEL35:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret
+LABEL39:
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ lea rdx, [rip + CONST]
+ lea rsi, [rip + CONST]
+ mov r12d, CONST
+ mov rcx, qword [rax]
+ xor eax, eax
+ call CONST
+LABEL38:
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax + CONST]
+ lea rdx, [rax + CONST]
+ mov qword [rip + CONST], rdx
+ test rdi, rdi
+ cjmp LABEL35
+LABEL16:
+ call CONST
+ test eax, eax
+ cjmp LABEL38
+ jmp LABEL39
+LABEL7:
+ call CONST
+ xor r12d, r12d
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret

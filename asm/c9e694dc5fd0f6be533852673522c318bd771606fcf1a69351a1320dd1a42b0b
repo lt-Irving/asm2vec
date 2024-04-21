@@ -1,0 +1,88 @@
+ .name method.std::vector_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_____std::allocator_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_______.reserve_unsigned_long_
+ .offset 00000000000096c0
+ .file apt-mark
+ endbr64
+ movabs rax, CONST
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ cmp rsi, rax
+ cjmp LABEL8
+ mov rbx, rdi
+ mov rdi, qword [rdi]
+ mov rax, qword [rbx + CONST]
+ sub rax, rdi
+ sar rax, CONST
+ cmp rsi, rax
+ cjmp LABEL15
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL15:
+ mov r8, qword [rbx + CONST]
+ mov r13, rsi
+ xor r12d, r12d
+ shl r13, CONST
+ mov rbp, r8
+ sub rbp, rdi
+ test rsi, rsi
+ cjmp LABEL29
+ mov rdi, r13
+ call CONST
+ mov r8, qword [rbx + CONST]
+ mov rdi, qword [rbx]
+ mov r12, rax
+LABEL29:
+ cmp r8, rdi
+ cjmp LABEL36
+ mov rdx, r12
+ jmp LABEL38
+LABEL53:
+ mov qword [rdx], rcx
+ mov rcx, qword [rdi + CONST]
+ mov qword [rdx + CONST], rcx
+LABEL56:
+ mov rcx, qword [rdi + CONST]
+ add rdi, CONST
+ add rdx, CONST
+ mov qword [rdx + CONST], rcx
+ cmp r8, rdi
+ cjmp LABEL47
+LABEL38:
+ lea rcx, [rdx + CONST]
+ lea rsi, [rdi + CONST]
+ mov qword [rdx], rcx
+ mov rcx, qword [rdi]
+ cmp rcx, rsi
+ cjmp LABEL53
+ movdqu xmm0, xmmword [rdi + CONST]
+ movups xmmword [rdx + CONST], xmm0
+ jmp LABEL56
+LABEL47:
+ mov rdi, qword [rbx]
+LABEL36:
+ test rdi, rdi
+ cjmp LABEL59
+ call CONST
+LABEL59:
+ mov qword [rbx], r12
+ add rbp, r12
+ add r12, r13
+ mov qword [rbx + CONST], rbp
+ mov qword [rbx + CONST], r12
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL8:
+ lea rdi, [rip + CONST]
+ call CONST
+ nop word cs:[rax + rax]
+ nop

@@ -1,0 +1,59 @@
+ .name sym.default_tty_job_signals
+ .offset 000000000005a7b0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL5
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL9
+LABEL5:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+LABEL43:
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL16
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL20
+LABEL16:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+LABEL47:
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL27
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL31
+LABEL27:
+ xor esi, esi
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL31:
+ mov esi, CONST
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL9:
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ jmp LABEL43
+LABEL20:
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ jmp LABEL47

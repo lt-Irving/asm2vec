@@ -1,0 +1,111 @@
+ .name sym.string_list_dollar_at
+ .offset 0000000000066500
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rsp
+ push r15
+ push r14
+ push r13
+ mov r13d, edx
+ push r12
+ mov r12, rdi
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rbp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov rcx, rsp
+ add rax, CONST
+ mov rdx, rax
+ and rax, CONST
+ sub rcx, rax
+ and rdx, CONST
+ mov rax, rcx
+ cmp rsp, rax
+ cjmp LABEL24
+LABEL28:
+ sub rsp, CONST
+ or qword [rsp + CONST], CONST
+ cmp rsp, rax
+ cjmp LABEL28
+LABEL24:
+ and edx, CONST
+ sub rsp, rdx
+ test rdx, rdx
+ cjmp LABEL32
+LABEL88:
+ mov rax, qword [rip + CONST]
+ mov r14, rsp
+ test rax, rax
+ cjmp LABEL36
+ and r13d, CONST
+ cjmp LABEL36
+ mov rax, qword [rax + CONST]
+ test rax, rax
+ cjmp LABEL36
+ cmp byte [rax], CONST
+ cjmp LABEL43
+LABEL36:
+ mov eax, CONST
+ mov word [r14], ax
+LABEL86:
+ and ebx, CONST
+ cjmp LABEL47
+ mov rbx, r12
+ test r12, r12
+ cjmp LABEL50
+LABEL61:
+ mov r15, qword [rbx + CONST]
+ xor esi, esi
+ mov r13, qword [r15]
+ mov rdi, r13
+ call CONST
+ mov rdi, r13
+ mov qword [r15], rax
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL61
+LABEL50:
+ mov rsi, r14
+ mov rdi, r12
+ call CONST
+ mov rcx, qword [rbp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL67
+ lea rsp, [rbp + CONST]
+ pop rbx
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ pop rbp
+ ret
+LABEL47:
+ mov rdi, r12
+ call CONST
+ mov r12, rax
+ jmp LABEL50
+LABEL43:
+ mov r13, qword [rip + CONST]
+ cmp r13, CONST
+ cjmp LABEL82
+ movzx eax, byte [rip + CONST]
+ mov byte [rsp + CONST], CONST
+ mov byte [rsp], al
+ jmp LABEL86
+LABEL32:
+ or qword [rsp + rdx + CONST], CONST
+ jmp LABEL88
+LABEL82:
+ mov rdx, r13
+ lea rsi, [rip + CONST]
+ mov rdi, rsp
+ call CONST
+ mov byte [rsp + r13], CONST
+ jmp LABEL86
+LABEL67:
+ call CONST

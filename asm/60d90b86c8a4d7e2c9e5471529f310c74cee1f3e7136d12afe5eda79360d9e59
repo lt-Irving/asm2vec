@@ -1,0 +1,17 @@
+ .name fcn.00009320
+ .offset 0000000000009320
+ .file chfn
+ endbr64
+ sub rsp, CONST
+ mov r10, rsi
+ mov r9, qword [rdi + CONST]
+ mov r8, qword [rdi + CONST]
+ mov rcx, qword [rdi]
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ mov rdi, r10
+ call CONST
+ add rsp, CONST
+ sar eax, CONST
+ ret

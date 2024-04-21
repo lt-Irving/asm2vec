@@ -1,0 +1,25 @@
+ .name sym.reinit_special_variables
+ .offset 0000000000053f20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+LABEL18:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ jmp CONST
+LABEL8:
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ jmp CONST
+LABEL5:
+ call CONST
+ jmp LABEL18

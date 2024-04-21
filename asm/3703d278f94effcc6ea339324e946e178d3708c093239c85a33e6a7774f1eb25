@@ -1,0 +1,17 @@
+ .name fcn.000243b0
+ .offset 00000000000243b0
+ .file diff
+ test rdi, rdi
+ cjmp LABEL1
+ push rbx
+ nop word cs:[rax + rax]
+LABEL8:
+ mov rbx, qword [rdi]
+ call CONST
+ mov rdi, rbx
+ test rbx, rbx
+ cjmp LABEL8
+ pop rbx
+ ret
+LABEL1:
+ ret

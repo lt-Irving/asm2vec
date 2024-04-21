@@ -1,0 +1,123 @@
+ .name fcn.00016bb0
+ .offset 0000000000016bb0
+ .file dash
+ endbr64
+ push r12
+ add dword [rip + CONST], CONST
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov edi, CONST
+ call CONST
+ movzx esi, byte [rbp]
+ mov rbx, rax
+ cmp sil, CONST
+ cjmp LABEL11
+ movzx edi, sil
+ mov ecx, edi
+ shl ecx, CONST
+ cmp sil, CONST
+ cjmp LABEL16
+ test sil, sil
+ cjmp LABEL16
+ movzx eax, byte [rbp + CONST]
+LABEL81:
+ mov rdx, rbp
+ jmp LABEL21
+LABEL29:
+ movzx edi, al
+ movzx eax, byte [rdx + CONST]
+LABEL21:
+ add rdx, CONST
+ add ecx, edi
+ test al, al
+ cjmp LABEL16
+ cmp al, CONST
+ cjmp LABEL29
+LABEL16:
+ mov eax, ecx
+ mov edx, CONST
+ mov rsi, rbp
+ imul rax, rdx
+ shr rax, CONST
+ mov rdx, rax
+ mov eax, ecx
+ sub eax, edx
+ shr eax, CONST
+ add eax, edx
+ shr eax, CONST
+ imul eax, eax, CONST
+ sub ecx, eax
+ lea rax, [rip + CONST]
+ lea rdi, [rax + rcx*CONST]
+ call CONST
+ mov esi, CONST
+ mov rdi, rbp
+ mov r12, qword [rax]
+ call CONST
+ test r12, r12
+ cjmp LABEL51
+ mov rdx, qword [r12 + CONST]
+ mov qword [rbx + CONST], rdx
+ mov edx, dword [r12 + CONST]
+ mov dword [rbx + CONST], edx
+ or edx, CONST
+ mov dword [r12 + CONST], edx
+ test rax, rax
+ cjmp LABEL59
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+LABEL59:
+ mov rax, qword [rip + CONST]
+ mov qword [rbx + CONST], r12
+ mov rdx, qword [rax + CONST]
+ mov qword [rbx], rdx
+ mov qword [rax + CONST], rbx
+ sub dword [rip + CONST], CONST
+ cjmp LABEL69
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL72
+LABEL69:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL11:
+ movzx eax, byte [rbp + CONST]
+ mov ecx, CONST
+ mov edi, CONST
+ test al, al
+ cjmp LABEL81
+ mov edi, CONST
+ xor r12d, r12d
+ call CONST
+ movdqu xmm0, xmmword [rip + CONST]
+ movups xmmword [rax], xmm0
+ movzx edx, word [rip + CONST]
+ mov word [rax + CONST], dx
+ mov qword [rbx + CONST], rax
+ jmp LABEL59
+LABEL51:
+ test rax, rax
+ cjmp LABEL92
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov r12, rax
+LABEL108:
+ mov dword [rbx + CONST], CONST
+ jmp LABEL59
+LABEL72:
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL92:
+ mov edx, CONST
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ mov r12, rax
+ jmp LABEL108

@@ -1,0 +1,72 @@
+ .name fcn.000168b0
+ .offset 00000000000168b0
+ .file dash
+ endbr64
+ push r15
+ or esi, edi
+ lea r15, [rip + CONST]
+ push r14
+ mov r14d, esi
+ push r13
+ mov r13d, edi
+ push r12
+ lea r12, [r15 + CONST]
+ push rbp
+ mov rbp, rdx
+ push rbx
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ mov rcx, qword [rip + CONST]
+ nop dword [rax]
+LABEL39:
+ mov rbx, qword [r15]
+ test rbx, rbx
+ cjmp LABEL19
+ jmp LABEL20
+LABEL27:
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL20
+LABEL19:
+ mov edx, dword [rbx + CONST]
+ and edx, r14d
+ cmp edx, r13d
+ cjmp LABEL27
+ cmp rax, rcx
+ cjmp LABEL29
+LABEL57:
+ mov rdx, qword [rbx + CONST]
+ mov rbx, qword [rbx]
+ add rax, CONST
+ mov qword [rax + CONST], rdx
+ mov rcx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL19
+LABEL20:
+ add r15, CONST
+ cmp r15, r12
+ cjmp LABEL39
+ cmp rcx, rax
+ cjmp LABEL41
+LABEL59:
+ test rbp, rbp
+ cjmp LABEL43
+ mov qword [rbp], rax
+LABEL43:
+ mov qword [rax], CONST
+ lea rdi, [rax + CONST]
+ sub rdi, qword [rip + CONST]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ jmp CONST
+LABEL29:
+ call CONST
+ jmp LABEL57
+LABEL41:
+ call CONST
+ jmp LABEL59

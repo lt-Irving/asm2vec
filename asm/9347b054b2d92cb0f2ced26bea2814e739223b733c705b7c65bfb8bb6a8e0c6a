@@ -1,0 +1,27 @@
+ .name method.APT::PackageContainer_std::__cxx11::list_pkgCache::PkgIterator__std::allocator_pkgCache::PkgIterator_____.clear__
+ .offset 00000000000094d0
+ .file apt-mark
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ lea rbp, [rdi + CONST]
+ push rbx
+ mov rbx, qword [rdi + CONST]
+ cmp rbx, rbp
+ cjmp LABEL8
+ nop dword [rax + rax]
+LABEL14:
+ mov rdi, rbx
+ mov rbx, qword [rbx]
+ call CONST
+ cmp rbx, rbp
+ cjmp LABEL14
+LABEL8:
+ mov qword [r12 + CONST], rbp
+ pop rbx
+ mov qword [r12 + CONST], rbp
+ pop rbp
+ mov qword [r12 + CONST], CONST
+ pop r12
+ ret

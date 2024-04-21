@@ -1,0 +1,48 @@
+ .name fcn.00008960
+ .offset 0000000000008960
+ .file dpkg-deb
+ endbr64
+ mov eax, dword [rip + CONST]
+ xor edx, edx
+ push rbp
+ mov r8, qword [rdi]
+ test eax, eax
+ setne dl
+ add edx, CONST
+ test r8, r8
+ cjmp LABEL9
+ mov rsi, qword [rdi + CONST]
+ test rsi, rsi
+ cjmp LABEL12
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL14
+ xor ecx, ecx
+ mov rdi, r8
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL9:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+LABEL35:
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+LABEL14:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+ jmp LABEL35
+LABEL12:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, qword [rax]
+ jmp LABEL35

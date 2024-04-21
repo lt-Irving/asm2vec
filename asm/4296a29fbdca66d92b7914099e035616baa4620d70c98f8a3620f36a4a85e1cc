@@ -1,0 +1,42 @@
+ .name sym.push_stream
+ .offset 0000000000032740
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edx, CONST
+ lea rdi, [rip + CONST]
+ lea rsi, [rax + CONST]
+ mov rbx, rax
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov qword [rbx + CONST], CONST
+ cjmp LABEL14
+LABEL31:
+ mov eax, dword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov dword [rbx + CONST], eax
+ mov rax, qword [rip + CONST]
+ mov qword [rbx], rax
+ mov qword [rip + CONST], rbx
+ mov dword [rip + CONST], CONST
+ test ebp, ebp
+ cjmp LABEL23
+ mov dword [rip + CONST], CONST
+LABEL23:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL14:
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL31
+ xor esi, esi
+ call CONST
+ mov qword [rbx + CONST], rax
+ jmp LABEL31

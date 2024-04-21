@@ -1,0 +1,56 @@
+ .name sym.optimize_subshell_command
+ .offset 0000000000096b30
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ jmp LABEL3
+LABEL15:
+ cmp eax, CONST
+ cjmp LABEL5
+LABEL24:
+ mov rdx, qword [rbx + CONST]
+ mov eax, dword [rdx + CONST]
+ sub eax, CONST
+ cmp eax, CONST
+ cjmp LABEL5
+ mov rbx, qword [rdx + CONST]
+LABEL3:
+ mov edx, dword [rip + CONST]
+ mov eax, dword [rbx]
+ test edx, edx
+ cjmp LABEL15
+ cmp eax, CONST
+ cjmp LABEL15
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL21
+LABEL30:
+ mov eax, dword [rbx]
+ cmp eax, CONST
+ cjmp LABEL24
+LABEL5:
+ pop rbx
+ ret
+LABEL21:
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL30
+ call CONST
+ test eax, eax
+ cjmp LABEL30
+ cmp qword [rbx + CONST], CONST
+ cjmp LABEL30
+ mov rdx, qword [rbx + CONST]
+ cmp qword [rdx + CONST], CONST
+ cjmp LABEL30
+ mov eax, dword [rbx + CONST]
+ test al, CONST
+ cjmp LABEL30
+ or eax, CONST
+ mov dword [rbx + CONST], eax
+ or dword [rdx], CONST
+ pop rbx
+ ret

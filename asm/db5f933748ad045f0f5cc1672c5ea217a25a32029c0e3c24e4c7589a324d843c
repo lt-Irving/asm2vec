@@ -1,0 +1,23 @@
+ .name fcn.000069d0
+ .offset 00000000000069d0
+ .file date
+ endbr64
+ sub rsp, CONST
+ mov r9, rcx
+ xor ecx, ecx
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov byte [rsp + CONST], CONST
+ push r8
+ lea r8, [rsp + CONST]
+ call CONST
+ pop rdx
+ pop rcx
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL15
+ add rsp, CONST
+ ret
+LABEL15:
+ call CONST

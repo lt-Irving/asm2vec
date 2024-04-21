@@ -1,0 +1,23 @@
+ .name sym.substring
+ .offset 0000000000089350
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ movsxd rbp, esi
+ sub edx, ebp
+ push rbx
+ movsxd rbx, edx
+ lea edi, [rbx + CONST]
+ movsxd rdi, edi
+ call CONST
+ lea rsi, [r12 + rbp]
+ mov rdx, rbx
+ mov rdi, rax
+ call CONST
+ mov byte [rax + rbx], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret

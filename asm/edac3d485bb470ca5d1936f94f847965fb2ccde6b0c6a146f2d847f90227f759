@@ -1,0 +1,120 @@
+ .name sym._rl_vi_done_inserting
+ .offset 00000000000ba990
+ .file bash
+LABEL50:
+ push rbp
+ mov ebp, edi
+ push rbx
+ movsxd rbx, esi
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ cmp eax, ebx
+ cjmp LABEL8
+LABEL33:
+ lea edx, [rbx + CONST]
+ movsxd rsi, ebp
+ add rsi, qword [rip + CONST]
+ movsxd rdx, edx
+ call CONST
+ mov byte [rax + rbx + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL8:
+ mov ecx, ebx
+ lea esi, [rbx + CONST]
+ sar ecx, CONST
+ shr ecx, CONST
+ lea edx, [rbx + rcx]
+ and edx, CONST
+ sub edx, ecx
+ sub esi, edx
+ add esi, eax
+ mov dword [rip + CONST], esi
+ movsxd rsi, esi
+ call CONST
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ jmp LABEL33
+LABEL64:
+ test rdi, rdi
+ cjmp LABEL35
+ cmp dword [rdi + CONST], CONST
+ cjmp LABEL37
+LABEL35:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL40
+ mov rax, qword [rip + CONST]
+ mov byte [rax], CONST
+ ret
+LABEL40:
+ ret
+LABEL37:
+ mov r8d, dword [rdi + CONST]
+ mov esi, dword [rdi + CONST]
+ sub esi, r8d
+ mov edi, r8d
+ add esi, CONST
+ jmp LABEL50
+ endbr64
+ sub rsp, CONST
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL55
+ mov rdi, qword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL59
+ mov edx, eax
+ and edx, CONST
+ cmp edx, CONST
+ cjmp LABEL59
+ call LABEL64
+ jmp LABEL65
+LABEL69:
+ call CONST
+LABEL65:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL69
+LABEL89:
+ add rsp, CONST
+ ret
+LABEL59:
+ cmp eax, CONST
+ cjmp LABEL65
+ jmp LABEL69
+LABEL55:
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov rax, qword [rip + CONST]
+ cjmp LABEL79
+ mov rdi, qword [rax]
+ add rsp, CONST
+ jmp LABEL64
+LABEL79:
+ test rax, rax
+ cjmp LABEL84
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL86
+LABEL84:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL89
+ mov rax, qword [rip + CONST]
+ mov byte [rax], CONST
+ jmp LABEL89
+LABEL86:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL84
+ mov edi, dword [rip + CONST]
+ lea esi, [rax + CONST]
+ add rsp, CONST
+ sub edi, eax
+ add edi, CONST
+ jmp LABEL50

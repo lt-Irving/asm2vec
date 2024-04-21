@@ -1,0 +1,13 @@
+ .name sym.begin_unwind_frame
+ .offset 00000000000772e0
+ .file bash
+ endbr64
+ push rbx
+ mov ebx, dword [rip + CONST]
+ mov rsi, rdi
+ xor edi, edi
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov dword [rip + CONST], ebx
+ pop rbx
+ ret

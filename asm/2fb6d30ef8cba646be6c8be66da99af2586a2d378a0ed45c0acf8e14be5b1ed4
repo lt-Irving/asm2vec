@@ -1,0 +1,77 @@
+ .name sym.rl_transpose_words
+ .offset 00000000000d57f0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ mov r12d, edi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ test edi, edi
+ cjmp LABEL10
+LABEL66:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL10:
+ mov ebp, esi
+ mov r14d, dword [rip + CONST]
+ call CONST
+ mov edi, CONST
+ mov ebx, dword [rip + CONST]
+ call CONST
+ mov esi, ebp
+ mov edi, r12d
+ mov r13d, dword [rip + CONST]
+ call CONST
+ mov ebp, dword [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov r15d, dword [rip + CONST]
+ cmp r13d, ebp
+ cjmp LABEL35
+ cmp r13d, r15d
+ cjmp LABEL35
+ mov esi, r15d
+ mov edi, ebp
+ call CONST
+ mov esi, ebx
+ mov edi, r13d
+ mov r14, rax
+ call CONST
+ mov r12, rax
+ call CONST
+ mov esi, ebx
+ mov edi, r13d
+ mov dword [rip + CONST], r13d
+ call CONST
+ mov rdi, r14
+ call CONST
+ mov esi, r15d
+ mov edi, ebp
+ mov dword [rip + CONST], ebp
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov dword [rip + CONST], ebx
+ call CONST
+ mov rdi, r14
+ call CONST
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ jmp LABEL66
+LABEL35:
+ call CONST
+ mov r12d, CONST
+ mov dword [rip + CONST], r14d
+ jmp LABEL66

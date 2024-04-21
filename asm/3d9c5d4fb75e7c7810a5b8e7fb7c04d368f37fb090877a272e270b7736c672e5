@@ -1,0 +1,25 @@
+ .name sym.check_binary_file
+ .offset 000000000003f1e0
+ .file bash
+ endbr64
+ test esi, esi
+ cjmp LABEL2
+ lea eax, [rsi + CONST]
+ lea rdx, [rdi + rax + CONST]
+ jmp LABEL5
+LABEL13:
+ test al, al
+ cjmp LABEL7
+ add rdi, CONST
+ cmp rdi, rdx
+ cjmp LABEL2
+LABEL5:
+ movzx eax, byte [rdi]
+ cmp al, CONST
+ cjmp LABEL13
+LABEL2:
+ xor eax, eax
+ ret
+LABEL7:
+ mov eax, CONST
+ ret

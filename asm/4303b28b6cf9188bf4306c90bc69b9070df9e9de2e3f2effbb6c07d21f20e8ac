@@ -1,0 +1,32 @@
+ .name fcn.00086f80
+ .offset 0000000000086f80
+ .file bash
+ endbr64
+ push r12
+ mov r12d, CONST
+ push rbp
+ mov ebp, dword [rip + CONST]
+ push rbx
+ mov ebx, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL9
+ mov r12d, eax
+ test ebx, ebx
+ cjmp LABEL12
+LABEL25:
+ mov esi, CONST
+ mov edi, CONST
+ mov dword [rip + CONST], ebx
+ call CONST
+LABEL9:
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ sub ebp, ebx
+ mov ebx, dword [rip + CONST]
+ sub ebx, ebp
+ jmp LABEL25

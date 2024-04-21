@@ -1,0 +1,36 @@
+ .name sym.builtin_help
+ .offset 0000000000099740
+ .file bash
+ endbr64
+ push rbx
+ mov rdi, qword [rip + CONST]
+ xor esi, esi
+ call CONST
+ mov qword [rip + CONST], rax
+ test rax, rax
+ cjmp LABEL7
+ mov rdx, qword [rip + CONST]
+ xor edi, edi
+ sub rax, rdx
+ mov rbx, rax
+ movabs rax, CONST
+ sar rbx, CONST
+ imul rbx, rax
+ movsxd rax, ebx
+ lea rax, [rax + rax*CONST]
+ shl rax, CONST
+ mov rsi, qword [rdx + rax + CONST]
+ mov edx, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+ mov edi, ebx
+ pop rbx
+ jmp CONST
+LABEL7:
+ pop rbx
+ ret

@@ -1,0 +1,30 @@
+ .name sym.rl_digit_argument
+ .offset 00000000000d6270
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, esi
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov rdx, rax
+ or dh, CONST
+ mov qword [rip + CONST], rdx
+ test eax, CONST
+ cjmp LABEL10
+ mov edi, ebp
+ call CONST
+ pop rbp
+ jmp CONST
+LABEL10:
+ mov esi, ebp
+ xor edi, edi
+ call CONST
+ mov esi, dword [rip + CONST]
+ imul esi, dword [rip + CONST]
+ xor eax, eax
+ lea rdi, [rip + CONST]
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret

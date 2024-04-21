@@ -1,0 +1,18 @@
+ .name fcn.0000d340
+ .offset 000000000000d340
+ .file diff
+ push rbx
+ mov rbx, rdi
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov rdi, rbx
+ lea rsi, [rip + CONST]
+ lea rdx, [rip + CONST]
+ neg rax
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], rax
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ pop rbx
+ jmp CONST

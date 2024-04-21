@@ -1,0 +1,93 @@
+ .name sym.rl_unix_word_rubout
+ .offset 00000000000d01b0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov r8d, dword [rip + CONST]
+ test r8d, r8d
+ cjmp LABEL4
+ mov r9d, CONST
+ test edi, edi
+ mov rcx, qword [rip + CONST]
+ movsxd rsi, r8d
+ cmovle edi, r9d
+ lea r9d, [rdi + CONST]
+ nop word [rax + rax]
+LABEL51:
+ test esi, esi
+ cjmp LABEL13
+ lea edx, [rsi + CONST]
+ lea rdi, [rsi + CONST]
+ movsxd rax, edx
+ mov edx, edx
+ sub rdi, rdx
+ jmp LABEL19
+LABEL27:
+ mov dword [rip + CONST], eax
+ movsxd rsi, eax
+ sub rax, CONST
+ cmp rdi, rax
+ cjmp LABEL24
+LABEL19:
+ movzx edx, byte [rcx + rax]
+ cmp dl, CONST
+ cjmp LABEL27
+ cmp dl, CONST
+ cjmp LABEL27
+ movsxd rsi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL13
+ lea edx, [rsi + CONST]
+ lea rdi, [rsi + CONST]
+ movsxd rax, edx
+ mov edx, edx
+ sub rdi, rdx
+ nop word cs:[rax + rax]
+LABEL48:
+ movzx edx, byte [rcx + rax]
+ cmp dl, CONST
+ cjmp LABEL41
+ cmp dl, CONST
+ cjmp LABEL41
+ mov dword [rip + CONST], eax
+ movsxd rsi, eax
+ sub rax, CONST
+ cmp rdi, rax
+ cjmp LABEL48
+LABEL24:
+ sub r9d, CONST
+ cmp r9d, CONST
+ cjmp LABEL51
+LABEL63:
+ mov edi, r8d
+ call CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL55
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL41:
+ sub r9d, CONST
+ movsxd rsi, dword [rip + CONST]
+ cmp r9d, CONST
+ cjmp LABEL51
+ jmp LABEL63
+LABEL55:
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL13:
+ sub r9d, CONST
+ cmp r9d, CONST
+ cjmp LABEL63
+ sub r9d, CONST
+ cmp r9d, CONST
+ cjmp LABEL51
+ jmp LABEL63

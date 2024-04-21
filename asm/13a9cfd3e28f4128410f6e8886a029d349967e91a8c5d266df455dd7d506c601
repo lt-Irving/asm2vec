@@ -1,0 +1,41 @@
+ .name sym.rl_vi_next_word
+ .offset 00000000000ba220
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ sub eax, CONST
+ cmp eax, dword [rip + CONST]
+ cjmp LABEL7
+ test esi, CONST
+ cjmp LABEL9
+ mov dword [rsp + CONST], esi
+ mov dword [rsp + CONST], edi
+ call CONST
+ mov edi, dword [rsp + CONST]
+ mov r8, rax
+ movsxd rax, dword [rsp + CONST]
+ mov rdx, qword [r8]
+ mov rsi, rax
+ test byte [rdx + rax*CONST + CONST], CONST
+ cjmp LABEL19
+LABEL9:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL19:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL7:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL2:
+ neg edi
+ jmp CONST

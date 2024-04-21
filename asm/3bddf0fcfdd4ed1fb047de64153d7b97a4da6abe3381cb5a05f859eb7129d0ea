@@ -1,0 +1,55 @@
+ .name sym.sh_erange
+ .offset 0000000000092700
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL6
+ mov rbp, rdi
+ test rsi, rsi
+ cjmp LABEL9
+LABEL40:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ add rsp, CONST
+ mov rdx, r12
+ mov rsi, rbp
+ mov rdi, rax
+ pop rbp
+ xor eax, eax
+ pop r12
+ jmp CONST
+LABEL6:
+ test rsi, rsi
+ cjmp LABEL23
+LABEL46:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ call CONST
+ add rsp, CONST
+ mov rsi, r12
+ mov rdi, rax
+ pop rbp
+ xor eax, eax
+ pop r12
+ jmp CONST
+LABEL9:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov r12, rax
+ jmp LABEL40
+LABEL23:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov r12, rax
+ jmp LABEL46

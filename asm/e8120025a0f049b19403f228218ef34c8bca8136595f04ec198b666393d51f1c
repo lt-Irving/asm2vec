@@ -1,0 +1,79 @@
+ .name fcn.00081ff0
+ .offset 0000000000081ff0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ lea edi, [rax + CONST]
+ movsxd rdi, edi
+ call CONST
+ movzx edx, byte [rbx]
+ mov rcx, rax
+ test dl, dl
+ cjmp LABEL13
+ lea rdi, [rip + CONST]
+LABEL29:
+ cmp dl, CONST
+ cjmp LABEL16
+ test ebp, ebp
+ cjmp LABEL18
+ cmp dl, CONST
+ cjmp LABEL20
+ cmp dl, CONST
+ cjmp LABEL20
+LABEL49:
+ mov byte [rcx], dl
+ add rcx, CONST
+ mov rdx, rbx
+LABEL46:
+ lea rbx, [rdx + CONST]
+ movzx edx, byte [rdx + CONST]
+ test dl, dl
+ cjmp LABEL29
+LABEL13:
+ mov byte [rcx], CONST
+LABEL43:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL16:
+ lea rsi, [rcx + CONST]
+ cmp ebp, CONST
+ cjmp LABEL37
+ movzx edx, byte [rbx + CONST]
+ cmp ebp, CONST
+ cjmp LABEL40
+LABEL55:
+ mov byte [rcx], dl
+ cmp byte [rbx + CONST], CONST
+ cjmp LABEL43
+ lea rdx, [rbx + CONST]
+ mov rcx, rsi
+ jmp LABEL46
+LABEL18:
+ movsx esi, dl
+ cmp esi, ebp
+ cjmp LABEL49
+ mov rdx, rbx
+ xor ebp, ebp
+ jmp LABEL46
+LABEL40:
+ movzx r8d, dl
+ test byte [rdi + r8*CONST], CONST
+ cjmp LABEL55
+LABEL37:
+ lea r8, [rcx + CONST]
+ mov byte [rcx], CONST
+ mov rcx, rsi
+ movzx edx, byte [rbx + CONST]
+ mov rsi, r8
+ jmp LABEL55
+LABEL20:
+ movsx ebp, dl
+ mov rdx, rbx
+ jmp LABEL46

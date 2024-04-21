@@ -1,0 +1,23 @@
+ .name sym.rl_completion_mode
+ .offset 00000000000c0a40
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], rdi
+ cjmp LABEL2
+LABEL15:
+ mov edx, dword [rip + CONST]
+ mov eax, CONST
+ test edx, edx
+ cjmp LABEL6
+ cmp dword [rip + CONST], CONST
+ sbb eax, eax
+ and eax, CONST
+ add eax, CONST
+LABEL6:
+ ret
+LABEL2:
+ mov ecx, dword [rip + CONST]
+ mov eax, CONST
+ test ecx, ecx
+ cjmp LABEL15
+ ret

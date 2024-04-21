@@ -1,0 +1,119 @@
+ .name sym.rl_transpose_chars
+ .offset 00000000000d5900
+ .file bash
+ endbr64
+ xor eax, eax
+ test edi, edi
+ cjmp LABEL3
+ mov ecx, dword [rip + CONST]
+ push r12
+ push rbp
+ push rbx
+ test ecx, ecx
+ cjmp LABEL9
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL9
+ mov r12d, edi
+ call CONST
+ mov ebx, dword [rip + CONST]
+ cmp ebx, dword [rip + CONST]
+ cjmp LABEL16
+LABEL97:
+ call CONST
+ mov esi, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL20
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL20
+ mov rdi, qword [rip + CONST]
+ mov edx, CONST
+ call CONST
+ jmp LABEL27
+LABEL9:
+ call CONST
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL20:
+ lea eax, [rsi + CONST]
+LABEL27:
+ sub ebx, eax
+ mov dword [rip + CONST], eax
+ lea edi, [rbx + CONST]
+ movsxd rdi, edi
+ call CONST
+ mov rbp, rax
+ test ebx, ebx
+ cjmp LABEL42
+ lea esi, [rbx + CONST]
+ xor eax, eax
+ nop word [rax + rax]
+LABEL55:
+ mov edx, dword [rip + CONST]
+ mov rcx, qword [rip + CONST]
+ add edx, eax
+ movsxd rdx, edx
+ movzx edx, byte [rcx + rdx]
+ mov byte [rbp + rax], dl
+ mov rdx, rax
+ add rax, CONST
+ cmp rdx, rsi
+ cjmp LABEL55
+ movsxd rax, ebx
+ add rax, rbp
+LABEL42:
+ mov byte [rax], CONST
+ mov edi, dword [rip + CONST]
+ lea esi, [rdi + rbx]
+ call CONST
+ mov esi, dword [rip + CONST]
+ mov edx, r12d
+ mov rdi, qword [rip + CONST]
+ mov ecx, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cmp eax, edx
+ cjmp LABEL70
+ test eax, eax
+ cjmp LABEL72
+ mov dword [rip + CONST], CONST
+LABEL72:
+ mov rdi, rbp
+ call CONST
+ call CONST
+ mov rdi, rbp
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL3:
+ ret
+LABEL70:
+ mov dword [rip + CONST], edx
+ jmp LABEL72
+LABEL16:
+ call CONST
+ mov esi, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL90
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL93
+LABEL90:
+ lea ebx, [rsi + CONST]
+LABEL102:
+ mov dword [rip + CONST], ebx
+ mov r12d, CONST
+ jmp LABEL97
+LABEL93:
+ mov rdi, qword [rip + CONST]
+ mov edx, CONST
+ call CONST
+ mov ebx, eax
+ jmp LABEL102

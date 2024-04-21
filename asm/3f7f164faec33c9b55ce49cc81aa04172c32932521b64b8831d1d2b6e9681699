@@ -1,0 +1,25 @@
+ .name fcn.00006200
+ .offset 0000000000006200
+ .file chsh
+ endbr64
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ mov ebx, edi
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ jmp LABEL8
+LABEL14:
+ cmp dword [rax + CONST], ebx
+ cjmp LABEL10
+LABEL8:
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL14
+LABEL10:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

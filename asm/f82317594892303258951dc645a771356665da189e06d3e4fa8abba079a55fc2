@@ -1,0 +1,31 @@
+ .name sym.copy_fifo_list
+ .offset 0000000000067940
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL9
+ mov dword [rdi], eax
+LABEL9:
+ movsxd rdi, eax
+ shl rdi, CONST
+ call CONST
+ movsxd rdx, dword [rip + CONST]
+ mov rsi, qword [rip + CONST]
+ add rsp, CONST
+ mov rdi, rax
+ shl rdx, CONST
+ jmp CONST
+LABEL3:
+ test rdi, rdi
+ cjmp LABEL21
+ mov dword [rdi], CONST
+LABEL21:
+ xor eax, eax
+ ret

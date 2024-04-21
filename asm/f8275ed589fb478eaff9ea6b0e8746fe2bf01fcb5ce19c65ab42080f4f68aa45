@@ -1,0 +1,94 @@
+ .name fcn.00004fe4
+ .offset 0000000000004fe4
+ .file apt-get
+LABEL76:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL2
+ call CONST
+LABEL2:
+ mov rdi, r14
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL10
+ call CONST
+LABEL10:
+ lea rax, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ mov rdi, qword [rsp + CONST]
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL16
+LABEL46:
+ mov rdi, r15
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL22
+ call CONST
+LABEL22:
+ mov rsi, qword [rsp + CONST]
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov r12, qword [rsp + CONST]
+ mov rbp, qword [rsp + CONST]
+LABEL73:
+ cmp r12, rbp
+ cjmp LABEL30
+ mov rdi, qword [rsp + CONST]
+ test rdi, rdi
+ cjmp LABEL33
+ call CONST
+LABEL33:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL38
+ call CONST
+LABEL38:
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rdi, rbx
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL46
+LABEL16:
+ call CONST
+ jmp LABEL46
+LABEL30:
+ mov rsi, qword [rbp + CONST]
+ lea rdi, [rbp + CONST]
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL55
+ call CONST
+LABEL55:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL60
+ call CONST
+LABEL60:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL65
+ call CONST
+LABEL65:
+ mov rdi, qword [rbp]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL70
+ call CONST
+LABEL70:
+ add rbp, CONST
+ jmp LABEL73
+ endbr64
+ mov r12, rax
+ jmp LABEL76

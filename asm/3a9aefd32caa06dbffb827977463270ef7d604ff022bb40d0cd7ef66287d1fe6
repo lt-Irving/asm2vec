@@ -1,0 +1,19 @@
+ .name sym.find_global_variable_noref
+ .offset 000000000004dcd0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rsi, qword [rip + CONST]
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL6
+ mov rax, qword [rax + CONST]
+ test rax, rax
+ cjmp LABEL6
+ add rsp, CONST
+ jmp rax
+LABEL6:
+ mov rax, rdi
+ add rsp, CONST
+ ret

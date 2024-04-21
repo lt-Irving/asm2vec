@@ -1,0 +1,34 @@
+ .name sym.set_job_control
+ .offset 000000000005eec0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ push r12
+ mov r12d, dword [rip + CONST]
+ mov dword [rip + CONST], edi
+ cmp eax, CONST
+ cjmp LABEL6
+LABEL26:
+ cmp dword [rip + CONST], eax
+ setne al
+ movzx eax, al
+ mov dword [rip + CONST], eax
+ cmp r12d, edi
+ cjmp LABEL12
+ test edi, edi
+ cjmp LABEL14
+LABEL12:
+ mov eax, r12d
+ pop r12
+ ret
+LABEL14:
+ mov dword [rip + CONST], CONST
+ mov eax, r12d
+ pop r12
+ ret
+LABEL6:
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ jmp LABEL26

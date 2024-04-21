@@ -1,0 +1,18 @@
+ .name fcn.000084a0
+ .offset 00000000000084a0
+ .file dmesg
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ jmp CONST

@@ -1,0 +1,28 @@
+ .name sym.number_of_args
+ .offset 0000000000065830
+ .file bash
+ endbr64
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ nop dword [rax]
+LABEL9:
+ cmp qword [rdx + rax*CONST], CONST
+ mov r8d, eax
+ cjmp LABEL6
+ add rax, CONST
+ cmp rax, CONST
+ cjmp LABEL9
+ mov r8d, CONST
+LABEL6:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL13
+ nop word cs:[rax + rax]
+LABEL18:
+ mov rax, qword [rax]
+ add r8d, CONST
+ test rax, rax
+ cjmp LABEL18
+LABEL13:
+ mov eax, r8d
+ ret

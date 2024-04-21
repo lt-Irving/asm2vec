@@ -1,0 +1,50 @@
+ .name sym._rl_erase_at_end_of_line
+ .offset 00000000000ca550
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbp
+ push rbx
+ call CONST
+ test r12d, r12d
+ cjmp LABEL7
+ xor ebx, ebx
+ nop word [rax + rax]
+LABEL16:
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ mov ebp, ebx
+ lea ebx, [rbx + CONST]
+ call CONST
+ cmp r12d, ebx
+ cjmp LABEL16
+ mov edi, r12d
+ call CONST
+ mov rsi, qword [rip + CONST]
+ xor edx, edx
+ nop dword [rax]
+LABEL31:
+ mov eax, dword [rip + CONST]
+ mov rcx, qword [rsi]
+ sub eax, CONST
+ mov dword [rip + CONST], eax
+ cdqe
+ mov byte [rcx + rax], CONST
+ mov eax, edx
+ add edx, CONST
+ cmp ebp, eax
+ cjmp LABEL31
+ pop rbx
+ add dword [rip + CONST], CONST
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ mov edi, r12d
+ call CONST
+ pop rbx
+ add dword [rip + CONST], CONST
+ pop rbp
+ pop r12
+ ret

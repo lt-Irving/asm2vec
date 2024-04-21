@@ -1,0 +1,52 @@
+ .name method.void_std::vector_pkgTagSection::Tag__std::allocator_pkgTagSection::Tag___::emplace_back_pkgTagSection.Tag__pkgTagSection::Tag_
+ .offset 000000000000fa80
+ .file apt-cache
+ endbr64
+ mov rdx, rsi
+ mov rsi, qword [rdi + CONST]
+ cmp rsi, qword [rdi + CONST]
+ cjmp LABEL4
+ mov eax, dword [rdx]
+ mov dword [rsi], eax
+ lea rax, [rsi + CONST]
+ mov qword [rsi + CONST], rax
+ mov rcx, qword [rdx + CONST]
+ lea rax, [rdx + CONST]
+ cmp rcx, rax
+ cjmp LABEL12
+ mov qword [rsi + CONST], rcx
+ mov rcx, qword [rdx + CONST]
+ mov qword [rsi + CONST], rcx
+LABEL39:
+ mov rcx, qword [rdx + CONST]
+ mov qword [rdx + CONST], rax
+ lea rax, [rsi + CONST]
+ mov qword [rdx + CONST], CONST
+ mov qword [rsi + CONST], rcx
+ mov byte [rdx + CONST], CONST
+ mov qword [rsi + CONST], rax
+ mov rcx, qword [rdx + CONST]
+ lea rax, [rdx + CONST]
+ cmp rcx, rax
+ cjmp LABEL26
+ mov qword [rsi + CONST], rcx
+ mov rcx, qword [rdx + CONST]
+ mov qword [rsi + CONST], rcx
+LABEL42:
+ mov rcx, qword [rdx + CONST]
+ mov qword [rdx + CONST], rax
+ mov qword [rdx + CONST], CONST
+ mov qword [rsi + CONST], rcx
+ mov byte [rdx + CONST], CONST
+ add qword [rdi + CONST], CONST
+ ret
+LABEL12:
+ movdqu xmm0, xmmword [rdx + CONST]
+ movups xmmword [rsi + CONST], xmm0
+ jmp LABEL39
+LABEL26:
+ movdqu xmm1, xmmword [rdx + CONST]
+ movups xmmword [rsi + CONST], xmm1
+ jmp LABEL42
+LABEL4:
+ jmp CONST

@@ -1,0 +1,32 @@
+ .name fcn.0000cc10
+ .offset 000000000000cc10
+ .file chfn
+ endbr64
+ mov rax, qword [rsi + CONST]
+ cmp qword [rdi + CONST], rsi
+ cjmp LABEL3
+ mov rdx, qword [rsi + CONST]
+ test rdx, rdx
+ cjmp LABEL6
+LABEL17:
+ mov qword [rdx + CONST], rax
+ mov rax, qword [rsi + CONST]
+ test rax, rax
+ cjmp LABEL10
+LABEL20:
+ mov qword [rax + CONST], rdx
+ or byte [rdi + CONST], CONST
+ ret
+LABEL3:
+ mov rdx, qword [rsi + CONST]
+ mov qword [rdi + CONST], rax
+ test rdx, rdx
+ cjmp LABEL17
+LABEL6:
+ mov qword [rdi + CONST], rax
+ test rax, rax
+ cjmp LABEL20
+LABEL10:
+ or byte [rdi + CONST], CONST
+ mov qword [rdi + CONST], rdx
+ ret

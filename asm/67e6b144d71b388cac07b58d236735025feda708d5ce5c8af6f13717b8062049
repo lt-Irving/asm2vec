@@ -1,0 +1,120 @@
+ .name fcn.0000de30
+ .offset 000000000000de30
+ .file dash
+ endbr64
+ push r12
+ lea rdi, [rip + CONST]
+ mov r12d, CONST
+ push rbp
+ push rbx
+ call CONST
+ mov rbp, qword [rip + CONST]
+ mov rdi, qword [rbp]
+ test rdi, rdi
+ cjmp LABEL10
+LABEL56:
+ cmp byte [rdi], CONST
+ cjmp LABEL12
+ call CONST
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL16
+ jmp LABEL17
+LABEL25:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL17
+LABEL16:
+ movzx edx, word [rbx + CONST]
+ shl rdx, CONST
+ add rdx, qword [rbx + CONST]
+ cmp dword [rdx + CONST], eax
+ cjmp LABEL25
+ jmp LABEL26
+LABEL33:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL31
+LABEL26:
+ cmp byte [rbx + CONST], CONST
+ cjmp LABEL33
+ movzx edx, byte [rbx + CONST]
+ mov eax, edx
+ or eax, CONST
+ mov byte [rbx + CONST], al
+ movzx eax, word [rbx + CONST]
+ shl rax, CONST
+ add rax, qword [rbx + CONST]
+ mov eax, dword [rax + CONST]
+ movzx ecx, ah
+ mov r12d, ecx
+ mov ecx, eax
+ and ecx, CONST
+ cjmp LABEL17
+ cmp al, CONST
+ cjmp LABEL48
+ cmp ecx, CONST
+ cjmp LABEL50
+LABEL97:
+ lea r12d, [rcx + CONST]
+ nop word [rax + rax]
+LABEL17:
+ mov rdi, qword [rbp + CONST]
+ add rbp, CONST
+ test rdi, rdi
+ cjmp LABEL56
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL77:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL31
+LABEL10:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL69
+ jmp LABEL70
+LABEL76:
+ or byte [rax + CONST], CONST
+ mov rax, qword [rax + CONST]
+ test rax, rax
+ cjmp LABEL70
+LABEL69:
+ cmp byte [rax + CONST], CONST
+ cjmp LABEL76
+ jmp LABEL77
+LABEL12:
+ xor esi, esi
+ call CONST
+ mov rbx, rax
+ jmp LABEL26
+LABEL31:
+ mov r12d, dword [rip + CONST]
+ pop rbx
+ pop rbp
+ sub r12d, CONST
+ mov eax, r12d
+ pop r12
+ ret
+LABEL70:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret
+LABEL50:
+ or edx, CONST
+ mov byte [rbx + CONST], dl
+ jmp LABEL97
+LABEL48:
+ mov ecx, r12d
+ lea r12d, [rcx + CONST]
+ jmp LABEL17

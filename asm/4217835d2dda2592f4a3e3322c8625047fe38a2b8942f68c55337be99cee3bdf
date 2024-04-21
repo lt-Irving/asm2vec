@@ -1,0 +1,26 @@
+ .name fcn.000174b0
+ .offset 00000000000174b0
+ .file dpkg-deb
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL5
+ cmp rax, rdi
+ cjmp LABEL7
+ nop dword [rax + rax]
+LABEL5:
+ mov rax, qword [rax]
+ test rax, rax
+ cjmp LABEL3
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL5
+ cmp rdi, rax
+ cjmp LABEL5
+LABEL7:
+ mov dword [rax + CONST], CONST
+ mov byte [rip + CONST], CONST
+ ret
+LABEL3:
+ ret

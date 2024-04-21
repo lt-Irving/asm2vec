@@ -1,0 +1,25 @@
+ .name fcn.00006040
+ .offset 0000000000006040
+ .file chsh
+ endbr64
+ mov rax, qword [rdi]
+ mov rax, qword [rax + CONST]
+ test rax, rax
+ cjmp LABEL4
+ mov rdx, qword [rsi]
+ mov r8d, CONST
+ mov rdx, qword [rdx + CONST]
+ test rdx, rdx
+ cjmp LABEL9
+ mov ecx, dword [rdx + CONST]
+ cmp dword [rax + CONST], ecx
+ cjmp LABEL9
+ seta r8b
+ movzx r8d, r8b
+LABEL9:
+ mov eax, r8d
+ ret
+LABEL4:
+ mov r8d, CONST
+ mov eax, r8d
+ ret

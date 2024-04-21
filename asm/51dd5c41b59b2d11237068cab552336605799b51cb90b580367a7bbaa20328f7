@@ -1,0 +1,80 @@
+ .name sym.glob_pattern_p
+ .offset 00000000000a9e90
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL9
+ xor esi, esi
+ mov rdi, rsp
+ mov rdx, r12
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL9
+ mov rdi, qword [rsp]
+ mov r12d, dword [rdi]
+ lea rax, [rdi + CONST]
+ test r12d, r12d
+ cjmp LABEL20
+ mov rsi, rdi
+ xor r9d, r9d
+ lea rcx, [rip + CONST]
+ xor r8d, r8d
+LABEL43:
+ sub r12d, CONST
+ cmp r12d, CONST
+ cjmp LABEL27
+ movsxd rdx, dword [rcx + r12*CONST]
+ add rdx, rcx
+ notrack jmp rdx
+ mov r12d, dword [rsi + CONST]
+ test r12d, r12d
+ cjmp LABEL20
+ lea rax, [rsi + CONST]
+ mov r9d, CONST
+ nop dword [rax + rax]
+LABEL27:
+ mov r12d, dword [rax]
+ lea rdx, [rax + CONST]
+ test r12d, r12d
+ cjmp LABEL40
+ mov rsi, rax
+ mov rax, rdx
+ jmp LABEL43
+ test r8d, r8d
+ cjmp LABEL27
+LABEL57:
+ mov r12d, CONST
+LABEL20:
+ call CONST
+LABEL63:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL50
+ add rsp, CONST
+ mov eax, r12d
+ pop r12
+ ret
+ cmp dword [rsi + CONST], CONST
+ cjmp LABEL27
+ jmp LABEL57
+ add r8d, CONST
+ jmp LABEL27
+LABEL9:
+ mov rdi, r12
+ call CONST
+ mov r12d, eax
+ jmp LABEL63
+LABEL40:
+ test r9d, r9d
+ mov eax, CONST
+ cmovne r12d, eax
+ jmp LABEL20
+LABEL50:
+ call CONST

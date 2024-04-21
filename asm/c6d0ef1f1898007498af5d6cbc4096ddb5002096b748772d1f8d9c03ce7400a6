@@ -1,0 +1,19 @@
+ .name sym.dispose_used_env_vars
+ .offset 00000000000539f0
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL2
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ add rsp, CONST
+ jmp CONST
+LABEL8:
+ add rsp, CONST
+ ret
+LABEL2:
+ ret

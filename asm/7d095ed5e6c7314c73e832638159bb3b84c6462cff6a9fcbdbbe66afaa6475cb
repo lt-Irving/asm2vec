@@ -1,0 +1,71 @@
+ .name fcn.0000e1d0
+ .offset 000000000000e1d0
+ .file dir
+ endbr64
+ mov eax, dword [rsi + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL4
+ xor eax, eax
+ ret
+LABEL4:
+ push rbp
+ xor ecx, ecx
+ xor edx, edx
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ lea rsi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL17
+ cjmp LABEL18
+LABEL51:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL17:
+ call CONST
+ mov edi, dword [rax]
+ cmp edi, CONST
+ cjmp LABEL18
+LABEL57:
+ call CONST
+ add rsp, CONST
+ movzx eax, al
+ pop rbx
+ pop rbp
+ neg eax
+ ret
+LABEL18:
+ mov eax, dword [rbx + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL38
+LABEL58:
+ xor eax, eax
+LABEL53:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL38:
+ xor ecx, ecx
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL50
+ cjmp LABEL51
+ xor eax, eax
+ jmp LABEL53
+LABEL50:
+ call CONST
+ mov edi, dword [rax]
+ cmp edi, CONST
+ cjmp LABEL57
+ jmp LABEL58

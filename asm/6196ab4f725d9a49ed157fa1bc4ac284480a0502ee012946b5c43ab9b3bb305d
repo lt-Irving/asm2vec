@@ -1,0 +1,66 @@
+ .name fcn.00005ae0
+ .offset 0000000000005ae0
+ .file chsh
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ movsx rbp, byte [rdi]
+ test bpl, bpl
+ cjmp LABEL11
+ mov r13, rsi
+ mov rbx, rdi
+ movsx esi, bpl
+ jmp LABEL15
+LABEL23:
+ movsx esi, byte [rbx + CONST]
+ add rbx, CONST
+ test sil, sil
+ cjmp LABEL19
+LABEL15:
+ mov rdi, r13
+ call CONST
+ test rax, rax
+ cjmp LABEL23
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL19:
+ call CONST
+ mov rax, qword [rax]
+ jmp LABEL33
+LABEL39:
+ movsx rbp, byte [r12 + CONST]
+ add r12, CONST
+ test bpl, bpl
+ cjmp LABEL11
+LABEL33:
+ test byte [rax + rbp*CONST + CONST], CONST
+ cjmp LABEL39
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL11:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ mov eax, CONST
+ ret

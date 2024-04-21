@@ -1,0 +1,20 @@
+ .name fcn.000017a0
+ .offset 00000000000017a0
+ .file clear
+ endbr64
+ push r12
+ mov r12, rsi
+ mov edx, CONST
+ mov rsi, rdi
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ pop r12
+ ret
+LABEL8:
+ mov edi, dword [rip + CONST]
+ mov rdx, r12
+ mov esi, CONST
+ pop r12
+ jmp CONST

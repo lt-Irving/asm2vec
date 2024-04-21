@@ -1,0 +1,18 @@
+ .name sym.strlist_dispose
+ .offset 00000000000b2160
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL2:
+ ret

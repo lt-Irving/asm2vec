@@ -1,0 +1,23 @@
+ .name sym.rl_unix_line_discard
+ .offset 00000000000d0440
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL4
+ call CONST
+LABEL13:
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ xor esi, esi
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ cjmp LABEL13
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

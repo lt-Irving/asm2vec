@@ -1,0 +1,22 @@
+ .name fcn.0000c640
+ .offset 000000000000c640
+ .file dir
+ endbr64
+ mov rax, qword [rdi + CONST]
+ mov rdx, rsi
+ cmp qword [rsi + CONST], rax
+ cjmp LABEL4
+ cjmp LABEL5
+ mov rax, qword [rdi + CONST]
+ sub eax, dword [rsi + CONST]
+ cjmp LABEL8
+ mov rsi, qword [rdi]
+ mov rdi, qword [rdx]
+ jmp CONST
+LABEL5:
+ mov eax, CONST
+LABEL8:
+ ret
+LABEL4:
+ mov eax, CONST
+ ret

@@ -1,0 +1,59 @@
+ .name sym.restore_pipeline
+ .offset 0000000000059e70
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r12, rsp
+ lea rbp, [rsp + CONST]
+ mov rdi, r12
+ call CONST
+ mov esi, CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rsi, r12
+ mov rdx, rbp
+ xor edi, edi
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov r12, qword [rip + CONST]
+ mov rax, qword [rdi]
+ mov qword [rip + CONST], rax
+ mov rax, qword [rdi + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov eax, dword [rip + CONST]
+ xor edx, edx
+ mov rsi, rbp
+ mov edi, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ test ebx, ebx
+ cjmp LABEL36
+ test r12, r12
+ cjmp LABEL38
+LABEL36:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL41
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL38:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ jmp LABEL36
+LABEL41:
+ call CONST

@@ -1,0 +1,19 @@
+ .name sym.rl_emacs_editing_mode
+ .offset 00000000000d69f0
+ .file bash
+ endbr64
+ lea rax, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test eax, eax
+ cjmp LABEL7
+ xor eax, eax
+ ret
+LABEL7:
+ sub rsp, CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

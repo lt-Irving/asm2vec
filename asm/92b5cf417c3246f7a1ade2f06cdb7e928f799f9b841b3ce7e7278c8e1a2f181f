@@ -1,0 +1,30 @@
+ .name sym.find_shell_variable
+ .offset 000000000004df40
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rsi, qword [rip + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov rdi, rax
+ test byte [rax + CONST], CONST
+ cjmp LABEL8
+LABEL17:
+ mov rax, qword [rdi + CONST]
+ test rax, rax
+ cjmp LABEL11
+ add rsp, CONST
+ jmp rax
+LABEL8:
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL17
+ nop dword [rax]
+LABEL5:
+ xor edi, edi
+LABEL11:
+ mov rax, rdi
+ add rsp, CONST
+ ret

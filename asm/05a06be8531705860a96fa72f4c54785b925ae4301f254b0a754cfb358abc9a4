@@ -1,0 +1,24 @@
+ .name sym._rl_input_queued
+ .offset 00000000000d1720
+ .file bash
+ endbr64
+ push rbx
+ mov ebx, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL4
+ mov dword [rip + CONST], edi
+LABEL4:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL8
+ call rax
+LABEL16:
+ test ebx, ebx
+ cjmp LABEL11
+ mov dword [rip + CONST], ebx
+LABEL11:
+ pop rbx
+ ret
+LABEL8:
+ call CONST
+ jmp LABEL16

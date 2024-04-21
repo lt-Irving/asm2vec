@@ -1,0 +1,17 @@
+ .name fcn.00014980
+ .offset 0000000000014980
+ .file diff
+ sub rsp, CONST
+ xor edi, edi
+ call CONST
+ mov esi, CONST
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ add rsp, CONST
+ jmp LABEL7
+LABEL7:
+ test rdi, rdi
+ lea rax, [rip + CONST]
+ cmove rdi, rax
+ mov dword [rdi], esi
+ ret

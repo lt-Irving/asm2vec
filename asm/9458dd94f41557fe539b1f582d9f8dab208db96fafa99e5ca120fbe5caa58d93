@@ -1,0 +1,16 @@
+ .name fcn.0000a296
+ .offset 000000000000a296
+ .file apt-mark
+ endbr64
+ mov rdi, rax
+ call CONST
+ mov rsi, r12
+ mov rdi, r14
+ call CONST
+ call CONST
+ endbr64
+ mov rbp, rax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ nop word cs:[rax + rax]

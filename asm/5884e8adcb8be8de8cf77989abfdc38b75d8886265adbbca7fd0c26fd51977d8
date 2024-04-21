@@ -1,0 +1,19 @@
+ .name sym.ttsave
+ .offset 00000000000b0210
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

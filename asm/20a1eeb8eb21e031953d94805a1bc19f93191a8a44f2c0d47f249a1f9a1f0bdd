@@ -1,0 +1,63 @@
+ .name fcn.00006140
+ .offset 0000000000006140
+ .file comm
+ push r15
+ mov r15, r8
+ push r14
+ mov r14, rcx
+ push r13
+ mov r13, rdx
+ mov edx, CONST
+ push r12
+ mov r12, rsi
+ lea rsi, [rip + CONST]
+ push rbp
+ mov ebp, edi
+ xor edi, edi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov esi, ebp
+ xor edi, edi
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ xor esi, esi
+ xor edi, edi
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ mov rcx, r15
+ mov rdx, r14
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov rcx, r13
+ mov rdx, r12
+ mov esi, CONST
+ xor edi, edi
+ mov rbx, rax
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov r12, rax
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov r8, rbx
+ xor esi, esi
+ add rsp, CONST
+ mov rdx, rax
+ mov rcx, r12
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ jmp CONST

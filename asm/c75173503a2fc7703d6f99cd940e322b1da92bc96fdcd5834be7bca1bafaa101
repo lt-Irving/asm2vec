@@ -1,0 +1,33 @@
+ .name fcn.00009380
+ .offset 0000000000009380
+ .file chfn
+ endbr64
+ push r12
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL9
+ mov rdi, qword [rbx]
+ call CONST
+ mov qword [r12], rax
+ test rax, rax
+ cjmp LABEL14
+ mov rax, qword [rbx + CONST]
+ mov qword [r12 + CONST], rax
+ mov rax, qword [rbx + CONST]
+ mov qword [r12 + CONST], rax
+LABEL9:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL14:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ jmp LABEL9

@@ -1,0 +1,143 @@
+ .name sym.find_or_make_array_variable
+ .offset 000000000007ccf0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL11
+ mov eax, dword [rax + CONST]
+LABEL57:
+ test bl, CONST
+ cjmp LABEL14
+LABEL113:
+ test eax, CONST
+ cjmp LABEL16
+LABEL14:
+ and ebx, CONST
+ cjmp LABEL18
+LABEL120:
+ test al, CONST
+ cjmp LABEL20
+LABEL18:
+ test al, CONST
+ cjmp LABEL22
+LABEL39:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL22:
+ add rsp, CONST
+ mov rdi, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL16:
+ xor r12d, r12d
+ test al, CONST
+ cjmp LABEL39
+ mov rdi, rbp
+ call CONST
+ jmp LABEL39
+LABEL11:
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov r13, rax
+ test rax, rax
+ cjmp LABEL48
+ mov eax, dword [rax + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL52
+LABEL106:
+ mov eax, dword [r13 + CONST]
+ test ah, CONST
+ cjmp LABEL55
+ mov r12, r13
+ jmp LABEL57
+LABEL48:
+ and ebx, CONST
+ cjmp LABEL59
+LABEL110:
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL55:
+ mov rdi, qword [r13 + CONST]
+ mov esi, CONST
+ call CONST
+ mov rdi, qword [r13 + CONST]
+ test eax, eax
+ cjmp LABEL72
+ test bl, CONST
+ cjmp LABEL74
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL78
+LABEL59:
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL20:
+ mov edx, CONST
+ xor edi, edi
+ xor r12d, r12d
+ mov dword [rip + CONST], CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL39
+LABEL52:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ and dword [r13 + CONST], CONST
+ jmp LABEL106
+LABEL74:
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL110
+ mov eax, dword [rax + CONST]
+ test bl, CONST
+ cjmp LABEL113
+ jmp LABEL18
+LABEL72:
+ call CONST
+ jmp LABEL39
+LABEL78:
+ mov eax, dword [rax + CONST]
+ test bl, CONST
+ cjmp LABEL113
+ jmp LABEL120

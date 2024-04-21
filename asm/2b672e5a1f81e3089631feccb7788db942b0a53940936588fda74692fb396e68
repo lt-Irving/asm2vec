@@ -1,0 +1,37 @@
+ .name method.std::vector_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_____std::allocator_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_______.vector__
+ .offset 0000000000009660
+ .file apt-mark
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov rbx, qword [rdi + CONST]
+ mov rbp, qword [rdi]
+ cmp rbx, rbp
+ cjmp LABEL7
+ mov r12, rdi
+ nop word [rax + rax]
+LABEL17:
+ mov rdi, qword [rbp]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL13
+ call CONST
+LABEL13:
+ add rbp, CONST
+ cmp rbx, rbp
+ cjmp LABEL17
+ mov rbp, qword [r12]
+LABEL7:
+ test rbp, rbp
+ cjmp LABEL20
+ pop rbx
+ mov rdi, rbp
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL20:
+ pop rbx
+ pop rbp
+ pop r12
+ ret

@@ -1,0 +1,35 @@
+ .name sym._rl_free_undo_list
+ .offset 00000000000d07c0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ jmp LABEL7
+LABEL16:
+ mov rdi, rbp
+ call CONST
+ test rbx, rbx
+ cjmp LABEL11
+LABEL7:
+ mov rbp, rbx
+ mov rbx, qword [rbx]
+ mov eax, dword [rbp + CONST]
+ test eax, eax
+ cjmp LABEL16
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ test rbx, rbx
+ cjmp LABEL7
+LABEL11:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ ret

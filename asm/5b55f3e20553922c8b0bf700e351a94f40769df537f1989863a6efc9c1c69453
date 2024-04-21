@@ -1,0 +1,69 @@
+ .name sym.rl_vi_change_char
+ .offset 00000000000bc870
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov ebp, edi
+ sub rsp, CONST
+ mov r12d, dword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test r12d, r12d
+ cjmp LABEL11
+ test byte [rip + CONST], CONST
+ cjmp LABEL13
+ mov r13, rsp
+ mov rdi, r13
+ call CONST
+ mov edx, CONST
+ mov rsi, r13
+ lea rdi, [rip + CONST]
+ mov r12d, eax
+ call CONST
+ mov byte [rip + CONST], CONST
+ test r12d, r12d
+ cjmp LABEL24
+LABEL56:
+ cmp r12d, CONST
+ cjmp LABEL24
+ cmp r12d, CONST
+ cjmp LABEL24
+ call CONST
+ mov esi, r12d
+ mov rdx, r13
+ mov edi, ebp
+ call CONST
+ mov r12d, eax
+LABEL48:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL37
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL13:
+ call CONST
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ jmp LABEL48
+LABEL11:
+ mov r13, rsp
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rdi, r13
+ call CONST
+ mov byte [rsp + CONST], CONST
+ movzx r12d, byte [rip + CONST]
+ jmp LABEL56
+LABEL24:
+ mov r12d, CONST
+ jmp LABEL48
+LABEL37:
+ call CONST

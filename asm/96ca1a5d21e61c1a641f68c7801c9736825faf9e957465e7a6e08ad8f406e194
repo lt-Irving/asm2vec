@@ -1,0 +1,36 @@
+ .name sym.print_func_list
+ .offset 000000000004d850
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ push rbx
+ mov rbx, rdi
+ jmp LABEL8
+LABEL23:
+ mov rdx, qword [rbp]
+ xor eax, eax
+ mov rsi, r12
+ mov edi, CONST
+ call CONST
+ test byte [rbp + CONST], CONST
+ cjmp LABEL15
+ mov rdi, rbp
+ call CONST
+LABEL15:
+ mov edi, CONST
+ add rbx, CONST
+ call CONST
+LABEL8:
+ mov rbp, qword [rbx]
+ test rbp, rbp
+ cjmp LABEL23
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ ret

@@ -1,0 +1,15 @@
+ .name sym.assoc_dispose
+ .offset 000000000007e710
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ xor esi, esi
+ mov rbp, rdi
+ call CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL2:
+ ret

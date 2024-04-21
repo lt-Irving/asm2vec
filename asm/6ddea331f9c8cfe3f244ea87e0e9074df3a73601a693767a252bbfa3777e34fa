@@ -1,0 +1,23 @@
+ .name sym.clear_unwind_protect_list
+ .offset 0000000000077590
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL2
+ push rbx
+ mov ebx, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL6
+ mov dword [rip + CONST], CONST
+ nop dword [rax + rax]
+LABEL11:
+ call CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL11
+LABEL6:
+ mov dword [rip + CONST], ebx
+ pop rbx
+ mov qword [rip + CONST], CONST
+ ret
+LABEL2:
+ ret

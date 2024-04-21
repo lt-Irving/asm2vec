@@ -1,0 +1,17 @@
+ .name fcn.00044060
+ .offset 0000000000044060
+ .file bash
+ push rbp
+ mov ebp, esi
+ test edi, edi
+ cjmp LABEL3
+ call CONST
+LABEL3:
+ test ebp, ebp
+ cjmp LABEL6
+ pop rbp
+ ret
+LABEL6:
+ mov edi, ebp
+ pop rbp
+ jmp CONST

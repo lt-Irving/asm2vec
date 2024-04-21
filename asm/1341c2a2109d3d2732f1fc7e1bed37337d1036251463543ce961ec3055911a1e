@@ -1,0 +1,22 @@
+ .name sym.set_dollar_vars_changed
+ .offset 0000000000092a70
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL4
+ or eax, CONST
+ mov dword [rip + CONST], eax
+ ret
+LABEL4:
+ lea rdx, [rip + CONST]
+ cmp qword [rip + CONST], rdx
+ cjmp LABEL10
+ or eax, CONST
+ mov dword [rip + CONST], eax
+ ret
+LABEL10:
+ or eax, CONST
+ mov dword [rip + CONST], eax
+ ret

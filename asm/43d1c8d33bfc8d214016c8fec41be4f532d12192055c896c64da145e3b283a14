@@ -1,0 +1,22 @@
+ .name sym.dispose_var_context
+ .offset 0000000000051ca0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+LABEL9:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST

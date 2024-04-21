@@ -1,0 +1,42 @@
+ .name sym.terminate_stopped_jobs
+ .offset 000000000005a3a0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ push rbp
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ jmp LABEL8
+LABEL16:
+ add rbx, CONST
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL11
+LABEL8:
+ mov rax, qword [rip + CONST]
+ lea rbp, [rbx*CONST]
+ mov rax, qword [rax + rbx*CONST]
+ test rax, rax
+ cjmp LABEL16
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL16
+ mov edi, dword [rax + CONST]
+ mov esi, CONST
+ add rbx, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov esi, CONST
+ mov rax, qword [rax + rbp]
+ mov edi, dword [rax + CONST]
+ call CONST
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL8
+LABEL11:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL3:
+ ret

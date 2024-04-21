@@ -1,0 +1,37 @@
+ .name sym.set_if_not
+ .offset 0000000000050e40
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL7
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL11
+LABEL20:
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ call CONST
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL20
+LABEL11:
+ mov rax, qword [rip + CONST]
+ mov rsi, r12
+ mov rdi, rbp
+ xor r8d, r8d
+ mov ecx, CONST
+ mov rdx, qword [rax + CONST]
+ add rsp, CONST
+ pop rbp
+ pop r12
+ jmp CONST

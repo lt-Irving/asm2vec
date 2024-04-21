@@ -1,0 +1,141 @@
+ .name sym.makunbound
+ .offset 00000000000527d0
+ .file bash
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push r14
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+ jmp LABEL10
+LABEL20:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL13
+LABEL10:
+ mov rsi, qword [rbx + CONST]
+ xor edx, edx
+ mov rdi, r12
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL20
+ mov r13, qword [rax + CONST]
+ test r13, r13
+ cjmp LABEL23
+ mov eax, dword [r13 + CONST]
+ test al, CONST
+ cjmp LABEL26
+ add dword [rip + CONST], CONST
+LABEL26:
+ test al, CONST
+ cjmp LABEL23
+ mov ecx, dword [r13 + CONST]
+ mov edx, dword [rip + CONST]
+ cmp ecx, edx
+ cjmp LABEL33
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL23
+ cmp ecx, edx
+ cjmp LABEL23
+LABEL33:
+ test eax, CONST
+ cjmp LABEL40
+ mov rdi, qword [r13 + CONST]
+ test al, CONST
+ cjmp LABEL43
+ test al, CONST
+ cjmp LABEL45
+ test rdi, rdi
+ cjmp LABEL40
+ call CONST
+LABEL40:
+ mov eax, dword [r13 + CONST]
+ mov rdi, qword [r13 + CONST]
+ mov qword [r13 + CONST], CONST
+ and eax, CONST
+ cmp eax, CONST
+ sete al
+ movzx eax, al
+ or eax, CONST
+ mov dword [r13 + CONST], eax
+ test rdi, rdi
+ cjmp LABEL59
+ call CONST
+ mov qword [r13 + CONST], CONST
+LABEL59:
+ mov r12, qword [r13]
+ mov r14, qword [rbx + CONST]
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov rsi, r14
+ xor edx, edx
+ mov rdi, rax
+ call CONST
+ mov rdi, qword [r13]
+ mov qword [rax + CONST], r13
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL23:
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ mov r12, rax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdi, r13
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, r12
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL13:
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL43:
+ call CONST
+ jmp LABEL40
+LABEL2:
+ mov eax, CONST
+ ret
+LABEL45:
+ call CONST
+ jmp LABEL40

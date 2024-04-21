@@ -1,0 +1,19 @@
+ .name fcn.00013330
+ .offset 0000000000013330
+ .file dash
+ endbr64
+ sub rsp, CONST
+ mov dword [rip + CONST], edi
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ test edi, edi
+ cjmp LABEL7
+LABEL13:
+ mov dword [rip + CONST], CONST
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL7:
+ call CONST
+ jmp LABEL13

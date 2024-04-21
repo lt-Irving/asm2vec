@@ -1,0 +1,41 @@
+ .name fcn.000072a0
+ .offset 00000000000072a0
+ .file chsh
+ test rsi, rsi
+ cjmp LABEL1
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov rbx, rsi
+ nop word [rax + rax]
+LABEL21:
+ mov rdi, qword [rbx + CONST]
+ test rdi, rdi
+ cjmp LABEL11
+ mov rax, qword [r12]
+ call qword [rax + CONST]
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL18
+LABEL11:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL21
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL18:
+ mov rax, rbx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL1:
+ xor eax, eax
+ ret

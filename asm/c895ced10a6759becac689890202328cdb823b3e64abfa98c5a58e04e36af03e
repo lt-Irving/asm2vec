@@ -1,0 +1,54 @@
+ .name sym.connect_async_list
+ .offset 0000000000041270
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword [rdi + CONST]
+ mov rdi, qword [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL8
+ test byte [rbp + CONST], CONST
+ cjmp LABEL8
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL8
+ movabs r8, CONST
+ mov rax, qword [rdi]
+ mov rbx, rbp
+ and rax, r8
+ cmp rax, CONST
+ cjmp LABEL18
+ jmp LABEL19
+LABEL29:
+ mov rax, qword [rax + CONST]
+ mov rbx, rdi
+ mov rcx, qword [rax]
+ and rcx, r8
+ cmp rcx, CONST
+ cjmp LABEL25
+ mov rdi, rax
+LABEL18:
+ mov rax, qword [rdi + CONST]
+ cmp dword [rax + CONST], CONST
+ cjmp LABEL29
+LABEL19:
+ call CONST
+ mov r8, rax
+ mov rax, qword [rbx + CONST]
+ mov qword [rax + CONST], r8
+ add rsp, CONST
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ ret
+LABEL8:
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL25:
+ mov rdi, rax
+ jmp LABEL19

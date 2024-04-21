@@ -1,0 +1,122 @@
+ .name fcn.00022840
+ .offset 0000000000022840
+ .file diff
+ push r15
+ mov r15, rcx
+ push r14
+ push r13
+ mov r13, rsi
+ push r12
+ mov r12, r8
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov rbx, r9
+ sub rsp, CONST
+ mov qword [rsp], rdi
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rax, qword [rsi]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov edx, dword [rbx]
+ mov r14, rax
+ test edx, edx
+ cjmp LABEL22
+ test rax, rax
+ cjmp LABEL24
+LABEL22:
+ lea rax, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ nop word [rax + rax]
+LABEL87:
+ movzx eax, byte [rbp + CONST]
+ mov edx, eax
+ and edx, CONST
+ cmp dl, CONST
+ cjmp LABEL32
+LABEL71:
+ cmp al, CONST
+ cjmp LABEL34
+ test r12, r12
+ cjmp LABEL32
+LABEL34:
+ mov rdi, qword [rsp]
+ mov r9, rbx
+ mov r8, r12
+ mov rcx, r15
+ mov rdx, rbp
+ mov rsi, r13
+ call CONST
+ mov r9, rax
+ mov eax, dword [rbx]
+ test eax, eax
+ cjmp LABEL47
+ test r9, r9
+ cjmp LABEL49
+LABEL47:
+ test r14, r14
+ cjmp LABEL51
+ test r9, r9
+ cjmp LABEL51
+ mov rax, qword [rsp + CONST]
+ mov r8, qword [rsp + CONST]
+ mov rcx, r9
+ mov rdx, r14
+ mov qword [rsp + CONST], r9
+ lea rsi, [rax + CONST]
+ lea rdi, [rax + CONST]
+ mov byte [rsp + CONST], CONST
+ call CONST
+ mov r9, qword [rsp + CONST]
+ test rax, rax
+ cjmp LABEL65
+ mov r14, rax
+ movzx eax, byte [rbp + CONST]
+ mov edx, eax
+ and edx, CONST
+ cmp dl, CONST
+ cjmp LABEL71
+ nop dword [rax]
+LABEL32:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ mov rax, r14
+ cjmp LABEL76
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL51:
+ test r14, r14
+ cmove r14, r9
+ jmp LABEL87
+LABEL49:
+ test r14, r14
+ cjmp LABEL24
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ mov rdi, r14
+ call CONST
+LABEL24:
+ xor r14d, r14d
+ jmp LABEL32
+LABEL65:
+ mov rdi, r9
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, r14
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ call CONST
+ xor r14d, r14d
+ mov dword [rbx], CONST
+ jmp LABEL32
+LABEL76:
+ call CONST

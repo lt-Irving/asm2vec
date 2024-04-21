@@ -1,0 +1,22 @@
+ .name sym.rl_kill_region
+ .offset 00000000000d04a0
+ .file bash
+ endbr64
+ push r12
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ cmp dword [rip + CONST], eax
+ cmovle eax, dword [rip + CONST]
+ mov ebx, eax
+ call CONST
+ mov edi, CONST
+ mov r12d, eax
+ call CONST
+ mov dword [rip + CONST], ebx
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret

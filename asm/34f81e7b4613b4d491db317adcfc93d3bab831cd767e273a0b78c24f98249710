@@ -1,0 +1,44 @@
+ .name fcn.00005017
+ .offset 0000000000005017
+ .file apt-mark
+LABEL12:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL2
+ call CONST
+LABEL2:
+ mov rdi, r14
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov byte [rsp + CONST], al
+ jmp LABEL9
+ endbr64
+ mov r12, rax
+ jmp LABEL12
+LABEL9:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ test rdi, rdi
+ cjmp LABEL17
+ call CONST
+LABEL17:
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL25
+ movzx eax, byte [rsp + CONST]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL25:
+ call CONST

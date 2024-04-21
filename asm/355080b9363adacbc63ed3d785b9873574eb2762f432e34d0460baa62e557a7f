@@ -1,0 +1,56 @@
+ .name fcn.0000ea70
+ .offset 000000000000ea70
+ .file diff
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rbp, rsp
+ jmp LABEL7
+LABEL34:
+ sub eax, CONST
+ mov ebx, CONST
+ mov dword [rip + CONST], eax
+LABEL38:
+ mov edi, ebx
+ call CONST
+ xor edx, edx
+ mov rsi, rbp
+ mov edi, CONST
+ call CONST
+LABEL7:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL19
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL22
+LABEL19:
+ mov edi, CONST
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rdx, rbp
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov ebx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL34
+ xor esi, esi
+ mov edi, ebx
+ call CONST
+ jmp LABEL38
+LABEL22:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL41
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL41:
+ call CONST

@@ -1,0 +1,27 @@
+ .name fcn.0009d000
+ .offset 000000000009d000
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push rbx
+ xor ebx, ebx
+ test rax, rax
+ cjmp LABEL5
+ call rax
+ mov ebx, eax
+LABEL5:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL10
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ or ebx, eax
+ mov qword [rip + CONST], rdx
+LABEL10:
+ xor eax, eax
+ test ebx, ebx
+ pop rbx
+ setne al
+ ret

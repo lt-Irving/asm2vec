@@ -1,0 +1,17 @@
+ .name fcn.0000df70
+ .offset 000000000000df70
+ .file diff
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov ebx, dword [rax]
+ call CONST
+ mov rcx, rbp
+ mov edi, CONST
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ mov esi, ebx
+ call CONST
+ nop dword [rax]

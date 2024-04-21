@@ -1,0 +1,22 @@
+ .name sym.first_pending_trap
+ .offset 0000000000075690
+ .file bash
+ endbr64
+ mov eax, CONST
+ lea rdx, [rip + CONST]
+ jmp LABEL3
+LABEL10:
+ add rax, CONST
+ cmp rax, CONST
+ cjmp LABEL6
+LABEL3:
+ mov ecx, dword [rdx + rax*CONST]
+ mov r8d, eax
+ test ecx, ecx
+ cjmp LABEL10
+ mov eax, r8d
+ ret
+LABEL6:
+ mov r8d, CONST
+ mov eax, r8d
+ ret

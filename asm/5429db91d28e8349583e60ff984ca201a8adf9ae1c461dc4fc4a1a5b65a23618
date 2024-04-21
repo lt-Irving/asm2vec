@@ -1,0 +1,17 @@
+ .name fcn.0000fe10
+ .offset 000000000000fe10
+ .file dash
+ endbr64
+ push rbp
+ mov esi, CONST
+ mov rbp, rdi
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL6
+ pop rbp
+ ret
+LABEL6:
+ mov rdi, rbp
+ call CONST
+ nop word cs:[rax + rax]
+ nop

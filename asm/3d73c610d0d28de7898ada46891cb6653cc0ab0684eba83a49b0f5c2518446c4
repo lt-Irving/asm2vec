@@ -1,0 +1,42 @@
+ .name sym._rl_init_eightbit
+ .offset 00000000000d5d40
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL4
+ movzx edx, byte [rax]
+ mov rsi, rax
+ xor eax, eax
+ test dl, dl
+ cjmp LABEL9
+ cmp dl, CONST
+ cjmp LABEL11
+ cmp dl, CONST
+ cjmp LABEL13
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ movsx eax, al
+ test eax, eax
+ cjmp LABEL13
+LABEL9:
+ add rsp, CONST
+ ret
+LABEL11:
+ cmp byte [rsi + CONST], CONST
+ cjmp LABEL9
+LABEL13:
+ mov dword [rip + CONST], CONST
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL4:
+ xor eax, eax
+ add rsp, CONST
+ ret

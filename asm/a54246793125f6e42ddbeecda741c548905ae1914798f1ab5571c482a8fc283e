@@ -1,0 +1,121 @@
+ .name fcn.0000c590
+ .offset 000000000000c590
+ .file dpkg-deb
+ endbr64
+ push r14
+ push r13
+ xor r13d, r13d
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ movsx edi, byte [rsi]
+ mov rbx, rsi
+ test dil, dil
+ cjmp LABEL12
+ jmp LABEL13
+LABEL30:
+ movsx eax, byte [r12]
+ sub eax, CONST
+ cmp r13d, CONST
+ cjmp LABEL17
+ cjmp LABEL18
+ cmp eax, CONST
+ cjmp LABEL17
+LABEL18:
+ movsx edi, byte [r12 + CONST]
+ lea edx, [r13 + r13*CONST]
+ add r12, CONST
+ lea r13d, [rax + rdx*CONST]
+ test dil, dil
+ cjmp LABEL26
+LABEL12:
+ mov esi, CONST
+ call CONST
+ test al, al
+ cjmp LABEL30
+ cmp rbx, r12
+ cjmp LABEL13
+ cmp byte [r12], CONST
+ cjmp LABEL34
+ movsx edi, byte [r12 + CONST]
+ lea rbx, [r12 + CONST]
+ xor r14d, r14d
+ mov r12, rbx
+ test dil, dil
+ cjmp LABEL40
+ jmp LABEL41
+LABEL58:
+ movsx eax, byte [r12]
+ sub eax, CONST
+ cmp r14d, CONST
+ cjmp LABEL45
+ cjmp LABEL46
+ cmp eax, CONST
+ cjmp LABEL45
+LABEL46:
+ movsx edi, byte [r12 + CONST]
+ lea edx, [r14 + r14*CONST]
+ add r12, CONST
+ lea r14d, [rax + rdx*CONST]
+ test dil, dil
+ cjmp LABEL54
+LABEL40:
+ mov esi, CONST
+ call CONST
+ test al, al
+ cjmp LABEL58
+ cmp rbx, r12
+ cjmp LABEL41
+ movzx eax, byte [r12]
+ cmp al, CONST
+ cjmp LABEL63
+ test al, al
+ cjmp LABEL63
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL68
+LABEL17:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+LABEL68:
+ pop rbx
+ lea rdi, [rip + CONST]
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL26:
+ cmp rbx, r12
+ cjmp LABEL13
+LABEL34:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL68
+LABEL13:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL68
+LABEL45:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL68
+LABEL54:
+ cmp rbx, r12
+ cjmp LABEL41
+LABEL63:
+ pop rbx
+ mov dword [rbp], r13d
+ xor eax, eax
+ mov dword [rbp + CONST], r14d
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL41:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL68

@@ -1,0 +1,85 @@
+ .name sym.assignment
+ .offset 000000000003ed70
+ .file bash
+ endbr64
+ push r12
+ mov r12d, esi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ movzx ebx, byte [rdi]
+ call CONST
+ mov rcx, qword [rax]
+ movzx eax, bl
+ test byte [rcx + rax*CONST + CONST], CONST
+ cjmp LABEL11
+ cmp bl, CONST
+ cjmp LABEL13
+LABEL11:
+ test bl, bl
+ cjmp LABEL15
+ xor eax, eax
+ jmp LABEL17
+LABEL33:
+ movzx edx, bl
+ test byte [rcx + rdx*CONST], CONST
+ cjmp LABEL20
+ cmp bl, CONST
+ cjmp LABEL15
+LABEL20:
+ add rax, CONST
+ movzx ebx, byte [rbp + rax]
+ test bl, bl
+ cjmp LABEL15
+LABEL17:
+ mov r8d, eax
+ cmp bl, CONST
+ cjmp LABEL29
+ cmp bl, CONST
+ cjmp LABEL31
+ cmp bl, CONST
+ cjmp LABEL33
+ cmp byte [rbp + rax + CONST], CONST
+ cjmp LABEL33
+ add r8d, CONST
+LABEL29:
+ pop rbx
+ mov eax, r8d
+ pop rbp
+ pop r12
+ ret
+LABEL13:
+ test r12b, CONST
+ cjmp LABEL15
+ cmp bl, CONST
+ cjmp LABEL15
+ xor r8d, r8d
+LABEL31:
+ mov edx, r12d
+ mov esi, r8d
+ mov rdi, rbp
+ sar edx, CONST
+ and edx, CONST
+ call CONST
+ movsxd rdx, eax
+ cmp byte [rbp + rdx], CONST
+ cjmp LABEL15
+ lea r8d, [rax + CONST]
+ movsxd rcx, r8d
+ movzx edx, byte [rbp + rcx]
+ cmp dl, CONST
+ cjmp LABEL60
+ cmp byte [rbp + rcx + CONST], CONST
+ lea r8d, [rax + CONST]
+ cjmp LABEL29
+LABEL15:
+ xor r8d, r8d
+ pop rbx
+ pop rbp
+ mov eax, r8d
+ pop r12
+ ret
+LABEL60:
+ cmp dl, CONST
+ cjmp LABEL29
+ jmp LABEL15

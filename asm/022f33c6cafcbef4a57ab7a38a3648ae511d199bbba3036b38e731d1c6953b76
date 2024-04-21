@@ -1,0 +1,63 @@
+ .name sym.push_args
+ .offset 0000000000052080
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL11
+ test byte [rax + CONST], CONST
+ cjmp LABEL13
+ mov r12, qword [rax + CONST]
+LABEL11:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov r13, rax
+ test rax, rax
+ cjmp LABEL19
+ test byte [rax + CONST], CONST
+ cjmp LABEL21
+ mov r13, qword [rax + CONST]
+LABEL19:
+ xor ebp, ebp
+ test rbx, rbx
+ cjmp LABEL25
+ nop dword [rax + rax]
+LABEL35:
+ mov rax, qword [rbx + CONST]
+ mov esi, CONST
+ mov rdi, r12
+ add rbp, CONST
+ mov rdx, qword [rax]
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL35
+LABEL25:
+ mov rdi, rbp
+ call CONST
+ mov rdi, r13
+ mov esi, CONST
+ mov rdx, rax
+ mov rbp, rax
+ call CONST
+ add rsp, CONST
+ mov rdi, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL21:
+ xor r13d, r13d
+ jmp LABEL19
+LABEL13:
+ xor r12d, r12d
+ jmp LABEL11

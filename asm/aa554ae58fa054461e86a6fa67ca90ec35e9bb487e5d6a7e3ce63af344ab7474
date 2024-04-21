@@ -1,0 +1,42 @@
+ .name sym.initialize_job_signals
+ .offset 000000000005bae0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL4
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ add rsp, CONST
+ ret
+LABEL7:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ ret
+LABEL4:
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST

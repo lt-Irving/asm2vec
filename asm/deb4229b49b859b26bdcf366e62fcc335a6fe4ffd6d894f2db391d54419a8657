@@ -1,0 +1,39 @@
+ .name sym._rl_next_macro_key
+ .offset 00000000000d0f80
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push r12
+ test rax, rax
+ cjmp LABEL4
+ jmp LABEL5
+LABEL14:
+ call CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL5
+LABEL4:
+ movsxd rdx, dword [rip + CONST]
+ mov rcx, rdx
+ movzx edx, byte [rax + rdx]
+ test dl, dl
+ cjmp LABEL14
+ movsx r12d, dl
+ mov rdx, qword [rip + CONST]
+ add ecx, CONST
+ mov dword [rip + CONST], ecx
+ test edx, CONST
+ cjmp LABEL20
+ and edx, CONST
+ cjmp LABEL20
+ movsxd rcx, ecx
+ cmp byte [rax + rcx], CONST
+ cjmp LABEL20
+ call CONST
+ jmp LABEL20
+LABEL5:
+ xor r12d, r12d
+LABEL20:
+ mov eax, r12d
+ pop r12
+ ret

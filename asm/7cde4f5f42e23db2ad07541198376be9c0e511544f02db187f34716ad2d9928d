@@ -1,0 +1,24 @@
+ .name sym.sv_childmax
+ .offset 000000000004ec80
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ xor r8d, r8d
+ test rax, rax
+ cjmp LABEL5
+ cmp byte [rax], CONST
+ cjmp LABEL7
+LABEL5:
+ mov edi, r8d
+ add rsp, CONST
+ jmp CONST
+LABEL7:
+ mov rdi, rax
+ mov edx, CONST
+ xor esi, esi
+ call CONST
+ add rsp, CONST
+ mov r8d, eax
+ mov edi, r8d
+ jmp CONST

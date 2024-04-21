@@ -1,0 +1,44 @@
+ .name fcn.00001eb0
+ .offset 0000000000001eb0
+ .file bzip2recover
+ push rbp
+ cmp byte [rdi + CONST], CONST
+ mov rbp, rdi
+ cjmp LABEL3
+ mov eax, dword [rdi + CONST]
+ mov edi, dword [rdi + CONST]
+ cmp eax, CONST
+ cjmp LABEL7
+ nop dword [rax]
+LABEL12:
+ add eax, CONST
+ add edi, edi
+ cmp eax, CONST
+ cjmp LABEL12
+ mov dword [rbp + CONST], CONST
+ mov dword [rbp + CONST], edi
+LABEL7:
+ mov rsi, qword [rbp]
+ movzx edi, dil
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL19
+ mov rdi, qword [rbp]
+ add qword [rip + CONST], CONST
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL19
+LABEL3:
+ mov rdi, qword [rbp]
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL28
+ cmp byte [rbp + CONST], CONST
+ cjmp LABEL19
+ call CONST
+LABEL28:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL19:
+ call CONST

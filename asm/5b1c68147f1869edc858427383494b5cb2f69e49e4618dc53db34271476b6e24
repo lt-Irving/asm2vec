@@ -1,0 +1,16 @@
+ .name sym.restore_token_state
+ .offset 0000000000032950
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov eax, dword [rdi]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rdi + CONST]
+ mov dword [rip + CONST], eax
+LABEL2:
+ ret

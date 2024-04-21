@@ -1,0 +1,43 @@
+ .name sym.rl_add_funmap_entry
+ .offset 00000000000bcb50
+ .file bash
+ endbr64
+ movsxd rdx, dword [rip + CONST]
+ push r12
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rip + CONST]
+ push rbx
+ mov rbx, rsi
+ mov esi, dword [rip + CONST]
+ lea eax, [rdx + CONST]
+ cmp eax, esi
+ cjmp LABEL11
+LABEL37:
+ lea r12, [rdi + rdx*CONST]
+ mov edi, CONST
+ call CONST
+ movsxd rcx, dword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ mov qword [r12], rax
+ mov rax, rcx
+ mov rsi, qword [rdx + rcx*CONST]
+ add eax, CONST
+ mov qword [rsi], rbp
+ mov qword [rsi + CONST], rbx
+ mov dword [rip + CONST], eax
+ mov qword [rdx + rcx*CONST + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL11:
+ add esi, CONST
+ mov dword [rip + CONST], esi
+ movsxd rsi, esi
+ shl rsi, CONST
+ call CONST
+ movsxd rdx, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov rdi, rax
+ jmp LABEL37

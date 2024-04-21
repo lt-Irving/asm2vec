@@ -1,0 +1,24 @@
+ .name fcn.000838d0
+ .offset 00000000000838d0
+ .file bash
+LABEL19:
+ push r12
+ mov r12, qword [rip + CONST]
+ lea rax, [rip + CONST]
+ push rbp
+ mov rbp, qword [rip + CONST]
+ push rbx
+ mov rbx, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+ call CONST
+ mov qword [rip + CONST], r12
+ mov qword [rip + CONST], rbp
+ mov qword [rip + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+ endbr64
+ mov edi, CONST
+ jmp LABEL19

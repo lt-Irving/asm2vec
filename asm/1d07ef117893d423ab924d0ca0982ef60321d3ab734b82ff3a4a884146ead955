@@ -1,0 +1,67 @@
+ .name sym.strip_trailing_ifs_whitespace
+ .offset 00000000000656d0
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbx
+ mov ebx, edx
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL7
+ cmp byte [rdi], CONST
+ cjmp LABEL9
+ mov rax, CONST
+LABEL49:
+ add rax, r12
+ cmp r12, rax
+ cjmp LABEL13
+LABEL54:
+ lea rdx, [rip + CONST]
+ nop dword [rax]
+LABEL37:
+ movzx ecx, byte [rax]
+ lea esi, [rcx + CONST]
+ cmp sil, CONST
+ cjmp LABEL19
+ cmp cl, CONST
+ cjmp LABEL21
+LABEL19:
+ movzx esi, cl
+ cmp byte [rdx + rsi], CONST
+ cjmp LABEL24
+LABEL21:
+ test ebx, ebx
+ cjmp LABEL13
+ cmp cl, CONST
+ cjmp LABEL13
+ movzx ecx, byte [rax + CONST]
+ lea esi, [rcx + CONST]
+ cmp sil, CONST
+ cjmp LABEL24
+ cmp cl, CONST
+ cjmp LABEL13
+LABEL24:
+ sub rax, CONST
+ cmp r12, rax
+ cjmp LABEL37
+LABEL13:
+ mov byte [rax + CONST], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL9:
+ cmp byte [rdi + CONST], CONST
+ mov rax, rdi
+ cjmp LABEL13
+ cmp byte [rdi + CONST], CONST
+ mov eax, CONST
+ cjmp LABEL49
+ call CONST
+ sub rax, CONST
+ jmp LABEL49
+LABEL7:
+ mov rax, CONST
+ jmp LABEL54

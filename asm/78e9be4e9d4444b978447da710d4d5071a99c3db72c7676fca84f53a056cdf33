@@ -1,0 +1,32 @@
+ .name fcn.00010f30
+ .offset 0000000000010f30
+ .file dash
+ push r12
+ push rbp
+ sub rsp, CONST
+ mov rsi, qword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rbp, rsp
+ mov dword [rip + CONST], edi
+ mov dword [rip + CONST], CONST
+ mov rdi, rbp
+ call CONST
+ xor edi, edi
+ mov r12, qword [rip + CONST]
+ call CONST
+ mov rdi, rax
+ mov rsi, r12
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL22
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL22:
+ call CONST

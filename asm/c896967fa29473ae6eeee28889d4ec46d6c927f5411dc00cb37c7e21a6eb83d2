@@ -1,0 +1,28 @@
+ .name fcn.000098c0
+ .offset 00000000000098c0
+ .file diff
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL6
+LABEL17:
+ add rsp, CONST
+ mov rsi, rbp
+ mov rdi, rbx
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL6:
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL17
+LABEL15:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

@@ -1,0 +1,62 @@
+ .name fcn.000100e0
+ .offset 00000000000100e0
+ .file apt-cache
+ endbr64
+ push r14
+ mov r14, rcx
+ push r13
+ mov r13, rsi
+ push r12
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ call CONST
+ xor esi, esi
+ mov r12, rax
+ mov rax, qword [r14]
+ lea r14, [r12 + CONST]
+ movzx eax, word [rax]
+ mov rdi, r14
+ mov word [r12 + CONST], ax
+ call CONST
+ lea rax, [r12 + CONST]
+ mov rsi, r13
+ lea rdx, [r12 + CONST]
+ mov rdi, rbp
+ lea rbx, [rip + CONST]
+ mov qword [r12 + CONST], rax
+ mov qword [r12 + CONST], rbx
+ mov dword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], rax
+ mov qword [r12 + CONST], CONST
+ call CONST
+ mov r13, rax
+ test rdx, rdx
+ cjmp LABEL33
+ pop rbx
+ mov rcx, r12
+ mov rdi, rbp
+ mov rsi, rax
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL33:
+ mov rsi, qword [r12 + CONST]
+ lea rdi, [r12 + CONST]
+ mov qword [r12 + CONST], rbx
+ call CONST
+ mov rdi, r14
+ call CONST
+ mov rdi, r12
+ call CONST
+ pop rbx
+ mov rax, r13
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

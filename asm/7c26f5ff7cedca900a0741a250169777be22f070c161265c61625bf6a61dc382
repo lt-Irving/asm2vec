@@ -1,0 +1,128 @@
+ .name sym.var_attribute_string
+ .offset 00000000000a0190
+ .file bash
+ endbr64
+ mov ecx, dword [rdi + CONST]
+ mov rax, rdx
+ mov r8d, ecx
+ and r8d, CONST
+ test esi, esi
+ cjmp LABEL6
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL9
+LABEL6:
+ test r8d, r8d
+ cjmp LABEL11
+ mov byte [rdx], CONST
+ mov ecx, dword [rdi + CONST]
+ lea rax, [rdx + CONST]
+ mov r8d, CONST
+LABEL11:
+ test cl, CONST
+ cjmp LABEL17
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL17:
+ test cl, CONST
+ cjmp LABEL24
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL24:
+ test cl, CONST
+ cjmp LABEL31
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL31:
+ test ch, CONST
+ cjmp LABEL38
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL38:
+ test cl, CONST
+ cjmp LABEL45
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL45:
+ test cl, CONST
+ cjmp LABEL52
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL52:
+ test cl, CONST
+ cjmp LABEL59
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL59:
+ test ch, CONST
+ cjmp LABEL66
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL66:
+ test ch, CONST
+ cjmp LABEL73
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL73:
+ and ch, CONST
+ cjmp LABEL80
+ add r8d, CONST
+ mov byte [rax], CONST
+ movsxd rax, r8d
+ add rax, rdx
+LABEL80:
+ mov byte [rax], CONST
+ mov eax, r8d
+ ret
+LABEL9:
+ test r8d, r8d
+ cjmp LABEL89
+ mov byte [rdx], CONST
+ mov ecx, dword [rdi + CONST]
+ lea rax, [rdx + CONST]
+ mov r8d, CONST
+LABEL89:
+ test cl, CONST
+ cjmp LABEL95
+ add r8d, CONST
+ mov byte [rax], CONST
+ mov ecx, dword [rdi + CONST]
+ movsxd rax, r8d
+ add rax, rdx
+LABEL95:
+ and ecx, CONST
+ cjmp LABEL80
+ add r8d, CONST
+ mov byte [rax], CONST
+ movsxd rax, r8d
+ add rax, rdx
+ mov byte [rax], CONST
+ mov eax, r8d
+ ret

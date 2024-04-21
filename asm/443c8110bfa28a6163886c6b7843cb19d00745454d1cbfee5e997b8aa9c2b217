@@ -1,0 +1,32 @@
+ .name sym.path_dot_or_dotdot
+ .offset 000000000003f390
+ .file bash
+ endbr64
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL3
+ cmp byte [rdi], CONST
+ cjmp LABEL5
+LABEL13:
+ ret
+LABEL5:
+ movzx edx, byte [rdi + CONST]
+ cmp dl, CONST
+ cjmp LABEL9
+ test dl, dl
+ cjmp LABEL9
+ cmp dl, CONST
+ cjmp LABEL13
+ movzx edx, byte [rdi + CONST]
+ cmp dl, CONST
+ sete al
+ test dl, dl
+ sete dl
+ or eax, edx
+ movzx eax, al
+ ret
+LABEL9:
+ mov eax, CONST
+ ret
+LABEL3:
+ ret

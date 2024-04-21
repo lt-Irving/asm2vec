@@ -1,0 +1,16 @@
+ .name sym.localetrans
+ .offset 000000000008a460
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ cmp byte [rdi], CONST
+ cjmp LABEL2
+ jmp CONST
+LABEL2:
+ test rdx, rdx
+ cjmp LABEL7
+ mov dword [rdx], CONST
+LABEL7:
+ xor eax, eax
+ ret

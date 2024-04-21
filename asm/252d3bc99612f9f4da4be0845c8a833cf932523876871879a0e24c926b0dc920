@@ -1,0 +1,15 @@
+ .name sym.maybe_set_sigchld_trap
+ .offset 0000000000075a50
+ .file bash
+ endbr64
+ test byte [rip + CONST], CONST
+ cjmp LABEL2
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL5
+LABEL2:
+ ret
+LABEL5:
+ mov rsi, rdi
+ mov edi, CONST
+ jmp CONST

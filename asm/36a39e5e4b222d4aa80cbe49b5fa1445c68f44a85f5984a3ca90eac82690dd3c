@@ -1,0 +1,20 @@
+ .name sym.tt_setcbreak
+ .offset 00000000000b0690
+ .file bash
+ endbr64
+ mov eax, dword [rdi]
+ and eax, CONST
+ or ah, CONST
+ mov dword [rdi], eax
+ mov eax, dword [rdi + CONST]
+ and eax, CONST
+ or eax, CONST
+ mov dword [rdi + CONST], eax
+ mov eax, CONST
+ mov word [rdi + CONST], ax
+ mov eax, dword [rdi + CONST]
+ and eax, CONST
+ or eax, CONST
+ mov dword [rdi + CONST], eax
+ xor eax, eax
+ ret

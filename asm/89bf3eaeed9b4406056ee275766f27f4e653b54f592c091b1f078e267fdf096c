@@ -1,0 +1,39 @@
+ .name sym.rltty_set_default_bindings
+ .offset 00000000000be360
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov edi, eax
+ mov ebp, eax
+ call CONST
+ call CONST
+ mov rsi, rsp
+ mov edi, ebp
+ mov dword [rax], CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL19
+ movzx r8d, byte [rsp + CONST]
+ movzx ecx, byte [rsp + CONST]
+ mov rdi, r12
+ movzx edx, byte [rsp + CONST]
+ movzx esi, byte [rsp + CONST]
+ call CONST
+LABEL19:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL28
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL28:
+ call CONST

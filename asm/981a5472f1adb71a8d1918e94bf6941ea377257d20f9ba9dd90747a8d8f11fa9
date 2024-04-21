@@ -1,0 +1,14 @@
+ .name fcn.0000c0c0
+ .offset 000000000000c0c0
+ .file dpkg-deb
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ movsxd rdi, edi
+ lea rax, [rip + CONST]
+ mov rax, qword [rax + rdi*CONST]
+ mov rax, qword [rax + CONST]
+ ret
+LABEL2:
+ push rax
+ call CONST

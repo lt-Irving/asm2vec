@@ -1,0 +1,23 @@
+ .name sym.assoc_remove
+ .offset 000000000007e850
+ .file bash
+ endbr64
+ push rbp
+ mov r8, rdi
+ xor edx, edx
+ mov rdi, rsi
+ mov rsi, r8
+ call CONST
+ test rax, rax
+ cjmp LABEL8
+ mov rdi, qword [rax + CONST]
+ mov rbp, rax
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL8:
+ pop rbp
+ ret

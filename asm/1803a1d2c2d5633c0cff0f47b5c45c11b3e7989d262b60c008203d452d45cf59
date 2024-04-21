@@ -1,0 +1,41 @@
+ .name sym.append_process
+ .offset 000000000005a2d0
+ .file bash
+ endbr64
+ push r13
+ mov r13d, esi
+ push r12
+ mov r12, rdi
+ mov edi, CONST
+ push rbp
+ movsxd rbp, ecx
+ push rbx
+ mov ebx, edx
+ shl ebx, CONST
+ and ebx, CONST
+ sub rsp, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov qword [rax], CONST
+ mov rdx, qword [rdx + rbp*CONST]
+ mov dword [rax + CONST], r13d
+ mov dword [rax + CONST], ebx
+ add dword [rip + CONST], CONST
+ mov rcx, qword [rdx + CONST]
+ mov dword [rax + CONST], CONST
+ mov qword [rax + CONST], r12
+ mov rdx, rcx
+ nop
+LABEL28:
+ mov rsi, rdx
+ mov rdx, qword [rdx]
+ cmp rdx, rcx
+ cjmp LABEL28
+ mov qword [rsi], rax
+ mov qword [rax], rdx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

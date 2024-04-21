@@ -1,0 +1,28 @@
+ .name fcn.0009ee60
+ .offset 000000000009ee60
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor eax, eax
+ cmp edi, CONST
+ sete al
+ lea rdi, [rip + CONST]
+ mov dword [rip + CONST], eax
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+LABEL22:
+ lea rdi, [rip + CONST]
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL10:
+ lea rdi, [rip + CONST]
+ call CONST
+ jmp LABEL22

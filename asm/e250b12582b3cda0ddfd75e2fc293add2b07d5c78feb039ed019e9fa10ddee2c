@@ -1,0 +1,31 @@
+ .name sym.bashline_reset
+ .offset 0000000000087b90
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ lea rax, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], rdi
+ call CONST
+ mov edx, dword [rip + CONST]
+ lea rax, [rip + CONST]
+ test edx, edx
+ cjmp LABEL14
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+LABEL25:
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL14:
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+ jmp LABEL25

@@ -1,0 +1,18 @@
+ .name sym.rl_make_bare_keymap
+ .offset 00000000000bcd20
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov rdx, rax
+ lea rcx, [rax + CONST]
+ nop dword [rax]
+LABEL11:
+ mov byte [rdx], CONST
+ add rdx, CONST
+ mov qword [rdx + CONST], CONST
+ cmp rdx, rcx
+ cjmp LABEL11
+ add rsp, CONST
+ ret

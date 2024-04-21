@@ -1,0 +1,44 @@
+ .name sym.check_bash_input
+ .offset 0000000000076ef0
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL2
+LABEL12:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL5
+ cmp edi, dword [rip + CONST]
+ cjmp LABEL7
+ ret
+LABEL5:
+ xor eax, eax
+ ret
+LABEL2:
+ cmp edi, dword [rip + CONST]
+ cjmp LABEL12
+LABEL7:
+ sub rsp, CONST
+ test edi, edi
+ cjmp LABEL15
+ mov eax, CONST
+ cjmp LABEL17
+LABEL26:
+ add rsp, CONST
+ ret
+LABEL15:
+ mov esi, CONST
+ call CONST
+ cmp eax, CONST
+ sete al
+ movzx eax, al
+ neg eax
+ jmp LABEL26
+LABEL17:
+ xor edi, edi
+ call CONST
+ cmp eax, CONST
+ sete al
+ movzx eax, al
+ neg eax
+ jmp LABEL26

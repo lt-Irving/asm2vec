@@ -1,0 +1,19 @@
+ .name fcn.000c08b0
+ .offset 00000000000c08b0
+ .file bash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ ret
+LABEL2:
+ test rsi, rsi
+ cjmp LABEL5
+ sub rsp, CONST
+ mov rdi, rsi
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL5:
+ mov dword [rip + CONST], CONST
+ ret

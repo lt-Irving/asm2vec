@@ -1,0 +1,26 @@
+ .name fcn.0000e540
+ .offset 000000000000e540
+ .file cp
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ cmp byte [rsi], CONST
+ cjmp LABEL4
+LABEL2:
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ cjmp LABEL10
+ cmp byte [rax], CONST
+ cjmp LABEL12
+LABEL10:
+ mov eax, CONST
+ add rsp, CONST
+ ret
+LABEL12:
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+LABEL4:
+ jmp CONST

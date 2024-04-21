@@ -1,0 +1,32 @@
+ .name sym.save_input_line_state
+ .offset 000000000003e190
+ .file bash
+ endbr64
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL3
+LABEL24:
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rdi], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rdi + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rdi + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rdi + CONST], rax
+ mov rax, rdi
+LABEL25:
+ add rsp, CONST
+ ret
+LABEL3:
+ mov edi, CONST
+ call CONST
+ mov rdi, rax
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL24
+ jmp LABEL25

@@ -1,0 +1,56 @@
+ .name sym.zwrite
+ .offset 00000000000b6ea0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ mov r14, rsi
+ push r13
+ xor r13d, r13d
+ push r12
+ mov r12d, edi
+ push rbp
+ movsxd rbp, edx
+ push rbx
+ mov r15, rbp
+ mov ebx, edx
+ sub rsp, CONST
+ mov qword [rsp + CONST], rdx
+ nop dword [rax + rax]
+LABEL28:
+ mov rdx, rbp
+ mov rsi, r14
+ mov edi, r12d
+ call CONST
+ test eax, eax
+ cjmp LABEL21
+ sub ebx, eax
+ test ebx, ebx
+ cjmp LABEL24
+ cdqe
+ movsxd rbp, ebx
+ add r14, rax
+ jmp LABEL28
+LABEL21:
+ cjmp LABEL29
+ add r13d, CONST
+ cmp r13d, CONST
+ cjmp LABEL28
+ mov r15d, dword [rsp + CONST]
+ sub r15d, ebx
+LABEL24:
+ add rsp, CONST
+ mov eax, r15d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL29:
+ call CONST
+ cmp dword [rax], CONST
+ cjmp LABEL28
+ mov r15d, CONST
+ jmp LABEL24

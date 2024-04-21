@@ -1,0 +1,19 @@
+ .name fcn.0000bb20
+ .offset 000000000000bb20
+ .file dpkg-deb
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, rsi
+ mov rsi, CONST
+ or dword [rbp + CONST], CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ pop rbp
+ ret
+LABEL8:
+ mov esi, dword [rbp + CONST]
+ mov edx, eax
+ mov rdi, rbp
+ call CONST

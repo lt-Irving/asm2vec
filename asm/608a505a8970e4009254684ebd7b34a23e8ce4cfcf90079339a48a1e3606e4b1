@@ -1,0 +1,20 @@
+ .name sym.file_iswdir
+ .offset 000000000003f360
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ test eax, eax
+ cjmp LABEL5
+ pop rbp
+ ret
+LABEL5:
+ mov rdi, rbp
+ mov esi, CONST
+ call CONST
+ pop rbp
+ test eax, eax
+ sete al
+ movzx eax, al
+ ret

@@ -1,0 +1,69 @@
+ .name sym.restore_original_signals
+ .offset 0000000000076220
+ .file bash
+LABEL55:
+ mov eax, dword [rip + CONST]
+ push r14
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ push rbx
+ test al, CONST
+ cjmp LABEL8
+ and eax, CONST
+ mov dword [rip + CONST], eax
+ lea rax, [rip + CONST]
+ cmp rdi, rax
+ cjmp LABEL8
+ mov qword [rip + CONST], CONST
+LABEL8:
+ mov ebx, CONST
+ lea r12, [rip + CONST]
+ lea rbp, [rip + CONST]
+ lea r14, [rip + CONST]
+ jmp LABEL19
+LABEL30:
+ cmp qword [r14 + rbx*CONST], CONST
+ cjmp LABEL21
+LABEL33:
+ mov edi, ebx
+ call r13
+LABEL32:
+ mov dword [rbp + rbx*CONST], CONST
+ add rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL27
+LABEL19:
+ mov eax, dword [r12 + rbx*CONST]
+ test al, CONST
+ cjmp LABEL30
+ test al, CONST
+ cjmp LABEL32
+ jmp LABEL33
+LABEL21:
+ mov esi, CONST
+ mov edi, ebx
+ call CONST
+ jmp LABEL32
+LABEL27:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL40
+ and dword [rip + CONST], CONST
+ and dword [rip + CONST], CONST
+LABEL40:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL45
+ and dword [rip + CONST], CONST
+LABEL45:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+ endbr64
+ lea rdi, [rip + CONST]
+ jmp LABEL55

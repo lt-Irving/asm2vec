@@ -1,0 +1,120 @@
+ .name fcn.000095b0
+ .offset 00000000000095b0
+ .file chfn
+ push r15
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ mov rbp, rdx
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ nop dword [rax]
+LABEL24:
+ mov rdi, r13
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL19
+ mov rdi, qword [r12]
+ mov rsi, r14
+ call CONST
+ test eax, eax
+ cjmp LABEL24
+ mov rdx, qword [r12 + CONST]
+ mov rax, qword [r12 + CONST]
+ add rax, rdx
+ sub rax, CONST
+ cmp rbp, rax
+ cjmp LABEL24
+ cmp rbp, rdx
+ cjmp LABEL24
+LABEL50:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL35
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL19:
+ movabs rax, CONST
+ cmp qword [r13], rax
+ cjmp LABEL47
+ movabs rax, CONST
+ cmp qword [r13], rax
+ cjmp LABEL50
+LABEL106:
+ cmp dword [r13 + CONST], CONST
+ cjmp LABEL50
+LABEL102:
+ pxor xmm0, xmm0
+ mov rdi, r14
+ mov byte [rsp + CONST], CONST
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm0
+ call CONST
+ test rax, rax
+ cjmp LABEL50
+ mov r8d, dword [rax + CONST]
+ lea r14, [rsp + CONST]
+ mov edx, CONST
+ xor eax, eax
+ mov rdi, r14
+ lea rcx, [rip + CONST]
+ mov esi, CONST
+ mov dword [rsp + CONST], r8d
+ call CONST
+ mov rdi, r13
+ call CONST
+ nop word [rax + rax]
+LABEL83:
+ mov rdi, r13
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL50
+ mov rdx, qword [rbx + CONST]
+ mov rax, qword [rbx + CONST]
+ add rax, rdx
+ sub rax, CONST
+ cmp rbp, rax
+ cjmp LABEL83
+ cmp rbp, rdx
+ cjmp LABEL83
+ mov r15, qword [rbx]
+ mov rsi, r14
+ mov rdi, r15
+ call CONST
+ test eax, eax
+ cjmp LABEL91
+ mov rdi, r15
+ call CONST
+ test rax, rax
+ cjmp LABEL83
+ mov ecx, dword [rsp + CONST]
+ cmp ecx, dword [rax + CONST]
+ cjmp LABEL83
+LABEL91:
+ mov r12, rbx
+ jmp LABEL50
+LABEL47:
+ cmp dword [r13 + CONST], CONST
+ cjmp LABEL102
+ movabs rax, CONST
+ cmp qword [r13], rax
+ cjmp LABEL50
+ jmp LABEL106
+LABEL35:
+ call CONST

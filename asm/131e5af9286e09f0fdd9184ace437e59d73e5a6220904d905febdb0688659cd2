@@ -1,0 +1,13 @@
+ .name fcn.00016880
+ .offset 0000000000016880
+ .file dash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ mov rdi, rax
+ lea rax, [rip + CONST]
+ cmove rdi, rax
+ xor esi, esi
+ add rsp, CONST
+ jmp CONST

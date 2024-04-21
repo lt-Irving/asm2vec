@@ -1,0 +1,100 @@
+ .name fcn.00019940
+ .offset 0000000000019940
+ .file diff
+ mov rax, qword [rdi + CONST]
+ movzx ecx, byte [rax + rdx]
+ movzx eax, byte [rsi + CONST]
+ cmp al, CONST
+ cjmp LABEL4
+ cjmp LABEL5
+ cmp al, CONST
+ cjmp LABEL7
+ cmp al, CONST
+ mov eax, CONST
+ cjmp LABEL10
+ test cl, cl
+ cjmp LABEL12
+LABEL7:
+ cmp cl, CONST
+ cjmp LABEL14
+ test cl, cl
+ cjmp LABEL16
+ mov rcx, qword [rdi + CONST]
+ xor eax, eax
+ test byte [rcx + CONST], CONST
+ cjmp LABEL12
+LABEL16:
+ push rbx
+ mov ebx, dword [rsi + CONST]
+ mov eax, CONST
+ test ebx, CONST
+ cjmp LABEL25
+ mov rsi, rdx
+ mov edx, dword [rdi + CONST]
+ shr ebx, CONST
+ call CONST
+ mov ecx, ebx
+ mov edx, eax
+ and cx, CONST
+ test bl, CONST
+ cjmp LABEL34
+ and ebx, CONST
+ cjmp LABEL36
+ test al, CONST
+ cjmp LABEL38
+LABEL36:
+ test cl, CONST
+ cjmp LABEL40
+ xor eax, eax
+ test dl, CONST
+ cjmp LABEL25
+LABEL40:
+ shr edx, CONST
+ mov eax, CONST
+ and edx, CONST
+ and ecx, CONST
+ cmovne eax, edx
+LABEL25:
+ pop rbx
+ ret
+LABEL5:
+ cmp al, CONST
+ mov eax, CONST
+ cjmp LABEL53
+ cmp byte [rsi], cl
+ cjmp LABEL16
+LABEL12:
+ ret
+LABEL10:
+ ret
+LABEL53:
+ ret
+LABEL4:
+ movzx eax, cl
+ mov r8, qword [rsi]
+ sar rax, CONST
+ mov rax, qword [r8 + rax*CONST]
+ shr rax, cl
+ mov rcx, rax
+ xor eax, eax
+ and ecx, CONST
+ cjmp LABEL16
+ ret
+LABEL34:
+ xor eax, eax
+ test dl, CONST
+ cjmp LABEL25
+ and ebx, CONST
+ cjmp LABEL36
+ pop rbx
+ ret
+LABEL14:
+ mov rcx, qword [rdi + CONST]
+ xor eax, eax
+ test byte [rcx + CONST], CONST
+ cjmp LABEL16
+ ret
+LABEL38:
+ xor eax, eax
+ pop rbx
+ ret

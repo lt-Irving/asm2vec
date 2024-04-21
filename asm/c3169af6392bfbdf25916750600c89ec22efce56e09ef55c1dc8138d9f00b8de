@@ -1,0 +1,50 @@
+ .name sym.find_variable_nameref_for_assignment
+ .offset 000000000004e670
+ .file bash
+ endbr64
+ push r12
+ mov esi, CONST
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL9
+ mov eax, dword [rax + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL13
+LABEL42:
+ test byte [r12 + CONST], CONST
+ cjmp LABEL15
+LABEL9:
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL15:
+ mov rdi, qword [r12 + CONST]
+ mov esi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL9
+ mov rdi, qword [r12 + CONST]
+ lea rax, [rip + CONST]
+ lea r12, [rip + CONST]
+ test rdi, rdi
+ cmove rdi, rax
+ call CONST
+ jmp LABEL9
+LABEL13:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ and dword [r12 + CONST], CONST
+ jmp LABEL42

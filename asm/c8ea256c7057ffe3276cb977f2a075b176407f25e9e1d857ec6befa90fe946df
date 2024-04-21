@@ -1,0 +1,15 @@
+ .name sym.bash_delete_histent
+ .offset 00000000000813c0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL4
+ mov rdi, rax
+ call CONST
+LABEL4:
+ sub dword [rip + CONST], CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,78 @@
+ .name sym.valid_array_reference
+ .offset 000000000007d430
+ .file bash
+ endbr64
+ push r13
+ mov r13d, esi
+ mov esi, CONST
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL11
+ mov byte [rax], CONST
+ mov rdi, rbp
+ mov rbx, rax
+ call CONST
+ mov r12d, eax
+ test r13b, CONST
+ cjmp LABEL18
+LABEL43:
+ mov byte [rbx], CONST
+ test r12d, r12d
+ cjmp LABEL11
+ xor edx, edx
+ xor esi, esi
+ mov rdi, rbx
+ call CONST
+LABEL64:
+ movsxd rdx, eax
+ cmp byte [rbx + rdx], CONST
+ cjmp LABEL11
+ cmp eax, CONST
+ cjmp LABEL11
+ xor eax, eax
+ cmp byte [rbx + rdx + CONST], CONST
+ sete al
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL18:
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL43
+ test byte [rax + CONST], CONST
+ cjmp LABEL43
+ mov byte [rbx], CONST
+ test r12d, r12d
+ cjmp LABEL48
+LABEL11:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL48:
+ mov esi, r13d
+ and esi, CONST
+ cmp esi, CONST
+ cjmp LABEL59
+ mov edx, CONST
+ xor esi, esi
+ mov rdi, rbx
+ call CONST
+ jmp LABEL64
+LABEL59:
+ mov rdi, rbx
+ call CONST
+ sub eax, CONST
+ jmp LABEL64

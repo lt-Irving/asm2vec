@@ -1,0 +1,13 @@
+ .name fcn.0000dcb0
+ .offset 000000000000dcb0
+ .file diff
+ push rbx
+ mov rbx, rdi
+ call CONST
+ mov rcx, rbx
+ lea rdx, [rip + CONST]
+ xor edi, edi
+ mov esi, dword [rax]
+ pop rbx
+ xor eax, eax
+ jmp CONST

@@ -1,0 +1,117 @@
+ .name sym.sh_eaccess
+ .offset 00000000000b0a80
+ .file bash
+ endbr64
+ push r12
+ mov r8, rdi
+ mov r12d, esi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ cmp byte [rdi], CONST
+ cjmp LABEL9
+LABEL30:
+ mov ecx, CONST
+ mov edx, r12d
+ mov rsi, r8
+ mov edi, CONST
+ call CONST
+LABEL65:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL17
+ add rsp, CONST
+ pop r12
+ ret
+LABEL9:
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL22
+LABEL84:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, r8
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL30
+ movzx eax, byte [r8 + CONST]
+ cmp al, CONST
+ cjmp LABEL33
+ cmp al, CONST
+ cjmp LABEL35
+ cmp al, CONST
+ cjmp LABEL30
+ lea rsi, [r8 + CONST]
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+LABEL69:
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL30
+LABEL85:
+ xor eax, eax
+ mov rsi, rsp
+ mov rdi, r8
+ call CONST
+ test eax, eax
+ cjmp LABEL51
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL54
+ test r12b, CONST
+ cjmp LABEL56
+ test byte [rsp + CONST], CONST
+ cjmp LABEL56
+LABEL54:
+ cmp eax, dword [rsp + CONST]
+ cjmp LABEL60
+ shl r12d, CONST
+LABEL76:
+ test dword [rsp + CONST], r12d
+ cjmp LABEL63
+LABEL56:
+ xor eax, eax
+ jmp LABEL65
+LABEL35:
+ lea rsi, [r8 + CONST]
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ jmp LABEL69
+LABEL60:
+ mov edi, dword [rsp + CONST]
+ call CONST
+ mov r8d, eax
+ lea eax, [r12*CONST]
+ test r8d, r8d
+ cmovne r12d, eax
+ jmp LABEL76
+LABEL22:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ mov rsi, r8
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL84
+ jmp LABEL85
+LABEL33:
+ cmp byte [r8 + CONST], CONST
+ cjmp LABEL30
+ cmp byte [r8 + CONST], CONST
+ cjmp LABEL85
+ jmp LABEL30
+LABEL63:
+ call CONST
+ mov dword [rax], CONST
+ mov eax, CONST
+ jmp LABEL65
+LABEL51:
+ mov eax, CONST
+ jmp LABEL65
+LABEL17:
+ call CONST

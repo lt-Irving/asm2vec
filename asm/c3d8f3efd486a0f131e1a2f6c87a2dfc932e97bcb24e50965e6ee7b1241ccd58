@@ -1,0 +1,34 @@
+ .name sym.rl_kill_line
+ .offset 00000000000d0100
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ push rbx
+ mov edi, CONST
+ mov ebx, dword [rip + CONST]
+ call CONST
+ mov esi, dword [rip + CONST]
+ cmp esi, ebx
+ cjmp LABEL9
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], ebx
+ cjmp LABEL12
+LABEL20:
+ xor eax, eax
+ pop rbx
+ ret
+LABEL9:
+ mov edi, ebx
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], ebx
+ cjmp LABEL20
+LABEL12:
+ mov dword [rip + CONST], ebx
+ xor eax, eax
+ pop rbx
+ ret
+LABEL2:
+ mov edi, CONST
+ jmp CONST

@@ -1,0 +1,20 @@
+ .name fcn.00006180
+ .offset 0000000000006180
+ .file chsh
+ endbr64
+ mov rsi, rdi
+ lea rdi, [rip + CONST]
+ jmp LABEL3
+LABEL3:
+ endbr64
+ push rbx
+ mov rcx, rsi
+ mov rbx, rdi
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ or byte [rbx + CONST], CONST
+ mov eax, CONST
+ pop rbx
+ ret

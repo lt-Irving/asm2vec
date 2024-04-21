@@ -1,0 +1,35 @@
+ .name sym.rl_maybe_replace_line
+ .offset 00000000000d6440
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov r12, qword [rip + CONST]
+ cmp qword [rax + CONST], r12
+ cjmp LABEL6
+ mov rbp, qword [rip + CONST]
+ call CONST
+ mov rdx, r12
+ mov rsi, rbp
+ mov edi, eax
+ call CONST
+ mov rdi, qword [rax]
+ mov rbp, rax
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL21
+ call CONST
+LABEL21:
+ mov rdi, rbp
+ call CONST
+LABEL6:
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

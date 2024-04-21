@@ -1,0 +1,14 @@
+ .name sym.merge_temporary_env
+ .offset 0000000000053a40
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ lea rdi, [rip + CONST]
+ test eax, eax
+ lea rax, [rip + CONST]
+ cmove rdi, rax
+ jmp CONST
+LABEL2:
+ ret

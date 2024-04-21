@@ -1,0 +1,18 @@
+ .name fcn.00008d30
+ .offset 0000000000008d30
+ .file dpkg-deb
+ endbr64
+ cmp word [rdi + CONST], CONST
+ lea rax, [rdi + CONST]
+ cjmp LABEL3
+ cmp word [rdi + CONST], CONST
+ cjmp LABEL5
+LABEL9:
+ mov eax, CONST
+ ret
+LABEL5:
+ cmp byte [rax + CONST], CONST
+ cjmp LABEL9
+LABEL3:
+ xor eax, eax
+ ret

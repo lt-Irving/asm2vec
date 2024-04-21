@@ -1,0 +1,101 @@
+ .name sym.sv_history_control
+ .offset 000000000004ea10
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov dword [rip + CONST], CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL14
+ cmp byte [rax], CONST
+ mov rbx, rax
+ cjmp LABEL14
+ mov dword [rsp + CONST], CONST
+ lea rbp, [rsp + CONST]
+ lea r15, [rip + CONST]
+ lea r12, [rip + CONST]
+ lea r13, [rip + CONST]
+ lea r14, [rip + CONST]
+ jmp LABEL24
+LABEL37:
+ cmp al, CONST
+ cjmp LABEL26
+LABEL47:
+ mov rdi, r8
+ call CONST
+LABEL24:
+ mov rsi, rbp
+ mov rdi, rbx
+ call CONST
+ mov r8, rax
+ test rax, rax
+ cjmp LABEL14
+ movzx eax, byte [r8]
+ cmp al, CONST
+ cjmp LABEL37
+ mov ecx, CONST
+ mov rsi, r8
+ mov rdi, r12
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL45
+ or dword [rip + CONST], CONST
+ jmp LABEL47
+LABEL45:
+ mov ecx, CONST
+ mov rsi, r8
+ mov rdi, r13
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL55
+ or dword [rip + CONST], CONST
+ jmp LABEL47
+LABEL55:
+ mov ecx, CONST
+ mov rsi, r8
+ mov rdi, r14
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL47
+ or dword [rip + CONST], CONST
+ jmp LABEL47
+LABEL14:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL70
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL26:
+ mov ecx, CONST
+ mov rsi, r8
+ mov rdi, r15
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL47
+ or dword [rip + CONST], CONST
+ jmp LABEL47
+LABEL70:
+ call CONST

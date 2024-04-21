@@ -1,0 +1,25 @@
+ .name fcn.000c2f80
+ .offset 00000000000c2f80
+ .file bash
+ endbr64
+ push rbx
+ xor ebx, ebx
+ test rdi, rdi
+ cjmp LABEL4
+ cmp byte [rdi], CONST
+ cjmp LABEL6
+LABEL4:
+ mov dword [rip + CONST], ebx
+ xor eax, eax
+ pop rbx
+ ret
+LABEL6:
+ xor esi, esi
+ mov edx, CONST
+ call CONST
+ test eax, eax
+ cmovns ebx, eax
+ xor eax, eax
+ mov dword [rip + CONST], ebx
+ pop rbx
+ ret

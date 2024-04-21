@@ -1,0 +1,21 @@
+ .name sym.rl_empty_keymap
+ .offset 00000000000bcd60
+ .file bash
+ endbr64
+ lea rax, [rdi + CONST]
+ jmp LABEL2
+LABEL9:
+ cmp qword [rdi + CONST], CONST
+ cjmp LABEL4
+ add rdi, CONST
+ cmp rdi, rax
+ cjmp LABEL7
+LABEL2:
+ cmp byte [rdi], CONST
+ cjmp LABEL9
+LABEL4:
+ xor eax, eax
+ ret
+LABEL7:
+ mov eax, CONST
+ ret

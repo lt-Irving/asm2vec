@@ -1,0 +1,16 @@
+ .name sym.current_history
+ .offset 00000000000d6c00
+ .file bash
+ endbr64
+ movsxd rdx, dword [rip + CONST]
+ cmp edx, dword [rip + CONST]
+ cjmp LABEL3
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL6
+ mov rax, qword [rax + rdx*CONST]
+ ret
+LABEL3:
+ xor eax, eax
+LABEL6:
+ ret

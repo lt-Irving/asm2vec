@@ -1,0 +1,49 @@
+ .name sym.rl_universal_argument
+ .offset 00000000000d61f0
+ .file bash
+LABEL39:
+ sub rsp, CONST
+ jmp LABEL1
+LABEL13:
+ call CONST
+ mov esi, eax
+ test eax, eax
+ cjmp LABEL5
+ mov edi, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL9
+ test byte [rip + CONST], CONST
+ cjmp LABEL9
+LABEL1:
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL13
+ call CONST
+ test eax, eax
+ cjmp LABEL13
+ mov eax, CONST
+LABEL9:
+ add rsp, CONST
+ ret
+LABEL5:
+ call CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ shl dword [rip + CONST], CONST
+ mov rdx, rax
+ or dh, CONST
+ mov qword [rip + CONST], rdx
+ test eax, CONST
+ cjmp LABEL34
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL34:
+ add rsp, CONST
+ jmp LABEL39

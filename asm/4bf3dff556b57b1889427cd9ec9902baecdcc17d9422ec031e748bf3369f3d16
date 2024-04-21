@@ -1,0 +1,22 @@
+ .name fcn.00013f40
+ .offset 0000000000013f40
+ .file dash
+ endbr64
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ lea ebx, [rdi + CONST]
+ movsxd rbx, ebx
+ sub rsp, CONST
+ movzx eax, byte [rbp + rbx]
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL10
+ mov esi, CONST
+ call CONST
+LABEL10:
+ mov byte [rbp + rbx], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

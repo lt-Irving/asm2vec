@@ -1,0 +1,33 @@
+ .name sym.strlist_walk
+ .offset 00000000000b2830
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL9
+ mov r12, rsi
+ xor ebx, ebx
+ jmp LABEL12
+LABEL20:
+ add rbx, CONST
+ cmp dword [rbp + CONST], ebx
+ cjmp LABEL9
+LABEL12:
+ mov rax, qword [rbp]
+ mov rdi, qword [rax + rbx*CONST]
+ call r12
+ test eax, eax
+ cjmp LABEL20
+LABEL9:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ ret

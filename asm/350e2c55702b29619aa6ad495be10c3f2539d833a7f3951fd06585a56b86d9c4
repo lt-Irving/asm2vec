@@ -1,0 +1,60 @@
+ .name fcn.00014a90
+ .offset 0000000000014a90
+ .file dash
+ movsx edx, byte [rdi]
+ lea eax, [rdx + CONST]
+ cmp al, CONST
+ cjmp LABEL3
+ lea rcx, [rip + CONST]
+ movzx eax, al
+ movsxd rax, dword [rcx + rax*CONST]
+ add rax, rcx
+ notrack jmp rax
+LABEL3:
+ lea eax, [rdx + CONST]
+ cmp al, CONST
+ cjmp LABEL11
+ lea r8, [rdi + CONST]
+ xor eax, eax
+LABEL21:
+ add rdi, CONST
+ lea eax, [rdx + rax*CONST + CONST]
+ movsx edx, byte [rdi]
+ lea ecx, [rdx + CONST]
+ cmp cl, CONST
+ cjmp LABEL19
+ cmp rdi, r8
+ cjmp LABEL21
+LABEL46:
+ mov dword [rsi], eax
+ mov rax, r8
+ ret
+ mov eax, CONST
+LABEL31:
+ lea r8, [rdi + CONST]
+ mov dword [rsi], eax
+ mov rax, r8
+ ret
+ mov eax, CONST
+ jmp LABEL31
+ mov eax, CONST
+ jmp LABEL31
+ mov eax, CONST
+ jmp LABEL31
+ mov eax, CONST
+ jmp LABEL31
+ mov eax, CONST
+ jmp LABEL31
+ mov eax, CONST
+ jmp LABEL31
+ mov eax, CONST
+ jmp LABEL31
+LABEL11:
+ mov r8, rdi
+ mov eax, CONST
+ jmp LABEL46
+ mov eax, CONST
+ jmp LABEL31
+LABEL19:
+ mov r8, rdi
+ jmp LABEL46

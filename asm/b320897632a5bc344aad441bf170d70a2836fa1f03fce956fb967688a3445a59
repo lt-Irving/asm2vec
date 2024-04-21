@@ -1,0 +1,32 @@
+ .name sym.dispose_variable
+ .offset 000000000004f4d0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov esi, dword [rdi + CONST]
+ mov rbp, rdi
+ test esi, CONST
+ cjmp LABEL7
+LABEL22:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL10
+ call CONST
+LABEL10:
+ mov rdi, qword [rbp]
+ call CONST
+ test byte [rbp + CONST], CONST
+ cjmp LABEL15
+ mov dword [rip + CONST], CONST
+LABEL15:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL7:
+ mov rdi, qword [rdi + CONST]
+ call CONST
+ jmp LABEL22
+LABEL2:
+ ret

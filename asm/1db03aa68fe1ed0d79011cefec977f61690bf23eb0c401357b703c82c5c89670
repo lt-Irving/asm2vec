@@ -1,0 +1,35 @@
+ .name sym.rl_read_init_file
+ .offset 00000000000c67c0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL3
+LABEL17:
+ cmp byte [rdi], CONST
+ cjmp LABEL5
+LABEL22:
+ lea rdi, [rip + CONST]
+ xor esi, esi
+ call CONST
+ lea rdi, [rip + CONST]
+ test eax, eax
+ cjmp LABEL11
+LABEL5:
+ xor esi, esi
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL17
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL22
+ jmp LABEL17
+LABEL11:
+ xor eax, eax
+ add rsp, CONST
+ ret

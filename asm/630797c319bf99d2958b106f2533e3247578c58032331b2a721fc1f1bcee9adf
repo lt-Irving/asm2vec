@@ -1,0 +1,38 @@
+ .name sym.glob_char_p
+ .offset 0000000000077a60
+ .file bash
+ endbr64
+ movzx eax, byte [rdi]
+ cmp al, CONST
+ cjmp LABEL3
+ xor r8d, r8d
+ cmp al, CONST
+ cjmp LABEL6
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL9
+ lea rdx, [rip + CONST]
+ movzx eax, al
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ notrack jmp rax
+ mov r8d, CONST
+LABEL6:
+ mov eax, r8d
+ ret
+LABEL9:
+ xor r8d, r8d
+ mov eax, r8d
+ ret
+LABEL3:
+ sub eax, CONST
+ xor r8d, r8d
+ cmp al, CONST
+ setb r8b
+ mov eax, r8d
+ ret
+ xor r8d, r8d
+ cmp byte [rdi + CONST], CONST
+ sete r8b
+ mov eax, r8d
+ ret

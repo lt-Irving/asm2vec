@@ -1,0 +1,18 @@
+ .name fcn.00003d30
+ .offset 0000000000003d30
+ .file csplit
+ endbr64
+ movzx eax, byte [rip + CONST]
+ push rbp
+ mov ebp, edi
+ test al, al
+ cjmp LABEL5
+ mov edi, CONST
+ call CONST
+LABEL5:
+ mov edi, ebp
+ xor esi, esi
+ call CONST
+ mov edi, ebp
+ pop rbp
+ jmp CONST

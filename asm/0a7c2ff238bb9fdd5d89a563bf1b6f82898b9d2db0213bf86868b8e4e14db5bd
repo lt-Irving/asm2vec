@@ -1,0 +1,60 @@
+ .name sym.get_new_window_size
+ .offset 00000000000b53f0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdx
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ cmp edi, CONST
+ cjmp LABEL11
+LABEL49:
+ test edi, edi
+ cjmp LABEL13
+LABEL26:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL16
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL13:
+ xor eax, eax
+ mov rdx, rsp
+ mov esi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL26
+ movzx edi, word [rsp]
+ test di, di
+ cjmp LABEL26
+ movzx esi, word [rsp + CONST]
+ test si, si
+ cjmp LABEL26
+ call CONST
+ movzx esi, word [rsp + CONST]
+ movzx edi, word [rsp]
+ call CONST
+ test rbp, rbp
+ cjmp LABEL38
+ movzx eax, word [rsp]
+ mov dword [rbp], eax
+LABEL38:
+ test rbx, rbx
+ cjmp LABEL26
+ movzx eax, word [rsp + CONST]
+ mov dword [rbx], eax
+ jmp LABEL26
+LABEL11:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov edi, eax
+ jmp LABEL49
+LABEL16:
+ call CONST

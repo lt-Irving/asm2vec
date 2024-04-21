@@ -1,0 +1,34 @@
+ .name sym.falarm
+ .offset 00000000000b5810
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, edi
+ lea rdx, [rsp + CONST]
+ xor edi, edi
+ mov qword [rsp + CONST], rax
+ mov eax, esi
+ mov rsi, rsp
+ mov qword [rsp], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], rax
+ call CONST
+ test eax, eax
+ cjmp LABEL16
+ mov rax, qword [rsp + CONST]
+ cmp qword [rsp + CONST], CONST
+ sbb rax, CONST
+LABEL26:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL22
+ add rsp, CONST
+ ret
+LABEL16:
+ mov eax, CONST
+ jmp LABEL26
+LABEL22:
+ call CONST

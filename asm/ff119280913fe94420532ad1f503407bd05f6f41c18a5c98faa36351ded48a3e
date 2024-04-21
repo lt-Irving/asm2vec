@@ -1,0 +1,115 @@
+ .name fcn.000229d0
+ .offset 00000000000229d0
+ .file diff
+ push r15
+ push r14
+ mov r14, r9
+ push r13
+ mov r13, rcx
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, rdx
+ push rbx
+ sub rsp, CONST
+ mov rbx, qword [rsi]
+ mov qword [rsp + CONST], rsi
+ mov qword [rsp + CONST], r8
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rax, qword [rbx + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov edx, dword [r14]
+ mov r15, rax
+ test edx, edx
+ cjmp LABEL23
+ test rax, rax
+ cjmp LABEL25
+LABEL23:
+ lea rax, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ jmp LABEL28
+LABEL74:
+ cmp al, CONST
+ cjmp LABEL30
+ cmp qword [rsp + CONST], CONST
+ cjmp LABEL32
+LABEL30:
+ mov rax, qword [rbx + CONST]
+ mov rcx, r13
+ mov r9, r14
+ mov rdx, rbp
+ mov r8, qword [rsp + CONST]
+ mov rsi, qword [rsp + CONST]
+ mov rdi, r12
+ mov qword [rsp + CONST], rax
+ mov rax, qword [rsp + CONST]
+ mov qword [rbx + CONST], rax
+ call CONST
+ mov rcx, rax
+ mov eax, dword [r14]
+ test eax, eax
+ cjmp LABEL47
+ test rcx, rcx
+ cjmp LABEL49
+LABEL47:
+ mov rax, qword [rsp + CONST]
+ or qword [rbx + CONST], rax
+LABEL76:
+ mov r8, qword [rsp + CONST]
+ mov rdx, r15
+ lea rdi, [rbx + CONST]
+ mov byte [rsp + CONST], CONST
+ lea rsi, [rbx + CONST]
+ call CONST
+ mov r15, rax
+ test rax, rax
+ cjmp LABEL60
+LABEL28:
+ cmp byte [rbp + CONST], CONST
+ cjmp LABEL62
+ mov rdx, r13
+ mov rsi, r12
+ mov rdi, rbp
+ or rdx, CONST
+ call CONST
+ cdqe
+ add qword [r12 + CONST], rax
+ movzx eax, byte [rbp + CONST]
+ mov edx, eax
+ and edx, CONST
+ cmp dl, CONST
+ cjmp LABEL74
+LABEL32:
+ xor ecx, ecx
+ jmp LABEL76
+LABEL49:
+ test r15, r15
+ cjmp LABEL25
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ mov rdi, r15
+ call CONST
+LABEL25:
+ xor r15d, r15d
+ nop dword [rax]
+LABEL62:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ mov rax, r15
+ cjmp LABEL88
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL60:
+ mov dword [r14], CONST
+ jmp LABEL62
+LABEL88:
+ call CONST

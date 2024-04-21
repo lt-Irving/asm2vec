@@ -1,0 +1,22 @@
+ .name sym.setup_glob_ignore
+ .offset 00000000000785b0
+ .file bash
+ endbr64
+ push rbx
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rbx, rax
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ mov dword [rip + CONST], CONST
+LABEL13:
+ pop rbx
+ ret
+LABEL8:
+ test rbx, rbx
+ cjmp LABEL13
+ mov dword [rip + CONST], CONST
+ pop rbx
+ ret

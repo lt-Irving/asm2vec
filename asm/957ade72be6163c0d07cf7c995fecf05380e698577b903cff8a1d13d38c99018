@@ -1,0 +1,19 @@
+ .name fcn.0004cd80
+ .offset 000000000004cd80
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ mov rdi, rsi
+ lea rsi, [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+ mov qword [rip + CONST], CONST
+LABEL7:
+ xor edi, edi
+ call CONST
+ mov qword [rip + CONST], rax
+ mov rax, r12
+ pop r12
+ ret

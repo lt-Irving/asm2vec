@@ -1,0 +1,25 @@
+ .name sym.make_subshell_command
+ .offset 0000000000041100
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov edi, CONST
+ mov rbx, rax
+ mov qword [rax + CONST], rbp
+ mov dword [rax], CONST
+ mov eax, dword [rip + CONST]
+ mov dword [rbx + CONST], eax
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

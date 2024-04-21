@@ -1,0 +1,42 @@
+ .name method.APT::PackageContainer_std::set_pkgCache::PkgIterator__std::less_pkgCache::PkgIterator___std::allocator_pkgCache::PkgIterator_____.insert_pkgCache::PkgIterator_const_
+ .offset 0000000000010af0
+ .file apt-cache
+ endbr64
+ push r12
+ xor r8d, r8d
+ push rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rax, qword [rsi + CONST]
+ test rax, rax
+ cjmp LABEL10
+ mov rax, qword [rax + CONST]
+ mov r12, rsi
+ cmp qword [rsi], rax
+ cjmp LABEL10
+ lea rbp, [rdi + CONST]
+ mov rdi, rbp
+ call CONST
+ mov rsi, rax
+ test rdx, rdx
+ cjmp LABEL20
+ mov r8, rsp
+ mov rcx, r12
+ mov rdi, rbp
+ mov qword [rsp], rbp
+ call CONST
+LABEL20:
+ mov r8d, CONST
+LABEL10:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL29
+ add rsp, CONST
+ mov eax, r8d
+ pop rbp
+ pop r12
+ ret
+LABEL29:
+ call CONST

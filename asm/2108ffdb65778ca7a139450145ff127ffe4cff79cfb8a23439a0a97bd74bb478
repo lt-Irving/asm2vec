@@ -1,0 +1,30 @@
+ .name fcn.00006a90
+ .offset 0000000000006a90
+ .file chage
+ endbr64
+ push rbp
+ call CONST
+ mov dword [rip + CONST], eax
+ test eax, eax
+ cjmp LABEL5
+LABEL12:
+ pop rbp
+ ret
+LABEL5:
+ call CONST
+ mov eax, dword [rax]
+ lea edx, [rax + CONST]
+ and edx, CONST
+ cjmp LABEL12
+ cmp eax, CONST
+ cjmp LABEL12
+ mov rbp, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ mov rsi, rbp
+ call CONST
+ mov edi, CONST
+ call CONST

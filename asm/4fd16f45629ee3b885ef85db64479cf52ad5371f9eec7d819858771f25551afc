@@ -1,0 +1,17 @@
+ .name sym.rl_begin_undo_group
+ .offset 00000000000d0bf0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov qword [rax + CONST], CONST
+ mov qword [rax], rdx
+ mov qword [rax + CONST], CONST
+ mov dword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ add dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

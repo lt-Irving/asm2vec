@@ -1,0 +1,56 @@
+ .name sym.maybe_call_trap_handler
+ .offset 0000000000076230
+ .file bash
+ endbr64
+ movsxd rdx, edi
+ lea rax, [rip + CONST]
+ push r12
+ mov eax, dword [rax + rdx*CONST]
+ mov r12d, eax
+ and r12d, CONST
+ cjmp LABEL7
+ test al, CONST
+ cjmp LABEL9
+ cmp edi, CONST
+ cjmp LABEL11
+ cjmp LABEL12
+ test edi, edi
+ cjmp LABEL14
+ cmp edi, CONST
+ cjmp LABEL16
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+LABEL7:
+ mov eax, r12d
+ pop r12
+ ret
+LABEL9:
+ xor r12d, r12d
+ mov eax, r12d
+ pop r12
+ ret
+LABEL12:
+ cmp edi, CONST
+ cjmp LABEL16
+ mov eax, dword [rip + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL7
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ jmp LABEL7
+LABEL14:
+ call CONST
+ jmp LABEL7
+LABEL11:
+ mov eax, dword [rip + CONST]
+ and eax, CONST
+ cmp eax, CONST
+ cjmp LABEL7
+ call CONST
+ jmp LABEL7
+LABEL16:
+ call CONST
+ jmp LABEL7

@@ -1,0 +1,125 @@
+ .name sym.compspec_copy
+ .offset 00000000000900f0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ mov rbp, qword [rbx + CONST]
+ mov dword [rax], CONST
+ mov r12, rax
+ mov rax, qword [rbx + CONST]
+ mov qword [r12 + CONST], rax
+ mov rax, qword [rbx + CONST]
+ mov qword [r12 + CONST], rax
+ test rbp, rbp
+ cjmp LABEL15
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL15:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL27
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL27:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL39
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL39:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL51
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL51:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL63
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL63:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL75
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL75:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL87
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL87:
+ mov qword [r12 + CONST], rbp
+ mov rbp, qword [rbx + CONST]
+ test rbp, rbp
+ cjmp LABEL99
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL99:
+ mov qword [r12 + CONST], rbp
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

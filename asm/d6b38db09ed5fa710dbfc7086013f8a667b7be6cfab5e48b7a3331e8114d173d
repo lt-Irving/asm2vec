@@ -1,0 +1,133 @@
+ .name sym.evalexp
+ .offset 0000000000057550
+ .file bash
+ endbr64
+ sub rsp, CONST
+ movdqa xmm0, xmmword [rip + CONST]
+ movdqa xmm1, xmmword [rip + CONST]
+ and esi, CONST
+ mov qword [rsp + CONST], rdi
+ movdqa xmm2, xmmword [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov qword [rsp], rdx
+ movdqa xmm3, xmmword [rip + CONST]
+ movdqa xmm4, xmmword [rip + CONST]
+ movdqa xmm5, xmmword [rip + CONST]
+ movdqa xmm6, xmmword [rip + CONST]
+ movdqa xmm7, xmmword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ movaps xmmword [rsp + CONST], xmm0
+ mov rax, qword [rip + CONST]
+ movdqa xmm0, xmmword [rip + CONST]
+ movaps xmmword [rsp + CONST], xmm1
+ movdqa xmm1, xmmword [rip + CONST]
+ movaps xmmword [rsp + CONST], xmm2
+ movdqa xmm2, xmmword [rip + CONST]
+ movaps xmmword [rsp + CONST], xmm3
+ movdqa xmm3, xmmword [rip + CONST]
+ mov dword [rip + CONST], esi
+ xor esi, esi
+ mov dword [rip + CONST], CONST
+ movaps xmmword [rsp + CONST], xmm4
+ movaps xmmword [rsp + CONST], xmm5
+ movaps xmmword [rsp + CONST], xmm6
+ movaps xmmword [rsp + CONST], xmm7
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm1
+ movaps xmmword [rsp + CONST], xmm2
+ movaps xmmword [rsp + CONST], xmm3
+ mov qword [rsp + CONST], rax
+ call CONST
+ endbr64
+ test eax, eax
+ cjmp LABEL41
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL44
+ call CONST
+LABEL44:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL48
+ call CONST
+LABEL48:
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ call CONST
+ movdqa xmm4, xmmword [rsp + CONST]
+ mov rcx, qword [rsp]
+ mov dword [rip + CONST], CONST
+ movdqa xmm5, xmmword [rsp + CONST]
+ movdqa xmm6, xmmword [rsp + CONST]
+ movdqa xmm7, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm4
+ mov rax, qword [rsp + CONST]
+ movdqa xmm4, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm5
+ movdqa xmm0, xmmword [rsp + CONST]
+ movdqa xmm5, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm6
+ movdqa xmm1, xmmword [rsp + CONST]
+ movdqa xmm6, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm7
+ movdqa xmm2, xmmword [rsp + CONST]
+ movdqa xmm7, xmmword [rsp + CONST]
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ movdqa xmm3, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm4
+ movaps xmmword [rip + CONST], xmm5
+ movaps xmmword [rip + CONST], xmm6
+ movaps xmmword [rip + CONST], xmm7
+ movaps xmmword [rip + CONST], xmm0
+ movaps xmmword [rip + CONST], xmm1
+ movaps xmmword [rip + CONST], xmm2
+ movaps xmmword [rip + CONST], xmm3
+ test rcx, rcx
+ cjmp LABEL83
+ mov dword [rcx], CONST
+LABEL83:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL87
+ add rsp, CONST
+ ret
+LABEL41:
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rcx, qword [rsp]
+ test rcx, rcx
+ cjmp LABEL94
+ mov dword [rcx], CONST
+LABEL94:
+ movdqa xmm4, xmmword [rsp + CONST]
+ movdqa xmm5, xmmword [rsp + CONST]
+ movdqa xmm6, xmmword [rsp + CONST]
+ movdqa xmm7, xmmword [rsp + CONST]
+ movdqa xmm0, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm4
+ movdqa xmm1, xmmword [rsp + CONST]
+ movdqa xmm4, xmmword [rsp + CONST]
+ mov rdx, qword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm5
+ movdqa xmm2, xmmword [rsp + CONST]
+ movdqa xmm5, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm6
+ movdqa xmm3, xmmword [rsp + CONST]
+ movdqa xmm6, xmmword [rsp + CONST]
+ movaps xmmword [rip + CONST], xmm7
+ movdqa xmm7, xmmword [rsp + CONST]
+ mov qword [rip + CONST], rdx
+ movaps xmmword [rip + CONST], xmm4
+ movaps xmmword [rip + CONST], xmm5
+ movaps xmmword [rip + CONST], xmm6
+ movaps xmmword [rip + CONST], xmm7
+ movaps xmmword [rip + CONST], xmm0
+ movaps xmmword [rip + CONST], xmm1
+ movaps xmmword [rip + CONST], xmm2
+ movaps xmmword [rip + CONST], xmm3
+ jmp LABEL83
+LABEL87:
+ call CONST

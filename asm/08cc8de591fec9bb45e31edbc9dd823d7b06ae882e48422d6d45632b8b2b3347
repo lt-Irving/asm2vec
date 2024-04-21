@@ -1,0 +1,30 @@
+ .name sym.rl_alphabetic
+ .offset 00000000000cf170
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ and edi, CONST
+ cjmp LABEL4
+LABEL21:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov esi, ebp
+ lea rdi, [rip + CONST]
+ call CONST
+ test rax, rax
+ setne al
+ movzx eax, al
+LABEL7:
+ pop rbp
+ ret
+LABEL4:
+ call CONST
+ movsxd rdx, ebp
+ mov rcx, qword [rax]
+ mov eax, CONST
+ test byte [rcx + rdx*CONST], CONST
+ cjmp LABEL21
+ pop rbp
+ ret

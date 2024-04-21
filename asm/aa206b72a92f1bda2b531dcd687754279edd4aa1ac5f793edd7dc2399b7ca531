@@ -1,0 +1,28 @@
+ .name fcn.00003a20
+ .offset 0000000000003a20
+ .file comm
+ endbr64
+ push rbp
+ mov rbp, rsi
+ mov rsi, rdx
+ mov rdx, rcx
+ push rbx
+ mov rbx, rcx
+ sub rsp, CONST
+ cmp rbp, rcx
+ cmovbe rdx, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+ cmp rbp, rbx
+ cjmp LABEL14
+ seta al
+ movzx eax, al
+LABEL12:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL14:
+ mov eax, CONST
+ jmp LABEL12

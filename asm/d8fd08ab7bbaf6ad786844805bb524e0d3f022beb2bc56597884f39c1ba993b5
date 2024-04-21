@@ -1,0 +1,64 @@
+ .name sym.get_group_array
+ .offset 000000000003fd60
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL6
+ test rdi, rdi
+ cjmp LABEL8
+ mov edx, dword [rip + CONST]
+ mov dword [rdi], edx
+LABEL8:
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL6:
+ movsxd rdi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL16
+ test edi, edi
+ cjmp LABEL18
+LABEL46:
+ shl rdi, CONST
+ call CONST
+ mov r8d, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ test r8d, r8d
+ cjmp LABEL24
+ mov rdi, qword [rip + CONST]
+ lea esi, [r8 + CONST]
+ xor edx, edx
+ nop dword [rax + rax]
+LABEL34:
+ mov ecx, dword [rdi + rdx*CONST]
+ mov dword [rax + rdx*CONST], ecx
+ mov rcx, rdx
+ add rdx, CONST
+ cmp rcx, rsi
+ cjmp LABEL34
+LABEL24:
+ test rbx, rbx
+ cjmp LABEL8
+ mov dword [rbx], r8d
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL16:
+ mov qword [rsp + CONST], rax
+ call CONST
+ movsxd rdi, dword [rip + CONST]
+ mov rax, qword [rsp + CONST]
+ test edi, edi
+ cjmp LABEL46
+LABEL18:
+ test rbx, rbx
+ cjmp LABEL48
+ mov dword [rbx], CONST
+ jmp LABEL8
+LABEL48:
+ xor eax, eax
+ jmp LABEL8

@@ -1,0 +1,17 @@
+ .name sym._rl_push_executing_macro
+ .offset 00000000000d0e50
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ add dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov qword [rax], rdx
+ mov edx, dword [rip + CONST]
+ mov dword [rax + CONST], edx
+ mov rdx, qword [rip + CONST]
+ mov qword [rax + CONST], rdx
+ add rsp, CONST
+ ret

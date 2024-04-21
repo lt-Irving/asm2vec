@@ -1,0 +1,123 @@
+ .name fcn.000086b0
+ .offset 00000000000086b0
+ .file choom
+ endbr64
+ lea r9d, [rcx*CONST + CONST]
+ push r12
+ push rbp
+ push rbx
+ test r9d, r9d
+ cjmp LABEL6
+ test rsi, rsi
+ cjmp LABEL6
+ mov r10, rcx
+ movsxd r8, r9d
+ mov rbx, rdi
+ xor r11d, r11d
+ jmp LABEL13
+LABEL81:
+ shr rcx, CONST
+ lea ebp, [r9 + CONST]
+ mov rcx, qword [rdx + rcx*CONST]
+ bt rcx, rbp
+ cjmp LABEL18
+ or eax, CONST
+ test r11, r11
+ cmove r11, rbx
+ movsx ecx, al
+ cmp al, CONST
+ cjmp LABEL24
+ lea eax, [rcx + CONST]
+ lea rcx, [rbx + CONST]
+ mov byte [rcx + CONST], al
+ sub r9d, CONST
+ cjmp LABEL29
+LABEL91:
+ mov rax, rcx
+ sub r8, CONST
+ sub rax, rdi
+ cmp rax, rsi
+ cjmp LABEL29
+ mov rbx, rcx
+LABEL13:
+ mov rcx, r8
+ xor eax, eax
+ shr rcx, CONST
+ cmp rcx, r10
+ cjmp LABEL40
+ mov rax, r8
+ mov ecx, r9d
+ shr rax, CONST
+ mov rax, qword [rdx + rax*CONST]
+ shr rax, cl
+ and eax, CONST
+LABEL40:
+ lea rcx, [r8 + CONST]
+ mov rbp, rcx
+ shr rbp, CONST
+ cmp rbp, r10
+ cjmp LABEL51
+ shr rcx, CONST
+ mov rbp, rcx
+ lea ecx, [r9 + CONST]
+ mov rbp, qword [rdx + rbp*CONST]
+ shr rbp, cl
+ mov ecx, eax
+ or ecx, CONST
+ and ebp, CONST
+ cmovne eax, ecx
+LABEL51:
+ lea rcx, [r8 + CONST]
+ mov rbp, rcx
+ shr rbp, CONST
+ cmp rbp, r10
+ cjmp LABEL65
+ shr rcx, CONST
+ mov rbp, rcx
+ lea ecx, [r9 + CONST]
+ mov rbp, qword [rdx + rbp*CONST]
+ shr rbp, cl
+ mov ecx, eax
+ or ecx, CONST
+ and ebp, CONST
+ cmovne eax, ecx
+LABEL65:
+ lea rcx, [r8 + CONST]
+ test r11, r11
+ mov rbp, rcx
+ sete r12b
+ shr rbp, CONST
+ cmp rbp, r10
+ cjmp LABEL81
+LABEL18:
+ movsx ecx, al
+ test al, al
+ cjmp LABEL24
+ test r12b, r12b
+ cmovne r11, rbx
+LABEL24:
+ lea eax, [rcx + CONST]
+ lea rcx, [rbx + CONST]
+ mov byte [rcx + CONST], al
+ sub r9d, CONST
+ cjmp LABEL91
+ nop
+LABEL29:
+ mov byte [rcx], CONST
+ test r11, r11
+ cjmp LABEL95
+ pop rbx
+ mov rax, r11
+ pop rbp
+ pop r12
+ ret
+LABEL6:
+ mov byte [rdi], CONST
+ lea rbx, [rdi + CONST]
+LABEL95:
+ mov r11, rbx
+ pop rbx
+ pop rbp
+ mov rax, r11
+ pop r12
+ ret

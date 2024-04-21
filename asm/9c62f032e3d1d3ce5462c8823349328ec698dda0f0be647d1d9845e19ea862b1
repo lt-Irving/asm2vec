@@ -1,0 +1,37 @@
+ .name sym.builtin_usage
+ .offset 00000000000923d0
+ .file bash
+ endbr64
+ push r12
+ mov r12, qword [rip + CONST]
+ test r12, r12
+ cjmp LABEL4
+ cmp byte [r12], CONST
+ cjmp LABEL6
+LABEL4:
+ mov rax, qword [rip + CONST]
+ mov edx, CONST
+ xor edi, edi
+ mov rsi, qword [rax + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov esi, CONST
+ lea rdx, [rip + CONST]
+ mov rcx, rax
+ xor eax, eax
+ call CONST
+ mov rdi, qword [rip + CONST]
+ pop r12
+ jmp CONST
+LABEL6:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rcx, r12
+ mov esi, CONST
+ mov rdx, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL4

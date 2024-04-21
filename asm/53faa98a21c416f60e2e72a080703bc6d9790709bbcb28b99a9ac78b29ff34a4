@@ -1,0 +1,21 @@
+ .name sym.set_original_signal
+ .offset 0000000000075c30
+ .file bash
+ endbr64
+ lea eax, [rdi + CONST]
+ cmp eax, CONST
+ cjmp LABEL3
+ lea rax, [rip + CONST]
+ movsxd rdi, edi
+ lea rdx, [rip + CONST]
+ cmp qword [rax + rdi*CONST], rdx
+ cjmp LABEL8
+LABEL3:
+ ret
+LABEL8:
+ mov qword [rax + rdi*CONST], rsi
+ cmp rsi, CONST
+ cjmp LABEL3
+ lea rax, [rip + CONST]
+ or dword [rax + rdi*CONST], CONST
+ ret

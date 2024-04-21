@@ -1,0 +1,15 @@
+ .name fcn.0000c510
+ .offset 000000000000c510
+ .file dmesg
+ endbr64
+ movzx eax, byte [rip + CONST]
+ and eax, CONST
+ cmp al, CONST
+ cjmp LABEL4
+ ret
+LABEL4:
+ mov rcx, rdi
+ mov edx, CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ jmp CONST

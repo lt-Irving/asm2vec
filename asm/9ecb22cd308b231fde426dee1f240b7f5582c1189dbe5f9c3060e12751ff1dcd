@@ -1,0 +1,25 @@
+ .name sym.pcomp_set_readline_variables
+ .offset 000000000008fad0
+ .file bash
+ endbr64
+ test dil, CONST
+ cjmp LABEL2
+ mov dword [rip + CONST], esi
+LABEL2:
+ test dil, CONST
+ cjmp LABEL5
+ mov dword [rip + CONST], esi
+LABEL5:
+ test dil, CONST
+ cjmp LABEL8
+ mov eax, CONST
+ sub eax, esi
+ mov dword [rip + CONST], eax
+LABEL8:
+ and edi, CONST
+ cjmp LABEL13
+ mov eax, CONST
+ sub eax, esi
+ mov dword [rip + CONST], eax
+LABEL13:
+ ret

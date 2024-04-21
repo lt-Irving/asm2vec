@@ -1,0 +1,18 @@
+ .name sym.delete_all_aliases
+ .offset 000000000007a9f0
+ .file bash
+ endbr64
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL3
+ sub rsp, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ ret

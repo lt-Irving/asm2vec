@@ -1,0 +1,35 @@
+ .name fcn.00008480
+ .offset 0000000000008480
+ .file diff
+ push rbp
+ lea rbp, [rdi + CONST]
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ mov rax, qword [rsi]
+ test dl, dl
+ mov rcx, qword [rip + CONST]
+ mov rsi, rdi
+ mov rdx, rax
+ cjmp LABEL10
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdx, qword [rbx + CONST]
+ mov rsi, rbp
+ mov rcx, qword [rip + CONST]
+ add rsp, CONST
+ lea rdi, [rip + CONST]
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL10:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdx, qword [rbx + CONST]
+ mov rsi, rbp
+ mov rcx, qword [rip + CONST]
+ add rsp, CONST
+ lea rdi, [rip + CONST]
+ pop rbx
+ pop rbp
+ jmp CONST

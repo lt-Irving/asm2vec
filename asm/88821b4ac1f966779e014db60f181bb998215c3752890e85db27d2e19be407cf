@@ -1,0 +1,70 @@
+ .name sym.ansiexpand
+ .offset 00000000000b4360
+ .file bash
+ endbr64
+ push r14
+ mov r14, rcx
+ push r13
+ mov r13d, esi
+ push r12
+ push rbp
+ mov rbp, rdi
+ mov edi, edx
+ push rbx
+ sub edi, esi
+ mov ebx, edx
+ add edi, CONST
+ movsxd rdi, edi
+ call CONST
+ mov r12, rax
+ cmp ebx, r13d
+ cjmp LABEL17
+ movsxd rax, r13d
+ mov rdx, r12
+ sub rdx, rax
+ nop dword [rax + rax]
+LABEL26:
+ movzx edi, byte [rbp + rax]
+ mov byte [rdx + rax], dil
+ add rax, CONST
+ cmp ebx, eax
+ cjmp LABEL26
+ sub ebx, r13d
+ movsxd rax, ebx
+ add rax, r12
+LABEL61:
+ mov byte [rax], CONST
+ cmp byte [r12], CONST
+ cjmp LABEL32
+ test r14, r14
+ cjmp LABEL34
+ mov dword [r14], CONST
+LABEL34:
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL32:
+ mov r8, r14
+ mov esi, ebx
+ mov rdi, r12
+ xor ecx, ecx
+ mov edx, CONST
+ call CONST
+ mov rdi, r12
+ mov rbx, rax
+ call CONST
+ mov r12, rbx
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL17:
+ xor ebx, ebx
+ jmp LABEL61

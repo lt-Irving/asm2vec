@@ -1,0 +1,53 @@
+ .name sym.find_global_variable_last_nameref
+ .offset 000000000004deb0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov ebx, CONST
+ call CONST
+ mov rcx, rax
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL10
+ jmp LABEL11
+LABEL26:
+ mov rdi, qword [r12 + CONST]
+ test rdi, rdi
+ cjmp LABEL14
+ cmp byte [rdi], CONST
+ cjmp LABEL14
+ call CONST
+ mov rcx, r12
+ test rax, rax
+ cjmp LABEL20
+ mov r12, rax
+LABEL10:
+ mov edx, dword [r12 + CONST]
+ test dh, CONST
+ cjmp LABEL24
+ sub ebx, CONST
+ cjmp LABEL26
+LABEL11:
+ xor r12d, r12d
+LABEL20:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL14:
+ test ebp, ebp
+ cjmp LABEL11
+ and dh, CONST
+ cjmp LABEL20
+ jmp LABEL11
+LABEL24:
+ mov r12, rcx
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ ret

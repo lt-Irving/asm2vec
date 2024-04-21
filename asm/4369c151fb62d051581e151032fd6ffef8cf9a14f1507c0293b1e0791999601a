@@ -1,0 +1,14 @@
+ .name sym.clear_fifo
+ .offset 00000000000678a0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ movsxd rdi, edi
+ lea rax, [rax + rdi*CONST]
+ mov edx, dword [rax]
+ test edx, edx
+ cjmp LABEL6
+ sub dword [rip + CONST], CONST
+ mov dword [rax], CONST
+LABEL6:
+ ret

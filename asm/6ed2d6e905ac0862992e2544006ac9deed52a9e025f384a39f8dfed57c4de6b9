@@ -1,0 +1,14 @@
+ .name fcn.000154a0
+ .offset 00000000000154a0
+ .file cp
+ endbr64
+ mov rdx, qword [rsi]
+ mov rcx, qword [rdi]
+ mov eax, CONST
+ mov rdx, qword [rdx + CONST]
+ cmp qword [rcx + CONST], rdx
+ cjmp LABEL6
+ seta al
+ movzx eax, al
+LABEL6:
+ ret

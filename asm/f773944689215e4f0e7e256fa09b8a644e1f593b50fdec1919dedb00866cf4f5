@@ -1,0 +1,58 @@
+ .name sym.rl_insert_comment
+ .offset 00000000000d56f0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ mov rbp, qword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test rbp, rbp
+ cjmp LABEL8
+ test eax, eax
+ cjmp LABEL10
+ mov rdi, rbp
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL15
+ movzx eax, byte [rbp]
+LABEL46:
+ mov rsi, qword [rip + CONST]
+ cmp byte [rsi], al
+ cjmp LABEL10
+ movsxd rdx, r12d
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ nop dword [rax + rax]
+LABEL10:
+ mov rdi, rbp
+ call CONST
+LABEL40:
+ call qword [rip + CONST]
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL15:
+ mov esi, r12d
+ xor edi, edi
+ call CONST
+ jmp LABEL40
+LABEL8:
+ test eax, eax
+ cjmp LABEL42
+ mov eax, CONST
+ mov r12d, CONST
+ lea rbp, [rip + CONST]
+ jmp LABEL46
+LABEL42:
+ lea rbp, [rip + CONST]
+ jmp LABEL10

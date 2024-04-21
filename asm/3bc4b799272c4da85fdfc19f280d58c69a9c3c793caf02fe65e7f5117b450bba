@@ -1,0 +1,39 @@
+ .name fcn.0000ad10
+ .offset 000000000000ad10
+ .file chfn
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ mov r12, rsi
+ lea rsi, [rip + CONST]
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ mov rdi, qword [rdi]
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL12
+ mov rdi, qword [rbp + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL12
+ mov rsi, r12
+ mov rdi, rbp
+ call CONST
+ cmp eax, CONST
+ sete al
+ movzx eax, al
+ neg eax
+LABEL30:
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ mov eax, CONST
+ jmp LABEL30
+LABEL2:
+ or eax, CONST
+ ret

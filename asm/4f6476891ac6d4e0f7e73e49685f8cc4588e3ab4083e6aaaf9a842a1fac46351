@@ -1,0 +1,44 @@
+ .name sym.rl_vi_end_word
+ .offset 00000000000ba5d0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ test edi, edi
+ cjmp LABEL5
+ mov r12d, edi
+ mov ebp, esi
+ test esi, CONST
+ cjmp LABEL9
+ call CONST
+ mov r8, rax
+ movsxd rax, ebp
+ mov rdx, qword [r8]
+ test byte [rdx + rax*CONST + CONST], CONST
+ cjmp LABEL15
+LABEL9:
+ mov esi, ebp
+ mov edi, r12d
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL15:
+ mov esi, ebp
+ mov edi, r12d
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ call CONST
+ add rsp, CONST
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret

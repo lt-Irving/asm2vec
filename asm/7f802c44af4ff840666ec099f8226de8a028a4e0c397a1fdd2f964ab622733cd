@@ -1,0 +1,46 @@
+ .name sym.delete_var
+ .offset 000000000004f600
+ .file bash
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push r12
+ mov r12, rdi
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ jmp LABEL8
+LABEL17:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL11
+LABEL8:
+ mov rsi, qword [rbx + CONST]
+ xor edx, edx
+ mov rdi, r12
+ call CONST
+ test rax, rax
+ cjmp LABEL17
+ mov rdi, qword [rax + CONST]
+ mov r12, qword [rax + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rax, qword [rsp + CONST]
+ mov rdi, rax
+ call CONST
+ mov rdi, r12
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop r12
+ ret
+LABEL11:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop r12
+ ret
+LABEL2:
+ mov eax, CONST
+ ret

@@ -1,0 +1,23 @@
+ .name sym.rl_exchange_point_and_mark
+ .offset 00000000000d5bd0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ cmp eax, dword [rip + CONST]
+ cjmp LABEL3
+ mov dword [rip + CONST], CONST
+LABEL12:
+ sub rsp, CONST
+ call CONST
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL3:
+ test eax, eax
+ cjmp LABEL12
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ mov dword [rip + CONST], edx
+ ret

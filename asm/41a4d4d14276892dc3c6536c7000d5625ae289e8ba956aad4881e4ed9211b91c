@@ -1,0 +1,15 @@
+ .name sym._rl_nsearch_cleanup
+ .offset 00000000000bd950
+ .file bash
+ endbr64
+ push rbx
+ mov ebx, esi
+ xor esi, esi
+ call CONST
+ xor eax, eax
+ and qword [rip + CONST], CONST
+ cmp ebx, CONST
+ mov qword [rip + CONST], CONST
+ setne al
+ pop rbx
+ ret

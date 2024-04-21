@@ -1,0 +1,15 @@
+ .name sym.restart_job_control
+ .offset 000000000005efe0
+ .file bash
+ endbr64
+ mov edi, dword [rip + CONST]
+ cmp edi, CONST
+ cjmp LABEL3
+ xor edi, edi
+ jmp CONST
+LABEL3:
+ sub rsp, CONST
+ call CONST
+ xor edi, edi
+ add rsp, CONST
+ jmp CONST

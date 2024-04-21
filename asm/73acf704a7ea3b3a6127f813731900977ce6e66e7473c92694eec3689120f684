@@ -1,0 +1,64 @@
+ .name fcn.00021160
+ .offset 0000000000021160
+ .file diff
+ push r14
+ mov r14, rdi
+ push r13
+ mov r13, rsi
+ push r12
+ mov r12, CONST
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov rbx, CONST
+ nop
+LABEL28:
+ mov rdx, rbp
+ mov rsi, r14
+ mov rdi, r13
+ call CONST
+ movzx edx, byte [r13]
+ cdqe
+ add qword [r14 + CONST], rax
+ movzx eax, byte [r13 + CONST]
+ cmp al, CONST
+ cjmp LABEL20
+ cmp al, CONST
+ cjmp LABEL22
+ cmp dl, CONST
+ cjmp LABEL22
+ cmp al, CONST
+ cjmp LABEL26
+LABEL31:
+ mov rbx, r12
+ jmp LABEL28
+LABEL26:
+ lea eax, [rdx + CONST]
+ cmp al, CONST
+ cjmp LABEL31
+ cmp rbx, CONST
+ cjmp LABEL31
+ cmp rbx, CONST
+ cjmp LABEL35
+ lea rax, [rbx + rbx*CONST]
+ lea rbx, [rdx + rax*CONST]
+ mov eax, CONST
+ cmp rbx, CONST
+ cmovg rbx, rax
+ sub rbx, CONST
+ jmp LABEL28
+LABEL20:
+ mov rbx, CONST
+LABEL22:
+ mov rax, rbx
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL35:
+ movzx ebx, dl
+ sub ebx, CONST
+ movsxd rbx, ebx
+ jmp LABEL28

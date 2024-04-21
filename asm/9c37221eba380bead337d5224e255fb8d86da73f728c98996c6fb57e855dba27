@@ -1,0 +1,35 @@
+ .name sym.new_var_context
+ .offset 000000000004fed0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ mov ebx, esi
+ call CONST
+ mov r12, rax
+ test rbp, rbp
+ cjmp LABEL10
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL10:
+ mov eax, dword [rip + CONST]
+ mov qword [r12], rbp
+ mov dword [r12 + CONST], ebx
+ mov dword [r12 + CONST], eax
+ mov rax, r12
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret

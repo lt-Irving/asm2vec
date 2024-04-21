@@ -1,0 +1,47 @@
+ .name sym.rl_vi_append_eol
+ .offset 00000000000ba860
+ .file bash
+ endbr64
+ push rbp
+ mov edi, CONST
+ mov ebp, esi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov eax, dword [rip + CONST]
+ cmp dword [rip + CONST], eax
+ cjmp LABEL9
+LABEL28:
+ mov edx, dword [rip + CONST]
+ mov edi, ebp
+ mov esi, CONST
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL9:
+ call CONST
+ mov ebx, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL22
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL25
+LABEL22:
+ add ebx, CONST
+ mov dword [rip + CONST], ebx
+ jmp LABEL28
+LABEL25:
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cmp ebx, eax
+ cjmp LABEL34
+ cmp eax, edx
+ cjmp LABEL28
+LABEL34:
+ mov dword [rip + CONST], edx
+ jmp LABEL28

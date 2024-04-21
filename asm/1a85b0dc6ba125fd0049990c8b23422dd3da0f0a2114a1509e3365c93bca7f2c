@@ -1,0 +1,16 @@
+ .name fcn.000089c0
+ .offset 00000000000089c0
+ .file chsh
+ endbr64
+ test byte [rdi + CONST], CONST
+ cjmp LABEL2
+ mov qword [rdi + CONST], CONST
+ mov eax, CONST
+ ret
+LABEL2:
+ sub rsp, CONST
+ call CONST
+ mov dword [rax], CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

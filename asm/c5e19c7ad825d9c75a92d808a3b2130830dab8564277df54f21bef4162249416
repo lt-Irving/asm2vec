@@ -1,0 +1,107 @@
+ .name sym.sgetsgent
+ .offset 000000000000d330
+ .file chfn
+ endbr64
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ mov rbp, qword [rip + CONST]
+ lea r13, [rax + CONST]
+ cmp qword [rip + CONST], r13
+ mov rbx, rax
+ cjmp LABEL15
+ mov rdi, rbp
+ mov rsi, r13
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL21
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], r13
+LABEL15:
+ mov rsi, r12
+ mov rdi, rbp
+ mov rdx, r13
+ call CONST
+ mov byte [rbp + rbx], CONST
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL33
+ mov byte [rax], CONST
+LABEL33:
+ mov ebx, CONST
+ mov r12, rsp
+LABEL48:
+ mov qword [r12 + rbx*CONST + CONST], rbp
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov edx, ebx
+ test rax, rax
+ cjmp LABEL43
+ mov byte [rax], CONST
+ lea rbp, [rax + CONST]
+ add rbx, CONST
+ cmp edx, CONST
+ cjmp LABEL48
+ nop word [rax + rax]
+LABEL21:
+ xor eax, eax
+ jmp LABEL51
+LABEL43:
+ cmp ebx, CONST
+ cjmp LABEL21
+ mov rax, qword [rsp]
+ cmp qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov rax, qword [rsp + CONST]
+ mov qword [rip + CONST], rax
+ cjmp LABEL59
+LABEL91:
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL61
+LABEL86:
+ mov rdi, qword [rsp + CONST]
+ lea rdx, [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rdx, [rip + CONST]
+ lea rsi, [rip + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+LABEL51:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL75
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL61:
+ mov rdi, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ call CONST
+ mov qword [rip + CONST], CONST
+ jmp LABEL86
+LABEL59:
+ mov rdi, qword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ call CONST
+ mov qword [rip + CONST], CONST
+ jmp LABEL91
+LABEL75:
+ call CONST

@@ -1,0 +1,45 @@
+ .name sym.rl_vi_append_mode
+ .offset 00000000000ba7d0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, esi
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ cmp dword [rip + CONST], eax
+ cjmp LABEL7
+LABEL26:
+ mov edx, dword [rip + CONST]
+ mov edi, ebp
+ mov esi, CONST
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL7:
+ call CONST
+ mov ebx, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL20
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL23
+LABEL20:
+ add ebx, CONST
+ mov dword [rip + CONST], ebx
+ jmp LABEL26
+LABEL23:
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ cmp ebx, eax
+ cjmp LABEL32
+ cmp eax, edx
+ cjmp LABEL26
+LABEL32:
+ mov dword [rip + CONST], edx
+ jmp LABEL26

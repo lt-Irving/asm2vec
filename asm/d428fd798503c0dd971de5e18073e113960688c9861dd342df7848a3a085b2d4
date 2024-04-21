@@ -1,0 +1,41 @@
+ .name fcn.00015ca0
+ .offset 0000000000015ca0
+ .file diff
+ mov r8, rdx
+ test rdi, rdi
+ cjmp LABEL2
+ test rsi, rsi
+ cjmp LABEL4
+ mov rcx, rsi
+ mov rax, rdi
+LABEL33:
+ xor edx, edx
+ div rcx
+ test rdx, rdx
+ cjmp LABEL10
+ mov rax, rdi
+ xor edx, edx
+ div rcx
+ mov rcx, rsi
+ imul rcx, rax
+ mov r9, rax
+ cmp rcx, r8
+ cjmp LABEL4
+ xor edx, edx
+ mov rax, rcx
+ div rsi
+ cmp rax, r9
+ cmove rdi, rcx
+LABEL4:
+ mov rax, rdi
+ ret
+LABEL2:
+ test rsi, rsi
+ mov edi, CONST
+ cmovne rdi, rsi
+ mov rax, rdi
+ ret
+LABEL10:
+ mov rax, rcx
+ mov rcx, rdx
+ jmp LABEL33

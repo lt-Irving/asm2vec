@@ -1,0 +1,35 @@
+ .name fcn.00016200
+ .offset 0000000000016200
+ .file dash
+ endbr64
+ mov rsi, qword [rsi]
+ mov rdi, qword [rdi]
+ movsx ecx, byte [rsi]
+ movsx eax, byte [rdi]
+ cmp ecx, eax
+ cjmp LABEL6
+ mov edx, CONST
+ nop dword [rax]
+LABEL17:
+ test eax, eax
+ cjmp LABEL10
+ cmp eax, CONST
+ cjmp LABEL10
+ movsx eax, byte [rdi + rdx]
+ movsx ecx, byte [rsi + rdx]
+ add rdx, CONST
+ cmp eax, ecx
+ cjmp LABEL17
+LABEL6:
+ endbr64
+ cmp eax, CONST
+ mov edx, CONST
+ cmove eax, edx
+ mov edx, eax
+ sub edx, ecx
+ cmp ecx, CONST
+ cmovne eax, edx
+ ret
+LABEL10:
+ sub eax, ecx
+ ret

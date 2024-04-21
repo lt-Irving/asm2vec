@@ -1,0 +1,23 @@
+ .name sym.alloc_word_desc
+ .offset 0000000000040030
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov rdx, qword [rip + CONST]
+ sub eax, CONST
+ mov dword [rip + CONST], eax
+ cdqe
+ mov rax, qword [rdx + rax*CONST]
+ mov dword [rax + CONST], CONST
+ mov qword [rax], CONST
+ ret
+LABEL3:
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov dword [rax + CONST], CONST
+ mov qword [rax], CONST
+ add rsp, CONST
+ ret

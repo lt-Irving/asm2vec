@@ -1,0 +1,27 @@
+ .name fcn.00016f40
+ .offset 0000000000016f40
+ .file dash
+ endbr64
+ add dword [rip + CONST], CONST
+ push rbx
+ mov edi, CONST
+ call CONST
+ mov rbx, rax
+ mov qword [rax + CONST], CONST
+ mov rax, qword [rip + CONST]
+ mov qword [rbx], rax
+ mov qword [rip + CONST], rbx
+ sub dword [rip + CONST], CONST
+ cjmp LABEL11
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL14
+LABEL11:
+ mov rax, qword [rbx]
+ pop rbx
+ ret
+LABEL14:
+ call CONST
+ mov rax, qword [rbx]
+ pop rbx
+ ret

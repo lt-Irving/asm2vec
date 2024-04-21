@@ -1,0 +1,64 @@
+ .name sym.rl_vi_replace
+ .offset 00000000000bc9b0
+ .file bash
+ endbr64
+ cmp qword [rip + CONST], CONST
+ push rbx
+ mov ebx, esi
+ mov dword [rip + CONST], CONST
+ cjmp LABEL5
+LABEL51:
+ mov edx, dword [rip + CONST]
+ mov edi, ebx
+ mov esi, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov dword [rip + CONST], ebx
+ pop rbx
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ ret
+LABEL5:
+ call CONST
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ mov qword [rip + CONST], rax
+ lea rdi, [rcx + CONST]
+ nop dword [rax]
+LABEL28:
+ cmp byte [rcx + rdx], CONST
+ cjmp LABEL23
+ mov rsi, qword [rdi + rdx]
+ mov qword [rax + rdx], rsi
+LABEL23:
+ add rdx, CONST
+ cmp rdx, CONST
+ cjmp LABEL28
+ lea rdx, [rax + CONST]
+ lea rsi, [rax + CONST]
+ lea rcx, [rip + CONST]
+ nop dword [rax + rax]
+LABEL36:
+ mov qword [rdx], rcx
+ add rdx, CONST
+ cmp rdx, rsi
+ cjmp LABEL36
+ lea rdx, [rip + CONST]
+ lea rcx, [rip + CONST]
+ lea rdi, [rip + CONST]
+ cmp byte [rip + CONST], CONST
+ mov qword [rax + CONST], rcx
+ mov qword [rax + CONST], rdi
+ mov qword [rax + CONST], rdx
+ mov qword [rax + CONST], rdx
+ cjmp LABEL45
+ lea rdi, [rip + CONST]
+ cmp qword [rip + CONST], rdi
+ cjmp LABEL48
+LABEL45:
+ mov byte [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ jmp LABEL51
+LABEL48:
+ mov qword [rax + CONST], rcx
+ jmp LABEL45

@@ -1,0 +1,39 @@
+ .name sym.sh_mktmpname
+ .offset 00000000000b1e90
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ mov edi, ebp
+ mov r12, rax
+ call CONST
+ test rbx, rbx
+ mov rdi, r12
+ mov esi, CONST
+ lea r9, [rip + CONST]
+ mov r8, rax
+ lea rcx, [rip + CONST]
+ mov rdx, CONST
+ cmovne r9, rbx
+ xor eax, eax
+ call CONST
+ mov rdi, r12
+ call CONST
+ test rax, rax
+ cjmp LABEL24
+LABEL33:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL24:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ jmp LABEL33

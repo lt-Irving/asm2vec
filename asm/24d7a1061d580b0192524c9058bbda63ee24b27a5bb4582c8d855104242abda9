@@ -1,0 +1,55 @@
+ .name fcn.000093e0
+ .offset 00000000000093e0
+ .file chage
+ endbr64
+ jmp LABEL1
+LABEL1:
+ endbr64
+ push r12
+ mov esi, CONST
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL12
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rbx]
+ mov qword [r12 + CONST], rax
+ call CONST
+ mov qword [r12], rax
+ test rax, rax
+ cjmp LABEL19
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov qword [r12 + CONST], rax
+ test rax, rax
+ cjmp LABEL19
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov qword [r12 + CONST], rax
+ test rax, rax
+ cjmp LABEL19
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov qword [r12 + CONST], rax
+ test rax, rax
+ cjmp LABEL19
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov qword [r12 + CONST], rax
+ test rax, rax
+ cjmp LABEL19
+LABEL12:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL19:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ jmp LABEL12

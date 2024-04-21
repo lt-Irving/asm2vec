@@ -1,0 +1,24 @@
+ .name sym.sv_opterr
+ .offset 000000000004ebe0
+ .file bash
+ endbr64
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ mov rdi, rax
+ mov eax, CONST
+ test rdi, rdi
+ cjmp LABEL7
+ cmp byte [rdi], CONST
+ cjmp LABEL9
+LABEL7:
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ ret
+LABEL9:
+ mov edx, CONST
+ xor esi, esi
+ call CONST
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ ret

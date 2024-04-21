@@ -1,0 +1,58 @@
+ .name sym.map_over
+ .offset 000000000004f720
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ test rsi, rsi
+ cjmp LABEL7
+ mov rbp, rdi
+ mov rbx, rsi
+ mov r12, rsi
+ xor edi, edi
+ nop
+LABEL19:
+ mov rax, qword [r12 + CONST]
+ test rax, rax
+ cjmp LABEL15
+ add edi, dword [rax + CONST]
+LABEL15:
+ mov r12, qword [r12 + CONST]
+ test r12, r12
+ cjmp LABEL19
+ test edi, edi
+ cjmp LABEL21
+ call CONST
+ mov r13, rax
+ nop dword [rax + rax]
+LABEL31:
+ mov rdi, qword [rbx + CONST]
+ mov rdx, r13
+ mov rsi, rbp
+ call CONST
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL31
+ mov rdi, r13
+ mov r12, qword [r13]
+ call CONST
+LABEL21:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL7:
+ add rsp, CONST
+ xor r12d, r12d
+ pop rbx
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ ret

@@ -1,0 +1,23 @@
+ .name fcn.00006cb0
+ .offset 0000000000006cb0
+ .file choom
+ endbr64
+ push rbx
+ sub rdx, CONST
+ mov rbx, rsi
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+ cjmp LABEL7
+ movsxd rdx, eax
+ cmp byte [rbx + rdx + CONST], CONST
+ cjmp LABEL10
+ sub eax, CONST
+ movsxd rdx, eax
+LABEL10:
+ add rbx, rdx
+LABEL7:
+ mov byte [rbx], CONST
+LABEL6:
+ pop rbx
+ ret

@@ -1,0 +1,57 @@
+ .name fcn.00007b70
+ .offset 0000000000007b70
+ .file dmesg
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL5
+ mov rcx, rdx
+ sub rcx, CONST
+ cjmp LABEL5
+ xor edx, edx
+ jmp LABEL10
+LABEL21:
+ add rdi, CONST
+ add rdx, CONST
+LABEL46:
+ mov byte [rsi + CONST], al
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL5
+ cmp rdx, rcx
+ cjmp LABEL5
+LABEL10:
+ add rsi, CONST
+ cmp al, CONST
+ cjmp LABEL21
+ lea r8, [rdx + CONST]
+ cmp r8, rcx
+ cjmp LABEL21
+ movzx r8d, byte [rdi + CONST]
+ mov r9d, r8d
+ and r9d, CONST
+ cmp r9b, CONST
+ cjmp LABEL21
+ movzx r9d, byte [rdi + CONST]
+ mov r10d, r9d
+ and r10d, CONST
+ cmp r10b, CONST
+ cjmp LABEL21
+ movzx r10d, byte [rdi + CONST]
+ mov r11d, r10d
+ and r11d, CONST
+ cmp r11b, CONST
+ cjmp LABEL21
+ and r9d, CONST
+ and r10d, CONST
+ add rdi, CONST
+ add rdx, CONST
+ lea r8d, [r9 + r8*CONST]
+ lea eax, [r10 + r8*CONST]
+ jmp LABEL46
+LABEL5:
+ mov byte [rsi], CONST
+LABEL2:
+ ret

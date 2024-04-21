@@ -1,0 +1,26 @@
+ .name sym.rl_maybe_unsave_line
+ .offset 00000000000d64b0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL4
+ mov rdi, qword [rax]
+ xor esi, esi
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rax, qword [rdi + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov eax, dword [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

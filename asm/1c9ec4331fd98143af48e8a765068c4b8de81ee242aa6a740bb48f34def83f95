@@ -1,0 +1,25 @@
+ .name fcn.00084240
+ .offset 0000000000084240
+ .file bash
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL5
+LABEL16:
+ call CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL8
+ add dword [rip + CONST], CONST
+LABEL8:
+ add rsp, CONST
+ ret
+LABEL5:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL16
+ lea rdi, [rip + CONST]
+ jmp LABEL16

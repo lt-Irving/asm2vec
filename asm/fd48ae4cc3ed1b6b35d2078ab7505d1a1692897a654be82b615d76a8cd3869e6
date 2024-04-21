@@ -1,0 +1,26 @@
+ .name sym.close_buffered_fd
+ .offset 0000000000076cc0
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ cmp dword [rip + CONST], edi
+ cjmp LABEL4
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL4
+ movsxd rdx, edi
+ mov r8, qword [rax + rdx*CONST]
+ test r8, r8
+ cjmp LABEL4
+ mov rdi, r8
+ jmp CONST
+LABEL4:
+ jmp CONST
+LABEL2:
+ sub rsp, CONST
+ call CONST
+ mov dword [rax], CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret

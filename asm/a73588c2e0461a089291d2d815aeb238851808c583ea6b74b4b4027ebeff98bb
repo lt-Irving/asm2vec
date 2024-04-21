@@ -1,0 +1,123 @@
+ .name fcn.00013cd0
+ .offset 0000000000013cd0
+ .file dash
+ endbr64
+ push r14
+ movsxd rdx, edi
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdx
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rax, [rip + CONST]
+ mov rax, qword [rax + rdx*CONST]
+ test rax, rax
+ cjmp LABEL15
+ xor ebx, ebx
+ cmp byte [rax], CONST
+ sete bl
+ add ebx, CONST
+LABEL85:
+ cmp ebp, CONST
+ mov eax, CONST
+ cmove ebx, eax
+LABEL96:
+ lea r12d, [rbp + CONST]
+ lea r13, [rip + CONST]
+ movsxd r12, r12d
+ movsx eax, byte [r13 + r12]
+ test al, al
+ cjmp LABEL28
+ cmp al, CONST
+ cjmp LABEL30
+LABEL72:
+ mov r14, rsp
+ cmp ebx, eax
+ cjmp LABEL30
+LABEL66:
+ cmp ebx, CONST
+ cjmp LABEL35
+ xor eax, eax
+ cmp ebx, CONST
+ sete al
+ mov qword [rsp], rax
+LABEL88:
+ lea rdi, [rsp + CONST]
+ mov byte [r13 + r12], bl
+ mov dword [rsp + CONST], CONST
+ call CONST
+ xor edx, edx
+ mov rsi, r14
+ mov edi, ebp
+ call CONST
+LABEL30:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL50
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL28:
+ mov r14, rsp
+ xor esi, esi
+ mov edi, ebp
+ mov rdx, r14
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL30
+ cmp qword [rsp], CONST
+ cjmp LABEL66
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL30
+ lea edx, [rbp + CONST]
+ mov eax, CONST
+ cmp edx, CONST
+ cjmp LABEL72
+ jmp LABEL30
+LABEL15:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL76
+ cmp edx, CONST
+ cjmp LABEL76
+ lea rcx, [rip + CONST]
+ mov edx, edx
+ movsxd rax, dword [rcx + rdx*CONST]
+ add rax, rcx
+ notrack jmp rax
+LABEL76:
+ mov ebx, CONST
+ jmp LABEL85
+LABEL35:
+ lea rax, [rip + CONST]
+ mov qword [rsp], rax
+ jmp LABEL88
+ cmp byte [rip + CONST], CONST
+ sbb ebx, ebx
+ and ebx, CONST
+ add ebx, CONST
+ jmp LABEL85
+ cmp byte [rip + CONST], CONST
+ mov ebx, ebp
+ cjmp LABEL96
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL96
+ cmp byte [rip + CONST], CONST
+ mov ebx, CONST
+ cmove ebx, ebp
+ jmp LABEL96
+ cmp byte [rip + CONST], CONST
+ sbb ebx, ebx
+ and ebx, CONST
+ add ebx, CONST
+ jmp LABEL96
+LABEL50:
+ call CONST

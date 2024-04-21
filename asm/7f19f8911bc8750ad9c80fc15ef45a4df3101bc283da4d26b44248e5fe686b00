@@ -1,0 +1,54 @@
+ .name sym.sh_quote_reusable
+ .offset 00000000000b3820
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ cmp byte [rdi], CONST
+ cjmp LABEL8
+ mov ebx, esi
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+ test ebx, ebx
+ cjmp LABEL14
+ add rsp, CONST
+ mov rdi, rbp
+ mov edx, CONST
+ xor esi, esi
+ pop rbx
+ xor eax, eax
+ pop rbp
+ jmp CONST
+LABEL8:
+ mov edi, CONST
+ call CONST
+ mov edx, CONST
+ mov word [rax], dx
+ mov byte [rax + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL14:
+ add rsp, CONST
+ mov rdi, rbp
+ xor eax, eax
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL12:
+ add rsp, CONST
+ mov rdi, rbp
+ xor edx, edx
+ xor esi, esi
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL2:
+ xor eax, eax
+ ret

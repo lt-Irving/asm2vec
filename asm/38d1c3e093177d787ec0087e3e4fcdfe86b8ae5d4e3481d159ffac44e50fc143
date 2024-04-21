@@ -1,0 +1,36 @@
+ .name sym.rl_unbind_command_in_map
+ .offset 00000000000c5010
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rsi
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ lea rdx, [rbx + CONST]
+ lea rcx, [rbx + CONST]
+ xor r8d, r8d
+ jmp LABEL9
+LABEL14:
+ add rdx, CONST
+ cmp rdx, rcx
+ cjmp LABEL12
+LABEL9:
+ cmp byte [rdx + CONST], CONST
+ cjmp LABEL14
+ cmp rax, qword [rdx]
+ cjmp LABEL14
+ mov qword [rdx], CONST
+ add rdx, CONST
+ mov r8d, CONST
+ cmp rdx, rcx
+ cjmp LABEL9
+LABEL12:
+ mov eax, r8d
+ pop rbx
+ ret
+LABEL5:
+ xor r8d, r8d
+ pop rbx
+ mov eax, r8d
+ ret

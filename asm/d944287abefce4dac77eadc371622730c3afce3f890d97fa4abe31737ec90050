@@ -1,0 +1,46 @@
+ .name sym.bash_directory_completion_matches
+ .offset 0000000000089090
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ test edx, edx
+ cjmp LABEL7
+ mov eax, dword [rip + CONST]
+ mov esi, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL11
+LABEL7:
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ mov r12, rax
+ jmp LABEL16
+LABEL11:
+ call CONST
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ mov r13, rax
+ call CONST
+ mov r12, rax
+ cmp rbp, r13
+ cjmp LABEL16
+ mov rdi, r13
+ call CONST
+LABEL16:
+ test r12, r12
+ cjmp LABEL28
+ cmp qword [r12], CONST
+ cjmp LABEL28
+ lea rsi, [rip + CONST]
+ mov rdi, r12
+ call CONST
+LABEL28:
+ mov rax, r12
+ pop rbp
+ pop r12
+ pop r13
+ ret

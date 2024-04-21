@@ -1,0 +1,59 @@
+ .name fcn.00003e20
+ .offset 0000000000003e20
+ .file csplit
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12, rcx
+ push rbp
+ mov rbp, rsi
+ push rbx
+ sub rsp, CONST
+ cmp qword [rdi], CONST
+ cjmp LABEL9
+LABEL51:
+ mov rbx, qword [rbp]
+ mov rax, qword [rbx]
+ cmp rax, CONST
+ cjmp LABEL13
+LABEL41:
+ mov rsi, qword [rbx + CONST]
+ add rax, CONST
+ mov rdi, rsi
+ add rsi, CONST
+ shl rdi, CONST
+ add rdi, rbx
+ mov qword [rdi + CONST], r13
+ mov qword [rdi + CONST], r12
+ mov qword [rbx], rax
+ mov qword [rbx + CONST], rsi
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL13:
+ mov edi, CONST
+ call CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rbx + CONST], rax
+ mov rax, qword [rbp]
+ mov rbx, qword [rax + CONST]
+ mov qword [rbp], rbx
+ mov rax, qword [rbx]
+ jmp LABEL41
+LABEL9:
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ mov qword [rbp], rax
+ mov qword [rax + CONST], CONST
+ mov qword [rax], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rbx], rax
+ jmp LABEL51

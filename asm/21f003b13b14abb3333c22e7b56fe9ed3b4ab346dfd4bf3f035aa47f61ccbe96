@@ -1,0 +1,69 @@
+ .name sym.fg_builtin
+ .offset 0000000000098da0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov r8, rdi
+ test rdi, rdi
+ cjmp LABEL4
+ mov rax, qword [rdi + CONST]
+ test rax, rax
+ cjmp LABEL4
+ mov rsi, qword [rax]
+ cmp byte [rsi], CONST
+ cjmp LABEL10
+LABEL4:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL13
+ mov rdi, r8
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ mov rdi, qword [rip + CONST]
+ mov rax, rdi
+ jmp LABEL20
+LABEL26:
+ mov rdx, qword [rax]
+ test rdx, rdx
+ cjmp LABEL23
+ mov rax, rdx
+LABEL20:
+ test rax, rax
+ cjmp LABEL26
+LABEL33:
+ mov esi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL23:
+ mov rax, qword [rax + CONST]
+ mov rax, qword [rax]
+ cmp byte [rax], CONST
+ cjmp LABEL33
+ xor esi, esi
+ cmp byte [rax + CONST], CONST
+ setne sil
+ add rsp, CONST
+ jmp CONST
+LABEL13:
+ xor edi, edi
+ call CONST
+ mov eax, CONST
+LABEL53:
+ add rsp, CONST
+ ret
+LABEL10:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL4
+ call CONST
+ mov eax, CONST
+ jmp LABEL53
+LABEL17:
+ mov eax, CONST
+ add rsp, CONST
+ ret

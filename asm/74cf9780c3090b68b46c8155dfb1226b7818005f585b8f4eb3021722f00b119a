@@ -1,0 +1,25 @@
+ .name fcn.000c2ef0
+ .offset 00000000000c2ef0
+ .file bash
+ endbr64
+ mov eax, CONST
+ test rdi, rdi
+ cjmp LABEL3
+ cmp byte [rdi], CONST
+ cjmp LABEL5
+LABEL3:
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ ret
+LABEL5:
+ sub rsp, CONST
+ mov edx, CONST
+ xor esi, esi
+ call CONST
+ mov edx, CONST
+ test eax, eax
+ cmovs eax, edx
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret

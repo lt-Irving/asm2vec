@@ -1,0 +1,30 @@
+ .name sym.sv_funcnest
+ .offset 000000000004e060
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test rax, rax
+ cjmp LABEL7
+ mov rdi, qword [rax + CONST]
+ mov rsi, rsp
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+LABEL7:
+ mov dword [rip + CONST], CONST
+LABEL21:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL16
+ add rsp, CONST
+ ret
+LABEL12:
+ mov rax, qword [rsp]
+ mov dword [rip + CONST], eax
+ jmp LABEL21
+LABEL16:
+ call CONST

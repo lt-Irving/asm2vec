@@ -1,0 +1,26 @@
+ .name sym.unbind_variable
+ .offset 00000000000529a0
+ .file bash
+ endbr64
+ push rbp
+ mov rsi, qword [rip + CONST]
+ mov rbp, rdi
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ test byte [rax + CONST], CONST
+ cjmp LABEL8
+LABEL6:
+ mov rsi, qword [rip + CONST]
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL8:
+ mov rdi, rax
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rax]
+ pop rbp
+ jmp CONST

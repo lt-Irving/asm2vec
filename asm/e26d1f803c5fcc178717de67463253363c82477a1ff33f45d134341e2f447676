@@ -1,0 +1,16 @@
+ .name fcn.00002070
+ .offset 0000000000002070
+ .file bzip2recover
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov qword [rax], rbx
+ mov qword [rax + CONST], CONST
+ mov byte [rax + CONST], CONST
+ pop rbx
+ ret
+LABEL5:
+ call CONST

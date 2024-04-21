@@ -1,0 +1,24 @@
+ .name fcn.00002b90
+ .offset 0000000000002b90
+ .file arch
+ cmp byte [rip + CONST], CONST
+ push rbp
+ mov rbp, rdi
+ cjmp LABEL3
+ mov rdi, qword [rip + CONST]
+ mov rax, qword [rdi + CONST]
+ cmp rax, qword [rdi + CONST]
+ cjmp LABEL7
+ lea rdx, [rax + CONST]
+ mov qword [rdi + CONST], rdx
+ mov byte [rax], CONST
+LABEL3:
+ mov rsi, qword [rip + CONST]
+ mov rdi, rbp
+ pop rbp
+ mov byte [rip + CONST], CONST
+ jmp CONST
+LABEL7:
+ mov esi, CONST
+ call CONST
+ jmp LABEL3

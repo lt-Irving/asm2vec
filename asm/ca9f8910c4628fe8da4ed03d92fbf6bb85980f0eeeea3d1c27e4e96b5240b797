@@ -1,0 +1,84 @@
+ .name sym.rl_username_completion_function
+ .offset 00000000000c2950
+ .file bash
+ endbr64
+ push r12
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ test esi, esi
+ cjmp LABEL6
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL9
+ call CONST
+LABEL9:
+ movsx eax, byte [rbx]
+ cmp eax, CONST
+ mov dword [rip + CONST], eax
+ sete r12b
+ sete al
+ movzx r12d, r12b
+ movzx eax, al
+ add r12, rbx
+ mov dword [rip + CONST], eax
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov rdi, rax
+ mov qword [rip + CONST], rax
+ call CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ nop dword [rax]
+LABEL6:
+ call CONST
+ mov qword [rip + CONST], rax
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL37
+ movsxd rdx, dword [rip + CONST]
+ mov r12, qword [r12]
+ test edx, edx
+ cjmp LABEL41
+ mov rdi, qword [rip + CONST]
+ movzx eax, byte [r12]
+ cmp byte [rdi], al
+ cjmp LABEL6
+ mov rsi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+LABEL41:
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ movsxd rdi, dword [rip + CONST]
+ mov r12, rax
+ movzx eax, byte [rbx]
+ add rdi, r12
+ mov byte [r12], al
+ mov rax, qword [rip + CONST]
+ mov rsi, qword [rax]
+ call CONST
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL63
+ mov dword [rip + CONST], CONST
+LABEL63:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL37:
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret

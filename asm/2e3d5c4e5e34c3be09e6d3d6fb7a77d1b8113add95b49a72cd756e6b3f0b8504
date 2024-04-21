@@ -1,0 +1,40 @@
+ .name sym.set_lang
+ .offset 0000000000089de0
+ .file bash
+ endbr64
+ mov rdi, qword [rip + CONST]
+ push rbp
+ mov rbp, rsi
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ test rbp, rbp
+ cjmp LABEL8
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov qword [rip + CONST], rax
+LABEL31:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL19
+ cmp byte [rax], CONST
+ cjmp LABEL21
+LABEL19:
+ pop rbp
+ jmp CONST
+LABEL21:
+ xor eax, eax
+ pop rbp
+ ret
+LABEL8:
+ mov edi, CONST
+ call CONST
+ mov qword [rip + CONST], rax
+ mov byte [rax], CONST
+ jmp LABEL31

@@ -1,0 +1,29 @@
+ .name sym.dispose_cond_node
+ .offset 0000000000043be0
+ .file bash
+LABEL8:
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL7
+ call LABEL8
+LABEL7:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL11
+ call LABEL8
+LABEL11:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL15
+ call CONST
+LABEL15:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL2:
+ ret

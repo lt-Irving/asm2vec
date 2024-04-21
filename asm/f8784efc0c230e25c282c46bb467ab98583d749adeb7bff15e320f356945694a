@@ -1,0 +1,35 @@
+ .name fcn.00005240
+ .offset 0000000000005240
+ .file df
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ push rbx
+ lea rsi, [rax + CONST]
+ mov rax, rsi
+ mov qword [rip + CONST], rsi
+ shr rax, CONST
+ setne al
+ shl rsi, CONST
+ cjmp LABEL9
+ movzx eax, al
+ test rax, rax
+ cjmp LABEL9
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rdx, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ lea rbx, [rax + rdx*CONST + CONST]
+ mov rax, rdi
+ shr rax, CONST
+ setne al
+ shl rdi, CONST
+ movzx eax, al
+ cjmp LABEL9
+ test rax, rax
+ cjmp LABEL9
+ call CONST
+ mov qword [rbx], rax
+ pop rbx
+ ret
+LABEL9:
+ call CONST

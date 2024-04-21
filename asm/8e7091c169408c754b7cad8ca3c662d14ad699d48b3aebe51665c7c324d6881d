@@ -1,0 +1,24 @@
+ .name sym.get_variable_value
+ .offset 000000000004e810
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov eax, dword [rdi + CONST]
+ mov rdi, qword [rdi + CONST]
+ test al, CONST
+ cjmp LABEL6
+ test al, CONST
+ cjmp LABEL8
+LABEL16:
+ mov rax, rdi
+ ret
+LABEL8:
+ lea rsi, [rip + CONST]
+ jmp CONST
+LABEL6:
+ xor esi, esi
+ jmp CONST
+LABEL2:
+ xor edi, edi
+ jmp LABEL16

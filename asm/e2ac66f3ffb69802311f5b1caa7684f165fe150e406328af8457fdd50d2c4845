@@ -1,0 +1,112 @@
+ .name sym.rl_completion_matches
+ .offset 00000000000c1650
+ .file bash
+ endbr64
+ push r15
+ xor r15d, r15d
+ push r14
+ mov r14, rdi
+ mov edi, CONST
+ push r13
+ mov r13d, CONST
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ call CONST
+ mov qword [rax + CONST], CONST
+ mov rbp, rax
+ jmp LABEL16
+LABEL45:
+ lea rax, [rip + CONST]
+ cmp r12, rax
+ cjmp LABEL19
+LABEL73:
+ mov rdi, rbp
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL24
+ mov r13d, CONST
+ mov esi, CONST
+ xor ebp, ebp
+ mov r15d, CONST
+LABEL53:
+ mov rdi, rbp
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL33
+LABEL48:
+ movsxd rax, r15d
+ mov qword [rbp + rax*CONST], rbx
+ mov qword [rbp + rax*CONST + CONST], CONST
+LABEL16:
+ mov esi, r15d
+ mov rdi, r14
+ call r12
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL42
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL45
+ add r15d, CONST
+ cmp r15d, r13d
+ cjmp LABEL48
+ lea esi, [r13 + CONST]
+ add r13d, CONST
+ movsxd rsi, esi
+ shl rsi, CONST
+ jmp LABEL53
+LABEL42:
+ test r15d, r15d
+ cjmp LABEL55
+ cmp r15d, CONST
+ cjmp LABEL57
+ mov rdx, r14
+ mov esi, r15d
+ mov rdi, rbp
+ call CONST
+LABEL33:
+ add rsp, CONST
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL19:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL73
+ lea r13, [rbp + CONST]
+ nop dword [rax]
+LABEL80:
+ call CONST
+ mov rdi, qword [r13]
+ add r13, CONST
+ test rdi, rdi
+ cjmp LABEL80
+ jmp LABEL73
+LABEL24:
+ mov edi, dword [rip + CONST]
+ mov r13d, CONST
+ xor ebp, ebp
+ mov r15d, CONST
+ call CONST
+ mov esi, CONST
+ jmp LABEL53
+LABEL55:
+ mov rdi, rbp
+ xor ebp, ebp
+ call CONST
+ jmp LABEL33
+LABEL57:
+ mov rax, qword [rbp + CONST]
+ mov qword [rbp + CONST], CONST
+ mov qword [rbp], rax
+ jmp LABEL33

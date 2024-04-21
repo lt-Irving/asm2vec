@@ -1,0 +1,63 @@
+ .name fcn.0000c290
+ .offset 000000000000c290
+ .file dpkg-deb
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ movsxd rdi, dword [rdi]
+ cmp edi, CONST
+ cjmp LABEL7
+ lea r12, [rip + CONST]
+ mov rbp, rsi
+ mov rax, qword [r12 + rdi*CONST]
+ mov rdi, rbx
+ call qword [rax + CONST]
+ mov eax, dword [rbx + CONST]
+ test eax, eax
+ cjmp LABEL15
+LABEL52:
+ mov edx, dword [rbx + CONST]
+ mov eax, CONST
+ test edx, edx
+ cjmp LABEL19
+ mov ecx, dword [rbx]
+ cmp ecx, CONST
+ cjmp LABEL22
+ cmp edx, CONST
+ sete al
+ cmp ecx, CONST
+ sete dl
+ and al, dl
+ cjmp LABEL19
+LABEL44:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rbp
+ mov rsi, rax
+ xor eax, eax
+ call CONST
+ xor eax, eax
+LABEL19:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL22:
+ sub edx, CONST
+ cmp edx, CONST
+ cjmp LABEL44
+ jmp LABEL19
+LABEL15:
+ movsxd rdi, dword [rbx]
+ cmp edi, CONST
+ cjmp LABEL7
+ mov rax, qword [r12 + rdi*CONST]
+ mov eax, dword [rax + CONST]
+ mov dword [rbx + CONST], eax
+ jmp LABEL52
+LABEL7:
+ call CONST

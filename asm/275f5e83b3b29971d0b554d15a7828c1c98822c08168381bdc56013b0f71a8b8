@@ -1,0 +1,63 @@
+ .name sym.input_avail
+ .offset 00000000000b6130
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, CONST
+ test edi, edi
+ cjmp LABEL12
+ mov edx, CONST
+ lea r12, [rsp + CONST]
+ mov ebx, edi
+ xor eax, eax
+ mov rcx, rdx
+ mov rdi, r12
+ cld
+ rep stosq qword [rdi], rax
+ lea r13, [rsp + CONST]
+ mov rcx, rdx
+ mov rdi, r13
+ cld
+ rep stosq qword [rdi], rax
+ movsxd r14, ebx
+ mov ebp, CONST
+ mov rdi, r14
+ call CONST
+ mov ecx, ebx
+ mov rdi, r14
+ shl rbp, cl
+ or qword [rsp + rax*CONST + CONST], rbp
+ call CONST
+ xor edx, edx
+ lea edi, [rbx + CONST]
+ mov r8, rsp
+ mov rcx, r13
+ mov rsi, r12
+ or qword [rsp + rax*CONST + CONST], rbp
+ mov qword [rsp], CONST
+ mov qword [rsp + CONST], CONST
+ call CONST
+ test eax, eax
+ setg al
+ movzx eax, al
+LABEL12:
+ mov rsi, qword [rsp + CONST]
+ xor rsi, qword fs:[CONST]
+ cjmp LABEL49
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL49:
+ call CONST

@@ -1,0 +1,33 @@
+ .name sym.expand_string_unsplit_to_string
+ .offset 00000000000709d0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL5
+ cmp byte [rdi], CONST
+ cjmp LABEL5
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL5
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov rdi, rbp
+ mov r12, rax
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ xor r12d, r12d
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret

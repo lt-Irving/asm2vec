@@ -1,0 +1,19 @@
+ .name sym._rl_prev_macro_key
+ .offset 00000000000d0e10
+ .file bash
+ endbr64
+ mov rdx, qword [rip + CONST]
+ test rdx, rdx
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+ sub eax, CONST
+ mov dword [rip + CONST], eax
+ cdqe
+ movsx eax, byte [rdx + rax]
+ ret
+LABEL3:
+ xor eax, eax
+LABEL6:
+ ret

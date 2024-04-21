@@ -1,0 +1,16 @@
+ .name sym.list_length
+ .offset 0000000000089170
+ .file bash
+ endbr64
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL3
+ nop dword [rax + rax]
+LABEL8:
+ mov rdi, qword [rdi]
+ add eax, CONST
+ test rdi, rdi
+ cjmp LABEL8
+ ret
+LABEL3:
+ ret

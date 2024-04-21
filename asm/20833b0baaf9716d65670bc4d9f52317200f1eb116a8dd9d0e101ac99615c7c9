@@ -1,0 +1,39 @@
+ .name sym.full_pathname
+ .offset 000000000003fb80
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbx
+ sub rsp, CONST
+ cmp byte [rdi], CONST
+ cjmp LABEL6
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov r12, rax
+LABEL32:
+ cmp byte [r12], CONST
+ cjmp LABEL15
+ mov rsi, r12
+ mov edx, CONST
+ xor edi, edi
+ call CONST
+ mov rdi, r12
+ mov rbx, rax
+ call CONST
+ mov r12, rbx
+LABEL15:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL6:
+ xor esi, esi
+ call CONST
+ mov r12, rax
+ jmp LABEL32

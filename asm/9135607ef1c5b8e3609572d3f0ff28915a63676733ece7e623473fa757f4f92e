@@ -1,0 +1,38 @@
+ .name sym.dequote_list
+ .offset 0000000000066960
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL6
+ mov rbx, rdi
+ jmp LABEL8
+LABEL22:
+ call CONST
+ mov rax, qword [rbx + CONST]
+ mov rbx, qword [rbx]
+ mov qword [rax], rbp
+ test rbx, rbx
+ cjmp LABEL6
+LABEL8:
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ call CONST
+ mov rbp, rax
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ cmp byte [rdi], CONST
+ cjmp LABEL22
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL22
+ and dword [rax + CONST], CONST
+ jmp LABEL22
+LABEL6:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

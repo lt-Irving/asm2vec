@@ -1,0 +1,24 @@
+ .name fcn.00014390
+ .offset 0000000000014390
+ .file dash
+ sub rsp, CONST
+ mov r8, rdx
+ mov r9, rcx
+ add dword [rip + CONST], CONST
+ mov rcx, CONST
+ mov edx, CONST
+ call CONST
+ sub dword [rip + CONST], CONST
+ cjmp LABEL8
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL11
+LABEL8:
+ add rsp, CONST
+ ret
+LABEL11:
+ mov dword [rsp + CONST], eax
+ call CONST
+ mov eax, dword [rsp + CONST]
+ add rsp, CONST
+ ret

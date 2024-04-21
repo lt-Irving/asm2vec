@@ -1,0 +1,14 @@
+ .name sym.rl_cleanup_after_signal
+ .offset 00000000000cec90
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL5
+ call rax
+LABEL5:
+ call CONST
+ add rsp, CONST
+ jmp CONST

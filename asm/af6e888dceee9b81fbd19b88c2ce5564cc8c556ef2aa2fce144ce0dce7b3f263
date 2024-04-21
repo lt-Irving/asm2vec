@@ -1,0 +1,39 @@
+ .name fcn.0000fc40
+ .offset 000000000000fc40
+ .file apt-cache
+LABEL14:
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push r13
+ lea r13, [rip + CONST]
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+LABEL25:
+ mov rsi, qword [rbx + CONST]
+ mov rbp, rbx
+ mov rdi, r12
+ call LABEL14
+ mov rbx, qword [rbx + CONST]
+ mov qword [rbp + CONST], r13
+ lea rdi, [rbp + CONST]
+ mov rsi, qword [rbp + CONST]
+ call CONST
+ lea rdi, [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ test rbx, rbx
+ cjmp LABEL25
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ ret

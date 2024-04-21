@@ -1,0 +1,51 @@
+ .name sym.xtrace_print_arith_cmd
+ .offset 0000000000042d90
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ push r12
+ push rbp
+ push rbx
+ test rax, rax
+ cmove rax, qword [rip + CONST]
+ mov rbx, rdi
+ mov qword [rip + CONST], rax
+ call CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, rax
+ call CONST
+ mov edx, CONST
+ mov rcx, qword [rip + CONST]
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test rbx, rbx
+ cjmp LABEL19
+ lea r12, [rip + CONST]
+ lea rbp, [rip + CONST]
+ nop dword [rax + rax]
+LABEL35:
+ mov rax, qword [rbx + CONST]
+ cmp qword [rbx], CONST
+ mov r8, rbp
+ mov esi, CONST
+ cmovne r8, r12
+ mov rdi, qword [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov rcx, qword [rax]
+ xor eax, eax
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL35
+LABEL19:
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST

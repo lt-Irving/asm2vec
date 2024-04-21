@@ -1,0 +1,70 @@
+ .name sym.break_builtin
+ .offset 0000000000091000
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL8
+ mov rax, qword [rdi + CONST]
+ test rax, rax
+ cjmp LABEL8
+ mov rsi, qword [rax]
+ cmp byte [rsi], CONST
+ cjmp LABEL14
+LABEL8:
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+LABEL37:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL20
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL17:
+ mov rdx, rsp
+ mov esi, CONST
+ mov rdi, rbx
+ call CONST
+ mov rdx, qword [rsp]
+ test rdx, rdx
+ cjmp LABEL30
+ movsxd rcx, dword [rip + CONST]
+ cmp rdx, rcx
+ mov rax, rcx
+ cmovle eax, edx
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ jmp LABEL37
+LABEL14:
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ repe cmpsb byte [rsi], byte [rdi]
+ seta al
+ sbb al, CONST
+ test al, al
+ cjmp LABEL8
+ call CONST
+ mov eax, CONST
+ jmp LABEL37
+LABEL30:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, rax
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ call CONST
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, CONST
+ jmp LABEL37
+LABEL20:
+ call CONST

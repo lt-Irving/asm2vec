@@ -1,0 +1,33 @@
+ .name fcn.0000cfb0
+ .offset 000000000000cfb0
+ .file chfn
+ endbr64
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ movsx edi, byte [rdi]
+ test dil, dil
+ cjmp LABEL7
+ mov rbp, rsi
+ jmp LABEL9
+LABEL17:
+ movsx edi, byte [rbx + CONST]
+ add rbx, CONST
+ test dil, dil
+ cjmp LABEL7
+LABEL9:
+ mov rsi, rbp
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL17
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL7:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret

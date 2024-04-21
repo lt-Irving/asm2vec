@@ -1,0 +1,22 @@
+ .name fcn.00013b80
+ .offset 0000000000013b80
+ .file diff
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov byte [rsp + CONST], CONST
+ push r9
+ push r8
+ xor r8d, r8d
+ lea r9, [rsp + CONST]
+ call CONST
+ pop rdx
+ pop rcx
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL14
+ add rsp, CONST
+ ret
+LABEL14:
+ call CONST

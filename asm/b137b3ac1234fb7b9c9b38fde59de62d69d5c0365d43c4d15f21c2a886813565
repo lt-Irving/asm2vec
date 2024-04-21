@@ -1,0 +1,93 @@
+ .name sym.utf8_mblen
+ .offset 00000000000b6b60
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ test rsi, rsi
+ cjmp LABEL4
+ movzx eax, byte [rdi]
+ test al, al
+ cjmp LABEL7
+ cmp al, CONST
+ cjmp LABEL4
+ movsx edx, byte [rdi + CONST]
+ cmp al, CONST
+ cjmp LABEL12
+ cmp rsi, CONST
+ cjmp LABEL4
+ xor dl, CONST
+ xor r8d, r8d
+ cmp edx, CONST
+ setle r8b
+ lea r8d, [r8 + r8*CONST + CONST]
+LABEL50:
+ mov eax, r8d
+ ret
+LABEL7:
+ setne r8b
+ movzx r8d, r8b
+ mov eax, r8d
+ ret
+LABEL12:
+ cmp al, CONST
+ cjmp LABEL27
+ cmp al, CONST
+ cjmp LABEL4
+ cmp rsi, CONST
+ cjmp LABEL4
+ movsx ecx, dl
+ xor cl, CONST
+ cmp ecx, CONST
+ cjmp LABEL4
+ movsx ecx, byte [rdi + CONST]
+ xor cl, CONST
+ cmp ecx, CONST
+ cjmp LABEL4
+ movsx ecx, byte [rdi + CONST]
+ xor cl, CONST
+ cmp ecx, CONST
+ cjmp LABEL4
+ cmp al, CONST
+ cjmp LABEL45
+ cmp dl, CONST
+ cjmp LABEL4
+LABEL45:
+ mov r8d, CONST
+ cmp al, CONST
+ cjmp LABEL50
+ cmp al, CONST
+ cjmp LABEL4
+ cmp dl, CONST
+ cjmp LABEL50
+ nop dword [rax]
+LABEL4:
+ mov r8d, CONST
+ jmp LABEL50
+LABEL27:
+ cmp rsi, CONST
+ cjmp LABEL4
+ movsx ecx, dl
+ xor cl, CONST
+ cmp ecx, CONST
+ cjmp LABEL4
+ movsx ecx, byte [rdi + CONST]
+ xor cl, CONST
+ cmp ecx, CONST
+ cjmp LABEL4
+ cmp al, CONST
+ cjmp LABEL69
+ cmp dl, CONST
+ cjmp LABEL4
+LABEL69:
+ cmp al, CONST
+ cjmp LABEL73
+ cmp dl, CONST
+ cjmp LABEL4
+LABEL73:
+ mov r8d, CONST
+ jmp LABEL50
+LABEL2:
+ xor r8d, r8d
+ mov eax, r8d
+ ret

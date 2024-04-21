@@ -1,0 +1,15 @@
+ .name sym.job_exit_status
+ .offset 000000000005aa40
+ .file bash
+ endbr64
+ call CONST
+ mov edi, eax
+ and eax, CONST
+ add eax, CONST
+ cmp al, CONST
+ cjmp LABEL6
+ jmp CONST
+LABEL6:
+ and edi, CONST
+ lea eax, [rdi + CONST]
+ ret

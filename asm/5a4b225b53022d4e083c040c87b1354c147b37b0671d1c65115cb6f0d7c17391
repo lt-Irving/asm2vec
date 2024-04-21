@@ -1,0 +1,47 @@
+ .name sym.rl_newline
+ .offset 00000000000d4ef0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov esi, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test esi, esi
+ cjmp LABEL5
+ mov eax, dword [rip + CONST]
+ mov edx, CONST
+ cmp eax, dword [rip + CONST]
+ cmove eax, edx
+ mov dword [rip + CONST], eax
+LABEL5:
+ mov ecx, dword [rip + CONST]
+ or qword [rip + CONST], CONST
+ test ecx, ecx
+ cjmp LABEL14
+LABEL31:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL17
+ mov eax, dword [rip + CONST]
+ or eax, dword [rip + CONST]
+ cjmp LABEL20
+LABEL17:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL23
+LABEL20:
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL14:
+ call CONST
+ mov edi, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL31
+ call CONST
+ jmp LABEL31
+LABEL23:
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

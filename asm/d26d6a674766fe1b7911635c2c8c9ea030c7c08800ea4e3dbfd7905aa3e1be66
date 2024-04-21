@@ -1,0 +1,23 @@
+ .name sym.bind_global_variable
+ .offset 0000000000050eb0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ mov r8d, edx
+ cjmp LABEL4
+LABEL17:
+ mov rax, qword [rip + CONST]
+ xor ecx, ecx
+ mov rdx, qword [rax + CONST]
+ add rsp, CONST
+ jmp CONST
+LABEL4:
+ mov qword [rsp + CONST], rsi
+ mov qword [rsp + CONST], rdi
+ mov dword [rsp + CONST], edx
+ call CONST
+ mov r8d, dword [rsp + CONST]
+ mov rsi, qword [rsp + CONST]
+ mov rdi, qword [rsp + CONST]
+ jmp LABEL17

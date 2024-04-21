@@ -1,0 +1,13 @@
+ .name fcn.0000b920
+ .offset 000000000000b920
+ .file dpkg-deb
+ push rax
+ pop rax
+ lea rcx, [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ mov r8d, edi
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST

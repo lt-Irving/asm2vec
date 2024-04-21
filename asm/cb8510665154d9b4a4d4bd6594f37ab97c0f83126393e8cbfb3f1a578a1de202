@@ -1,0 +1,44 @@
+ .name fcn.0000dd20
+ .offset 000000000000dd20
+ .file dash
+ endbr64
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ mov ebp, esi
+ push rbx
+ sub rsp, CONST
+LABEL12:
+ xor esi, esi
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+ mov rbx, qword [rip + CONST]
+ mov r12d, ebp
+ and r12d, CONST
+ test rbx, rbx
+ cjmp LABEL17
+ nop dword [rax + rax]
+LABEL29:
+ test r12d, r12d
+ cjmp LABEL20
+ test byte [rbx + CONST], CONST
+ cjmp LABEL22
+LABEL20:
+ mov edx, ebp
+ mov rsi, rbx
+ mov rdi, r13
+ call CONST
+LABEL22:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL29
+LABEL17:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

@@ -1,0 +1,49 @@
+ .name sym.array_quote_escapes
+ .offset 000000000007b280
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rax, qword [rdi + CONST]
+ test rax, rax
+ cjmp LABEL9
+ mov edx, dword [rdi + CONST]
+ test edx, edx
+ cjmp LABEL12
+ mov rbx, qword [rax + CONST]
+ cmp rax, rbx
+ cjmp LABEL15
+ nop dword [rax]
+LABEL27:
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ mov rbp, rax
+ test rdi, rdi
+ cjmp LABEL22
+ call CONST
+LABEL22:
+ mov qword [rbx + CONST], rbp
+ mov rbx, qword [rbx + CONST]
+ cmp qword [r12 + CONST], rbx
+ cjmp LABEL27
+LABEL15:
+ mov rax, r12
+LABEL9:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL12:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ xor eax, eax
+ ret

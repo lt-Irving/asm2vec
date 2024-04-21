@@ -1,0 +1,19 @@
+ .name sym.list_reverse
+ .offset 0000000000089140
+ .file bash
+ endbr64
+ mov rax, rdi
+ test rdi, rdi
+ cjmp LABEL3
+ xor ecx, ecx
+ jmp LABEL5
+LABEL11:
+ mov rax, rdx
+LABEL5:
+ mov rdx, qword [rax]
+ mov qword [rax], rcx
+ mov rcx, rax
+ test rdx, rdx
+ cjmp LABEL11
+LABEL3:
+ ret

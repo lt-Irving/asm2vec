@@ -1,0 +1,20 @@
+ .name fcn.00081fa0
+ .offset 0000000000081fa0
+ .file bash
+ endbr64
+ test esi, esi
+ cjmp LABEL2
+ mov dword [rip + CONST], CONST
+LABEL2:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL6
+ movsxd rcx, dword [rip + CONST]
+ mov rax, qword [rax + rcx*CONST]
+ mov rdx, rcx
+ test rax, rax
+ cjmp LABEL6
+ add edx, CONST
+ mov dword [rip + CONST], edx
+LABEL6:
+ ret

@@ -1,0 +1,30 @@
+ .name sym._rl_to_lower
+ .offset 00000000000cf810
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbx
+ sub rsp, CONST
+ and edi, CONST
+ cjmp LABEL6
+LABEL16:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret
+LABEL6:
+ call CONST
+ movsxd rbx, r12d
+ mov rax, qword [rax]
+ test byte [rax + rbx*CONST + CONST], CONST
+ cjmp LABEL16
+ call CONST
+ mov rax, qword [rax]
+ mov r12d, dword [rax + rbx*CONST]
+ add rsp, CONST
+ pop rbx
+ mov eax, r12d
+ pop r12
+ ret

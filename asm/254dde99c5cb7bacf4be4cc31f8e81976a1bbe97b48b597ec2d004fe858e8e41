@@ -1,0 +1,14 @@
+ .name fcn.0000e4c0
+ .offset 000000000000e4c0
+ .file cp
+ sub rsp, CONST
+ mov r9, qword [rip + CONST]
+ mov r8d, CONST
+ lea rcx, [rip + CONST]
+ lea rdx, [rip + CONST]
+ call CONST
+ mov r8, rax
+ lea rax, [rip + CONST]
+ mov eax, dword [rax + r8*CONST]
+ add rsp, CONST
+ ret

@@ -1,0 +1,64 @@
+ .name sym.parse_command
+ .offset 0000000000031260
+ .file bash
+ endbr64
+ push r12
+ sub rsp, CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL7
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL9
+LABEL7:
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL14
+ add rsp, CONST
+ pop r12
+ ret
+LABEL9:
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL25
+ lea rsi, [rip + CONST]
+ call CONST
+LABEL25:
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL7
+ lea rdi, [rip + CONST]
+ xor r12d, r12d
+ call CONST
+ mov rcx, rax
+ test rax, rax
+ cjmp LABEL35
+LABEL54:
+ mov rdi, qword [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ call CONST
+ mov rdi, r12
+ call CONST
+ jmp LABEL7
+LABEL14:
+ mov dword [rsp + CONST], eax
+ call CONST
+ mov eax, dword [rsp + CONST]
+ add rsp, CONST
+ pop r12
+ ret
+LABEL35:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rcx, rax
+ mov r12, rax
+ jmp LABEL54

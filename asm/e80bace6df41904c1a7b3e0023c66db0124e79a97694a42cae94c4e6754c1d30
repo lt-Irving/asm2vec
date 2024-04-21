@@ -1,0 +1,19 @@
+ .name sym.posix_readline_initialize
+ .offset 0000000000087110
+ .file bash
+ endbr64
+ sub rsp, CONST
+ test edi, edi
+ cjmp LABEL3
+ lea rsi, [rip + CONST]
+LABEL13:
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ jmp LABEL13

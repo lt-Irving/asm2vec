@@ -1,0 +1,53 @@
+ .name fcn.00007e30
+ .offset 0000000000007e30
+ .file chown
+ mov eax, esi
+ mov r8d, edi
+ mov rdi, rdx
+ mov edx, esi
+ shl edx, CONST
+ shl eax, CONST
+ and edx, CONST
+ and eax, CONST
+ or edx, eax
+ or edx, CONST
+ and esi, CONST
+ cjmp LABEL11
+ mov rsi, rdi
+ xor eax, eax
+ mov edi, r8d
+ jmp CONST
+LABEL11:
+ mov esi, edx
+ xor eax, eax
+ jmp LABEL18
+LABEL18:
+ endbr64
+ sub rsp, CONST
+ mov qword [rsp + CONST], rdx
+ xor edx, edx
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test sil, CONST
+ cjmp LABEL27
+LABEL43:
+ xor eax, eax
+ call CONST
+ mov edi, eax
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL34
+ add rsp, CONST
+ ret
+LABEL27:
+ lea rax, [rsp + CONST]
+ mov dword [rsp], CONST
+ mov edx, dword [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ lea rax, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ jmp LABEL43
+LABEL34:
+ call CONST

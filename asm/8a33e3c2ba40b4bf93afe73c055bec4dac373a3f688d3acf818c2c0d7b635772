@@ -1,0 +1,22 @@
+ .name sym.set_current_flags
+ .offset 0000000000057b10
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ lea rax, [rip + CONST]
+ mov ecx, CONST
+ lea rdx, [rip + CONST]
+ jmp LABEL6
+LABEL14:
+ mov rdx, qword [rax]
+ movzx ecx, byte [rax + CONST]
+ add rax, CONST
+LABEL6:
+ movsx esi, byte [rdi]
+ add rdi, CONST
+ mov dword [rdx], esi
+ test cl, cl
+ cjmp LABEL14
+LABEL2:
+ ret

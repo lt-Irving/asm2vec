@@ -1,0 +1,79 @@
+ .name sym.array_reference
+ .offset 000000000007bcc0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL2
+ cmp qword [rdi + CONST], rsi
+ cjmp LABEL2
+ mov rcx, qword [rdi + CONST]
+ mov r8, qword [rcx + CONST]
+ mov rax, qword [r8]
+ cmp rax, rsi
+ cjmp LABEL2
+ mov r9, qword [rdi + CONST]
+ test r9, r9
+ cjmp LABEL15
+ mov r10, qword [r9]
+ mov edx, CONST
+ mov rax, r10
+ shr rax, CONST
+ add rax, r10
+ sar rax, CONST
+ cmp rax, rsi
+ cjmp LABEL23
+LABEL51:
+ cmp rcx, r8
+ cjmp LABEL25
+ mov rax, r8
+ jmp LABEL27
+LABEL38:
+ mov rax, qword [rax + CONST]
+ cmp edx, CONST
+ cjmp LABEL30
+ cmp qword [rax], rsi
+ cjmp LABEL32
+LABEL30:
+ cmp rcx, rax
+ cjmp LABEL25
+LABEL27:
+ cmp qword [rax], rsi
+ cjmp LABEL36
+ cmp edx, CONST
+ cjmp LABEL38
+ mov rax, qword [rax + CONST]
+ cmp qword [rax], rsi
+ cjmp LABEL30
+LABEL32:
+ mov r8, rax
+LABEL25:
+ mov qword [rdi + CONST], r8
+ xor eax, eax
+ ret
+LABEL2:
+ xor eax, eax
+ ret
+LABEL23:
+ mov r8, r9
+ mov edx, CONST
+ cmp rsi, r10
+ cjmp LABEL51
+LABEL61:
+ mov edx, CONST
+ jmp LABEL51
+LABEL15:
+ mov rdx, rax
+ shr rdx, CONST
+ add rax, rdx
+ mov edx, CONST
+ sar rax, CONST
+ cmp rsi, rax
+ cjmp LABEL51
+ jmp LABEL61
+LABEL36:
+ mov qword [rdi + CONST], rax
+ mov rax, qword [rax + CONST]
+ ret

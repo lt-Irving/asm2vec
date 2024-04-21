@@ -1,0 +1,34 @@
+ .name sym.set_default_locale
+ .offset 0000000000089970
+ .file bash
+ endbr64
+ push rbp
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+LABEL6:
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ call CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ xor esi, esi
+ xor edi, edi
+ mov dword [rip + CONST], eax
+ call CONST
+ pop rbp
+ mov dword [rip + CONST], eax
+ ret

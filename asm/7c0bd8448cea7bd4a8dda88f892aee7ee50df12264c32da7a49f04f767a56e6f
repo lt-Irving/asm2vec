@@ -1,0 +1,41 @@
+ .name fcn.000020a0
+ .offset 00000000000020a0
+ .file bzip2recover
+ endbr64
+ push r12
+ xor eax, eax
+ mov r12, rsi
+ mov edx, CONST
+ push rbp
+ mov esi, CONST
+ sub rsp, CONST
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL10
+ mov rsi, r12
+ mov edi, eax
+ mov ebp, eax
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL17
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL10:
+ xor r12d, r12d
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL17:
+ mov edi, ebp
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret

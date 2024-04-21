@@ -1,0 +1,15 @@
+ .name fcn.0000ade0
+ .offset 000000000000ade0
+ .file chfn
+ endbr64
+ sub rsp, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test al, al
+ cjmp LABEL5
+ add rsp, CONST
+ ret
+LABEL5:
+ lea rdi, [rip + CONST]
+ add rsp, CONST
+ jmp CONST

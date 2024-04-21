@@ -1,0 +1,14 @@
+ .name sym.get_current_prompt_level
+ .offset 0000000000033020
+ .file bash
+ endbr64
+ mov rdx, qword [rip + CONST]
+ mov eax, CONST
+ test rdx, rdx
+ cjmp LABEL4
+ xor eax, eax
+ cmp rdx, qword [rip + CONST]
+ sete al
+ add eax, CONST
+LABEL4:
+ ret

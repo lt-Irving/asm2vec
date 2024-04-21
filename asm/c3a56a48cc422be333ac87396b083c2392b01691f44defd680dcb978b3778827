@@ -1,0 +1,93 @@
+ .name sym.move_to_high_fd
+ .offset 000000000003f0c0
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ mov r12d, edi
+ push rbp
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ cmp edx, CONST
+ cjmp LABEL13
+ lea ebp, [rdx + CONST]
+ mov eax, CONST
+LABEL72:
+ test ebx, ebx
+ setne r14b
+ and r14b, al
+ cjmp LABEL19
+ lea r13, [rsp + CONST]
+ jmp LABEL21
+LABEL31:
+ sub ebp, CONST
+ cmp ebp, CONST
+ cjmp LABEL24
+LABEL21:
+ xor eax, eax
+ mov rdx, r13
+ mov esi, CONST
+ mov edi, ebp
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL31
+LABEL77:
+ cmp r12d, ebp
+ cjmp LABEL24
+ test r14b, r14b
+ cjmp LABEL24
+ mov esi, ebp
+ mov edi, r12d
+ call CONST
+ mov r13d, eax
+ cmp eax, CONST
+ cjmp LABEL24
+ test ebx, ebx
+ cjmp LABEL43
+ mov rdi, qword [rip + CONST]
+ call CONST
+ cmp eax, r12d
+ cjmp LABEL47
+LABEL43:
+ mov edi, r12d
+ call CONST
+ jmp LABEL47
+LABEL24:
+ mov r13d, r12d
+LABEL47:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL54
+ add rsp, CONST
+ mov eax, r13d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL13:
+ call CONST
+ test eax, eax
+ cjmp LABEL65
+ cmp eax, CONST
+ mov ebp, CONST
+ cmovg eax, ebp
+ lea ebp, [rax + CONST]
+ cmp ebp, CONST
+ setg al
+ jmp LABEL72
+LABEL65:
+ mov eax, CONST
+ mov ebp, CONST
+ jmp LABEL72
+LABEL19:
+ mov r14d, eax
+ jmp LABEL77
+LABEL54:
+ call CONST

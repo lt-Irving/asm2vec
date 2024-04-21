@@ -1,0 +1,19 @@
+ .name fcn.00010ef0
+ .offset 0000000000010ef0
+ .file dash
+ endbr64
+ mov eax, dword [rip + CONST]
+ cmp eax, CONST
+ cjmp LABEL3
+ cmp eax, CONST
+ cjmp LABEL5
+ lea rax, [rip + CONST]
+ ret
+LABEL3:
+ mov rax, qword [rip + CONST]
+ lea rdi, [rax + CONST]
+ jmp CONST
+LABEL5:
+ mov rax, qword [rip + CONST]
+ lea rdi, [rax + CONST]
+ jmp CONST

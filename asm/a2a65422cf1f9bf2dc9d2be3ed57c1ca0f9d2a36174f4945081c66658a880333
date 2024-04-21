@@ -1,0 +1,69 @@
+ .name sym.rl_char_search
+ .offset 00000000000d5ac0
+ .file bash
+LABEL50:
+ push r14
+ push r13
+ mov r13d, edx
+ push r12
+ mov r12d, esi
+ mov esi, CONST
+ push rbp
+ mov ebp, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r14, rsp
+ mov rdi, r14
+ call CONST
+ mov ecx, eax
+ mov eax, CONST
+ test ecx, ecx
+ cjmp LABEL18
+ test ebp, ebp
+ cjmp LABEL20
+ test r12d, r12d
+ cjmp LABEL18
+ mov rdx, r14
+ mov esi, r12d
+ mov edi, ebp
+ call CONST
+LABEL18:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL29
+ add rsp, CONST
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL20:
+ test r13d, r13d
+ cjmp LABEL18
+ mov edi, ebp
+ mov rdx, r14
+ mov esi, r13d
+ neg edi
+ call CONST
+ jmp LABEL18
+LABEL29:
+ call CONST
+ endbr64
+ test byte [rip + CONST], CONST
+ cjmp LABEL47
+ mov edx, CONST
+ mov esi, CONST
+ jmp LABEL50
+LABEL47:
+ sub rsp, CONST
+ call CONST
+ movabs rcx, CONST
+ mov qword [rip + CONST], rax
+ mov qword [rax + CONST], rcx
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ xor eax, eax
+ add rsp, CONST
+ ret

@@ -1,0 +1,21 @@
+ .name fcn.00074d50
+ .offset 0000000000074d50
+ .file bash
+ endbr64
+ push rbp
+ lea rax, [rip + CONST]
+ push rbx
+ movsxd rbx, edi
+ mov edi, ebx
+ sub rsp, CONST
+ mov rsi, qword [rax + rbx*CONST]
+ call CONST
+ mov edi, ebx
+ xor esi, esi
+ call CONST
+ lea rax, [rip + CONST]
+ and dword [rax + rbx*CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

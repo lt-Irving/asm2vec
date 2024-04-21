@@ -1,0 +1,14 @@
+ .name sym._rl_vi_initialize_line
+ .offset 00000000000b8d30
+ .file bash
+ endbr64
+ lea rax, [rip + CONST]
+ lea rdx, [rax + CONST]
+ nop
+LABEL7:
+ mov dword [rax], CONST
+ add rax, CONST
+ cmp rax, rdx
+ cjmp LABEL7
+ and qword [rip + CONST], CONST
+ ret

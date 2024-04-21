@@ -1,0 +1,41 @@
+ .name sym.array_walk
+ .offset 000000000007b190
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL11
+ mov rax, qword [rdi + CONST]
+ mov r12, rsi
+ mov r13, rdx
+ mov rbx, qword [rax + CONST]
+ cmp rax, rbx
+ cjmp LABEL17
+ jmp LABEL11
+LABEL26:
+ mov rbx, qword [rbx + CONST]
+ cmp qword [rbp + CONST], rbx
+ cjmp LABEL11
+LABEL17:
+ mov rsi, r13
+ mov rdi, rbx
+ call r12
+ test eax, eax
+ cjmp LABEL26
+LABEL11:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ ret

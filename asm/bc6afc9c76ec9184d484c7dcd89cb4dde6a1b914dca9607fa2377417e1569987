@@ -1,0 +1,21 @@
+ .name fcn.00002010
+ .offset 0000000000002010
+ .file bzip2recover
+ push rax
+ pop rax
+ mov r8d, CONST
+ lea rcx, [rip + CONST]
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ lea rcx, [rip + CONST]
+ lea rdx, [rip + CONST]
+ call CONST
+ mov edi, CONST
+ call CONST

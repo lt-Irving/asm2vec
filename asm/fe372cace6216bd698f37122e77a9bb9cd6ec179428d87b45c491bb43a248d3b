@@ -1,0 +1,17 @@
+ .name sym.signal_name
+ .offset 0000000000074eb0
+ .file bash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ movsxd rdi, edi
+ lea rax, [rip + CONST]
+ mov rax, qword [rax + rdi*CONST]
+ test rax, rax
+ cjmp LABEL2
+ ret
+LABEL2:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ jmp CONST

@@ -1,0 +1,66 @@
+ .name sym.xtrace_set
+ .offset 0000000000042290
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ mov rbx, rsi
+ test edi, edi
+ cjmp LABEL7
+ test rsi, rsi
+ cjmp LABEL9
+LABEL24:
+ mov dword [rip + CONST], ebp
+ mov qword [rip + CONST], rbx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ call CONST
+ test eax, eax
+ cjmp LABEL18
+ test rbx, rbx
+ cjmp LABEL9
+ mov rdi, rbx
+ call CONST
+ cmp eax, ebp
+ cjmp LABEL24
+ mov rdi, rbx
+ call CONST
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov r12d, eax
+ call CONST
+ mov edx, r12d
+ mov esi, ebp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL24
+LABEL9:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ pop rbx
+ pop rbp
+ mov rdi, rax
+ pop r12
+ xor eax, eax
+ jmp CONST
+LABEL18:
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ call CONST
+ pop rbx
+ mov esi, ebp
+ pop rbp
+ mov rdi, rax
+ pop r12
+ xor eax, eax
+ jmp CONST

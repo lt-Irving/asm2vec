@@ -1,0 +1,26 @@
+ .name sym.get_minus_o_opts
+ .offset 000000000009f250
+ .file bash
+ endbr64
+ mov edi, CONST
+ sub rsp, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edx, CONST
+ lea rcx, [rip + CONST]
+ lea rdi, [rip + CONST]
+ jmp LABEL8
+LABEL17:
+ mov r8, qword [rsi]
+ mov rdi, rcx
+ add rsi, CONST
+ mov rcx, r8
+LABEL8:
+ mov qword [rax + rdx*CONST + CONST], rdi
+ movsxd rdi, edx
+ add rdx, CONST
+ test rcx, rcx
+ cjmp LABEL17
+ mov qword [rax + rdi*CONST], CONST
+ add rsp, CONST
+ ret

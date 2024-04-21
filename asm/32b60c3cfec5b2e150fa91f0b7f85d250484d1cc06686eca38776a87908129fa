@@ -1,0 +1,14 @@
+ .name sym.without_job_control
+ .offset 000000000005ef30
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ xor edi, edi
+ call CONST
+ xor edi, edi
+ add rsp, CONST
+ jmp CONST

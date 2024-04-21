@@ -1,0 +1,137 @@
+ .name sym.umask_builtin
+ .offset 00000000000a31a0
+ .file bash
+ endbr64
+ push r14
+ push r13
+ xor r13d, r13d
+ push r12
+ xor r12d, r12d
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ mov rbx, rdi
+ call CONST
+LABEL31:
+ mov rsi, rbp
+ mov rdi, rbx
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL15
+ cmp eax, CONST
+ cjmp LABEL17
+ cmp eax, CONST
+ cjmp LABEL19
+ cmp eax, CONST
+ cjmp LABEL21
+ call CONST
+ mov eax, CONST
+LABEL92:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL17:
+ add r12d, CONST
+ jmp LABEL31
+LABEL21:
+ call CONST
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL19:
+ add r13d, CONST
+ jmp LABEL31
+LABEL15:
+ mov r14, qword [rip + CONST]
+ test r14, r14
+ cjmp LABEL44
+ mov rax, qword [r14 + CONST]
+ mov rdi, qword [rax]
+ movzx eax, byte [rdi]
+ sub eax, CONST
+ cmp al, CONST
+ cjmp LABEL50
+ mov edi, CONST
+ call CONST
+ mov edi, eax
+ mov ebx, eax
+ call CONST
+ mov rax, qword [r14 + CONST]
+ mov esi, ebx
+ not esi
+ mov rdi, qword [rax]
+ and esi, CONST
+ xor eax, eax
+ call CONST
+ mov ebp, eax
+ cmp eax, CONST
+ cjmp LABEL65
+ not ebp
+ and ebp, CONST
+LABEL82:
+ mov edi, ebp
+ call CONST
+ test r12d, r12d
+ cjmp LABEL71
+LABEL95:
+ pop rbx
+ xor edi, edi
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL50:
+ call CONST
+ mov ebp, eax
+ cmp eax, CONST
+ cjmp LABEL82
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rsi, rax
+ mov rax, qword [r14 + CONST]
+ mov rdi, qword [rax]
+ call CONST
+ mov eax, CONST
+ jmp LABEL92
+LABEL71:
+ mov edi, ebp
+ call CONST
+ jmp LABEL95
+LABEL44:
+ mov edi, CONST
+ call CONST
+ mov edi, eax
+ mov ebp, eax
+ call CONST
+ test r13d, r13d
+ cjmp LABEL102
+ test r12d, r12d
+ lea rax, [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov edi, CONST
+ cmove rdx, rax
+ lea rsi, [rip + CONST]
+ xor eax, eax
+ call CONST
+LABEL102:
+ test r12d, r12d
+ cjmp LABEL71
+ mov edx, ebp
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ xor eax, eax
+ call CONST
+ jmp LABEL95
+LABEL65:
+ mov eax, CONST
+ jmp LABEL92

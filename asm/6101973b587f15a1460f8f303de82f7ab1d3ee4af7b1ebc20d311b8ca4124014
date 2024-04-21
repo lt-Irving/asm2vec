@@ -1,0 +1,55 @@
+ .name fcn.000172a0
+ .offset 00000000000172a0
+ .file diff
+ push r13
+ mov r13, rsi
+ push r12
+ shl r13, CONST
+ mov r12d, edx
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword [rdi]
+ mov rsi, qword [rax + r13]
+ mov rdx, qword [rax + r13 + CONST]
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL15
+ mov edi, r12d
+ mov r8, qword [rbx]
+ mov rsi, rax
+ and di, CONST
+ shl rsi, CONST
+ mov ecx, edi
+ add rsi, r8
+ and ecx, CONST
+ shl ecx, CONST
+ mov edx, ecx
+ mov ecx, dword [rsi + CONST]
+ and ecx, CONST
+ or ecx, edx
+ mov dword [rsi + CONST], ecx
+ mov edx, dword [r8 + r13 + CONST]
+ and ecx, CONST
+ shr edx, CONST
+ or edx, edi
+ and edx, CONST
+ shl edx, CONST
+ or edx, ecx
+ mov ecx, edx
+ mov dword [rsi + CONST], edx
+ shr ecx, CONST
+ mov edx, ecx
+ or edx, CONST
+ mov byte [rsi + CONST], dl
+ mov rdx, qword [rbx + CONST]
+ mov qword [rdx + rax*CONST], rbp
+LABEL15:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

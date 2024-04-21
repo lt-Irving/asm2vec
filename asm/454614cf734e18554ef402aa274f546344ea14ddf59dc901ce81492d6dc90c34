@@ -1,0 +1,19 @@
+ .name fcn.00006b40
+ .offset 0000000000006b40
+ .file chage
+ endbr64
+ mov rdx, rdi
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL4
+ sub rsp, CONST
+ xor r9d, r9d
+ xor r8d, r8d
+ xor ecx, ecx
+ push rsi
+ mov esi, CONST
+ call CONST
+ add rsp, CONST
+ ret
+LABEL4:
+ ret

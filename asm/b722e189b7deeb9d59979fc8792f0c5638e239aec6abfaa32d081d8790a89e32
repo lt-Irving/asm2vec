@@ -1,0 +1,24 @@
+ .name sym.xtrace_reset
+ .offset 0000000000042380
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL4
+ mov r8, qword [rip + CONST]
+ test r8, r8
+ cjmp LABEL7
+ mov rdi, r8
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+LABEL4:
+ mov rax, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ ret
+LABEL7:
+ call CONST
+ jmp LABEL4

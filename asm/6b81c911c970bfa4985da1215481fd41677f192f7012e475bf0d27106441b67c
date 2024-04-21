@@ -1,0 +1,69 @@
+ .name sym._rl_get_char_len
+ .offset 00000000000dba30
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+ call CONST
+ mov rbp, rax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ test rbp, rbp
+ cjmp LABEL10
+ cmp byte [r12], CONST
+ cjmp LABEL10
+ setne al
+ movzx eax, al
+ jmp LABEL17
+LABEL10:
+ call CONST
+ mov r8, rbp
+ cdqe
+ cmp rax, rbp
+ cmovbe r8, rax
+ test rbx, rbx
+ cjmp LABEL24
+ xor edi, edi
+ mov rcx, rbx
+ mov rdx, r8
+ mov rsi, r12
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL31
+ cmp rax, CONST
+ cjmp LABEL33
+LABEL17:
+ test rax, rax
+ mov edx, CONST
+ cmove eax, edx
+LABEL50:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL24:
+ xor edx, edx
+ mov rsi, r8
+ mov rdi, r12
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL46
+ cmp rax, CONST
+ cjmp LABEL17
+ mov eax, CONST
+ jmp LABEL50
+LABEL33:
+ mov qword [rbx], CONST
+ mov eax, CONST
+ jmp LABEL50
+LABEL31:
+ mov qword [rbx], CONST
+ mov eax, CONST
+ jmp LABEL50
+LABEL46:
+ mov eax, CONST
+ jmp LABEL50

@@ -1,0 +1,46 @@
+ .name fcn.0000f9f0
+ .offset 000000000000f9f0
+ .file diff
+ mov r9d, esi
+ mov r8d, esi
+ movzx eax, byte [rdi]
+ lea rdx, [rip + CONST]
+ and r9d, CONST
+ and r8d, CONST
+ and esi, CONST
+LABEL19:
+ lea rcx, [rdi + CONST]
+ cmp al, CONST
+ cjmp LABEL9
+ movsxd rax, dword [rdx + rax*CONST]
+ add rax, rdx
+ jmp rax
+ test r8d, r8d
+ cjmp LABEL9
+LABEL34:
+ mov eax, CONST
+ ret
+LABEL9:
+ movzx eax, byte [rdi + CONST]
+ mov rdi, rcx
+ jmp LABEL19
+ test r8d, r8d
+ cjmp LABEL9
+ test esi, esi
+ cjmp LABEL23
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL23
+ lea rcx, [rdi + CONST]
+LABEL23:
+ movzx eax, byte [rcx]
+ mov rdi, rcx
+ jmp LABEL19
+ test r9d, r9d
+ cjmp LABEL9
+ movzx eax, byte [rdi + CONST]
+ cmp al, CONST
+ cjmp LABEL34
+ mov rdi, rcx
+ jmp LABEL19
+ xor eax, eax
+ ret

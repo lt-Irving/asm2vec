@@ -1,0 +1,32 @@
+ .name sym.rl_vi_movement_mode
+ .offset 00000000000baa70
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL4
+ mov edi, CONST
+ call CONST
+LABEL4:
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ test byte [rip + CONST], CONST
+ cjmp LABEL11
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL14
+LABEL22:
+ or qword [rip + CONST], CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL11:
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL22
+LABEL14:
+ call CONST
+ jmp LABEL22

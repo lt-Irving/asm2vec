@@ -1,0 +1,33 @@
+ .name sym.rl_vi_back_to_indent
+ .offset 00000000000bc200
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ movsxd rdx, dword [rip + CONST]
+ mov esi, dword [rip + CONST]
+ cmp edx, esi
+ cjmp LABEL7
+ sub esi, CONST
+ lea eax, [rdx + CONST]
+ mov rcx, qword [rip + CONST]
+ sub esi, edx
+ cdqe
+ lea rsi, [rsi + rdx + CONST]
+ jmp LABEL14
+LABEL21:
+ mov dword [rip + CONST], eax
+ add rax, CONST
+ cmp rax, rsi
+ cjmp LABEL7
+LABEL14:
+ movzx edx, byte [rcx + rax + CONST]
+ cmp dl, CONST
+ cjmp LABEL21
+ cmp dl, CONST
+ cjmp LABEL21
+LABEL7:
+ xor eax, eax
+ add rsp, CONST
+ ret

@@ -1,0 +1,54 @@
+ .name fcn.00003760
+ .offset 0000000000003760
+ .file chrt
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov esi, dword [rdi]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test byte [rdi + CONST], CONST
+ cjmp LABEL10
+ mov edi, esi
+ lea rbx, [rsp + CONST]
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL16
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ call CONST
+ mov edi, CONST
+ mov rsi, rax
+ xor eax, eax
+ call CONST
+LABEL32:
+ mov esi, dword [rsp + CONST]
+ mov rdi, rbp
+ call CONST
+LABEL16:
+ mov rsi, rbx
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL32
+ mov rdi, r12
+ call CONST
+ jmp LABEL35
+LABEL10:
+ call CONST
+LABEL35:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL39
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL39:
+ call CONST

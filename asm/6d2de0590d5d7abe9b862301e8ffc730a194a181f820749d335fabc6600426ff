@@ -1,0 +1,46 @@
+ .name sym._rl_nsearch_callback
+ .offset 00000000000bdac0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+ mov esi, eax
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL12
+LABEL22:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL12:
+ mov rdi, rbp
+ call CONST
+ mov ebx, eax
+ test eax, eax
+ cjmp LABEL22
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+ and qword [rip + CONST], CONST
+ cmp ebx, CONST
+ mov qword [rip + CONST], CONST
+ setne al
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL7:
+ cjmp LABEL22
+ lea rsi, [rbp + CONST]
+ lea rdi, [rbp + CONST]
+ call CONST
+ jmp LABEL22

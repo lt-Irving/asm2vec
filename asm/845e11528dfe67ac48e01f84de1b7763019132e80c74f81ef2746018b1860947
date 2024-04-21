@@ -1,0 +1,75 @@
+ .name sym.get_exitstat
+ .offset 0000000000092c70
+ .file bash
+ endbr64
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL7
+ mov rax, qword [rdi + CONST]
+ mov rbx, rdi
+ mov rdi, qword [rax]
+ cmp byte [rdi], CONST
+ cjmp LABEL12
+LABEL32:
+ mov rsi, rsp
+ call CONST
+ test eax, eax
+ cjmp LABEL16
+ cmp qword [rbx], CONST
+ cjmp LABEL18
+ movzx eax, byte [rsp]
+LABEL30:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL22
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL7:
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL28
+LABEL46:
+ mov eax, dword [rip + CONST]
+ jmp LABEL30
+LABEL12:
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL32
+ cmp byte [rdi + CONST], CONST
+ cjmp LABEL32
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL7
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ test rdi, rdi
+ cjmp LABEL32
+LABEL54:
+ lea rdi, [rip + CONST]
+ jmp LABEL43
+LABEL28:
+ mov eax, dword [rip + CONST]
+ cmp eax, CONST
+ cjmp LABEL46
+ test eax, eax
+ cjmp LABEL46
+ mov eax, dword [rip + CONST]
+ jmp LABEL30
+LABEL16:
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ test rdi, rdi
+ cjmp LABEL54
+LABEL43:
+ call CONST
+ mov eax, CONST
+ jmp LABEL30
+LABEL22:
+ call CONST
+LABEL18:
+ call CONST
+ nop word cs:[rax + rax]

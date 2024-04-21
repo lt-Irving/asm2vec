@@ -1,0 +1,92 @@
+ .name sym.list_stopped_jobs
+ .offset 000000000005b8e0
+ .file bash
+LABEL76:
+ push r14
+ push r13
+ mov r13d, esi
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r12, rsp
+ lea r14, [rsp + CONST]
+ mov rdi, r12
+ call CONST
+ mov esi, CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, r14
+ call CONST
+ mov rdx, r14
+ mov rsi, r12
+ xor edi, edi
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL26
+ xor ebx, ebx
+ nop dword [rax + rax]
+LABEL42:
+ mov rax, qword [rip + CONST]
+ mov rdi, qword [rax + rbx*CONST]
+ test rdi, rdi
+ cjmp LABEL32
+ mov ecx, ebx
+ mov edx, r13d
+ mov esi, ebp
+ call CONST
+ mov r12d, eax
+ test eax, eax
+ cjmp LABEL39
+LABEL32:
+ add rbx, CONST
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL42
+LABEL26:
+ xor r12d, r12d
+LABEL39:
+ xor edx, edx
+ mov rsi, r14
+ mov edi, CONST
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL50
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL50:
+ call CONST
+ endbr64
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL63
+ mov edx, dword [rip + CONST]
+ push rbp
+ mov ebp, edi
+ test edx, edx
+ cjmp LABEL68
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL72
+LABEL68:
+ mov edi, ebp
+ mov esi, CONST
+ pop rbp
+ jmp LABEL76
+LABEL72:
+ pop rbp
+ ret
+LABEL63:
+ ret

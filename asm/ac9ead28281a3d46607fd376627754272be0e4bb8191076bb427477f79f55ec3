@@ -1,0 +1,102 @@
+ .name sym.fgetsgent
+ .offset 000000000000d4f0
+ .file chfn
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL8
+LABEL77:
+ test rbp, rbp
+ cjmp LABEL10
+ mov esi, dword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ mov rdx, rbp
+ call CONST
+ mov r13, qword [rip + CONST]
+ cmp r13, rax
+ cjmp LABEL10
+ nop dword [rax]
+LABEL63:
+ mov esi, CONST
+ mov rdi, r13
+ call CONST
+ test rax, rax
+ cjmp LABEL23
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL27
+ mov rax, qword [rip + CONST]
+ mov rdi, r13
+ lea r12, [rax + rax]
+ mov rsi, r12
+ call CONST
+ test rax, rax
+ cjmp LABEL10
+ mov qword [rip + CONST], rax
+ mov rbx, rax
+ mov qword [rip + CONST], r12
+LABEL44:
+ mov ecx, dword [rbx]
+ add rbx, CONST
+ lea edx, [rcx + CONST]
+ not ecx
+ and edx, ecx
+ and edx, CONST
+ cjmp LABEL44
+ mov ecx, edx
+ mov esi, r12d
+ shr ecx, CONST
+ test edx, CONST
+ cmove edx, ecx
+ lea rcx, [rbx + CONST]
+ cmove rbx, rcx
+ mov edi, edx
+ add dil, dl
+ mov rdx, rbp
+ sbb rbx, CONST
+ sub rbx, rax
+ sub esi, ebx
+ lea rdi, [rax + rbx]
+ call CONST
+ mov r13, qword [rip + CONST]
+ add rbx, r13
+ cmp rax, rbx
+ cjmp LABEL63
+LABEL10:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL8:
+ mov edi, CONST
+ call CONST
+ mov qword [rip + CONST], rax
+ test rax, rax
+ cjmp LABEL10
+ mov qword [rip + CONST], CONST
+ jmp LABEL77
+LABEL27:
+ mov esi, CONST
+ mov rdi, r13
+ call CONST
+ test rax, rax
+ cjmp LABEL82
+LABEL23:
+ mov byte [rax], CONST
+LABEL82:
+ add rsp, CONST
+ mov rdi, r13
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST

@@ -1,0 +1,19 @@
+ .name sym.set_posix_options
+ .offset 000000000003e800
+ .file bash
+ endbr64
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ lea rcx, [rip + CONST]
+ lea r8, [rip + CONST]
+ jmp LABEL5
+LABEL12:
+ mov rcx, rdx
+ mov rdx, qword [r8 + rax*CONST]
+LABEL5:
+ movsx esi, byte [rdi + rax]
+ add rax, CONST
+ mov dword [rcx], esi
+ test rdx, rdx
+ cjmp LABEL12
+ ret

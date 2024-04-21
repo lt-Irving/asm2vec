@@ -1,0 +1,19 @@
+ .name sym.push_context
+ .offset 0000000000053b40
+ .file bash
+ endbr64
+ sub rsp, CONST
+ test esi, esi
+ cjmp LABEL3
+LABEL13:
+ add dword [rip + CONST], CONST
+ mov esi, CONST
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ mov qword [rsp + CONST], rdx
+ mov qword [rsp], rdi
+ call CONST
+ mov rdx, qword [rsp + CONST]
+ mov rdi, qword [rsp]
+ jmp LABEL13

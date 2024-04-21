@@ -1,0 +1,30 @@
+ .name sym.bind_assoc_variable
+ .offset 000000000007cca0
+ .file bash
+ endbr64
+ push r12
+ mov eax, dword [rdi + CONST]
+ mov r12, rdi
+ test al, CONST
+ cjmp LABEL5
+ test r8b, CONST
+ cjmp LABEL7
+ test ah, CONST
+ cjmp LABEL7
+LABEL15:
+ mov rdi, r12
+ xor esi, esi
+ pop r12
+ jmp CONST
+LABEL5:
+ test ah, CONST
+ cjmp LABEL15
+ mov rax, r12
+ pop r12
+ ret
+LABEL7:
+ mov rdi, rsi
+ call CONST
+ mov rax, r12
+ pop r12
+ ret

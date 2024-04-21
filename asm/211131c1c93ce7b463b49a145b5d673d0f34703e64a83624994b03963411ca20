@@ -1,0 +1,29 @@
+ .name fcn.0001b360
+ .offset 000000000001b360
+ .file diff
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ cmp qword [rdi], CONST
+ cjmp LABEL5
+ xor ebx, ebx
+ nop
+LABEL18:
+ mov rax, qword [r12 + CONST]
+ lea rbp, [rbx + rbx*CONST]
+ add rbx, CONST
+ shl rbp, CONST
+ mov rdi, qword [rax + rbp + CONST]
+ call CONST
+ mov rax, qword [r12 + CONST]
+ mov rdi, qword [rax + rbp + CONST]
+ call CONST
+ cmp rbx, qword [r12]
+ cjmp LABEL18
+LABEL5:
+ mov rdi, qword [r12 + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp CONST

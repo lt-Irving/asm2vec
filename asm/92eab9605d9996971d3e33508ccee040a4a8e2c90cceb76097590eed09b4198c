@@ -1,0 +1,38 @@
+ .name sym.print_array_assignment
+ .offset 000000000007d330
+ .file bash
+ endbr64
+ push r12
+ mov r12d, esi
+ push rbp
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL9
+ mov rdx, qword [rbx]
+ mov rbp, rax
+ mov rcx, rax
+ mov edi, CONST
+ lea rsi, [rip + CONST]
+ xor eax, eax
+ call CONST
+ pop rbx
+ mov rdi, rbp
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL9:
+ test r12d, r12d
+ lea rax, [rip + CONST]
+ mov rdx, qword [rbx]
+ pop rbx
+ lea rcx, [rip + CONST]
+ pop rbp
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ cmove rcx, rax
+ pop r12
+ xor eax, eax
+ jmp CONST

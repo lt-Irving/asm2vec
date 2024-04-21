@@ -1,0 +1,25 @@
+ .name sym.pcomp_set_compspec_options
+ .offset 000000000008fb20
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+LABEL17:
+ mov rax, qword [rdi + CONST]
+ test edx, edx
+ cjmp LABEL5
+ movsxd rsi, esi
+ or rsi, rax
+ mov qword [rdi + CONST], rsi
+ ret
+LABEL5:
+ not esi
+ movsxd rsi, esi
+ and rsi, rax
+ mov qword [rdi + CONST], rsi
+ ret
+LABEL2:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL17
+ ret

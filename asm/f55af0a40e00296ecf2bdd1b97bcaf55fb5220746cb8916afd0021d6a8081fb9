@@ -1,0 +1,52 @@
+ .name sym.rl_callback_sigcleanup
+ .offset 00000000000d2610
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test eax, CONST
+ cjmp LABEL3
+ sub rsp, CONST
+ test al, CONST
+ cjmp LABEL6
+ test ah, CONST
+ cjmp LABEL8
+ test eax, CONST
+ cjmp LABEL10
+ test ah, CONST
+ cjmp LABEL12
+ mov dword [rip + CONST], CONST
+ and ah, CONST
+ mov qword [rip + CONST], rax
+ jmp LABEL16
+LABEL6:
+ mov rdi, qword [rip + CONST]
+ xor esi, esi
+ call CONST
+ mov rax, qword [rip + CONST]
+LABEL16:
+ test eax, CONST
+ cjmp LABEL22
+ and rax, CONST
+ mov qword [rip + CONST], rax
+LABEL22:
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL3:
+ ret
+LABEL10:
+ and rax, CONST
+ mov qword [rip + CONST], rax
+ jmp LABEL16
+LABEL8:
+ mov rdi, qword [rip + CONST]
+ xor esi, esi
+ call CONST
+ mov rax, qword [rip + CONST]
+ jmp LABEL16
+LABEL12:
+ test eax, CONST
+ cjmp LABEL16
+ and rax, CONST
+ mov qword [rip + CONST], rax
+ jmp LABEL16

@@ -1,0 +1,64 @@
+ .name sym.print_timeval
+ .offset 00000000000b1160
+ .file bash
+ endbr64
+ movabs rdx, CONST
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rcx, qword [rsi + CONST]
+ mov r12, qword [rsi]
+ mov rax, rcx
+ imul rdx
+ mov rax, rcx
+ sar rax, CONST
+ sar rdx, CONST
+ sub rdx, rax
+ imul rdx, rdx, CONST
+ sub rcx, rdx
+ movsxd rbx, ecx
+ mov eax, ecx
+ imul rbx, rbx, CONST
+ sar eax, CONST
+ sar rbx, CONST
+ sub ebx, eax
+ imul eax, ebx, CONST
+ sub ecx, eax
+ cmp ecx, CONST
+ cjmp LABEL25
+ add ebx, CONST
+ cmp ebx, CONST
+ cjmp LABEL25
+ add r12, CONST
+ xor ebx, ebx
+LABEL25:
+ call CONST
+ sub rsp, CONST
+ mov r8d, r12d
+ mov rdi, rbp
+ mov r9d, eax
+ mov rax, r12
+ push rbx
+ mov esi, CONST
+ movabs rdx, CONST
+ imul rdx
+ mov rax, r12
+ sar rax, CONST
+ lea rcx, [rdx + r12]
+ lea rdx, [rip + CONST]
+ sar rcx, CONST
+ sub rcx, rax
+ mov rax, rcx
+ shl rax, CONST
+ sub rax, rcx
+ shl rax, CONST
+ sub r8d, eax
+ xor eax, eax
+ call CONST
+ pop rax
+ pop rdx
+ pop rbx
+ pop rbp
+ pop r12
+ ret

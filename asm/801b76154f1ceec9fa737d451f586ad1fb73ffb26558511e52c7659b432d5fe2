@@ -1,0 +1,25 @@
+ .name sym.getcoprocbyname
+ .offset 0000000000045380
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ movzx ecx, byte [rdi]
+ mov rsi, rdi
+ cmp byte [rax], cl
+ cjmp LABEL7
+ sub rsp, CONST
+ mov rdi, rax
+ call CONST
+ mov edx, CONST
+ test eax, eax
+ lea rax, [rip + CONST]
+ cmovne rax, rdx
+ add rsp, CONST
+ ret
+LABEL7:
+ xor eax, eax
+ ret
+LABEL3:
+ ret

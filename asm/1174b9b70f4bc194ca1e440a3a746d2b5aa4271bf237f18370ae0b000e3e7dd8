@@ -1,0 +1,34 @@
+ .name sym.rl_set_prompt
+ .offset 00000000000b7110
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ test rbp, rbp
+ cjmp LABEL8
+ mov qword [rip + CONST], CONST
+ lea rax, [rip + CONST]
+LABEL27:
+ mov rdi, rbp
+ mov qword [rip + CONST], rax
+ call CONST
+ pop rbp
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ ret
+LABEL8:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov qword [rip + CONST], rax
+ mov rbp, rax
+ jmp LABEL27

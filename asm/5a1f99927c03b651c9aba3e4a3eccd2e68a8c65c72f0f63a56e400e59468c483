@@ -1,0 +1,31 @@
+ .name fcn.0000ecf0
+ .offset 000000000000ecf0
+ .file dash
+ endbr64
+ push rbp
+ mov ebp, edi
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL8
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL8:
+ sub ebp, CONST
+ cjmp LABEL15
+LABEL22:
+ mov edi, CONST
+ call CONST
+LABEL15:
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ cmp dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ cjmp LABEL22
+ mov dword [rip + CONST], eax
+ jmp LABEL22

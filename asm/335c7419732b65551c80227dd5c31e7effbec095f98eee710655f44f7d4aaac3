@@ -1,0 +1,37 @@
+ .name fcn.00008790
+ .offset 0000000000008790
+ .file diff
+ cmp qword [rdi], CONST
+ cjmp LABEL1
+ push rbp
+ push rbx
+ mov rbx, rdi
+ push rdx
+ mov rbp, qword [rdi + CONST]
+ mov edi, CONST
+ call CONST
+ cmp byte [rbx + CONST], CONST
+ mov qword [rbp + CONST], rax
+ cjmp LABEL11
+LABEL22:
+ pop rax
+ pop rbx
+ pop rbp
+ ret
+LABEL1:
+ ret
+LABEL11:
+ mov rdx, qword [rbx + CONST]
+ mov rsi, qword [rbx + CONST]
+ mov rdi, qword [rbx]
+ call CONST
+ test rax, rax
+ cjmp LABEL22
+ mov rcx, qword [rbx]
+ mov r8, rax
+ lea rdx, [rip + CONST]
+ xor esi, esi
+ mov edi, CONST
+ xor eax, eax
+ call CONST
+ nop dword [rax]

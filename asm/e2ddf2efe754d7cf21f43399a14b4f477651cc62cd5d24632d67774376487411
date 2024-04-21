@@ -1,0 +1,20 @@
+ .name sym._rl_keyseq_chain_dispose
+ .offset 00000000000b75a0
+ .file bash
+ endbr64
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL3
+ sub rsp, CONST
+ nop dword [rax]
+LABEL11:
+ mov rax, qword [rdi + CONST]
+ mov qword [rip + CONST], rax
+ call CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL11
+ add rsp, CONST
+ ret
+LABEL3:
+ ret

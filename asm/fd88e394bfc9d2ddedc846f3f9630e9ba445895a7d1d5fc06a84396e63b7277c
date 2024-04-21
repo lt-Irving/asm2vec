@@ -1,0 +1,28 @@
+ .name sym._rl_set_normal_color
+ .offset 00000000000dc740
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ test al, al
+ cjmp LABEL5
+ add rsp, CONST
+ ret
+LABEL5:
+ mov rcx, qword [rip + CONST]
+ mov rsi, qword [rip + CONST]
+ mov edx, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov rsi, qword [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ add rsp, CONST
+ jmp CONST

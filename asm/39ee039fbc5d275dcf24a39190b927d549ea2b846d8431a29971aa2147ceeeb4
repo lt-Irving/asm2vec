@@ -1,0 +1,15 @@
+ .name sym.rl_free_line_state
+ .offset 00000000000cecf0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov qword [rax + CONST], CONST
+LABEL5:
+ call CONST
+ call CONST
+ add rsp, CONST
+ jmp CONST

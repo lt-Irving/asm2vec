@@ -1,0 +1,16 @@
+ .name sym.print_arith_command
+ .offset 0000000000042b50
+ .file bash
+ endbr64
+ push rbp
+ xor eax, eax
+ mov rbp, rdi
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rdi, rbp
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ xor eax, eax
+ pop rbp
+ jmp CONST

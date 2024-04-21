@@ -1,0 +1,124 @@
+ .name sym.set_signal
+ .offset 0000000000075870
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ mov r12, rsi
+ push rbp
+ mov ebp, edi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test edi, edi
+ cjmp LABEL13
+ cmp edi, CONST
+ cjmp LABEL13
+ lea eax, [rdi + CONST]
+ cmp eax, CONST
+ cjmp LABEL18
+ lea r13, [rip + CONST]
+ movsxd rbx, edi
+ mov eax, dword [r13 + rbx*CONST]
+ test al, CONST
+ cjmp LABEL23
+ test al, CONST
+ cjmp LABEL25
+ lea r14, [rip + CONST]
+ lea rcx, [rip + CONST]
+ mov rdx, qword [r14 + rbx*CONST]
+ cmp rdx, rcx
+ cjmp LABEL30
+ cmp rdx, CONST
+ cjmp LABEL23
+LABEL25:
+ test al, CONST
+ cjmp LABEL18
+ mov r14, rsp
+ lea r13, [rsp + CONST]
+ mov rdi, r14
+ call CONST
+ mov esi, ebp
+ mov rdi, r14
+ call CONST
+ mov rdi, r13
+ call CONST
+ mov rdx, r13
+ mov rsi, r14
+ xor edi, edi
+ call CONST
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov edi, ebp
+ mov rsi, rax
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, ebp
+ call CONST
+ xor edx, edx
+ mov rsi, r13
+ mov edi, CONST
+ call CONST
+ nop dword [rax]
+LABEL23:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL68
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL18:
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov edi, ebp
+ mov rsi, rax
+ call CONST
+ jmp LABEL23
+LABEL13:
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov edi, ebp
+ mov rsi, rax
+ call CONST
+ or ebp, dword [rip + CONST]
+ cjmp LABEL23
+ call CONST
+ jmp LABEL23
+LABEL30:
+ xor esi, esi
+ call CONST
+ mov edi, ebp
+ mov rsi, rax
+ mov qword [r14 + rbx*CONST], rax
+ call CONST
+ cmp qword [r14 + rbx*CONST], CONST
+ cjmp LABEL108
+ mov eax, dword [r13 + rbx*CONST]
+ jmp LABEL25
+LABEL108:
+ or dword [r13 + rbx*CONST], CONST
+ jmp LABEL23
+LABEL68:
+ call CONST

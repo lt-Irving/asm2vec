@@ -1,0 +1,19 @@
+ .name sym.ttattr
+ .offset 00000000000b02b0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ lea rax, [rip + CONST]
+ test edi, edi
+ cjmp LABEL6
+ cmp edi, CONST
+ mov edx, CONST
+ lea rax, [rip + CONST]
+ cmovne rax, rdx
+ ret
+LABEL3:
+ xor eax, eax
+LABEL6:
+ ret

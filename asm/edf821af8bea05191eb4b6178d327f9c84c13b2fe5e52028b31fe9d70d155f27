@@ -1,0 +1,32 @@
+ .name sym.sh_ttyerror
+ .offset 00000000000928f0
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ call CONST
+ mov edi, dword [rax]
+ test ebx, ebx
+ cjmp LABEL8
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, rax
+LABEL26:
+ xor edi, edi
+ call CONST
+ add rsp, CONST
+ mov rsi, rbp
+ mov rdi, rax
+ pop rbx
+ xor eax, eax
+ pop rbp
+ jmp CONST
+LABEL8:
+ call CONST
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ mov rbp, rax
+ jmp LABEL26

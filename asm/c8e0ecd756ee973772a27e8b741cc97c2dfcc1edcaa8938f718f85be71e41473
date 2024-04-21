@@ -1,0 +1,21 @@
+ .name sym.bash_history_reinit
+ .offset 0000000000081240
+ .file bash
+ endbr64
+ test edi, edi
+ cjmp LABEL2
+ mov edx, dword [rip + CONST]
+ mov eax, CONST
+ mov dword [rip + CONST], edx
+ sub eax, edx
+LABEL15:
+ mov dword [rip + CONST], eax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ ret
+LABEL2:
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ jmp LABEL15

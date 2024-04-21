@@ -1,0 +1,129 @@
+ .name sym.match_pattern_char
+ .offset 00000000000af1d0
+ .file bash
+ endbr64
+ push r14
+ push r13
+ push r12
+ push rbp
+ movzx ebp, byte [rsi]
+ push rbx
+ movzx ebx, byte [rdi]
+ test bpl, bpl
+ cjmp LABEL9
+ cmp bl, CONST
+ cjmp LABEL11
+ cmp bl, CONST
+ cjmp LABEL13
+LABEL41:
+ and edx, CONST
+ cjmp LABEL15
+ call CONST
+ movzx r13d, bpl
+ mov r12, qword [rax]
+ test byte [r12 + r13*CONST + CONST], CONST
+ cjmp LABEL20
+ call CONST
+ mov rax, qword [rax]
+ mov ebp, dword [rax + r13*CONST]
+LABEL20:
+ movzx r13d, bl
+ test byte [r12 + r13*CONST + CONST], CONST
+ cjmp LABEL15
+LABEL110:
+ call CONST
+ mov rax, qword [rax]
+ mov ebx, dword [rax + r13*CONST]
+LABEL15:
+ xor eax, eax
+ cmp ebx, ebp
+ pop rbx
+ pop rbp
+ sete al
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL13:
+ lea eax, [rbx + CONST]
+ cmp al, CONST
+ cjmp LABEL41
+ lea rcx, [rip + CONST]
+ movzx eax, al
+ movsxd rax, dword [rcx + rax*CONST]
+ add rax, rcx
+ notrack jmp rax
+LABEL55:
+ mov eax, CONST
+LABEL97:
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL11:
+ cmp bl, CONST
+ cjmp LABEL55
+ cmp bl, CONST
+ cjmp LABEL41
+ and edx, CONST
+ movzx r12d, byte [rdi + CONST]
+ movzx ebx, bpl
+ cjmp LABEL61
+ call CONST
+ movzx r14d, bpl
+ movzx ebx, bpl
+ mov r13, qword [rax]
+ test byte [r13 + r14*CONST + CONST], CONST
+ cjmp LABEL67
+ call CONST
+ mov rax, qword [rax]
+ mov ebx, dword [rax + r14*CONST]
+LABEL67:
+ movzx ebp, r12b
+ test byte [r13 + rbp*CONST + CONST], CONST
+ cjmp LABEL61
+ call CONST
+ mov rax, qword [rax]
+ mov r12d, dword [rax + rbp*CONST]
+LABEL61:
+ xor eax, eax
+ cmp r12d, ebx
+ pop rbx
+ pop rbp
+ sete al
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL9:
+ xor eax, eax
+ cmp bl, CONST
+ pop rbx
+ pop rbp
+ sete al
+ pop r12
+ pop r13
+ pop r14
+ ret
+ cmp byte [rdi + CONST], CONST
+ mov eax, CONST
+ cjmp LABEL97
+ and edx, CONST
+ cjmp LABEL99
+ call CONST
+ movzx r13d, bpl
+ mov r12, qword [rax]
+ test byte [r12 + r13*CONST + CONST], CONST
+ cjmp LABEL104
+ call CONST
+ mov rax, qword [rax]
+ mov ebp, dword [rax + r13*CONST]
+LABEL104:
+ movsx r13, bl
+ test byte [r12 + r13*CONST + CONST], CONST
+ cjmp LABEL110
+LABEL99:
+ movsx ebx, bl
+ jmp LABEL15

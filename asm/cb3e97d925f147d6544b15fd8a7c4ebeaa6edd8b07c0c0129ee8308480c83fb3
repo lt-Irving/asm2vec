@@ -1,0 +1,36 @@
+ .name sym.rl_noninc_forward_search_again
+ .offset 00000000000bd9c0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL7
+ cmp esi, CONST
+ cjmp LABEL12
+LABEL7:
+ xor edx, edx
+ mov esi, CONST
+ call CONST
+LABEL27:
+ cmp eax, CONST
+ setne al
+ movzx eax, al
+LABEL23:
+ add rsp, CONST
+ ret
+LABEL4:
+ call CONST
+ mov eax, CONST
+ jmp LABEL23
+LABEL12:
+ mov edx, CONST
+ mov esi, CONST
+ call CONST
+ jmp LABEL27

@@ -1,0 +1,33 @@
+ .name fcn.00003950
+ .offset 0000000000003950
+ .file dircolors
+ push r12
+ xor esi, esi
+ xor eax, eax
+ mov r12d, CONST
+ push rbx
+ mov ebx, edi
+ lea rdi, [rip + CONST]
+ sub rsp, CONST
+ call CONST
+ cmp ebx, eax
+ cjmp LABEL10
+ xor r12d, r12d
+ test eax, eax
+ cjmp LABEL13
+LABEL10:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret
+LABEL13:
+ mov edi, eax
+ call CONST
+ call CONST
+ mov dword [rax], CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret

@@ -1,0 +1,18 @@
+ .name fcn.00002464
+ .offset 0000000000002464
+ .file apt
+LABEL12:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL2
+ call CONST
+LABEL2:
+ mov rdi, rbx
+ call CONST
+ mov rdi, r12
+ call CONST
+ nop word cs:[rax + rax]
+ nop
+ endbr64
+ mov r12, rax
+ jmp LABEL12

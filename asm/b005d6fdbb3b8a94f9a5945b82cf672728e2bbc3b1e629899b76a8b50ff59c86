@@ -1,0 +1,79 @@
+ .name fcn.0000cbb0
+ .offset 000000000000cbb0
+ .file dir
+ endbr64
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ mov eax, dword [rdi + CONST]
+ mov ecx, dword [rsi + CONST]
+ cmp eax, CONST
+ sete dl
+ cmp eax, CONST
+ sete al
+ or edx, eax
+ cmp ecx, CONST
+ sete al
+ cmp ecx, CONST
+ sete cl
+ or al, cl
+ cjmp LABEL19
+ test dl, dl
+ cjmp LABEL21
+LABEL33:
+ mov r8d, CONST
+ test al, al
+ cjmp LABEL24
+LABEL53:
+ add rsp, CONST
+ mov eax, r8d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL19:
+ test dl, dl
+ cjmp LABEL33
+LABEL24:
+ mov r12, qword [rdi]
+ mov esi, CONST
+ mov rdi, r12
+ call CONST
+ mov r13, qword [rbx]
+ mov esi, CONST
+ mov rbp, rax
+ mov rdi, r13
+ call CONST
+ mov rsi, rax
+ test rax, rax
+ cjmp LABEL45
+ test rbp, rbp
+ lea rax, [rip + CONST]
+ cmove rbp, rax
+LABEL64:
+ mov rdi, rbp
+ call CONST
+ mov r8d, eax
+ test eax, eax
+ cjmp LABEL53
+LABEL65:
+ add rsp, CONST
+ mov rsi, r13
+ mov rdi, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST
+LABEL45:
+ lea rsi, [rip + CONST]
+ test rbp, rbp
+ cjmp LABEL64
+ jmp LABEL65
+LABEL21:
+ mov r8d, CONST
+ jmp LABEL53

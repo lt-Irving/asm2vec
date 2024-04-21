@@ -1,0 +1,40 @@
+ .name sym.absolute_pathname
+ .offset 000000000003f3f0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ movzx edx, byte [rdi]
+ xor eax, eax
+ test dl, dl
+ cjmp LABEL6
+ mov eax, CONST
+ cmp dl, CONST
+ cjmp LABEL6
+ xor eax, eax
+ cmp dl, CONST
+ cjmp LABEL12
+LABEL6:
+ ret
+LABEL12:
+ movzx edx, byte [rdi + CONST]
+ cmp dl, CONST
+ cjmp LABEL16
+ test dl, dl
+ cjmp LABEL16
+ cmp dl, CONST
+ cjmp LABEL6
+ movzx edx, byte [rdi + CONST]
+ cmp dl, CONST
+ sete al
+ test dl, dl
+ sete dl
+ or eax, edx
+ movzx eax, al
+ ret
+LABEL2:
+ xor eax, eax
+ ret
+LABEL16:
+ mov eax, CONST
+ ret

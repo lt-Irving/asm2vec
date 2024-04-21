@@ -1,0 +1,21 @@
+ .name sym.rl_vi_yank_arg
+ .offset 00000000000b94d0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+ sub edi, CONST
+ xor esi, esi
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

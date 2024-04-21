@@ -1,0 +1,90 @@
+ .name sym.bind_array_variable
+ .offset 000000000007cb80
+ .file bash
+ endbr64
+ push r14
+ mov r14, rdi
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ mov ebx, ecx
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL13
+LABEL59:
+ mov edx, dword [rbp + CONST]
+LABEL54:
+ test dl, CONST
+ cjmp LABEL16
+ test bl, CONST
+ cjmp LABEL18
+ test dh, CONST
+ cjmp LABEL18
+LABEL35:
+ and edx, CONST
+ cjmp LABEL22
+LABEL63:
+ mov r8d, ebx
+ mov rcx, r13
+ pop rbx
+ mov rsi, r12
+ mov rdi, rbp
+ xor edx, edx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL16:
+ test dh, CONST
+ cjmp LABEL35
+LABEL48:
+ pop rbx
+ mov rax, rbp
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL13:
+ xor esi, esi
+ mov rdi, r14
+ call CONST
+ lea rdx, [rip + CONST]
+ cmp rax, rdx
+ cjmp LABEL48
+ test rax, rax
+ cjmp LABEL50
+ mov edx, dword [rax + CONST]
+ mov rbp, rax
+ test dh, CONST
+ cjmp LABEL54
+ mov rdi, qword [rax + CONST]
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL59
+LABEL50:
+ mov rdi, r14
+ call CONST
+ mov rbp, rax
+ jmp LABEL63
+LABEL22:
+ mov rdi, rbp
+ call CONST
+ mov rbp, rax
+ jmp LABEL63
+LABEL18:
+ mov rdi, r14
+ call CONST
+ pop rbx
+ mov rax, rbp
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

@@ -1,0 +1,15 @@
+ .name fcn.00017740
+ .offset 0000000000017740
+ .file dash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov eax, dword [rdi]
+ sub eax, CONST
+ cjmp LABEL5
+ mov dword [rdi], eax
+ ret
+LABEL2:
+ ret
+LABEL5:
+ jmp CONST

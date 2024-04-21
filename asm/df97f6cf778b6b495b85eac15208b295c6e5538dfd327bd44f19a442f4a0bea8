@@ -1,0 +1,29 @@
+ .name sym.clear_fifo_list
+ .offset 00000000000678d0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ mov esi, dword [rip + CONST]
+ mov rcx, qword [rip + CONST]
+ xor eax, eax
+ nop dword [rax]
+LABEL16:
+ cmp esi, eax
+ cjmp LABEL9
+ mov edi, dword [rcx + rax*CONST]
+ test edi, edi
+ cjmp LABEL12
+ mov dword [rcx + rax*CONST], CONST
+ add rax, CONST
+ sub edx, CONST
+ cjmp LABEL16
+LABEL9:
+ mov dword [rip + CONST], CONST
+ ret
+LABEL12:
+ add rax, CONST
+ jmp LABEL16
+LABEL3:
+ ret

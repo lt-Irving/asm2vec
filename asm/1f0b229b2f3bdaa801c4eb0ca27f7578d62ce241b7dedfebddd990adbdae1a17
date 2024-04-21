@@ -1,0 +1,14 @@
+ .name fcn.00010d50
+ .offset 0000000000010d50
+ .file dash
+ push rax
+ pop rax
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ mov rsi, rdi
+ lea rdi, [rip + CONST]
+ mov eax, dword [rax + CONST]
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ call CONST
+ nop word [rax + rax]

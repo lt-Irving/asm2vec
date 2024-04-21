@@ -1,0 +1,31 @@
+ .name sym.wait_procsubs
+ .offset 0000000000067c10
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ push rbx
+ xor ebx, ebx
+ jmp LABEL6
+LABEL19:
+ mov rax, qword [rip + CONST]
+ mov edi, dword [rax + rbx*CONST]
+ test edi, edi
+ cjmp LABEL10
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov dword [rax + rbx*CONST], CONST
+LABEL10:
+ mov eax, dword [rip + CONST]
+ add rbx, CONST
+ test eax, eax
+ cjmp LABEL17
+LABEL6:
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL19
+LABEL17:
+ pop rbx
+ ret
+LABEL3:
+ ret

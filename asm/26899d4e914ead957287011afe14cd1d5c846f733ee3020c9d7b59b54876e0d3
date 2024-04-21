@@ -1,0 +1,16 @@
+ .name sym.filter_stringlist
+ .offset 000000000008e460
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ cmp qword [rdi], CONST
+ cjmp LABEL2
+ mov eax, dword [rdi + CONST]
+ test eax, eax
+ cjmp LABEL2
+ xor eax, eax
+ jmp CONST
+LABEL2:
+ mov rax, rdi
+ ret

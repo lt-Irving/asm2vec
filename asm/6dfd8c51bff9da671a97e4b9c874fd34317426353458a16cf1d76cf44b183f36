@@ -1,0 +1,14 @@
+ .name sym._rl_keyseq_cxt_alloc
+ .offset 00000000000b7550
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov qword [rax], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], rdx
+ mov dword [rax + CONST], CONST
+ add rsp, CONST
+ ret

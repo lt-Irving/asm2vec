@@ -1,0 +1,15 @@
+ .name sym.get_string_value
+ .offset 000000000004e8c0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL4
+ mov rdi, rax
+ add rsp, CONST
+ jmp CONST
+LABEL4:
+ xor eax, eax
+ add rsp, CONST
+ ret

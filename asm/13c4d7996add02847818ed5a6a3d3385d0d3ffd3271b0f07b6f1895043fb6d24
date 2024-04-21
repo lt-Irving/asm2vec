@@ -1,0 +1,14 @@
+ .name sym._rl_start_using_history
+ .offset 00000000000d6410
+ .file bash
+ endbr64
+ sub rsp, CONST
+ call CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,26 @@
+ .name fcn.00052190
+ .offset 0000000000052190
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ or edx, dword [rip + CONST]
+ mov rax, rdi
+ or edx, dword [rip + CONST]
+ cjmp LABEL5
+ mov dword [rip + CONST], CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL9
+ mov dword [rip + CONST], CONST
+ ret
+LABEL5:
+ ret
+LABEL9:
+ sub rsp, CONST
+ mov qword [rsp + CONST], rdi
+ call CONST
+ mov rax, qword [rsp + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

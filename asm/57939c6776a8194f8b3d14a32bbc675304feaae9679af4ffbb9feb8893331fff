@@ -1,0 +1,68 @@
+ .name sym.set_current_options
+ .offset 000000000009f390
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push r14
+ lea rsi, [rip + CONST]
+ lea r14, [rip + CONST]
+ push r13
+ mov r13d, CONST
+ push r12
+ mov r12, rdi
+ mov edi, CONST
+ push rbp
+ mov ebp, CONST
+ push rbx
+ lea rbx, [rip + CONST]
+ jmp LABEL15
+LABEL30:
+ cmp byte [r12 + rbp + CONST], CONST
+ sbb esi, esi
+ and esi, CONST
+ add esi, CONST
+ call CONST
+LABEL56:
+ movsxd rdi, ebp
+ add rbx, CONST
+ add rbp, CONST
+ test r14, r14
+ cjmp LABEL25
+LABEL44:
+ mov rsi, r14
+ mov edi, dword [rbx + CONST]
+ mov r14, qword [rbx + CONST]
+LABEL15:
+ test edi, edi
+ cjmp LABEL30
+ mov rax, qword [rbx + CONST]
+ movzx edx, byte [r12 + rbp + CONST]
+ test rax, rax
+ cjmp LABEL34
+ cmp dl, CONST
+ sbb edi, edi
+ add rbx, CONST
+ and edi, CONST
+ add edi, CONST
+ call rax
+ movsxd rdi, ebp
+ add rbp, CONST
+ test r14, r14
+ cjmp LABEL44
+LABEL25:
+ pop rbx
+ add rdi, r12
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ jmp CONST
+LABEL34:
+ test dl, dl
+ mov rax, qword [rbx]
+ cmovne edi, r13d
+ mov dword [rax], edi
+ jmp LABEL56
+LABEL2:
+ ret

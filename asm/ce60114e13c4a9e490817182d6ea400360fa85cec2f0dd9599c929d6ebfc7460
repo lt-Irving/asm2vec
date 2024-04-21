@@ -1,0 +1,44 @@
+ .name sym.copy_function_def_contents
+ .offset 0000000000054890
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ mov rbp, qword [rdi + CONST]
+ mov rbx, rdi
+ mov rdi, qword [rbp]
+ call CONST
+ mov edx, dword [rbp + CONST]
+ mov rdi, qword [rbx + CONST]
+ mov dword [rax + CONST], edx
+ mov qword [r12 + CONST], rax
+ test rdi, rdi
+ cjmp LABEL14
+ call CONST
+ mov rdi, rax
+LABEL14:
+ mov eax, dword [rbx]
+ mov rbp, qword [rbx + CONST]
+ mov qword [r12 + CONST], rdi
+ mov dword [r12], eax
+ mov eax, dword [rbx + CONST]
+ mov dword [r12 + CONST], eax
+ test rbp, rbp
+ cjmp LABEL24
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+LABEL24:
+ mov qword [r12 + CONST], rbp
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

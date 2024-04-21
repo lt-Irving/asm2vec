@@ -1,0 +1,16 @@
+ .name sym.print_unix_command_map
+ .offset 0000000000088ee0
+ .file bash
+ endbr64
+ push rbp
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rbp, rax
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret

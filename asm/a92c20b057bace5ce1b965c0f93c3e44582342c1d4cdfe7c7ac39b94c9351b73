@@ -1,0 +1,29 @@
+ .name sym.rl_vi_overstrike
+ .offset 00000000000b8c60
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+LABEL22:
+ test ebx, ebx
+ cjmp LABEL10
+ mov esi, ebp
+ mov edi, ebx
+ call CONST
+ add dword [rip + CONST], ebx
+LABEL10:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL8:
+ mov dword [rip + CONST], CONST
+ call CONST
+ jmp LABEL22

@@ -1,0 +1,56 @@
+ .name sym.list_rest_of_args
+ .offset 0000000000065790
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ xor ebp, ebp
+ push rbx
+ lea rbx, [rip + CONST]
+ lea r12, [rbx + CONST]
+ nop dword [rax]
+LABEL18:
+ mov rdi, qword [rbx]
+ test rdi, rdi
+ cjmp LABEL10
+ call CONST
+ mov rsi, rbp
+ add rbx, CONST
+ mov rdi, rax
+ call CONST
+ mov rbp, rax
+ cmp rbx, r12
+ cjmp LABEL18
+LABEL10:
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL21
+ nop dword [rax + rax]
+LABEL32:
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbx, qword [rbx]
+ mov rbp, rax
+ test rbx, rbx
+ cjmp LABEL32
+LABEL21:
+ test rbp, rbp
+ cjmp LABEL34
+ cmp qword [rbp], CONST
+ cjmp LABEL34
+ pop rbx
+ mov rdi, rbp
+ xor eax, eax
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL34:
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ ret

@@ -1,0 +1,18 @@
+ .name sym.reap_dead_jobs
+ .offset 000000000005ba60
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor edi, edi
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL6
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL6
+ add rsp, CONST
+ jmp CONST
+LABEL6:
+ add rsp, CONST
+ ret

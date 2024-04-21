@@ -1,0 +1,13 @@
+ .name sym.set_impossible_sigchld_trap
+ .offset 0000000000075e40
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ lea rsi, [rip + CONST]
+ mov edi, CONST
+ call CONST
+ and dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

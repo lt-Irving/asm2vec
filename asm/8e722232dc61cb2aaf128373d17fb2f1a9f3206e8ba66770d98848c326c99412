@@ -1,0 +1,15 @@
+ .name sym.cmd_init
+ .offset 000000000003ffe0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ ret

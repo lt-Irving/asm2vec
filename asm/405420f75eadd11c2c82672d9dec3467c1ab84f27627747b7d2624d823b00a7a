@@ -1,0 +1,25 @@
+ .name sym.coproc_alloc
+ .offset 0000000000045400
+ .file bash
+ endbr64
+ push rbp
+ mov eax, CONST
+ mov rbp, rdi
+ mov qword [rip + CONST], rax
+ movabs rax, CONST
+ mov dword [rip + CONST], esi
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ pop rbp
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ ret

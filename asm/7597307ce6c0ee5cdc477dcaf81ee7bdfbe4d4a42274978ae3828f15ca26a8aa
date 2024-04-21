@@ -1,0 +1,31 @@
+ .name sym.strlist_remove
+ .offset 00000000000b2190
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi]
+ test rdi, rdi
+ cjmp LABEL7
+ mov eax, dword [rbx + CONST]
+ test eax, eax
+ cjmp LABEL10
+LABEL15:
+ pop rbx
+ ret
+LABEL10:
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ sub dword [rbx + CONST], CONST
+ pop rbx
+ ret
+LABEL2:
+ xor eax, eax
+ ret
+LABEL7:
+ xor eax, eax
+ pop rbx
+ ret

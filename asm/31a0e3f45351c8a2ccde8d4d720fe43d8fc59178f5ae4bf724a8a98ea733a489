@@ -1,0 +1,59 @@
+ .name fcn.00007f40
+ .offset 0000000000007f40
+ .file dmesg
+ endbr64
+ sub rsp, CONST
+ mov ecx, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rsi, rsp
+ mov rdi, rsi
+ cld
+ rep stosq qword [rdi], rax
+ or qword [rsp], CONST
+ movdqa xmm1, xmmword [rsp + CONST]
+ xor edx, edx
+ xor r8d, r8d
+ movdqa xmm0, xmmword [rsp]
+ movdqa xmm2, xmmword [rsp + CONST]
+ mov edi, CONST
+ lea rcx, [rsp + CONST]
+ movdqa xmm3, xmmword [rsp + CONST]
+ movdqa xmm4, xmmword [rsp + CONST]
+ movaps xmmword [rsp + CONST], xmm1
+ movdqa xmm5, xmmword [rsp + CONST]
+ movdqa xmm6, xmmword [rsp + CONST]
+ movaps xmmword [rsp + CONST], xmm0
+ movdqa xmm7, xmmword [rsp + CONST]
+ movaps xmmword [rsp + CONST], xmm2
+ movaps xmmword [rsp + CONST], xmm3
+ movaps xmmword [rsp + CONST], xmm4
+ movaps xmmword [rsp + CONST], xmm5
+ movaps xmmword [rsp + CONST], xmm6
+ movaps xmmword [rsp + CONST], xmm7
+ call CONST
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL37
+LABEL51:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL40
+ add rsp, CONST
+ ret
+LABEL37:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL51
+LABEL40:
+ call CONST

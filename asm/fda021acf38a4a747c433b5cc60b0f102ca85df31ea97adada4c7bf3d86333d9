@@ -1,0 +1,20 @@
+ .name sym.rl_vi_column
+ .offset 00000000000bac40
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp dword [rip + CONST], edi
+ cjmp LABEL3
+ mov edi, CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL3:
+ mov dword [rip + CONST], CONST
+ sub edi, CONST
+ call CONST
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ add rsp, CONST
+ ret

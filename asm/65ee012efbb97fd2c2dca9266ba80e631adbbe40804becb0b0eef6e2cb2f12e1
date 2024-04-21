@@ -1,0 +1,44 @@
+ .name sym._rl_search_getchar
+ .offset 00000000000c76d0
+ .file bash
+ endbr64
+ push r12
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ or qword [rip + CONST], CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ mov dword [rbx + CONST], eax
+ mov r12d, eax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL12
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL15
+LABEL12:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL18
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret
+LABEL18:
+ mov edi, dword [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop r12
+ ret
+LABEL15:
+ mov edi, dword [rbx + CONST]
+ lea rsi, [rbx + CONST]
+ mov edx, CONST
+ call CONST
+ mov dword [rbx + CONST], eax
+ mov r12d, eax
+ jmp LABEL12

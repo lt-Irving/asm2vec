@@ -1,0 +1,14 @@
+ .name sym.dispose_fd_bitmap
+ .offset 0000000000044040
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL5
+ call CONST
+LABEL5:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST

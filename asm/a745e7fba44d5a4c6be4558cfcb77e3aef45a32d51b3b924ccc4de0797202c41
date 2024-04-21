@@ -1,0 +1,21 @@
+ .name sym.ttfd_cbreak
+ .offset 00000000000b06d0
+ .file bash
+ endbr64
+ mov eax, dword [rsi]
+ mov rdx, rsi
+ and eax, CONST
+ or ah, CONST
+ mov dword [rsi], eax
+ mov eax, dword [rsi + CONST]
+ and eax, CONST
+ or eax, CONST
+ mov dword [rsi + CONST], eax
+ mov eax, CONST
+ mov word [rsi + CONST], ax
+ mov eax, dword [rsi + CONST]
+ and eax, CONST
+ or eax, CONST
+ mov dword [rsi + CONST], eax
+ mov esi, CONST
+ jmp CONST

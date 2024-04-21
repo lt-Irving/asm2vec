@@ -1,0 +1,114 @@
+ .name sym.bind_keyseq_to_unix_command
+ .offset 0000000000088f10
+ .file bash
+ endbr64
+ push r14
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL12
+LABEL96:
+ call CONST
+ lea r14, [rsp + CONST]
+ xor esi, esi
+ mov rdi, r13
+ mov rcx, r14
+ mov edx, CONST
+ mov r12, rax
+ call CONST
+ mov ebx, eax
+ test eax, eax
+ cjmp LABEL23
+ mov esi, dword [rsp + CONST]
+ mov edx, eax
+ mov rdi, r13
+ call CONST
+ mov rbp, rax
+ movsxd rax, ebx
+ movzx edx, byte [r13 + rax]
+ cmp dl, CONST
+ cjmp LABEL32
+ test dl, dl
+ cjmp LABEL34
+ lea eax, [rbx + CONST]
+ cdqe
+ nop word cs:[rax + rax]
+LABEL44:
+ movzx edx, byte [r13 + rax]
+ mov ebx, eax
+ add rax, CONST
+ test dl, dl
+ cjmp LABEL34
+ cmp dl, CONST
+ cjmp LABEL44
+LABEL32:
+ xor edx, edx
+ lea esi, [rbx + CONST]
+ mov rcx, r14
+ mov rdi, r13
+ call CONST
+ mov edx, eax
+ test eax, eax
+ cjmp LABEL52
+ mov esi, dword [rsp + CONST]
+ mov rdi, r13
+ call CONST
+ mov rcx, qword [rip + CONST]
+ mov rsi, rbp
+ mov edi, CONST
+ mov rdx, rax
+ call CONST
+ mov rdx, r12
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+LABEL93:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL70
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL34:
+ cmp dl, CONST
+ cjmp LABEL32
+ xor edi, edi
+ lea rsi, [rip + CONST]
+ mov edx, CONST
+ call CONST
+ mov rsi, r13
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ test rbp, rbp
+ cjmp LABEL23
+LABEL98:
+ mov rdi, rbp
+ call CONST
+LABEL23:
+ mov eax, CONST
+ jmp LABEL93
+LABEL12:
+ call CONST
+ mov qword [rip + CONST], rax
+ jmp LABEL96
+LABEL52:
+ test rbp, rbp
+ cjmp LABEL98
+ jmp LABEL23
+LABEL70:
+ call CONST

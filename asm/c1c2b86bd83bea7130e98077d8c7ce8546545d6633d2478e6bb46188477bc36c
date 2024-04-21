@@ -1,0 +1,48 @@
+ .name fcn.0009ef30
+ .offset 000000000009ef30
+ .file bash
+ endbr64
+ sub rsp, CONST
+ cmp edi, CONST
+ cjmp LABEL3
+ cmp dword [rip + CONST], CONST
+ movzx eax, byte [rsi]
+ cjmp LABEL6
+ cmp al, CONST
+ cjmp LABEL8
+LABEL14:
+ mov eax, CONST
+ sub eax, dword [rip + CONST]
+ add rsp, CONST
+ ret
+LABEL6:
+ cmp al, CONST
+ cjmp LABEL14
+LABEL8:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL17
+LABEL34:
+ mov dword [rip + CONST], CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL3:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL26
+LABEL36:
+ mov dword [rip + CONST], CONST
+ mov eax, CONST
+ add rsp, CONST
+ ret
+LABEL17:
+ mov rdi, qword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ jmp LABEL34
+LABEL26:
+ call CONST
+ jmp LABEL36

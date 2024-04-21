@@ -1,0 +1,38 @@
+ .name fcn.000140a0
+ .offset 00000000000140a0
+ .file dash
+ endbr64
+ push rax
+ pop rax
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, dword [rip + CONST]
+ mov rdi, rsp
+ mov dword [rip + CONST], eax
+ call CONST
+ endbr64
+ test eax, eax
+ cjmp LABEL13
+ mov rdi, qword [rip + CONST]
+ mov rax, rsp
+ mov qword [rip + CONST], rax
+ test rdi, rdi
+ cjmp LABEL13
+ mov qword [rip + CONST], CONST
+ xor esi, esi
+ mov dword [rip + CONST], CONST
+ call CONST
+LABEL13:
+ mov rdi, rsp
+ call CONST
+ endbr64
+ test eax, eax
+ cjmp LABEL27
+ xor edi, edi
+ call CONST
+LABEL27:
+ call CONST
+ mov edi, dword [rip + CONST]
+ call CONST

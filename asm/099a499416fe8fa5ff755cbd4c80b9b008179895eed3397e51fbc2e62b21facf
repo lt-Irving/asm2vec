@@ -1,0 +1,94 @@
+ .name sym._rl_revert_all_lines
+ .offset 00000000000d65e0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rbp, qword [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rbp, qword [rip + CONST]
+ mov r12, rax
+ call CONST
+ cmp dword [rip + CONST], eax
+ mov r13d, eax
+ cjmp LABEL21
+ call CONST
+ mov rbx, rax
+LABEL82:
+ xor r14d, r14d
+ test rbx, rbx
+ cjmp LABEL26
+ jmp LABEL27
+LABEL34:
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL27
+LABEL26:
+ mov rax, qword [rbx + CONST]
+ test rax, rax
+ cjmp LABEL34
+ cmp rax, rbp
+ mov rdi, rbx
+ cmove rbp, r14
+ xor esi, esi
+ call CONST
+ cmp qword [rip + CONST], CONST
+ mov qword [rbx + CONST], CONST
+ cjmp LABEL42
+ nop dword [rax]
+LABEL46:
+ call CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL46
+LABEL42:
+ mov rdi, qword [rbx]
+ test rdi, rdi
+ cjmp LABEL49
+ call CONST
+LABEL49:
+ mov r15, qword [rip + CONST]
+ mov rdi, r15
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r15
+ mov rdi, rax
+ call CONST
+ mov qword [rbx], rax
+ call CONST
+ mov rbx, rax
+ test rax, rax
+ cjmp LABEL26
+LABEL27:
+ mov edi, r13d
+ mov qword [rip + CONST], rbp
+ call CONST
+ mov rdi, r12
+ xor esi, esi
+ call CONST
+ call CONST
+ add rsp, CONST
+ mov rdi, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ jmp CONST
+LABEL21:
+ call CONST
+ mov rbx, rax
+ jmp LABEL82

@@ -1,0 +1,27 @@
+ .name fcn.00002cb0
+ .offset 0000000000002cb0
+ .file dirname
+ endbr64
+ push rbp
+ xor ebp, ebp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ cmp byte [rdi], CONST
+ sete bpl
+ call CONST
+ sub rax, rbx
+ jmp LABEL10
+LABEL16:
+ cmp byte [rbx + rax + CONST], CONST
+ lea rdx, [rax + CONST]
+ cjmp LABEL13
+ mov rax, rdx
+LABEL10:
+ cmp rax, rbp
+ cjmp LABEL16
+LABEL13:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

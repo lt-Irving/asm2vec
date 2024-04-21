@@ -1,0 +1,18 @@
+ .name fcn.00006d80
+ .offset 0000000000006d80
+ .file cut
+ endbr64
+ mov rax, qword [rdi + CONST]
+ cmp qword [rdi + CONST], rax
+ cjmp LABEL3
+ mov r8, qword [rdi + CONST]
+ mov rax, qword [rdi + CONST]
+ sub rax, r8
+ cjmp LABEL3
+ mov qword [rsi], rax
+ mov rax, r8
+ ret
+LABEL3:
+ xor r8d, r8d
+ mov rax, r8
+ ret

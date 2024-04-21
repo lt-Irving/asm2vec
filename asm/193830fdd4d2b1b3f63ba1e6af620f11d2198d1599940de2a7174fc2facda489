@@ -1,0 +1,15 @@
+ .name fcn.00004540
+ .offset 0000000000004540
+ .file csplit
+ sub rsp, CONST
+ jmp LABEL1
+LABEL7:
+ lea rsi, [rdi + CONST]
+ call CONST
+LABEL1:
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL7
+ add rsp, CONST
+ ret

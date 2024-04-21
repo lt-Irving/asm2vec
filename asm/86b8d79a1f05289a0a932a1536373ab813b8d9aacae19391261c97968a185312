@@ -1,0 +1,24 @@
+ .name fcn.0000c872
+ .offset 000000000000c872
+ .file apt-cache
+LABEL17:
+ call CONST
+ mov rdi, r13
+ call CONST
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL12
+LABEL12:
+ call CONST
+ jmp CONST
+ endbr64
+ mov rdi, rax
+ jmp LABEL17

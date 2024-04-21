@@ -1,0 +1,16 @@
+ .name fcn.0000af9e
+ .offset 000000000000af9e
+ .file apt-cache
+LABEL10:
+ mov rdi, r14
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ cmp rdi, rbx
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ mov rbx, rbp
+ jmp CONST
+ endbr64
+ mov rbp, rax
+ jmp LABEL10

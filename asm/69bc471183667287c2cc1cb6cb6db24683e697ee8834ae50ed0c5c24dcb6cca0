@@ -1,0 +1,34 @@
+ .name sym.pop_var_context
+ .offset 0000000000051ce0
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, qword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ test byte [rbp + CONST], CONST
+ cjmp LABEL6
+ mov rax, qword [rbp + CONST]
+ test rax, rax
+ cjmp LABEL9
+ mov rdi, qword [rbp + CONST]
+ mov qword [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ test rdi, rdi
+ cjmp LABEL14
+ lea rsi, [rip + CONST]
+ call CONST
+LABEL14:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL9:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+LABEL6:
+ xor edi, edi
+ call CONST
+ pop rbp
+ mov rdi, rax
+ xor eax, eax
+ jmp CONST

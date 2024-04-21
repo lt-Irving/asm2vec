@@ -1,0 +1,52 @@
+ .name sym.save_pipeline
+ .offset 0000000000059b20
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov r12, rsp
+ lea rbp, [rsp + CONST]
+ mov rdi, r12
+ call CONST
+ mov esi, CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov rdx, rbp
+ mov rsi, r12
+ xor edi, edi
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov rdx, qword [rip + CONST]
+ mov qword [rax], rdx
+ mov rdx, qword [rip + CONST]
+ mov qword [rip + CONST], rax
+ mov qword [rax + CONST], rdx
+ test ebx, ebx
+ cjmp LABEL30
+ mov qword [rip + CONST], CONST
+LABEL30:
+ mov eax, dword [rip + CONST]
+ xor edx, edx
+ mov rsi, rbp
+ mov edi, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL40
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL40:
+ call CONST

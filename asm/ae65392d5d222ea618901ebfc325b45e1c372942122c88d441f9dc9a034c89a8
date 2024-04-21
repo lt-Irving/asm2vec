@@ -1,0 +1,35 @@
+ .name sym.rl_stuff_char
+ .offset 00000000000d1820
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ movsxd rdx, dword [rip + CONST]
+ cmp eax, edx
+ cjmp LABEL4
+ sub eax, edx
+ sub eax, CONST
+LABEL22:
+ test eax, eax
+ cjmp LABEL8
+ cmp edi, CONST
+ cjmp LABEL10
+LABEL26:
+ lea ecx, [rdx + CONST]
+ lea rax, [rip + CONST]
+ mov byte [rax + rdx], dil
+ cmp ecx, CONST
+ mov edx, CONST
+ mov eax, CONST
+ cmovge ecx, edx
+ mov dword [rip + CONST], ecx
+LABEL8:
+ ret
+LABEL4:
+ sub eax, edx
+ add eax, CONST
+ jmp LABEL22
+LABEL10:
+ or qword [rip + CONST], CONST
+ mov edi, CONST
+ mov dword [rip + CONST], CONST
+ jmp LABEL26

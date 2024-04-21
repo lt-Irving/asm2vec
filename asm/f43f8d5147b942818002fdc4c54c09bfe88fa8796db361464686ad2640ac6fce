@@ -1,0 +1,94 @@
+ .name fcn.0000d450
+ .offset 000000000000d450
+ .file diff
+ push rbx
+ mov rbx, rdi
+ movsx edi, byte [rdi]
+ test dil, dil
+ cjmp LABEL4
+ mov r8, rbx
+ xor r9d, r9d
+ xor esi, esi
+ jmp LABEL8
+LABEL21:
+ call CONST
+ test al, al
+ cjmp LABEL11
+ lea rdx, [rsi + CONST]
+ add rsi, CONST
+ cmp al, CONST
+ cmove rsi, rdx
+LABEL11:
+ add r8, CONST
+ movsx edi, byte [r8]
+ test dil, dil
+ cjmp LABEL19
+LABEL8:
+ cmp dil, CONST
+ cjmp LABEL21
+ add r8, CONST
+ movsx edi, byte [r8]
+ mov r9d, CONST
+ test dil, dil
+ cjmp LABEL8
+LABEL19:
+ test rsi, rsi
+ cjmp LABEL28
+ test r9b, r9b
+ cjmp LABEL28
+LABEL4:
+ mov rax, rbx
+ pop rbx
+ ret
+LABEL28:
+ sub r8, rbx
+ lea rdi, [rsi + r8 + CONST]
+ call CONST
+ mov byte [rax], CONST
+ movzx esi, byte [rbx]
+ mov r9, rax
+ lea r8, [rax + CONST]
+ test sil, sil
+ cjmp LABEL42
+LABEL55:
+ mov eax, CONST
+ mov rbx, r9
+ mov word [r8], ax
+ mov rax, rbx
+ pop rbx
+ ret
+LABEL61:
+ mov byte [r8], CONST
+ add r8, CONST
+ mov byte [r8 + CONST], al
+LABEL76:
+ add rbx, CONST
+ movzx esi, byte [rbx]
+ test sil, sil
+ cjmp LABEL55
+LABEL42:
+ movsx edi, sil
+ call CONST
+ test al, al
+ cjmp LABEL59
+ cmp al, CONST
+ cjmp LABEL61
+ mov eax, esi
+ mov byte [r8], CONST
+ add r8, CONST
+ shr al, CONST
+ add eax, CONST
+ mov byte [r8 + CONST], al
+ mov eax, esi
+ and esi, CONST
+ sar al, CONST
+ add esi, CONST
+ and eax, CONST
+ mov byte [r8 + CONST], sil
+ add eax, CONST
+ mov byte [r8 + CONST], al
+ jmp LABEL76
+LABEL59:
+ mov byte [r8], sil
+ add r8, CONST
+ jmp LABEL76

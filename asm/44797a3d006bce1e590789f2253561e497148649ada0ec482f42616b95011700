@@ -1,0 +1,57 @@
+ .name fcn.000043fc
+ .offset 00000000000043fc
+ .file apt-config
+ endbr64
+ mov r12, rax
+ mov rdi, qword [rbp + CONST]
+ cmp qword [rsp + CONST], rdi
+ cjmp LABEL4
+ call CONST
+LABEL4:
+ mov rdi, r12
+ call CONST
+ mov rdi, rbp
+ call CONST
+ call CONST
+ endbr64
+ mov rbp, rax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ nop dword [rax]
+ endbr64
+ push r15
+ lea r15, [rip + CONST]
+ push r14
+ mov r14, rdx
+ push r13
+ mov r13, rsi
+ push r12
+ mov r12d, edi
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ sub rbp, r15
+ sub rsp, CONST
+ call CONST
+ sar rbp, CONST
+ cjmp LABEL33
+ xor ebx, ebx
+ nop dword [rax]
+LABEL42:
+ mov rdx, r14
+ mov rsi, r13
+ mov edi, r12d
+ call qword [r15 + rbx*CONST]
+ add rbx, CONST
+ cmp rbp, rbx
+ cjmp LABEL42
+LABEL33:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret

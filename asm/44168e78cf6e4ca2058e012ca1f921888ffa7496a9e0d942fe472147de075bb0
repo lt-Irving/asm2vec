@@ -1,0 +1,63 @@
+ .name sym.rl_vi_yank_pop
+ .offset 00000000000cfcb0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ cmp rax, qword [rip + CONST]
+ push r12
+ push rbp
+ push rbx
+ cjmp LABEL6
+ lea rdx, [rip + CONST]
+ cmp rax, rdx
+ cjmp LABEL6
+LABEL18:
+ call CONST
+ pop rbx
+ mov eax, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL6:
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL18
+ movsxd rdx, dword [rip + CONST]
+ mov r12, qword [rax + rdx*CONST]
+ mov rdi, r12
+ call CONST
+ mov ebp, dword [rip + CONST]
+ mov ebx, ebp
+ sub ebx, eax
+ cjmp LABEL18
+ test eax, eax
+ cjmp LABEL28
+ movsxd rdi, ebx
+ add rdi, qword [rip + CONST]
+ movzx ecx, byte [r12]
+ cmp byte [rdi], cl
+ cjmp LABEL18
+ movsxd rdx, eax
+ mov rsi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL18
+LABEL28:
+ mov esi, ebp
+ mov edi, ebx
+ call CONST
+ sub dword [rip + CONST], CONST
+ mov dword [rip + CONST], ebx
+ cjmp LABEL44
+ mov eax, dword [rip + CONST]
+ sub eax, CONST
+ mov dword [rip + CONST], eax
+LABEL44:
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

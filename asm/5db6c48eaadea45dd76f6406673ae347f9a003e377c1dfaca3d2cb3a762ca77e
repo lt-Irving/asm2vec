@@ -1,0 +1,45 @@
+ .name sym.hash_create
+ .offset 0000000000073710
+ .file bash
+ endbr64
+ push r12
+ push rbx
+ mov ebx, edi
+ mov edi, CONST
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test ebx, ebx
+ cjmp LABEL9
+ mov edi, CONST
+ mov ebx, CONST
+ call CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12], rax
+LABEL33:
+ xor edx, edx
+ nop dword [rax]
+LABEL20:
+ mov qword [rax + rdx*CONST], CONST
+ add rdx, CONST
+ cmp ebx, edx
+ cjmp LABEL20
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret
+LABEL9:
+ movsxd rdi, ebx
+ shl rdi, CONST
+ call CONST
+ mov dword [r12 + CONST], ebx
+ mov qword [r12], rax
+ mov dword [r12 + CONST], CONST
+ test ebx, ebx
+ cjmp LABEL33
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop r12
+ ret

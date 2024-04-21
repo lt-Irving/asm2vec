@@ -1,0 +1,39 @@
+ .name sym.timeval_to_secs
+ .offset 00000000000b10d0
+ .file bash
+ endbr64
+ mov r9, qword [rdi]
+ mov r8, rdx
+ movabs rdx, CONST
+ mov qword [rsi], r9
+ mov rcx, qword [rdi + CONST]
+ mov rax, rcx
+ imul rdx
+ mov rax, rcx
+ sar rax, CONST
+ sar rdx, CONST
+ sub rdx, rax
+ imul rdx, rdx, CONST
+ sub rcx, rdx
+ movsxd rdx, ecx
+ mov eax, ecx
+ imul rdx, rdx, CONST
+ sar eax, CONST
+ sar rdx, CONST
+ sub edx, eax
+ imul eax, edx, CONST
+ sub ecx, eax
+ cmp ecx, CONST
+ cjmp LABEL23
+ mov dword [r8], edx
+ ret
+LABEL23:
+ add edx, CONST
+ mov dword [r8], edx
+ cmp edx, CONST
+ cjmp LABEL29
+ add r9, CONST
+ mov qword [rsi], r9
+ mov dword [r8], CONST
+LABEL29:
+ ret

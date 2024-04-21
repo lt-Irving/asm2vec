@@ -1,0 +1,53 @@
+ .name sym.termsig_sighandler
+ .offset 0000000000078f00
+ .file bash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ mov eax, CONST
+ bt rax, rdi
+ cjmp LABEL2
+LABEL15:
+ mov r8d, dword [rip + CONST]
+ mov dword [rip + CONST], edi
+ test r8d, r8d
+ cjmp LABEL9
+LABEL24:
+ test qword [rip + CONST], CONST
+ cjmp LABEL11
+ ret
+LABEL2:
+ mov eax, dword [rip + CONST]
+ cmp eax, edi
+ cjmp LABEL15
+ mov dword [rip + CONST], edi
+LABEL9:
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL19
+LABEL29:
+ mov dword [rip + CONST], CONST
+LABEL38:
+ mov dword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL24
+ sub rsp, CONST
+ call CONST
+LABEL19:
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL29
+ cmp edi, CONST
+ cjmp LABEL31
+ cmp edi, CONST
+ cjmp LABEL29
+LABEL31:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL29
+ test byte [rip + CONST], CONST
+ cjmp LABEL38
+ jmp LABEL29
+LABEL11:
+ jmp CONST

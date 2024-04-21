@@ -1,0 +1,14 @@
+ .name sym.rl_free_undo_list
+ .offset 00000000000d0820
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, qword [rip + CONST]
+ mov rdi, rbp
+ call CONST
+ mov rsi, rbp
+ xor edx, edx
+ mov edi, CONST
+ mov qword [rip + CONST], CONST
+ pop rbp
+ jmp CONST

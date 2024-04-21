@@ -1,0 +1,19 @@
+ .name sym.list_append
+ .offset 00000000000891a0
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ mov rdx, rdi
+ nop dword [rax]
+LABEL8:
+ mov rcx, rdx
+ mov rdx, qword [rdx]
+ test rdx, rdx
+ cjmp LABEL8
+ mov qword [rcx], rsi
+ mov rax, rdi
+ ret
+LABEL2:
+ mov rax, rsi
+ ret

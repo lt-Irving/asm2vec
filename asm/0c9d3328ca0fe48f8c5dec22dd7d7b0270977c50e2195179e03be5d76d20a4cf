@@ -1,0 +1,28 @@
+ .name sym.make_cond_node
+ .offset 00000000000409d0
+ .file bash
+ endbr64
+ push r13
+ mov r13d, edi
+ mov edi, CONST
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov rbx, rcx
+ sub rsp, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rax], CONST
+ mov dword [rax + CONST], edx
+ mov dword [rax + CONST], r13d
+ mov qword [rax + CONST], r12
+ mov qword [rax + CONST], rbp
+ mov qword [rax + CONST], rbx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

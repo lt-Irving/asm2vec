@@ -1,0 +1,112 @@
+ .name fcn.00005ac0
+ .offset 0000000000005ac0
+ .file choom
+ endbr64
+ push r13
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ mov rsi, rcx
+ sub rsp, CONST
+ mov qword [rsp + CONST], r8
+ mov qword [rsp + CONST], r9
+ test al, al
+ cjmp LABEL13
+ movaps xmmword [rsp + CONST], xmm0
+ movaps xmmword [rsp + CONST], xmm1
+ movaps xmmword [rsp + CONST], xmm2
+ movaps xmmword [rsp + CONST], xmm3
+ movaps xmmword [rsp + CONST], xmm4
+ movaps xmmword [rsp + CONST], xmm5
+ movaps xmmword [rsp + CONST], xmm6
+ movaps xmmword [rsp + CONST], xmm7
+LABEL13:
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rsi, rsi
+ cjmp LABEL26
+ lea rax, [rsp + CONST]
+ mov r13, qword [rbp + CONST]
+ mov rdx, rsp
+ mov rdi, rbp
+ mov qword [rsp + CONST], rax
+ lea rax, [rsp + CONST]
+ mov dword [rsp], CONST
+ mov dword [rsp + CONST], CONST
+ mov qword [rsp + CONST], rax
+ call CONST
+ test r13, r13
+ cjmp LABEL38
+ xor edx, edx
+ cmp byte [r13], CONST
+ sete dl
+ add r13, rdx
+ test rax, rax
+ cjmp LABEL44
+LABEL79:
+ xor edx, edx
+ cmp byte [rax], CONST
+ sete dl
+ add rax, rdx
+LABEL82:
+ mov rdx, qword [rbp + CONST]
+ push rax
+ lea r9, [rip + CONST]
+ mov rsi, r12
+ push r13
+ mov rcx, CONST
+ lea r8, [rip + CONST]
+ mov rdi, rbx
+ test rdx, rdx
+ cmovne r9, rdx
+ mov edx, CONST
+ xor eax, eax
+ call CONST
+ movsxd rdx, eax
+ pop rax
+ mov rax, rbx
+ pop rcx
+ cmp rdx, r12
+ cjmp LABEL67
+LABEL86:
+ mov rbx, qword [rsp + CONST]
+ xor rbx, qword fs:[CONST]
+ cjmp LABEL70
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL38:
+ lea r13, [rip + CONST]
+ test rax, rax
+ cjmp LABEL79
+ lea rax, [rip + CONST]
+ mov r13, rax
+ jmp LABEL82
+LABEL26:
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL86
+ lea rdx, [r12 + CONST]
+ mov rsi, rax
+ mov rdi, rbx
+ call CONST
+ mov byte [rbx + r12 + CONST], CONST
+ jmp LABEL86
+LABEL44:
+ lea rax, [rip + CONST]
+ jmp LABEL82
+LABEL67:
+ call CONST
+ mov dword [rax], CONST
+ xor eax, eax
+ jmp LABEL86
+LABEL70:
+ call CONST

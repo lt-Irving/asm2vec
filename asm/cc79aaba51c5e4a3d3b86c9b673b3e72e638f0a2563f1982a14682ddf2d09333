@@ -1,0 +1,41 @@
+ .name sym.tteightbit
+ .offset 00000000000b0510
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov rax, qword [rip + CONST]
+ mov rdx, rsp
+ mov esi, CONST
+ xor edi, edi
+ movdqa xmm0, xmmword [rip + CONST]
+ movdqa xmm1, xmmword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ mov eax, dword [rip + CONST]
+ movaps xmmword [rsp], xmm0
+ movdqa xmm2, xmmword [rip + CONST]
+ mov dword [rsp + CONST], eax
+ mov eax, dword [rsp + CONST]
+ and dword [rsp], CONST
+ and ah, CONST
+ movaps xmmword [rsp + CONST], xmm1
+ or eax, CONST
+ movaps xmmword [rsp + CONST], xmm2
+ mov dword [rsp + CONST], eax
+ call CONST
+LABEL33:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL29
+ add rsp, CONST
+ ret
+LABEL7:
+ mov eax, CONST
+ jmp LABEL33
+LABEL29:
+ call CONST

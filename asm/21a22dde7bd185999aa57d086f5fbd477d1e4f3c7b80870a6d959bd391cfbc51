@@ -1,0 +1,31 @@
+ .name sym.check_dev_tty
+ .offset 000000000003efa0
+ .file bash
+ endbr64
+ sub rsp, CONST
+ xor eax, eax
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+LABEL22:
+ mov edi, eax
+ add rsp, CONST
+ jmp CONST
+LABEL7:
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov edi, eax
+ call CONST
+ mov rdi, rax
+ test rax, rax
+ cjmp LABEL17
+ xor eax, eax
+ mov esi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL22
+LABEL17:
+ add rsp, CONST
+ ret

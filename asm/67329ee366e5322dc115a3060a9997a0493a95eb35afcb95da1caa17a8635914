@@ -1,0 +1,44 @@
+ .name fcn.000057b0
+ .offset 00000000000057b0
+ .file choom
+ endbr64
+ push rbx
+ test rdi, rdi
+ cjmp LABEL3
+ mov rbx, rdi
+ mov edi, dword [rdi]
+ test edi, edi
+ cjmp LABEL7
+ test byte [rip + CONST], CONST
+ cjmp LABEL9
+ call CONST
+ mov dword [rbx], CONST
+LABEL7:
+ pop rbx
+ ret
+LABEL9:
+ call CONST
+ lea r9, [rip + CONST]
+ mov esi, CONST
+ lea r8, [rip + CONST]
+ mov ecx, eax
+ mov rax, qword [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov rdi, qword [rax]
+ xor eax, eax
+ call CONST
+ mov rdx, qword [rbx + CONST]
+ mov rdi, rbx
+ xor eax, eax
+ lea rsi, [rip + CONST]
+ call CONST
+ mov edi, dword [rbx]
+ call CONST
+ mov dword [rbx], CONST
+ jmp LABEL7
+LABEL3:
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST

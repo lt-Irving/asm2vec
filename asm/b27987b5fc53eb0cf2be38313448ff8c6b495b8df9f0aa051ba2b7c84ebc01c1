@@ -1,0 +1,71 @@
+ .name sym.get_group_list
+ .offset 000000000003fc80
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL8
+ test rdi, rdi
+ cjmp LABEL10
+ mov edx, dword [rip + CONST]
+ mov dword [rdi], edx
+LABEL10:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL20
+ test edi, edi
+ cjmp LABEL22
+LABEL53:
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ test edx, edx
+ cjmp LABEL27
+ xor ebx, ebx
+ nop
+LABEL39:
+ lea rbp, [rax + rbx*CONST]
+ mov rax, qword [rip + CONST]
+ mov edi, dword [rax + rbx*CONST]
+ add rbx, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov qword [rbp], rax
+ mov rax, qword [rip + CONST]
+ cmp edx, ebx
+ cjmp LABEL39
+LABEL27:
+ test r12, r12
+ cjmp LABEL10
+ mov dword [r12], edx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL20:
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov rax, qword [rsp + CONST]
+ test edi, edi
+ cjmp LABEL53
+LABEL22:
+ test r12, r12
+ cjmp LABEL55
+ mov dword [r12], CONST
+ jmp LABEL10
+LABEL55:
+ xor eax, eax
+ jmp LABEL10

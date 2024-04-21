@@ -1,0 +1,19 @@
+ .name sym.make_cond_command
+ .offset 0000000000040a20
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ xor edx, edx
+ mov qword [rax + CONST], rbx
+ mov qword [rax + CONST], CONST
+ mov qword [rax], CONST
+ test rbx, rbx
+ cjmp LABEL10
+ mov edx, dword [rbx + CONST]
+LABEL10:
+ mov dword [rax + CONST], edx
+ pop rbx
+ ret

@@ -1,0 +1,32 @@
+ .name sym.remove_alias
+ .offset 000000000007a980
+ .file bash
+ endbr64
+ mov rsi, qword [rip + CONST]
+ test rsi, rsi
+ cjmp LABEL3
+ push rbp
+ xor edx, edx
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL9
+ mov rdi, qword [rax + CONST]
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rax, qword [rip + CONST]
+ pop rbp
+ mov eax, dword [rax + CONST]
+ ret
+LABEL9:
+ mov eax, CONST
+ pop rbp
+ ret
+LABEL3:
+ or eax, CONST
+ ret

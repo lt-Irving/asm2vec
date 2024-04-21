@@ -1,0 +1,40 @@
+ .name fcn.00013510
+ .offset 0000000000013510
+ .file dpkg-deb
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ mov rdi, rsi
+ push rbx
+ mov rbx, rsi
+ call CONST
+ cmp byte [rbx + CONST], CONST
+ cjmp LABEL9
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL9
+ nop dword [rax + rax]
+LABEL30:
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov rax, qword [rbx + CONST]
+ mov r12, qword [rax + CONST]
+ mov rdi, r12
+ call CONST
+ mov rsi, r12
+ mov rdi, rbp
+ mov rdx, rax
+ call CONST
+ mov esi, CONST
+ mov rdi, rbp
+ call CONST
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL30
+LABEL9:
+ pop rbx
+ pop rbp
+ pop r12
+ ret

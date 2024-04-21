@@ -1,0 +1,22 @@
+ .name sym.rl_dump_variables
+ .offset 00000000000c7450
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL4
+LABEL16:
+ mov edi, dword [rip + CONST]
+ call CONST
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret
+LABEL4:
+ mov rcx, qword [rip + CONST]
+ mov edx, CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ jmp LABEL16

@@ -1,0 +1,55 @@
+ .name sym.push_var_context
+ .offset 0000000000053a80
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdx
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ mov r13d, dword [rip + CONST]
+ call CONST
+ mov r12, rax
+ test r13d, r13d
+ cjmp LABEL12
+ and ebx, CONST
+ cjmp LABEL14
+LABEL12:
+ test rbp, rbp
+ cjmp LABEL16
+ mov eax, dword [rbp + CONST]
+ mov qword [r12 + CONST], rbp
+ test eax, eax
+ cjmp LABEL20
+ xor edx, edx
+ lea rsi, [rip + CONST]
+ mov rdi, rbp
+ call CONST
+LABEL20:
+ or dword [r12 + CONST], CONST
+LABEL16:
+ mov rax, qword [rip + CONST]
+ mov qword [rip + CONST], r12
+ mov qword [r12 + CONST], rax
+ mov qword [rax + CONST], r12
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL14:
+ cmp qword [rip + CONST], rbp
+ cjmp LABEL12
+ test rbp, rbp
+ cjmp LABEL16
+ mov edx, dword [rip + CONST]
+ lea rax, [rip + CONST]
+ lea rdi, [rip + CONST]
+ test edx, edx
+ cmove rdi, rax
+ call CONST
+ jmp LABEL16

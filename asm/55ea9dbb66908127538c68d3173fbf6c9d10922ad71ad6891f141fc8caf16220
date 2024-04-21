@@ -1,0 +1,27 @@
+ .name sym.xmalloc
+ .offset 0000000000090510
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdi
+ push r12
+ sub rsp, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL8
+ add rsp, CONST
+ mov rax, r12
+ pop r12
+ pop r13
+ ret
+LABEL8:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdx, r13
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ xor eax, eax
+ call CONST

@@ -1,0 +1,59 @@
+ .name fcn.000037d0
+ .offset 00000000000037d0
+ .file apt-config
+ endbr64
+ push r12
+ lea rsi, [rip + CONST]
+ mov r12, rdi
+ lea rdi, [rip + CONST]
+ push rbp
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rax, [rip + CONST]
+ mov qword [rsp], rax
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ lea rdi, [rip + CONST]
+ lea rsi, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov qword [r12], CONST
+ mov edi, CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [rsp + CONST], rax
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ mov qword [rsp + CONST], CONST
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ lea rdx, [rax + CONST]
+ mov qword [r12], rax
+ movdqa xmm0, xmmword [rsp]
+ mov qword [r12 + CONST], rdx
+ movdqa xmm1, xmmword [rsp + CONST]
+ movdqa xmm2, xmmword [rsp + CONST]
+ mov qword [rax + CONST], rcx
+ mov qword [r12 + CONST], rdx
+ movdqa xmm3, xmmword [rsp + CONST]
+ movups xmmword [rax], xmm0
+ movups xmmword [rax + CONST], xmm1
+ movups xmmword [rax + CONST], xmm2
+ movups xmmword [rax + CONST], xmm3
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL48
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL48:
+ call CONST

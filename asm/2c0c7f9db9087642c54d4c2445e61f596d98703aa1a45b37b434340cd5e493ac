@@ -1,0 +1,23 @@
+ .name sym._rl_current_display_line
+ .offset 00000000000ce560
+ .file bash
+ endbr64
+ mov ecx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ mov rsi, qword [rip + CONST]
+ sub eax, ecx
+ cmp qword [rip + CONST], rsi
+ cjmp LABEL6
+LABEL16:
+ xor r8d, r8d
+ test eax, eax
+ cjmp LABEL9
+ cdq
+ idiv ecx
+ lea r8d, [rax + CONST]
+LABEL9:
+ mov eax, r8d
+ ret
+LABEL6:
+ sub eax, dword [rip + CONST]
+ jmp LABEL16

@@ -1,0 +1,22 @@
+ .name sym.rl_replace_from_history
+ .offset 00000000000d6590
+ .file bash
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov rdi, qword [rdi]
+ xor esi, esi
+ call CONST
+ mov rax, qword [rbx + CONST]
+ mov edx, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ test edx, edx
+ cjmp LABEL13
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+LABEL13:
+ pop rbx
+ ret

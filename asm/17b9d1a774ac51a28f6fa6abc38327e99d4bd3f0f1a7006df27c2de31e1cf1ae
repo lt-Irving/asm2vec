@@ -1,0 +1,30 @@
+ .name sym.find_token_in_alist
+ .offset 0000000000089250
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, qword [rsi]
+ test rbp, rbp
+ cjmp LABEL4
+ add rsi, CONST
+ jmp LABEL6
+LABEL12:
+ mov rbp, qword [rsi]
+ add rsi, CONST
+ test rbp, rbp
+ cjmp LABEL4
+LABEL6:
+ cmp dword [rsi + CONST], edi
+ cjmp LABEL12
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST
+LABEL4:
+ xor eax, eax
+ pop rbp
+ ret

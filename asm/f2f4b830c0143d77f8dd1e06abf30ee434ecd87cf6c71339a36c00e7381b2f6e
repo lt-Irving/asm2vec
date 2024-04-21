@@ -1,0 +1,61 @@
+ .name fcn.00003a30
+ .offset 0000000000003a30
+ .file base64
+ endbr64
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13, rdi
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, r8
+ push rbx
+ mov rbx, rcx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rax, rdx
+ shr rax, CONST
+ lea rdi, [rax + rax*CONST + CONST]
+ mov qword [rsp + CONST], rdi
+ call CONST
+ mov qword [rbx], rax
+ test rax, rax
+ cjmp LABEL22
+ mov rcx, rax
+ lea r8, [rsp + CONST]
+ mov rdx, r12
+ mov rsi, r14
+ mov rdi, r13
+ call CONST
+ test al, al
+ cjmp LABEL30
+ test rbp, rbp
+ cjmp LABEL22
+ mov rdx, qword [rsp + CONST]
+ mov qword [rbp], rdx
+LABEL46:
+ mov rbx, qword [rsp + CONST]
+ xor rbx, qword fs:[CONST]
+ cjmp LABEL37
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL22:
+ mov eax, CONST
+ jmp LABEL46
+LABEL30:
+ mov rdi, qword [rbx]
+ mov byte [rsp + CONST], al
+ call CONST
+ mov qword [rbx], CONST
+ movzx eax, byte [rsp + CONST]
+ jmp LABEL46
+LABEL37:
+ call CONST

@@ -1,0 +1,75 @@
+ .name sym.find_variable_nameref
+ .offset 000000000004dd10
+ .file bash
+ endbr64
+ push r13
+ mov r13, rdi
+ push r12
+ mov r12, rdi
+ push rbp
+ mov ebp, CONST
+ push rbx
+ sub rsp, CONST
+ jmp LABEL9
+LABEL35:
+ mov rdi, qword [r12 + CONST]
+ test rdi, rdi
+ cjmp LABEL12
+ cmp byte [rdi], CONST
+ cjmp LABEL12
+ mov ecx, dword [rip + CONST]
+ xor esi, esi
+ test ecx, ecx
+ cjmp LABEL18
+ xor esi, esi
+ mov eax, dword [rip + CONST]
+ or eax, dword [rip + CONST]
+ setne sil
+LABEL18:
+ call CONST
+ mov rbx, rax
+ cmp r13, rax
+ cjmp LABEL26
+ cmp r12, rax
+ cjmp LABEL26
+ mov r12, rax
+LABEL9:
+ test r12, r12
+ cjmp LABEL12
+ test byte [r12 + CONST], CONST
+ cjmp LABEL33
+ sub ebp, CONST
+ cjmp LABEL35
+LABEL12:
+ xor r12d, r12d
+LABEL33:
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL26:
+ mov edx, CONST
+ mov rbp, qword [r13]
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ call CONST
+ mov rdi, rax
+ mov rsi, rbp
+ xor eax, eax
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL12
+ mov eax, dword [rbx + CONST]
+ test eax, eax
+ cjmp LABEL12
+ mov rdi, qword [rbx]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST

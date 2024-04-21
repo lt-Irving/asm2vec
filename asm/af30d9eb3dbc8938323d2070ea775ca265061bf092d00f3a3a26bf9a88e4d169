@@ -1,0 +1,24 @@
+ .name sym.print_var_list
+ .offset 000000000004da10
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbx
+ mov rbx, rdi
+ jmp LABEL5
+LABEL11:
+ add rbx, CONST
+LABEL5:
+ mov rdi, qword [rbx]
+ test rdi, rdi
+ cjmp LABEL9
+ test byte [rdi + CONST], CONST
+ cjmp LABEL11
+ call CONST
+ jmp LABEL11
+LABEL9:
+ pop rbx
+ ret
+LABEL2:
+ ret

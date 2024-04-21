@@ -1,0 +1,23 @@
+ .name fcn.0000ef20
+ .offset 000000000000ef20
+ .file diff
+ mov rax, qword [rsi + CONST]
+ lea rdx, [rax + rdx + CONST]
+ lea r9, [rax + rcx + CONST]
+ mov rax, qword [rip + CONST]
+ cmp rdx, r9
+ cjmp LABEL5
+ movsx r8d, dil
+ mov rcx, rdx
+ mov rdi, rax
+ mov esi, CONST
+ lea rdx, [rip + CONST]
+ xor eax, eax
+ jmp CONST
+LABEL5:
+ mov rdi, rax
+ mov rcx, r9
+ mov esi, CONST
+ xor eax, eax
+ lea rdx, [rip + CONST]
+ jmp CONST

@@ -1,0 +1,57 @@
+ .name sym.redirection_expand
+ .offset 000000000008b810
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ call CONST
+ mov rdi, rax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ or dword [rdi + CONST], CONST
+LABEL8:
+ xor esi, esi
+ call CONST
+ lea rdi, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov r12, rax
+ call CONST
+ mov rdi, r12
+ call CONST
+ mov ebx, dword [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov rbp, rax
+ call CONST
+ mov rdi, r12
+ mov dword [rip + CONST], ebx
+ call CONST
+ test rbp, rbp
+ cjmp LABEL28
+ cmp qword [rbp], CONST
+ mov rdi, rbp
+ cjmp LABEL31
+ call CONST
+ mov rdi, rbp
+ mov r12, rax
+ call CONST
+LABEL49:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL31:
+ call CONST
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov rax, r12
+ pop r12
+ ret
+LABEL28:
+ xor r12d, r12d
+ jmp LABEL49

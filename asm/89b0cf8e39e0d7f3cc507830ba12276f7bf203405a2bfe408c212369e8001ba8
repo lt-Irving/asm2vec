@@ -1,0 +1,42 @@
+ .name fcn.000051d0
+ .offset 00000000000051d0
+ .file df
+ push r12
+ push rbp
+ push rbx
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ sete al
+ test rdi, rdi
+ sete r12b
+ or r12b, al
+ cjmp LABEL9
+ mov rbp, rdi
+LABEL18:
+ mov rsi, qword [rbx]
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL18
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL9:
+ xor r12d, r12d
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret
+LABEL15:
+ mov r12d, CONST
+ pop rbx
+ pop rbp
+ mov eax, r12d
+ pop r12
+ ret

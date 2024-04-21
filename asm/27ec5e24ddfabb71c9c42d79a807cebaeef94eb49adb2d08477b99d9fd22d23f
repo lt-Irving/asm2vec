@@ -1,0 +1,28 @@
+ .name fcn.00015950
+ .offset 0000000000015950
+ .file diff
+ mov rax, qword [rsi]
+ test rdi, rdi
+ cjmp LABEL2
+ movabs rdx, CONST
+ cmp rax, rdx
+ cjmp LABEL5
+ mov rdx, rax
+ shr rdx, CONST
+ lea rax, [rdx + rax + CONST]
+LABEL18:
+ mov qword [rsi], rax
+ mov rsi, rax
+ jmp CONST
+LABEL2:
+ test rax, rax
+ cjmp LABEL13
+ mov eax, CONST
+ mov qword [rsi], rax
+ mov rsi, rax
+ jmp CONST
+LABEL13:
+ cjmp LABEL18
+LABEL5:
+ push rax
+ call CONST

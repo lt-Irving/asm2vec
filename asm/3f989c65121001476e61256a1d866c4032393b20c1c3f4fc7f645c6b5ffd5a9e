@@ -1,0 +1,31 @@
+ .name fcn.00007ca0
+ .offset 0000000000007ca0
+ .file chfn
+ endbr64
+ sub rsp, CONST
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL3
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+LABEL21:
+ mov rdi, qword [rax + CONST]
+ test rdi, rdi
+ cjmp LABEL6
+ lea rsi, [rip + CONST]
+ call CONST
+ test eax, eax
+ sete al
+ add rsp, CONST
+ ret
+LABEL3:
+ mov qword [rsp + CONST], rdi
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ test rax, rax
+ cjmp LABEL21
+LABEL6:
+ xor eax, eax
+ add rsp, CONST
+ ret

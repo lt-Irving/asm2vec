@@ -1,0 +1,17 @@
+ .name sym.save_token_state
+ .offset 0000000000032910
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov edx, dword [rip + CONST]
+ mov dword [rax], edx
+ mov edx, dword [rip + CONST]
+ mov dword [rax + CONST], edx
+ mov edx, dword [rip + CONST]
+ mov dword [rax + CONST], edx
+ mov edx, dword [rip + CONST]
+ mov dword [rax + CONST], edx
+ add rsp, CONST
+ ret

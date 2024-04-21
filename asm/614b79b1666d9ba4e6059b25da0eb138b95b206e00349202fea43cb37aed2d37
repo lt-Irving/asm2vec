@@ -1,0 +1,20 @@
+ .name sym.compspec_create
+ .offset 0000000000090060
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, CONST
+ call CONST
+ mov dword [rax], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ add rsp, CONST
+ ret

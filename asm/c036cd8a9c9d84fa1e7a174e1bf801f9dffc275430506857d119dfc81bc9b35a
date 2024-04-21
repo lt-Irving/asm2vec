@@ -1,0 +1,57 @@
+ .name sym.pop_scope
+ .offset 0000000000051db0
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rbp, qword [rip + CONST]
+ test byte [rbp + CONST], CONST
+ cjmp LABEL6
+ mov rax, qword [rbp + CONST]
+ mov ebx, edi
+ test rax, rax
+ cjmp LABEL10
+ mov qword [rax + CONST], CONST
+LABEL10:
+ mov rdi, qword [rbp]
+ mov qword [rip + CONST], rax
+ test rdi, rdi
+ cjmp LABEL15
+ call CONST
+LABEL15:
+ mov rdi, qword [rbp + CONST]
+ test rdi, rdi
+ cjmp LABEL19
+ test ebx, ebx
+ cjmp LABEL21
+ lea rsi, [rip + CONST]
+ call CONST
+LABEL37:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+LABEL19:
+ mov rdi, rbp
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ pop rbx
+ mov rdi, rax
+ pop rbp
+ jmp CONST
+LABEL21:
+ lea rsi, [rip + CONST]
+ call CONST
+ jmp LABEL37
+LABEL6:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ add rsp, CONST
+ mov rdi, rax
+ pop rbx
+ xor eax, eax
+ pop rbp
+ jmp CONST

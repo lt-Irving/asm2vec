@@ -1,0 +1,18 @@
+ .name fcn.000590c0
+ .offset 00000000000590c0
+ .file bash
+ endbr64
+ cmp edx, CONST
+ cjmp LABEL2
+ cmp dword [rdi + CONST], edx
+ cjmp LABEL2
+ xor eax, eax
+ ret
+LABEL2:
+ sub rsp, CONST
+ mov rdx, qword [rip + CONST]
+ mov edi, ecx
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

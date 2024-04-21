@@ -1,0 +1,28 @@
+ .name sym.sv_locale
+ .offset 000000000004ec30
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ cmp byte [rbp], CONST
+ mov rdi, rbp
+ mov rsi, rax
+ cjmp LABEL7
+ cmp byte [rbp + CONST], CONST
+ cjmp LABEL9
+LABEL7:
+ call CONST
+LABEL20:
+ test eax, eax
+ cjmp LABEL12
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL12
+ mov dword [rip + CONST], CONST
+LABEL12:
+ pop rbp
+ ret
+LABEL9:
+ call CONST
+ jmp LABEL20

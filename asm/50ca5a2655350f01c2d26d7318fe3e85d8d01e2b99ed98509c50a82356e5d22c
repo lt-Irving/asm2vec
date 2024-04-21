@@ -1,0 +1,37 @@
+ .name sym.var_lookup
+ .offset 000000000004db70
+ .file bash
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+ nop dword [rax + rax]
+LABEL22:
+ mov rbp, qword [rbx + CONST]
+ xor edx, edx
+ mov rdi, r12
+ mov rsi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ mov rax, qword [rax + CONST]
+ mov qword [rip + CONST], rbp
+ test rax, rax
+ cjmp LABEL19
+LABEL15:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL22
+ xor eax, eax
+LABEL19:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ xor eax, eax
+ ret

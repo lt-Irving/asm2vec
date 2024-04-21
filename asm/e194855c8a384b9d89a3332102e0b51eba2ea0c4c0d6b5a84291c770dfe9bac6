@@ -1,0 +1,27 @@
+ .name fcn.00003f10
+ .offset 0000000000003f10
+ .file csplit
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, qword [rsi]
+ test rbx, rbx
+ cjmp LABEL7
+ nop word [rax + rax]
+LABEL13:
+ mov rdi, rbx
+ mov rbx, qword [rbx + CONST]
+ call CONST
+ test rbx, rbx
+ cjmp LABEL13
+LABEL7:
+ mov qword [r12], CONST
+ mov rdi, qword [rbp]
+ call CONST
+ pop rbx
+ mov qword [rbp], CONST
+ pop rbp
+ pop r12
+ ret

@@ -1,0 +1,52 @@
+ .name sym.setenv
+ .offset 00000000000afbb0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL5
+ cmp byte [rdi], CONST
+ mov rbp, rdi
+ cjmp LABEL5
+ mov r12, rsi
+ mov esi, CONST
+ mov ebx, edx
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ test ebx, ebx
+ cjmp LABEL16
+LABEL36:
+ xor edx, edx
+ mov rsi, r12
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL22
+LABEL35:
+ mov edx, dword [rax + CONST]
+ and dh, CONST
+ or edx, CONST
+ mov dword [rax + CONST], edx
+ xor eax, eax
+LABEL40:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL16:
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL35
+ jmp LABEL36
+LABEL5:
+ call CONST
+ mov dword [rax], CONST
+ mov eax, CONST
+ jmp LABEL40
+LABEL22:
+ mov eax, CONST
+ jmp LABEL40

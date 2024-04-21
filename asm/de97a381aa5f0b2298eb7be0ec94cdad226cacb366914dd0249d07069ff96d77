@@ -1,0 +1,30 @@
+ .name sym.rl_vi_search
+ .offset 00000000000b95c0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ cmp esi, CONST
+ cjmp LABEL4
+ cmp esi, CONST
+ cjmp LABEL6
+ call CONST
+ mov edi, ebp
+ mov esi, CONST
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL4:
+ call CONST
+ mov edi, ebp
+ mov esi, CONST
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL6:
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret

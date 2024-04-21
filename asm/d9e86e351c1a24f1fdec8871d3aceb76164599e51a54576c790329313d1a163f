@@ -1,0 +1,17 @@
+ .name fcn.000147d0
+ .offset 00000000000147d0
+ .file dash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ add rsp, CONST
+ mov rdx, r12
+ mov rdi, rbp
+ mov rsi, rax
+ pop rbp
+ pop r12
+ jmp CONST

@@ -1,0 +1,21 @@
+ .name sym.rl_vi_start_inserting
+ .offset 00000000000b8db0
+ .file bash
+ endbr64
+ push rbx
+ mov ebx, edi
+ mov dword [rip + CONST], edi
+ mov dword [rip + CONST], esi
+ mov dword [rip + CONST], edx
+ call CONST
+ lea rax, [rip + CONST]
+ mov dword [rip + CONST], ebx
+ mov qword [rip + CONST], rax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL12
+ pop rbx
+ ret
+LABEL12:
+ pop rbx
+ jmp CONST

@@ -1,0 +1,75 @@
+ .name sym.rl_bind_keyseq_if_unbound_in_map
+ .offset 00000000000c4510
+ .file bash
+LABEL63:
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13, rdx
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ lea rdi, [rax + rax + CONST]
+ call CONST
+ lea rdx, [rsp + CONST]
+ mov rdi, r12
+ mov rsi, rax
+ mov rbp, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL21
+ movsxd rsi, dword [rsp + CONST]
+ xor ecx, ecx
+ mov rdx, r13
+ mov rdi, rbp
+ call CONST
+ mov rdi, rbp
+ mov rbx, rax
+ call CONST
+ test rbx, rbx
+ sete dl
+ cmp rbx, qword [rip + CONST]
+ sete al
+ or dl, al
+ cjmp LABEL35
+ cmp rbx, qword [rip + CONST]
+ mov eax, CONST
+ cjmp LABEL35
+LABEL54:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL41
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL35:
+ mov rcx, r13
+ mov rdx, r14
+ mov rsi, r12
+ xor edi, edi
+ call CONST
+ jmp LABEL54
+LABEL21:
+ mov rdi, rbp
+ call CONST
+ mov eax, CONST
+ jmp LABEL54
+LABEL41:
+ call CONST
+ endbr64
+ test rdi, rdi
+ cjmp LABEL62
+ jmp LABEL63
+LABEL62:
+ xor eax, eax
+ ret

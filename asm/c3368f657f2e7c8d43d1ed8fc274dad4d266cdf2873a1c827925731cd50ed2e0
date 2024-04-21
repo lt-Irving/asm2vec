@@ -1,0 +1,38 @@
+ .name sym.reset_parser
+ .offset 0000000000032b60
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ test byte [rip + CONST], CONST
+ cjmp LABEL5
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+LABEL5:
+ cmp qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ cjmp LABEL11
+ call CONST
+LABEL11:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL15
+ call CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+LABEL15:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL22
+ call CONST
+LABEL22:
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

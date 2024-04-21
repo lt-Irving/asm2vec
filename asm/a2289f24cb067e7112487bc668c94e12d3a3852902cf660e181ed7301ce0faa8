@@ -1,0 +1,111 @@
+ .name sym.hash_copy
+ .offset 00000000000737b0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov qword [rsp + CONST], rsi
+ test rdi, rdi
+ cjmp LABEL10
+ mov r12, rdi
+ mov edi, dword [rdi + CONST]
+ call CONST
+ mov r15, rax
+ mov eax, dword [r12 + CONST]
+ test eax, eax
+ cjmp LABEL17
+ xor ebp, ebp
+ nop dword [rax]
+LABEL73:
+ mov rax, qword [r12]
+ mov r13, qword [rax + rbp*CONST]
+ mov rax, qword [r15]
+ lea rax, [rax + rbp*CONST]
+ mov qword [rsp + CONST], rax
+ test r13, r13
+ cjmp LABEL26
+ xor r14d, r14d
+ jmp LABEL28
+LABEL62:
+ call CONST
+ mov qword [r14], rax
+ mov r14, rax
+LABEL66:
+ mov rsi, qword [r13 + CONST]
+ mov rdi, rsi
+ mov qword [rsp + CONST], rsi
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ mov rdi, rax
+ call CONST
+ mov r8, qword [r13 + CONST]
+ mov qword [r14 + CONST], rax
+ test r8, r8
+ cjmp LABEL44
+ mov rax, qword [rsp + CONST]
+ mov rdi, r8
+ test rax, rax
+ cjmp LABEL48
+ call rax
+ mov r8, rax
+LABEL44:
+ mov eax, dword [r13 + CONST]
+ mov qword [r14 + CONST], r8
+ mov dword [r14 + CONST], eax
+ mov eax, dword [r13 + CONST]
+ mov qword [r14], CONST
+ mov r13, qword [r13]
+ mov dword [r14 + CONST], eax
+ test r13, r13
+ cjmp LABEL59
+LABEL28:
+ mov edi, CONST
+ test r14, r14
+ cjmp LABEL62
+ call CONST
+ mov rbx, rax
+ mov r14, rax
+ jmp LABEL66
+LABEL26:
+ xor ebx, ebx
+ nop word [rax + rax]
+LABEL59:
+ mov rax, qword [rsp + CONST]
+ add rbp, CONST
+ mov qword [rax], rbx
+ cmp dword [r12 + CONST], ebp
+ cjmp LABEL73
+LABEL17:
+ mov eax, dword [r12 + CONST]
+ mov dword [r15 + CONST], eax
+LABEL96:
+ add rsp, CONST
+ mov rax, r15
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL48:
+ mov qword [rsp + CONST], r8
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov r8, qword [rsp + CONST]
+ mov rdi, rax
+ mov rsi, r8
+ call CONST
+ mov r8, rax
+ jmp LABEL44
+LABEL10:
+ xor r15d, r15d
+ jmp LABEL96

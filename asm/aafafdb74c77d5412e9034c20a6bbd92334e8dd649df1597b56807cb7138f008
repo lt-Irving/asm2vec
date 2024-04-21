@@ -1,0 +1,26 @@
+ .name sym.show_func_attributes
+ .offset 00000000000a0650
+ .file bash
+ endbr64
+ push r12
+ mov r12d, esi
+ call CONST
+ mov rdi, rax
+ mov eax, CONST
+ test rdi, rdi
+ cjmp LABEL7
+ mov rax, qword [rip + CONST]
+ lea rdx, [rip + CONST]
+ cmp rax, rdx
+ lea rdx, [rip + CONST]
+ sete sil
+ cmp rax, rdx
+ mov edx, r12d
+ sete al
+ or esi, eax
+ movzx esi, sil
+ call CONST
+ xor eax, eax
+LABEL7:
+ pop r12
+ ret

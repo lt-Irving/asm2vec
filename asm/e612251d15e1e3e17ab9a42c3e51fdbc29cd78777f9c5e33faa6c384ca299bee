@@ -1,0 +1,49 @@
+ .name fcn.000051bf
+ .offset 00000000000051bf
+ .file apt-cache
+LABEL20:
+ mov rsi, qword [rsp + CONST]
+ mov rdi, qword [rsp + CONST]
+ call CONST
+LABEL36:
+ mov rdi, qword [rsp + CONST]
+LABEL40:
+ cmp rdi, qword [rsp + CONST]
+ cjmp LABEL5
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ mov rdi, rbx
+ call CONST
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL15
+ call CONST
+LABEL15:
+ mov rdi, qword [rsp + CONST]
+ lea rax, [rsp + CONST]
+ cmp rdi, rax
+ cjmp LABEL20
+ call CONST
+ jmp LABEL20
+ endbr64
+ mov rbx, rax
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ lea rax, [rip + CONST]
+ lea rdi, [rsp + CONST]
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov rdi, r15
+ call CONST
+ mov rsi, qword [rsp + CONST]
+ mov rdi, qword [rsp + CONST]
+ call CONST
+ jmp LABEL36
+LABEL5:
+ mov rbp, qword [rdi]
+ call CONST
+ mov rdi, rbp
+ jmp LABEL40

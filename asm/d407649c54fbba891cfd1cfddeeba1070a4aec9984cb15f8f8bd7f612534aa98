@@ -1,0 +1,25 @@
+ .name sym.reset_mail_files
+ .offset 0000000000074120
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ mov rax, qword [rip + CONST]
+ lea ecx, [rdx + CONST]
+ lea rdx, [rax + CONST]
+ lea rcx, [rdx + rcx*CONST]
+ jmp LABEL8
+LABEL17:
+ add rdx, CONST
+LABEL8:
+ mov rax, qword [rax]
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov dword [rax + CONST], CONST
+ mov rax, rdx
+ cmp rdx, rcx
+ cjmp LABEL17
+LABEL3:
+ ret

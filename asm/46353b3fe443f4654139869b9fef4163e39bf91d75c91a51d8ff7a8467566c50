@@ -1,0 +1,38 @@
+ .name sym.dirspell
+ .offset 00000000000b31f0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ lea rdi, [rax + rax*CONST + CONST]
+ shr rdi, CONST
+ add edi, CONST
+ movsxd rdi, edi
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL13
+ mov rsi, rax
+ mov rdi, rbp
+ xor eax, eax
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL19
+LABEL13:
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL19:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret

@@ -1,0 +1,22 @@
+ .name fcn.0000f0c0
+ .offset 000000000000f0c0
+ .file cp
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ call CONST
+ cmp byte [rax], CONST
+ mov rbx, rax
+ cmove rbx, rbp
+ mov rdi, rbx
+ call CONST
+ add rbx, rax
+ cmp byte [rbx], CONST
+ mov byte [rbx], CONST
+ setne al
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

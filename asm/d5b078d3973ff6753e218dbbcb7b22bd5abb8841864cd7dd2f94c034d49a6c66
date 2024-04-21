@@ -1,0 +1,45 @@
+ .name sym.group_member
+ .offset 000000000003fbf0
+ .file bash
+ endbr64
+ cmp dword [rip + CONST], edi
+ cjmp LABEL2
+ cmp dword [rip + CONST], edi
+ push rbx
+ mov ebx, edi
+ cjmp LABEL6
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL9
+ xor eax, eax
+ test edx, edx
+ cjmp LABEL12
+LABEL29:
+ mov rax, qword [rip + CONST]
+ sub edx, CONST
+ lea rdx, [rax + rdx*CONST + CONST]
+ nop word cs:[rax + rax]
+LABEL21:
+ cmp dword [rax], ebx
+ cjmp LABEL6
+ add rax, CONST
+ cmp rax, rdx
+ cjmp LABEL21
+ xor eax, eax
+LABEL12:
+ pop rbx
+ ret
+LABEL9:
+ call CONST
+ mov edx, dword [rip + CONST]
+ xor eax, eax
+ test edx, edx
+ cjmp LABEL29
+ jmp LABEL12
+LABEL6:
+ mov eax, CONST
+ pop rbx
+ ret
+LABEL2:
+ mov eax, CONST
+ ret

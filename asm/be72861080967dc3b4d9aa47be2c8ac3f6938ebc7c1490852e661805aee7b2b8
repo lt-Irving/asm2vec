@@ -1,0 +1,127 @@
+ .name fcn.00008820
+ .offset 0000000000008820
+ .file choom
+ endbr64
+ push r15
+ mov r15, rdx
+ push r14
+ mov r14, rsi
+ push r13
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ call CONST
+ movsxd rdx, eax
+ lea r13, [rbx + rdx + CONST]
+ cmp eax, CONST
+ cjmp LABEL15
+ lea rax, [rbx + CONST]
+ cmp word [rbx], CONST
+ cmove rbx, rax
+LABEL15:
+ mov rdx, r15
+ xor esi, esi
+ mov rdi, r14
+ call CONST
+ xor ebp, ebp
+ cmp rbx, r13
+ cjmp LABEL25
+ nop word [rax + rax]
+LABEL95:
+ movsx r12, byte [r13]
+ cmp r12b, CONST
+ cjmp LABEL29
+ movsx r12, byte [r13 + CONST]
+ sub r13, CONST
+LABEL29:
+ movsx eax, r12b
+ sub eax, CONST
+ cmp eax, CONST
+ cjmp LABEL35
+ call CONST
+ mov rax, qword [rax]
+ mov eax, dword [rax + r12*CONST]
+ lea ecx, [rax + CONST]
+ cmp ecx, CONST
+ cjmp LABEL41
+ sub eax, CONST
+LABEL35:
+ mov esi, eax
+ test al, CONST
+ cjmp LABEL45
+ mov rax, rbp
+ shr rax, CONST
+ cmp rax, r15
+ cjmp LABEL45
+ mov rax, rbp
+ mov edx, CONST
+ mov ecx, ebp
+ shr rax, CONST
+ shl rdx, cl
+ or qword [r14 + rax*CONST], rdx
+LABEL45:
+ test sil, CONST
+ cjmp LABEL57
+ lea eax, [rbp + CONST]
+ mov rdi, rax
+ mov rcx, rax
+ shr rdi, CONST
+ cmp rdi, r15
+ cjmp LABEL57
+ shr rax, CONST
+ mov edx, CONST
+ shl rdx, cl
+ or qword [r14 + rax*CONST], rdx
+LABEL57:
+ test sil, CONST
+ cjmp LABEL69
+ lea eax, [rbp + CONST]
+ mov rdi, rax
+ mov rcx, rax
+ shr rdi, CONST
+ cmp rdi, r15
+ cjmp LABEL69
+ shr rax, CONST
+ mov edx, CONST
+ shl rdx, cl
+ or qword [r14 + rax*CONST], rdx
+LABEL69:
+ and esi, CONST
+ cjmp LABEL81
+ lea eax, [rbp + CONST]
+ mov rsi, rax
+ mov rcx, rax
+ shr rsi, CONST
+ cmp rsi, r15
+ cjmp LABEL81
+ shr rax, CONST
+ mov edx, CONST
+ shl rdx, cl
+ or qword [r14 + rax*CONST], rdx
+LABEL81:
+ sub r13, CONST
+ add rbp, CONST
+ cmp rbx, r13
+ cjmp LABEL95
+LABEL25:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL41:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret

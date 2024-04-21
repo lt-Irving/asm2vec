@@ -1,0 +1,13 @@
+ .name fcn.00007270
+ .offset 0000000000007270
+ .file dash
+ endbr64
+ push rax
+ pop rax
+ sub rsp, CONST
+ add dword [rip + CONST], CONST
+ mov dword [rip + CONST], edi
+ mov rdi, qword [rip + CONST]
+ mov esi, CONST
+ call CONST
+ nop dword [rax + rax]

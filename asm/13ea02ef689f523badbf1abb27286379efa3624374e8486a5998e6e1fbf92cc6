@@ -1,0 +1,35 @@
+ .name sym.ttonechar
+ .offset 00000000000b0370
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov rax, qword [rip + CONST]
+ mov rsi, rsp
+ xor edi, edi
+ movdqa xmm0, xmmword [rip + CONST]
+ movdqa xmm1, xmmword [rip + CONST]
+ movdqa xmm2, xmmword [rip + CONST]
+ mov qword [rsp + CONST], rax
+ mov eax, dword [rip + CONST]
+ movaps xmmword [rsp], xmm0
+ mov dword [rsp + CONST], eax
+ movaps xmmword [rsp + CONST], xmm1
+ movaps xmmword [rsp + CONST], xmm2
+ call CONST
+LABEL27:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL23
+ add rsp, CONST
+ ret
+LABEL7:
+ mov eax, CONST
+ jmp LABEL27
+LABEL23:
+ call CONST

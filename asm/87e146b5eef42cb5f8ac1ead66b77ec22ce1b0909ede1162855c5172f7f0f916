@@ -1,0 +1,13 @@
+ .name sym.rl_stop_output
+ .offset 00000000000be330
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ xor esi, esi
+ mov edi, eax
+ call CONST
+ xor eax, eax
+ add rsp, CONST
+ ret

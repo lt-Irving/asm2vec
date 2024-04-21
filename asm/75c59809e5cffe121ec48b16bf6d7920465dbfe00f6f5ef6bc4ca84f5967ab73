@@ -1,0 +1,43 @@
+ .name fcn.00017a30
+ .offset 0000000000017a30
+ .file diff
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL2
+ mov r8, qword [rsi]
+ sub rdi, CONST
+ xor esi, esi
+LABEL29:
+ cmp rsi, rdi
+ cjmp LABEL7
+ lea rcx, [rsi + rdi]
+ shr rcx, CONST
+ cmp rdx, qword [r8 + rcx*CONST]
+ cjmp LABEL11
+ jmp LABEL12
+LABEL19:
+ lea rax, [rsi + rcx]
+ shr rax, CONST
+ cmp qword [r8 + rax*CONST], rdx
+ cjmp LABEL16
+ mov rcx, rax
+LABEL11:
+ cmp rsi, rcx
+ cjmp LABEL19
+LABEL7:
+ xor eax, eax
+ cmp rdx, qword [r8 + rsi*CONST]
+ cjmp LABEL22
+LABEL2:
+ ret
+LABEL12:
+ mov rax, rcx
+ mov rcx, rdi
+ nop dword [rax]
+LABEL16:
+ lea rsi, [rax + CONST]
+ mov rdi, rcx
+ jmp LABEL29
+LABEL22:
+ lea rax, [rsi + CONST]
+ ret

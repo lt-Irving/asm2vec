@@ -1,0 +1,55 @@
+ .name sym._rl_internal_char_cleanup
+ .offset 00000000000b7410
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL4
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL7
+LABEL4:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ cmp eax, dword [rip + CONST]
+ cjmp LABEL12
+LABEL10:
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL15
+ call qword [rip + CONST]
+ mov ecx, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test ecx, ecx
+ cjmp LABEL20
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL23
+LABEL20:
+ add rsp, CONST
+ ret
+LABEL15:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL20
+LABEL23:
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL20
+ mov eax, dword [rip + CONST]
+ or eax, dword [rip + CONST]
+ cjmp LABEL20
+ add rsp, CONST
+ jmp CONST
+LABEL12:
+ call qword [rip + CONST]
+ mov esi, CONST
+ mov edi, CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ jmp LABEL10
+LABEL7:
+ call CONST
+ jmp LABEL4

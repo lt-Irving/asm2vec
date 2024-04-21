@@ -1,0 +1,26 @@
+ .name sym.sh_nojobs
+ .offset 00000000000927e0
+ .file bash
+ endbr64
+ push rbp
+ test rdi, rdi
+ cjmp LABEL3
+ mov rbp, rdi
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ xor eax, eax
+ jmp CONST
+LABEL3:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ pop rbp
+ mov rdi, rax
+ xor eax, eax
+ jmp CONST

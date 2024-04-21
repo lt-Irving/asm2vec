@@ -1,0 +1,31 @@
+ .name fcn.000117e0
+ .offset 00000000000117e0
+ .file diff
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL9
+ test eax, eax
+ cjmp LABEL11
+LABEL20:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ mov rax, rbx
+ cjmp LABEL15
+ add rsp, CONST
+ pop rbx
+ ret
+LABEL11:
+ mov rbx, qword [rsp]
+ jmp LABEL20
+LABEL9:
+ xor ebx, ebx
+ jmp LABEL20
+LABEL15:
+ call CONST

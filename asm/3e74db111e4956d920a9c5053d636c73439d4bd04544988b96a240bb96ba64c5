@@ -1,0 +1,94 @@
+ .name sym.timeval_to_cpu
+ .offset 00000000000b0f80
+ .file bash
+ endbr64
+ push rbx
+ mov rcx, qword [rdx + CONST]
+ add rcx, qword [rsi + CONST]
+ mov r8, qword [rdx]
+ add r8, qword [rsi]
+ cmp rcx, CONST
+ cjmp LABEL7
+ sub rcx, CONST
+ add r8, CONST
+LABEL7:
+ mov r9, qword [rdi]
+ mov rsi, qword [rdi + CONST]
+ mov r10d, CONST
+ movabs rbx, CONST
+ movabs r11, CONST
+LABEL60:
+ cmp r9, CONST
+ cjmp LABEL16
+ cmp r8, CONST
+ cjmp LABEL16
+ mov rax, rcx
+ lea rdi, [r8 + r8*CONST]
+ imul rbx
+ mov rax, rcx
+ sar rax, CONST
+ sar rdx, CONST
+ sub rdx, rax
+ lea r8, [rdx + rdi*CONST]
+ lea rdi, [rcx + rcx*CONST]
+ add rdi, rdi
+ mov rax, rdi
+ imul r11
+ mov rax, rdi
+ sar rax, CONST
+ sar rdx, CONST
+ mov rcx, rdx
+ sub rcx, rax
+ mov rax, rsi
+ imul rcx, rcx, CONST
+ imul rbx
+ mov rax, rsi
+ sar rax, CONST
+ sub rdi, rcx
+ sar rdx, CONST
+ mov rcx, rdi
+ lea rdi, [r9 + r9*CONST]
+ sub rdx, rax
+ lea r9, [rdx + rdi*CONST]
+ lea rdi, [rsi + rsi*CONST]
+ add rdi, rdi
+ mov rax, rdi
+ imul r11
+ mov rax, rdi
+ sar rax, CONST
+ sar rdx, CONST
+ mov rsi, rdx
+ sub rsi, rax
+ imul rsi, rsi, CONST
+ sub rdi, rsi
+ mov rsi, rdi
+ sub r10d, CONST
+ cjmp LABEL60
+LABEL16:
+ movabs rsi, CONST
+ mov ecx, CONST
+LABEL68:
+ cmp r8, CONST
+ cjmp LABEL64
+ lea r8, [r8 + r8*CONST]
+ add r8, r8
+LABEL83:
+ sub ecx, CONST
+ cjmp LABEL68
+ xor eax, eax
+ test r9, r9
+ cjmp LABEL71
+ mov rax, r8
+ cqo
+ idiv r9
+LABEL71:
+ pop rbx
+ ret
+LABEL64:
+ mov rax, r9
+ sar r9, CONST
+ imul rsi
+ sar rdx, CONST
+ sub rdx, r9
+ mov r9, rdx
+ jmp LABEL83

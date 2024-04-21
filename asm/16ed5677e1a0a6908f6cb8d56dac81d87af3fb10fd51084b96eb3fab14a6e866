@@ -1,0 +1,40 @@
+ .name fcn.00010d70
+ .offset 0000000000010d70
+ .file diff
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, rsi
+ push rbx
+ call CONST
+ mov rsi, qword [rax]
+ test rsi, rsi
+ cjmp LABEL8
+ mov rbx, rax
+ jmp LABEL10
+LABEL20:
+ mov rsi, qword [rbx]
+LABEL10:
+ cmp rsi, rbp
+ cjmp LABEL13
+ mov rdi, rbp
+ call qword [r12 + CONST]
+ test al, al
+ cjmp LABEL17
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL20
+LABEL8:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL17:
+ mov rbp, qword [rbx]
+LABEL13:
+ mov rax, rbp
+ pop rbx
+ pop rbp
+ pop r12
+ ret

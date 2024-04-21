@@ -1,0 +1,62 @@
+ .name sym.exit_shell
+ .offset 0000000000030ef0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ test byte [rip + CONST], CONST
+ cjmp LABEL8
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL8
+ call rax
+LABEL8:
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+LABEL47:
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL19
+LABEL45:
+ call CONST
+ mov ecx, dword [rip + CONST]
+ test ecx, ecx
+ cjmp LABEL23
+LABEL42:
+ call CONST
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL27
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL29
+LABEL27:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL32
+LABEL40:
+ mov edi, ebp
+ call CONST
+LABEL29:
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL27
+ call CONST
+ jmp LABEL27
+LABEL32:
+ call CONST
+ jmp LABEL40
+LABEL23:
+ call CONST
+ jmp LABEL42
+LABEL19:
+ call CONST
+ mov ebp, eax
+ jmp LABEL45
+LABEL15:
+ call CONST
+ jmp LABEL47

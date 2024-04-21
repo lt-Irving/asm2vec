@@ -1,0 +1,19 @@
+ .name sym.strvec_len
+ .offset 00000000000b2a20
+ .file bash
+ endbr64
+ cmp qword [rdi], CONST
+ cjmp LABEL2
+ mov eax, CONST
+ nop
+LABEL8:
+ mov r8d, eax
+ add rax, CONST
+ cmp qword [rdi + rax*CONST + CONST], CONST
+ cjmp LABEL8
+ mov eax, r8d
+ ret
+LABEL2:
+ xor r8d, r8d
+ mov eax, r8d
+ ret

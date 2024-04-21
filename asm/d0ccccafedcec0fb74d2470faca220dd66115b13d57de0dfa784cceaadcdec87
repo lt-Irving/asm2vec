@@ -1,0 +1,29 @@
+ .name fcn.00006060
+ .offset 0000000000006060
+ .file choom
+ endbr64
+ push r12
+ mov r12d, esi
+ mov rsi, rdx
+ mov rdx, rcx
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL10
+ add rsp, CONST
+ mov esi, r12d
+ mov rdi, rbp
+ mov rdx, rax
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL10:
+ call CONST
+ mov eax, dword [rax]
+ add rsp, CONST
+ pop rbp
+ pop r12
+ neg eax
+ ret

@@ -1,0 +1,130 @@
+ .name sym.u32toutf8
+ .offset 00000000000b6350
+ .file bash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ mov byte [rsi], dil
+ mov eax, CONST
+ add rsi, CONST
+LABEL18:
+ mov byte [rsi], CONST
+ ret
+LABEL2:
+ cmp edi, CONST
+ cjmp LABEL9
+ cmp edi, CONST
+ cjmp LABEL11
+ cmp edi, CONST
+ cjmp LABEL13
+ cmp edi, CONST
+ cjmp LABEL15
+ xor eax, eax
+ test edi, edi
+ cjmp LABEL18
+ mov eax, edi
+ add rsi, CONST
+ shr eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ shr eax, CONST
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ shr eax, CONST
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ shr eax, CONST
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ and edi, CONST
+ shr eax, CONST
+ or edi, CONST
+ and eax, CONST
+ mov byte [rsi + CONST], dil
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, CONST
+ jmp LABEL18
+LABEL9:
+ mov eax, edi
+ and edi, CONST
+ add rsi, CONST
+ shr eax, CONST
+ or edi, CONST
+ mov byte [rsi + CONST], dil
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, CONST
+ mov byte [rsi], CONST
+ ret
+LABEL13:
+ mov eax, edi
+ add rsi, CONST
+ shr eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ shr eax, CONST
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ and edi, CONST
+ shr eax, CONST
+ or edi, CONST
+ and eax, CONST
+ mov byte [rsi + CONST], dil
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, CONST
+ jmp LABEL18
+LABEL11:
+ mov eax, edi
+ add rsi, CONST
+ shr eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ and edi, CONST
+ shr eax, CONST
+ or edi, CONST
+ mov byte [rsi + CONST], dil
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, CONST
+ mov byte [rsi], CONST
+ ret
+LABEL15:
+ mov eax, edi
+ add rsi, CONST
+ shr eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ shr eax, CONST
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ shr eax, CONST
+ and eax, CONST
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, edi
+ and edi, CONST
+ shr eax, CONST
+ or edi, CONST
+ and eax, CONST
+ mov byte [rsi + CONST], dil
+ or eax, CONST
+ mov byte [rsi + CONST], al
+ mov eax, CONST
+ jmp LABEL18

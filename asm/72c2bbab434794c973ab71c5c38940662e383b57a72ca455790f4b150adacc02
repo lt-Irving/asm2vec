@@ -1,0 +1,34 @@
+ .name sym.bash_brace_completion
+ .offset 0000000000080f10
+ .file bash
+ endbr64
+ push r14
+ lea rax, [rip + CONST]
+ mov edi, CONST
+ push r13
+ mov r14, qword [rip + CONST]
+ push r12
+ mov r13, qword [rip + CONST]
+ push rbp
+ mov r12, qword [rip + CONST]
+ push rbx
+ mov rbp, qword [rip + CONST]
+ mov ebx, dword [rip + CONST]
+ mov qword [rip + CONST], rax
+ lea rax, [rip + CONST]
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov qword [rip + CONST], r14
+ mov qword [rip + CONST], r13
+ mov qword [rip + CONST], r12
+ mov qword [rip + CONST], rbp
+ mov dword [rip + CONST], ebx
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

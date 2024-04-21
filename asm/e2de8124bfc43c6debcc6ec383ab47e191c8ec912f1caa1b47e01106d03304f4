@@ -1,0 +1,36 @@
+ .name sym.copy_redirects
+ .offset 0000000000054440
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ xor eax, eax
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ nop dword [rax]
+LABEL15:
+ mov rdi, rbx
+ mov rbp, rax
+ call CONST
+ mov qword [rax], rbp
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL15
+ test rbp, rbp
+ cjmp LABEL17
+ add rsp, CONST
+ mov rdi, rax
+ xor eax, eax
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL17:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ xor eax, eax
+ ret

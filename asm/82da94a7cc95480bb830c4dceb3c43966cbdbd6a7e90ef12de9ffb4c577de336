@@ -1,0 +1,66 @@
+ .name method.void_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___._M_construct_char__char__char__std::forward_iterator_tag_
+ .offset 0000000000008d30
+ .file apt-get
+ endbr64
+ push r12
+ mov r12, rdx
+ push rbp
+ mov rbp, rsi
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rdx, rdx
+ cjmp LABEL12
+ test rsi, rsi
+ cjmp LABEL14
+LABEL12:
+ sub r12, rbp
+ mov qword [rsp], r12
+ cmp r12, CONST
+ cjmp LABEL18
+ mov rdi, qword [rbx]
+ cmp r12, CONST
+ cjmp LABEL21
+ movzx eax, byte [rbp]
+ mov byte [rdi], al
+ mov r12, qword [rsp]
+ mov rdi, qword [rbx]
+LABEL37:
+ mov qword [rbx + CONST], r12
+ mov byte [rdi + r12], CONST
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL30
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL21:
+ test r12, r12
+ cjmp LABEL37
+ jmp LABEL38
+LABEL18:
+ mov rdi, rbx
+ mov rsi, rsp
+ xor edx, edx
+ call CONST
+ mov qword [rbx], rax
+ mov rdi, rax
+ mov rax, qword [rsp]
+ mov qword [rbx + CONST], rax
+LABEL38:
+ mov rdx, r12
+ mov rsi, rbp
+ call CONST
+ mov r12, qword [rsp]
+ mov rdi, qword [rbx]
+ jmp LABEL37
+LABEL14:
+ lea rdi, [rip + CONST]
+ call CONST
+LABEL30:
+ call CONST

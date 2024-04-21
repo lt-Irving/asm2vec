@@ -1,0 +1,14 @@
+ .name sym.rl_reset_after_signal
+ .offset 00000000000cecc0
+ .file bash
+ endbr64
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL3
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ call rax
+ add rsp, CONST
+ jmp CONST
+LABEL3:
+ jmp CONST

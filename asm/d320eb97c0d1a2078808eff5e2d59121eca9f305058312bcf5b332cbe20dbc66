@@ -1,0 +1,20 @@
+ .name sym._rl_release_sigint
+ .offset 00000000000cf0f0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov dword [rip + CONST], CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov edi, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ cmp edi, CONST
+ cjmp LABEL11
+ jmp CONST
+LABEL3:
+ ret
+LABEL11:
+ jmp CONST

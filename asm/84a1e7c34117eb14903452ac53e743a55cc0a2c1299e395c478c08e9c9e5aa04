@@ -1,0 +1,32 @@
+ .name sym.sigint_sighandler
+ .offset 0000000000078b30
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov eax, dword [rip + CONST]
+ add eax, CONST
+ mov dword [rip + CONST], eax
+LABEL3:
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL9
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL12
+ test byte [rip + CONST], CONST
+ cjmp LABEL14
+ ret
+LABEL12:
+ mov dword [rip + CONST], CONST
+ sub edi, CONST
+ mov dword [rip + CONST], edi
+ jmp CONST
+LABEL9:
+ lea eax, [rdi + CONST]
+ mov dword [rip + CONST], edi
+ mov dword [rip + CONST], eax
+ ret
+LABEL14:
+ jmp CONST

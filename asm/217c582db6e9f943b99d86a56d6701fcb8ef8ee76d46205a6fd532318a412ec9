@@ -1,0 +1,65 @@
+ .name sym.sv_histsize
+ .offset 000000000004e930
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ call CONST
+ test rax, rax
+ cjmp LABEL10
+ cmp byte [rax], CONST
+ cjmp LABEL12
+LABEL10:
+ cmp byte [rbx + CONST], CONST
+ cjmp LABEL14
+LABEL26:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL17
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL12:
+ mov rsi, rsp
+ mov rdi, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL26
+ mov rbp, qword [rsp]
+ movzx eax, byte [rbx + CONST]
+ test ebp, ebp
+ cjmp LABEL30
+ cmp al, CONST
+ cjmp LABEL32
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, ebp
+ mov rdi, rax
+ call CONST
+ cmp dword [rip + CONST], ebp
+ cjmp LABEL26
+ mov dword [rip + CONST], ebp
+ jmp LABEL26
+LABEL30:
+ cmp al, CONST
+ cjmp LABEL26
+ nop dword [rax]
+LABEL14:
+ call CONST
+ jmp LABEL26
+LABEL32:
+ mov edi, ebp
+ call CONST
+ call CONST
+ cmp dword [rip + CONST], eax
+ cjmp LABEL26
+ mov dword [rip + CONST], eax
+ jmp LABEL26
+LABEL17:
+ call CONST

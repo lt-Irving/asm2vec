@@ -1,0 +1,60 @@
+ .name sym.strlist_from_word_list
+ .offset 00000000000b28b0
+ .file bash
+ endbr64
+ push r15
+ push r14
+ push r13
+ mov r13, rcx
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rdi, rdi
+ cjmp LABEL13
+ xor eax, eax
+ mov r14d, edx
+ mov rbp, rdi
+ mov r15d, esi
+ call CONST
+ mov edi, CONST
+ mov ebx, eax
+ call CONST
+ lea rcx, [rsp + CONST]
+ mov edx, r14d
+ mov esi, r15d
+ mov rdi, rbp
+ mov r12, rax
+ add ebx, r14d
+ call CONST
+ mov dword [r12 + CONST], ebx
+ mov qword [r12], rax
+ mov eax, dword [rsp + CONST]
+ mov dword [r12 + CONST], eax
+ test r13, r13
+ cjmp LABEL34
+ mov dword [r13], eax
+LABEL34:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL38
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL13:
+ xor r12d, r12d
+ test rcx, rcx
+ cjmp LABEL34
+ mov dword [rcx], CONST
+ jmp LABEL34
+LABEL38:
+ call CONST

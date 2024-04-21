@@ -1,0 +1,16 @@
+ .name sym.array_dispose
+ .offset 000000000007b960
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ call CONST
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ pop rbp
+ jmp CONST
+LABEL2:
+ ret

@@ -1,0 +1,216 @@
+ .name sym.stupidly_hack_special_variables
+ .offset 0000000000052320
+ .file bash
+ add al, byte [rcx]
+ add dword [rax], eax
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add eax, dword [rax]
+ add byte ds:[rcx], al
+ add byte [rax], al
+ add byte [rax], dh
+ add al, CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ pop rax
+ invalid
+ fadd dword [rdx]
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ fadd dword [rdx]
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ or byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add eax, dword [rax]
+ add byte [rax], al
+ add al, CONST
+ add byte [rax], al
+ sbb byte [rbx], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ sbb byte [rbx], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ sbb byte [rbx], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ sbb al, CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+LABEL75:
+ sbb al, CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+LABEL79:
+ add dword [rax], eax
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add dword [rax], eax
+ add byte [rax], al
+ add al, CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ cjmp LABEL75
+ add al, byte [rax]
+ add byte [rax], al
+ add byte [rax], al
+ cjmp LABEL79
+ add al, byte [rax]
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], dl
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rcx], al
+ add byte [rax], al
+ add byte [rip], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rcx], al
+ add byte [rax], al
+ add byte [rip], al
+ rol byte [rdx], CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ rol byte [rdx], CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ rol byte [rdx], CONST
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rip + CONST], al
+ add byte [rax], al
+ add byte [rip + CONST], al
+ add byte [rax], al
+ add byte [rax], al
+ adc byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rcx], al
+ add byte [rax], al
+ add byte [rax + rax], al
+ add byte [rax], al
+ add al, ah
+ or eax, CONST
+ add byte [rax], al
+ cjmp LABEL121
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ cjmp LABEL125
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rax + CONST], bl
+ add byte [rax], al
+ add byte [rax + CONST], bl
+ add byte [rax], al
+ add byte [rax], al
+ adc byte [rax], al
+ add byte [rax], al
+ add byte [rax], al
+ add byte [rcx], al
+ add byte [rax], al
+ add byte [rsi], al
+ add byte [rax], al
+ add al, dh
+ adc qword [rax], r8
+ add byte [rax], al
+ add byte [rax], al
+ invalid
+LABEL121:
+ cwde
+ invalid
+LABEL125:
+ cwde
+ invalid
+ endbr64
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL158
+LABEL203:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL161
+ movsx ebp, byte [r12]
+ lea r13, [rip + CONST]
+ xor ebx, ebx
+ jmp LABEL165
+LABEL175:
+ test eax, eax
+ cjmp LABEL161
+ mov rdi, qword [r13]
+ add r13, CONST
+ add ebx, CONST
+ test rdi, rdi
+ cjmp LABEL161
+LABEL165:
+ movsx eax, byte [rdi]
+ sub eax, ebp
+ cjmp LABEL175
+ mov rsi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL175
+ movsxd rbx, ebx
+ lea rax, [rip + CONST]
+ mov rdi, r12
+ shl rbx, CONST
+ mov rax, qword [rax + rbx + CONST]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp rax
+LABEL161:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL158:
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], CONST
+ jmp LABEL203

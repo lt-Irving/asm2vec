@@ -1,0 +1,32 @@
+ .name sym.make_coproc_command
+ .offset 0000000000041160
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rdi
+ mov edi, CONST
+ push rbx
+ call CONST
+ mov rdi, rbp
+ mov rbx, rax
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov qword [rbx + CONST], r12
+ mov edi, CONST
+ mov qword [rbx + CONST], rax
+ mov dword [rbx], CONST
+ call CONST
+ mov qword [rax + CONST], rbx
+ mov qword [rax], CONST
+ mov dword [rbx], CONST
+ mov qword [rax + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret

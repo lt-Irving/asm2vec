@@ -1,0 +1,68 @@
+ .name sym.fsleep
+ .offset 00000000000b5890
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbp
+ mov ebp, esi
+ push rbx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rbx, [rsp + CONST]
+ mov rdi, rbx
+ call CONST
+ mov esi, CONST
+ mov rdi, rbx
+ call CONST
+ mov eax, r12d
+ mov qword [rsp], rax
+ imul eax, ebp, CONST
+ mov rbp, rsp
+ mov qword [rsp + CONST], rax
+ call CONST
+ mov r12, rax
+LABEL49:
+ xor ecx, ecx
+ xor edx, edx
+ xor esi, esi
+ xor edi, edi
+ mov r9, rbx
+ mov r8, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL31
+LABEL41:
+ mov rdx, qword [rsp + CONST]
+ xor rdx, qword fs:[CONST]
+ cjmp LABEL34
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL31:
+ cmp dword [r12], CONST
+ cjmp LABEL41
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL44
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL47
+LABEL54:
+ mov dword [r12], CONST
+ jmp LABEL49
+LABEL44:
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL54
+LABEL47:
+ call CONST
+ jmp LABEL54
+LABEL34:
+ call CONST

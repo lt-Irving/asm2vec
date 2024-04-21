@@ -1,0 +1,108 @@
+ .name sym.setifs
+ .offset 0000000000069790
+ .file bash
+ endbr64
+ push rbp
+ mov r9d, dword [rip + CONST]
+ mov rax, rdi
+ mov qword [rip + CONST], rdi
+ test rdi, rdi
+ cjmp LABEL6
+ mov rsi, qword [rdi + CONST]
+ test rsi, rsi
+ cjmp LABEL9
+ mov qword [rip + CONST], rsi
+ xor eax, eax
+ lea r8, [rip + CONST]
+ mov ecx, CONST
+ mov dword [rip + CONST], CONST
+ cmp byte [rsi], CONST
+ mov rdi, r8
+ sete al
+ mov dword [rip + CONST], eax
+ xor eax, eax
+ rep stosq qword [rdi], rax
+ movzx eax, byte [rsi]
+ test al, al
+ cjmp LABEL23
+LABEL58:
+ mov rdx, rsi
+ nop dword [rax]
+LABEL30:
+ add rdx, CONST
+ mov byte [r8 + rax], CONST
+ movzx eax, byte [rdx]
+ test al, al
+ cjmp LABEL30
+ test r9d, r9d
+ cjmp LABEL32
+ movzx eax, byte [rsi]
+ test al, al
+ cjmp LABEL32
+ mov rsi, qword [rip + CONST]
+LABEL60:
+ test al, al
+ setne al
+ movzx eax, al
+ mov qword [rip + CONST], rax
+LABEL72:
+ movzx eax, byte [rsi]
+ pop rbp
+ mov byte [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov byte [rip + CONST], al
+ ret
+LABEL9:
+ lea r8, [rip + CONST]
+ mov rax, rsi
+ mov ecx, CONST
+ mov dword [rip + CONST], CONST
+ lea rdx, [rip + CONST]
+ mov rdi, r8
+ mov dword [rip + CONST], CONST
+ rep stosq qword [rdi], rax
+ mov qword [rip + CONST], rdx
+ mov rsi, rdx
+ mov eax, CONST
+ jmp LABEL58
+LABEL23:
+ test r9d, r9d
+ cjmp LABEL60
+ nop dword [rax]
+LABEL32:
+ call CONST
+ mov rdi, qword [rip + CONST]
+ mov rsi, rax
+ call CONST
+ mov rbp, rax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL69
+ mov qword [rip + CONST], CONST
+ mov rsi, qword [rip + CONST]
+ jmp LABEL72
+LABEL69:
+ mov rdi, qword [rip + CONST]
+ mov rsi, rbp
+ call CONST
+ mov rsi, qword [rip + CONST]
+ movsxd rdx, eax
+ lea rax, [rdx + CONST]
+ mov qword [rip + CONST], rdx
+ cmp rax, CONST
+ cjmp LABEL72
+ mov ecx, CONST
+ lea rdi, [rip + CONST]
+ pop rbp
+ jmp CONST
+LABEL6:
+ lea r8, [rip + CONST]
+ mov ecx, CONST
+ lea rsi, [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov rdi, r8
+ mov qword [rip + CONST], rsi
+ rep stosq qword [rdi], rax
+ mov eax, CONST
+ mov dword [rip + CONST], CONST
+ jmp LABEL58

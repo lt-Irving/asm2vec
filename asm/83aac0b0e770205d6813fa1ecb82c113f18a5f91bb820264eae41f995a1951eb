@@ -1,0 +1,57 @@
+ .name sym.rl_yank_last_arg
+ .offset 00000000000cfe80
+ .file bash
+ endbr64
+ sub rsp, CONST
+ lea rax, [rip + CONST]
+ cmp qword [rip + CONST], rax
+ cjmp LABEL4
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], edi
+ xor edx, edx
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], eax
+ mov dword [rip + CONST], CONST
+LABEL33:
+ test eax, eax
+ cjmp LABEL12
+ mov edi, dword [rip + CONST]
+ call CONST
+LABEL23:
+ xor edx, edx
+ test eax, eax
+ sete dl
+ mov dword [rip + CONST], edx
+ add rsp, CONST
+ ret
+LABEL12:
+ mov edi, CONST
+ call CONST
+ jmp LABEL23
+LABEL4:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL26
+LABEL45:
+ mov edx, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL29
+LABEL39:
+ add edx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], edx
+ cjmp LABEL33
+ mov dword [rip + CONST], CONST
+ xor edx, edx
+ jmp LABEL33
+LABEL29:
+ neg edx
+ mov dword [rip + CONST], edx
+ jmp LABEL39
+LABEL26:
+ mov dword [rsp + CONST], esi
+ mov dword [rsp + CONST], edi
+ call CONST
+ mov esi, dword [rsp + CONST]
+ mov edi, dword [rsp + CONST]
+ jmp LABEL45

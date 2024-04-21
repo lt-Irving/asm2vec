@@ -1,0 +1,92 @@
+ .name sym.run_sigchld_trap
+ .offset 000000000005acc0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ sub rsp, CONST
+ mov r12, qword [rip + CONST]
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rbx, rax
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rbx
+ xor eax, eax
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rsi, rbx
+ xor eax, eax
+ call CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ test ebp, ebp
+ cjmp LABEL60
+ xor r13d, r13d
+ lea r12, [rip + CONST]
+ nop dword [rax]
+LABEL77:
+ mov rdi, rbx
+ add r13d, CONST
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbx
+ mov rdi, rax
+ call CONST
+ mov edx, CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ cmp ebp, r13d
+ cjmp LABEL77
+LABEL60:
+ lea rdi, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

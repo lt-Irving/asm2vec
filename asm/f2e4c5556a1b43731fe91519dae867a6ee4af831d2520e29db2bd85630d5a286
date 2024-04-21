@@ -1,0 +1,23 @@
+ .name sym._rl_kill_kbd_macro
+ .offset 00000000000d1090
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL4
+ call CONST
+ mov qword [rip + CONST], CONST
+LABEL4:
+ mov rdi, qword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ test rdi, rdi
+ cjmp LABEL11
+ call CONST
+LABEL11:
+ and qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

@@ -1,0 +1,44 @@
+ .name sym.valid_nameref_value
+ .offset 000000000003ea70
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ xor eax, eax
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ cmp byte [rdi], CONST
+ cjmp LABEL9
+LABEL19:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL9:
+ mov ebx, esi
+ call CONST
+ test eax, eax
+ cjmp LABEL17
+ cmp ebx, CONST
+ cjmp LABEL19
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ setne al
+ add rsp, CONST
+ movzx eax, al
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ xor eax, eax
+ ret
+LABEL17:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret

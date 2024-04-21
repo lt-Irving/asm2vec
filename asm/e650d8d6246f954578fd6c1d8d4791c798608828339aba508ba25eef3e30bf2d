@@ -1,0 +1,50 @@
+ .name sym.replace_history_entry
+ .offset 00000000000d7140
+ .file bash
+ endbr64
+ push r14
+ push r13
+ xor r13d, r13d
+ push r12
+ push rbp
+ push rbx
+ movsxd rbx, edi
+ test ebx, ebx
+ cjmp LABEL9
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL9
+ mov edi, CONST
+ mov r14, rdx
+ mov r12, rsi
+ call CONST
+ mov rdi, r12
+ mov rbp, rax
+ mov rax, qword [rip + CONST]
+ mov r13, qword [rax + rbx*CONST]
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov r12, qword [r13 + CONST]
+ mov qword [rbp + CONST], r14
+ mov qword [rbp], rax
+ mov rdi, r12
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, r12
+ mov rdi, rax
+ call CONST
+ mov qword [rbp + CONST], rax
+ mov rax, qword [rip + CONST]
+ mov qword [rax + rbx*CONST], rbp
+LABEL9:
+ pop rbx
+ mov rax, r13
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret

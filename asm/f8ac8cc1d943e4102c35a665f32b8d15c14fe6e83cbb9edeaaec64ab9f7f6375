@@ -1,0 +1,34 @@
+ .name sym.gather_here_documents
+ .offset 0000000000032ac0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], CONST
+ test edx, edx
+ cjmp LABEL5
+ push rbx
+ lea rbx, [rip + CONST]
+ nop word cs:[rax + rax]
+LABEL23:
+ mov rdi, qword [rbx]
+ mov esi, dword [rip + CONST]
+ or eax, CONST
+ add rbx, CONST
+ mov dword [rip + CONST], eax
+ call CONST
+ mov eax, dword [rip + CONST]
+ mov ecx, dword [rip + CONST]
+ mov qword [rbx + CONST], CONST
+ and eax, CONST
+ lea edx, [rcx + CONST]
+ mov dword [rip + CONST], eax
+ mov dword [rip + CONST], edx
+ test edx, edx
+ cjmp LABEL23
+ mov dword [rip + CONST], CONST
+ pop rbx
+ ret
+LABEL5:
+ mov dword [rip + CONST], CONST
+ ret

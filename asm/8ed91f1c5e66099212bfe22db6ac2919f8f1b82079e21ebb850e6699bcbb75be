@@ -1,0 +1,87 @@
+ .name sym.extract_colon_unit
+ .offset 000000000003f770
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov rbx, rsi
+ sub rsp, CONST
+ call CONST
+ mov esi, dword [rbx]
+ cmp esi, eax
+ cjmp LABEL11
+ test esi, esi
+ cjmp LABEL13
+ movzx eax, byte [rbp]
+ mov rcx, rbp
+LABEL51:
+ cmp al, CONST
+ cjmp LABEL17
+LABEL46:
+ test al, al
+ cjmp LABEL17
+ movsxd rax, esi
+ lea r9d, [rsi + CONST]
+ lea rax, [rbp + rax + CONST]
+ sub r9d, eax
+ nop word [rax + rax]
+LABEL32:
+ movzx edx, byte [rax]
+ lea r8d, [r9 + rax]
+ mov rcx, rax
+ add rax, CONST
+ test dl, dl
+ cjmp LABEL30
+ cmp dl, CONST
+ cjmp LABEL32
+LABEL30:
+ mov dword [rbx], r8d
+ cmp esi, r8d
+ cjmp LABEL35
+ add rsp, CONST
+ mov rdi, rbp
+ mov edx, r8d
+ pop rbx
+ pop rbp
+ jmp CONST
+LABEL13:
+ movsxd rcx, esi
+ add rcx, rbp
+ movzx eax, byte [rcx]
+ cmp al, CONST
+ cjmp LABEL46
+ add esi, CONST
+ movsxd rcx, esi
+ add rcx, rbp
+ movzx eax, byte [rcx]
+ jmp LABEL51
+LABEL17:
+ mov dword [rbx], esi
+ mov r8d, esi
+LABEL35:
+ cmp byte [rcx], CONST
+ cjmp LABEL55
+LABEL65:
+ mov edi, CONST
+ call CONST
+ mov byte [rax], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL55:
+ add r8d, CONST
+ mov dword [rbx], r8d
+ jmp LABEL65
+LABEL11:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ xor eax, eax
+ ret

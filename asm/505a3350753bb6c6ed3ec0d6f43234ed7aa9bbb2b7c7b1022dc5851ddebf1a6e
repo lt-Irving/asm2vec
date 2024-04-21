@@ -1,0 +1,68 @@
+ .name sym.rl_vi_delete
+ .offset 00000000000bb7a0
+ .file bash
+ endbr64
+ push r12
+ mov r12d, edi
+ push rbp
+ mov ebp, esi
+ sub rsp, CONST
+ test edi, edi
+ cjmp LABEL7
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL10
+ call CONST
+ mov edi, dword [rip + CONST]
+ cmp rax, CONST
+ cjmp LABEL14
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL17
+LABEL14:
+ add r12d, edi
+LABEL53:
+ cmp dword [rip + CONST], r12d
+ mov esi, r12d
+ cmovle esi, dword [rip + CONST]
+ xor r12d, r12d
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL26
+ cmp eax, dword [rip + CONST]
+ cjmp LABEL28
+LABEL26:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL10:
+ call CONST
+ mov r12d, CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ add rsp, CONST
+ neg edi
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL17:
+ mov esi, edi
+ mov rdi, qword [rip + CONST]
+ mov edx, r12d
+ mov ecx, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov r12d, eax
+ jmp LABEL53
+LABEL28:
+ mov esi, ebp
+ mov edi, CONST
+ call CONST
+ jmp LABEL26

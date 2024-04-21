@@ -1,0 +1,21 @@
+ .name sym.subshell_exit
+ .offset 0000000000030fb0
+ .file bash
+ endbr64
+ push rbp
+ mov ebp, edi
+ mov rdi, qword [rip + CONST]
+ call CONST
+ mov rdi, qword [rip + CONST]
+ call CONST
+ xor edi, edi
+ call CONST
+ test eax, eax
+ cjmp LABEL10
+LABEL15:
+ mov edi, ebp
+ call CONST
+LABEL10:
+ call CONST
+ mov ebp, eax
+ jmp LABEL15

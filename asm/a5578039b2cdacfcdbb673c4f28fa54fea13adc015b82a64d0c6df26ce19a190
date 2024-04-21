@@ -1,0 +1,15 @@
+ .name sym.ignore_tty_job_signals
+ .offset 000000000005a770
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ call CONST
+ mov esi, CONST
+ mov edi, CONST
+ add rsp, CONST
+ jmp CONST

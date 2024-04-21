@@ -1,0 +1,61 @@
+ .name sym.same_file
+ .offset 000000000003f000
+ .file bash
+ endbr64
+ push r12
+ mov r12, rsi
+ push rbp
+ mov rbp, rcx
+ push rbx
+ mov rbx, rdx
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test rdx, rdx
+ cjmp LABEL12
+ test rbp, rbp
+ cjmp LABEL14
+LABEL40:
+ mov rax, qword [rbp]
+ cmp qword [rbx], rax
+ cjmp LABEL17
+LABEL30:
+ xor eax, eax
+LABEL31:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL21
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL17:
+ mov rdx, qword [rbp + CONST]
+ mov eax, CONST
+ cmp qword [rbx + CONST], rdx
+ cjmp LABEL30
+ jmp LABEL31
+LABEL12:
+ mov rbx, rsp
+ mov rsi, rdi
+ mov edi, CONST
+ mov rdx, rbx
+ call CONST
+ test eax, eax
+ cjmp LABEL30
+ test rbp, rbp
+ cjmp LABEL40
+ nop dword [rax]
+LABEL14:
+ lea rbp, [rsp + CONST]
+ mov rsi, r12
+ mov edi, CONST
+ mov rdx, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL40
+ jmp LABEL30
+LABEL21:
+ call CONST

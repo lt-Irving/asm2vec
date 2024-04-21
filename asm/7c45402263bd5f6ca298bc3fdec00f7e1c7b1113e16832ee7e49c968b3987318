@@ -1,0 +1,67 @@
+ .name sym._rl_move_vert
+ .offset 00000000000c9b90
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ cmp eax, edi
+ cjmp LABEL3
+ push r13
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ sub rsp, CONST
+ cmp dword [rip + CONST], edi
+ cjmp LABEL11
+ mov r12d, edi
+ sub r12d, eax
+ test r12d, r12d
+ cjmp LABEL15
+ xor ebx, ebx
+ nop dword [rax + rax]
+LABEL23:
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ add ebx, CONST
+ call CONST
+ cmp r12d, ebx
+ cjmp LABEL23
+ lea rdx, [rip + CONST]
+ mov rdi, qword [rip + CONST]
+ mov esi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+LABEL38:
+ mov dword [rip + CONST], ebp
+LABEL11:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL15:
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL38
+ cmp byte [rdi], CONST
+ cjmp LABEL38
+ sub eax, ebp
+ mov ebx, eax
+ test eax, eax
+ cjmp LABEL38
+ lea r13, [rip + CONST]
+ xor r12d, r12d
+ jmp LABEL47
+LABEL54:
+ mov rdi, qword [rip + CONST]
+LABEL47:
+ mov rdx, r13
+ mov esi, CONST
+ add r12d, CONST
+ call CONST
+ cmp ebx, r12d
+ cjmp LABEL54
+ jmp LABEL38
+LABEL3:
+ ret

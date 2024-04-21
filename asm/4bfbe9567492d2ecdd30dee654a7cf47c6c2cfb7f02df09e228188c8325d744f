@@ -1,0 +1,111 @@
+ .name sym.match_pattern_wchar
+ .offset 00000000000af5c0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov eax, dword [rsi]
+ mov ebp, dword [rdi]
+ test eax, eax
+ cjmp LABEL7
+ cmp ebp, CONST
+ cjmp LABEL9
+ cmp ebp, CONST
+ cjmp LABEL11
+LABEL40:
+ and edx, CONST
+ mov r12d, eax
+ mov ebx, ebp
+ cjmp LABEL15
+LABEL96:
+ mov edi, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL19
+ mov edi, r12d
+ call CONST
+ mov r12d, eax
+LABEL19:
+ mov edi, ebp
+ call CONST
+ test eax, eax
+ cjmp LABEL15
+ mov edi, ebp
+ call CONST
+ mov ebx, eax
+LABEL15:
+ xor r8d, r8d
+ cmp ebx, r12d
+ pop rbx
+ pop rbp
+ sete r8b
+ pop r12
+ mov eax, r8d
+ ret
+LABEL11:
+ lea ecx, [rbp + CONST]
+ cmp ecx, CONST
+ cjmp LABEL40
+ lea rsi, [rip + CONST]
+ movsxd rcx, dword [rsi + rcx*CONST]
+ add rcx, rsi
+ notrack jmp rcx
+LABEL52:
+ mov r8d, CONST
+LABEL91:
+ pop rbx
+ mov eax, r8d
+ pop rbp
+ pop r12
+ ret
+LABEL9:
+ cmp ebp, CONST
+ cjmp LABEL52
+ cmp ebp, CONST
+ cjmp LABEL40
+ and edx, CONST
+ mov r12d, dword [rdi + CONST]
+ mov ebp, eax
+ cjmp LABEL58
+ mov edi, eax
+ call CONST
+ test eax, eax
+ cjmp LABEL62
+ mov edi, ebp
+ call CONST
+ mov ebp, eax
+LABEL62:
+ mov edi, r12d
+ call CONST
+ test eax, eax
+ cjmp LABEL58
+ mov edi, r12d
+ call CONST
+ mov r12d, eax
+LABEL58:
+ xor r8d, r8d
+ cmp r12d, ebp
+ pop rbx
+ pop rbp
+ sete r8b
+ pop r12
+ mov eax, r8d
+ ret
+LABEL7:
+ xor r8d, r8d
+ cmp ebp, CONST
+ pop rbx
+ pop rbp
+ sete r8b
+ pop r12
+ mov eax, r8d
+ ret
+ cmp dword [rdi + CONST], CONST
+ mov r8d, CONST
+ cjmp LABEL91
+ and edx, CONST
+ mov r12d, eax
+ mov ebx, ebp
+ cjmp LABEL15
+ jmp LABEL96

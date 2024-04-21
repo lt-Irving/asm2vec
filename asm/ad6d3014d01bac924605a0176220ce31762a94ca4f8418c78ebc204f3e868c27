@@ -1,0 +1,16 @@
+ .name sym.rl_vi_arg_digit
+ .offset 00000000000baae0
+ .file bash
+ endbr64
+ cmp esi, CONST
+ cjmp LABEL2
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL2
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+LABEL2:
+ jmp CONST
+LABEL7:
+ mov edi, CONST
+ jmp CONST

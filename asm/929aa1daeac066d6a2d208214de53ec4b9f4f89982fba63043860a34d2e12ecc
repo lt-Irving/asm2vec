@@ -1,0 +1,14 @@
+ .name sym._rl_savestring
+ .offset 00000000000cf920
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ call CONST
+ lea edi, [rax + CONST]
+ movsxd rdi, edi
+ call CONST
+ mov rsi, rbp
+ pop rbp
+ mov rdi, rax
+ jmp CONST

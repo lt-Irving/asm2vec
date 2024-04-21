@@ -1,0 +1,19 @@
+ .name sym.hash_string
+ .offset 0000000000073930
+ .file bash
+ endbr64
+ movzx edx, byte [rdi]
+ mov eax, CONST
+ test dl, dl
+ cjmp LABEL4
+LABEL11:
+ imul ecx, eax, CONST
+ add rdi, CONST
+ movsx eax, dl
+ movzx edx, byte [rdi]
+ xor eax, ecx
+ test dl, dl
+ cjmp LABEL11
+ ret
+LABEL4:
+ ret

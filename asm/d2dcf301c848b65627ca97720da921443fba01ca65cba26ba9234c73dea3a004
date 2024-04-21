@@ -1,0 +1,19 @@
+ .name sym.terminate_current_pipeline
+ .offset 000000000005a350
+ .file bash
+ endbr64
+ mov edi, dword [rip + CONST]
+ test edi, edi
+ cjmp LABEL3
+ cmp edi, dword [rip + CONST]
+ cjmp LABEL5
+LABEL3:
+ ret
+LABEL5:
+ sub rsp, CONST
+ mov esi, CONST
+ call CONST
+ mov edi, dword [rip + CONST]
+ mov esi, CONST
+ add rsp, CONST
+ jmp CONST

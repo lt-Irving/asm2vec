@@ -1,0 +1,37 @@
+ .name fcn.0000caf0
+ .offset 000000000000caf0
+ .file dash
+ push r13
+ push r12
+ mov r12, rsi
+ push rbp
+ push rbx
+ sub rsp, CONST
+ movzx ebp, word [rdi + CONST]
+ mov rbx, qword [rdi + CONST]
+ shl rbp, CONST
+ add rbp, rbx
+ add rbx, CONST
+ cmp rbp, rbx
+ cjmp LABEL12
+ lea r13, [rip + CONST]
+ nop dword [rax]
+LABEL22:
+ mov rdx, qword [rbx + CONST]
+ mov rsi, r13
+ mov rdi, r12
+ xor eax, eax
+ add rbx, CONST
+ call CONST
+ cmp rbp, rbx
+ cjmp LABEL22
+LABEL12:
+ mov rsi, r12
+ mov edi, CONST
+ call CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ jmp CONST

@@ -1,0 +1,53 @@
+ .name sym.disable_priv_mode
+ .offset 00000000000310a0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL7
+ mov edi, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL11
+LABEL34:
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [rip + CONST], eax
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ xor edi, edi
+ mov ebp, dword [rip + CONST]
+ mov r12d, dword [rip + CONST]
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov edx, r12d
+ mov esi, ebp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ mov edi, dword [rip + CONST]
+ call CONST
+ test eax, eax
+ cjmp LABEL34
+LABEL11:
+ mov r12d, dword [rip + CONST]
+ mov ebp, dword [rip + CONST]
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov edx, r12d
+ mov esi, ebp
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+ jmp LABEL34

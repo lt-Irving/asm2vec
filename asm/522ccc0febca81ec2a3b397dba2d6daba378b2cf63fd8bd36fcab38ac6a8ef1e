@@ -1,0 +1,27 @@
+ .name sym.unbind_function_def
+ .offset 000000000004f5b0
+ .file bash
+ endbr64
+ push rbp
+ mov rsi, qword [rip + CONST]
+ xor edx, edx
+ call CONST
+ test rax, rax
+ cjmp LABEL6
+ mov rdi, qword [rax + CONST]
+ mov rbp, rax
+ test rdi, rdi
+ cjmp LABEL10
+ call CONST
+LABEL10:
+ mov rdi, qword [rbp + CONST]
+ call CONST
+ mov rdi, rbp
+ call CONST
+ xor eax, eax
+ pop rbp
+ ret
+LABEL6:
+ mov eax, CONST
+ pop rbp
+ ret

@@ -1,0 +1,57 @@
+ .name fcn.00003950
+ .offset 0000000000003950
+ .file csplit
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL2
+ push r13
+ lea r13, [rip + CONST]
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ jmp LABEL11
+LABEL22:
+ mov eax, dword [rip + CONST]
+ add ebx, CONST
+ cmp ebx, eax
+ cjmp LABEL15
+LABEL11:
+ mov edi, ebx
+ call CONST
+ mov rdi, rax
+ mov r12, rax
+ call CONST
+ test eax, eax
+ cjmp LABEL22
+ test bpl, bpl
+ cjmp LABEL22
+ mov rdx, r12
+ mov esi, CONST
+ xor edi, edi
+ add ebx, CONST
+ call CONST
+ mov r12, rax
+ call CONST
+ mov rcx, r12
+ mov rdx, r13
+ xor edi, edi
+ mov esi, dword [rax]
+ xor eax, eax
+ call CONST
+ mov eax, dword [rip + CONST]
+ cmp ebx, eax
+ cjmp LABEL11
+LABEL15:
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL2:
+ mov dword [rip + CONST], CONST
+ ret

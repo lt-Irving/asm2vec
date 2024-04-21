@@ -1,0 +1,39 @@
+ .name sym.line_isblank
+ .offset 000000000003ee50
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ movzx ebx, byte [rdi]
+ test bl, bl
+ cjmp LABEL9
+ call CONST
+ lea rdi, [rbp + CONST]
+ mov rax, qword [rax]
+ jmp LABEL13
+LABEL19:
+ movzx ebx, byte [rdi]
+ add rdi, CONST
+ test bl, bl
+ cjmp LABEL9
+LABEL13:
+ test byte [rax + rbx*CONST], CONST
+ cjmp LABEL19
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL9:
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL2:
+ xor eax, eax
+ ret

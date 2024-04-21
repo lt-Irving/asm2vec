@@ -1,0 +1,65 @@
+ .name sym.all_local_variables
+ .offset 000000000004f920
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL6
+ mov edx, dword [rip + CONST]
+ nop word [rax + rax]
+LABEL16:
+ mov eax, dword [rbx + CONST]
+ test al, CONST
+ cjmp LABEL11
+ cmp dword [rbx + CONST], edx
+ cjmp LABEL13
+LABEL11:
+ mov rbx, qword [rbx + CONST]
+ test rbx, rbx
+ cjmp LABEL16
+LABEL6:
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ xor edi, edi
+ xor r12d, r12d
+ call CONST
+ mov rdi, rax
+ xor eax, eax
+ call CONST
+LABEL32:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL13:
+ mov r12, qword [rbx + CONST]
+ test r12, r12
+ cjmp LABEL32
+ mov edi, dword [r12 + CONST]
+ xor r12d, r12d
+ test edi, edi
+ cjmp LABEL32
+ test al, CONST
+ cjmp LABEL32
+ call CONST
+ mov rdi, qword [rbx + CONST]
+ lea rsi, [rip + CONST]
+ mov rbp, rax
+ mov rdx, rax
+ call CONST
+ mov r12, qword [rbp]
+ mov rdi, rbp
+ call CONST
+ test r12, r12
+ cjmp LABEL32
+ mov rdi, r12
+ call CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

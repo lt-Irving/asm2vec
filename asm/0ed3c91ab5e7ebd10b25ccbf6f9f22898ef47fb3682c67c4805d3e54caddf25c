@@ -1,0 +1,26 @@
+ .name sym.extract_command_subst
+ .offset 0000000000060c60
+ .file bash
+ endbr64
+ movsxd r8, dword [rsi]
+ mov ecx, edx
+ add r8, rdi
+ cmp byte [r8], CONST
+ cjmp LABEL5
+ test dh, CONST
+ cjmp LABEL5
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL10
+ or ecx, CONST
+LABEL10:
+ mov rdx, rsi
+ mov rsi, r8
+ jmp CONST
+LABEL5:
+ or ecx, CONST
+ lea r8, [rip + CONST]
+ lea rdx, [rip + CONST]
+ mov r9d, ecx
+ lea rcx, [rip + CONST]
+ jmp CONST

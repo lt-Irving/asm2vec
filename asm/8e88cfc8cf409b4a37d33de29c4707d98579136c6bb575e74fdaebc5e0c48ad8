@@ -1,0 +1,49 @@
+ .name sym.do_redirections
+ .offset 000000000008d120
+ .file bash
+ endbr64
+ push rbp
+ mov rbp, rdi
+ push rbx
+ mov ebx, esi
+ sub rsp, CONST
+ and esi, CONST
+ cjmp LABEL7
+ mov rdi, qword [rip + CONST]
+ test rdi, rdi
+ cjmp LABEL10
+ call CONST
+ mov qword [rip + CONST], CONST
+LABEL10:
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL7
+ call CONST
+ test rbp, rbp
+ cjmp LABEL17
+ nop dword [rax]
+LABEL26:
+ mov esi, ebx
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL23
+ mov rbp, qword [rbp]
+LABEL7:
+ test rbp, rbp
+ cjmp LABEL26
+LABEL17:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ ret
+LABEL23:
+ mov esi, eax
+ mov rdi, rbp
+ mov dword [rsp + CONST], eax
+ call CONST
+ mov eax, dword [rsp + CONST]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret

@@ -1,0 +1,14 @@
+ .name fcn.00015430
+ .offset 0000000000015430
+ .file cp
+ endbr64
+ mov rdx, qword [rsi + CONST]
+ xor eax, eax
+ cmp qword [rdi + CONST], rdx
+ cjmp LABEL4
+ ret
+LABEL4:
+ mov rax, qword [rsi]
+ cmp qword [rdi], rax
+ sete al
+ ret

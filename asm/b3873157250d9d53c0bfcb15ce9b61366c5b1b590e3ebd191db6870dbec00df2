@@ -1,0 +1,14 @@
+ .name sym.rl_get_keymap_name_from_edit_mode
+ .offset 00000000000c6bd0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ lea rax, [rip + CONST]
+ cmp edx, CONST
+ cjmp LABEL4
+ test edx, edx
+ lea rax, [rip + CONST]
+ lea rdx, [rip + CONST]
+ cmovne rax, rdx
+LABEL4:
+ ret

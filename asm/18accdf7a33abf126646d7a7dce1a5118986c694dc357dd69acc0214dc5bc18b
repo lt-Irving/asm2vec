@@ -1,0 +1,58 @@
+ .name sym.rl_forward_char
+ .offset 00000000000d4600
+ .file bash
+ endbr64
+ push r12
+ mov r12d, esi
+ push rbp
+ mov ebp, edi
+ sub rsp, CONST
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL8
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL8
+ test ebp, ebp
+ cjmp LABEL13
+ cjmp LABEL14
+ mov eax, dword [rip + CONST]
+ cmp dword [rip + CONST], eax
+ cjmp LABEL17
+ cmp dword [rip + CONST], CONST
+ cjmp LABEL19
+LABEL17:
+ mov edi, ebp
+ call CONST
+ cmp dword [rip + CONST], eax
+ mov ebp, eax
+ cjmp LABEL24
+LABEL45:
+ mov dword [rip + CONST], ebp
+LABEL14:
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL8:
+ add rsp, CONST
+ mov esi, r12d
+ mov edi, ebp
+ pop rbp
+ pop r12
+ jmp CONST
+LABEL13:
+ mov edi, ebp
+ add rsp, CONST
+ mov esi, r12d
+ pop rbp
+ neg edi
+ pop r12
+ jmp CONST
+LABEL24:
+ call CONST
+ jmp LABEL45
+LABEL19:
+ call CONST
+ jmp LABEL14

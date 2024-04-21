@@ -1,0 +1,15 @@
+ .name fcn.0007a700
+ .offset 000000000007a700
+ .file bash
+ endbr64
+ mov rax, qword [rdi]
+ mov rdi, qword [rax]
+ mov rax, qword [rsi]
+ mov rsi, qword [rax]
+ movsx eax, byte [rdi]
+ movsx edx, byte [rsi]
+ sub eax, edx
+ cjmp LABEL8
+ jmp CONST
+LABEL8:
+ ret

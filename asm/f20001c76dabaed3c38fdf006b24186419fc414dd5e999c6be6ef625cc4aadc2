@@ -1,0 +1,90 @@
+ .name fcn.000172c0
+ .offset 00000000000172c0
+ .file dash
+LABEL18:
+ test rdi, rdi
+ cjmp LABEL1
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ mov rbx, rdi
+LABEL23:
+ movsxd rax, dword [rbx]
+ movsx eax, word [r12 + rax*CONST]
+ add dword [rip + CONST], eax
+ cmp dword [rbx], CONST
+ cjmp LABEL12
+ mov eax, dword [rbx]
+ movsxd rax, dword [rbp + rax*CONST]
+ add rax, rbp
+ notrack jmp rax
+ mov rdi, qword [rbx + CONST]
+ call LABEL18
+LABEL37:
+ mov rdi, qword [rbx + CONST]
+ call LABEL18
+ mov rbx, qword [rbx + CONST]
+LABEL31:
+ test rbx, rbx
+ cjmp LABEL23
+LABEL12:
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+ mov rdi, qword [rbx + CONST]
+ call LABEL18
+ mov rbx, qword [rbx + CONST]
+ jmp LABEL31
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov edx, dword [rip + CONST]
+ lea eax, [rdx + rax + CONST]
+ mov dword [rip + CONST], eax
+ jmp LABEL37
+ mov rdi, qword [rbx + CONST]
+ call LABEL18
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov edx, dword [rip + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ lea eax, [rdx + rax + CONST]
+ mov dword [rip + CONST], eax
+ ret
+ mov rdi, qword [rbx + CONST]
+ call LABEL50
+ mov rdi, qword [rbx + CONST]
+ call CONST
+ mov edx, dword [rip + CONST]
+ lea eax, [rdx + rax + CONST]
+ mov dword [rip + CONST], eax
+ mov rbx, qword [rbx + CONST]
+ jmp LABEL31
+ mov rdi, qword [rbx + CONST]
+ pop rbx
+ pop rbp
+ pop r12
+ jmp LABEL50
+LABEL1:
+ ret
+LABEL50:
+ test rdi, rdi
+ cjmp LABEL65
+ push rbx
+ mov rbx, rdi
+ nop dword [rax]
+LABEL74:
+ mov rdi, qword [rbx + CONST]
+ add dword [rip + CONST], CONST
+ call LABEL18
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL74
+ pop rbx
+ ret
+LABEL65:
+ ret

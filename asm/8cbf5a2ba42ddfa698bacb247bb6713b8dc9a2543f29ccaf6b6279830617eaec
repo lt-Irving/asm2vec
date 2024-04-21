@@ -1,0 +1,35 @@
+ .name sym.get_original_tty_job_signals
+ .offset 000000000005a880
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL3
+ sub rsp, CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL7
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL3:
+ ret
+LABEL7:
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ xor esi, esi
+ mov edi, CONST
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

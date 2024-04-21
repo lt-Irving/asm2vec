@@ -1,0 +1,30 @@
+ .name sym.reset_completer_word_break_chars
+ .offset 0000000000087160
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL4
+ mov edi, CONST
+ call CONST
+ mov ecx, CONST
+ movabs rdx, CONST
+ mov qword [rax], rdx
+ mov dword [rax + CONST], CONST
+ mov word [rax + CONST], cx
+ mov byte [rax + CONST], CONST
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ ret
+LABEL4:
+ mov edi, CONST
+ call CONST
+ mov edx, CONST
+ movabs rcx, CONST
+ mov qword [rax], rcx
+ mov dword [rax + CONST], CONST
+ mov word [rax + CONST], dx
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ ret

@@ -1,0 +1,26 @@
+ .name sym._rl_abort_internal
+ .offset 00000000000cf200
+ .file bash
+ endbr64
+ push rax
+ pop rax
+ sub rsp, CONST
+ call CONST
+ call CONST
+ call CONST
+ call CONST
+ and qword [rip + CONST], CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL10
+ nop dword [rax + rax]
+LABEL14:
+ call CONST
+ cmp qword [rip + CONST], CONST
+ cjmp LABEL14
+LABEL10:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ and qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ call CONST
+ nop

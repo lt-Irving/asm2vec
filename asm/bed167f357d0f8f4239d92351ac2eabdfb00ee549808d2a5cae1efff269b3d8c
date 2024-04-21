@@ -1,0 +1,51 @@
+ .name fcn.00010750
+ .offset 0000000000010750
+ .file diff
+ cmp rdi, CONST
+ mov esi, CONST
+ movabs r9, CONST
+ cmovae rsi, rdi
+ or rsi, CONST
+ cmp rsi, CONST
+ cjmp LABEL6
+ nop dword [rax]
+LABEL39:
+ mov rax, rsi
+ mov rcx, rsi
+ mul r9
+ mov rax, rdx
+ shr rax, CONST
+ lea rax, [rax + rax*CONST]
+ sub rcx, rax
+ mov rax, rcx
+ cmp rsi, CONST
+ cjmp LABEL17
+ test rcx, rcx
+ cjmp LABEL19
+ mov r8d, CONST
+ mov edi, CONST
+ mov ecx, CONST
+ jmp LABEL23
+LABEL34:
+ add r8, CONST
+ test rdx, rdx
+ cjmp LABEL19
+LABEL23:
+ add rcx, CONST
+ mov rax, rsi
+ xor edx, edx
+ add rdi, r8
+ div rcx
+ mov rax, rdx
+ cmp rdi, rsi
+ cjmp LABEL34
+LABEL17:
+ test rax, rax
+ cjmp LABEL6
+LABEL19:
+ add rsi, CONST
+ cmp rsi, CONST
+ cjmp LABEL39
+LABEL6:
+ mov rax, rsi
+ ret

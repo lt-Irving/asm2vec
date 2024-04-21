@@ -1,0 +1,35 @@
+ .name sym.xrealloc
+ .offset 0000000000090570
+ .file bash
+ endbr64
+ push r13
+ mov r13, rsi
+ push r12
+ sub rsp, CONST
+ test rdi, rdi
+ cjmp LABEL6
+ call CONST
+ mov r12, rax
+LABEL19:
+ test r12, r12
+ cjmp LABEL10
+ add rsp, CONST
+ mov rax, r12
+ pop r12
+ pop r13
+ ret
+LABEL6:
+ mov rdi, rsi
+ call CONST
+ mov r12, rax
+ jmp LABEL19
+LABEL10:
+ xor edi, edi
+ mov edx, CONST
+ lea rsi, [rip + CONST]
+ call CONST
+ mov rdx, r13
+ lea rsi, [rip + CONST]
+ mov rdi, rax
+ xor eax, eax
+ call CONST

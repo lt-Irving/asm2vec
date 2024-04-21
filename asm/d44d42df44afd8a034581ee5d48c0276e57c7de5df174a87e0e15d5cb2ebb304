@@ -1,0 +1,61 @@
+ .name sym.execute_command
+ .offset 00000000000499b0
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ mov edi, CONST
+ push rbp
+ sub rsp, CONST
+ mov qword [rip + CONST], CONST
+ call CONST
+ lea rdi, [rip + CONST]
+ mov rbp, rax
+ call CONST
+ xor eax, eax
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ call CONST
+ xor esi, esi
+ mov r8, rbp
+ mov ecx, CONST
+ mov edx, CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, rbp
+ mov r12d, eax
+ call CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ or eax, dword [rip + CONST]
+ cjmp LABEL28
+LABEL52:
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL31
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL34
+LABEL44:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL31:
+ mov edi, dword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL44
+LABEL34:
+ call CONST
+ add rsp, CONST
+ mov eax, r12d
+ pop rbp
+ pop r12
+ ret
+LABEL28:
+ call CONST
+ jmp LABEL52

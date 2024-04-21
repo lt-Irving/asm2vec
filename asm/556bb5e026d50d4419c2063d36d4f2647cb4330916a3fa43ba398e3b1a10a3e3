@@ -1,0 +1,43 @@
+ .name fcn.00015820
+ .offset 0000000000015820
+ .file dash
+ push rbp
+ mov rbp, rsi
+ mov rsi, rdi
+ mov edi, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ test eax, eax
+ cjmp LABEL11
+LABEL24:
+ xor eax, eax
+LABEL28:
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL15
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL11:
+ lea rdx, [rsp + CONST]
+ mov rsi, rbp
+ mov edi, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL24
+ mov rcx, qword [rsp + CONST]
+ mov eax, CONST
+ cmp qword [rsp + CONST], rcx
+ cjmp LABEL28
+ cjmp LABEL24
+ mov rax, qword [rsp + CONST]
+ cmp qword [rsp + CONST], rax
+ setl al
+ movzx eax, al
+ jmp LABEL28
+LABEL15:
+ call CONST

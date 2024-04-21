@@ -1,0 +1,22 @@
+ .name sym.word_list_remove_quoted_nulls
+ .offset 0000000000067590
+ .file bash
+ endbr64
+ test rdi, rdi
+ cjmp LABEL2
+ push rbx
+ mov rbx, rdi
+ nop dword [rax]
+LABEL13:
+ mov rax, qword [rbx + CONST]
+ mov rdi, qword [rax]
+ call CONST
+ mov rax, qword [rbx + CONST]
+ mov rbx, qword [rbx]
+ and dword [rax + CONST], CONST
+ test rbx, rbx
+ cjmp LABEL13
+ pop rbx
+ ret
+LABEL2:
+ ret

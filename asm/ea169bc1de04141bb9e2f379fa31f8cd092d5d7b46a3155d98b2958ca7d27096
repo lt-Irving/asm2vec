@@ -1,0 +1,41 @@
+ .name sym._rl_scxt_alloc
+ .offset 00000000000c75c0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, edi
+ mov edi, CONST
+ push rbx
+ mov ebx, esi
+ call CONST
+ mov r12, rax
+ mov dword [rax], ebp
+ mov dword [rax + CONST], ebx
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ mov eax, dword [rip + CONST]
+ mov dword [r12 + CONST], eax
+ mov eax, dword [rip + CONST]
+ mov dword [r12 + CONST], eax
+ call CONST
+ mov qword [r12 + CONST], CONST
+ mov dword [r12 + CONST], eax
+ mov dword [r12 + CONST], eax
+ mov rax, qword [rip + CONST]
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], rax
+ mov qword [r12 + CONST], rax
+ mov rax, r12
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ mov qword [r12 + CONST], CONST
+ pop rbx
+ pop rbp
+ pop r12
+ ret

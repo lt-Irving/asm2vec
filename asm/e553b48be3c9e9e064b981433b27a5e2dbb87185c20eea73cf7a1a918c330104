@@ -1,0 +1,17 @@
+ .name fcn.000116d0
+ .offset 00000000000116d0
+ .file dir
+ endbr64
+ push r12
+ mov r12d, esi
+ push rbp
+ mov rbp, rdi
+ sub rsp, CONST
+ call CONST
+ add rsp, CONST
+ mov edx, r12d
+ mov rdi, rbp
+ mov rsi, rax
+ pop rbp
+ pop r12
+ jmp CONST

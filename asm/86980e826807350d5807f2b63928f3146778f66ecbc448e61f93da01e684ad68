@@ -1,0 +1,15 @@
+ .name sym.get_hostname_list
+ .offset 0000000000087ca0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ mov rax, qword [rip + CONST]
+ ret
+LABEL3:
+ sub rsp, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ add rsp, CONST
+ ret

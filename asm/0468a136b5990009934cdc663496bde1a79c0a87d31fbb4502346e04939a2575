@@ -1,0 +1,35 @@
+ .name sym.sv_ignoreeof
+ .offset 000000000004e180
+ .file bash
+ endbr64
+ push rbp
+ mov dword [rip + CONST], CONST
+ call CONST
+ test rax, rax
+ cjmp LABEL5
+ mov rbp, qword [rax + CONST]
+ test rbp, rbp
+ cjmp LABEL5
+ mov dword [rip + CONST], CONST
+ cmp byte [rbp], CONST
+ cjmp LABEL11
+LABEL22:
+ mov eax, CONST
+LABEL27:
+ pop rbp
+ mov dword [rip + CONST], eax
+ jmp CONST
+LABEL5:
+ mov dword [rip + CONST], CONST
+ pop rbp
+ jmp CONST
+LABEL11:
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL22
+ mov edx, CONST
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ jmp LABEL27

@@ -1,0 +1,34 @@
+ .name fcn.0000e930
+ .offset 000000000000e930
+ .file diff
+ test rdi, rdi
+ cjmp LABEL1
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13, rdx
+ push r12
+ push rbp
+ push rbx
+ mov rbx, rdi
+ nop word cs:[rax + rax]
+LABEL21:
+ mov rdi, rbx
+ call r14
+ mov rdi, rbx
+ mov r12, qword [rax]
+ mov rbp, rax
+ mov qword [rax], CONST
+ call r13
+ mov rbx, r12
+ mov qword [rbp], r12
+ test r12, r12
+ cjmp LABEL21
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL1:
+ ret

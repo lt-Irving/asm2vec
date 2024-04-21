@@ -1,0 +1,22 @@
+ .name fcn.00008c80
+ .offset 0000000000008c80
+ .file dash
+ endbr64
+ cmp edi, CONST
+ cjmp LABEL2
+ xor eax, eax
+ ret
+LABEL2:
+ sub rsp, CONST
+ mov word [rip + CONST], CONST
+ mov qword [rsp + CONST], rsi
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov rsi, qword [rsp + CONST]
+ xor edx, edx
+ lea r8, [rax + CONST]
+ lea rdi, [rsi + CONST]
+ mov rsi, r8
+ call CONST
+ nop word cs:[rax + rax]
+ nop dword [rax + rax]

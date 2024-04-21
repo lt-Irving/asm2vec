@@ -1,0 +1,31 @@
+ .name sym.bash_delete_history_range
+ .offset 00000000000813f0
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL8
+ jmp LABEL9
+LABEL15:
+ call CONST
+LABEL8:
+ mov eax, ebx
+ add rbx, CONST
+ mov rdi, qword [rbp + rbx*CONST + CONST]
+ test rdi, rdi
+ cjmp LABEL15
+LABEL23:
+ sub dword [rip + CONST], eax
+ add rsp, CONST
+ mov eax, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL9:
+ xor eax, eax
+ jmp LABEL23

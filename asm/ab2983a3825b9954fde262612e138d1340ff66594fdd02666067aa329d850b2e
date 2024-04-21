@@ -1,0 +1,38 @@
+ .name sym.builtin_builtin
+ .offset 0000000000091200
+ .file bash
+ endbr64
+ push rbp
+ push rbx
+ sub rsp, CONST
+ call CONST
+ test eax, eax
+ cjmp LABEL6
+ mov rbx, qword [rip + CONST]
+ test rbx, rbx
+ cjmp LABEL9
+ mov rax, qword [rbx + CONST]
+ mov rbp, qword [rax]
+ mov rdi, rbp
+ call CONST
+ test rax, rax
+ cjmp LABEL15
+ mov qword [rip + CONST], rbp
+ mov rdi, qword [rbx]
+ mov qword [rip + CONST], rax
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ jmp rax
+LABEL6:
+ mov eax, CONST
+LABEL9:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ ret
+LABEL15:
+ mov rdi, rbp
+ call CONST
+ mov eax, CONST
+ jmp LABEL9

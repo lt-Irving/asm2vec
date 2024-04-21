@@ -1,0 +1,24 @@
+ .name fcn.0004c980
+ .offset 000000000004c980
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ xor edi, edi
+ push rbp
+ push rbx
+ call CONST
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ mov rdi, qword [r12 + CONST]
+ mov rbx, rax
+ call CONST
+ mov rdi, rbp
+ call CONST
+ mov qword [r12 + CONST], rbx
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret

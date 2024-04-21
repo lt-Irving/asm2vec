@@ -1,0 +1,27 @@
+ .name sym.u32tochar
+ .offset 00000000000b6280
+ .file bash
+ endbr64
+ cmp rdi, CONST
+ cjmp LABEL2
+ cmp rdi, CONST
+ cjmp LABEL4
+ rol di, CONST
+ mov edx, CONST
+ mov eax, CONST
+ mov word [rsi], di
+ mov byte [rsi + rdx], CONST
+ ret
+LABEL2:
+ mov edx, CONST
+ mov byte [rsi], dil
+ mov eax, CONST
+ mov byte [rsi + rdx], CONST
+ ret
+LABEL4:
+ mov edx, CONST
+ bswap edi
+ mov eax, CONST
+ mov dword [rsi], edi
+ mov byte [rsi + rdx], CONST
+ ret

@@ -1,0 +1,59 @@
+ .name sym.find_index_in_alist
+ .offset 00000000000892b0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov rbp, rdi
+ push rbx
+ sub rsp, CONST
+ mov rdi, qword [rsi]
+ test rdi, rdi
+ cjmp LABEL9
+ mov r13d, edx
+ lea rbx, [rsi + CONST]
+ xor r12d, r12d
+ jmp LABEL13
+LABEL23:
+ movzx eax, byte [rdi]
+ cmp byte [rbp], al
+ cjmp LABEL16
+LABEL28:
+ mov rdi, qword [rbx]
+ add rbx, CONST
+ add r12d, CONST
+ test rdi, rdi
+ cjmp LABEL9
+LABEL13:
+ test r13d, r13d
+ cjmp LABEL23
+ mov edx, CONST
+ mov rsi, rbp
+ call CONST
+ cmp eax, CONST
+ cjmp LABEL28
+LABEL41:
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL16:
+ mov rsi, rdi
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL28
+ jmp LABEL41
+LABEL9:
+ add rsp, CONST
+ mov r12d, CONST
+ pop rbx
+ mov eax, r12d
+ pop rbp
+ pop r12
+ pop r13
+ ret

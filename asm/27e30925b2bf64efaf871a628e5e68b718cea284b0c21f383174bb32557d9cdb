@@ -1,0 +1,88 @@
+ .name sym.get_job_by_pid
+ .offset 000000000005a4e0
+ .file bash
+ endbr64
+ push r13
+ push r12
+ push rbp
+ mov ebp, esi
+ push rbx
+ mov ebx, edi
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ test esi, esi
+ cjmp LABEL12
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL15
+LABEL63:
+ mov rdi, qword [rip + CONST]
+ xor edx, edx
+LABEL24:
+ mov rax, qword [rdi + rdx*CONST]
+ mov r12d, edx
+ test rax, rax
+ cjmp LABEL21
+LABEL47:
+ add rdx, CONST
+ cmp esi, edx
+ cjmp LABEL24
+ mov r12d, CONST
+ nop dword [rax]
+LABEL43:
+ lea r13, [rsp + CONST]
+ test ebp, ebp
+ cjmp LABEL29
+LABEL70:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL32
+ add rsp, CONST
+ mov eax, r12d
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL21:
+ mov rcx, qword [rax + CONST]
+ mov rax, rcx
+LABEL46:
+ cmp ebx, dword [rax + CONST]
+ cjmp LABEL43
+ mov rax, qword [rax]
+ cmp rcx, rax
+ cjmp LABEL46
+ jmp LABEL47
+LABEL12:
+ mov r12, rsp
+ lea r13, [rsp + CONST]
+ mov rdi, r12
+ call CONST
+ mov esi, CONST
+ mov rdi, r12
+ call CONST
+ mov rdi, r13
+ call CONST
+ mov rsi, r12
+ mov rdx, r13
+ xor edi, edi
+ call CONST
+ mov esi, dword [rip + CONST]
+ test esi, esi
+ cjmp LABEL63
+ mov r12d, CONST
+ nop dword [rax]
+LABEL29:
+ xor edx, edx
+ mov rsi, r13
+ mov edi, CONST
+ call CONST
+ jmp LABEL70
+LABEL15:
+ mov r12d, CONST
+ jmp LABEL70
+LABEL32:
+ call CONST

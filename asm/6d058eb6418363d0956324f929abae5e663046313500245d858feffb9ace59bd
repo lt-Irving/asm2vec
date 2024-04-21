@@ -1,0 +1,39 @@
+ .name sym._rl_copy_undo_list
+ .offset 00000000000d08d0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ push rbx
+ test rdi, rdi
+ cjmp LABEL5
+ mov rbx, rdi
+ call CONST
+ mov r12, rax
+ mov rbp, rax
+ jmp LABEL10
+LABEL19:
+ mov qword [rbp], rax
+LABEL21:
+ mov rbp, rax
+LABEL10:
+ mov rbx, qword [rbx]
+ test rbx, rbx
+ cjmp LABEL15
+ mov rdi, rbx
+ call CONST
+ test r12, r12
+ cjmp LABEL19
+ mov r12, rax
+ jmp LABEL21
+LABEL15:
+ mov qword [rbp], CONST
+LABEL29:
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL5:
+ xor r12d, r12d
+ jmp LABEL29

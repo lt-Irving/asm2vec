@@ -1,0 +1,33 @@
+ .name sym.rl_copy_forward_word
+ .offset 00000000000d0550
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, edi
+ push rbx
+ test edi, edi
+ cjmp LABEL6
+ xor esi, esi
+ mov r12d, dword [rip + CONST]
+ mov ebx, dword [rip + CONST]
+ call CONST
+ mov eax, dword [rip + CONST]
+ mov edi, ebp
+ xor esi, esi
+ mov dword [rip + CONST], eax
+ call CONST
+ xor edi, edi
+ call CONST
+ mov dword [rip + CONST], r12d
+ mov dword [rip + CONST], ebx
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL6:
+ pop rbx
+ neg edi
+ pop rbp
+ pop r12
+ jmp CONST

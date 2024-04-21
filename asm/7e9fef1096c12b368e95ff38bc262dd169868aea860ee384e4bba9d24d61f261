@@ -1,0 +1,16 @@
+ .name sym.read_tty_cleanup
+ .offset 000000000009ed10
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ ret
+LABEL3:
+ sub rsp, CONST
+ mov edi, dword [rip + CONST]
+ lea rsi, [rip + CONST]
+ call CONST
+ mov dword [rip + CONST], CONST
+ add rsp, CONST
+ ret

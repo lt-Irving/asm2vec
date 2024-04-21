@@ -1,0 +1,66 @@
+ .name fcn.00010780
+ .offset 0000000000010780
+ .file apt-cache
+ endbr64
+ push r15
+ lea r15, [rdi + CONST]
+ push r14
+ mov r14, rdx
+ push r13
+ mov r13d, CONST
+ push r12
+ push rbp
+ mov rbp, rcx
+ push rbx
+ mov rbx, rdi
+ sub rsp, CONST
+ test rsi, rsi
+ cjmp LABEL14
+LABEL38:
+ mov edi, CONST
+ call CONST
+ movdqu xmm0, xmmword [rbp]
+ mov rcx, r15
+ mov rdx, r14
+ mov r12, rax
+ mov edi, r13d
+ movups xmmword [rax + CONST], xmm0
+ mov rax, qword [rbp + CONST]
+ mov rsi, r12
+ mov qword [r12 + CONST], rax
+ call CONST
+ add qword [rbx + CONST], CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret
+LABEL14:
+ cmp rdx, r15
+ cjmp LABEL38
+ mov rdx, qword [rcx + CONST]
+ mov rax, qword [rcx]
+ test rdx, rdx
+ cjmp LABEL42
+ mov rdx, qword [rdx + CONST]
+LABEL42:
+ cmp rdx, rax
+ mov edx, CONST
+ mov rcx, qword [r14 + CONST]
+ cmove rax, rdx
+ mov rdx, qword [r14 + CONST]
+ test rdx, rdx
+ cjmp LABEL50
+ mov rdx, qword [rdx + CONST]
+LABEL50:
+ cmp rcx, rax
+ seta al
+ xor r13d, r13d
+ cmp rcx, rdx
+ setne r13b
+ and r13d, eax
+ jmp LABEL38

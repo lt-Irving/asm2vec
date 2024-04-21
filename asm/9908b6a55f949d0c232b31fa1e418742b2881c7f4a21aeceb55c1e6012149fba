@@ -1,0 +1,16 @@
+ .name fcn.00009590
+ .offset 0000000000009590
+ .file apt-mark
+ endbr64
+ lea rax, [rip + CONST]
+ push rbp
+ mov rbp, rdi
+ mov qword [rdi], rax
+ mov rdi, qword [rdi + CONST]
+ test rdi, rdi
+ cjmp LABEL7
+ call CONST
+LABEL7:
+ mov rdi, rbp
+ pop rbp
+ jmp CONST

@@ -1,0 +1,22 @@
+ .name fcn.00013bf0
+ .offset 0000000000013bf0
+ .file dash
+ push rbp
+ mov rbp, rdi
+ call CONST
+ test eax, eax
+ cjmp LABEL4
+ mov edx, CONST
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ mov r8d, eax
+ cmp eax, CONST
+ cjmp LABEL4
+LABEL16:
+ mov eax, r8d
+ pop rbp
+ ret
+LABEL4:
+ mov r8d, CONST
+ jmp LABEL16

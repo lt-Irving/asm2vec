@@ -1,0 +1,48 @@
+ .name sym._rl_backspace
+ .offset 00000000000d32c0
+ .file bash
+ endbr64
+ push r12
+ push rbp
+ mov ebp, edi
+ mov rdi, qword [rip + CONST]
+ push rbx
+ test rdi, rdi
+ cjmp LABEL7
+ test ebp, ebp
+ cjmp LABEL9
+ xor ebx, ebx
+ lea r12, [rip + CONST]
+ jmp LABEL12
+LABEL19:
+ mov rdi, qword [rip + CONST]
+LABEL12:
+ mov rdx, r12
+ mov esi, CONST
+ add ebx, CONST
+ call CONST
+ cmp ebp, ebx
+ cjmp LABEL19
+LABEL9:
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL7:
+ xor ebx, ebx
+ test ebp, ebp
+ cjmp LABEL9
+ nop word cs:[rax + rax]
+LABEL34:
+ mov rsi, qword [rip + CONST]
+ mov edi, CONST
+ add ebx, CONST
+ call CONST
+ cmp ebp, ebx
+ cjmp LABEL34
+ pop rbx
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret

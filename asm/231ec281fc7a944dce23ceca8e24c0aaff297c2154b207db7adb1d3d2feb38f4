@@ -1,0 +1,32 @@
+ .name fcn.00010d80
+ .offset 0000000000010d80
+ .file dash
+ push rbp
+ sub rsp, CONST
+ movsxd rdx, dword [rip + CONST]
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ lea rax, [rip + CONST]
+ mov rcx, qword [rax + rdx*CONST]
+ cmp edi, CONST
+ cjmp LABEL9
+ movsxd rdi, edi
+ mov rbp, rsp
+ mov esi, CONST
+ mov r8, qword [rax + rdi*CONST]
+ lea rdx, [rip + CONST]
+ mov rdi, rbp
+ xor eax, eax
+ call CONST
+LABEL26:
+ mov rdi, rbp
+ call CONST
+LABEL9:
+ mov rbp, rsp
+ lea rdx, [rip + CONST]
+ mov esi, CONST
+ xor eax, eax
+ mov rdi, rbp
+ call CONST
+ jmp LABEL26

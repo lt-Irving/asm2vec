@@ -1,0 +1,106 @@
+ .name sym.rl_on_new_line_with_prompt
+ .offset 00000000000c9500
+ .file bash
+ endbr64
+ push r14
+ mov rdi, qword [rip + CONST]
+ push r13
+ push r12
+ push rbp
+ push rbx
+ call CONST
+ lea edi, [rax + CONST]
+ call CONST
+ mov rbp, qword [rip + CONST]
+ mov r14, qword [rip + CONST]
+ test rbp, rbp
+ cmove rbp, qword [rip + CONST]
+ mov rdi, qword [r14]
+ mov rsi, rbp
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov rsi, rbp
+ mov rdi, qword [rax]
+ call CONST
+ mov rbx, qword [rip + CONST]
+ mov esi, CONST
+ mov rdi, rbx
+ call CONST
+ test rax, rax
+ mov r12, rax
+ cmove r12, rbx
+ mov rdi, r12
+ call CONST
+ mov r13, rax
+ mov ebp, eax
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL34
+ mov edx, dword [rip + CONST]
+ test edx, edx
+ cjmp LABEL37
+LABEL34:
+ mov dword [rip + CONST], r13d
+LABEL93:
+ mov eax, dword [rip + CONST]
+ xor ebx, ebx
+ test eax, eax
+ mov eax, ebp
+ sete bl
+ cdq
+ add ebx, dword [rip + CONST]
+ idiv ebx
+ mov dword [rip + CONST], eax
+ test r13d, r13d
+ cjmp LABEL49
+ test edx, edx
+ cjmp LABEL51
+LABEL86:
+ mov dword [rip + CONST], CONST
+ mov rsi, qword [r14 + CONST]
+LABEL80:
+ mov rcx, rsi
+ xor edx, edx
+ xor eax, eax
+ nop dword [rax]
+LABEL64:
+ mov dword [rip + CONST], edx
+ add rcx, CONST
+ add edx, CONST
+ mov dword [rcx + CONST], eax
+ add eax, ebx
+ cmp ebp, eax
+ cjmp LABEL64
+ movsxd rdx, edx
+ lea rsi, [rsi + rdx*CONST]
+LABEL81:
+ mov rax, qword [rip + CONST]
+ mov dword [rsi], r13d
+ mov dword [rip + CONST], CONST
+ pop rbx
+ mov qword [rip + CONST], rax
+ pop rbp
+ xor eax, eax
+ pop r12
+ pop r13
+ pop r14
+ ret
+LABEL49:
+ mov dword [rip + CONST], CONST
+ mov rsi, qword [r14 + CONST]
+ cjmp LABEL80
+ jmp LABEL81
+LABEL51:
+ mov esi, CONST
+ lea rdi, [rip + CONST]
+ call CONST
+ mov r14, qword [rip + CONST]
+ jmp LABEL86
+LABEL37:
+ mov ecx, CONST
+ mov edx, r13d
+ xor esi, esi
+ mov rdi, r12
+ call CONST
+ mov dword [rip + CONST], eax
+ jmp LABEL93

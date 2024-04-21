@@ -1,0 +1,29 @@
+ .name method.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____std::operator_char__std::char_traits_char___std.allocator_char____std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____const__std::__cxx11:
+ .offset 00000000000040b0
+ .file apt-config
+ endbr64
+ push r13
+ push r12
+ mov r12, rdi
+ push rbp
+ lea rbp, [rdi + CONST]
+ push rbx
+ mov rbx, rdx
+ sub rsp, CONST
+ mov qword [rdi], rbp
+ mov rdx, qword [rsi + CONST]
+ mov r8, qword [rsi]
+ add rdx, r8
+ mov rsi, r8
+ call CONST
+ mov rdx, qword [rbx + CONST]
+ mov rsi, qword [rbx]
+ mov rdi, r12
+ call CONST
+ add rsp, CONST
+ mov rax, r12
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

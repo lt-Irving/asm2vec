@@ -1,0 +1,64 @@
+ .name fcn.00006170
+ .offset 0000000000006170
+ .file choom
+ endbr64
+ push rbp
+ mov rbp, rsi
+ test rsi, rsi
+ cjmp LABEL4
+ movzx eax, byte [rsi]
+ mov r8, rsi
+ xor esi, esi
+ jmp LABEL8
+LABEL23:
+ cmp al, CONST
+ cjmp LABEL10
+ cmp al, CONST
+ cjmp LABEL12
+ mov r9d, esi
+ or r9d, CONST
+ cmp al, CONST
+ cmove esi, r9d
+LABEL28:
+ add r8, CONST
+ mov eax, ecx
+LABEL8:
+ test al, al
+ cjmp LABEL20
+ movzx ecx, byte [r8 + CONST]
+ cmp al, CONST
+ cjmp LABEL23
+ mov eax, esi
+ or eax, CONST
+ cmp cl, CONST
+ cmove esi, eax
+ jmp LABEL28
+LABEL4:
+ xor esi, esi
+ nop word [rax + rax]
+LABEL20:
+ call CONST
+ mov edi, eax
+ test eax, eax
+ cjmp LABEL34
+ mov rsi, rbp
+ pop rbp
+ jmp CONST
+LABEL10:
+ mov eax, esi
+ or esi, CONST
+ or eax, CONST
+ cmp cl, CONST
+ cmove esi, eax
+ jmp LABEL28
+LABEL12:
+ mov eax, esi
+ or esi, CONST
+ or eax, CONST
+ cmp cl, CONST
+ cmove esi, eax
+ jmp LABEL28
+LABEL34:
+ xor eax, eax
+ pop rbp
+ ret

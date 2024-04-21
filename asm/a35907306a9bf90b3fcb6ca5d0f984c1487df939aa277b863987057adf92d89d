@@ -1,0 +1,26 @@
+ .name fcn.000072a0
+ .offset 00000000000072a0
+ .file dash
+ endbr64
+ push rax
+ pop rax
+ xor edi, edi
+ sub rsp, CONST
+ mov dword [rip + CONST], CONST
+ call CONST
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL9
+ cmp byte [rip + CONST], CONST
+ cjmp LABEL11
+LABEL9:
+ mov edi, CONST
+ xor esi, esi
+ call CONST
+ mov edi, CONST
+ call CONST
+LABEL11:
+ mov dword [rip + CONST], CONST
+ xor edi, edi
+ call CONST
+ nop word cs:[rax + rax]

@@ -1,0 +1,55 @@
+ .name sym.rl_get_termcap
+ .offset 00000000000d31d0
+ .file bash
+ endbr64
+ mov eax, dword [rip + CONST]
+ test eax, eax
+ cjmp LABEL3
+ push r13
+ mov eax, CONST
+ mov r13, rdi
+ push r12
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ xor ebx, ebx
+ sub rsp, CONST
+ movzx r12d, byte [rdi]
+ lea rdi, [rip + CONST]
+ jmp LABEL15
+LABEL23:
+ add ebx, CONST
+ cmp ebx, CONST
+ cjmp LABEL18
+ mov rdi, qword [rbp]
+ add rbp, CONST
+ movzx eax, byte [rdi]
+LABEL15:
+ cmp r12b, al
+ cjmp LABEL23
+ mov rsi, r13
+ call CONST
+ test eax, eax
+ cjmp LABEL23
+ movsxd rbx, ebx
+ lea rax, [rip + CONST]
+ shl rbx, CONST
+ mov rax, qword [rax + rbx + CONST]
+ mov rax, qword [rax]
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL18:
+ add rsp, CONST
+ xor eax, eax
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret
+LABEL3:
+ xor eax, eax
+ ret

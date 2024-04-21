@@ -1,0 +1,22 @@
+ .name sym.zsyncfd
+ .offset 00000000000b0180
+ .file bash
+ endbr64
+ sub rsp, CONST
+ mov rsi, qword [rip + CONST]
+ sub rsi, qword [rip + CONST]
+ test rsi, rsi
+ cjmp LABEL5
+LABEL14:
+ mov qword [rip + CONST], CONST
+ mov qword [rip + CONST], CONST
+ add rsp, CONST
+ ret
+LABEL5:
+ neg rsi
+ mov edx, CONST
+ call CONST
+ cmp rax, CONST
+ cjmp LABEL14
+ add rsp, CONST
+ ret

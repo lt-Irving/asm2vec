@@ -1,0 +1,41 @@
+ .name sym.get_all_original_signals
+ .offset 0000000000075bb0
+ .file bash
+ endbr64
+ push r13
+ lea r13, [rip + CONST]
+ push r12
+ lea r12, [rip + CONST]
+ push rbp
+ lea rbp, [rip + CONST]
+ push rbx
+ mov ebx, CONST
+ sub rsp, CONST
+ jmp LABEL10
+LABEL15:
+ add rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL13
+LABEL10:
+ cmp qword [rbp + rbx*CONST], r12
+ cjmp LABEL15
+ xor esi, esi
+ mov edi, ebx
+ call CONST
+ mov edi, ebx
+ mov rsi, rax
+ mov qword [rbp + rbx*CONST], rax
+ call CONST
+ cmp qword [rbp + rbx*CONST], CONST
+ cjmp LABEL15
+ or dword [r13 + rbx*CONST], CONST
+ add rbx, CONST
+ cmp rbx, CONST
+ cjmp LABEL10
+LABEL13:
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ ret

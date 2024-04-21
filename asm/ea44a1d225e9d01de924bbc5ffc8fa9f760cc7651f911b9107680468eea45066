@@ -1,0 +1,30 @@
+ .name sym.uitos
+ .offset 00000000000afe40
+ .file bash
+ endbr64
+ push rbp
+ mov ecx, CONST
+ mov r8d, CONST
+ mov esi, CONST
+ sub rsp, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rdx, rsp
+ call CONST
+ mov rdi, rax
+ mov rbp, rax
+ call CONST
+ lea rdi, [rax + CONST]
+ call CONST
+ mov rsi, rbp
+ mov rdi, rax
+ call CONST
+ mov rcx, qword [rsp + CONST]
+ xor rcx, qword fs:[CONST]
+ cjmp LABEL21
+ add rsp, CONST
+ pop rbp
+ ret
+LABEL21:
+ call CONST

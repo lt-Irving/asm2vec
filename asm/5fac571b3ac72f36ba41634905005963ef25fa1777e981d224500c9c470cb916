@@ -1,0 +1,42 @@
+ .name fcn.00027f00
+ .offset 0000000000027f00
+ .file diff
+ push r15
+ lea rax, [rip + CONST]
+ mov r15, rdx
+ push r14
+ mov r14, rsi
+ push r13
+ mov r13, rdi
+ push r12
+ push rbp
+ push rbx
+ mov rbx, r8
+ sub rsp, CONST
+ test r8, r8
+ cmove rbx, rax
+ mov qword [rsp + CONST], rcx
+ call CONST
+ sub rsp, CONST
+ mov rdx, r15
+ mov rsi, r14
+ mov r12d, dword [rax]
+ mov rbp, rax
+ lea rax, [rbx + CONST]
+ mov r9d, dword [rbx + CONST]
+ push qword [rbx + CONST]
+ mov r8d, dword [rbx]
+ mov rdi, r13
+ push qword [rbx + CONST]
+ push rax
+ mov rcx, qword [rsp + CONST]
+ call CONST
+ mov dword [rbp], r12d
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret

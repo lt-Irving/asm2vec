@@ -1,0 +1,58 @@
+ .name sym.check_selfref
+ .offset 000000000003eae0
+ .file bash
+ endbr64
+ push r12
+ mov r12, rdi
+ push rbp
+ mov rbp, rsi
+ sub rsp, CONST
+ movzx eax, byte [rsi]
+ cmp byte [rdi], al
+ cjmp LABEL8
+ call CONST
+ mov r8d, eax
+ mov eax, CONST
+ test r8d, r8d
+ cjmp LABEL13
+LABEL8:
+ xor esi, esi
+ mov rdi, rbp
+ call CONST
+ test eax, eax
+ cjmp LABEL18
+LABEL13:
+ add rsp, CONST
+ pop rbp
+ pop r12
+ ret
+LABEL18:
+ mov rdi, rbp
+ xor ecx, ecx
+ xor edx, edx
+ xor esi, esi
+ call CONST
+ mov rbp, rax
+ test rax, rax
+ cjmp LABEL30
+ movzx eax, byte [rax]
+ cmp byte [r12], al
+ cjmp LABEL33
+LABEL30:
+ mov rdi, rbp
+ call CONST
+ add rsp, CONST
+ xor eax, eax
+ pop rbp
+ pop r12
+ ret
+LABEL33:
+ mov rsi, rbp
+ mov rdi, r12
+ call CONST
+ test eax, eax
+ cjmp LABEL30
+ mov rdi, rbp
+ call CONST
+ mov eax, CONST
+ jmp LABEL13

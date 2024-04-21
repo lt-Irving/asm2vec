@@ -1,0 +1,40 @@
+ .name method.std::_Rb_tree_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char_____std::pair_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____const__std::__cxx11::basic_string_char__std::char_traits_char__
+ .offset 0000000000008850
+ .file apt-get
+LABEL11:
+ endbr64
+ test rsi, rsi
+ cjmp LABEL2
+ push r12
+ mov r12, rdi
+ push rbp
+ push rbx
+ mov rbx, rsi
+LABEL26:
+ mov rsi, qword [rbx + CONST]
+ mov rbp, rbx
+ mov rdi, r12
+ call LABEL11
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ mov rbx, qword [rbx + CONST]
+ cmp rdi, rax
+ cjmp LABEL16
+ call CONST
+LABEL16:
+ mov rdi, qword [rbp + CONST]
+ lea rax, [rbp + CONST]
+ cmp rdi, rax
+ cjmp LABEL21
+ call CONST
+LABEL21:
+ mov rdi, rbp
+ call CONST
+ test rbx, rbx
+ cjmp LABEL26
+ pop rbx
+ pop rbp
+ pop r12
+ ret
+LABEL2:
+ ret

@@ -1,0 +1,45 @@
+ .name fcn.000057e0
+ .offset 00000000000057e0
+ .file chrt
+ endbr64
+ push r12
+ push rbp
+ sub rsp, CONST
+ or qword [rsp], CONST
+ sub rsp, CONST
+ lea rcx, [rip + CONST]
+ mov edx, CONST
+ mov esi, CONST
+ mov rax, qword fs:[CONST]
+ mov qword [rsp + CONST], rax
+ xor eax, eax
+ mov rbp, rsp
+ mov r8d, edi
+ mov rdi, rbp
+ call CONST
+ mov edi, CONST
+ call CONST
+ mov r12, rax
+ test rax, rax
+ cjmp LABEL20
+ mov rdi, rbp
+ call CONST
+ mov qword [r12], rax
+ test rax, rax
+ cjmp LABEL20
+LABEL37:
+ mov rax, qword [rsp + CONST]
+ xor rax, qword fs:[CONST]
+ cjmp LABEL28
+ add rsp, CONST
+ mov rax, r12
+ pop rbp
+ pop r12
+ ret
+LABEL20:
+ mov rdi, r12
+ xor r12d, r12d
+ call CONST
+ jmp LABEL37
+LABEL28:
+ call CONST

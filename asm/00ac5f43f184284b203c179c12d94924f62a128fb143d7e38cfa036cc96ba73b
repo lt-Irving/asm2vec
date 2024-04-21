@@ -1,0 +1,13 @@
+ .name fcn.000183c0
+ .offset 00000000000183c0
+ .file cp
+ endbr64
+ push rbx
+ mov rbx, rdi
+ mov edi, CONST
+ call CONST
+ mov qword [rax], rbx
+ mov qword [rax + CONST], CONST
+ mov qword [rax + CONST], CONST
+ pop rbx
+ ret

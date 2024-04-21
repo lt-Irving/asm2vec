@@ -1,0 +1,25 @@
+ .name sym.clear_history
+ .offset 00000000000d75c0
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ mov rax, qword [rip + CONST]
+ push rbx
+ xor ebx, ebx
+ test edx, edx
+ cjmp LABEL6
+ nop dword [rax + rax]
+LABEL14:
+ mov rdi, qword [rax + rbx*CONST]
+ call CONST
+ mov rax, qword [rip + CONST]
+ mov qword [rax + rbx*CONST], CONST
+ add rbx, CONST
+ cmp dword [rip + CONST], ebx
+ cjmp LABEL14
+LABEL6:
+ mov dword [rip + CONST], CONST
+ pop rbx
+ mov dword [rip + CONST], CONST
+ mov dword [rip + CONST], CONST
+ ret

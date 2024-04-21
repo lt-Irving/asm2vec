@@ -1,0 +1,81 @@
+ .name fcn.000b6f90
+ .offset 00000000000b6f90
+ .file bash
+ push r15
+ push r14
+ push r13
+ push r12
+ push rbp
+ push rbx
+ sub rsp, CONST
+ lea r8, [rip + CONST]
+ mov rbx, qword [rip + CONST]
+ mov qword [rip + CONST], rdi
+ lea rdi, [rip + CONST]
+ mov rsi, r8
+ call CONST
+ lea r15, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, r15
+ call CONST
+ lea r14, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, r14
+ call CONST
+ lea r13, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, r13
+ call CONST
+ lea r12, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, r12
+ call CONST
+ lea rbp, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, rbp
+ call CONST
+ lea r8, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, r8
+ call CONST
+ mov rsi, r15
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, r14
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, r13
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, r12
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ call CONST
+ lea r12, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, r12
+ call CONST
+ lea rbp, [rip + CONST]
+ lea rdi, [rip + CONST]
+ mov rsi, rbp
+ call CONST
+ lea rsi, [rip + CONST]
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, r12
+ lea rdi, [rip + CONST]
+ call CONST
+ mov rsi, rbp
+ lea rdi, [rip + CONST]
+ call CONST
+ mov qword [rip + CONST], rbx
+ add rsp, CONST
+ pop rbx
+ pop rbp
+ pop r12
+ pop r13
+ pop r14
+ pop r15
+ ret

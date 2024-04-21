@@ -1,0 +1,15 @@
+ .name sym.set_directory_hook
+ .offset 0000000000088e90
+ .file bash
+ endbr64
+ mov edx, dword [rip + CONST]
+ lea rax, [rip + CONST]
+ test edx, edx
+ cjmp LABEL4
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+ ret
+LABEL4:
+ mov qword [rip + CONST], rax
+ mov qword [rip + CONST], CONST
+ ret

@@ -1,0 +1,21 @@
+ .name sym._rl_signal_handler
+ .offset 00000000000cf080
+ .file bash
+LABEL14:
+ sub rsp, CONST
+ call CONST
+ mov rax, qword [rip + CONST]
+ test rax, rax
+ cjmp LABEL4
+ add rsp, CONST
+ jmp rax
+LABEL4:
+ add rsp, CONST
+ ret
+ endbr64
+ mov dword [rip + CONST], CONST
+ cmp edi, CONST
+ cjmp LABEL12
+ jmp CONST
+LABEL12:
+ jmp LABEL14
